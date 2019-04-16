@@ -1,4 +1,4 @@
-![header with logo](./docs/images/titan-header_logo.jpg)
+![header with logo](../images/titan-header_logo.jpg)
 
 # Introduction - what is TITAN?
 
