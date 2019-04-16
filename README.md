@@ -1,7 +1,5 @@
 ![header with logo](./docs/images/titan-header_logo.jpg)
 
-# TITAN
-
-Thunderstorm Identification Tracking Analysis and Nowcasting
+# Thunderstorm Identification Tracking Analysis & Nowcasting
 
 TITAN system within LROSE
