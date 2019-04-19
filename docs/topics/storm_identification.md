@@ -10,9 +10,7 @@ TITAN identifies storms in 3-D (or 2-D) Cartesian radar data. The data is stored
 
 The following figure shows an example of slice at an altitude of 4km MSL from the FTG radar near Denver. The radar is located at the origin of the plot. The image shows radar reflectivity, in units of dBZ, which is a measure of power reflected back to the radar by the water drops in a cloud. The higher the reflectivity the more severe the weather phenomenon. A dBZ value of 30 indicates light rain or drizzle, 40 dBZ indicates moderate rain and 50 dBZ heavy rain. At values above 50 dBZ hail is likely.
 
-![cappi_simple](../images/cappi_simple.png)
-
-{% include image.html url="../images/cappi_simple.png" description="CAPPI at 4 km" %}
+![cappi_simple](../images/cappi_simple.png "CAPPI at 4 km")
 
 In this image, a line of strong storms lies just to the south of the radar stretching in a line towards the ENE. A second smaller line is seen to the NE of the radar.
 
