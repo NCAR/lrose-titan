@@ -22,6 +22,7 @@ The following figure shows the same storms as in the previous figure, but with t
 
 #### CAPPI with storm runs shown
 
+<a name="cappi_with_storm_runs"/>
 ![cappi_with_storm_runs](../images/cappi_with_storm_runs.png)
 
 As mentioned above, a storm is identified as a region of reflectivity in excess of the specified threshold. The search is constrained between a minimum and maximum height. Furthermore, a 'storm' is only considered valid if its volume exceeds a specified minimum volume.
@@ -66,7 +67,7 @@ And then finally we 'grow' the significant regions back out to the original 35 d
 
 ## Spatial representation of storms
 
-TITAN stores, optionally, the location of all of the grid points which make up the identified storm. That is how we are able to show the details of the storm runs in the figure ![cappi_with_storm_runs](../images/cappi_with_storm_runs.png).
+TITAN stores, optionally, the location of all of the grid points which make up the identified storm. That is how we are able to show the details of the storm runs in the figure [cappi_with_storm_runs](#cappi_with_storm_runs).
 
 There are 2 other storms representations which are useful: the ellipse and the polygon.
 
