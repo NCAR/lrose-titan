@@ -6,7 +6,7 @@ The TITAN project is now hosted on GitHub.
 
 The TITAN applications are part of the [lrose-core](https://github.com/NCAR/lrose-core).
 
-The templates for the scripts and parameter files reside in this respository - [see](./templates).
+The templates for the scripts and parameter files reside in this respository - [here](./templates).
 
 ## Overview
 
