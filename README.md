@@ -1,6 +1,6 @@
 ![front page](./docs/images/titan_front_page.jpg)
 
-## Thunderstorm Identification Tracking Analysis & Nowcasting
+## TITAN - Thunderstorm Identification Tracking Analysis & Nowcasting
 
 The TITAN project is now hosted on GitHub.
 
