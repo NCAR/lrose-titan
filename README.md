@@ -12,7 +12,7 @@ The templates for the scripts and parameter files reside in this respository - [
 
 1. [Introduction](./docs/topics/introduction.md)
 2. [Storm Indentification](./docs/topics/storm_identification.md)
-3. [Storm Tracking](./docs/topics/storm_identification.md)
+3. [Storm Tracking](./docs/topics/storm_tracking.md)
 4. [Forecasting](./docs/topics/forecasting.md)
 5. [Storm Analysis](#./docs/topics/storm_analysis.md)
 6. [Storm Climatology](./docs/topics/storm_climatology.md)
