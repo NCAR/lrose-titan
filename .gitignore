@@ -1,0 +1,9 @@
+# .gitignore at top level
+
+# emacs
+
+~*
+*~
+TAGS
+.#*
+
