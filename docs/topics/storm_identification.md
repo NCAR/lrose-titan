@@ -12,6 +12,8 @@ The following figure shows an example of slice at an altitude of 4km MSL from th
 
 ![cappi_simple](../images/cappi_simple.png "CAPPI at 4 km")
 
+#### CAPPI at 4 km
+
 In this image, a line of strong storms lies just to the south of the radar stretching in a line towards the ENE. A second smaller line is seen to the NE of the radar.
 
 TITAN identifies a 'storm' as a contiguous region in the atmoshpere with a reflectivity in excess of a set threshold. First, horizontal (E-W) segments in the data grid above the threshold are found. Then, overlaps between a segment and adjacent segments are identified. Searching for overlaps occurs in both the N-S and up-down directions since we are performing a 3-D analysis of the storms. Although configurable, the overlap is generally set to '1' - i.e., two regions of reflectivity only need to overlap by a single grid cell in order for both to be considered part of the same storm.
