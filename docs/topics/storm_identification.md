@@ -20,6 +20,8 @@ TITAN identifies a 'storm' as a contiguous region in the atmoshpere with a refle
 
 The following figure shows the same storms as in the previous figure, but with the first stage of storm identification shown. The cyan rectangles show which regions were identified as exceeding the reflectivity threshold. In this case we are using a threshold of 35 dBZ.
 
+#### CAPPI with storm runs shown
+
 ![cappi_with_storm_runs](../images/cappi_with_storm_runs.png)
 
 As mentioned above, a storm is identified as a region of reflectivity in excess of the specified threshold. The search is constrained between a minimum and maximum height. Furthermore, a 'storm' is only considered valid if its volume exceeds a specified minimum volume.
@@ -34,34 +36,33 @@ In order to deal with this problem, a second threshold is introduced. In the pre
 
 In the figure below, we show the same situation depicted above, but you can see that the storms, which would have been identified as single entities, have been divided up into a number of parts. So how do we achieve that?
 
+#### Storms split up using the dual threshold
+
 ![dual_thresh_dbz](../images/dual_thresh_dbz.png)
 
 The following figure shows the 'composite' reflectivity for grid points with reflectivity which exceeds the lower threshold of 35 dBZ. In this context 'composite' means the maximum value at any height. In the dual threshold phase of the identification, we work in 2-D instead of 3-D.
 
-![dual_thresh_comp_dbz](../images/dual_thresh_comp_dbz.png)
+#### Composite reflectivity showing overlaps
 
-<!---
-<h4><a name="dual_thresh_comp_dbz">Composite reflectivity showing overlaps</a></h4>
-<img src="./images/dual_thresh_comp_dbz.png" alt="Sorry, image not available" />
--->
+![dual_thresh_comp_dbz](../images/dual_thresh_comp_dbz.png)
 
 Next, we find the grid points which exceed the upper threshold, in this case 45 dBZ.
 
-![dual_threshold_all](../images/dual_threshold_all.png)
+#### Points with DBZ > 45
 
-Points with DBZ > 45
+![dual_threshold_all](../images/dual_threshold_all.png)
 
 We then discard some small areas to tidy things up and just leave what we consider to be significant regions with reflectivity in excess of the upper threshold.
 
-![dual_threshold_valid](../images/dual_threshold_valid.png)
+#### Significant regions with DBZ > 45
 
-Significant regions with DBZ > 45
+![dual_threshold_valid](../images/dual_threshold_valid.png)
 
 And then finally we 'grow' the significant regions back out to the original 35 dBZ boundary. Where two growth boundaries meet, we stop growing, so that the significant regions are preserved as separate entities, but once again include the reflectivity down to the lower threshold. All of this is performed in 2-D. However, once the final storm boundaries are established, TITAN retrieves the original 3-D storm points and allocates them to the relevant storm.
 
-![dual_threshold_grown](../images/dual_threshold_grown.png)
+#### Significant regions grown out to 35 DBZ boundary
 
-Significant regions grown out to 35 DBZ boundary
+![dual_threshold_grown](../images/dual_threshold_grown.png)
 
 ## Spatial representation of storms
 
@@ -71,15 +72,15 @@ There are 2 other storms representations which are useful: the ellipse and the p
 
 The ellipse is a simplified representation of the storm shape which is useful for some applications. It works well for distinct storms but not well for lines.
 
-![ellipses](../images/ellipses.png)
+#### Ellipse representation of storms
 
-Ellipse representation of storms
+![ellipses](../images/ellipses.png)
 
 The polygon is a 'complex hull' representation of the storm boundary. It is computed by projecting radials out from the storm centroid and finding the intersection point with the storm boundary. This works well for some complex storm shapes, but fails with shapes such as bow echoes. We are considering a more flexible shape format which would describe any storm shape adequately.
 
-![ellipses](../images/polygons.png)
+#### Polygon representation of storms
 
-Polygon representation of storms
+![ellipses](../images/polygons.png)
 
 ## Storm properties
 
@@ -146,7 +147,7 @@ Optionally the following hail metrics are also computed:
 
 A reflectivity distribution is computed both in 3-D (the distribution over the volume) and 2-D (the distribution over the projected area).
 
-[Top](../../README.md)
-[Back](./introduction.md)
-[Fwd](./storm_tracking.md)
+[<Top>](../../README.md)
+[<Back>](./introduction.md)
+[<Fwd>](./storm_tracking.md)
 
