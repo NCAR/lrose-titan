@@ -1,6 +1,6 @@
 ![front page](./docs/images/titan_front_page.jpg)
 
-   Images (c) courtesy of Greg Thompson, NCAR/RAL.
+###### Images (c) courtesy of Greg Thompson, NCAR/RAL, Boulder, CO, USA.
 
 ## Thunderstorm Identification Tracking Analysis & Nowcasting
 
