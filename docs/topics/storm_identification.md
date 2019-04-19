@@ -20,9 +20,9 @@ TITAN identifies a 'storm' as a contiguous region in the atmoshpere with a refle
 
 The following figure shows the same storms as in the previous figure, but with the first stage of storm identification shown. The cyan rectangles show which regions were identified as exceeding the reflectivity threshold. In this case we are using a threshold of 35 dBZ.
 
-#### CAPPI with storm runs shown
-
 <a name="cappi_with_storm_runs"/>
+
+#### CAPPI with storm runs shown
 
 ![cappi_with_storm_runs](../images/cappi_with_storm_runs.png)
 
