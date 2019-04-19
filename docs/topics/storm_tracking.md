@@ -1,3 +1,9 @@
+![header with logo](../images/titan-header_logo.jpg)
+
+[Top](../../README.md)
+[Fwd](./forecasting.md)
+[Back](./storm_identification.md)
+
 # Storm tracking
 
 TITAN tracks storms by matching storms identified at one scan time with storms identified at the following scan time. Two methods are applied in order.
@@ -88,6 +94,6 @@ The following two figures show an example of a storm splitting into 4 parts. A n
 
 ![split_example_scan2](../images/split_example_scan2.png)
 
-[ Top ](../../README.md)
-[ Fwd ](./storm_tracking.md)
-[ Back ](./storm_identification.md)
+[Top](../../README.md)
+[Fwd](./forecasting.md)
+[Back](./storm_identification.md)
