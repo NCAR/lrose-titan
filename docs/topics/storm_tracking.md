@@ -1,8 +1,8 @@
 ![header with logo](../images/titan-header_logo.jpg)
 
 [Top](../../README.md)
-[Fwd](./forecasting.md)
 [Back](./storm_identification.md)
+[Fwd](./forecasting.md)
 
 # Storm tracking
 
@@ -95,5 +95,5 @@ The following two figures show an example of a storm splitting into 4 parts. A n
 ![split_example_scan2](../images/split_example_scan2.png)
 
 [Top](../../README.md)
-[Fwd](./forecasting.md)
 [Back](./storm_identification.md)
+[Fwd](./forecasting.md)
