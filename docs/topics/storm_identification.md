@@ -50,19 +50,19 @@ Next, we find the grid points which exceed the upper threshold, in this case 45 
 
 #### Points with DBZ > 45
 
-![dual_threshold_all](../images/dual_threshold_all.png)
+![dual_threshold_all](../images/dual_thresh_all.png)
 
 We then discard some small areas to tidy things up and just leave what we consider to be significant regions with reflectivity in excess of the upper threshold.
 
 #### Significant regions with DBZ > 45
 
-![dual_threshold_valid](../images/dual_threshold_valid.png)
+![dual_threshold_valid](../images/dual_thresh_valid.png)
 
 And then finally we 'grow' the significant regions back out to the original 35 dBZ boundary. Where two growth boundaries meet, we stop growing, so that the significant regions are preserved as separate entities, but once again include the reflectivity down to the lower threshold. All of this is performed in 2-D. However, once the final storm boundaries are established, TITAN retrieves the original 3-D storm points and allocates them to the relevant storm.
 
 #### Significant regions grown out to 35 DBZ boundary
 
-![dual_threshold_grown](../images/dual_threshold_grown.png)
+![dual_threshold_grown](../images/dual_thresh_grown.png)
 
 ## Spatial representation of storms
 
@@ -147,7 +147,7 @@ Optionally the following hail metrics are also computed:
 
 A reflectivity distribution is computed both in 3-D (the distribution over the volume) and 2-D (the distribution over the projected area).
 
-[<Top>](../../README.md)
-[<Back>](./introduction.md)
-[<Fwd>](./storm_tracking.md)
+[ Top ](../../README.md)
+[ Fwd ](./storm_tracking.md)
+[ Back ](./introduction.md)
 
