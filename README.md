@@ -1,10 +1,16 @@
 ![front page](./docs/images/titan_front_page.jpg)
 
+   Images (c) courtesy of Greg Thompson, NCAR/RAL.
+
 # Thunderstorm Identification Tracking Analysis & Nowcasting
 
-TITAN system within LROSE
+The TITAN project is now hosted on GitHub.
 
-This will checkout and build the latest source from GitHub.
+The TITAN applications are part of the [lrose-core](https://github.com/NCAR/lrose-core)
+
+The TITAN templates and parameter files are in [lrose-titan](https://github.com/NCAR/lrose-titan)
+
+# Overview
 
 1. [Introduction](./docs/topics/introduction.md)
 2. [History](#history)
@@ -13,8 +19,6 @@ This will checkout and build the latest source from GitHub.
 5. [Forecasting](#forecasting)
 6. [Storm Analysis](#storm_analysis)
 7. [Storm Climatology](#storm_climatology)
-
-<a name="introduction"/>
 
 ![header with logo](./docs/images/titan-header_logo.jpg)
 

@@ -1,6 +1,6 @@
 ![header with logo](../images/titan-header_logo.jpg)
 
-# Introduction - what is TITAN?
+# What is TITAN?
 
 ## Thunderstorm Identification, Tracking, Analysis and Nowcasting
 
@@ -12,4 +12,6 @@ Since then it has grown in two ways:
 2. The name TITAN has become associated with the system (for data handling, analysis and display) upon which TITAN is built, rather than the algorithm itself.
  
 The TITAN system is now a relatively large suite of software, incorporating the capabililty to handle data from a large number of radar types, as well as supporting data from satellite, lightning sensors, surface observations and numerical models. The display software has been augmented by CIDD (the Cartesian Interactive Data Display) developed at NCAR/RAL by Frank Hage. Jazz, a Java-based display, is also available.
+
+[back](../../README.md)
 
