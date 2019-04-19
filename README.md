@@ -1,7 +1,5 @@
 ![front page](./docs/images/titan_front_page.jpg)
 
-###### Images (c) courtesy of Greg Thompson, NCAR/RAL, Boulder, CO, USA.
-
 ## Thunderstorm Identification Tracking Analysis & Nowcasting
 
 The TITAN project is now hosted on GitHub.
@@ -21,4 +19,6 @@ The templates for the scripts and parameter files reside in this respository - [
 7. [Storm Climatology](#storm_climatology)
 
 ![header with logo](./docs/images/titan-header_logo.jpg)
+
+###### Photos courtesy of Greg Thompson, NCAR/RAL, Boulder, CO, USA.
 
