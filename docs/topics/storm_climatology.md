@@ -149,6 +149,8 @@ The TracksAscii application produces ASCII tables of storm and track properties,
  - Mean speed (km/hr)
  - Mean direction (deg T)
 
+### Example analyses
+
 The following figures demonstrate some of the ways in which this data may be analyzed. The data for this analysis was obtained from the Mile High radar, near Denver, for the summer seasons 1991 through 1993.
 
 #### Lognormal fit to precipitation area
