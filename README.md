@@ -18,8 +18,9 @@ The templates for the scripts and parameter files reside in this respository - [
 4. [Forecasting](./docs/topics/forecasting.md)
 5. [Storm Analysis](./docs/topics/storm_analysis.md)
 6. [Storm Climatology](./docs/topics/storm_climatology.md)
-7. [History](./docs/topics/history.md)
-8. [Overview](#overview)
+7. [Cloud seeding analysis](./docs/topics/cloud_seeding_analysis.md)
+8. [History](./docs/topics/history.md)
+9. [Acknowledgements](./docs/topics/acknowledgements.md)
 
 ![header with logo](./docs/images/titan-header_logo.jpg)
 

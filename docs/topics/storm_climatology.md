@@ -2,7 +2,7 @@
 
 [Top](../../README.md)
 [Back](./storm_analysis.md)
-[Fwd](./history.md)
+[Fwd](./cloud_seending_analysis.md)
 
 # Storm climatology
 
@@ -210,5 +210,5 @@ The following figures demonstrate some of the ways in which this data may be ana
 
 [Top](../../README.md)
 [Back](./storm_analysis.md)
-[Fwd](./history.md)
+[Fwd](./cloud_seending_analysis.md)
 
