@@ -6,6 +6,8 @@
 #
 #=====================================================================
 
+from __future__ import print_function
+
 import os
 import sys
 import time
@@ -13,7 +15,6 @@ import datetime
 from datetime import timedelta
 
 import string
-import ftplib
 import subprocess
 from optparse import OptionParser
 
@@ -26,9 +27,6 @@ from subprocess import call
 def main():
 
     global options
-    global ftpUser
-    global ftpPassword
-    global ftpDebugLevel
     global tmpDir
     global singleTime, startTime, endTime
     global doSingle, doInterval
@@ -41,183 +39,180 @@ def main():
     # parse the command line
 
     parseArgs()
-    sys.exit(0)
     
     # initialize
     
     beginString = "BEGIN: " + thisScriptName
-    today = datetime.datetime.now()
-    beginString += " at " + str(today)
+    nowTime = datetime.datetime.now()
+    beginString += " at " + str(nowTime)
     
-    if (options.force):
-        beginString += " (ftp forced)"
+    print("=============================================", file=sys.stderr)
+    print(beginString, file=sys.stderr)
+    print("=============================================", file=sys.stderr)
 
-    print "\n========================================================"
-    print beginString
-    print "========================================================="
-
-    # create tmp dir if necessary
+    # create dirs
 
     try:
         os.makedirs(options.tmpDir)
     except OSError as exc:
         if (options.verbose):
-            print >>sys.stderr, "WARNING: cannot make tmp dir: ", options.tmpDir
-            print >>sys.stderr, "  ", exc
+            print("WARNING: cannot make tmp dir: ", options.tmpDir, file=sys.stderr)
+            print("  ", exc, file=sys.stderr)
             
-    # set ftp debug level
+    try:
+        os.makedirs(options.outputDir)
+    except OSError as exc:
+        if (options.verbose):
+            print("WARNING: cannot make output dir: ", options.outputDir, file=sys.stderr)
+            print("  ", exc, file=sys.stderr)
 
-    if (options.verbose):
-        ftpDebugLevel = 2
-    elif (options.debug):
-        ftpDebugLevel = 1
+    # actually get the data
+
+    if (doSingle):
+        getRadarData(options.radarName, singleTime, singleTime)
     else:
-        ftpDebugLevel = 0
-    
+        getRadarData(options.radarName, startTime, endTime)
+            
     # get current date and time
 
-    nowTime = time.gmtime()
-    now = datetime.datetime(nowTime.tm_year, nowTime.tm_mon, nowTime.tm_mday,
-                            nowTime.tm_hour, nowTime.tm_min, nowTime.tm_sec)
-    nowDateStr = now.strftime("%Y%m%d")
-    nowDateTimeStr = now.strftime("%Y%m%d%H%M%S")
+    # nowTime = time.gmtime()
+    # now = datetime.datetime(nowTime.tm_year, nowTime.tm_mon, nowTime.tm_mday,
+    #                         nowTime.tm_hour, nowTime.tm_min, nowTime.tm_sec)
+    # nowDateStr = now.strftime("%Y%m%d")
+    # nowDateTimeStr = now.strftime("%Y%m%d%H%M%S")
 
     # compute time strings
 
-    startDateTimeStr = startTime.strftime("%Y%m%d%H%M%S")
-    startDateStr = startTime.strftime("%Y%m%d")
-    endDateTimeStr = endTime.strftime("%Y%m%d%H%M%S")
-    endDateStr = endTime.strftime("%Y%m%d")
+    # startDateTimeStr = startTime.strftime("%Y%m%d%H%M%S")
+    # startDateStr = startTime.strftime("%Y%m%d")
+    # endDateTimeStr = endTime.strftime("%Y%m%d%H%M%S")
+    # endDateStr = endTime.strftime("%Y%m%d")
 
     # set up list of days to be checked
 
-    timeInterval = endTime - startTime
-    if (options.debug):
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
-        print >>sys.stderr, "  timeInterval: ", timeInterval
-        print >>sys.stderr, "  nDays: ", timeInterval.days
+    # timeInterval = endTime - startTime
+    # if (options.debug):
+    #     print("  startTime: ", startTime, file=sys.stderr)
+    #     print("  endTime: ", endTime, file=sys.stderr)
+    #     print("  timeInterval: ", timeInterval, file=sys.stderr)
+    #     print("  nDays: ", timeInterval.days, file=sys.stderr)
 
-    # loop through the hours
-
-    thisTime = startTime
-    while (thisTime <= endTime):
-        if (options.debug):
-            print >>sys.stderr, "  thisTime: ", thisTime
-        thisTime = thisTime + timedelta(0, 3600, 0)
-        try:
-            getDataForHour(thisTime)
-        except:
-            print >>sys.stderr, "FTP failed"
-        
     if (count == 0):
-        print "---->> No files to download"
+        print("---->> No files to download", file=sys.stderr)
+    else:
+        print("---->> Downloaded files, n = ", count, file=sys.stderr)
         
-    print "==============================================================="
-    print "END: " + thisScriptName + str(datetime.datetime.now())
-    print "==============================================================="
+    endString = "END: " + thisScriptName
+    nowTime = datetime.datetime.now()
+    endString += " at " + str(nowTime)
+    
+    print("==============================================", file=sys.stderr)
+    print(endString, file=sys.stderr)
+    print("==============================================", file=sys.stderr)
 
     sys.exit(0)
 
 ########################################################################
-# Get the data for a specified hour
+# Download specified file
 
-def getDataForHour(dataTime):
+def download(filepath, radarName):
 
     global count
 
+    dataURL = "https://noaa-nexrad-level2.s3.amazonaws.com"
+    print("Downloading: ", filepath, file=sys.stderr)
+
+    if(options.dryRun == False):
+        (dir,file) = os.path.split(filepath)
+        local = open(os.path.join(options.outputDir,file),'wb')
+        try:
+            opener = urllib.URLopener()
+            myfile = opener.open(os.path.join(dataURL,filepath))
+            local.write(myfile.read())
+            local.close()
+            count = count + 1
+        except OSError as e:
+            print("ERROR: Got a URL error: ", e, file=sys.stderr)
+    
+########################################################################
+# Get text for nodes
+
+def getText(nodelist):
+    rc = []
+    for node in nodelist:
+        if node.nodeType == node.TEXT_NODE:
+            rc.append(node.data)
+    return ''.join(rc)
+
+
+########################################################################
+# Get the data
+
+def getRadarData(radarName, startTime, endTime):
+
+    dateStr =  startTime.strftime("%Y/%m/%d")
+
+    bucketURL = "http://noaa-nexrad-level2.s3.amazonaws.com"
+    dirListURL = bucketURL+ "/?prefix=" + dateStr + "/" + radarName
+
     if (options.debug):
-        print >>sys.stderr, "====>> getting data for time: ", dataTime
-        print >>sys.stderr, "  year: ", dataTime.year
-        print >>sys.stderr, "  month: ", dataTime.month
-        print >>sys.stderr, "  day: ", dataTime.day
-        print >>sys.stderr, "  hour: ", dataTime.hour
+        print("dirListURL: ", dirListURL, file=sys.stderr)
 
-    # make the target directory and go there
-    
-    dateStr = dataTime.strftime("%Y%m%d")
-    timeStr = dataTime.strftime("%Y%m%d%H%M%S")
-    localDayDir = os.path.join(options.targetDir, dateStr)
-    try:
-        os.makedirs(localDayDir)
-    except OSError as exc:
-        if (options.verbose):
-            print >>sys.stderr, "WARNING: trying to create dir: ", localDayDir
-            print >>sys.stderr, "  ", exc
-    os.chdir(localDayDir)
+    sys.stdout.write("listing files from dir %s/%s ... " % (dateStr, radarName))
+    sys.stdout.flush()
+    #xmldoc = minidom.parse(stdin)
+    xmldoc = minidom.parse(urlopen(dirListURL))
+    itemlist = xmldoc.getElementsByTagName('Key')
 
-    # get local file list - i.e. those which have already been downloaded
-    
-    localFileList = os.listdir('.')
-    localFileList.reverse()
-    if (options.verbose):
-        print >>sys.stderr, "  localFileList: ", localFileList
+    if (options.debug):
+        print("number of keys found: ", len(itemlist), file=sys.stderr)
+
+    process = 0
+    lastFileTime = 0
+    lastFile = ""
+    for x in itemlist:
+        file = getText(x.childNodes)
+        # Only process files that look like "2012/07/02/KJAX/KJAX20120702_030836_V06.gz"
+        try:
+            year = int(file[20:24]);
+            month = int(file[24:26]);
+            day = int(file[26:28]);
+            hour = int(file[29:31]);
+            min = int(file[31:33]);
+            sec = int(file[33:35]);
+            fileTime = datetime.datetime(year, month, day, hour, min, sec);
+        except:
+            continue
+
+        if(options.verbose):
+            print("file, time: ", file, fileTime, file=sys.stderr)
+        if(process == 0 and startTime < fileTime and endTime > lastFileTime):
+            process = 1
+            download(lastFile,radarName)
+        if(endTime < fileTime):
+            process = 0
+
+        if(process):
+            download(file,radarName)
             
-    # open ftp connection
+        lastFileTime = fileTime
+        lastFile = file
+         
     
-    ftp = ftplib.FTP(options.ftpServer, options.ftpUser, options.ftpPasswd)
-    ftp.set_debuglevel(ftpDebugLevel)
-
-    # got to source directory on the ftp site
-
-    hourStr = dataTime.strftime("%Y/%m/%d/%H")
-    hourDir = options.sourceDir + "/" + hourStr
-
-    if (options.debug):
-        print >>sys.stderr, "====>> cd to hourDir: ", hourDir
-
-    ftp.cwd(hourDir)
-
-    # get list of volume times in this hour
-
-    hourDirList = ftp.nlst()
-    if (options.debug):
-        print >>sys.stderr, "====>> times in this hour: ", dataTime
-    
-    # loop through the vol times
-
-    for volTimeStr in hourDirList:
-        
-        # go there
-
-        volDir = hourDir + "/" + volTimeStr
-
-        if (options.debug):
-            print >>sys.stderr, "  volTimeStr: ", volTimeStr
-            print >>sys.stderr, "  volDir: ", volDir
-
-        ftp.cwd(volDir)
-
-        # get list of files
-
-        fileList = ftp.nlst()
-
-        # loop through file list, getting the BUFR files
-
-        for fileName in fileList:
-            if (fileName.find('BUFR') > 0):
-                if (fileName not in localFileList):
-                    downloadFile(ftp, dateStr, timeStr, fileName)
-                    count = count + 1
-
-    # close ftp connection
-    
-    ftp.quit()
-
 ########################################################################
 # Download a file into the current directory
 
 def downloadFile(ftp, dateStr, timeStr, fileName):
     
     if (options.debug):
-        print >>sys.stderr, "  downloading file: ", fileName
+        print("  downloading file: ", fileName, file=sys.stderr)
         
     # get file, store in tmp
 
     tmpPath = os.path.join(options.tmpDir, fileName)
 
     if (options.verbose):
-        print >>sys.stderr, "retrieving file, storing as tmpPath: ", tmpPath
+        print("retrieving file, storing as tmpPath: ", tmpPath, file=sys.stderr)
     ftp.retrbinary('RETR '+ fileName, open(tmpPath, 'wb').write)
 
     # move to final location - i.e. this directory
@@ -276,6 +271,14 @@ def parseArgs():
                       dest='dryRun', default=False,
                       action="store_true",
                       help='Dry run: do not download data, list what would be downloaded')
+    parser.add_option('--latest',
+                      dest='getLatest', default=False,
+                      action="store_true",
+                      help='Get latest file')
+    parser.add_option('--continuous',
+                      dest='runContinuously', default=False,
+                      action="store_true",
+                      help='Run continuously - use with --latest')
     parser.add_option('--single',
                       dest='singleTime',
                       default='1970 01 01 00 00 00',
@@ -316,22 +319,34 @@ def parseArgs():
         doInterval = False
     
     if (options.debug):
-        print >>sys.stderr, "Options:"
-        print >>sys.stderr, "  debug? ", options.debug
-        print >>sys.stderr, "  force? ", options.force
-        print >>sys.stderr, "  dryRun? ", options.dryRun
-        print >>sys.stderr, "  radarName: ", options.radarName
-        print >>sys.stderr, "  outputDir: ", options.outputDir
-        print >>sys.stderr, "  tmpDir: ", options.tmpDir
-        print >>sys.stderr, "  doSingle? ", doSingle
-        print >>sys.stderr, "  singleTime: ", singleTime
-        print >>sys.stderr, "  doInterval? ", doInterval
-        print >>sys.stderr, "  startTime: ", startTime
-        print >>sys.stderr, "  endTime: ", endTime
+        print("Options:", file=sys.stderr)
+        print("  debug? ", options.debug, file=sys.stderr)
+        print("  force? ", options.force, file=sys.stderr)
+        print("  dryRun? ", options.dryRun, file=sys.stderr)
+        print("  radarName: ", options.radarName, file=sys.stderr)
+        print("  outputDir: ", options.outputDir, file=sys.stderr)
+        print("  tmpDir: ", options.tmpDir, file=sys.stderr)
+        print("  getLatest? ", options.getLatest, file=sys.stderr)
+        print("  runContinuously? ", options.runContinuously, file=sys.stderr)
+        print("  doSingle? ", doSingle, file=sys.stderr)
+        print("  singleTime: ", singleTime, file=sys.stderr)
+        print("  doInterval? ", doInterval, file=sys.stderr)
+        print("  startTime: ", startTime, file=sys.stderr)
+        print("  endTime: ", endTime, file=sys.stderr)
 
     if (doSingle == True and doInterval == True):
-        print >>sys.stderr, "ERROR - ", thisScriptName
-        print >>sys.stderr, "  Cannot set both single and start/end times"
+        print("ERROR - ", thisScriptName, file=sys.stderr)
+        print("  Cannot set both single and start/end times", file=sys.stderr)
+        sys.exit(1)
+
+    if (options.getLatest == True and doSingle == True):
+        print("ERROR - ", thisScriptName, file=sys.stderr)
+        print("  Cannot set both latest and single modes", file=sys.stderr)
+        sys.exit(1)
+
+    if (options.getLatest == True and doInterval == True):
+        print("ERROR - ", thisScriptName, file=sys.stderr)
+        print("  Cannot set both latest and interval modes", file=sys.stderr)
         sys.exit(1)
 
 ########################################################################
@@ -345,11 +360,11 @@ def runCommand(cmd):
     try:
         retcode = subprocess.call(cmd, shell=True)
         if retcode < 0:
-            print >>sys.stderr, "Child was terminated by signal: ", -retcode
+            print("Child was terminated by signal: ", -retcode, file=sys.stderr)
         else:
             if (options.debug):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
         print >>sys.stderr, "Execution failed:", e
 
 ########################################################################
