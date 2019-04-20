@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Mdv2Dsr -params Mdv2Dsr.sim"
+if ($status == 1) then
+  Mdv2Dsr -params Mdv2Dsr.sim -debug \
+   -f /data/titan5/sample_data/gap/mdv/radarPolar/cp2_s/sur/20081116/0[5-7]* |& \
+   LogFilter -d $ERRORS_LOG_DIR -p Mdv2Dsr -i sim &
+endif
+

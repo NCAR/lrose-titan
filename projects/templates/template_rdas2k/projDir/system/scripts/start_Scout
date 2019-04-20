@@ -1,0 +1,8 @@
+#! /bin/csh
+
+running "Scout"
+if ($status == 1) then
+    Scout |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Scout -i primary >& /dev/null &
+endif
+

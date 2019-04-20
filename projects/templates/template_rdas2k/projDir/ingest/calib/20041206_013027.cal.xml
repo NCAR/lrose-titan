@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE calibration [
+ <!ELEMENT calibration (point*) >
+ <!ELEMENT point (posn, siggen, dbm, dbz1km, dbzCalRng, count) >
+ <!ELEMENT posn (#PCDATA)>
+ <!ELEMENT siggen (#PCDATA)>
+ <!ELEMENT dbm (#PCDATA)>
+ <!ELEMENT dbz1km (#PCDATA)>
+ <!ELEMENT dbzCalRng (#PCDATA)>
+ <!ELEMENT count (#PCDATA)>
+]>
+
+<calibration>
+
+  <siteName>Denver</siteName>
+  <siteNum>0</siteNum>
+  <userName>Unknown</userName>
+  <year>2004</year>
+  <month>12</month>
+  <day>06</day>
+  <hour>01</hour>
+  <min>30</min>
+  <sec>27</sec>
+
+  <freqGhz>5.5</freqGhz>
+  <freqHz>5.5E9</freqHz>
+  <lambda>0.0545</lambda>
+  <horizBeamWidth>1.0</horizBeamWidth>
+  <vertBeamWidth>1.0</vertBeamWidth>
+  <antGain>44.0</antGain>
+  <peakPower>84.0</peakPower>
+  <pulseWidth>2.0</pulseWidth>
+  <waveguideLoss>0.5</waveguideLoss>
+  <radomeLoss>0.5</radomeLoss>
+  <receiverLoss>0.0</receiverLoss>
+  <testCableAtten>3.8</testCableAtten>
+  <couplerAtten>30.75</couplerAtten>
+  <nPointsTable>15</nPointsTable>
+  <minDbz>0.0</minDbz>
+  <deltaDbz>5.0</deltaDbz>
+  <fitDbzLow>5.0</fitDbzLow>
+  <fitDbzHigh>65.0</fitDbzHigh>
+  <atmosAtten>1.4E-5</atmosAtten>
+  <radarConst>-89.528</radarConst>
+
+  <mdsCount>300.8</mdsCount>
+  <mdsPower>-102.55</mdsPower>
+  <mdsSiggen>-68.0</mdsSiggen>
+  <calSlope>118.5948</calSlope>
+  <calOffset1km>4730.227</calOffset1km>
+  <calOffsetCalRng>-178.4109</calOffsetCalRng>
+
+  <point>
+    <posn>0</posn>
+    <siggen>-70.0</siggen>
+    <dbm>-104.55</dbm>
+    <dbz1km>-39.01</dbz1km>
+    <dbzCalRng>2.38</dbzCalRng>
+    <count>199.2</count>
+  </point>
+
+  <point>
+    <posn>1</posn>
+    <siggen>-65.0</siggen>
+    <dbm>-99.55</dbm>
+    <dbz1km>-34.01</dbz1km>
+    <dbzCalRng>7.38</dbzCalRng>
+    <count>799.1</count>
+  </point>
+
+  <point>
+    <posn>2</posn>
+    <siggen>-60.0</siggen>
+    <dbm>-94.55</dbm>
+    <dbz1km>-29.01</dbz1km>
+    <dbzCalRng>12.38</dbzCalRng>
+    <count>1299.1</count>
+  </point>
+
+  <point>
+    <posn>3</posn>
+    <siggen>-55.0</siggen>
+    <dbm>-89.55</dbm>
+    <dbz1km>-24.01</dbz1km>
+    <dbzCalRng>17.38</dbzCalRng>
+    <count>1900.0</count>
+  </point>
+
+  <point>
+    <posn>4</posn>
+    <siggen>-50.0</siggen>
+    <dbm>-84.55</dbm>
+    <dbz1km>-19.01</dbz1km>
+    <dbzCalRng>22.38</dbzCalRng>
+    <count>2400.0</count>
+  </point>
+
+  <point>
+    <posn>5</posn>
+    <siggen>-45.0</siggen>
+    <dbm>-79.55</dbm>
+    <dbz1km>-14.01</dbz1km>
+    <dbzCalRng>27.38</dbzCalRng>
+    <count>2999.8</count>
+  </point>
+
+  <point>
+    <posn>6</posn>
+    <siggen>-40.0</siggen>
+    <dbm>-74.55</dbm>
+    <dbz1km>-9.01</dbz1km>
+    <dbzCalRng>32.38</dbzCalRng>
+    <count>3599.7</count>
+  </point>
+
+  <point>
+    <posn>7</posn>
+    <siggen>-35.0</siggen>
+    <dbm>-69.55</dbm>
+    <dbz1km>-4.01</dbz1km>
+    <dbzCalRng>37.38</dbzCalRng>
+    <count>4300.0</count>
+  </point>
+
+  <point>
+    <posn>8</posn>
+    <siggen>-30.0</siggen>
+    <dbm>-64.55</dbm>
+    <dbz1km>0.99</dbz1km>
+    <dbzCalRng>42.38</dbzCalRng>
+    <count>4800.6</count>
+  </point>
+
+  <point>
+    <posn>9</posn>
+    <siggen>-25.0</siggen>
+    <dbm>-59.55</dbm>
+    <dbz1km>5.99</dbz1km>
+    <dbzCalRng>47.38</dbzCalRng>
+    <count>5399.8</count>
+  </point>
+
+  <point>
+    <posn>10</posn>
+    <siggen>-20.0</siggen>
+    <dbm>-54.55</dbm>
+    <dbz1km>10.99</dbz1km>
+    <dbzCalRng>52.38</dbzCalRng>
+    <count>6099.5</count>
+  </point>
+
+  <point>
+    <posn>11</posn>
+    <siggen>-15.0</siggen>
+    <dbm>-49.55</dbm>
+    <dbz1km>15.99</dbz1km>
+    <dbzCalRng>57.38</dbzCalRng>
+    <count>6700.4</count>
+  </point>
+
+  <point>
+    <posn>12</posn>
+    <siggen>-10.0</siggen>
+    <dbm>-44.55</dbm>
+    <dbz1km>20.99</dbz1km>
+    <dbzCalRng>62.38</dbzCalRng>
+    <count>7200.1</count>
+  </point>
+
+  <point>
+    <posn>13</posn>
+    <siggen>-5.0</siggen>
+    <dbm>-39.55</dbm>
+    <dbz1km>25.99</dbz1km>
+    <dbzCalRng>67.38</dbzCalRng>
+    <count>7699.6</count>
+  </point>
+
+  <point>
+    <posn>14</posn>
+    <siggen>0.0</siggen>
+    <dbm>-34.55</dbm>
+    <dbz1km>30.99</dbz1km>
+    <dbzCalRng>72.38</dbzCalRng>
+    <count>8200.4</count>
+  </point>
+
+</calibration>
+

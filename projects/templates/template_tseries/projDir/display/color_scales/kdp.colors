@@ -1,0 +1,23 @@
+# colorscale for kdp
+
+-20	-2	DarkSlateBlue
+-2	-1	NavyBlue
+-1	-0.5	slateBlue
+-0.5	-0.3  	Blue
+-0.3	-0.2	MediumBlue
+-0.2	-0.1 	SkyBlue
+-0.1    0.1	gray20
+0.1 	0.3	DarkGreen
+0.3	0.5	ForestGreen
+0.5	1.0	YellowGreen
+1.0	1.5	Gold
+1.5 	2  	Yellow
+2	2.5	coral
+2.5	3 	Orange
+3 	4 	MediumVioletRed
+4 	5 	OrangeRed
+5 	6 	Red
+6 	7 	Pink
+7 	8	Gray50
+8	10      Gray80
+10	99	White

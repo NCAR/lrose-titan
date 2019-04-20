@@ -1,0 +1,11 @@
+#
+# File created from CloudClassColors template
+# for White Sands, Niles Oien March 2001
+#
+
+0.5	1.5	gray50 ! Clr
+1.5	2.5	green  ! Cu
+3.5	4.5	red    ! Cug
+7.5	8.5	blue   ! Cb
+15.5	16.5	white  ! Cs
+

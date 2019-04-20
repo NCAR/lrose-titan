@@ -1,0 +1,11 @@
+############################
+# Brown scale for Land Sea    
+# METSYS, Marion Mittermaier, 2000/05/17
+
+0	1	#00c8ff
+1	500	#ffe6af
+500	1000	#ffcd96
+1000	1500	#ffc87d
+1500	2000	#ffaf32
+2000	3000	#ff9800
+3000	4000	#c86941

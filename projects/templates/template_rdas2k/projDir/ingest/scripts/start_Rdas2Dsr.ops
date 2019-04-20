@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "Rdas2Dsr -params Rdas2Dsr.ops"
+if ($status == 1) then
+  Rdas2Dsr -params Rdas2Dsr.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rdas2Dsr -i ops &
+endif
+

@@ -1,0 +1,14 @@
+#! /bin/csh
+
+# Copying the gnome desktop icons etc from one host to another
+# ============================================================
+
+cd $home
+set host=$1
+
+echo "Copying gnome desktop to host ${host}"
+
+rsync -avz .gnome2/panel2.d ${host}:.gnome2
+rsync -avz .gconf/apps/panel ${host}:.gconf/apps
+
+

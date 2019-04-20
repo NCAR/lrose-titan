@@ -1,0 +1,17 @@
+#! /bin/csh
+
+set date=`date +%Y%m%d%H%M%S`
+
+cd $DATA_DIR/fmq
+
+mkdir -p save.$date
+
+snuff Iq2Dsr
+
+cp Iq2Dsr* save.$date
+
+start_Iq2Dsr.ops
+start_Iq2Dsr.cp2_x
+
+
+

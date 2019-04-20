@@ -1,0 +1,36 @@
+# NAME sat_highres
+
+# roberts 	3/29/1996 
+
+283	288     black    ! 87
+278  	283	gray0    ! 57
+273 	273 	gray11   ! 52
+268     273     gray16   ! 47 
+263     263     gray21   ! 42
+258 	263 	gray25   ! 38
+253 	253 	gray28   ! 35
+248 	253 	gray30   ! 31
+243     243     gray31   ! 28
+238     243     gray34   ! 24 
+233 	233 	gray37   ! 21
+228     233     gray41   ! 18
+223     223     gray44   ! 15
+218     223     gray47   ! 12
+213  	213  	gray51   ! 8 
+208   	213   	gray53   ! 4 
+203   	203   	linen    ! 0   
+198  	203   	blanched almond   ! -3
+193  	198     bisque            ! -7
+188	193 	pale turquoise    ! -10
+183     188     cyan              ! -13 
+178	183	deep sky blue     ! -16
+173	178	cornflower blue   ! -19
+168	173	medium slate blue ! -22
+163 	168	slate blue        ! -25
+158     163     blue4             ! -28
+153	158	MediumPurple4     ! -31
+148	153	DarkOrchid4       ! -35
+143	148	MediumOrchid4     ! -40
+138     143     dark orchid       ! -46	
+133     138     purple            ! -52
+128	133     medium purple     ! -100

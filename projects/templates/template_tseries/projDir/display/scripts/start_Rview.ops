@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd $PROJ_DIR/display/params
+
+setenv DATA_HOST pgen
+
+Rview -params Rview.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rview -i ops &
+
+
+

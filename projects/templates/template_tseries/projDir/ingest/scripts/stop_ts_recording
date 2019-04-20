@@ -1,0 +1,7 @@
+#! /bin/csh
+
+# delete flag file to indicate that we want to stop
+# saving time series data
+
+/bin/rm -f /tmp/TsSmartSave.flag
+

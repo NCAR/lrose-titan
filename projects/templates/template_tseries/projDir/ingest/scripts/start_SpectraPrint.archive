@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "SpectraPrint -params SpectraPrint.ops"
+if ($status == 1) then
+  nice SpectraPrint -params SpectraPrint.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p SpectraPrint -i ops &
+endif
+

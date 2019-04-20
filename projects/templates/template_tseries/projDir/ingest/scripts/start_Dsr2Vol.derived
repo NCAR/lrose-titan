@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Dsr2Vol -params Dsr2Vol.derived"
+if ($status == 1) then
+  nice Dsr2Vol -params Dsr2Vol.derived |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Dsr2Vol -i derived &
+endif
+

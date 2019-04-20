@@ -1,0 +1,34 @@
+# NAME sat_enhanced
+
+# roberts 	2/7/1996 
+
+0 	8 	gray0
+8 	16  	gray5
+16 	24 	gray10
+24 	32 	gray15
+32 	40 	gray18
+40 	48 	gray21
+48 	56 	gray25
+56 	64 	gray28
+64 	72 	gray32
+72 	80 	gray35
+80 	88 	gray38
+88 	96 	gray41
+96 	104 	gray45
+104 	112 	gray48
+112 	120 	gray51
+120 	128 	gray55
+128	136	gray58
+136	144	gray61
+144	152	gray65
+152	160	gray68
+160 	168	gray71
+168	176	gray75
+176	184	gray78
+184	192	gray81
+192	200	gray85
+200 	208 	gray88
+208	216	gray91
+216	224	gray95
+224	240	gray98
+232   	256	gray100

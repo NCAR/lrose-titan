@@ -1,0 +1,38 @@
+ICONDEF NAVAID 5
+-4 2
+4 2
+0 -5
+-4 2
+32767 32767
+
+# Brisbane VOR location  
+ICON NAVAID -27.3667 153.1400 10 10 BN
+
+# Laravale VOR location  
+ICON NAVAID -28.0900 152.9250 10 10 LAV
+
+# maleny VOR location  
+ICON NAVAID -26.7450 152.7617 10 10 ML
+
+# oakey VOR location  
+ICON NAVAID -27.4000 151.7367 10 10 OK
+
+# Amberley NDB location  
+ICON NAVAID -27.6483 152.7233 10 10 AMB
+
+# Kilcoy NDB location  
+ICON NAVAID -26.9183 152.5733 10 10 KIL
+
+# Archerfield NDB location  
+ICON NAVAID -27.5700 153.0167 10 10 AF
+
+# Kingaroy NDB location  
+ICON NAVAID -26.5783 151.8450 10 10 KRY
+
+# Bromelton NDB location  
+ICON NAVAID -27.9667 152.9000 10 10 BML
+
+# Toowoomba NDB location  
+ICON NAVAID -27.5417 151.9117 10 10 TWB
+
+

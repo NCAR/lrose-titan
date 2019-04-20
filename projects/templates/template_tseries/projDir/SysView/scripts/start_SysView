@@ -1,0 +1,18 @@
+#! /bin/csh
+
+# make sure virtual X server is running and set display accordingly
+
+start_Xvfb
+setenv DISPLAY :1.0
+
+# make sure font path is correct
+#set_font_path
+
+cd $PROJ_DIR/SysView/params
+
+running "java -jar /home/titan5/projDir/lib/sysview.jar -instance ops"
+
+if ($status == 1) then
+   java -jar /home/titan5/projDir/lib/sysview.jar -instance ops -params SysView.params.xml -diagram CP2.diagram.xml -run -noedit |& \	LogFilter -d $ERRORS_LOG_DIR -p SysView >& /dev/null &
+endif
+

@@ -1,0 +1,217 @@
+/**********************************************************************
+ * TDRP params for DsFileDist
+ **********************************************************************/
+
+//======================================================================
+//
+// SETTING UP PARAMETER FILES FOR DsFileDist.
+//
+// The main parameter file specifies the global behavior of DsFileDist. 
+//   The program may be started with the -params option to specify a 
+//   global parameter file, or there may be a '_DsFileDist' file in 
+//   $RAP_DATA_DIR (or $DATA_DIR).
+//  
+// Local parameter files in the directory tree may override the global 
+//   parameters - see 'LOCAL DISTRIBUTION PARAMETERS'.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+// ONLY set these in the global file. DO NOT set them in the local 
+//   parameter files down in the data directory tree.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//     DEBUG_EXTRA
+//
+
+debug = DEBUG_NORM;
+
+///////////// instance ////////////////////////////////
+//
+// Program instance for process registration.
+// This program registers with procmap. This is the instance used for 
+//   registration.
+// Type: string
+//
+
+instance = "primary";
+
+///////////// max_n_threads ///////////////////////////
+//
+// File disrtibution is handled by child processes. This is the max 
+//   number of child processes allowed to be active at a time.
+// If the child count reaches this number, no new children will be 
+//   created until an existing child exits. This prevents the number of 
+//   children from becoming excessive should children hang.
+// Type: int
+//
+
+max_n_threads = 256;
+
+///////////// no_threads //////////////////////////////
+//
+// No threads option. Forces single-threaded operation - no children are 
+//   created.
+// For debugging purposes. Note that the program will handle only a 
+//   single data directory in single-threaded operation.
+// Type: boolean
+//
+
+no_threads = FALSE;
+
+///////////// server_open_timeout_msecs ///////////////
+//
+// Set the timeout for server connections, in milliseconds.
+// If set to -1, the server connections open in blocking mode. This is 
+//   the default and is recommended to internet operations. If you have a 
+//   local network and wish to speed up timeout for hosts which are not 
+//   up, you can set this to a positive number. 10000 (10 secs) is 
+//   suggested.
+// Type: int
+//
+
+server_open_timeout_msecs = 10000;
+
+//======================================================================
+//
+// DIRECTORY SEARCH PARAMETERS.
+//
+// ONLY set these in the global file. DO NOT set them in the local 
+//   parameter files down in the data directory tree.
+//
+//======================================================================
+ 
+///////////// source_top_dir //////////////////////////
+//
+// Top-level directory, relative to RAP_DATA_DIR.
+// DsFileDist searches recursively below source_top_dir for 'active' 
+//   directories from which files are be distributed.
+// Type: string
+//
+
+source_top_dir = "";
+
+///////////// tmp_dir /////////////////////////////////
+//
+// Directory for temporary files.
+// DsFileDist uses temporary files to pass information from the child 
+//   threads back to the main thread.
+// Type: string
+//
+
+tmp_dir = "/tmp";
+
+///////////// check_for_new_directories ///////////////
+//
+// Option to periodically check for new active directories.
+// If TRUE, the program will periodically check for new active 
+//   directories or directories which have been removed. See 'find_mode' 
+//   for the definition of an active directory.
+// To force a new directory search, send the process a SIGHUP signal.
+// See 'new_directory_delay' for how often the check is performed. .
+// Type: boolean
+//
+
+check_for_new_directories = FALSE;
+
+///////////// new_directory_delay /////////////////////
+//
+// Delay between checking for active directories using params (secs).
+// The program will sleep for this length of time between checking for 
+//   new or removed _DsFileDist files.
+// See 'check_for_new_directories'.
+// Minimum val: 1
+// Type: int
+//
+
+new_directory_delay = 600;
+
+///////////// check_for_new_latest_data_info //////////
+//
+// Option to periodically check for new latest_data_info files.
+// Only applies to directories for which find_mode = 
+//   FIND_LATEST_DATA_INFO. See 'find_mode' below. If TRUE, the program 
+//   will periodically check for new _latest_data_info files to activate a 
+//   directory. This applies to new data sets which appear AFTER 
+//   DsFileDist has been started. To force a new search, send the process 
+//   a SIGHUP signal.
+// See 'new_latest_data_info_delay' for how often the check is 
+//   performed. .
+// Type: boolean
+//
+
+check_for_new_latest_data_info = TRUE;
+
+///////////// new_latest_data_info_delay //////////////
+//
+// Delay between checking for new latest_data_info (secs).
+// The program will sleep for this length of time between checking for 
+//   new _latest_data_info files.
+// Minimum val: 1
+// Type: int
+//
+
+new_latest_data_info_delay = 60;
+
+///////////// new_data_delay //////////////////////////
+//
+// Delay while checking a directory for new data.
+// Only for latest_data_info_avail = false. The program will sleep for 
+//   this length of time between checking a directory for new data.
+// Minimum val: 1
+// Type: int
+//
+
+new_data_delay = 1;
+
+///////////// max_simultaneous_per_host ///////////////
+//
+// Max number of simultaneous active file transfers to each host.
+// The program will only allow this number of puts to be active to a 
+//   single host at any time. This prevents the network from becoming 
+//   overloaded by many simultaneous file transfers.
+// Minimum val: 1
+// Type: int
+//
+
+max_simultaneous_per_host = 16;
+
+///////////// max_n_tries_per_transfer ////////////////
+//
+// Number of tries to transfer a file.
+// Sometimes the transfer to a remote host will fail, possibly because 
+//   of network problems. If max_n_tries_for_transfer is greater than 1, 
+//   the application will retry to transfer the file. When the number of 
+//   tries is exceeded, it will give up.
+// Minimum val: 1
+// Type: int
+//
+
+max_n_tries_per_transfer = 2;
+
+///////////// max_age_on_queue ////////////////////////
+//
+// Max age for an entry on the queue (secs).
+// When a file is found, an entry is added to the queue for 
+//   distribution. If an entry exists on the queue for longer than this, 
+//   it will be aged off. Normally this only happens if a destination host 
+//   is down.
+// Type: int
+//
+
+max_age_on_queue = 3600;
+

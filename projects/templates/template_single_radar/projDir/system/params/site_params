@@ -1,0 +1,58 @@
+#############################################
+# site-specific parameter file
+#
+# Mike Dixon April 2004
+#############################################
+
+# Host where the data is stored
+
+setenv DATA_HOST                  localhost
+
+# RDAS communications
+
+setenv RDAS_HOST                  rdas
+setenv RDAS_PORT                  10000
+
+# Radar details
+
+setenv RADAR_NAME                 FTG
+setenv RADAR_DESCRIPTION          "Front Range NEXRAD"
+setenv RADAR_DATA_INFO            "FTG radar, Denver, Colorado"
+setenv RADAR_LAT                  39.787
+setenv RADAR_LON                  -104.546
+setenv RADAR_ALT                  1.71
+setenv RADAR_CONSTANT             -157.0
+setenv RADAR_WAVELENGTH           5.0
+setenv RADAR_BEAM_WIDTH           1.6
+setenv RADAR_NOISE_DBZ_AT_100KM   -9.0
+
+# time between volumes (secs)
+
+setenv SCAN_DELTA_T               240
+
+# Lowest cappi for cart grid (km)
+
+setenv CART_GRID_START_HT         1.0
+
+# Start height for Rview
+
+setenv RVIEW_START_HT             2.0
+
+# Map config file for Rview
+
+setenv RVIEW_MAP_CONF_FILE        denver.conf
+
+# Precip estimation
+
+setenv ZR_COEFF                   200.0
+setenv ZR_EXPON                   1.6
+setenv HAIL_DBZ_THRESHOLD         53
+
+# Directory for cart radar data
+# If ClutterRemove is active, use cart_no_clutter
+# If ClutterRemove is no active, use cart
+
+setenv RADAR_CART_DIR             mdv/radar/cart
+#setenv RADAR_CART_DIR            mdv/radar/cart_no_clutter
+
+#############################################

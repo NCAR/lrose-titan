@@ -1,0 +1,18 @@
+#
+# Color scale for
+# Satellite derived cloud heights.
+# Niles Oien October 1999 
+#
+0  30 Gray10  
+30 60 Gray20  
+60 90 Gray30  
+90 120 Gray40 
+120 150 Gray50
+150 180 Gray60
+180 210 Gray70
+210 240 Gray80
+240 290 Gray90
+290 350 SpringGreen4
+350 410 SpringGreen3
+410 450 SpringGreen2
+450 650 yellow      

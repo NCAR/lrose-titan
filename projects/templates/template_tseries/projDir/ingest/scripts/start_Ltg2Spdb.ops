@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Ltg2Spdb -params Ltg2Spdb.ops"
+if ($status == 1) then
+  nice Ltg2Spdb -params Ltg2Spdb.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Ltg2Spdb -i ops &
+endif
+

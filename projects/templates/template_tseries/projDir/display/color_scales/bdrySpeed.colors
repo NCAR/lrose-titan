@@ -1,0 +1,28 @@
+# NAME bdrySpeed.colors
+# jaimi 	4/6/1998 18:14:21
+# MIN    MAX    NAME        COLOR LABEL
+0       1       blue 	!
+1 	2 	medium blue 	!
+2 	3 	slate blue 	!
+3 	4 	cornflower blue 	!
+4 	5 	medium turquoise 	!
+5 	6 	dark green 	!
+6 	7 	SpringGreen4 	!
+7 	8 	medium sea green 	!
+8 	9 	lime green 	!
+9 	10 	rosy brown 	!
+10 	11 	dark goldenrod 	!
+11 	12 	goldenrod 	!
+12 	13 	gold1 	!
+13 	14 	yellow 	!
+14 	15 	HotPink4 	!
+15 	16 	indian red 	!
+16 	17 	salmon 	!
+17 	18 	brown2 	!
+18 	19 	firebrick1 	!
+19 	20 	magenta 	!
+20 	21 	grey40 	!
+21 	22 	grey50 	!
+22 	23 	dark grey 	!
+23 	24 	light grey 	!
+24 	25 	snow 	!

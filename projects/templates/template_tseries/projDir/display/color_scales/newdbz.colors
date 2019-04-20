@@ -1,0 +1,33 @@
+# NAME dbz.colors
+# jonesa 	9/16/1994 15:19:26
+# MIN    MAX    NAME        COLOR LABEL
+-17 	-14 	gray0 	
+-14 	-11 	MediumOrchid4 	
+-11 	-8 	dark orchid 	
+-8 	-5 	purple 	
+-5 	-2 	medium purple 	
+-2 	1 	medium blue 	
+1 	4 	royal blue 	
+4 	7 	deep sky blue 	
+7 	10 	cyan 	
+10 	13 	medium aquamarine 	
+13 	16 	pale green 	
+16 	19 	SpringGreen3  
+19 	22 	SpringGreen4 	
+22 	25 	dark green 	
+25 	28 	light gray 	
+28 	31 	orange 	
+31 	34 	goldenrod2 	
+34 	37 	goldenrod1 	
+37 	40 	gold 	
+40 	43 	yellow 	
+43 	46 	yellow2 	
+46 	49 	light goldenrod 	
+49 	52 	dark salmon 	
+52 	55 	tomato 	
+55 	58 	red 	
+58 	61 	brown2 	
+61 	64 	tomato3 
+64 	67 	firebrick 	
+67 	70 	saddle brown 	
+70 	73 	dark slate gray 	

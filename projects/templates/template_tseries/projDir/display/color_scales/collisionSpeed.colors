@@ -1,0 +1,27 @@
+# NAME colSpeed.colors
+# jaimi 	9/22/1998 16:44:17
+# MIN    MAX    NAME        COLOR LABEL
+-60 	-55 	midnight blue 	!
+-55 	-50 	dark slate blue 	!
+-50 	-45 	slate blue 	!
+-45 	-40 	medium slate blue 	!
+-40 	-35 	light slate blue 	!
+-35 	-30 	cornflower blue 	!
+-30 	-25 	steel blue 	!
+-25 	-20 	royal blue 	!
+-20 	-15 	medium blue 	!
+-15 	-10 	blue 	!
+-10 	-5 	dodger blue 	!
+-5 	0 	deep sky blue 	!
+0 	5 	light sky blue 	!
+5 	10 	turquoise 	!
+10 	15 	medium turquoise 	!
+15 	20 	medium aquamarine 	!
+20 	25 	medium sea green 	!
+25 	30 	dark sea green 	!
+30 	35 	dark khaki 	!
+35 	40 	dark goldenrod 	!
+40 	45 	goldenrod 	!
+45 	50 	gold 	!
+50 	55 	light goldenrod 	!
+55 	60 	pale goldenrod 	!

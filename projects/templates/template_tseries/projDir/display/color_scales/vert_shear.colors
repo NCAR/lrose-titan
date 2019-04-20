@@ -1,0 +1,24 @@
+# colorscale for vertical shear
+
+# Mike Dixon, April 1991
+
+-0.020		-0.009		DarkSlateBlue
+-0.009 		-0.008 		NavyBlue
+-0.008		-0.007 		Blue
+-0.007		-0.006		MediumBlue
+-0.006		-0.005		SkyBlue
+-0.005		-0.004 		DarkGreen
+-0.004		-0.003		ForestGreen
+-0.003		-0.002		Green
+-0.002		-0.001		YellowGreen
+-0.001  	0.001 	   	gray
+0.001		0.002		Gold
+0.002		0.003		yellow
+0.003		0.004		peru
+0.004		0.005		sienna
+0.005		0.006		Coral
+0.006		0.007		Orange
+0.007		0.008		Red
+0.008		0.009		plum
+0.009		0.020		MediumVioletRed
+

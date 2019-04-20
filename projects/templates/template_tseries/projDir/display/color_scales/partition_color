@@ -1,0 +1,21 @@
+# colorscale for partitions
+
+# Nancy Rehak, Jan 1999
+	
+00	1	DarkSlateBlue
+1 	2 	NavyBlue
+2	3 	Blue
+3 	4	MediumBlue
+4 	5 	SkyBlue
+5 	6 	DarkGreen
+6	7	ForestGreen
+7	8	YellowGreen
+8	9	Gold
+9	10 	Yellow
+10	11	Coral
+11	12	Orange
+12	13	MediumVioletRed
+13	14	OrangeRed
+14	15	Red
+15	1000	Gray
+

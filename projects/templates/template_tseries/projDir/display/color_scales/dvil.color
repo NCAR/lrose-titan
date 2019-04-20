@@ -1,0 +1,20 @@
+# colorscale for dvil field
+
+# Mike Dixon, May 1999
+
+-100.0	-50.0     DarkSlateBlue
+-50.0 	-20.0 	NavyBlue
+-20.0	-10.0 	Blue
+-10.0 	-5.0	MediumBlue
+-5.0 	-2.0 	SkyBlue
+-2.0 	-1.0 	DarkGreen
+-1.0	-0.1	ForestGreen
+-0.1	0.1	black
+0.1 	0.5	Gold3
+0.5  	1.0 	Gold1
+1.0  	2.0 	Yellow
+2.0	3.0	Coral
+3.0	4.0	Orange
+4.0	5.0	MediumVioletRed
+5.0	20.0	Red
+

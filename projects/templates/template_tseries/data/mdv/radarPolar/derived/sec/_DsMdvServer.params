@@ -1,0 +1,78 @@
+//======================================================================
+//
+// MEASURED RHI DATA OPTION.
+//
+//======================================================================
+ 
+///////////// serve_rhi_data //////////////////////////
+//
+// Option to serve out data for measured RHIs.
+// Normally a vertical section from polar radar data is served out as a 
+//   reconstructed RHI. If this option is set, the server will try to read 
+//   measured RHI data and return this. If the measured request fails, the 
+//   server will revert to serving out the reconstructed RHI data.
+// Type: boolean
+//
+
+serve_rhi_data = TRUE;
+
+///////////// rhi_url /////////////////////////////////
+//
+// URL for measured RHI data.
+// Type: string
+//
+
+rhi_url = "mdvp:://localhost:0:mdv/radarPolar/derived/rhi";
+
+///////////// polar_rhi ///////////////////////////////
+//
+// Option to serve out polar data for RHI.
+// If true, the raw polar RHI data is returned. If false, the RHI is 
+//   remapped onto a grid with height in km.
+// Type: boolean
+//
+
+polar_rhi = TRUE;
+
+///////////// rhi_max_az_error ////////////////////////
+//
+// Maximum azimuth error for retrieving RHI.
+// The user selects a vertical cross-section in the normal manner. The 
+//   azimuth of the mid-point of the vert section is computed and the RHI 
+//   closest to this azimuth is selected. If the azimuth difference 
+//   between the selected azimuth and the closest RHI exceeds this max 
+//   error, the RHI request fails and a normal vertical section is 
+//   returned.
+// Type: double
+//
+
+rhi_max_az_error = 5;
+
+///////////// respect_user_rhi_distance ///////////////
+//
+// Option to respect user distance for measured RHI.
+// If false (default) then the end points of the measured RHI are 
+//   returned. If TRUE then the start point is the sensor but the end 
+//   point is obtained by travelling in the direction of the RHI azimuth 
+//   for the distance specified by the user.
+// Type: boolean
+//
+
+respect_user_rhi_distance = TRUE;
+
+//======================================================================
+//
+// VERTICAL SECTIONS - READ OPERATIONS ONLY.
+//
+//======================================================================
+ 
+///////////// vsection_disable_interp /////////////////
+//
+// Option to disable interpolation in vertical sections.
+// Some data is not amenable to interpolation. Setting this to TRUE will 
+//   disable interpolation when vertical sections are computed.
+// Type: boolean
+//
+
+vsection_disable_interp = TRUE;
+

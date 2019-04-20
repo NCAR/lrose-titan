@@ -1,0 +1,43 @@
+# NAME shear.colors
+
+-20   -19     	dark slate gray
+-19   -18  	dark slate gray
+-18   -17  	midnight blue
+-17   -16  	midnight blue
+-16   -15  	navy
+-15   -14   	navy
+-14   -13   	dark slate blue
+-13   -12  	dark slate blue
+-12   -11   	slate blue
+-11   -10   	slate blue
+-10   -09  	medium slate blue
+-09   -08   	medium slate blue
+-08   -07  	dark green
+-07   -06   	dark green
+-06   -05   	dark olive green
+-05   -04   	dark olive green
+-04   -03  	brown
+-03   -03   	brown
+-02   -01   	dark_gray
+-01    00   	dark gray
+ 0     01  	dark gray
+ 01    02  	dark gray
+ 02    03  	sienna
+ 03    04  	indian red
+ 04    05  	indian red
+ 05    06  	rosy brown
+ 06    07  	rosy brown
+ 07    08  	dark goldenrod
+ 08    09  	dark goldenrod
+ 09    10  	goldenrod
+ 10    11  	goldenrod
+ 11    12  	light goldenrod
+ 12    13  	light goldenrod
+ 13    14  	gold
+ 14    15  	gold
+ 15    16  	yellow
+ 16    17  	yellow
+ 17    18  	light yellow
+ 18    19  	light yellow
+ 19    20       light yellow
+ 20    25       light yellow

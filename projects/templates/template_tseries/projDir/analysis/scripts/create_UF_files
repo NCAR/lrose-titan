@@ -1,0 +1,16 @@
+#! /bin/csh
+
+cd $PROJ_DIR/analysis/params
+
+Mdv2Dsr -params Mdv2Dsr.primary -debug -f ~/projDir/data/mdv/radarPolar/ops/sur/20080204/19*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/sur/20080204/20*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/sur/20080204/21*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/sur/20080208/0[5,6,7,8,9]*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/sur/20080202/07*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/sur/20080115/0[2,3]*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/rhi/20080208/*mdv
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/rhi/20080202/*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/sec/20080208/*
+Mdv2Dsr -params Mdv2Dsr.archive -debug -f ~/projDir/data/mdv/radarPolar/ops/sec/20080216/*
+
+

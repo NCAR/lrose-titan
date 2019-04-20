@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="ltg.colors">
+  <ColorRange minValue="0.0" maxValue="2.0">
+    <Color red="175" green="238" blue="238" />
+  </ColorRange>
+  <ColorRange minValue="2.0" maxValue="4.0">
+    <Color red="0" green="255" blue="255" />
+  </ColorRange>
+  <ColorRange minValue="4.0" maxValue="6.0">
+    <Color red="0" green="191" blue="255" />
+  </ColorRange>
+  <ColorRange minValue="6.0" maxValue="8.0">
+    <Color red="100" green="149" blue="237" />
+  </ColorRange>
+  <ColorRange minValue="8.0" maxValue="10.0">
+    <Color red="123" green="104" blue="238" />
+  </ColorRange>
+  <ColorRange minValue="10.0" maxValue="10.0">
+    <Color red="106" green="90" blue="205" />
+  </ColorRange>
+  <ColorRange minValue="15.0" maxValue="15.0">
+    <Color red="0" green="0" blue="139" />
+  </ColorRange>
+  <ColorRange minValue="20.0" maxValue="20.0">
+    <Color red="93" green="71" blue="139" />
+  </ColorRange>
+  <ColorRange minValue="25.0" maxValue="25.0">
+    <Color red="104" green="34" blue="139" />
+  </ColorRange>
+  <ColorRange minValue="30.0" maxValue="50.0">
+    <Color red="160" green="32" blue="240" />
+  </ColorRange>
+  <ColorRange minValue="50.0" maxValue="100.0">
+    <Color red="147" green="112" blue="219" />
+  </ColorRange>
+</ColorScale>
+

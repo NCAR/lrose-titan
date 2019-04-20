@@ -1,0 +1,34 @@
+/**********************************************************************
+ * TDRP params for Janitor
+ **********************************************************************/
+
+// for server hosts, do nothing
+
+//======================================================================
+//
+// TRAVERSING THE DIRECTORY TREE.
+//
+// Controlling the way the Janitor searches the directory tree for files 
+//   to delete or compress.
+//
+//======================================================================
+ 
+///////////// recurse /////////////////////////////////
+//
+// Recurse to lower directories.
+// Set to false to leave directories below the current directory alone.
+// Type: boolean
+//
+
+recurse = FALSE;
+
+///////////// process /////////////////////////////////
+//
+// Process files in this directory.
+// Set to false to leave the current directory alone. However, subdirs 
+//   are processed unless the recurse parameter is set to false.
+// Type: boolean
+//
+
+process = FALSE;
+

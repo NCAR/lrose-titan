@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="rh.colors">
+  <ColorRange minValue="0.0" maxValue="10.0">
+    <Color red="233" green="150" blue="122" />
+  </ColorRange>
+  <ColorRange minValue="10.0" maxValue="20.0">
+    <Color red="205" green="104" blue="137" />
+  </ColorRange>
+  <ColorRange minValue="20.0" maxValue="25.0">
+    <Color red="176" green="48" blue="96" />
+  </ColorRange>
+  <ColorRange minValue="25.0" maxValue="30.0">
+    <Color red="139" green="34" blue="82" />
+  </ColorRange>
+  <ColorRange minValue="30.0" maxValue="35.0">
+    <Color red="139" green="58" blue="98" />
+  </ColorRange>
+  <ColorRange minValue="35.0" maxValue="40.0">
+    <Color red="255" green="193" blue="37" />
+  </ColorRange>
+  <ColorRange minValue="40.0" maxValue="45.0">
+    <Color red="218" green="165" blue="32" />
+  </ColorRange>
+  <ColorRange minValue="45.0" maxValue="50.0">
+    <Color red="238" green="154" blue="73" />
+  </ColorRange>
+  <ColorRange minValue="50.0" maxValue="55.0">
+    <Color red="205" green="133" blue="63" />
+  </ColorRange>
+  <ColorRange minValue="55.0" maxValue="60.0">
+    <Color red="205" green="102" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="60.0" maxValue="65.0">
+    <Color red="139" green="69" blue="19" />
+  </ColorRange>
+  <ColorRange minValue="65.0" maxValue="70.0">
+    <Color red="160" green="82" blue="45" />
+  </ColorRange>
+  <ColorRange minValue="70.0" maxValue="75.0">
+    <Color red="85" green="107" blue="47" />
+  </ColorRange>
+  <ColorRange minValue="75.0" maxValue="80.0">
+    <Color red="0" green="100" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="80.0" maxValue="90.0">
+    <Color red="0" green="139" blue="69" />
+  </ColorRange>
+  <ColorRange minValue="90.0" maxValue="93.0">
+    <Color red="65" green="105" blue="225" />
+  </ColorRange>
+  <ColorRange minValue="93.0" maxValue="96.0">
+    <Color red="0" green="0" blue="255" />
+  </ColorRange>
+  <ColorRange minValue="96.0" maxValue="99.0">
+    <Color red="0" green="0" blue="205" />
+  </ColorRange>
+  <ColorRange minValue="99.0" maxValue="100.0">
+    <Color red="25" green="25" blue="112" />
+  </ColorRange>
+</ColorScale>
+

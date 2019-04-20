@@ -1,0 +1,12 @@
+#! /bin/csh -f
+
+setenv DISPLAY :0.0
+
+cd $PROJ_DIR/rdas2k/params
+ 
+running "java -jar $RAP_INST_JAVA_DIR/RdasControl.jar -instance display"
+if ($status == 1) then
+    java -jar $RAP_INST_JAVA_DIR/RdasControl.jar -instance display -via_relay -params RdasControl.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p RdasControl -i display &
+endif
+

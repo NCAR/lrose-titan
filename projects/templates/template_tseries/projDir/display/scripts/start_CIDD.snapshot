@@ -1,0 +1,29 @@
+#! /bin/csh
+
+# start up Xvfb for screen 9
+
+snuff "Xvfb :9.0"
+Xvfb :9.0 -screen 0 1600x1200x24 -pixdepths 24 -ac -ld 100000 -ls 10000 |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Xvfb -i display_9 >& /dev/null &
+sleep 2
+
+# set display to 9
+
+setenv DISPLAY :9.0
+set_font_path
+setenv DATA_HOST localhost
+
+# fire up CIDD
+
+cd $PROJ_DIR/display/params
+CIDD -p CIDD.snapshot -i snapshot -fn fixed -v 2 |& \
+    LogFilter -d $ERRORS_LOG_DIR -p CIDD -i snapshot
+
+# kill Xvfb
+
+snuff "Xvfb :9.0"
+
+
+
+
+

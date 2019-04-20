@@ -1,0 +1,209 @@
+[control]
+Z = chill_Z
+V = chill_V
+W = chill_W
+NCP = chill_NCP
+ZDR = chill_ZDR
+LDR = chill_LDR
+PHIDP = chill_PHIDP
+RHOHV = chill_RHOHV
+
+[chill_Z]
+interp_mode=0
+num_pts=16
+color00 = 118;90;48
+color01 = 139;105;55
+color02 = 140;140;104
+color03 = 171;171;131
+color04 = 26;40;209
+color05 = 54;50;255
+color06 = 26;150;15
+color07 = 33;183;20
+color08 = 195;3;0
+color09 = 223;5;0
+color10 = 209;209;0
+color11 = 254;254;2
+color12 = 212;64;232
+color13 = 248;22;255
+color14 = 10;211;224
+color15 = 12;242;255
+
+[chill_V]
+interp_mode=0
+num_pts=16
+color00 = 36;224;48
+color01 = 6;182;55
+color02 = 9;149;0
+color03 = 26;40;209
+color04 = 54;50;255
+color05 = 36;156;209
+color06 = 106;168;255
+color07 = 230;230;255
+color08 = 255;230;230
+color09 = 188;73;195
+color10 = 230;90;238
+color11 = 195;44;42
+color12 = 254;59;57
+color13 = 183;143;0
+color14 = 224;175;0
+color15 = 254;254;2
+
+[chill_W]
+interp_mode=0
+num_pts=16
+color00 = 180;180;180
+color01 = 0;130;0
+color02 = 0;168;0
+color03 = 0;200;0
+color04 = 59;245;125
+color05 = 140;148;255
+color06 = 173;102;217
+color07 = 219;117;204
+color08 = 255;43;161
+color09 = 255;56;36
+color10 = 255;97;122
+color11 = 250;130;5
+color12 = 255;176;87
+color13 = 255;214;18
+color14 = 255;214;163
+color15 = 240;240;240
+
+[chill_NCP]
+interp_mode=0
+num_pts=16
+color00 = 147;163;160
+color01 = 119;135;188
+color02 = 89;96;226
+color03 = 40;91;255
+color04 = 40;165;232
+color05 = 53;191;204
+color06 = 76;214;183
+color07 = 99;234;158
+color08 = 153;244;132
+color09 = 188;255;99
+color10 = 226;255;73
+color11 = 236;225;16
+color12 = 255;196;2
+color13 = 255;145;50
+color14 = 244;76;38
+color15 = 255;33;56
+
+[chill_ZDR]
+interp_mode=0
+num_pts=16
+color00 = 128;242;25
+color01 = 34;212;2
+color02 = 24;150;13
+color03 = 122;122;90
+color04 = 122;122;90
+color05 = 150;150;110
+color06 = 63;133;139
+color07 = 78;163;170
+color08 = 98;200;209
+color09 = 8;242;232
+color10 = 170;13;0
+color11 = 209;16;0
+color12 = 224;173;48
+color13 = 255;198;56
+color14 = 230;230;230
+color15 = 247;247;247
+
+[chill_LDR]
+interp_mode=0
+num_pts=16
+color00 = 0;0;150
+color01 = 0;20;255
+color02 = 0;80;230
+color03 = 17;137;235
+color04 = 40;165;232
+color05 = 53;191;204
+color06 = 76;214;183
+color07 = 99;234;165
+color08 = 255;255;30
+color09 = 255;242;2
+color10 = 255;196;2
+color11 = 255;142;0
+color12 = 234;76;38
+color13 = 244;35;51
+color14 = 255;0;0
+color15 = 70;70;70
+
+[chill_PHIDP]
+interp_mode=0
+num_pts=16
+color00 = 36;224;48
+color01 = 6;182;55
+color02 = 9;149;0
+color03 = 26;40;209
+color04 = 54;50;255
+color05 = 36;156;209
+color06 = 106;168;255
+color07 = 222;222;222
+color08 = 246;246;246
+color09 = 188;73;195
+color10 = 230;90;238
+color11 = 195;44;42
+color12 = 254;59;57
+color13 = 183;143;0
+color14 = 224;175;0
+color15 = 254;254;2
+
+[chill_RHOHV]
+interp_mode=0
+num_pts=16
+color00 = 36;224;48
+color01 = 6;182;55
+color02 = 9;149;0
+color03 = 26;40;209
+color04 = 54;50;255
+color05 = 36;156;209
+color06 = 106;168;255
+color07 = 222;222;222
+color08 = 246;246;246
+color09 = 188;73;195
+color10 = 230;90;238
+color11 = 195;44;42
+color12 = 254;59;57
+color13 = 183;143;0
+color14 = 224;175;0
+color15 = 254;254;2
+
+[chill_mono]
+interp_mode=0
+num_pts=16
+color00 = 0;0;0
+color01 = 15;15;15
+color02 = 31;31;31
+color03 = 47;47;47
+color04 = 63;63;63
+color05 = 79;79;79
+color06 = 95;95;95
+color07 = 111;111;111
+color08 = 127;127;127
+color09 = 143;143;143
+color10 = 159;159;159
+color11 = 175;175;175
+color12 = 191;191;191
+color13 = 207;207;207
+color14 = 223;223;223
+color15 = 240;240;240
+
+[chill_retro]
+interp_mode=0
+num_pts=16
+color00 = 0;0;0
+color01 = 0;25;0
+color02 = 0;51;0
+color03 = 0;76;0
+color04 = 0;102;0
+color05 = 0;128;0
+color06 = 0;152;0
+color07 = 0;178;0
+color08 = 0;203;0
+color09 = 0;229;0
+color10 = 0;254;0
+color11 = 25;254;25
+color12 = 51;254;51
+color13 = 76;254;76
+color14 = 102;254;102
+color15 = 127;255;127

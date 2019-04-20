@@ -1,0 +1,21 @@
+# NAME sat_tempdif.colors
+
+# roberts 	12/3/1997
+
+-10 	-8.0 	DeepPink1
+-8.0 	-6.0 	maroon
+-6.0 	-4.0 	dark orchid
+-4.0 	-3.0 	blue
+-3.0 	-2.0 	royal blue
+-2.0 	-1.5 	deep sky blue
+-1.5 	-1 	medium spring green
+-1 	-0.5 	forest green
+-0.5 	0.5 	gray
+0.5 	1 	tan2
+1 	1.5 	gold1
+1.5 	2 	yellow
+2 	3 	salmon1
+3 	4 	tomato
+4      	6 	brown1
+6 	8 	red
+8 	10 	firebrick

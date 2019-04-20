@@ -1,0 +1,239 @@
+/**********************************************************************
+ * TDRP params for Janitor
+ **********************************************************************/
+
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debugging messages will be printed.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "primary";
+
+///////////// top_dir /////////////////////////////////
+//
+// Top level directory - defaults to DATA_DIR or RAP_DATA_DIR if not 
+//   set.
+// The Janitor traverses recursively from this directory downwards.
+// Type: string
+//
+
+top_dir = "$(RAP_DATA_DIR)";
+
+///////////// once_only ///////////////////////////////
+//
+// Option to traverse the directories once and then exit.
+// If false, the Janitor will repeatedly traverse the directory tree, 
+//   with a delay of 'SleepBetweenPasses' between the passes. If true, the 
+//   Janitor will make a single pass and then exit.
+// Type: boolean
+//
+
+once_only = FALSE;
+
+///////////// SleepBetweenPasses //////////////////////
+//
+// Sleep time between passes - secs.
+// Janitor sleeps for this time between traversal passes of the 
+//   directory structure. This is intended to prevent the Janitor from 
+//   causing an excessive CPU load.
+// Minimum val: 0
+// Type: int
+//
+
+SleepBetweenPasses = 1;
+
+//======================================================================
+//
+// TRAVERSING THE DIRECTORY TREE.
+//
+// Controlling the way the Janitor searches the directory tree for files 
+//   to delete or compress.
+//
+//======================================================================
+ 
+///////////// recurse /////////////////////////////////
+//
+// Recurse to lower directories.
+// Set to false to leave directories below the current directory alone.
+// Type: boolean
+//
+
+recurse = TRUE;
+
+///////////// process /////////////////////////////////
+//
+// Process files in this directory.
+// Set to false to leave the current directory alone. However, subdirs 
+//   are processed unless the recurse parameter is set to false.
+// Type: boolean
+//
+
+process = TRUE;
+
+///////////// SleepBetweenDirs ////////////////////////
+//
+// Sleep time between directories - secs.
+// Janitor sleeps for this time as it moves between between directories. 
+//   It is intended to prevent the Janitor from causing an excessive CPU 
+//   load.
+// Minimum val: 0
+// Type: int
+//
+
+SleepBetweenDirs = 1;
+
+///////////// report //////////////////////////////////
+//
+// Option to place a report file in each directory visisted.
+// If set, a file named _janitor_Report is written in the directory
+// where the -janitor file was found. Note that this parameter
+// does NOT recurse, that is, setting report=TRUE in the top directory
+// will cause a _janitor_Report to be written to the top
+// directory but not subdirectories.
+
+// The _janitor_Report file is an ASCII report of the state of
+// the janitor when it got to that directory.
+// Type: boolean
+//
+
+report = FALSE;
+
+//======================================================================
+//
+// FILE IDENTIFICATION.
+//
+// Controlling the way the Janitor finds files to delete or compress.
+//
+//======================================================================
+ 
+///////////// check_ext ///////////////////////////////
+//
+// Option to check for file extension.
+// If set, only files with the 'ext' extension are processed.
+// Type: boolean
+//
+
+check_ext = FALSE;
+
+///////////// date_format /////////////////////////////
+//
+// Option to check for RAP date-time naming convention.
+// If set, the files must follow the RAP file naming
+// convention (which means that the filename is based
+// on the date that the data in the file pertains to).
+// Type: boolean
+//
+
+date_format = FALSE;
+
+///////////// file_ages_in_days ///////////////////////
+//
+// Option to specify file ages in days, instead of secs.
+// If TRUE, 'MaxNoModDays' and 'MaxNoAccessDays' are used. If FALSE, 
+//   'MaxModificationAgeBeforeDelete' and 'MaxAccessAgeBeforeCompress' are 
+//   used.
+// Type: boolean
+//
+
+file_ages_in_days = TRUE;
+
+//======================================================================
+//
+// FILE DELETION.
+//
+// Option to delete files and directories.
+//
+//======================================================================
+ 
+///////////// delete_files ////////////////////////////
+//
+// Option to delete files.
+// If set, files are deleted if their modification age exceeds 
+//   MaxNoModDays, if set, or MaxModificationAgeBeforeDelete.
+// Type: boolean
+//
+
+delete_files = FALSE;
+
+///////////// RemoveEmptyDirs /////////////////////////
+//
+// Option to remove empty directories.
+// If set, directories are removed if file deletion leaves them empty.
+// Type: boolean
+//
+
+RemoveEmptyDirs = FALSE;
+
+///////////// disk_use_threshold //////////////////////
+//
+// Percentage full disk threshold.
+// If this is exceeded, then the Janitor will start deleting the oldest 
+//   files in the data repository until the disk usage percentage is below 
+//   disk_delete_threshold.
+
+// NOTE : This facility is only supported under LINUX. For other UNIX 
+//   OS's the disk is assumed to be 0% full.
+// Minimum val: 0
+// Maximum val: 100
+// Type: int
+//
+
+disk_use_threshold = 98;
+
+///////////// disk_delete_threshold ///////////////////
+//
+// Percentage full disk threshold for deletions.
+// If the disk is considered too full based on the disk_use_threshold 
+//   parameter, the oldest files in the data repository will be deleted 
+//   until the disk usage falls below this value. Note that files will 
+//   only be deleted if they are not in an event list and are not in a 
+//   directory with a disk_use_threshold of 100. Note that this value must 
+//   be less than the disk_use_threshold value or your disk could fill up.
+// Minimum val: 0
+// Maximum val: 100
+// Type: int
+//
+
+disk_delete_threshold = 95;
+
+//======================================================================
+//
+// FILE COMPRESSION.
+//
+// Option to compress files.
+//
+//======================================================================
+ 
+///////////// compress ////////////////////////////////
+//
+// Single bool value.
+// If set, files are compressed if their age indicates
+// that they should be. Systems that do not decompress
+// on the fly (Juneau?) should avoid compression.
+// Type: boolean
+//
+
+compress = FALSE;
+

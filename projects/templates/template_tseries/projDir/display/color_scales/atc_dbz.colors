@@ -1,0 +1,10 @@
+# NAME atc_dbz.colors
+# ice 	5/10/1996 14:48:29
+# MIN    MAX    NAME        COLOR LABEL
+20 	30 	gray28 	!
+30 	40 	gray47 	!
+40 	45 	blue4 	!
+45 	50 	SpringGreen4 	!
+50 	55 	DarkOrange3 	!
+55 	60 	tan2 	!
+60 	80 	brown1 	! 

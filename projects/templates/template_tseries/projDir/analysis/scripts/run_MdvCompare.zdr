@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/analysis/params
+
+
+MdvCompare ~/projDir/data/mdv/radarPolar/ops/sur/20081206/164803.mdv DBZ_F ~/projDir/data/mdv/radarPolar/ops/sur/20081206/165403.mdv DBZ_F -params MdvCompare.zdr
+
+MdvCompare ~/projDir/data/mdv/radarPolar/ops/sur/20081206/164803.mdv ZDR_F ~/projDir/data/mdv/radarPolar/ops/sur/20081206/165403.mdv ZDR_F -params MdvCompare.zdr
+
+

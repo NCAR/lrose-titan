@@ -1,0 +1,18 @@
+Configuring a host
+==================
+
+NOTE: before running configure_host, you must stop the system:
+
+  stop_all
+
+To configure a host, after checking out the system into the ~/cvs directory,
+or copying this across to another host:
+
+  cd ~/cvs/projects/titan/cp2/projDir/system/scripts
+  ./configure_host
+  source ~/.cshrc
+
+Then, you can restart the host:
+
+  start_all
+

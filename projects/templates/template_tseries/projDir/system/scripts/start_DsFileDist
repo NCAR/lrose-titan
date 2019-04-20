@@ -1,0 +1,11 @@
+#! /bin/csh 
+
+
+cd $PROJ_DIR/system/params
+
+running "DsFileDist -params DsFileDist.primary"
+if ($status == 1) then
+  DsFileDist -params DsFileDist.primary |& \
+	LogFilter -d $ERRORS_LOG_DIR -p DsFileDist -i primary >& /dev/null &
+endif
+

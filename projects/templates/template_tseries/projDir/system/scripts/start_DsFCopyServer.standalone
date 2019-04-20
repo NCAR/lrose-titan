@@ -1,0 +1,8 @@
+#! /bin/csh
+
+running "DsFCopyServer -port 5445"
+if ($status == 1) then
+    DsFCopyServer -port 5445 -instance standalone -qmax -1 |& \
+	LogFilter -d $ERRORS_LOG_DIR -p DsFCopyServer -i standalone >& /dev/null &
+endif
+

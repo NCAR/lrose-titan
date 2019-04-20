@@ -1,0 +1,43 @@
+/**********************************************************************
+ * TDRP params for Janitor
+ **********************************************************************/
+
+//======================================================================
+//
+// TRAVERSING THE DIRECTORY TREE.
+//
+// Controlling the way the Janitor searches the directory tree for files 
+//   to delete or compress.
+//
+//======================================================================
+ 
+///////////// recurse /////////////////////////////////
+//
+// Recurse to lower directories.
+// Set to false to leave directories below the current directory alone.
+// Type: boolean
+//
+
+recurse = FALSE;
+
+///////////// FollowDangerousLinks ////////////////////
+//
+// Follow path relative soft links. - Off by default.
+// Setting this to true is dangerous if recurse is true. Links may be 
+//   circular and cause the Janitor to do 20+ times more work. Janitor 
+//   will skip all soft link dirs which begin with ./ or ../ by default.
+// Type: boolean
+//
+
+FollowDangerousLinks = FALSE;
+
+///////////// process /////////////////////////////////
+//
+// Process files in this directory.
+// Set to false to leave the current directory alone. However, subdirs 
+//   are processed unless the recurse parameter is set to false.
+// Type: boolean
+//
+
+process = FALSE;
+

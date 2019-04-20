@@ -1,0 +1,7 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/display/params
+
+xterm -title RadMon -bg black -fg cyan -g 33x1-0+950 -e RadMon -i remote -params RadMon.ops &
+
+

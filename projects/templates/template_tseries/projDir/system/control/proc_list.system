@@ -1,0 +1,9 @@
+##############################################################################################
+# SYSTEM processes
+#
+DsServerMgr         primary       start_DsServerMgr              snuff_inst          localhost
+Janitor             primary       start_Janitor                  kill_Janitor        localhost
+Scout               primary       start_Scout                    kill_Scout          localhost
+DataMapper          primary       start_DataMapper               kill_DataMapper     localhost
+#DsFileDist         primary       start_DsFileDist               snuff_inst          localhost
+#

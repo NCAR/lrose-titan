@@ -1,0 +1,8 @@
+######################################
+# list of destination hosts for data
+#
+# localhost should ALWAYS be listed
+#
+######################################
+
+localhost

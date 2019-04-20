@@ -1,0 +1,1006 @@
+/**********************************************************************
+ * TDRP params for Metar2Symprod
+ **********************************************************************/
+
+//======================================================================
+//
+// STATION SELECTION.
+//
+//======================================================================
+ 
+///////////// useAcceptedStationsList /////////////////
+//
+// Set to TRUE to use the acceptedStations list (below).
+// Only accept stations in this list.
+// Type: boolean
+//
+
+useAcceptedStationsList = FALSE;
+
+///////////// acceptedStations ////////////////////////
+//
+// List of accepted station IDs.
+// If a station is not on this list, it is not displayed.
+// Type: string
+// 1D array - variable length.
+//
+
+acceptedStations = {
+};
+
+///////////// useRejectedStationsList /////////////////
+//
+// Set to TRUE to use the rejectedStations list (below).
+// Reject stations in this list.
+// Type: boolean
+//
+
+useRejectedStationsList = FALSE;
+
+///////////// rejectedStations ////////////////////////
+//
+// List of rejected station IDs.
+// If a station is not on this list, it is not displayed.
+// Type: string
+// 1D array - variable length.
+//
+
+rejectedStations = {
+};
+
+///////////// useBoundingBox //////////////////////////
+//
+// Set to TRUE to only include stations within the lat-lon bounding box.
+// Only accept stations for which the position is inside the bounding 
+//   box. Note: this will be overridden if the client specifies horizontal 
+//   limits.
+// Type: boolean
+//
+
+useBoundingBox = FALSE;
+
+///////////// bounding_box ////////////////////////////
+//
+// If useBoundingBox is true, only stations within this box will be 
+//   included in the product list.
+// To span the international date line, specify a continuous interval 
+//   using positive longitudes which exceed 180 or negative longitudes 
+//   which are less than -180. For example, min_lon = 80 and max_lon = 240 
+//   will span between 80E and 120W across the Pacific.
+//
+// Type: struct
+//   typedef struct {
+//      float min_lat;
+//      float min_lon;
+//      float max_lat;
+//      float max_lon;
+//   }
+//
+//
+
+bounding_box = {
+    min_lat = -5,
+    min_lon = 86,
+    max_lat = 55,
+    max_lon = 156
+};
+
+///////////// decimate_spatially //////////////////////
+//
+// Option to decimate metar density spatially. Only applicable if the 
+//   bounding box option is specified in the param file, or the client 
+//   specifies the horizontal limits in the request.
+// If active, an imaginary grid will be constructed for the bounding 
+//   box. The number of grids in each direction will be specified by 
+//   decimate_n_lat and decimate_n_lon. Only one METAR product will be 
+//   created for each rectangle in the grid.
+// Type: boolean
+//
+
+decimate_spatially = TRUE;
+
+///////////// decimate_n_lat //////////////////////////
+//
+// If decimation is active, the bounding box is divided into this number 
+//   of sub-boxes in the latitude direction.
+// See decimate_spatially.
+// Type: int
+//
+
+decimate_n_lat = 40;
+
+///////////// decimate_n_lon //////////////////////////
+//
+// If decimation is active, the bounding box is divided into this number 
+//   of sub-boxes in the longitude direction.
+// See decimate_spatially.
+// Type: int
+//
+
+decimate_n_lon = 40;
+
+///////////// decimate_required_stations //////////////
+//
+// List of required stations when decimating.
+// If a station is in this list, it will always be displayed.
+// Type: string
+// 1D array - variable length.
+//
+
+decimate_required_stations = {
+};
+
+//======================================================================
+//
+// TRANSLATION OPTION.
+//
+//======================================================================
+ 
+///////////// do_translation //////////////////////////
+//
+// Option to perform translation to symprod format.
+// If FALSE, the data is passed to the client in binary format
+// .Note: Display control of binary format is extremely limited
+// Value must be TRUE to turn labels on/off, and set colors and
+// positions independently.
+// Type: boolean
+//
+
+do_translation = TRUE;
+
+///////////// display_temp ////////////////////////////
+//
+// Display of temperature data.
+// Set to the units that you want to use.
+//
+// Type: enum
+// Options:
+//     DISPLAY_TEMP_C
+//     DISPLAY_TEMP_F
+//     DISPLAY_TEMP_K
+//
+
+display_temp = DISPLAY_TEMP_C;
+
+//======================================================================
+//
+// TRANSLATED RENDERING PARAMETERS.
+//
+// Parameters for translated rendering using symprod format.
+//
+//======================================================================
+ 
+///////////// plot_unscaled ///////////////////////////
+//
+// Option to not scale the product with zoom state.
+// If true, the product is always rendered at the same scale, regardless 
+//   of zoom state. If false, the product is scaled down on the screen as 
+//   the zoome expands, and is scaled up as you zoom in.
+// Type: boolean
+//
+
+plot_unscaled = TRUE;
+
+//======================================================================
+//
+// Text labels.
+//
+// The following are specified for each text label:
+// 	do_draw: option to draw the label, true or false
+// 	color: foreground color
+// 	background_color: background color - if empty, no background
+// 	override_color_from_flight_cat - if true, flight cat color will 
+// 	                                 used instead of specified color
+// 	font_name: name of font family
+// 	font_size: suggest size in pixels
+// 	x_offset: x offset from station location in pixels
+// 	y_offset: y offset from station location in pixels
+// 	vert_align: vert justification of text relative to offset point
+// 	horiz_align: horiz justification of text relative to offset point.
+//
+//======================================================================
+ 
+///////////// temperature_label ///////////////////////
+//
+// Details for temperature label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+temperature_label = {
+    do_draw = TRUE,
+    color = "red",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = -6,
+    y_offset = 6,
+    vert_align = VERT_ALIGN_BOTTOM,
+    horiz_align = HORIZ_ALIGN_RIGHT
+};
+
+///////////// dew_point_label /////////////////////////
+//
+// Details for dew_point label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+dew_point_label = {
+    do_draw = TRUE,
+    color = "gray",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = -6,
+    y_offset = -6,
+    vert_align = VERT_ALIGN_TOP,
+    horiz_align = HORIZ_ALIGN_RIGHT
+};
+
+///////////// pressure_as_3_digits ////////////////////
+//
+// Option to draw pressure in 3 digits only.
+// If true, only the first 3 digits of the pressure are plotted. So, for 
+//   example, 1014 will appear as 014. 998 will always appear as 998.
+// Type: boolean
+//
+
+pressure_as_3_digits = FALSE;
+
+///////////// temps_to_1_digit ////////////////////////
+//
+// Option to draw temperature and dew point to only one decmal point.
+// If true, temperature and dew point will appear to one decimal place, 
+//   ie. 2.1198 will appear as 2.1.
+// Type: boolean
+//
+
+temps_to_1_digit = FALSE;
+
+///////////// temps_to_int ////////////////////////////
+//
+// Option to round temperature and dew point to nearest integer.
+// If true, temperature and dew point will appear as integers, ie. 
+//   2.1198 will appear as 2. Overides temps_to_1_digit.
+// Type: boolean
+//
+
+temps_to_int = FALSE;
+
+///////////// pressure_label //////////////////////////
+//
+// Details for pressure label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+pressure_label = {
+    do_draw = FALSE,
+    color = "white",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = 6,
+    y_offset = 6,
+    vert_align = VERT_ALIGN_BOTTOM,
+    horiz_align = HORIZ_ALIGN_LEFT
+};
+
+///////////// current_weather_label ///////////////////
+//
+// Details for current weather label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+current_weather_label = {
+    do_draw = FALSE,
+    color = "yellow",
+    background_color = "",
+    override_color_from_flight_cat = TRUE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = -6,
+    y_offset = 0,
+    vert_align = VERT_ALIGN_CENTER,
+    horiz_align = HORIZ_ALIGN_RIGHT
+};
+
+///////////// current_weather_type ////////////////////
+//
+// Details for current weather types - Set as bit fields.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+current_weather_type = {
+    do_draw = FALSE,
+    color = "yellow",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "fixed",
+    font_size = 10,
+    x_offset = -6,
+    y_offset = 0,
+    vert_align = VERT_ALIGN_CENTER,
+    horiz_align = HORIZ_ALIGN_RIGHT
+};
+
+///////////// wind_gust_label /////////////////////////
+//
+// Details for wind gust label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+wind_gust_label = {
+    do_draw = FALSE,
+    color = "green",
+    background_color = "",
+    override_color_from_flight_cat = TRUE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = 6,
+    y_offset = 0,
+    vert_align = VERT_ALIGN_CENTER,
+    horiz_align = HORIZ_ALIGN_LEFT
+};
+
+///////////// ceiling_label ///////////////////////////
+//
+// Details for ceiling label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+ceiling_label = {
+    do_draw = FALSE,
+    color = "cyan",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = 6,
+    y_offset = -16,
+    vert_align = VERT_ALIGN_TOP,
+    horiz_align = HORIZ_ALIGN_LEFT
+};
+
+///////////// ceiling_units ///////////////////////////
+//
+// Units for plotting ceiling.
+//
+// Type: enum
+// Options:
+//     CEILING_METERS
+//     CEILING_KM
+//     CEILING_FT
+//     CEILING_KFT
+//     CEILING_FL
+//
+
+ceiling_units = CEILING_FT;
+
+///////////// wind_units //////////////////////////////
+//
+// Units for plotting Wind Barbs.
+//
+// Type: enum
+// Options:
+//     WIND_MS
+//     WIND_KTS
+//     WIND_MPH
+//     WIND_KPH
+//
+
+wind_units = WIND_MS;
+
+///////////// visibility_label ////////////////////////
+//
+// Details for visibility label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+visibility_label = {
+    do_draw = FALSE,
+    color = "magenta",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = -6,
+    y_offset = -16,
+    vert_align = VERT_ALIGN_TOP,
+    horiz_align = HORIZ_ALIGN_RIGHT
+};
+
+///////////// humidity_label //////////////////////////
+//
+// Details for humidity label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+humidity_label = {
+    do_draw = TRUE,
+    color = "blue",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "fixed",
+    font_size = 10,
+    x_offset = 6,
+    y_offset = -6,
+    vert_align = VERT_ALIGN_TOP,
+    horiz_align = HORIZ_ALIGN_LEFT
+};
+
+///////////// visibility_units ////////////////////////
+//
+// Units for plotting visibility.
+//
+// Type: enum
+// Options:
+//     VISIBILITY_METERS
+//     VISIBILITY_KM
+//     VISIBILITY_METERS_KM
+//     VISIBILITY_MILES
+//
+
+visibility_units = VISIBILITY_KM;
+
+///////////// station_name_label_len //////////////////
+//
+// Length of station name label.
+// The last n chars are included in the label.
+// Maximum val: 4
+// Type: int
+//
+
+station_name_label_len = 2;
+
+///////////// station_name_label //////////////////////
+//
+// Details for station_name label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+station_name_label = {
+    do_draw = FALSE,
+    color = "gray",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "8x13",
+    font_size = 13,
+    x_offset = 6,
+    y_offset = -6,
+    vert_align = VERT_ALIGN_TOP,
+    horiz_align = HORIZ_ALIGN_LEFT
+};
+
+///////////// time_label //////////////////////////////
+//
+// Details for time string label.
+// Intended mainly for debugging, to see the time for the plotted METAR.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+time_label = {
+    do_draw = FALSE,
+    color = "white",
+    background_color = "",
+    override_color_from_flight_cat = FALSE,
+    font_name = "fixed",
+    font_size = 10,
+    x_offset = 0,
+    y_offset = -30,
+    vert_align = VERT_ALIGN_TOP,
+    horiz_align = HORIZ_ALIGN_CENTER
+};
+
+//======================================================================
+//
+// WIND BARB PLOT.
+//
+//======================================================================
+ 
+///////////// draw_wind_barb //////////////////////////
+//
+// Option to draw the wind barb.
+// Type: boolean
+//
+
+draw_wind_barb = TRUE;
+
+///////////// station_posn_circle_radius //////////////
+//
+// Radius of circle at station position.
+// Set to 0 for no circle.
+// Type: int
+//
+
+station_posn_circle_radius = 1;
+
+///////////// wind_barb_color /////////////////////////
+//
+// Color of wind barb.
+// Type: string
+//
+
+wind_barb_color = "green";
+
+///////////// override_wind_barb_color_from_flight_cat 
+//
+// Option to override the the wind barb color using the flight category 
+//   color.
+// Type: boolean
+//
+
+override_wind_barb_color_from_flight_cat = FALSE;
+
+///////////// wind_barb_line_width ////////////////////
+//
+// Width of lines used to render wind barbs.
+// Type: int
+//
+
+wind_barb_line_width = 1;
+
+///////////// wind_barb_shaft_len /////////////////////
+//
+// Length of wind barb shaft in pixels.
+// Type: int
+//
+
+wind_barb_shaft_len = 32;
+
+///////////// wind_barb_tick_len //////////////////////
+//
+// Length of wind barb ticks in pixels.
+// Type: int
+//
+
+wind_barb_tick_len = 12;
+
+///////////// wind_ticks_angle_to_shaft ///////////////
+//
+// Angle of the wind ticks relative to the shaft (deg).
+// Type: float
+//
+
+wind_ticks_angle_to_shaft = 60;
+
+//======================================================================
+//
+// FLIGHT CATEGORY AND SKY OBSCURATION.
+//
+//======================================================================
+ 
+///////////// draw_flight_category ////////////////////
+//
+// Option to draw the flight category and obscuration icon.
+// Type: boolean
+//
+
+draw_flight_category = FALSE;
+
+///////////// flight_category /////////////////////////
+//
+// Array of flight category parameters.
+// The flight category at a station will be computed using the ceiling 
+//   (ft) and visibility (km) thresholds. If both values exceed the 
+//   threshold, the flight category will be equal to or greater that the 
+//   specified category.
+//
+// Type: struct
+//   typedef struct {
+//      flight_category_label_t label;
+//        Options:
+//          VFR
+//          MVFR
+//          IFR
+//      string color;
+//      float ceiling_threshold;
+//      float visibility_threshold;
+//   }
+//
+// 1D array - variable length.
+//
+
+flight_category = {
+  {
+    label = VFR,
+    color = "green",
+    ceiling_threshold = 1500,
+    visibility_threshold = 5
+  }
+  ,
+  {
+    label = IFR,
+    color = "gold",
+    ceiling_threshold = 0,
+    visibility_threshold = 0
+  }
+};
+
+///////////// flight_category_circle_radius ///////////
+//
+// Radius for flight_category / obscuration icon.
+// Type: int
+//
+
+flight_category_circle_radius = 6;
+
+//======================================================================
+//
+// NATIVE RENDERING PARAMETERS.
+//
+// Parameters for rendering from native binary format.
+//
+//======================================================================
+ 
+///////////// color ///////////////////////////////////
+//
+// Chunk object foreground color.
+// Suggested foreground color for rendering the object.
+// Type: string
+//
+
+color = "green";
+
+///////////// background_color ////////////////////////
+//
+// Chunk object background color.
+// Suggested background color for rendering the object.
+// Type: string
+//
+
+background_color = "black";
+
+//======================================================================
+//
+// FULL METAR MESSAGE AS HIDDEN TEXT.
+//
+//======================================================================
+ 
+///////////// activate_hidden_text ////////////////////
+//
+// Option to activate hidden text.
+// If true, the full METAR message will be sent to the client, marked as 
+//   hidden text. This text may then be used by the client for any 
+//   purpose, such as pop-up text in response to a mouse event near the 
+//   product location.
+// Type: boolean
+//
+
+activate_hidden_text = FALSE;
+
+///////////// hidden_text_font_name ///////////////////
+//
+// Name of font for hidden texy.
+// Type: string
+//
+
+hidden_text_font_name = "fixed";
+
+///////////// hidden_text_x_offset ////////////////////
+//
+// X offset for hidden text (pixels).
+// Type: int
+//
+
+hidden_text_x_offset = 10;
+
+///////////// hidden_text_y_offset ////////////////////
+//
+// Y offset for hidden text (pixels).
+// Type: int
+//
+
+hidden_text_y_offset = 0;
+
+///////////// hidden_text_font_size ///////////////////
+//
+// Font size for hidden text (pixels).
+// Type: int
+//
+
+hidden_text_font_size = 10;
+
+///////////// hidden_text_vert_align //////////////////
+//
+// Vertical alignment hidden text.
+//
+// Type: enum
+// Options:
+//     VERT_ALIGN_TOP
+//     VERT_ALIGN_CENTER
+//     VERT_ALIGN_BOTTOM
+//
+
+hidden_text_vert_align = VERT_ALIGN_CENTER;
+
+///////////// hidden_text_horiz_align /////////////////
+//
+// Horizontal alignment for hidden text.
+//
+// Type: enum
+// Options:
+//     HORIZ_ALIGN_LEFT
+//     HORIZ_ALIGN_CENTER
+//     HORIZ_ALIGN_RIGHT
+//
+
+hidden_text_horiz_align = HORIZ_ALIGN_LEFT;
+
+///////////// hidden_text_foreground_color ////////////
+//
+// Hidden text background color.
+// Set to empty string to use flight cat color color.
+// Type: string
+//
+
+hidden_text_foreground_color = "";
+
+///////////// hidden_text_background_color ////////////
+//
+// Hidden text background color.
+// Set to empty string to use display background color.
+// Type: string
+//
+
+hidden_text_background_color = "gray20";
+
+//======================================================================
+//
+// ADD CHUNK TO END OF PRODUCT.
+//
+//======================================================================
+ 
+///////////// add_raw_data_as_chunk ///////////////////
+//
+// Option to add raw data as chunk.
+// If true, the raw data buffer will be added as a chunk at the end of 
+//   the product.
+// Type: boolean
+//
+
+add_raw_data_as_chunk = FALSE;
+

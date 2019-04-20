@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cp -f closeARight.xpm closeA.xpm
+cp -f closeIRight.xpm closeI.xpm

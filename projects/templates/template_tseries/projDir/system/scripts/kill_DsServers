@@ -1,0 +1,11 @@
+#! /bin/csh
+
+pkill DsServerMgr
+pkill DataMapper
+pkill DsFileDist
+pkill DsFCopyServer
+pkill DsSpdbServer
+pkill DsMdvServer
+pkill DsFmqServer
+
+

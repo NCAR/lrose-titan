@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/titan/params
+
+running "Titan -params Titan.ops"
+if ($status == 1) then
+  nice Titan -params Titan.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Titan -i ops &
+endif
+

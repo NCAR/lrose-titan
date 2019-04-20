@@ -1,0 +1,23 @@
+#MIN     MAX     NAME                 COLOR LABEL
+
+0       50      violet 
+50      100     Orchid
+100     200     Purple 
+200     300     SkyBlue1 
+300     400     RoyalBlue 
+400     500     Blue 
+500     750     SpringGreen1 
+750    1000     SpringGreen2   
+1000   1250     SpringGreen3
+1250   1500     SpringGreen4
+1500   1750     DarkGreen
+1750   2000     wheat 
+2000   2250     LightGoldenrod
+2250   2500     goldenrod
+2500   2750     orange 
+2750   3000     DarkGoldenrod 
+3000   3500     salmon	
+3500   4000     red 
+4000   4500     firebrick2
+4500   6000     maroon 
+6000   8000     ivory 	

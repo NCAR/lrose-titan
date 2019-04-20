@@ -1,0 +1,12 @@
+#############################################
+# site-specific parameters
+#############################################
+
+setenv SITE_NAME                  "Greeley"
+setenv RADAR_NAME                 "CSU-CHILL"
+setenv RADAR_LAT                  40.4464
+setenv RADAR_LON                  -104.637
+setenv RADAR_ALT_KM               1.432
+setenv RADAR_ALT_M                1432
+
+#############################################

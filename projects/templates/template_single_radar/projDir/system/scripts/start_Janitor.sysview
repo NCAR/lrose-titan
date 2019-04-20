@@ -1,0 +1,8 @@
+#! /bin/csh
+
+running "Janitor -instance sysview"
+if ($status == 1) then
+    Janitor -instance sysview -top $DATA_DIR/sysview |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Janitor -i sysview >& /dev/null &
+endif
+

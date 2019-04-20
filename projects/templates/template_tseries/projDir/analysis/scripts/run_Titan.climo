@@ -1,0 +1,21 @@
+#! /bin/csh
+
+cd $PROJ_DIR/analysis/params
+
+Titan -params Titan.ops25 -start "2007 11 01 00 00 00" -end "2007 11 16 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.01 >& /tmp/Titan.log.01 &
+Titan -params Titan.ops25 -start "2007 11 16 00 00 00" -end "2007 12 01 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.02 >& /tmp/Titan.log.02 &
+
+Titan -params Titan.ops25 -start "2007 12 01 00 00 00" -end "2007 12 16 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.03 >& /tmp/Titan.log.03 &
+Titan -params Titan.ops25 -start "2007 12 16 00 00 00" -end "2008 01 01 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.04 >& /tmp/Titan.log.04 &
+
+Titan -params Titan.ops25 -start "2008 01 01 00 00 00" -end "2008 01 16 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.05 >& /tmp/Titan.log.05 &
+Titan -params Titan.ops25 -start "2008 01 16 00 00 00" -end "2008 02 01 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.06 >& /tmp/Titan.log.06 &
+
+Titan -params Titan.ops25 -start "2008 02 01 00 00 00" -end "2008 02 16 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.07 >& /tmp/Titan.log.07 &
+Titan -params Titan.ops25 -start "2008 02 16 00 00 00" -end "2008 03 01 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.08 >& /tmp/Titan.log.08 &
+
+Titan -params Titan.ops25 -start "2008 03 01 00 00 00" -end "2008 03 16 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.09 >& /tmp/Titan.log.09 &
+Titan -params Titan.ops25 -start "2008 03 16 00 00 00" -end "2008 04 01 00 00 00" -debug -odir ~/projDir/data/analysis/titan/storms/ops25.10 >& /tmp/Titan.log.10 &
+
+
+

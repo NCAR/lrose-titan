@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Fmq2Fmq -params Fmq2Fmq.derived"
+if ($status == 1) then
+  nice Fmq2Fmq -params Fmq2Fmq.derived |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Fmq2Fmq -i derived &
+endif
+

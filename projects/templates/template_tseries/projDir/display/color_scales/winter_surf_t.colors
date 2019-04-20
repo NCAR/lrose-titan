@@ -1,0 +1,25 @@
+# NAME winter_surf_t.colors
+# fhage 	2/13/1998 17:7:41
+# MIN    MAX    NAME        COLOR LABEL
+-80 	-25 	DarkOrchid4 	!
+-25 	-20 	midnight blue 	!
+-20 	-15 	blue4 	!
+-15 	-10 	medium blue 	!
+-10 	-8 	blue 	!
+-8 	-6 	royal blue 	!
+-6 	-4 	cornflower blue 	!
+-4 	-2 	deep sky blue 	!
+-2 	-1 	light sea green 	!
+-1 	0 	VioletRed4 	!
+0 	1 	maroon 	!
+1 	2 	dark olive green 	!
+2 	4 	lime green 	!
+4 	6 	green2 	!
+6 	8 	goldenrod2 	!
+8 	10 	gold 	!
+10 	15 	yellow2 	!
+15 	20 	yellow 	!
+20 	25 	salmon1 	!
+25 	30 	tomato 	!
+30 	35 	OrangeRed1 	!
+35 	50 	red 	!

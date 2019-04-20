@@ -1,0 +1,27 @@
+# NAME sst_data_age.colors
+
+# kessinger 	4/13/2001 
+
+-5 	0 	dark green
+0 	5 	dark olive green
+5 	10 	forest green
+10 	15	SpringGreen3
+15	20	medium sea green
+20	25	medium aquamarine
+25	30	medium slate blue
+30	35 	blue
+35 	40 	blue4
+40 	45 	DarkOrchid4
+45 	50 	HotPink4
+50 	55 	maroon
+55 	60 	VioletRed4
+60 	65 	sienna
+65 	70 	chocolate
+70 	75 	goldenrod
+75 	80 	yellow
+80 	85 	dark salmon
+85 	90 	salmon
+90 	95 	firebrick2
+95	100	DeepPink1
+100	105 	light grey
+105	110	snow

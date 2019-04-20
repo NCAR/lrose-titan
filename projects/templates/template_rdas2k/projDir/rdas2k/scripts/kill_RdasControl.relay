@@ -1,0 +1,4 @@
+#! /bin/csh -f
+
+snuff "java -jar $RAP_INST_JAVA_DIR/RdasControl.jar -instance relay"
+

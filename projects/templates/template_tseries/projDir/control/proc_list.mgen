@@ -1,0 +1,30 @@
+##############################################################################
+# SYSTEM processes
+#
+DsServerMgr   primary    start_DsServerMgr         snuff_inst        localhost
+Scout         primary    start_Scout               kill_Scout        localhost
+Janitor       logs       start_Janitor.logs        kill_Janitor      localhost
+DataMapper    primary    start_DataMapper          kill_DataMapper   localhost
+DsFileDist    primary    start_DsFileDist          snuff_inst        localhost
+#
+###############################################################################
+# CP2 MOMENTS - moved to cp2cloud from cp2server
+# To use cp2server instead, comment these out and uncomment
+# them in proc_list.server
+#
+#TsFile2Fmq    sim        start_TsFile2Fmq.sim         snuff_inst    localhost
+TsTcp2Fmq      ops        start_TsTcp2Fmq.ops          snuff_inst    localhost
+Iq2Dsr         ops        start_Iq2Dsr.ops             snuff_inst    localhost
+#SpectraPrint  realtime   start_SpectraPrint.realtime  snuff_inst    localhost
+Fmq2Fmq        moments    start_Fmq2Fmq.moments        snuff_inst    localhost
+Fmq2Fmq        derived    start_Fmq2Fmq.derived        snuff_inst    localhost
+RadMon         log        start_RadMon.log             snuff_inst    localhost
+###############################################################################
+# Time series recording
+#
+TsSmartSave   ops      start_TsSmartSave.ops   snuff_inst    localhost
+###############################################################################
+# PARTRAIN - PARTICLE ID and PRECIP
+#
+PartRain     ops     start_PartRain.ops         snuff_inst  localhost
+#

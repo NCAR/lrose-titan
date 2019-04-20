@@ -1,0 +1,12 @@
+# NAME nrl_cloudclassf08.colors
+# kessinge 	5/23/2002 13:54:29
+# MIN    MAX    NAME        COLOR LABEL
+7.5     8.5    seashell3        !  N/A
+6.5     7.5    pink             !   SG
+5.5     6.5    light slate blue !   Hz
+4.5     5.5    gray98           !   Sn
+3.5     4.5     gray4            ! Clear
+2.5     3.5     VioletRed4       !Vertical
+1.5     2.5     gold1            !  High
+0.5     1.5     OliveDrab3       ! Middle
+-0.5    0.5     DodgerBlue2      !  Low

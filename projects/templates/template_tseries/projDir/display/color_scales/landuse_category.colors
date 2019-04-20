@@ -1,0 +1,56 @@
+# NAME landuse_category.colors
+
+-100     0      gray25
+1 	2 	blue4
+2 	3 	medium blue
+3 	4 	slate blue
+4 	5 	cornflower blue
+5 	6 	medium turquoise
+6 	7 	dark olive green
+7 	8 	dark green 	!
+8	9 	SpringGreen4 	!
+9 	10 	medium sea green 	!
+10 	11 	lime green 	!
+11 	12 	chartreuse 	!
+12 	13 	DarkOliveGreen1 	!
+13 	14 	dark goldenrod 	!
+14 	15 	goldenrod 	!
+15 	16 	gold1 	!
+16 	17 	yellow 	!
+17 	18 	brown 	!
+18 	19 	red3 	!
+19 	20 	brown2 	!
+20 	21  	firebrick1 	!
+21 	22  	magenta 	!
+22 	23  	gray 	!
+23 	24  	light gray 	!
+24 	25  	snow 	!
+#120 	125 	blue4
+#125 	130 	DarkOrchid4
+#130 	135 	HotPink4
+#135 	140 	maroon
+#140 	145 	sienna
+#145 	150 	chocolate
+#150 	155 	goldenrod
+#155 	160 	yellow
+#160 	165 	dark salmon
+#165 	170 	salmon
+#170 	175 	firebrick2
+#175 	180 	DeepPink1
+#180 	185 	gray21
+#185 	190 	blue4
+#190 	195 	DarkOrchid4
+#195 	200 	HotPink4
+#200 	205 	maroon
+#205 	210 	sienna
+#210 	215 	chocolate
+#215	220 	yellow
+#220	225 	blue4
+#225 	230 	medium blue
+#230 	235 	slate blue
+#235 	240 	cornflower blue
+#240 	245	medium turquoise
+#245 	250 	dark olive green
+#250 	255 	dark green
+#255     1000    snow
+

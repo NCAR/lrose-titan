@@ -1,0 +1,31 @@
+# NAME wwind.colors
+
+# pinto 	6/9/1993 12:10:15
+-1.0 	-0.050  #391D00
+-0.050 	-0.020  #9C4E00
+-0.020 	-0.0075 DarkOrange3
+-0.0075 -0.005 	goldenrod
+-0.005 	-0.0045 gold1
+-0.0045	-0.0040 yellow
+-0.0040	-0.0035	light goldenrod
+-0.0035	-0.003  dark salmon
+-0.003 	-0.0025	salmon
+-0.0025	-0.002  PaleVioletRed3
+-0.002 	-0.0015	firebrick
+-0.0015	-0.001  red
+-0.001 	-0.0005	DeepPink1
+-0.0005   0     gray
+0 	0.0005 	gray
+0.0005 	0.001 	blue4
+0.001 	0.0015 	medium blue
+0.0015 	0.002 	slate blue
+0.002 	0.0025 	cornflower blue
+0.0025 	0.003 	medium turquoise
+0.003 	0.0035 	dark green
+0.0035 	0.004 	dark olive green
+0.004 	0.0045 	SpringGreen4
+0.0045 	0.005 	SpringGreen3
+0.005 	0.0075 	lime green
+0.0075 	0.020 	chartreuse
+0.020 	0.05   	DarkOliveGreen1
+0.05 	1.0   	white

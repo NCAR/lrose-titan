@@ -1,0 +1,10 @@
+#! /bin/csh
+
+snuff DsServerMgr
+snuff DataMapper
+snuff DsFileDist
+snuff DsFCopyServer
+snuff DsSpdbServer
+snuff DsMdvServer
+snuff DsFmqServer
+snuff DsTitanServer

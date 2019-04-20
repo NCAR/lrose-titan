@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/rdas2k/params
+ 
+running "java -jar $RAP_INST_JAVA_DIR/RdasControl.jar -instance relay"
+if ($status == 1) then
+    java -jar $RAP_INST_JAVA_DIR/RdasControl.jar -instance relay -relay -params RdasControl.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p RdasControl -i relay &
+endif
+

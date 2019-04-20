@@ -1,0 +1,8 @@
+# distribution host list
+
+# To start file distribution, you must copy this file
+# to _distribHostList and set the entries appropriately
+
+localhost
+#cp2titan
+#cp2huttitan

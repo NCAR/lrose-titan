@@ -1,0 +1,21 @@
+# NAME convtemp.colors
+
+# enelson 	Fri Oct 18 13:01:57 MDT 2002 
+
+-200 	-175 	tomato
+-175 	-150 	brown1
+-150 	-125	red
+-125	-100 	firebrick
+-100 	-75	DeepPink1
+-75 	-50 	maroon
+-50 	-25	dark orchid
+-25 	0 	blue
+0	25 	royal blue
+25 	50 	deep sky blue
+50 	75 	medium spring green
+75 	100 	forest green
+100 	125 	gray
+125 	150 	tan2
+150 	175	gold1
+175 	200	yellow
+200 	225 	salmon1

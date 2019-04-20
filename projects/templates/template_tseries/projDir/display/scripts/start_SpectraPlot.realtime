@@ -1,0 +1,6 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/display/params
+
+SpectraPlot -params SpectraPlot.realtime |& \
+    LogFilter -d $ERRORS_LOG_DIR -p SpectraPlot -i realtime &

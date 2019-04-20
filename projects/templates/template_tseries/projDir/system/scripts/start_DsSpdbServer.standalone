@@ -1,0 +1,8 @@
+#! /bin/csh
+
+running "DsSpdbServer -port 5441"
+if ($status == 1) then
+    DsSpdbServer -port 5441 -instance standalone -qmax -1 |& \
+	LogFilter -d $ERRORS_LOG_DIR -p DsSpdbServer -i standalone >& /dev/null &
+endif
+

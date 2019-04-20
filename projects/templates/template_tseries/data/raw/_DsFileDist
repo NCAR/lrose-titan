@@ -1,0 +1,11 @@
+///////////// process /////////////////////////////////
+//
+// Processing flag - controls whether we process this directory or not.
+// If FALSE, stop looking for _DsFileDist param files and do not process 
+//   this directory. If TRUE, process using the param information at this 
+//   level.
+// Type: boolean
+//
+
+process = FALSE;
+

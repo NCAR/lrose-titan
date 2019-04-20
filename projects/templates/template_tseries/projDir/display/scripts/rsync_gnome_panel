@@ -1,0 +1,12 @@
+#! /bin/csh -f
+
+cd
+
+set target=$1
+
+rsync -avz .gnome2/panel2.d $target:.gnome2
+rsync -avz .gconf/apps/panel $target:.gconf/apps
+
+
+
+

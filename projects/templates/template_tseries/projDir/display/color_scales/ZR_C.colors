@@ -1,0 +1,15 @@
+# NAME ZR_C.colors
+# 
+# Diagnostic field for WSDDM - ZrCalib  - precipType
+# 
+#
+#
+0       160      Gray15
+160      270      darkslateblue
+270      380      RoyalBlue
+380      490      SteelBlue1
+490      600     purple
+600     710     seagreen
+710     820     limegreen
+820     950     orange
+950     1000     chocolate

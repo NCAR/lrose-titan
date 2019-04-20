@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="flt_cat.colors" rangeLabels="VFR,SVFR,IFR">
+  <ColorRange minValue="35.0" maxValue="45.0">
+    <Color red="46" green="139" blue="87" />
+  </ColorRange>
+  <ColorRange minValue="25.0" maxValue="35.0">
+    <Color red="0" green="0" blue="255" />
+  </ColorRange>
+  <ColorRange minValue="10.0" maxValue="25.0">
+    <Color red="255" green="165" blue="0" />
+  </ColorRange>
+</ColorScale>
+

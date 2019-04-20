@@ -1,0 +1,257 @@
+#! /bin/bash
+
+#--------------------------------------------------------------------
+#
+# script to install TITAN time series system
+#
+# Mike Dixon, RAP, NCAR, Boulder, CO, USA
+# April 2009
+#
+#--------------------------------------------------------------------
+
+# set the path
+
+export PATH=.:/bin:/usr/bin:/sbin:/usr/sbin:/usr/bin/X11:/usr/local/bin:/usr/local/sbin
+
+#######################################################
+# get run time
+
+year=`date +'%Y'`
+month=`date +'%m'`
+day=`date +'%d'`
+hour=`date +'%H'`
+min=`date +'%M'`
+sec=`date +'%S'`
+datestr=${year}${month}${day}.${hour}${min}${sec}
+
+#--------------------------------------------------------------------
+
+echo
+echo "*********************************************************************"
+echo
+echo "  TITAN INSTALLATION"
+echo
+echo "  NCAR, Boulder, CO, USA"
+echo
+echo "  Runtime: $year/$month/$day $hour:$min:$sec"
+echo
+echo "*********************************************************************"
+echo
+echo "  NOTES:"
+echo
+echo "    TITAN distribution must reside in $HOME/rap"
+echo "    TITAN will be installed in project directory $HOME/projDir"
+echo
+echo "*********************************************************************"
+echo
+
+#--------------------------------------------------------------------
+# check args
+#
+
+if [ $# != 0 -a $# != 1 ]; then
+    echo
+    echo "ERROR - bad command line"
+    echo
+    echo "Usage: $0 [-debug | -h]"
+    echo
+    exit -1
+fi
+
+if [ $# == 1 -a "$1" == -h ]; then
+    echo
+    echo "Usage: $0 [-debug | -h]"
+    echo
+    exit 0
+fi
+
+debug=false
+debug_str=""
+if [ $# == 1 -a "$1" == -debug ]; then
+    debug=true
+    debug_str="-debug"
+fi
+
+echo "  User input is requested as follows:"
+echo ""
+echo "    [option1 / option2 / option3] (default)?"
+echo ""
+echo "  Enter the option you want, or hit ENTER for the default"
+echo ""
+echo "*********************************************************************"
+echo ""
+
+probable_host_type=single
+echo $HOST | grep mgen
+if [ $? == 0 ]; then
+  probable_host_type=mgen
+fi
+
+echo $HOST | grep pgen
+if [ $? == 0 ]; then
+  probable_host_type=pgen
+fi
+
+#-- get host type ---------------------------------------------------
+
+echo "Choose host type from the following list:"
+echo
+echo "    mgen (moments generator)"
+echo "    pgen (products generator)"
+echo "    display (display only)"
+echo "    single (testing on single host)"
+read -ep "    ......($probable_host_type)? " host_type
+test "$host_type" || host_type=$probable_host_type
+echo
+
+if [ "$host_type" != mgen -a \
+     "$host_type" != pgen -a \
+     "$host_type" != single -a \
+     "$host_type" != display ]; then
+    echo -n X | tr X '\07'	# Beep.
+    echo
+    echo "  ERROR - invalid host type: $host_type"
+    echo "          aborting ......."
+    echo
+    exit -1
+fi
+
+echo "  Host type chosen: $host_type"
+echo
+
+# set source directory paths
+
+cd $HOME
+
+default_source_dir=$HOME/rap
+if [ -d $default_source_dir ]; then
+    source_dir=$default_source_dir
+else
+    echo "Set the source directory you want to use"
+    echo "  This is where the libs, apps, distrib directories are"
+    echo "  The default location is $HOME/rap"
+    read -ep "    source_dir? " source_dir
+    test "$source_dir" || source_dir=$default_source_dir
+    echo
+fi
+
+echo "  Using source dir: $source_dir"
+echo
+
+source_proj_dir=$source_dir/projects/titan/templates/template_tseries/projDir
+source_data_dir=$source_dir/projects/titan/templates/template_tseries/data
+system_dir=$source_proj_dir/system
+
+########################
+# copy in dotfiles
+
+cd $HOME
+
+/bin/mv .cshrc .cshrc.$datestr
+/bin/cp $system_dir/dotfiles/cshrc .cshrc
+
+if [ ! -e .emacs ]; then
+  /bin/cp $system_dir/dotfiles/emacs .emacs
+fi
+
+if [ ! -e .cvsignore ]; then
+  /bin/cp $system_dir/dotfiles/cvsignore .cvsignore
+fi
+
+if [ ! -e .Xdefaults ]; then
+  /bin/cp $system_dir/dotfiles/Xdefaults .Xdefaults
+fi
+
+######################
+# copy in projDir
+
+cd $HOME
+
+if [ -e projDir ]; then
+  mv projDir save.projDir.$datestr
+fi
+
+rsync -av $source_proj_dir $HOME
+
+###########################################
+# set data dir
+# copy data dir into /data/titan5, which must be writable by titan5
+# or set data dir to other location
+# make link to data dir
+
+default_data_dir=$HOME/data
+data_dir=$default_data_dir
+if [ ! -d $data_dir ]; then
+    echo "Set the main data directory you want to use"
+    echo "  The default location is $default_data_dir"
+    echo "  Must be writable by `whoami`"
+    read -ep "    data_dir? " data_dir
+    test "$data_dir" || data_dir=$default_data_dir
+    echo
+fi
+
+echo "  Using data_dir: $data_dir"
+echo
+
+if [ ! -d $data_dir ]; then
+    echo "INFO - no $data_dir directory"
+    echo "  Making directory $data_dir"
+    mkdir -p $data_dir || exit 1
+fi
+
+rsync -av $source_data_dir/* $data_dir
+cd $HOME/projDir
+ln -s $data_dir data
+
+#######################
+# make link to log dir
+
+/bin/rm -rf logs
+ln -s data/logs
+
+########################
+# distribution host list
+
+cd $HOME/projDir/data
+if [ ! -f _distHostList ]; then
+    cp _distHostList.template _distHostList
+fi
+
+#############################################
+# link _Janitor files according to host type
+
+cd $HOME/projDir/data
+/bin/rm -f _Janitor
+ln -s _Janitor.$host_type _Janitor
+
+cd $HOME/projDir/data/mdv
+/bin/rm -f _Janitor
+ln -s _Janitor.$host_type _Janitor
+
+cd $HOME/projDir/data/spdb
+/bin/rm -f _Janitor
+ln -s _Janitor.$host_type _Janitor
+
+cd $HOME/projDir/data/titan
+/bin/rm -f _Janitor
+ln -s _Janitor.$host_type _Janitor
+
+##############################
+# set up links in control dir
+
+cd $HOME/projDir/control
+/bin/rm -f crontab proc_list
+ln -s proc_list.$host_type proc_list
+ln -s crontab.$host_type crontab
+
+#--------------------------------------------------------------------
+# done
+
+echo
+echo "  ************"
+echo "  *** Done ***"
+echo "  ************"
+echo
+
+exit 0
+

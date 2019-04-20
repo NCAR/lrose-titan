@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="none_temp_horiz.colors">
+  <ColorRange minValue="-80.0" maxValue="-78.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-78.0" maxValue="-76.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-76.0" maxValue="-74.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-74.0" maxValue="-72.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-72.0" maxValue="-70.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-70.0" maxValue="-68.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-68.0" maxValue="-66.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-66.0" maxValue="-64.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-64.0" maxValue="-62.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-62.0" maxValue="-60.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-60.0" maxValue="-58.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-58.0" maxValue="-56.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-56.0" maxValue="-54.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-54.0" maxValue="-52.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-52.0" maxValue="-50.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-50.0" maxValue="-48.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-48.0" maxValue="-46.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-46.0" maxValue="-44.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-44.0" maxValue="-42.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-42.0" maxValue="-40.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-40.0" maxValue="-38.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-38.0" maxValue="-36.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-36.0" maxValue="-34.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-34.0" maxValue="-32.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-32.0" maxValue="-30.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-30.0" maxValue="-28.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-28.0" maxValue="-26.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-26.0" maxValue="-24.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-24.0" maxValue="-22.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-22.0" maxValue="-20.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-20.0" maxValue="-18.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-18.0" maxValue="-16.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-16.0" maxValue="-14.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-14.0" maxValue="-12.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-12.0" maxValue="-10.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-10.0" maxValue="-8.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-8.0" maxValue="-6.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-6.0" maxValue="-4.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-4.0" maxValue="-2.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="-2.0" maxValue="0.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="0.0" maxValue="2.0">
+    <Color red="255" green="255" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="2.0" maxValue="4.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="4.0" maxValue="6.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="6.0" maxValue="8.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="8.0" maxValue="10.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="10.0" maxValue="12.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="12.0" maxValue="14.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="14.0" maxValue="16.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="16.0" maxValue="18.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="18.0" maxValue="20.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="20.0" maxValue="22.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="22.0" maxValue="24.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="24.0" maxValue="26.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="26.0" maxValue="28.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="28.0" maxValue="30.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="30.0" maxValue="32.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="32.0" maxValue="34.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="34.0" maxValue="36.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="36.0" maxValue="38.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="38.0" maxValue="40.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="40.0" maxValue="42.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="42.0" maxValue="44.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+</ColorScale>
+

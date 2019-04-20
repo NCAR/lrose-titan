@@ -1,0 +1,645 @@
+/**********************************************************************
+ * TDRP params for Tstorms2Symprod
+ **********************************************************************/
+
+//======================================================================
+//
+// PLOT CURRENT SHAPE.
+//
+//======================================================================
+ 
+///////////// plot_current ////////////////////////////
+//
+// Plot current shape.
+// If set, the current storm shape will be sent.
+// Type: boolean
+//
+
+plot_current = TRUE;
+
+///////////// current_color ///////////////////////////
+//
+// current color.
+// Color for current storm shapes.
+// Type: string
+//
+
+current_color = "yellow";
+
+//======================================================================
+//
+// PLOT FORECAST SHAPE.
+//
+//======================================================================
+ 
+///////////// plot_forecast ///////////////////////////
+//
+// Plot forecast shape.
+// If set, the forecast storm shape will be sent.
+// Type: boolean
+//
+
+plot_forecast = TRUE;
+
+///////////// forecast_color //////////////////////////
+//
+// forecast color.
+// Color for forecast storm shapes.
+// Type: string
+//
+
+forecast_color = "red";
+
+///////////// vector_color ////////////////////////////
+//
+// motion vector color.
+// Color for forecast motion vector.
+// Type: string
+//
+
+vector_color = "orange";
+
+//======================================================================
+//
+// FORECASTS IN NON-XML data.
+//
+// Data created by Tstorms2Spdb.
+//
+//======================================================================
+ 
+///////////// forecast_lead_time //////////////////////
+//
+// Forecast lead time (secs).
+// Lead time for forecast shapes and positions. Does not apply to XML 
+//   data - XML data has the forecasts pre-defined by Tstorms2Xml.
+// Type: long
+//
+
+forecast_lead_time = 1800;
+
+///////////// forecast_dashed /////////////////////////
+//
+// Forecast line dashed.
+// If set, the forecast will be rendered using a dashed line rather than 
+//   a solid line. Does not apply to XML data.
+// Type: boolean
+//
+
+forecast_dashed = FALSE;
+
+///////////// valid_forecasts_only ////////////////////
+//
+// Plot valid forecasts only.
+// If set, only valid forecasts will be sent. If not, all forecasts will 
+//   be sent. Does not apply to XML data.
+// Type: boolean
+//
+
+valid_forecasts_only = TRUE;
+
+///////////// grow_forecast ///////////////////////////
+//
+// Grow the storm when plotting the forecast.
+// If set, the growth rate information provided by TITAN will be used to 
+//   modify the storm area.  If not set, the storm will be moved to the 
+//   extrapolated position without changing the area. Does not apply to 
+//   XML data. XML forecasts are pre-defined by Tstorms2Xml.
+// Type: boolean
+//
+
+grow_forecast = TRUE;
+
+//======================================================================
+//
+// PLOT PAST SHAPES.
+//
+// XML data only.
+//
+//======================================================================
+ 
+///////////// plot_past ///////////////////////////////
+//
+// Plot past shape.
+// Only applies to XML data.
+// Type: boolean
+//
+
+plot_past = FALSE;
+
+///////////// past_color //////////////////////////////
+//
+// past color.
+// Color for past shapes.
+// Type: string
+//
+
+past_color = "cyan";
+
+//======================================================================
+//
+// TEXT PLOTTING.
+//
+// Text plotted relative to the storm location.
+//
+//======================================================================
+ 
+///////////// plot_text ///////////////////////////////
+//
+// Plot text labels?.
+// Allows you to turn all text products off. This controls all 
+//   non-hidden text plotting. The default is TRUE for backward 
+//   compatibility.
+// Type: boolean
+//
+
+plot_text = TRUE;
+
+///////////// text_color //////////////////////////////
+//
+// Color of text plotted next to storm position.
+// Type: string
+//
+
+text_color = "yellow";
+
+///////////// text_background_color ///////////////////
+//
+// text background color.
+// Color for text background. Set to blank string (the default) to plot 
+//   the text with no background.
+// Type: string
+//
+
+text_background_color = "";
+
+///////////// plot_text_line_offset ///////////////////
+//
+// Vertical line spacing, pixels.
+// Optionally, the user may choose to plot various parameters (storm 
+//   speed, simple and complex track number, trend etc). The selected 
+//   poltting elements are then draw vertically above each other on the 
+//   display, separated by plot_text_line_offset pixels in the vertical. 
+//   If this is negative then the column of numbers will ascend rather 
+//   than descend on the display. Does not apply to XML data.
+// Type: int
+//
+
+plot_text_line_offset = 10;
+
+///////////// plot_text_horizontal_offset /////////////
+//
+// Horizontal offset, pixels.
+// Option to move text to either side of the centroid. If this is 
+//   negative the  text moves to the left rather than the right.
+// Type: int
+//
+
+plot_text_horizontal_offset = 10;
+
+///////////// text_font ///////////////////////////////
+//
+// text font name.
+// The name of the X font to be used when rendering the text.
+// Type: string
+//
+
+text_font = "8x13";
+
+///////////// text_font_size //////////////////////////
+//
+// text font size.
+// The size of the font to be used when rendering the text.
+// Type: int
+//
+
+text_font_size = 13;
+
+///////////// plot_trend //////////////////////////////
+//
+// Plot trend.
+// If set, the storm size and intensity trend will be included as text: 
+//   '+', '-' or '0'.
+// Type: boolean
+//
+
+plot_trend = FALSE;
+
+///////////// plot_speed //////////////////////////////
+//
+// Plot speed.
+// If set, speed is placed at the head of the vector.
+// Type: boolean
+//
+
+plot_speed = TRUE;
+
+///////////// speed_units /////////////////////////////
+//
+// Units for plotting speed.
+// The speed is computed in kmh. The speed will be converted and plotted 
+//   in these units.
+//
+// Type: enum
+// Options:
+//     SPEED_KMH
+//     SPEED_KNOTS
+//     SPEED_MPH
+//
+
+speed_units = SPEED_KNOTS;
+
+///////////// speed_round /////////////////////////////
+//
+// Plot speed rounded to nearest 5.
+// Default is not rounded.
+// Type: boolean
+//
+
+speed_round = TRUE;
+
+///////////// plot_top ////////////////////////////////
+//
+// Plot top.
+// If set, top value is placed at the head of the vector.
+// Type: boolean
+//
+
+plot_top = FALSE;
+
+///////////// top_km //////////////////////////////////
+//
+// Plot top value in kilometers.
+// If FALSE, top value is plotted in 100s of feet.
+// Type: boolean
+//
+
+top_km = FALSE;
+
+///////////// plot_track_numbers //////////////////////
+//
+// Plot track numbers.
+// If TRUE, track numbers are plotted.
+// Type: boolean
+//
+
+plot_track_numbers = FALSE;
+
+///////////// plot_volume /////////////////////////////
+//
+// Plot storm volume in km3.
+// XML data only.
+// Type: boolean
+//
+
+plot_volume = FALSE;
+
+///////////// plot_area ///////////////////////////////
+//
+// Plot storm area in km.
+// XML data only.
+// Type: boolean
+//
+
+plot_area = FALSE;
+
+///////////// plot_max_dbz ////////////////////////////
+//
+// Plot max DBZ - radar reflectivity.
+// XML data only.
+// Type: boolean
+//
+
+plot_max_dbz = FALSE;
+
+///////////// plot_vil ////////////////////////////////
+//
+// Plot VIL - vertically integrated liquid.
+// XML data only.
+// Type: boolean
+//
+
+plot_vil = FALSE;
+
+///////////// plot_storm_intensity ////////////////////
+//
+// Plot storm intensity.
+// XML data only.
+// Type: boolean
+//
+
+plot_storm_intensity = FALSE;
+
+///////////// plot_hail_probability ///////////////////
+//
+// Plot hail probability - %.
+// XML data only.
+// Type: boolean
+//
+
+plot_hail_probability = FALSE;
+
+///////////// plot_hail_mass //////////////////////////
+//
+// Plot hail mass - %.
+// XML data only.
+// Type: boolean
+//
+
+plot_hail_mass = FALSE;
+
+///////////// plot_hail_mass_aloft ////////////////////
+//
+// Plot hail mass aloft - %.
+// XML data only.
+// Type: boolean
+//
+
+plot_hail_mass_aloft = FALSE;
+
+///////////// plot_individual_storms //////////////////
+//
+// Option to plot each storm as an individual product.
+// Non-XML data only. Can be useful for CIDD.
+// Type: boolean
+//
+
+plot_individual_storms = FALSE;
+
+//======================================================================
+//
+// STORM SHAPE.
+//
+//======================================================================
+ 
+///////////// storm_shape /////////////////////////////
+//
+// Shape type.
+// Determines the way in which the storm is represented.
+//
+// Type: enum
+// Options:
+//     ELLIPSE_SHAPE
+//     POLYGON_SHAPE
+//
+
+storm_shape = POLYGON_SHAPE;
+
+//======================================================================
+//
+// POLYGON SMOOTHING.
+//
+//======================================================================
+ 
+///////////// hull_smooth /////////////////////////////
+//
+// Smooth the storm polygon.
+// If TRUE and storm_shape is POLYGON_SHAPE, the storm polygon will be 
+//   smoothed within the boundaries defined by inner_bnd_multiplier and 
+//   outer_bnd_multiplier. Does NOT apply to XML data.
+// Type: boolean
+//
+
+hull_smooth = FALSE;
+
+///////////// inner_bnd_multiplier ////////////////////
+//
+// Inner boundary multiplier for storm smoothing.
+// Multipliers less than 1.0 produce an inner boundary smaller than the 
+//   original storm. Multipliers greater than 1.0 produce an inner 
+//   boundary larger than the original storm. inner_bnd_multiplier must be 
+//   <= outer_bnd_multiplier.
+// Minimum val: 0
+// Type: double
+//
+
+inner_bnd_multiplier = 1;
+
+///////////// outer_bnd_multiplier ////////////////////
+//
+// Outer boundary multiplier for storm smoothing.
+// Multipliers less than 1.0 produce an outer boundary smaller than the 
+//   original storm. Multipliers greater than 1.0 produce an outer 
+//   boundary larger than the original storm. outer_bnd_multiplier must be 
+//   >= inner_bnd_multiplier.
+// Minimum val: 0
+// Type: double
+//
+
+outer_bnd_multiplier = 1;
+
+//======================================================================
+//
+// VECTOR RENDERING.
+//
+//======================================================================
+ 
+///////////// plot_vectors ////////////////////////////
+//
+// Plot vector.
+// If set, the forecast vector be sent.
+// Type: boolean
+//
+
+plot_vectors = TRUE;
+
+///////////// arrow_head_len_in_pixels ////////////////
+//
+// Define arrow head length in pixels.
+// If false, head length is in km.
+// Type: boolean
+//
+
+arrow_head_len_in_pixels = FALSE;
+
+///////////// arrow_head_len //////////////////////////
+//
+// Length of arrow head.
+// Units can be either km or pixels. See 'arrow_head_len_in_pixels'.
+// Minimum val: 0
+// Type: double
+//
+
+arrow_head_len = 2;
+
+///////////// arrow_head_half_angle ///////////////////
+//
+// Half angle of arrow head (deg).
+// Minimum val: 0
+// Maximum val: 90
+// Type: double
+//
+
+arrow_head_half_angle = 25;
+
+///////////// fixed_length_arrows /////////////////////
+//
+// Fixed length arrows.
+// If flag set, direction arrows are of fixed lenght. If not set, arrows 
+//   are scaled to length for time forecast_lead_time.
+// Type: boolean
+//
+
+fixed_length_arrows = FALSE;
+
+///////////// arrow_shaft_length //////////////////////
+//
+// Shaft length arrow head (km).
+// This is used if 'fixed_length_arrows' is TRUE.
+// Minimum val: 0
+// Type: double
+//
+
+arrow_shaft_length = 20;
+
+//======================================================================
+//
+// LINE STYLES.
+//
+// For polygons, ellipses and vectors.
+//
+//======================================================================
+ 
+///////////// suggested_line_type /////////////////////
+//
+// display line type.
+// Line type suggested for using on the display.
+//
+// Type: enum
+// Options:
+//     LINETYPE_SOLID
+//     LINETYPE_DASH
+//     LINETYPE_DOT_DASH
+//
+
+suggested_line_type = LINETYPE_SOLID;
+
+///////////// suggested_line_width ////////////////////
+//
+// display line width.
+// Line width suggested for using on the display.
+// Type: long
+//
+
+suggested_line_width = 1;
+
+///////////// suggested_capstyle //////////////////////
+//
+// display capstyle.
+// Capstyle suggested for using on the display.
+//
+// Type: enum
+// Options:
+//     CAPSTYLE_BUTT
+//     CAPSTYLE_NOT_LAST
+//     CAPSTYLE_PROJECTING
+//     CAPSTYLE_ROUND
+//
+
+suggested_capstyle = CAPSTYLE_BUTT;
+
+///////////// suggested_joinstyle /////////////////////
+//
+// display joinstyle.
+// Joinstyle suggested for using on the display.
+//
+// Type: enum
+// Options:
+//     JOINSTYLE_BEVEL
+//     JOINSTYLE_MITER
+//     JOINSTYLE_ROUND
+//
+
+suggested_joinstyle = JOINSTYLE_BEVEL;
+
+//======================================================================
+//
+// HIDDEN TEXT.
+//
+//======================================================================
+ 
+///////////// plot_hidden_text ////////////////////////
+//
+// Option to include hidden text instead of plotting it directly.
+// If set, text will be hidden. Mouse-over events reveal the text.
+// Type: boolean
+//
+
+plot_hidden_text = FALSE;
+
+///////////// hidden_text_x_offset ////////////////////
+//
+// X offset for hidden text (pixels).
+// Type: int
+//
+
+hidden_text_x_offset = 0;
+
+///////////// hidden_text_y_offset ////////////////////
+//
+// Y offset for hidden text (pixels).
+// Type: int
+//
+
+hidden_text_y_offset = 0;
+
+///////////// hidden_text_font_name ///////////////////
+//
+// hidden text font name.
+// The name of the X font to be used when rendering the text.
+// Type: string
+//
+
+hidden_text_font_name = "8x13";
+
+///////////// hidden_text_font_size ///////////////////
+//
+// Font size for hidden text (pixels).
+// Type: int
+//
+
+hidden_text_font_size = 10;
+
+///////////// hidden_text_vert_align //////////////////
+//
+// Vertical alignment hidden text.
+//
+// Type: enum
+// Options:
+//     VERT_ALIGN_TOP
+//     VERT_ALIGN_CENTER
+//     VERT_ALIGN_BOTTOM
+//
+
+hidden_text_vert_align = VERT_ALIGN_CENTER;
+
+///////////// hidden_text_horiz_align /////////////////
+//
+// Horizontal alignment for hidden text.
+//
+// Type: enum
+// Options:
+//     HORIZ_ALIGN_LEFT
+//     HORIZ_ALIGN_CENTER
+//     HORIZ_ALIGN_RIGHT
+//
+
+hidden_text_horiz_align = HORIZ_ALIGN_CENTER;
+
+///////////// hidden_text_foreground_color ////////////
+//
+// Hidden text background color.
+// Set to empty string to use SIGMET product color.
+// Type: string
+//
+
+hidden_text_foreground_color = "";
+
+///////////// hidden_text_background_color ////////////
+//
+// Hidden text background color.
+// Set to empty string to use display background color.
+// Type: string
+//
+
+hidden_text_background_color = "";
+

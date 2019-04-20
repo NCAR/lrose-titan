@@ -1,0 +1,25 @@
+########################################################
+#
+#  If sourced, this sets up the build environment
+#
+#  Created by create_build_env_cshrc
+#
+#  Tue May  5 16:20:39 EDT 2009
+#
+########################################################
+setenv HOST_OS LINUX_64
+setenv BUILD_DIR /home/titan5/Titan_64bit_src
+setenv RAP_MAKE_INC_DIR /home/titan5/Titan_64bit_src/make_include
+setenv RAP_MAKE_BIN_DIR /home/titan5/Titan_64bit_src/make_bin
+setenv RAP_INC_DIR /home/titan5/Titan_64bit_src/include
+setenv RAP_LIB_DIR /home/titan5/Titan_64bit_src/lib64
+setenv RAP_BIN_DIR /home/titan5/Titan_64bit_src/bin64
+setenv RAP_MAN_DIR /home/titan5/Titan_64bit_src/man
+setenv RAP_DOC_DIR /home/titan5/Titan_64bit_src/doc
+setenv RAP_DEBUG_LIB_DIR /home/titan5/Titan_64bit_src/debug_lib
+setenv RAP_PROFILE_LIB_DIR /home/titan5/Titan_64bit_src/profile_lib
+setenv RAP_SHARED_INC_DIR /home/titan5/Titan_64bit_src/include
+setenv RAP_SHARED_LIB_DIR /home/titan5/Titan_64bit_src/lib64
+setenv RAP_SHARED_BIN_DIR /home/titan5/Titan_64bit_src/bin64
+setenv RAP_SHARED_MAN_DIR /home/titan5/Titan_64bit_src/man
+setenv RAP_SHARED_DOC_DIR /home/titan5/Titan_64bit_src/doc

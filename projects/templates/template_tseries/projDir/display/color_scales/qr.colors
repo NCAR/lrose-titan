@@ -1,0 +1,23 @@
+# NAME qr.colors
+
+
+0.0    0.0009	black     
+0.0009 0.0016	dark olive green
+0.0016 0.0023	forest green
+0.0023 0.0034	SpringGreen3
+0.0034 0.0051	medium sea green
+0.0051 0.0076	medium aquamarine
+0.0076 0.0113	medium slate blue
+0.0112 0.0167	blue
+0.0167 0.0248	blue4
+0.0248 0.0368	DarkOrchid4
+0.0368 0.0546	HotPink4
+0.0546 0.0810	maroon
+0.0810 0.1202	VioletRed4
+0.1202 0.2035	sienna
+0.2035 0.3445	chocolate
+0.3445 0.6651	goldenrod
+0.6651 1.2840	yellow
+1.2840 2.4791 	dark salmon
+2.4791 4.7863 	salmon
+4.7863 10.000	firebrick2

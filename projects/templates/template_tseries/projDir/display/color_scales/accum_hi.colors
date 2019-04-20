@@ -1,0 +1,21 @@
+# NAME accum_hi.colors
+# ice 	5/15/1996 14:33:12
+# MIN    MAX    NAME        COLOR LABEL
+0 	4 	dark slate gray 	!
+4 	8 	dim gray 	! 
+8 	12 	dark green 	! 
+12 	16 	forest green 	! 
+16 	20 	medium sea green 	! 
+20 	30 	DeepSkyBlue3 	!
+30 	40 	royal blue 	! 
+40 	50 	purple 	!
+50 	60 	violet red 	!
+60 	70 	maroon1 	!
+70 	80 	coral 	!
+80 	90 	orange 	!
+90 	100	red 	!
+100	200	snow 	!
+200	300	gray88 	!
+300	400	gray77 	!
+400	500	gray66 	!
+500	600	gray55 	!

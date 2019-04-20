@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+# usage: start_Rview.archive yyyy mm dd hh mm ss
+
+cd $PROJ_DIR/display/params
+
+Rview -params Rview.archive -time "$1 $2 $3 $4 $5 $6"
+
+
+

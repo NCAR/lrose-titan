@@ -1,0 +1,13 @@
+#! /bin/csh -f
+# Script to build the TITAN, including their support libraries.
+#
+# Mike Dixon/Frank Hage, April 2004
+#
+# Run this script from the base of the source tree. ie. distribs/titan/..
+#
+# Installation will be done in ./include, ./lib and ./bin
+#
+
+build_libs
+build_apps
+

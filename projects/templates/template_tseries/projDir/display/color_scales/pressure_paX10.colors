@@ -1,0 +1,30 @@
+# NAME pressure_paX100.colors
+# Cathy K	11/10/2001          
+# MIN    MAX    NAME        COLOR LABEL
+0       5000    gray94
+5000    6000    PeachPuff2
+6000    7000    wheat
+7000    8000    bisque
+8000    9000    blanched almond
+9000	10000 	saddle brown 	!
+10000 	11000 	brown 	!
+11000 	12000 	indian red 	!
+12000 	13000 	rosy brown 	!
+13000 	14000 	tan 	!
+14000   15000 	light goldenrod 	!
+15000   16000 	dark khaki 	!
+16000   17000 	dark sea green 	!
+17000   18000 	medium sea green 	!
+18000   19000 	olive drab 	!
+19000   20000 	sea green 	!
+20000   21000 	light sea green 	!
+21000   22000 	cadet blue 	!
+22000   23000 	steel blue 	!
+23000   24000 	dodger blue 	!
+24000   25000 	royal blue 	!
+25000   27500 	medium blue 	!
+27500   30000 	medium slate blue 	!
+30000   35000 	slate blue 	!
+35000   40000 	dark slate blue 	!
+40000   45000 	navy 	!
+45000   50000 	midnight blue 	!

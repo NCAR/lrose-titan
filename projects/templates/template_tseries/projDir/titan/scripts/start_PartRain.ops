@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/titan/params
+
+running "PartRain -params PartRain.ops"
+if ($status == 1) then
+  nice PartRain -params PartRain.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p PartRain -i ops &
+endif
+

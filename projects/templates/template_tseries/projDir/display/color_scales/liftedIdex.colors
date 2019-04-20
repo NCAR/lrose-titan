@@ -1,0 +1,28 @@
+# NAME liftingIdex.colors
+# jaimi 	12/8/1998 15:21:56
+# MIN    MAX    NAME        COLOR LABEL
+-15 	-13 	dark slate gray 	!
+-13 	-11 	midnight blue 	!
+-11 	-9 	navy 	!
+-9 	-7 	dark slate blue 	!
+-7 	-5 	slate blue 	!
+-5 	-3 	medium slate blue 	!
+-3 	-1 	dodger blue 	!
+-1 	1 	deep sky blue 	!
+1 	3 	light sky blue 	!
+3 	5 	steel blue 	!
+5 	7 	cadet blue 	!
+7 	9 	dark sea green 	!
+9 	11 	sea green 	!
+11 	13 	dark green 	!
+13 	15 	dark olive green 	!
+15 	17 	dark goldenrod 	!
+17 	19 	goldenrod 	!
+19 	21 	gold 	!
+21 	23 	dark khaki 	!
+23 	25 	tan 	!
+25 	27 	dark salmon 	!
+27 	29 	salmon 	!
+29 	31 	rosy brown 	!
+31 	33 	brown 	!
+33 	35 	saddle brown 	!

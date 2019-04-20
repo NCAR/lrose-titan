@@ -1,0 +1,7 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/display/params
+
+Rview -i remote -params Rview.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rview -i remote &
+

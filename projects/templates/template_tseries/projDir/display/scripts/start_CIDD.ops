@@ -1,0 +1,10 @@
+#! /bin/csh
+
+set_font_path
+
+setenv DATA_HOST $PGEN_HOST
+
+cd $PROJ_DIR/display/params
+
+CIDD -p CIDD.ops -i ops -fn fixed >& /dev/null &
+

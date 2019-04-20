@@ -1,0 +1,8 @@
+#! /bin/csh
+#
+# check_libs: Check installed library files
+#
+
+set host_type=`get_host_type`
+
+check_libs.pl -list $PROJ_DIR/build/params/libs_check_list -dir $PROJ_DIR/lib -host_type $host_type

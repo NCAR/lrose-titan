@@ -1,0 +1,32 @@
+#! /bin/csh
+#
+# Script to build the SPOL support libraries.
+#
+# Installation will be done in:
+#   $RAP_INC_DIR - includes
+#   $RAP_LIB_DIR - lib .a files
+#
+
+# build tdrp_generator
+
+cd $CVS_DIR/libs/tdrp
+make install
+
+cd $CVS_DIR/apps/tdrp/src/tdrp_gen
+make install
+rehash
+
+# Install our Standard Include Files
+
+cd $CVS_DIR/incs
+make install
+
+# Build and install the Libraries and their include files
+
+cd $CVS_DIR/libs
+make -k install_include
+make -k opt install
+
+# run the checker
+
+do_check_libs

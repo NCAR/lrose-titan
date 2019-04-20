@@ -1,0 +1,24 @@
+# NAME conv.colors
+
+# roberts 	5/27/1998 12:40:43
+
+-2.5 	-1.7 	blue
+-1.7 	-1.5 	medium blue
+-1.5 	-1.3 	slate blue
+-1.3 	-1.1 	cornflower blue
+-1.1 	-.9 	medium sea green
+-.9 	-.7 	lime green
+-.7 	-.5 	forest green
+-.5 	-.3 	dark olive green
+-.3 	-.1 	dark green
+-.1 	.1 	dim gray
+.1 	.3 	saddle brown
+.3 	.5 	sienna
+.5 	.7 	dark goldenrod
+.7 	.9 	goldenrod
+.9 	1.1 	gold1
+1.1 	1.3 	orange
+1.3 	1.5 	salmon
+1.5 	1.7 	tomato
+1.7 	1.9 	red
+1.9 	2.5 	firebrick

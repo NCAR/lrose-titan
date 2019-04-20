@@ -1,0 +1,9 @@
+#! /bin/csh
+
+cd $PROJ_DIR/cal/params
+
+running "VertCompute -params VertCompute.mom"
+if ($status == 1) then
+  VertCompute -params VertCompute.mom |& \
+    LogFilter -d $ERRORS_LOG_DIR -p VertCompute -i mom &
+endif

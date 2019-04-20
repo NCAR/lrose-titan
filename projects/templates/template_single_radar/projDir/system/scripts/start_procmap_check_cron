@@ -1,0 +1,20 @@
+#! /bin/csh
+#
+
+#
+# start procmap only if cron is active
+#
+
+set checkfile=/tmp/croncheck_procmap
+crontab -l >& $checkfile
+grep "no crontab" $checkfile >& /dev/null
+
+# if grep returns 1, cron is there so go ahead
+
+if ($status == 1) then
+    start_procmap
+endif
+
+# rm tmp file
+
+/bin/rm -f $checkfile

@@ -1,0 +1,25 @@
+# NAME temp_comfort.colors2
+# fhage 	5/9/2007 12:41:2
+# MIN    MAX    NAME        COLOR LABEL
+-80 	-35 	LightYellow1 	!
+-35 	-30 	LightYellow2 	!
+-30 	-25 	wheat1 	!
+-25 	-15 	LightYellow3 	!
+-15 	-10 	RosyBrown3 	!
+-10 	-5 	medium slate blue 	!
+-5 	0 	dark slate blue 	!
+0 	5 	blue 	!
+5 	10 	royal blue 	!
+10 	14 	slate gray 	!
+14 	17 	dark slate gray 	!
+17 	20 	dark green 	!
+20 	23 	forest green 	!
+23 	26 	lime green 	!
+26 	29 	lawn green 	!
+29 	32 	yellow 	!
+32 	35 	gold1 	!
+35 	38 	DarkGoldenrod1 	!
+38 	41 	orange 	!
+41 	44 	sienna1 	!
+44 	47 	orange red 	!
+47 	50 	red1 	! 

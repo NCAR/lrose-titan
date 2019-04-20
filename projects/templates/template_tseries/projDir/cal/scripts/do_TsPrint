@@ -1,0 +1,5 @@
+#! /bin/csh
+
+TsPrint -fmq ~/projDir/data/fmq/ts/shmem_10000 -gate 50 -ngates 250 -nsamples 1000
+
+

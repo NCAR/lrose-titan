@@ -1,0 +1,476 @@
+/**********************************************************************
+ * TDRP params for /home/titan5/cvs/apps/dsserver/src/AcTrack2Symprod/AcTrack2Symprod
+ **********************************************************************/
+
+//======================================================================
+//
+// PRODUCT SPATIAL VALIDITY.
+//
+//======================================================================
+ 
+///////////// useBoundingBox //////////////////////////
+//
+// Set to TRUE to only include stations within the lat-lon bounding box.
+// Only accept stations for which the position is inside the bounding 
+//   box. Note: this will be overridden if the client specifies horizontal 
+//   limits.
+// Type: boolean
+//
+
+useBoundingBox = FALSE;
+
+///////////// bounding_box ////////////////////////////
+//
+// If useBoundingBox is true, only stations within this box will be 
+//   included in the product list.
+// To span the international date line, specify a continuous interval 
+//   using positive longitudes which exceed 180 or negative longitudes 
+//   which are less than -180. For example, min_lon = 80 and max_lon = 240 
+//   will span between 80E and 120W across the Pacific.
+//
+// Type: struct
+//   typedef struct {
+//      float min_lat;
+//      float min_lon;
+//      float max_lat;
+//      float max_lon;
+//   }
+//
+//
+
+bounding_box = { -90, -180, 90, 180 };
+
+//======================================================================
+//
+// RENDERING PARAMETERS.
+//
+//======================================================================
+ 
+///////////// display_ga //////////////////////////////
+//
+// display GA aircraft flag.
+// If TRUE, all aircraft, including GA aircraft, will be displayed.  If 
+//   FALSE, GA aircraft won't be displayed.  For this purporse, a GA 
+//   aircraft is assumed to be any aircraft with a number somewhere in the 
+//   first 3 characters of its callsign.
+// Type: boolean
+//
+
+display_ga = TRUE;
+
+///////////// polyline_width //////////////////////////
+//
+// Width of polylines.
+// Minimum val: 1
+// Type: int
+//
+
+polyline_width = 2;
+
+///////////// plot_dirn_arrow /////////////////////////
+//
+// Plot the arrow for direction.
+// If TRUE, an arrow will be added to the end of the polyline to 
+//   indicate the direction of travel of the aircraft.
+// Type: boolean
+//
+
+plot_dirn_arrow = TRUE;
+
+///////////// dirn_arrow_head_len /////////////////////
+//
+// Length of head of dirn arrow (km).
+// Minimum val: 0
+// Type: double
+//
+
+dirn_arrow_head_len = 2;
+
+///////////// sparse_icons ////////////////////////////
+//
+// Option to check space between icons.
+// If TRUE, the distance between consecutive icons will be computed.
+// Type: boolean
+//
+
+sparse_icons = FALSE;
+
+///////////// sparse_icons_min_distance ///////////////
+//
+// Minimum distance between sparse icons (km).
+// Applicable if sparse_icons is TRUE. Icon rendering will be limited so 
+//   that this minimum distance is exceeded bewteen consecutive icons.
+// Minimum val: 0
+// Type: double
+//
+
+sparse_icons_min_distance = 1;
+
+//======================================================================
+//
+// Track before current time.
+//
+//======================================================================
+ 
+///////////// before_secs /////////////////////////////
+//
+// number of seconds of before track.
+// Number of seconds of track information to display before the current 
+//   position.
+// Type: int
+//
+
+before_secs = 180;
+
+///////////// display_before_icon /////////////////////
+//
+// display before icon flag.
+// If TRUE, the before icon (described in the before_icon parameter) is 
+//   displayed at each aircraft position before the current position.
+// Type: boolean
+//
+
+display_before_icon = FALSE;
+
+///////////// before_icon /////////////////////////////
+//
+// before icon.
+// Array defining the icon to be used for the before positions.  The 
+//   icon is a bit-mapped square icon.  You put 1's in the positions of 
+//   the icon where the bit should be displayed, and 0's in the positions 
+//   that are not a part of the icon.  You may want to look at an example 
+//   parameter file to see how this is done.
+// Type: int
+// 2D array - variable size
+//
+
+before_icon = {
+  { 1, 0, 0, 0, 1 },
+  { 0, 1, 0, 1, 0 },
+  { 0, 0, 1, 0, 0 },
+  { 0, 1, 0, 1, 0 },
+  { 1, 0, 0, 0, 1 }
+};
+
+///////////// before_icon_color ///////////////////////
+//
+// before icon color.
+// Name of X color to be used when rendering the before icon(s).
+// Type: string
+//
+
+before_icon_color = "orange";
+
+///////////// display_before_polyline /////////////////
+//
+// display before polyline flag.
+// If TRUE, the before positions will be connected with a polyline.
+// Type: boolean
+//
+
+display_before_polyline = TRUE;
+
+///////////// before_polyline_color ///////////////////
+//
+// before polyline color.
+// Name of X color to be used when rendering the before polyline.
+// Type: string
+//
+
+before_polyline_color = "orange";
+
+//======================================================================
+//
+// Track at current time.
+//
+//======================================================================
+ 
+///////////// display_current_icon ////////////////////
+//
+// display current icon flag.
+// If TRUE, the current icon (described in the current_icon parameter) 
+//   is displayed at the current position.
+// Type: boolean
+//
+
+display_current_icon = TRUE;
+
+///////////// current_icon ////////////////////////////
+//
+// current icon.
+// Array defining the icon to be used for the current position.  The 
+//   icon is a bit-mapped square icon.  You put 1's in the positions of 
+//   the icon where the bit should be displayed, and 0's in the positions 
+//   that are not a part of the icon.  You may want to look at an example 
+//   parameter file to see how this is done.
+// Type: int
+// 2D array - variable size
+//
+
+current_icon = {
+  { 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 },
+  { 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+  { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+  { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0 },
+  { 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0 },
+  { 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0 }
+};
+
+///////////// current_icon_color //////////////////////
+//
+// current icon color.
+// Name of X color to be used when rendering the current icon.
+// Type: string
+//
+
+current_icon_color = "orange";
+
+///////////// display_label ///////////////////////////
+//
+// display label flag.
+// If TRUE, the callsign of the aircraft will be displayed by the 
+//   current position icon (or where the current position icon would be if 
+//   it isn't being displayed.
+// Type: boolean
+//
+
+display_label = FALSE;
+
+///////////// label_color /////////////////////////////
+//
+// label color.
+// Name of the X color to be used when rendering the aircraft label.
+// Type: string
+//
+
+label_color = "orange";
+
+///////////// label_font //////////////////////////////
+//
+// label font.
+// Suggested X font to use for rendering label.
+// Type: string
+//
+
+label_font = "8x13";
+
+///////////// label_horiz_align ///////////////////////
+//
+// label horizontal alignment.
+// Desired horizontal alignment for the label.
+//
+// Type: enum
+// Options:
+//     HORIZ_ALIGN_LEFT
+//     HORIZ_ALIGN_CENTER
+//     HORIZ_ALIGN_RIGHT
+//
+
+label_horiz_align = HORIZ_ALIGN_CENTER;
+
+///////////// label_vert_align ////////////////////////
+//
+// label vertical alignment.
+// Desired vertical alignment for the label.
+//
+// Type: enum
+// Options:
+//     VERT_ALIGN_TOP
+//     VERT_ALIGN_CENTER
+//     VERT_ALIGN_BOTTOM
+//
+
+label_vert_align = VERT_ALIGN_CENTER;
+
+///////////// label_offset ////////////////////////////
+//
+// label offset.
+// Pixel offsets for label rendering.  The label is rendered at the 
+//   given offsets from the current position location.  A positive 
+//   x_offset moves the label to the right; a positive y_offset moves the 
+//   label up.
+//
+// Type: struct
+//   typedef struct {
+//      int x_offset;
+//      int y_offset;
+//   }
+//
+//
+
+label_offset = { 0, 0 };
+
+//======================================================================
+//
+// Track after current time.
+//
+//======================================================================
+ 
+///////////// after_secs //////////////////////////////
+//
+// number of seconds of after track.
+// Number of seconds of track information to display after the current 
+//   position.  Of course, when displaying realtime aircraft data, there 
+//   will be no track information after the current position, so this 
+//   value will be ignored.
+// Type: int
+//
+
+after_secs = 0;
+
+///////////// display_after_icon //////////////////////
+//
+// display after icon flag.
+// If TRUE, the after icon (described in the after_icon parameter) is 
+//   displayed at each aircraft position after the current position.
+// Type: boolean
+//
+
+display_after_icon = FALSE;
+
+///////////// after_icon //////////////////////////////
+//
+// after icon.
+// Array defining the icon to be used for the after positions.  The icon 
+//   is a bit-mapped square icon.  You put 1's in the positions of the 
+//   icon where the bit should be displayed, and 0's in the positions that 
+//   are not a part of the icon.  You may want to look at an example 
+//   parameter file to see how this is done.
+// Type: int
+// 2D array - variable size
+//
+
+after_icon = {
+  { 0, 0, 1, 0, 0 },
+  { 0, 0, 1, 0, 0 },
+  { 1, 1, 1, 1, 1 },
+  { 0, 0, 1, 0, 0 },
+  { 0, 0, 1, 0, 0 }
+};
+
+///////////// after_icon_color ////////////////////////
+//
+// after icon color.
+// Name of X color to be used when rendering the after icon(s).
+// Type: string
+//
+
+after_icon_color = "orange";
+
+///////////// display_after_polyline //////////////////
+//
+// display after polyline flag.
+// If TRUE, the after positions will be connected with a polyline.
+// Type: boolean
+//
+
+display_after_polyline = TRUE;
+
+///////////// after_polyline_color ////////////////////
+//
+// after polyline color.
+// Name of X color to be used when rendering the after polyline.
+// Type: string
+//
+
+after_polyline_color = "orange";
+
+//======================================================================
+//
+// Altitude display.
+//
+//======================================================================
+ 
+///////////// color_by_altitude ///////////////////////
+//
+// Option to set color based on altitude field.
+// If TRUE, this option overrides the other color options and sets the 
+//   color based on the aircraft altitude. The colors used are set in the 
+//   altitude_color array.
+// Type: boolean
+//
+
+color_by_altitude = FALSE;
+
+///////////// altitude_color_scale ////////////////////
+//
+// Color scale for altitude data - only used if color_by_altitude is 
+//   TRUE.
+// This is an array of entries, each of which has min_val, max_val and 
+//   color for each altitude range selected. Altitude units are meters. If 
+//   the true altitude is outside this range the color will default to the 
+//   color which would have been used if color_by_altitude were FALSE.
+//
+// Type: struct
+//   typedef struct {
+//      double min_val;
+//      double max_val;
+//      char* color;
+//   }
+//
+// 1D array - variable length.
+//
+
+altitude_color_scale = {
+  { 0, 0, "not_set"}
+};
+
+///////////// plot_altitude_text //////////////////////
+//
+// Option to plot altitude as text instead of icon.
+// If TRUE, the altitude value is plotted at the aircraft position 
+//   instead of the icon. The altitude_font is used.
+// Type: boolean
+//
+
+plot_altitude_text = FALSE;
+
+///////////// altitude_font ///////////////////////////
+//
+// altitude font.
+// Suggested X font to use for rendering altitude.
+// Type: string
+//
+
+altitude_font = "6x10";
+
+//======================================================================
+//
+// Set color by callsign.
+//
+//======================================================================
+ 
+///////////// color_by_callsign ///////////////////////
+//
+// Option to set color based on airfraft callsign.
+// If TRUE, the track for a recognized callsign will be colored 
+//   accordingly.
+// Type: boolean
+//
+
+color_by_callsign = TRUE;
+
+///////////// callsign_colors /////////////////////////
+//
+// Color table lookup for aircraft callsigns.
+// See 'color_by_callsign'.
+//
+// Type: struct
+//   typedef struct {
+//      string callsign;
+//      string color;
+//   }
+//
+// 1D array - variable length.
+//
+
+callsign_colors = {
+  { "ZJRA", "orange"},
+  { "47RE", "cyan"}
+};
+

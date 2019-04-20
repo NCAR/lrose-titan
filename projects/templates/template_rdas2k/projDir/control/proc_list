@@ -1,0 +1,38 @@
+##############################################################################
+# SYSTEM processes
+#
+DsServerMgr   primary    start_DsServerMgr         snuff_inst        localhost
+#Janitor       primary    start_Janitor             kill_Janitor      localhost
+Scout         primary    start_Scout               kill_Scout        localhost
+DataMapper    primary    start_DataMapper          kill_DataMapper   localhost
+#DsFileDist   primary    start_DsFileDist          snuff_inst        localhost
+###############################################################################
+# RDAS processes
+#
+RdasSim         sim        start_RdasSim.sim          snuff_inst                localhost
+RdasControl     relay      start_RdasControl.relay    kill_RdasControl.relay    localhost	
+#RdasControl    display    start_RdasControl.display  kill_RdasControl.display  localhost	
+###############################################################################
+# INGEST processes
+#
+Rdas2Dsr        ops        start_Rdas2Dsr.ops           snuff_inst  localhost
+#EsdAcIngest    ops        start_EsdAcIngest.ops        snuff_inst  localhost
+EsdAcIngest     sim        start_EsdAcIngest.sim        snuff_inst  localhost
+Dsr2Vol         ops        start_Dsr2Vol.ops            snuff_inst  localhost
+#ClutterRemove  cart       start_ClutterRemove.cart     snuff_inst  localhost
+##############################################################################
+# TITAN ROCESSES
+#
+Titan        ops       start_Titan.ops              snuff_inst  localhost
+PrecipAccum  single    start_PrecipAccum.single     snuff_inst  localhost
+PrecipAccum  1hr       start_PrecipAccum.1hr        snuff_inst  localhost
+PrecipAccum  24hr      start_PrecipAccum.24hr       snuff_inst  localhost
+Mdv2Vil      ops       start_Mdv2Vil.ops            snuff_inst  localhost
+Tstorms2Spdb ops       start_Tstorms2Spdb.ops       snuff_inst  localhost
+##############################################################################
+# DISPLAY processes
+#
+Rview        ops       start_Rview.ops          snuff_inst       localhost
+TimeHist     ops       start_Rview.ops          snuff_inst       localhost
+RadMon       ops       start_RadMon.ops         kill_RadMon.ops  localhost
+#CIDD         ops       start_CIDD.ops           snuff_inst       localhost

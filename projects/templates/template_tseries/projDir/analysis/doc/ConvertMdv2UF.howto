@@ -1,0 +1,99 @@
+Converting CP2 MDV data to UF format
+====================================
+
+Mike Dixon
+2008/04/20
+
+Introduction
+------------
+
+Converting MDV to UF requires 2 components, which communicate
+via a File Message Queue.
+
+The data flow is as follows
+
+
+  MDV-file -> Mdv2Dsr -> FMQ -> Dsr2UF -> UF-file
+
+
+Running the applications
+------------------------
+
+You will need 2 windows open, one for Dsr2UF and one for Mdv2Dsr.
+
+Open 2 windows. In each one:
+
+  Log into cp2server
+
+  cd projDir/analysis/params
+
+Start Dsr2UF:
+-------------
+
+In one window, start Dsr2UF.
+
+For S-band:
+
+ Dsr2UF -params Dsr2UF.cp2_s -debug
+
+For X-Band:
+
+  Dsr2UF -params Dsr2UF.cp2_x -debug
+
+Dsr2UF will wait until Mdv2Dsr runs. You will see messages once it it
+processing data.
+
+Run Mdv2Dsr:
+------------
+
+In the other window window, start Mdv2Dsr. The following are examples
+for data on 2008/03/26 from 05:00 to 07:00.
+
+For S-band surveillance data:
+
+ Mdv2Dsr -debug -params Mdv2Dsr.cp2_s -indir ~/projDir/data/mdv/radarPolar/cp2_s/sur -start "2008 03 26 05 00 00" -end "2008 03 26 07 00 00"
+
+For S-band sector data:
+
+ Mdv2Dsr -debug -params Mdv2Dsr.cp2_s -indir ~/projDir/data/mdv/radarPolar/cp2_s/sec -start "2008 03 26 05 00 00" -end "2008 03 26 07 00 00"
+
+For S-band RHI data:
+
+ Mdv2Dsr -debug -params Mdv2Dsr.cp2_s -indir ~/projDir/data/mdv/radarPolar/cp2_s/rhi -start "2008 03 26 05 00 00" -end "2008 03 26 07 00 00"
+
+For X-band surveillance data:
+
+ Mdv2Dsr -debug -params Mdv2Dsr.cp2_x -indir ~/projDir/data/mdv/radarPolar/cp2_x/sur -start "2008 03 26 05 00 00" -end "2008 03 26 07 00 00"
+
+For X-band sector data:
+
+ Mdv2Dsr -debug -params Mdv2Dsr.cp2_x -indir ~/projDir/data/mdv/radarPolar/cpx_s/sec -start "2008 03 26 05 00 00" -end "2008 03 26 07 00 00"
+
+For X-band RHI data:
+
+ Mdv2Dsr -debug -params Mdv2Dsr.cp2_x -indir ~/projDir/data/mdv/radarPolar/cp2_x/rhi -start "2008 03 26 05 00 00" -end "2008 03 26 07 00 00"
+
+Data directories:
+-----------------
+
+The UF data will be in:
+
+  projDir/data/uf/cp2_s (S-band)
+  projDir/data/uf/cp2_x (X-band)
+
+File name examples are:
+
+  CP2_sur_20080326.050830.uf: surveillance file
+  CP2_sec_20080326.050830.uf: sector file
+  CP2_rhi_20080326.050830.uf: RHI file
+
+Note: for early CP2 ops, some sector files will be labelled as 'sur'
+because the full 360 degrees were saved, with the data in the
+non-sector azimuths set to missing.
+
+
+
+  
+
+
+

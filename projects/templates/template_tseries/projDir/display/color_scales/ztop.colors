@@ -1,0 +1,23 @@
+# NAME sat_albedo 
+
+# roberts 12/2/1997   
+
+0       5       gray35 
+5  	10 	gray38
+10 	13 	gray42
+13      16      gray45
+16 	19 	gray48
+19 	21 	gray51
+21 	24 	gray55
+24      27      gray58
+27      30      gray61
+30 	33 	gray64
+33      36      gray67
+36      39      gray70
+39      45      gray73
+45 	50 	gray77
+50      60  	gray81
+60      70  	gray85
+70      80  	gray90
+80  	90      gray95	
+90      100     white 

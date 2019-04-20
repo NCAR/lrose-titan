@@ -1,0 +1,13 @@
+#! /bin/csh -f
+
+setenv DISPLAY :0.0
+
+cd $PROJ_DIR/display/params
+
+running "Rview -params Rview.ops"
+if ($status == 1) then
+  kill_Rview.ops
+  Rview -params Rview.ops  |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rview -i ops &
+endif
+

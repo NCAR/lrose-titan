@@ -1,0 +1,31 @@
+# NAME t_prime.colors
+
+# fhage 	6/19/1993 15:14:20
+
+MIN     MAX     NAME        COLOR LABEL
+
+-5 	-4.6 	gray25 	!
+-4.6 	-4.2 	blue4 	!
+-4.2 	-3.8 	medium blue 	!
+-3.8 	-3.4 	slate blue 	!
+-3.4 	-3 	cornflower blue 	!
+-3 	-2.6 	medium turquoise 	!
+-2.6 	-2.2 	dark green 	!
+-2.2 	-1.8 	dark olive green 	!
+-1.8 	-1.4 	SpringGreen4 	!
+-1.4 	-1 	lime green 	!
+-1 	-0.6 	green 	!
+-0.6 	-0.2 	SpringGreen3 	!
+-0.2 	0.2 	gray 	!
+0.2 	0.6 	goldenrod 	!
+0.6 	1 	orange 	!
+1 	1.4 	gold1 	!
+1.4 	1.8 	yellow 	!
+1.8 	2.2 	light goldenrod 	!
+2.2 	2.6 	dark salmon 	!
+2.6 	3 	salmon 	!
+3 	3.4 	PaleVioletRed3 	!
+3.4 	3.8 	maroon 	!
+3.8 	4.2 	red 	!
+4.2 	4.6 	hot pink 	!
+4.6 	5 	DeepPink1 	!

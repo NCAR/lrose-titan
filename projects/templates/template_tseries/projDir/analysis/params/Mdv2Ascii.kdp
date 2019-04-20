@@ -1,0 +1,293 @@
+/**********************************************************************
+ * TDRP params for Mdv2Ascii
+ **********************************************************************/
+
+//======================================================================
+//
+// Mdv2Ascii.
+//
+// This program converts MDV files to a simple ASCII format. It runs in 
+//   realtime, unlike the old mdv2ascii.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING PARAMETERS.
+//
+// Parameters controlling debug outputs.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// debug flag.
+// Debug flag.
+// Type: boolean
+//
+
+debug = FALSE;
+
+//======================================================================
+//
+// PROCESS PARAMETERS.
+//
+//======================================================================
+ 
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "kdp";
+
+//======================================================================
+//
+// PROCESS I/O PARAMETERS.
+//
+// Parameters describing the input and output locations.
+//
+//======================================================================
+ 
+///////////// trigger_mode ////////////////////////////
+//
+// Input triggering mode.
+// In LATEST_DATA mode, the program waits for new data from the MDV 
+//   location specified by the latest_data_trigger parameter.
+// In TIME_LIST mode, the program operates on archive data as specified 
+//   in the time_list_trigger parameter.
+//
+// Type: enum
+// Options:
+//     LATEST_DATA
+//     TIME_LIST
+//
+
+trigger_mode = TIME_LIST;
+
+///////////// time_list_trigger ///////////////////////
+//
+// Trigger information used when using the TIME_LIST trigger.
+// start_time specifies the archive start time in any format recognized 
+//   by the DateTime class.
+// end_time specifies the archive end time in any format recognized by 
+//   the DateTime class.
+//
+// Type: struct
+//   typedef struct {
+//      string start_time;
+//      string end_time;
+//   }
+//
+//
+
+time_list_trigger = { "2001/1/1 00:00:00", "2002/1/2 00:00:00" };
+
+///////////// input_url ///////////////////////////////
+//
+// URL for input files.
+// Type: string
+//
+
+input_url = "mdvp:://localhost::mdv/radarPolar/ops/sur";
+
+///////////// use_field_name //////////////////////////
+//
+// Flag indicating whether to use the field_name or the field_num field 
+//   in the input_fields array to identify the input fields.
+// Type: boolean
+//
+
+use_field_name = TRUE;
+
+///////////// input_field /////////////////////////////
+//
+// Information about the field to be converted to ASCII.
+// If use_field_name is true, uses the field_name field to identify the 
+//   input field.  Otherwise, uses field_num to identify the input field.
+//
+// Type: struct
+//   typedef struct {
+//      string field_name;
+//      long field_num;
+//   }
+//
+//
+
+input_field = { "KDP_F", 0 };
+
+///////////// max_input_valid_secs ////////////////////
+//
+// Maximum input valid age in seconds.
+// Once the algorithm is triggered, it will not use any input data older 
+//   than this value.
+// Type: long
+//
+
+max_input_valid_secs = 1800;
+
+///////////// output_dir //////////////////////////////
+//
+// Output directory.
+// Type: string
+//
+
+output_dir = "/tmp/kdp_ascii";
+
+//======================================================================
+//
+// PRINTING PARAMETERS.
+//
+// Parameters describing how to print the ASCII output.
+//
+//======================================================================
+ 
+///////////// specify_bad_data_value //////////////////
+//
+// Flag indicating whether the bad/missing data value is specified in 
+//   the paramter file.
+// If set to TRUE, the value of the bad_data_value parameter will be 
+//   used for all bad and missing data in the field. If false, the 
+//   missing_data_value from the MDV field header will be used for all bad 
+//   and missing data in the field.
+// Type: boolean
+//
+
+specify_bad_data_value = FALSE;
+
+///////////// bad_data_value //////////////////////////
+//
+// See description for specify_bad_data_value parameter.
+// Type: double
+//
+
+bad_data_value = 0;
+
+///////////// constrain_min_output_value //////////////
+//
+// Flag indicating whether to constrain the minimum output value.
+// If set to TRUE, the minimum output value will be constrained to the 
+//   value of the min_output_value parameter.
+// Type: boolean
+//
+
+constrain_min_output_value = FALSE;
+
+///////////// min_output_value ////////////////////////
+//
+// See description for constrain_min_output_value parameter.
+// Type: double
+//
+
+min_output_value = 0;
+
+///////////// constrain_max_output_value //////////////
+//
+// Flag indicating whether to constrain the maximum output value.
+// If set to TRUE, the maximum output value will be constrained to the 
+//   value of the max_output_value parameter.
+// Type: boolean
+//
+
+constrain_max_output_value = FALSE;
+
+///////////// max_output_value ////////////////////////
+//
+// See description for constrain_max_output_value parameter.
+// Type: double
+//
+
+max_output_value = 0;
+
+///////////// process_type ////////////////////////////
+//
+// Flag indicating how much of the data to process.
+// 	PROCESS_VOLUME - The entire volume of data will be processed.
+// 	PROCESS_PLANE - A single plane, indicated by the plane_num 
+//   parameter, will be processed.
+// 	PROCESS_COMPOSITE - The entire volume will be composited before 
+//   being processed.
+//
+// Type: enum
+// Options:
+//     PROCESS_VOLUME
+//     PROCESS_PLANE
+//     PROCESS_COMPOSITE
+//
+
+process_type = PROCESS_VOLUME;
+
+///////////// plane_num ///////////////////////////////
+//
+// The plane number to be processed.
+// Used only when process_type is set to PROCESS_PLANE.
+// Type: long
+//
+
+plane_num = 0;
+
+///////////// start_row ///////////////////////////////
+//
+// Flag indicating whether to start at the top row or the bottom row.
+//
+// Type: enum
+// Options:
+//     START_TOP
+//     START_BOTTOM
+//
+
+start_row = START_BOTTOM;
+
+///////////// format_string ///////////////////////////
+//
+// Output format string.
+// This is the fprintf() format string used for printing the data 
+//   values.
+// Type: string
+//
+
+format_string = " %7.2f";
+
+///////////// num_print_columns ///////////////////////
+//
+// Number of columns in each line of output.
+// Minimum val: 1
+// Type: long
+//
+
+num_print_columns = 10;
+
+///////////// include_ESRI_header /////////////////////
+//
+// Flag indicating whether to include ESRI-compatible header info in the 
+//   output file.
+// If set to TRUE, the output file can be imported into ArcGIS via the 
+//   'ASCII to GRID' utility in ArcToolbox.
+// Type: boolean
+//
+
+include_ESRI_header = FALSE;
+
+///////////// cell_size ///////////////////////////////
+//
+// Cell size (in km).
+// Used only when include_ESRI_header is set to TRUE.Given: km/deg = 
+//   111.12*cos(latitude) default is set for a lat/lon mdv file centered 
+//   on Denver.
+// Type: double
+//
+
+cell_size = 0.01;
+
+///////////// filenames_with_gentime //////////////////
+//
+// Set to TRUE to put the gen time on the end of the
+// output file names.
+// May be necessary in event of forecast input.
+// Type: boolean
+//
+
+filenames_with_gentime = FALSE;
+

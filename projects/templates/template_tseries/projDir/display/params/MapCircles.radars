@@ -1,0 +1,98 @@
+/**********************************************************************
+ * TDRP params for MapCircles
+ **********************************************************************/
+
+//======================================================================
+//
+// MapCircles program.
+//
+// MapCircles creates a map file, with circles of a given radius around 
+//   a set of points. Map file data is written to stdout.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "radars";
+
+//======================================================================
+//
+// ARC SPECIFICATION.
+//
+//======================================================================
+ 
+///////////// map_file_header /////////////////////////
+//
+// String to go at the head of the map file as a comment.
+// Type: string
+//
+
+map_file_header = "Radar_extents";
+
+///////////// n_arc_segments //////////////////////////
+//
+// Number of segments in the arc.
+// The arc is divided into this number of segments, and a point is 
+//   computed for the start of each segment.
+// Type: int
+//
+
+n_arc_segments = 360;
+
+///////////// arcs ////////////////////////////////////
+//
+// Array of points around which arcs should be placed.
+// The arcs are computed around each point at the given radius in km. If 
+//   a complete circle is required, set start_az_deg to 0 and end_az_deg 
+//   to 360.0. If a partial circle is required, set the start and end 
+//   azimuths accordingly. If the parial arc crosses north, set the 
+//   start_az_deg to a negative value. The arc is represented by a 
+//   poly-line with the specified number of segments.
+//
+// Type: struct
+//   typedef struct {
+//      string label;
+//      double center_lat;
+//      double center_lon;
+//      double start_az_deg;
+//      double end_az_deg;
+//      double radius_km;
+//      int n_segments;
+//   }
+//
+// 1D array - variable length.
+//
+
+arcs = {
+  { "Ops", -27.7178, 153.24, 0, 360, 148.5, 360},
+  { "Grafton", -29.622, 152.951, 0, 360, 150, 360},
+  { "Kanign", -25.9574, 152.577, 0, 360, 150, 360},
+  { "Moree", -29.5, 149.85, 0, 360, 150, 360},
+  { "Marburg", -27.608, 152.539, 0, 360, 150, 360}
+};
+

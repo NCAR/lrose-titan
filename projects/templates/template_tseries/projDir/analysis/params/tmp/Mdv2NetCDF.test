@@ -1,0 +1,185 @@
+/**********************************************************************
+ * TDRP params for Mdv2NetCDF
+ **********************************************************************/
+
+//======================================================================
+//
+// Mdv2NetCDF creates CF-1.0 compliant NetCDF files from Mdv files or 
+//   fields.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed with the appropriate level of 
+//   detail.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_NORM;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "test";
+
+//======================================================================
+//
+// PROGRAM MODES OF OPERATION.
+//
+//======================================================================
+ 
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+// In REALTIME mode, the program triggers off of a latest data info 
+//   file. In FILELIST mode the program processed data between start and 
+//   end times entered on the command line. In FILELIST mode the file 
+//   processes files enterec on the command line. .
+//
+// Type: enum
+// Options:
+//     TIME_INTERVAL
+//     FILELIST
+//     REALTIME
+//
+
+mode = FILELIST;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// mdv_url /////////////////////////////////
+//
+// Url of mdv dataset.
+// Type: string
+//
+
+mdv_url = "mdvp:://localhost::mdv";
+
+///////////// max_valid_realtime_age //////////////////
+//
+// Maximum age(secs) of mdv dataset that will trigger processing.
+// Type: int
+//
+
+max_valid_realtime_age = 600;
+
+//======================================================================
+//
+// PROCESSING.
+//
+//======================================================================
+ 
+///////////// global_attributes ///////////////////////
+//
+// field list.
+//
+// Type: struct
+//   typedef struct {
+//      string conventions;
+//      string institution;
+//      string references;
+//      string source;
+//      string title;
+//      string comment;
+//   }
+//
+//
+
+global_attributes = { "", "", "", "", "", "" };
+
+///////////// mdv_ncf_fields //////////////////////////
+//
+// field list.
+//
+// Type: struct
+//   typedef struct {
+//      string mdv_field_name;
+//      string ncf_standard_name;
+//      string ncf_long_name;
+//      string ncf_units;
+//      boolean do_linear_transform;
+//      float linear_multiplier;
+//      float linear_const;
+//      data_pack_t packed_data_type;
+//        Options:
+//          DATA_PACK_NONE
+//          DATA_PACK_BYTE
+//          DATA_PACK_SHORT
+//   }
+//
+// 1D array - variable length.
+//
+
+mdv_ncf_fields = {
+};
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// basename ////////////////////////////////
+//
+// basename of netCDF file.
+// Type: string
+//
+
+basename = "ncfdata";
+
+///////////// output_dir //////////////////////////////
+//
+// Output direcory.
+// Location of netCDF output.
+// Type: string
+//
+
+output_dir = "$(DATA_DIR)/NetCdf/cp2_s/test";
+
+///////////// use_output_filename /////////////////////
+//
+// If true the output_filename is used, otherwise it is created with the 
+//   baename and a timestamp.
+// User specifies the output file name.
+// Type: boolean
+//
+
+use_output_filename = FALSE;
+
+///////////// output_filename /////////////////////////
+//
+// User-specified output filename.
+// Type: string
+//
+
+output_filename = "outputfile.nc";
+
+///////////// output_file_prefix //////////////////////
+//
+// User-specified output file prefix.
+// Type: string
+//
+
+output_file_prefix = "";
+

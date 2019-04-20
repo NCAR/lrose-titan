@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/titan/params
+
+running "Tstorms2Xml -params Tstorms2Xml.ops"
+if ($status == 1) then
+  nice Tstorms2Xml -params Tstorms2Xml.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Tstorms2Xml -i ops &
+endif
+

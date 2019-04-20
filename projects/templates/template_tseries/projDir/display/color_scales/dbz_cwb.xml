@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="dbz_cwb.colors">
+  <ColorRange minValue="-30.0" maxValue="10.0">
+    <Color red="0" green="0" blue="246" />
+  </ColorRange>
+  <ColorRange minValue="10.0" maxValue="15.0">
+    <Color red="0" green="255" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="15.0" maxValue="20.0">
+    <Color red="0" green="192" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="20.0" maxValue="25.0">
+    <Color red="0" green="144" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="25.0" maxValue="30.0">
+    <Color red="255" green="255" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="30.0" maxValue="35.0">
+    <Color red="231" green="192" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="35.0" maxValue="40.0">
+    <Color red="255" green="144" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="40.0" maxValue="45.0">
+    <Color red="255" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="45.0" maxValue="50.0">
+    <Color red="208" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="50.0" maxValue="55.0">
+    <Color red="192" green="0" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="55.0" maxValue="60.0">
+    <Color red="255" green="0" blue="255" />
+  </ColorRange>
+  <ColorRange minValue="60.0" maxValue="65.0">
+    <Color red="153" green="112" blue="200" />
+  </ColorRange>
+  <ColorRange minValue="65.0" maxValue="70.0">
+    <Color red="255" green="255" blue="255" />
+  </ColorRange>
+</ColorScale>
+

@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/titan/params
+
+running "EchoTops -params EchoTops.ops"
+if ($status == 1) then
+  nice EchoTops -params EchoTops.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p EchoTops -i ops &
+endif
+

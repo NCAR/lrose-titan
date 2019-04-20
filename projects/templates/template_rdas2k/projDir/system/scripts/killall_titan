@@ -1,0 +1,17 @@
+#!/bin/csh -f
+# kills all processes that may be running on a TITAN machine 
+# 
+# This is done by running killall on all executable files in
+# ~/rap/bin
+#
+
+cd ~/rap/bin
+
+foreach app \
+    (DsServerMgr Janitor Scout DataMapper DsFileDist Bprp2Dsr \
+    Test2Dsr EsdAcIngest Dsr2Vol ClutterRemove Titan PrecipAccum \
+    Mdv2Vil Tstorms2Spdb Rview TimeHist RadMon CIDD)
+	killall $app >& /dev/null
+end
+
+

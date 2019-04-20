@@ -1,0 +1,410 @@
+/**********************************************************************
+ * TDRP params for mdv2netCDF
+ **********************************************************************/
+
+//======================================================================
+//
+// Program name: mdv2netCDF.
+//
+// mdv2netCDF converts MDV files to netCDF, using the COARDS convention.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_NORM;
+
+///////////// Instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+Instance = "test";
+
+//======================================================================
+//
+// MODE OF OPERATION.
+//
+//======================================================================
+ 
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+// In REALTIME mode, the program waits for a new input file. In ARCHIVE 
+//   mode, it moves through the data between the start and end times set 
+//   on the command line. In FILELIST mode, it moves through the list of 
+//   file names specified on the command line. Paths (in FILELIST mode, at 
+//   least) MUST contain a day-directory below the data file -- 
+//   ./data_file.mdv will not work as a file path.
+//
+// Type: enum
+// Options:
+//     ARCHIVE
+//     REALTIME
+//     FILELIST
+//
+
+mode = ARCHIVE;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// InMdvURL ////////////////////////////////
+//
+// Input URL.
+// Set to the URL for the input MDV files.
+// Type: string
+//
+
+InMdvURL = "./";
+
+///////////// RealtimeMaxAge //////////////////////////
+//
+// Maximum age for file to be considered valid.
+// In realtime mode only.
+// Type: int
+//
+
+RealtimeMaxAge = 3600;
+
+///////////// Once ////////////////////////////////////
+//
+// Set to TRUE to run once and exit.
+// Set to TRUE in Realtime only.
+// Type: boolean
+//
+
+Once = FALSE;
+
+//======================================================================
+//
+// DATA CONVERSION.
+//
+//======================================================================
+ 
+///////////// DoAllFields /////////////////////////////
+//
+// Set to TRUE to convert all fields.
+// If FALSE then only fields in FieldNames are converted.
+// Type: boolean
+//
+
+DoAllFields = TRUE;
+
+///////////// FieldNames //////////////////////////////
+//
+// Names of fields to be output in netCDF file.
+// Only used if DoAllFields is FALSE.
+// Type: string
+// 1D array - variable length.
+//
+
+FieldNames = { "Pressure", "Temperature" };
+
+///////////// AddNumToFieldName ///////////////////////
+//
+// Option to add the field number to the end of the field name for 
+//   output.
+// If TRUE, the field number will be added to all field names, except 
+//   for the first field.
+// Type: boolean
+//
+
+AddNumToFieldName = TRUE;
+
+///////////// DataOrderingZYX /////////////////////////
+//
+// Option to store data in ZYX order, in which Z changes slowest and Z 
+//   fastest.
+// If FALSE, the default ordering will be used. This is YXZ.
+// Type: boolean
+//
+
+DataOrderingZYX = TRUE;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// OutDir //////////////////////////////////
+//
+// Output netCDF directory.
+// Set to the name of the output netCDF directory.
+// Type: string
+//
+
+OutDir = "$(DATA_DIR)/netcdf/cp2_s/test";
+
+///////////// OutFileExt //////////////////////////////
+//
+// Output file extension.
+// Type: string
+//
+
+OutFileExt = "nc";
+
+///////////// OutputPathFromTime //////////////////////
+//
+// Compute output path from time.
+// If TRUE, path is OutDir/yyyymmdd/hhmmss.nc. If FALSE, the file path 
+//   is OutDir/yyyymmdd_hhmmss.NetCDF_FileName.
+// Type: boolean
+//
+
+OutputPathFromTime = FALSE;
+
+///////////// NetCDF_FileName /////////////////////////
+//
+// Base NetCDF filename, with or without .nc extension.
+// Output NetCDF files will have the date/time pre-pended.
+// Type: string
+//
+
+NetCDF_FileName = "CP2";
+
+///////////// WriteLdataInfo //////////////////////////
+//
+// Write _latest_data_info file in OutDir.
+// Type: boolean
+//
+
+WriteLdataInfo = FALSE;
+
+///////////// CompressAfterWrite //////////////////////
+//
+// Option to try gzip -f on the netcdf file after it
+// is written. If this is invoked, the program sleeps
+// for a second prior to trying to zip the file.
+// Type: boolean
+//
+
+CompressAfterWrite = FALSE;
+
+///////////// includeFile /////////////////////////////
+//
+// Option to include an existing ASCII file in the output.
+// If set, the file designated by includeFilename will be read and
+// added, line by line, to the netCDF output file as an attribute.
+// Type: boolean
+//
+
+includeFile = FALSE;
+
+///////////// includeFilename /////////////////////////
+//
+// ASCII file to be included in the netCDF output if
+// includeFile is TRUE.
+// The file will be read line by line and included as text
+// in the netcdf output.
+// Type: string
+//
+
+includeFilename = "/Some/File/Name.ext";
+
+///////////// applyVleveLimits ////////////////////////
+//
+// Option to apply vlevel limits.
+// If true, set the minVlevel and maxVlevel below.
+// Type: boolean
+//
+
+applyVleveLimits = FALSE;
+
+///////////// minVlevel ///////////////////////////////
+//
+// Minimum Vlevel.
+// Applies only if applyVleveLimits is true.
+// Type: double
+//
+
+minVlevel = 0;
+
+///////////// maxVlevel ///////////////////////////////
+//
+// Maximum Vlevel.
+// Applies only if applyVleveLimits is true.
+// Type: double
+//
+
+maxVlevel = 0;
+
+///////////// composite ///////////////////////////////
+//
+// Option to perform compositing.
+// If true, a maximum value vertical composite is performed.
+// Type: boolean
+//
+
+composite = FALSE;
+
+///////////// remap_xy ////////////////////////////////
+//
+// Option to remap grid in x,y.
+// If true, set the remap parameters below.
+// Type: boolean
+//
+
+remap_xy = FALSE;
+
+///////////// remap_projection ////////////////////////
+//
+// Projection for remapping in x,y.
+//
+// Type: enum
+// Options:
+//     PROJ_LATLON
+//     PROJ_LAMBERT_CONF
+//     PROJ_FLAT
+//
+
+remap_projection = PROJ_FLAT;
+
+///////////// remap_grid //////////////////////////////
+//
+// Grid parameters for remapping in x,y.
+// These params apply to all projection types.
+//
+// Type: struct
+//   typedef struct {
+//      int nx;
+//      int ny;
+//      double minx;
+//      double miny;
+//      double dx;
+//      double dy;
+//   }
+//
+//
+
+remap_grid = { 1, 1, 0, 0, 1, 1 };
+
+///////////// remap_rotation //////////////////////////
+//
+// Remapped grid rotation.
+// This applies only to PROJ_FLAT projections.
+// Type: double
+//
+
+remap_rotation = 0;
+
+///////////// remap_origin_lat ////////////////////////
+//
+// Remapped grid origin latitude.
+// This applies only to PROJ_FLAT and PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+remap_origin_lat = 0;
+
+///////////// remap_origin_lon ////////////////////////
+//
+// Remapped grid origin longitude.
+// This applies only to PROJ_FLAT and PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+remap_origin_lon = 0;
+
+///////////// remap_lat1 //////////////////////////////
+//
+// Remapped grid reference latitude 1.
+// This applies only to PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+remap_lat1 = 0;
+
+///////////// remap_lat2 //////////////////////////////
+//
+// Remapped grid reference latitude 2.
+// This applies only to PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+remap_lat2 = 0;
+
+///////////// zUnitLabel //////////////////////////////
+//
+// Label to use for Z axis units.
+// Another option might be Kilometers.
+// Type: string
+//
+
+zUnitLabel = "level";
+
+///////////// substitutions ///////////////////////////
+//
+// These parameters offer the ability to substitute another
+// field name or units other than those from the MDV file.
+// Also a long name can be added.
+// Defaults are OK for adjoint 3D.
+//
+// Type: struct
+//   typedef struct {
+//      string mdvFieldname;
+//      string netCDFfieldname;
+//      string units;
+//      string longName;
+//   }
+//
+// 1D array - variable length.
+//
+
+substitutions = {
+};
+
+///////////// addHeight ///////////////////////////////
+//
+// Option to add the height as a netCDF variable.
+// Fields have the following meaning :
+
+//  addHeightVar - set to TRUE to add the height as a netCDF
+//                 variable. If this is FALSE, then the remaining
+//                 settings are irrelevant.
+
+//  usePlaneNumber - By default, the actual plane heights are taken from
+//                   the vlevel header. Setting this option to TRUE
+//                   means that the plane numbers (starting at 0) will
+//                   be used rather than the height values.
+
+//  mdvFieldName - mdv field to take the height values from.
+
+//  netcdfName - name to use for the height variable in the netcdf file.
+//  units - units for the height variable.
+//
+// Type: struct
+//   typedef struct {
+//      boolean addHeightVar;
+//      boolean usePlaneNumber;
+//      string mdvFieldName;
+//      string netcdfName;
+//      string units;
+//   }
+//
+//
+
+addHeight = { FALSE, FALSE, "DBZ", "heightDBZ", "elevationDegrees" };
+

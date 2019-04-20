@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="icing.colors" rangeLabels="NONE,LGT,MOD,SEV">
+  <ColorRange minValue="0.0" maxValue="0.25">
+    <Color red="77" green="77" blue="77" />
+  </ColorRange>
+  <ColorRange minValue="0.25" maxValue="0.5">
+    <Color red="155" green="205" blue="155" />
+  </ColorRange>
+  <ColorRange minValue="0.5" maxValue="0.75">
+    <Color red="0" green="0" blue="255" />
+  </ColorRange>
+  <ColorRange minValue="0.75" maxValue="1.0">
+    <Color red="255" green="105" blue="180" />
+  </ColorRange>
+</ColorScale>
+

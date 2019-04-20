@@ -1,0 +1,24 @@
+# NAME bdryShear.colors
+# jaimi         1/29/1999 12:21:22
+# MIN    MAX    NAME        COLOR LABEL
+-20     -18     royal blue      !
+-18     -16     medium blue     !
+-16     -14     dark slate blue         !
+-14     -12     steel blue      !
+-12     -10     cadet blue      !
+-10     -8      dark green      !
+-8      -6      dark olive green        !
+-6      -4      sea green       !
+-4      -2      olive drab      !
+-2      0       dark khaki      !
+0       2       dark goldenrod  !
+2       4       goldenrod       !
+4       6       gold    !
+6       8       light goldenrod         !
+8       10      burlywood       !
+10      12      dark salmon     !
+12      14      indian red      !
+14      16      rosy brown      !
+16      18      sienna  !
+18      20      saddle brown    !
+

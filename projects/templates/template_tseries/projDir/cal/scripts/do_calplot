@@ -1,0 +1,19 @@
+#!/bin/csh
+#
+# Generate a plot from the txt file and display it
+#
+echo "set terminal png" > /tmp/gnulpot.cmd 
+echo "set output '/tmp/cal_plot.png'" >> /tmp/gnulpot.cmd
+echo "set title 'Receiver Calibration" >> /tmp/gnulpot.cmd
+echo "set xlabel 'Input Signal dBm'" >> /tmp/gnulpot.cmd
+echo "set ylabel 'Response Signal" >> /tmp/gnulpot.cmd
+
+echo -n "plot '$1' using 1:2 title 'Horiz', " >> /tmp/gnulpot.cmd
+echo " '$1' using 1:3 title 'Vert' " >> /tmp/gnulpot.cmd
+
+gnuplot /tmp/gnulpot.cmd
+\rm /tmp/gnulpot.cmd
+display /tmp/cal_plot.png
+
+set newname=$1:r.png
+mv  /tmp/cal_plot.png $newname

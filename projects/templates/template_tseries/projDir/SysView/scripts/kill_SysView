@@ -1,0 +1,4 @@
+#! /bin/csh
+
+snuff "java -jar /home/titan5/projDir/lib/sysview.jar -instance ops"
+

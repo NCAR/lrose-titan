@@ -1,0 +1,501 @@
+/**********************************************************************
+ * TDRP params for Dsr2Sweep
+ **********************************************************************/
+
+//======================================================================
+//
+// Dsr2Sweep program.
+//
+// Dsr2Sweep reads an input FMQ containing radar data, and writes it to 
+//   a file in Sweep format. Currently, DORADE and netCDF sweep file 
+//   formats are supported.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "pid";
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_fmq_url ///////////////////////////
+//
+// Input URL for DsRadar data via FMQ.
+// Type: string
+//
+
+input_fmq_url = "$(DATA_DIR)/fmq/pid";
+
+///////////// seek_to_end_of_input ////////////////////
+//
+// Option to seek to the end of the input FMQ.
+// If TRUE, the program will seek to the end of the fmq and only read in 
+//   new data. If FALSE, it will start reading from the beginning of the 
+//   FMQ.
+// Type: boolean
+//
+
+seek_to_end_of_input = TRUE;
+
+///////////// end_of_sweep_detection //////////////////
+//
+// Method used for detecting end-of-sweep.
+// 	SWEEP_NUM_EOS_DETECT - An end-of-sweep is detected if the sweep 
+//   number in the DsRadar queue changes. This can only be used if the 
+//   sweep number value is set correctly by the radar software.
+// 	SCAN_STRATEGY_EOS_DETECT - End-of-sweep is determined based on the 
+//   scan strategy specified in the scan_strategy parameter.
+//
+// Type: enum
+// Options:
+//     SWEEP_NUM_EOS_DETECT
+//     SCAN_STRATEGY_EOS_DETECT
+//
+
+end_of_sweep_detection = SWEEP_NUM_EOS_DETECT;
+
+///////////// scan_strategy ///////////////////////////
+//
+// List of expected elevation angles for the radar data.
+// Used only if end_of_sweep_detection is set to 
+//   SCAN_STRATEGY_EOS_DETECT.
+// Note that there must be more than one elevation angle for this to 
+//   work.
+// Type: double
+// 1D array - variable length.
+//
+
+scan_strategy = { 0.5, 1.5, 2.5, 3.5, 6, 8, 10, 15 };
+
+///////////// scan_strategy_epsilon ///////////////////
+//
+// Allowable error in the elevation angle when matching it to a target 
+//   elevation in the scan strategy.
+// Used only if end_of_sweep_detection is set to 
+//   SCAN_STRATEGY_EOS_DETECT.
+// Type: double
+//
+
+scan_strategy_epsilon = 0.3;
+
+///////////// min_beams_in_sweep //////////////////////
+//
+// Minimum number of beams allowed in a sweep.
+// Minimum val: 0
+// Type: long
+//
+
+min_beams_in_sweep = 0;
+
+///////////// constrain_elevation /////////////////////
+//
+// Option to only write sweeps with selected range of elevation angles.
+// If TRUE, only sweeps with elevation angles between min_elevation and 
+//   max_elevation will be written.
+// Type: boolean
+//
+
+constrain_elevation = FALSE;
+
+///////////// min_elevation ///////////////////////////
+//
+// Min elevation angle (deg).
+// See 'contrain_elevation' parameter.
+// Type: double
+//
+
+min_elevation = 0;
+
+///////////// max_elevation ///////////////////////////
+//
+// Max elevation angle (deg).
+// See 'contrain_elevation' parameter.
+// Type: double
+//
+
+max_elevation = 90;
+
+//======================================================================
+//
+// CHECK FOR MOVING ANTENNA.
+//
+//======================================================================
+ 
+///////////// check_antenna_moving ////////////////////
+//
+// Option to check that the antenna is moving.
+// If true, beams will only be stored if the antenna is moving. If the 
+//   antenna stops, beams will be ignored.
+// Type: boolean
+//
+
+check_antenna_moving = FALSE;
+
+///////////// min_angle_change ////////////////////////
+//
+// Minimun angle change beam-to-beam (deg).
+// For the antenna to be considered moving. the antenna much move by 
+//   this amount from one beam to the next. The angle check is made in 
+//   both azimuth and elevation.
+// Type: double
+//
+
+min_angle_change = 0.05;
+
+//======================================================================
+//
+// TEST PULSE.
+//
+//======================================================================
+ 
+///////////// test_pulse_present //////////////////////
+//
+// is there a test pulse in the data?.
+// Normally the test pulse would appear towards the maximum range.
+// Type: boolean
+//
+
+test_pulse_present = FALSE;
+
+///////////// test_pulse_power ////////////////////////
+//
+// Test pulse power (dBm).
+// Type: double
+//
+
+test_pulse_power = -9999;
+
+///////////// test_pulse_start_range //////////////////
+//
+// Test pulse start range (km).
+// Type: double
+//
+
+test_pulse_start_range = -9999;
+
+///////////// test_pulse_end_range ////////////////////
+//
+// Test pulse end range (km).
+// Type: double
+//
+
+test_pulse_end_range = -9999;
+
+///////////// remove_test_pulse ///////////////////////
+//
+// Option to remove the test pulse data.
+// If true, the test pulse data will be removed from the end of the 
+//   beam. The test pulse data generally lies in the last few gates in the 
+//   beam. If true, the number of gates will be reduced by 
+//   'ngates_test_pulse'.
+// Type: boolean
+//
+
+remove_test_pulse = FALSE;
+
+///////////// ngates_test_pulse ///////////////////////
+//
+// Number of gates to remove to get rid of test pulse.
+// See 'remove_test_pulse'.
+// Type: int
+//
+
+ngates_test_pulse = 20;
+
+//======================================================================
+//
+// OUTPUT FILES.
+//
+//======================================================================
+ 
+///////////// output_dir //////////////////////////////
+//
+// Output directory.
+// Type: string
+//
+
+output_dir = "$(DATA_DIR)/dorade/pid";
+
+///////////// output_format ///////////////////////////
+//
+// Type of output files to create.
+//
+// Type: enum
+// Options:
+//     DORADE_OUTPUT
+//     NC_RADAR_OUTPUT
+//
+
+output_format = DORADE_OUTPUT;
+
+///////////// write_to_dated_dir //////////////////////
+//
+// Option to write to a directory named after the date.
+// If FALSE, files will be written to output_dir/.If TRUE, files will be 
+//   written to output_dir/yyyymmdd/.
+// Type: boolean
+//
+
+write_to_dated_dir = TRUE;
+
+///////////// write_latest_data_info_file /////////////
+//
+// Option to write latest data info file to output dir.
+// If TRUE, latest_data_info files will be written after the file 
+//   itself.
+// Type: boolean
+//
+
+write_latest_data_info_file = TRUE;
+
+///////////// max_nbeams_in_file //////////////////////
+//
+// Max number of beams in a file.
+// Set to -1 to impose no maximum.
+// Type: int
+//
+
+max_nbeams_in_file = 1024;
+
+///////////// use_fixed_angle_for_filename ////////////
+//
+// Option to use the fixed (target) angle in file name.
+// If TRUE, the fixed angle in the center of the sweep will be used to 
+//   name the file. If FALSE, the mean of the angles in the sweep will be 
+//   used to name the file.
+// Type: boolean
+//
+
+use_fixed_angle_for_filename = TRUE;
+
+///////////// filter_antenna_transitions //////////////
+//
+// Option to filter data when the transition flag is set.
+// If TRUE, the program will filter out beams which are computed when 
+//   the antenna is moving from one tilt to the next, or one volume to the 
+//   next.
+// Type: boolean
+//
+
+filter_antenna_transitions = FALSE;
+
+//======================================================================
+//
+// RADAR PARAMETERS.
+//
+//======================================================================
+ 
+///////////// project_name ////////////////////////////
+//
+// Name of project.
+// Type: string
+//
+
+project_name = "CP2";
+
+///////////// platform_name ///////////////////////////
+//
+// Name of instrument platform.
+// This is normally the radar name, and is used in the sweep file name.
+// Type: string
+//
+
+platform_name = "CP2";
+
+///////////// producer_name ///////////////////////////
+//
+// Name of producer.
+// Type: string
+//
+
+producer_name = "NCAR RAL";
+
+///////////// use_target_elev /////////////////////////
+//
+// Flag indicating whether to use the target elevation.
+// Type: boolean
+//
+
+use_target_elev = FALSE;
+
+///////////// override_radar_location /////////////////
+//
+// Option to override radar location.
+// If TRUE, the program will use location specified in the 
+//   'radar_location' parameter.
+// Type: boolean
+//
+
+override_radar_location = FALSE;
+
+///////////// radar_location //////////////////////////
+//
+// Radar location if override is set true.
+// The radar_location is only used if 'override_radar_location' is set 
+//   true. Otherwise the information in the input data stream is used. 
+//   Note that the altitude is in kilometers, not meters.
+//
+// Type: struct
+//   typedef struct {
+//      double latitude;
+//      double longitude;
+//      double altitude;
+//   }
+//
+//
+
+radar_location = { 0, 0, 0 };
+
+///////////// override_beam_width /////////////////////
+//
+// Option to override radar beam width.
+// If TRUE, the program will use beam width specified in the 
+//   'beam_width' parameter.
+// Type: boolean
+//
+
+override_beam_width = FALSE;
+
+///////////// beam_width //////////////////////////////
+//
+// Radar beam width if override is set true.
+// The beam width is only used if 'override_beam_width' is set true. 
+//   Otherwise the information in the input data stream is used.
+// Type: double
+//
+
+beam_width = 1;
+
+///////////// set_calib_power_to_measured_power ///////
+//
+// Option to set the calibrated power as the measured power.
+// If TRUE, the measured power will be stored as calibrated power.
+// Type: boolean
+//
+
+set_calib_power_to_measured_power = FALSE;
+
+//======================================================================
+//
+// OUTPUT FIELDS.
+//
+//======================================================================
+ 
+///////////// output_fields ///////////////////////////
+//
+// Array of output fields.
+// The program will only output these fields
+// 	dsr_name - the field name in the dsr data.
+// 	output_name - the field name in the output file. If the output_name 
+//   is an empty string, the output name will be set to the dsr_name.
+// 	output_units - The units to use in the output file. This has to be 
+//   an enumerated list because that's all that's allowed by the library 
+//   that creates the output file.
+// 	output_encoding - The encoding to use in the output file.
+// 	  SI16: signed 16-bit integer, with scale and bias
+// 	        si16 = (float - bias) / scale
+// 	  FL32: 32-bit floating point
+// 	output_scale - the scaling to be used for ENCODING_SI16
+// 	    set scale to -9999 to use the scaling from the input data
+// 	output_bias - the bias to be used for ENCODING_SI16
+// 	    bias should normally be set to 0.0.
+//
+// Type: struct
+//   typedef struct {
+//      string dsr_name;
+//      string output_name;
+//      field_units_t output_units;
+//        Options:
+//          UNITS_NONE
+//          UNITS_REFL
+//          UNITS_POWER
+//          UNITS_VEL
+//      field_encoding_t output_encoding;
+//        Options:
+//          ENCODING_SI16
+//          ENCODING_FL32
+//      double output_scale;
+//      double output_bias;
+//   }
+//
+// 1D array - variable length.
+//
+
+output_fields = {
+  { "DBZ_F", "DBZ", UNITS_REFL, ENCODING_SI16, -9999, 0},
+  { "VEL_F", "VR", UNITS_VEL, ENCODING_SI16, -9999, 0},
+  { "WIDTH_F", "SW", UNITS_VEL, ENCODING_SI16, -9999, 0},
+  { "ZDR_F", "ZDR", UNITS_POWER, ENCODING_SI16, -9999, 0},
+  { "PHIDP_F", "PHIDP", UNITS_NONE, ENCODING_SI16, -9999, 0},
+  { "RHOHV_F", "RHOHV", UNITS_NONE, ENCODING_SI16, -9999, 0},
+//{ "LDRH_F", "LDR", UNITS_POWER, ENCODING_SI16, -9999, 0},
+//{ "LDRV_F", "LVDR", UNITS_POWER, ENCODING_SI16, -9999, 0},
+  { "DBMHC_F", "DM", UNITS_NONE, ENCODING_SI16, -9999, 0},
+  { "DBMVC_F", "DL", UNITS_NONE, ENCODING_SI16, -9999, 0},
+  { "DBMHX_F", "DW", UNITS_NONE, ENCODING_SI16, -9999, 0},
+  { "DBMVX_F", "DX", UNITS_NONE, ENCODING_SI16, -9999, 0},
+  { "NCP", "NCP", UNITS_NONE, ENCODING_SI16, -9999, 0},
+  { "PID", "PID", UNITS_NONE, ENCODING_SI16, -9999, 0}
+};
+
+///////////// override_nyquist ////////////////////////
+//
+// Option to override nyquist velocity in incoming data.
+// If true, the nyquist_velocity parameter is used to specify the 
+//   nyquist. If false, the nyquist is computed from the incoming radar 
+//   data stream. The nyquist is used for velocity interpolation, to 
+//   ensure that folded values are treated correctlty.
+// Type: boolean
+//
+
+override_nyquist = FALSE;
+
+///////////// nyquist_velocity ////////////////////////
+//
+// Specify nyquist velocity (m/s).
+// See 'override_nyquist'.
+// Type: double
+//
+
+nyquist_velocity = 25;
+
+///////////// scale_by_100_bias_0 /////////////////////
+//
+// Option to use scale of 100, bias of 0.
+// If TRUE, the program will scale output parameterswith scale of 100, 
+//   bias of 0 - needed for S-Pol legacy.  Rain and Particle ID derived 
+//   products If FALSE, it will use 'standard' product scaling.
+// Type: boolean
+//
+
+scale_by_100_bias_0 = FALSE;
+

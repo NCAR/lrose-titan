@@ -1,0 +1,25 @@
+# NAME pressure_mb.colors
+# jaimi 	12/2/1998 13:20:33
+# MIN    MAX    NAME        COLOR LABEL
+800 	815 	saddle brown 	!
+815 	830 	brown 	!
+830 	845 	indian red 	!
+845 	860 	rosy brown 	!
+860 	875 	tan 	!
+875 	890 	light goldenrod 	!
+890 	905 	dark khaki 	!
+905 	920 	dark sea green 	!
+920 	935 	medium sea green 	!
+935 	950 	olive drab 	!
+950 	965 	sea green 	!
+965 	980 	light sea green 	!
+980 	995 	cadet blue 	!
+995    1010 	steel blue 	!
+1010   1025 	dodger blue 	!
+1025   1040 	royal blue 	!
+1040   1055 	medium blue 	!
+1055   1070 	medium slate blue 	!
+1070   1085 	slate blue 	!
+1085   1100 	dark slate blue 	!
+1100   1115 	navy 	!
+1115   1130 	midnight blue 	!

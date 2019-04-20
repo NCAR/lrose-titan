@@ -1,0 +1,3 @@
+moment_svr_name = cp2server
+moment_svr_port = 2111
+listen_port = 2511

@@ -1,0 +1,50 @@
+#! /bin/csh
+
+# Cloning a display machine from a master display host
+# ====================================================
+
+# On source host:
+-----------------
+
+# Set the master display host up, get everything working.
+#
+# Code and configs will be in ~/cvs
+#
+# Tar up cvs directory and copy over to target host
+
+cd
+tar cvfz cp2_display_cvz.tgz cvs
+scp cp2_display_cvz.tgz $target_host:
+
+# On target host:
+-----------------
+
+# Log in
+# Stop system
+
+cd
+stop_all
+
+# move old cvs out of way
+
+mkdir -p save
+mv cvs save/cvs.yyyymmdd (e.g. 20081003)
+
+# untar clone code and configs
+
+tar xvfz cp2_display_cvz.tgz
+
+# configure the host but running a script
+# this sets up links etc
+
+~/cvs/projects/titan/cp2/projDir/system/scripts/configure_host
+
+# restart system
+
+start_all
+
+# copy over gnome desktop as required
+#
+#  See 'copy_gnome_desktop.howto.txt' for details.
+
+

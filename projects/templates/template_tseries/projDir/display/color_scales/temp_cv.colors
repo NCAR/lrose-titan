@@ -1,0 +1,25 @@
+# NAME temp_cv.colors
+#
+# Used to display temperatures in the
+# ceiling and visibility system.
+# Niles Oien Jan 2000
+#
+-80     -60     white
+-60     -48     red
+-48 	-42 	DeepPink1
+-42 	-36 	maroon
+-36 	-30 	dark orchid
+-30 	-24 	blue
+-24 	-18 	royal blue
+-18 	-12 	deep sky blue
+-12 	-6 	medium spring green
+-6 	-2 	forest green
+-2 	2 	gray
+2 	6 	tan2
+6 	12 	gold1
+12 	18 	yellow
+18 	24 	salmon1
+24 	30 	tomato
+30 	36 	brown1
+36 	42 	red
+42 	48 	firebrick

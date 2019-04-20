@@ -1,0 +1,19 @@
+# VIL color scale -- based on Lincoln Lab's
+
+# DM, FEB 1999
+
+#1	2       #9c9c9c
+#2	3	#767676
+1	5	#ffaaaa
+5	6	#ee8c8c
+6	7	#c97070
+7	8	#00fb90
+8	9	#00bb00
+9	10	#ffff70
+10	12	#d0d060
+12	14	#ff6060
+14	16	#da0000
+16	18	#ae0000
+18	20	#0000ff
+20	40	#ffffff
+40	100	#e700ff

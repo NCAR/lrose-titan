@@ -1,0 +1,7 @@
+#! /bin/csh
+
+# set the font path for etch
+
+xset fp= /usr/share/X11/fonts/misc/,/usr/share/X11/fonts/75dpi/,/usr/share/X11/fonts/100dpi/
+
+

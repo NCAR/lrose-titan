@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Iq2Dsr -params Iq2Dsr.ops"
+if ($status == 1) then
+  nice Iq2Dsr -params Iq2Dsr.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Iq2Dsr -i ops &
+endif
+

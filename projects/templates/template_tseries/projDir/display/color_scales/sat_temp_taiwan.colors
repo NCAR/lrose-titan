@@ -1,0 +1,24 @@
+# NAME sat_temp_taiwan.colors
+#
+# Niles Oien 9 December 1999
+#
+-85     -61     pink              ! -70
+-61	-52     hot pink          ! -61
+-52     -46     purple            ! -52
+-46     -40     dark orchid       ! -46	
+-40	-35	MediumOrchid4     ! -40
+-35	-31	DarkOrchid4       ! -35
+-31	-28	MediumPurple4     ! -31
+-28     -25     blue4             ! -28
+-25 	-22	slate blue        ! -25
+-22	-19	medium slate blue ! -22
+-19	-16	cornflower blue   ! -19
+-16	-13	deep sky blue     ! -16
+-13     -10     cyan              ! -13 
+-10	-7 	pale turquoise    ! -10
+-7  	-3      gray90            ! -7
+-3  	-0.5   	gray80            ! -3
+-0.5   	0.5   	gray70            ! 0   
+0.5   	4   	gray60            ! 4 
+4  	7       gray50            ! 7
+

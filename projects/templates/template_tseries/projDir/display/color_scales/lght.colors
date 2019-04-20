@@ -1,0 +1,19 @@
+# NAME light.colors
+
+# peters 
+
+-10000 	-1000 	chartreuse
+-1000 	-100 	chartreuse3
+-100 	-50 	green3
+-50 	-10 	green4
+-10 	-7 	dark green
+#-5 	-1 	cyan4
+#-1 	-0.1 	navy blue
+-7 	0.1 	black
+0.1 	1 	dark violet
+1 	5 	magenta4
+5 	10 	red4
+10 	50 	red3
+50 	100 	red2
+100     1000   	orangered3
+1000    10000   orange red

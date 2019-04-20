@@ -1,0 +1,39 @@
+# NAME tropopause_hgt.colors
+# Cathy Kessinger 11/1/2001 
+#MIN     MAX     NAME        COLOR LABEL
+5000 	6000 	blue4
+6000 	7000 	DarkOrchid4
+7000 	8000 	blue
+8000 	8500 	medium slate blue
+8500    9000 	dark green
+9000    9500 	dark olive green
+9500  	10000	forest green
+10000 	10250 	SpringGreen3
+10250 	10500 	medium sea green
+10500 	10750 	medium aquamarine
+10750	11000  	HotPink4
+11000  	11250  	maroon
+11250  	11500  	VioletRed4
+11500 	11750 	saddle brown 	
+11750 	12000 	sienna
+12000 	12250 	DarkOrange3 	
+12250 	12500 	chocolate
+12500 	12750 	dark orange 	
+12750 	13000 	orange 		
+13000 	13250 	tan2 		
+13250 	13500 	peru 		
+13500 	13750 	goldenrod1
+13750 	14000 	gold 		
+14000 	14250 	light goldenrod	
+14250   14500   PeachPuff2
+14500   14750   wheat
+14750   15000   bisque
+15000   15250   blanched almond
+15250 	15500 	yellow
+15500 	15750 	dark salmon
+15750 	16000 	salmon
+16000 	16250 	firebrick2
+16250 	16500 	DeepPink1
+16500 	16750 	light grey
+16750 	17000 	gray92 		
+17000 	18000 	snow 		

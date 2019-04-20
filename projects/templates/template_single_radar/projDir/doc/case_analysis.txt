@@ -1,0 +1,213 @@
+CASE ANALYSIS
+=============
+
+Mike Dixon, RAP, NCAR, Boulder, CO, USA
+December 1997
+
+Introduction.
+-------------
+
+The document details the use of the case analysis software which was
+added to TITAN during November/December 1997. The intention of this
+software is to provide the statistical analysis capabilities provided
+by the original storm tracking software used on the South African
+projects. The funding for the new TITAN software comes from the
+Mexican PARC project.
+
+Definition of a case.
+---------------------
+
+For each case there exists a corresponding 'experimental unit.'
+
+The experimental unit is defined as the storm as measured by the radar
+and tracked by TITAN, using a set threshold, for the time period 'x'
+min prior to decision time to 'y' min after decision time. If
+the storm does not exist 'x' min before decision time, the case
+starts at the first detection by TITAN. Similarly if the storms dies
+before 'y' min after decision time the case ends when TITAN no
+longer detects it.
+
+Any mergers and splits which occur during the specified time period
+will be included in the analysis, but any mergers and splits which
+occur outside that time period will be ignored.
+
+Identifying a case.
+-------------------
+
+The rview and time_hist displays are the main tools for identifying
+cases. It is assumed that the radar data, TITAN tracks and aircraft
+tracks are available for each case.
+
+Use rview to find the case at decision time, using the TITAN tracks
+and the aircraft position. Set the annotation to 'track numbers'. Note
+the complex and simple track number. The track number appears either
+as a single number or as a pair, such as 129/277. If there is only a
+single number the complex and simple track numbers are the same. If
+there is a pair, the complex number is the first of the pair and the
+simple number is the second.
+
+Middle double-clicking on the case at decision time will give you an
+idea of what the case looks like. time_hist includes the following
+parameters:
+
+  time_hist.partial_track_past_period: 20.0
+  time_hist.partial_track_future_period: 60.0
+
+If set as above, middle-clicking the case will highlight the
+case from  20 minutes before to 60 minutes after the current
+time on the display. Middle-clicking on the track menu button
+will turn off all other tracks, leaving only the case.
+
+Creating the case_tracks file.
+------------------------------
+
+Create an ASCII file which contains the details of all of the
+cases. The file 'case_tracks.example' is an example of such a file.
+The headers in the file are self-explanatory.
+
+Comments start with '#'.
+
+The following are the columns you need to fill in:
+
+case   Seed?   N.    Seed   track ref time        Ref-   End-  (cont.)
+num    Y/N     of    Dur    YYYY MM DD HH MM SS   start  ref   (cont.)
+               Flrs  (min)                        (min)  (min) (cont.)
+----   -----   ----  -----  -------------------   -----  ----- (cont.)
+
+ Compl Simpl Cloud Mixing  CCL    L.I.
+ track track Base  Ratio   Temp   500mb
+   num   num   (km)  (g/kg)  (C)    (C)
+ ----- ----- ----- ------  ----   ------
+
+'track ref time' and 'decision time' are synonymous.
+
+Ref-start is the time (in min) from the desired start of the case to
+decision time. End-ref is the time from decision time to the the
+desired end of the case.
+
+Only include cases for which a TITAN track was found.
+
+Check the file 'case_tracks.example' to see how this was done for Mexico.
+Those cases for which no TITAN tracks existed are commented out.
+
+The environmental data (cloud base, mixing ration, CCL temp or lifted
+index) is included for partitioning purposes in the analysis. For
+example, you may choose to only include cases for which cloud base is
+in a given range. If any of the environmental data is not available
+use -999.0 to indicate a missing value.
+
+Dealing with bad mergers.
+-------------------------
+
+If you feel that the track includes parts of the storm which are
+not relevant to the case, limit the duration of the case by setting
+'Ref-start' and 'End-ref' accordingly.
+
+Checking the case definitions.
+------------------------------
+
+rview and time_hist have been updated to identify cases from a case file.
+This allows you to check exactly which portions of a storm are included in
+a case.
+
+In the time_hist parameter file, set:
+
+  time_hist.use_case_tracks: true
+  time_hist.case_tracks_file_path: $(TITAN_HOME)/params/???????
+
+Then, when you click on a case in rview, using the middle button, the
+case number will be displayed on both rview and time_hist instead of
+the track number. For example, case 15 will appear as C15. To see the
+track number as before, use the left button (complex track) or right
+button (simple track).
+
+Check all of the cases using rview and time_hist. The time-history
+window (upper-right) has been updated to allow all of the storm
+properties to be viewed at once. The time-height window (middle-right)
+has been updated to optionally show the max reflectivity plotted on
+the vertical centroid. Check the help feature for details on these
+changes.
+
+Computing track properties - PartialProps.
+------------------------------------------
+
+Replaces old TRACKPROPS program.
+
+Track properties are computed for the cases by running the program
+PartialProps. Check the parameter file for parameter details. Apart
+from the various directory names, the main parameter is the
+'altitude_threshold', which is the altitude cutoff for computing the
+volume_above_alt and mass_above_alt properties.
+
+You need to create a directory (usually called case_props or
+something similar) for the case properties.
+
+For each case PartialProps will create a global properties and a time
+series properties file. For example, for case 17, the files would be
+global.017 and tseries.017. These files are ASCII, and the data from
+them is used by the next step, CaseStats. The time series files have
+one data line for each scan in the case. The delta times are relative
+to decision time. See CaseStats for generating interpolated
+time series files.
+
+Take a look at the files to see which properties are computed.  'roi'
+means 'rate of increase'. 'ht_max_minus_centroid_z' is 'ht_of_dbz_max'
+minus 'refl_centroid_z'. VCDI is the Vertical Centroid Difference
+Integral, which is ht_max_minus_centroid_z integrated over time.
+
+Case Statistics - CaseStats.
+----------------------------
+
+Replaces old RANDOM_STATS program.
+
+CaseStats runs on the property files produced by PartialProps. It
+produces statistics on differences between the the seed and no-seed
+cases. Optionally you can run the re-randomization option to produce
+P-factors.
+
+CaseStats uses the case_tracks file and the files stored in the
+case_props directory.
+
+In the parameter file you indicate which global and time series
+properties you want to analyze. For the time series you also indicate
+the times, relative to decision time, at which you wish to analyze the
+series. If you use the -interp command line option, the interpolated
+time series data is written out to the case_props directory in the
+same format as the raw time series data. This may be useful should you
+wish to perform other analyses or plot the data.
+
+You may also specify conditions to be placed on the analysis. For example,
+setting:
+
+  conditions = {
+    {	
+      "volume@0", /* prop_name:string */
+      0.0, /* min_val:double */
+      750.0 /* max_val:double */
+    }
+  };
+
+only includes cases with volumes at time 0 (decision time) between 0
+and 750 km3. The '@' in the property name indicates a time series
+property at a number of minutes relative to decision time. If no '@'
+exists in the property name it is assumed to be a global property.
+
+You may perform the analysis on the following statistics:
+
+  arithmetic means  : use -arith  on command line
+  geometric  means  : use -geom   on command line
+  first  quartiles  : use -quart1 on command line
+  second quartiles  : use -quart2 on command line
+  third  quartiles  : use -quart3 on command line
+
+These options may also be specified directly in the parameter file.
+
+You may specify whether or not to use rerandomization. If set,
+the number in the list and the worst split are also specified.
+
+Output from CaseStats is in ASCII to stdout. You can redirect to
+a file.
+
+
+
+

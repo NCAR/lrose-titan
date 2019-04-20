@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/titan/params
+
+running "Tstorms2Spdb -params Tstorms2Spdb.ops"
+if ($status == 1) then
+  nice Tstorms2Spdb -params Tstorms2Spdb.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Tstorms2Spdb -i ops &
+endif
+

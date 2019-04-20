@@ -1,0 +1,18 @@
+#! /bin/csh -f
+
+set proc_name=$1
+set instance=$2
+set role_dir=$3
+
+cd $PROJ_DIR/$role_dir/params
+
+running "$proc_name -params $proc_name.$instance"
+if ($status == 1) then
+  $proc_name -params $proc_name.$instance |& \
+    LogFilter -d $ERRORS_LOG_DIR -p $proc_name -i $instance >& /dev/null &
+endif
+
+
+
+
+

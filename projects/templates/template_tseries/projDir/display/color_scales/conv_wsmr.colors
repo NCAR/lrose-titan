@@ -1,0 +1,24 @@
+# NAME conv_wsmr.colors
+
+# roberts 	5/27/1998 12:40:43
+
+-1000 	-680 	blue
+-680 	-600 	medium blue
+-600 	-520 	slate blue
+-520 	-440 	cornflower blue
+-440 	-360 	medium sea green
+-360 	-280 	lime green
+-280 	-200 	forest green
+-200 	-120 	dark olive green
+-120 	-40 	dark green
+-40 	40 	dim gray
+40 	120 	saddle brown
+120 	200 	sienna
+200 	280 	dark goldenrod
+280 	360 	goldenrod
+360 	440 	gold1
+440 	520 	orange
+520 	600 	salmon
+600 	680 	tomato
+680 	1000 	red
+1000 	1250 	firebrick

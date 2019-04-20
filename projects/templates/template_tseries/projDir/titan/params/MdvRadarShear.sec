@@ -1,0 +1,427 @@
+/**********************************************************************
+ * TDRP params for MdvRadarShear
+ **********************************************************************/
+
+//======================================================================
+//
+// MdvRadarShear reads in radial velocity data in MDV polar radar 
+//   format, computes the shear and writes out shear fields in MDV format.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUG AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "sec";
+
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+// In REALTIME mode, the program waits for a new input file. In ARCHIVE 
+//   mode, it moves through the data between the start and end times set 
+//   on the command line. In FILELIST mode, it moves through the list of 
+//   file names specified on the command line.
+//
+// Type: enum
+// Options:
+//     ARCHIVE
+//     REALTIME
+//     FILELIST
+//
+
+mode = REALTIME;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_dir ///////////////////////////////
+//
+// Directory for input data.
+// This is used in REALTIME and ARCHIVE modes only. In FILELIST mode, 
+//   the file paths are specified on the command line.
+// Type: string
+//
+
+input_dir = "$(DATA_DIR)/mdv/radarPolar/ops/sec";
+
+///////////// set_elev_limits /////////////////////////
+//
+// Option to set elevation limits.
+// Type: boolean
+//
+
+set_elev_limits = FALSE;
+
+///////////// lower_elev //////////////////////////////
+//
+// Lower elev limit (deg).
+// Type: float
+//
+
+lower_elev = 0;
+
+///////////// upper_elev //////////////////////////////
+//
+// Upper elev limit (deg).
+// Type: float
+//
+
+upper_elev = 0;
+
+//======================================================================
+//
+// INPUT FIELD INFORMATION.
+//
+// Names of input fields in the Dsr queue.
+//
+//======================================================================
+ 
+///////////// DBZ_field_name //////////////////////////
+//
+// Field name for DBZ in the input file.
+// Type: string
+//
+
+DBZ_field_name = "DBZ_F";
+
+///////////// SNR_field_name //////////////////////////
+//
+// Field name for SNR in the input file.
+// Type: string
+//
+
+SNR_field_name = "SNRHC_F";
+
+///////////// VEL_field_name //////////////////////////
+//
+// Field name for radial velocity in the input file.
+// Type: string
+//
+
+VEL_field_name = "VEL_F";
+
+//======================================================================
+//
+// SMOOTHING INPUT FIELDS.
+//
+// This section gives you the option of smoothing the fields in range by 
+//   applying a median filter.
+//
+//======================================================================
+ 
+///////////// apply_median_filter_to_DBZ //////////////
+//
+// Option to filter DBZ with median filter.
+// The filter is computed in range.
+// Type: boolean
+//
+
+apply_median_filter_to_DBZ = FALSE;
+
+///////////// DBZ_median_filter_len ///////////////////
+//
+// Length of median filter for DBZ - gates.
+// See 'apply_median_filter_to_DBZ'.
+// Type: int
+//
+
+DBZ_median_filter_len = 5;
+
+///////////// apply_median_filter_to_VEL //////////////
+//
+// Option to filter VEL with median filter.
+// The filter is computed in range.
+// Type: boolean
+//
+
+apply_median_filter_to_VEL = TRUE;
+
+///////////// VEL_median_filter_len ///////////////////
+//
+// Length of median filter for VEL - gates.
+// See 'apply_median_filter_to_VEL'.
+// Type: int
+//
+
+VEL_median_filter_len = 7;
+
+///////////// apply_median_filter_to_SNR //////////////
+//
+// Option to filter SNR with median filter.
+// The filter is computed in range, and affects PID only.
+// Type: boolean
+//
+
+apply_median_filter_to_SNR = FALSE;
+
+///////////// SNR_median_filter_len ///////////////////
+//
+// Length of median filter for SNR - gates.
+// See 'apply_median_filter_to_SNR'.
+// Type: int
+//
+
+SNR_median_filter_len = 5;
+
+//======================================================================
+//
+// CENSORING.
+//
+//======================================================================
+ 
+///////////// censor_using_thresholds /////////////////
+//
+// Option to censor the output using set thresholds.
+// If TRUE, the thresholding fields will be examined to see if it is 
+//   within the desired range. Examples are SNR (Signal-to-noise) and NCP 
+//   (normalized coherent power). If the specified field at a gate falls 
+//   outside the specified range, all output fields will be set to missing 
+//   for that gate.
+// Type: boolean
+//
+
+censor_using_thresholds = TRUE;
+
+///////////// censor_field_name ///////////////////////
+//
+// Name of field for thresholding.
+// This is the DSR (input) field name for the thresholding field. If 
+//   this field is available, it is used for thresholding. If not, 
+//   thresholding will not be performed.
+// Type: string
+//
+
+censor_field_name = "SNRHC_F";
+
+///////////// censor_min_value ////////////////////////
+//
+// Minimum threshold - see 'censor_output_using_thresholds'.
+// The specified field at a gate must exceed this value for the gate to 
+//   be accepted.
+// Type: double
+//
+
+censor_min_value = 3;
+
+///////////// censor_max_value ////////////////////////
+//
+// Maximum threshold - see 'censor_output_using_thresholds'.
+// The specified field at a gate must be less than this value for the 
+//   gate to be accepted.
+// Type: double
+//
+
+censor_max_value = 1000;
+
+//======================================================================
+//
+// COMPUTING SHEAR.
+//
+//======================================================================
+ 
+///////////// shear_kernel_size ///////////////////////
+//
+// Size of kernel for computing shear.
+// Type: int
+//
+
+shear_kernel_size = 7;
+
+///////////// max_arc_width ///////////////////////////
+//
+// Max width of azimuth arc (km).
+// This limits the smearing of the data in azimuth at longer ranges.
+// Type: double
+//
+
+max_arc_width = 3;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// output_url //////////////////////////////
+//
+// Output URL.
+// Output MDV data is written to this URL.
+// Type: string
+//
+
+output_url = "$(DATA_DIR)/mdv/radarPolar/shear/sec";
+
+///////////// RADIAL_SHEAR_output_field ///////////////
+//
+// If write is TRUE, RADIAL_SHEAR is included in the output MDV file.
+// This is the shear along the radial.
+//
+// Type: struct
+//   typedef struct {
+//      string name;
+//      string long_name;
+//      string units;
+//      encoding_type_t encoding;
+//        Options:
+//          ENCODING_ASIS
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      boolean write;
+//   }
+//
+//
+
+RADIAL_SHEAR_output_field = {
+    name = "rad_shear",
+    long_name = "radial_shear",
+    units = "m/s/km",
+    encoding = ENCODING_INT16,
+    write = TRUE
+};
+
+///////////// AZIMUTHAL_SHEAR_output_field ////////////
+//
+// If write is TRUE, AZIMUTHAL_SHEAR is included in the output MDV file.
+// This is the shear is radial velocity, but computed in azimuth.
+//
+// Type: struct
+//   typedef struct {
+//      string name;
+//      string long_name;
+//      string units;
+//      encoding_type_t encoding;
+//        Options:
+//          ENCODING_ASIS
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      boolean write;
+//   }
+//
+//
+
+AZIMUTHAL_SHEAR_output_field = {
+    name = "az_shear",
+    long_name = "azimuthal_shear",
+    units = "m/s/km",
+    encoding = ENCODING_INT16,
+    write = TRUE
+};
+
+///////////// MAX_SHEAR_output_field //////////////////
+//
+// If write is TRUE, MAX_SHEAR is included in the output MDV file.
+// This is the max of RADIAL_SHEAR and AZIMUTHAL_SHEAR.
+//
+// Type: struct
+//   typedef struct {
+//      string name;
+//      string long_name;
+//      string units;
+//      encoding_type_t encoding;
+//        Options:
+//          ENCODING_ASIS
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      boolean write;
+//   }
+//
+//
+
+MAX_SHEAR_output_field = {
+    name = "max_shear",
+    long_name = "max_of_rad_and_az_shear",
+    units = "m/s/km",
+    encoding = ENCODING_INT16,
+    write = TRUE
+};
+
+///////////// MEAN_VEL_output_field ///////////////////
+//
+// If write is TRUE, MEAN_VEL is included in the output MDV file.
+// This is a smoothed velocity.
+//
+// Type: struct
+//   typedef struct {
+//      string name;
+//      string long_name;
+//      string units;
+//      encoding_type_t encoding;
+//        Options:
+//          ENCODING_ASIS
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      boolean write;
+//   }
+//
+//
+
+MEAN_VEL_output_field = {
+    name = "mean_vel",
+    long_name = "mean_vel_from_shear_computations",
+    units = "m/s",
+    encoding = ENCODING_INT16,
+    write = TRUE
+};
+
+//======================================================================
+//
+// ECHO INPUT FIELDS.
+//
+//======================================================================
+ 
+///////////// echo_input_fields_in_output_file ////////
+//
+// Option to copy some of the input fields into the output file.
+// If TRUE, the listed fields will be copied to the output MDV file. See 
+//   'echo_field_names'.
+// Type: boolean
+//
+
+echo_input_fields_in_output_file = TRUE;
+
+///////////// echo_field_names ////////////////////////
+//
+// List of field names to be copied from the input file to the output 
+//   file.
+// See 'echo_input_fields_in_output_file'.
+// Type: string
+// 1D array - variable length.
+//
+
+echo_field_names = {
+ "DBZ_F",
+ "VEL_F",
+ "SNRHC_F"
+};
+

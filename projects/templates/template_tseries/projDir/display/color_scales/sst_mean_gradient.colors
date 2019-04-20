@@ -1,0 +1,29 @@
+# NAME sst_mean_gradient.colors
+
+# kessinger 	4/13/2001
+
+-15 	-11 	black
+-11 	-10 	purple
+-10 	-9 	mediumpurple2
+-9 	-8 	orchid
+-8 	-7 	midnight blue
+-7 	-6 	dark slate blue
+-6 	-5 	blue
+-5 	-4 	royal blue
+-4 	-3 	deep sky blue
+-3 	-2 	medium spring green
+-2 	-1 	forest green
+-1 	-0.5 	dark gray
+-0.5 	0.5 	light gray
+0.5 	1 	dark gray
+1 	2 	tan2
+2 	3 	gold1
+3 	4 	yellow
+4 	5 	salmon1
+5 	6 	tomato
+6 	7 	brown1
+7 	8 	red
+8 	9 	DeepPink1
+9 	10 	maroon 
+10 	11 	firebrick 
+11 	15 	black 

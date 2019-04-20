@@ -1,0 +1,20 @@
+# NAME sat_ebbt_16
+
+# roberts 	2/27/1996 12:12:00
+
+0 	16 	gray0             ! NA 
+16 	32 	gray11            ! 98
+32 	48 	gray21            ! 60 
+48 	64 	gray31            ! 41
+64 	80 	gray41            ! 26
+80 	96 	gray51            ! 14
+96 	112 	gray61            ! 3
+112 	128 	gray67            ! -6
+128 	144 	gray73            ! -14
+144 	160 	light yellow      ! -22
+160 	176     Dark Turquoise    ! -30
+176 	192 	cyan              ! -37
+192 	208 	cornflower blue   ! -43
+208     224     blue              ! -49
+224 	240 	medium purple     ! -55
+240 	256 	dark orchid       ! -61

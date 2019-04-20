@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="CloudHeightFL.colors">
+  <ColorRange minValue="0.0" maxValue="30.0">
+    <Color red="26" green="26" blue="26" />
+  </ColorRange>
+  <ColorRange minValue="30.0" maxValue="60.0">
+    <Color red="51" green="51" blue="51" />
+  </ColorRange>
+  <ColorRange minValue="60.0" maxValue="90.0">
+    <Color red="77" green="77" blue="77" />
+  </ColorRange>
+  <ColorRange minValue="90.0" maxValue="120.0">
+    <Color red="102" green="102" blue="102" />
+  </ColorRange>
+  <ColorRange minValue="120.0" maxValue="150.0">
+    <Color red="127" green="127" blue="127" />
+  </ColorRange>
+  <ColorRange minValue="150.0" maxValue="180.0">
+    <Color red="153" green="153" blue="153" />
+  </ColorRange>
+  <ColorRange minValue="180.0" maxValue="210.0">
+    <Color red="179" green="179" blue="179" />
+  </ColorRange>
+  <ColorRange minValue="210.0" maxValue="240.0">
+    <Color red="204" green="204" blue="204" />
+  </ColorRange>
+  <ColorRange minValue="240.0" maxValue="290.0">
+    <Color red="229" green="229" blue="229" />
+  </ColorRange>
+  <ColorRange minValue="290.0" maxValue="350.0">
+    <Color red="0" green="139" blue="69" />
+  </ColorRange>
+  <ColorRange minValue="350.0" maxValue="410.0">
+    <Color red="0" green="205" blue="102" />
+  </ColorRange>
+  <ColorRange minValue="410.0" maxValue="450.0">
+    <Color red="0" green="238" blue="118" />
+  </ColorRange>
+  <ColorRange minValue="450.0" maxValue="650.0">
+    <Color red="255" green="255" blue="0" />
+  </ColorRange>
+</ColorScale>
+

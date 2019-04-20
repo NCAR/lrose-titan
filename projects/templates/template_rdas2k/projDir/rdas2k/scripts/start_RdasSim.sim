@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/rdas2k/params
+
+running "RdasSim -params RdasSim.sim"
+if ($status == 1) then
+  RdasSim -params RdasSim.sim |& \
+    LogFilter -d $ERRORS_LOG_DIR -p RdasSim -i sim &
+endif
+

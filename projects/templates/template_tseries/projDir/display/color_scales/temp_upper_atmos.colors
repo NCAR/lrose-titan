@@ -1,0 +1,34 @@
+# colorscale for temperature fields of upper atmosphere (deg K)
+
+# Cathy Kessinger, November 2001
+
+180	185     Plum
+185	190     Orchid
+190	195     Violet
+195	200     Purple
+200	205     DarkSlateBlue
+205	210	NavyBlue
+210	215	Blue
+215 	220	MediumBlue
+220	225	SkyBlue
+225	230 	DarkGreen
+230	235	ForestGreen
+235 	240	Green
+240	245	YellowGreen
+245     250     sienna
+250     255     DarkOrange3 
+255     260     chocolate
+260     265     dark orange 
+265     270     orange 
+270     275     tan2 
+275     280     peru 
+280   	285 	goldenrod
+285  	290 	Gold
+290  	295 	Yellow
+295 	300 	Wheat
+300	305	Coral
+305	310	Orange
+310	315	MediumVioletRed
+315	320	OrangeRed
+320	325	Red
+

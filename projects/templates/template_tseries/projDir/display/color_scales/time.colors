@@ -1,0 +1,21 @@
+# NAME time.colors
+
+# jaimi 	2/7/2000
+
+0	249 	DeepPink1
+250	499 	maroon
+500	749 	dark orchid
+750	999 	blue
+1000    1249 	royal blue
+1250	1499 	deep sky blue
+1500	1749 	medium spring green
+1750	1999 	forest green
+2000	2249 	gray
+2250	2499	tan2
+2500	2749 	gold1
+2750	2999 	yellow
+3000    3249 	salmon1
+3250 	3499 	tomato
+3500 	3749 	brown1
+3750    3799 	red
+4000    4249 	firebrick

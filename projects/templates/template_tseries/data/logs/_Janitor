@@ -1,0 +1,85 @@
+/**********************************************************************
+ * TDRP params for Janitor
+ **********************************************************************/
+
+// data/logs
+
+//======================================================================
+//
+// FILE IDENTIFICATION.
+//
+// Controlling the way the Janitor finds files to delete or compress.
+//
+//======================================================================
+ 
+///////////// check_ext ///////////////////////////////
+//
+// Option to check for file extension.
+// If set, only files with the 'ext' extension are processed.
+// Type: boolean
+//
+
+check_ext = FALSE;
+
+///////////// date_format /////////////////////////////
+//
+// Option to check for RAP date-time naming convention.
+// If set, the files must follow the RAP file naming
+// convention (which means that the filename is based
+// on the date that the data in the file pertains to).
+// Type: boolean
+//
+
+date_format = FALSE;
+
+///////////// file_ages_in_days ///////////////////////
+//
+// Option to specify file ages in days, instead of secs.
+// If TRUE, 'MaxNoModDays' and 'MaxNoAccessDays' are used. If FALSE, 
+//   'MaxModificationAgeBeforeDelete' and 'MaxAccessAgeBeforeCompress' are 
+//   used.
+// Type: boolean
+//
+
+file_ages_in_days = TRUE;
+
+//======================================================================
+//
+// FILE DELETION.
+//
+// Option to delete files and directories.
+//
+//======================================================================
+ 
+///////////// delete_files ////////////////////////////
+//
+// Option to delete files.
+// If set, files are deleted if their modification age exceeds 
+//   MaxNoModDays, if set, or 
+//   MaxModificationAgeBeforeDelete.
+// Type: boolean
+//
+
+delete_files = TRUE;
+
+///////////// RemoveEmptyDirs /////////////////////////
+//
+// Single bool value.
+// Remove empty directories if set.
+// Type: boolean
+//
+
+RemoveEmptyDirs = TRUE;
+
+///////////// MaxNoModDays ////////////////////////////
+//
+// Max file age before deletion - days. Used if 'file_ages_in_days' is 
+//   TRUE.
+// If delete_files is TRUE, a file will be deleted if it has not been 
+//   modified in this amount of time.
+// Type: float
+//
+
+MaxNoModDays = 7;
+
+

@@ -1,0 +1,172 @@
+/**********************************************************************
+ * TDRP params for Scout
+ **********************************************************************/
+
+//======================================================================
+//
+// The Scout is a program that reports data files
+// to the data manager. It recurses under the top
+// directory defined by the environment variable
+// RAP_DATA_DIR and deduces the time that the
+// data pertains to (from the filename).
+
+// Many file names contain the date, but not
+// the time of the data they pertain to. In
+// this case a time of noon on the day in question
+// is assumed.
+//
+// By default the Scout only counts files which have names
+// which follow the following naming conventions for date/time:
+//   */yyyymmdd/g_hhmmss/f_llllllll.ext
+//   */yyyymmdd/hhmmss.ext
+//   * *yyyymmdd?hhmmss*
+//   * *yyyymmddhhmmss*
+//   * *yyyymmddhhmm*
+//   * *yyyymmddhh.tmhhmm (mm5 forecast)
+//   * *yyyymmddhh*
+//   * *yyyyjjjhh*
+//   * *yyyymmdd?hhmm*
+//   * *yyyymmdd?hh*
+//   * *yyyymmdd*
+//   * *yyjjj*
+//   
+// Set SeeAllFiles to TRUE to count all files.
+//
+//======================================================================
+ 
+///////////// Debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debugging messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+Debug = DEBUG_OFF;
+
+///////////// Instance ////////////////////////////////
+//
+// Process instance.
+// This is used for registration with the process mapper.
+// Type: string
+//
+
+Instance = "primary";
+
+///////////// SeeAllFiles /////////////////////////////
+//
+// Count all files, ignoring the file naming conventions.
+// By default, the Scout only counts files which follow date/time file 
+//   naming conventions. If SeeAllFiles is set to TRUE, the Scout will 
+//   count all files and will use the file modify time deduce the time of 
+//   files which do not follow the naming connventions.
+// Type: boolean
+//
+
+SeeAllFiles = FALSE;
+
+///////////// OnceOnly ////////////////////////////////
+//
+// Run only once.
+// If true, the scout runs through the directory structure once and then 
+//   exits.
+// Type: boolean
+//
+
+OnceOnly = TRUE;
+
+///////////// BetweenPassDelay ////////////////////////
+//
+// Delay between passes - secs.
+// The scout sleeps for this time between scans of the directory 
+//   structure.
+// Minimum val: 1
+// Type: int
+//
+
+BetweenPassDelay = 6000;
+
+///////////// BetweenDirDelay /////////////////////////
+//
+// Delay between directories - secs.
+// Sleep for this number of seconds after processing a directory.
+// Type: int
+//
+
+BetweenDirDelay = 0;
+
+///////////// BetweenFileDelay ////////////////////////
+//
+// Delay between files - micro-secs.
+// Sleep for this number of micro-seconds after processing a file.
+// Minimum val: 0
+// Type: int
+//
+
+BetweenFileDelay = 0;
+
+///////////// Report //////////////////////////////////
+//
+// Report as it goes.
+// If true, the scout writes a report file in each subdirectory it 
+//   processes.
+// Type: boolean
+//
+
+Report = FALSE;
+
+///////////// ReportDirEntry //////////////////////////
+//
+// Option to report entry into a new directory by printing to stderr.
+// Intended as a minimal debugging option. Setting Debug to TRUE does 
+//   this as well.
+// Type: boolean
+//
+
+ReportDirEntry = FALSE;
+
+///////////// CompressedExt ///////////////////////////
+//
+// Extension for compressed files.
+// Use this to check for compressed files.
+// Type: string
+//
+
+CompressedExt = ".gz";
+
+///////////// Recurse /////////////////////////////////
+//
+// Recurse into this directory and subdirectories below it.
+// If FALSE, the current directory and all those below it are ignored. 
+//   This value is controlled by inserting a _scout (or _Scout) parameter 
+//   file into the relevant directory.
+// Type: boolean
+//
+
+Recurse = TRUE;
+
+///////////// DataType ////////////////////////////////
+//
+// Data type to use for data mapper registration.
+// This data type is used for registration from this point in the 
+//   direectory tree down, or until another _Scout param file is found.
+// Type: string
+//
+
+DataType = "";
+
+///////////// SummarizeFromHereDown ///////////////////
+//
+// Force a file count from this directory and below.
+// If TRUE, the Scout will count all files below here and report the 
+//   stats to the DataMapper for this directory. Only a single DataMapper 
+//   entry will appear.
+// Type: boolean
+//
+
+SummarizeFromHereDown = FALSE;
+

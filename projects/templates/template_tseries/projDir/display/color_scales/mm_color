@@ -1,0 +1,13 @@
+# colorscale for precip
+
+# Mike Dixon, April 1991
+	
+1 	5 	NavyBlue
+5 	25	SkyBlue
+25	50	ForestGreen
+50	100 	Yellow
+100	500	Red
+
+
+
+

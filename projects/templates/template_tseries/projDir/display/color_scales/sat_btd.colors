@@ -1,0 +1,24 @@
+# NAME sat_btd
+
+# carson 7/31/1997   
+
+7.5     8.0     black
+7.0	7.5	gray5
+6.5 	7.0 	gray15
+6.0 	6.5 	gray20
+5.5 	6.0 	gray25
+5.0	5.5 	gray30
+4.5	5.0	gray35
+4.0     4.5     gray40
+3.5     4.0     gray45
+3.0     3.5     gray50
+2.5	3.0	gray55
+2.0     2.5     gray60
+1.5     2.0     gray65
+1.0	1.5	gray70
+0.5	1.0	gray75
+0.0	0.5	gray80
+-0.5    0.0     gray85
+-1.0 	-0.5 	gray90
+-1.5	-1.0	gray95
+-2      -1.5    snow 

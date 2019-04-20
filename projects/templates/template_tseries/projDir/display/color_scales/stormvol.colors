@@ -1,0 +1,24 @@
+# NAME stormvol.colors
+# Rita Roberts 	4/2/1998 
+# MIN    MAX    NAME               COLOR LABEL
+0 	25 	forest green 	!
+25 	50 	SpringGreen3 	!
+50 	75 	medium sea green 	!
+75 	100 	medium aquamarine 	!
+100     125 	medium slate blue 	!
+125 	150 	blue 	!
+150 	175 	blue4 	!
+175 	200 	DarkOrchid4 	!
+200 	250 	HotPink4 	!
+250 	300 	maroon 	!
+300 	400 	VioletRed4 	!
+400 	500 	sienna 	!
+500 	600 	chocolate 	!
+600 	700 	goldenrod 	!
+700 	800 	yellow 	!
+800 	900 	dark salmon 	!
+900 	1000 	salmon 	!
+1000 	2000 	firebrick2 	!
+2000 	4000 	DeepPink1 	!
+4000 	6000 	light grey 	!
+6000 	10000 	snow 	!

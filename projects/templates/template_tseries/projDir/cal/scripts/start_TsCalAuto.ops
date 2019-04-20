@@ -1,0 +1,12 @@
+#! /bin/csh
+
+cd $PROJ_DIR/cal/params
+
+echo "Starting  Time Series Data Auto Calibration Proceedures"
+echo
+echo "Please Wait - This takes a few minutes"
+echo
+running "TsCalAuto"
+if ($status == 1) then
+  TsCalAuto -params TsCalAuto.ops 
+endif

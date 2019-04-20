@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!DOCTYPE parameters [
+ <!ELEMENT parameters (param+) >
+ <!ELEMENT param (label?, description?, info?, value?, param*) >
+ <!ELEMENT label (#PCDATA)>
+ <!ELEMENT description (#PCDATA)>
+ <!ELEMENT info (#PCDATA)>
+ <!ELEMENT value (#PCDATA)>
+ <!ATTLIST param name NMTOKEN #REQUIRED>
+ <!ATTLIST param type NMTOKEN #REQUIRED>
+ <!ATTLIST param type ( String | Boolean | Integer | Float | Double | Option | Collection ) #REQUIRED>
+ <!ATTLIST param view_x NMTOKEN #IMPLIED>
+ <!ATTLIST param view_y NMTOKEN #IMPLIED>
+ <!ATTLIST param view_width NMTOKEN #IMPLIED>
+ <!ATTLIST param view_height NMTOKEN #IMPLIED>
+]>
+
+<parameters>
+
+  <!-- ====== start of collection Root ====== -->
+
+  <param name="Root" type="Collection" view_x="741" view_y="59" view_width="550" view_height="518">
+    <label>Param manager</label>
+    <description>Root-depth parameter manager</description>
+
+    <param name="debug" type="Boolean">
+      <label>Debugging flag</label>
+      <description></description>
+      <value>false</value>
+    </param>
+
+    <param name="verbose" type="Boolean">
+      <label>Verbose debugging flag</label>
+      <description></description>
+      <value>false</value>
+    </param>
+
+    <param name="instance" type="String">
+      <label>SysView instance</label>
+      <description>Instance name for this SysView app</description>
+      <value>edit</value>
+    </param>
+
+    <param name="queryInterval" type="Integer">
+      <label>Query interval</label>
+      <description>Query interval (secs)</description>
+      <info>
+        <![CDATA[
+        SysView will query the process, data and other components of the system at regular intervals. This is the interval between queries, in seconds.
+        ]]>
+      </info>
+      <value>120</value>
+    </param>
+
+    <!-- ====== start of collection process ====== -->
+
+    <param name="process" type="Collection" view_x="678" view_y="61" view_width="470" view_height="458">
+      <label>Process params</label>
+      <description>Edit the process parameters</description>
+      <info>
+        <![CDATA[
+        These parameters control how the information about the processes is interpreted on the diagram.
+        ]]>
+      </info>
+
+      <param name="outlineColor" type="Color">
+        <label>Outline color</label>
+        <description>Color of the process icon outlines</description>
+        <info>
+          <![CDATA[
+          Outline color for the process icons.
+          ]]>
+        </info>
+        <value>0x000000</value>
+      </param>
+
+      <param name="disabledColor" type="Color">
+        <label>Disabled color</label>
+        <description>Color for disabled processes</description>
+        <info>
+          <![CDATA[
+          In the diagram, some processes are not 'active', in the sense that there is no information available on their status. However, it may still be useful to show them in the diagram. In this case, the process icon is shown 'grayed' out, with this disabled color.
+          ]]>
+        </info>
+        <value>0x888888</value>
+      </param>
+
+      <param name="okColor" type="Color">
+        <label>Ok color</label>
+        <description>Color for processes which are OK</description>
+        <info>
+          <![CDATA[
+          This is the color for processes which have registered within the required period.
+          ]]>
+        </info>
+        <value>0x33cc00</value>
+      </param>
+
+      <param name="downColor" type="Color">
+        <label>Down color</label>
+        <description>Color for processes which are DOWN</description>
+        <info>
+          <![CDATA[
+          This is the color for processes which have not registered. They are considered down.
+          ]]>
+        </info>
+        <value>0xcc0000</value>
+      </param>
+
+      <param name="lateRegColor" type="Color">
+        <label>Late reg color</label>
+        <description>Color for processes which are late in their registration</description>
+        <info>
+          <![CDATA[
+          This is the color for processes which have not registered within the required period, but have registered within twice the required interval. They might be up but are having trouble completing their tasks before registering.
+          ]]>
+        </info>
+        <value>0xffaa00</value>
+      </param>
+
+      <param name="statusInvalidColor" type="Color">
+        <label>Status invalid color</label>
+        <description>Color for processes for which no valid status is known.</description>
+        <info>
+          <![CDATA[
+          This is the color for processes which have never registered and for which no information is available.
+          ]]>
+        </info>
+        <value>0xffafaf</value>
+      </param>
+
+      <param name="defaultWidth" type="Integer">
+        <label>Default width</label>
+        <description>Default width of a text box (pixels)</description>
+        <info>
+          <![CDATA[
+          When a text box is created, it will have this width by default. You can then resize the box by entering a different value in the edit dialog.
+          ]]>
+        </info>
+        <value>100</value>
+      </param>
+
+      <param name="defaultHeight" type="Integer">
+        <label>Default height</label>
+        <description>Default height of a text box (pixels)</description>
+        <info>
+          <![CDATA[
+          When a text box is created, it will have this height by default. You can then resize the box by entering a different value in the edit dialog.
+          ]]>
+        </info>
+        <value>50</value>
+      </param>
+
+      <param name="cornerRadius" type="Integer">
+        <label>Corner radius</label>
+        <description>Radius of the corner arc (pixels)</description>
+        <info>
+          <![CDATA[
+          The corners of the text box may optionally be rounded by a corner arc of this radius. Value is in pixels.
+          ]]>
+        </info>
+        <value>40</value>
+      </param>
+
+      <param name="fontName" type="String">
+        <label>Font name</label>
+        <description>Font name for text</description>
+        <info>
+          <![CDATA[
+          Set the font name for the text in the text boxes.
+          ]]>
+        </info>
+        <value>Dialog-plain-12</value>
+      </param>
+
+      <param name="procmapHost" type="String">
+        <label>Procmap Host</label>
+        <description>Host where the procmap server is running</description>
+        <info>
+          <![CDATA[
+          Host where the procmap server is running
+          ]]>
+        </info>
+        <value>localhost</value>
+      </param>
+
+      <param name="procmapPort" type="Integer">
+        <label>Procmap Port</label>
+        <description>The port to connect to the procmapper</description>
+        <info>
+          <![CDATA[
+          The port that sysview will use to connect to the procmapper
+          ]]>
+        </info>
+        <value>5433</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection process ======= -->
+
+    <!-- ====== start of collection dataset ====== -->
+
+    <param name="dataset" type="Collection" view_x="1083" view_y="55" view_width="598" view_height="659">
+      <label>Dataset params</label>
+      <description>Edit the dataset parameters</description>
+      <info>
+        <![CDATA[
+        These parameters control how the information about the datasets is interpreted on the diagram.
+        ]]>
+      </info>
+
+      <param name="outlineColor" type="Color">
+        <label>Outline color</label>
+        <description>Color of the dataset icon outlines</description>
+        <info>
+          <![CDATA[
+          Outline color for the dataset icons.
+          ]]>
+        </info>
+        <value>0x000000</value>
+      </param>
+
+      <param name="disabledColor" type="Color">
+        <label>Disabled color</label>
+        <description>Color for disabled datasets</description>
+        <info>
+          <![CDATA[
+          In the diagram, some datasets are not 'active', in the sense that there is no information available on their status. However, it may still be useful to show them in the diagram. In this case, the dataset icon is shown 'grayed' out, with this disabled color.
+          ]]>
+        </info>
+        <value>0x888888</value>
+      </param>
+
+      <param name="okColor" type="Color">
+        <label>Ok color</label>
+        <description>Color for datasets which are OK</description>
+        <info>
+          <![CDATA[
+          This is the color for datasets which have registered within the required period.
+          ]]>
+        </info>
+        <value>0x33cc00</value>
+      </param>
+
+      <param name="downColor" type="Color">
+        <label>Down color</label>
+        <description>Color for datasets which are DOWN</description>
+        <info>
+          <![CDATA[
+          This is the color for datasets which have not registered. They are considered down.
+          ]]>
+        </info>
+        <value>0xaa0000</value>
+      </param>
+
+      <param name="noDataColor" type="Color">
+        <label>No data color</label>
+        <description>Color for datasets for which no data is available</description>
+        <info>
+          <![CDATA[
+          This is the color for datasets for which there is no data available.
+          ]]>
+        </info>
+        <value>0x888888</value>
+      </param>
+
+      <param name="lateColor" type="Color">
+        <label>Data late color</label>
+        <description>Color for datasets for which data is late</description>
+        <info>
+          <![CDATA[
+          This is the color for datasets for which data has not come in within the late period.
+          ]]>
+        </info>
+        <value>0xffcc00</value>
+      </param>
+
+      <param name="veryLateColor" type="Color">
+        <label>Data very late color</label>
+        <description>Color for datasets for which data is very late</description>
+        <info>
+          <![CDATA[
+          This is the color for datasets for which data has not come in within the very late period.
+          ]]>
+        </info>
+        <value>0xdd0000</value>
+      </param>
+
+      <param name="statusInvalidColor" type="Color">
+        <label>Status invalid color</label>
+        <description>Color for datasets for which no valid status is known.</description>
+        <info>
+          <![CDATA[
+          This is the color for datasets which have never registered and for which no information is available.
+          ]]>
+        </info>
+        <value>0x00ffff</value>
+      </param>
+
+      <param name="defaultLateReference" type="Option">
+        <label>Default reference time</label>
+        <description>Time stamp from which to measure late and very late offsets.</description>
+        <info>
+          <![CDATA[
+          Determines which time is used to evaluate timeliness.
+          ]]>
+        </info>
+        <value>26 Last Registration Time</value>
+      </param>
+
+      <param name="defaultLateSecs" type="Integer">
+        <label>Default late period</label>
+        <description>Default late period - in secs</description>
+        <info>
+          <![CDATA[
+          If data has not come in within the late secs period, it will be considered late. This is the default value for the late secs period which is assigned to a new data set. The value may then be edited on a dataset by dataset basis.
+          ]]>
+        </info>
+        <value>1800</value>
+      </param>
+
+      <param name="defaultVeryLateSecs" type="Integer">
+        <label>Default very late period</label>
+        <description>Default very late period - in secs</description>
+        <info>
+          <![CDATA[
+          If data has not come in within the very late secs period, it will be considered very late. This is the default value for the very late secs period which is assigned to a new data set. The value may then be edited on a dataset by dataset basis.
+          ]]>
+        </info>
+        <value>3600</value>
+      </param>
+
+      <param name="defaultWidth" type="Integer">
+        <label>Default width</label>
+        <description>Default width of a text box (pixels)</description>
+        <info>
+          <![CDATA[
+          When a text box is created, it will have this width by default. You can then resize the box by entering a different value in the edit dialog.
+          ]]>
+        </info>
+        <value>100</value>
+      </param>
+
+      <param name="defaultHeight" type="Integer">
+        <label>Default height</label>
+        <description>Default height of a text box (pixels)</description>
+        <info>
+          <![CDATA[
+          When a text box is created, it will have this height by default. You can then resize the box by entering a different value in the edit dialog.
+          ]]>
+        </info>
+        <value>50</value>
+      </param>
+
+      <param name="cornerRadius" type="Integer">
+        <label>Corner radius</label>
+        <description>Radius of the corner arc (pixels)</description>
+        <info>
+          <![CDATA[
+          The corners of the text box may optionally be rounded by a corner arc of this radius. Value is in pixels.
+          ]]>
+        </info>
+        <value>1</value>
+      </param>
+
+      <param name="fontName" type="String">
+        <label>Font name</label>
+        <description>Font name for text</description>
+        <info>
+          <![CDATA[
+          Set the font name for the text in the text boxes.
+          ]]>
+        </info>
+        <value>Dialog-plain-12</value>
+      </param>
+
+      <param name="datamapHost" type="String">
+        <label>Datamap Host</label>
+        <description>Host where the datamap server is running</description>
+        <info>
+          <![CDATA[
+          Host where the datamap server is running
+          ]]>
+        </info>
+        <value>localhost</value>
+      </param>
+
+      <param name="datamapPort" type="Integer">
+        <label>Datamap Port</label>
+        <description>The port to connect to the datamapper</description>
+        <info>
+          <![CDATA[
+          The port that sysview will use to connect to the datamapper
+          ]]>
+        </info>
+        <value>5434</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection dataset ======= -->
+
+    <!-- ====== start of collection diagram ====== -->
+
+    <param name="diagram" type="Collection" view_x="102" view_y="241" view_width="584" view_height="420">
+      <label>Diagram params</label>
+      <description>Edit the diagram parameters</description>
+
+      <param name="gridRes" type="Integer">
+        <label>Grid resolution</label>
+        <description>Grid resolution (pixels)</description>
+        <info>
+          <![CDATA[
+          A grid is placed on the canvas to aid in drawing. This is the color of the grid lines.
+          ]]>
+        </info>
+        <value>50</value>
+      </param>
+
+      <param name="gridColor" type="Color">
+        <label>Grid color</label>
+        <description>Color of the grid lines</description>
+        <value>0x009999</value>
+      </param>
+
+      <param name="labelFontName" type="String">
+        <label>Font name</label>
+        <description>Font name for labels</description>
+        <info>
+          <![CDATA[
+          Set the font name for the labels in the diagram.
+          ]]>
+        </info>
+        <value>Dialog-plain-12</value>
+      </param>
+
+      <param name="labelColor" type="Color">
+        <label>Label color</label>
+        <description>Color of the labels</description>
+        <info>
+          <![CDATA[
+          Label color for the text in the diagram.
+          ]]>
+        </info>
+        <value>0x000000</value>
+      </param>
+
+      <param name="displayLastQueryTime" type="Boolean">
+        <label>Display last query time?</label>
+        <description>Should the last query time be shown on sysview?</description>
+        <info>
+          <![CDATA[
+          If this is true, the last query time will be displayed
+          ]]>
+        </info>
+        <value>true</value>
+      </param>
+
+      <param name="lastQueryTimeFont" type="String">
+        <label>Font for last query time</label>
+        <description>Which Font to use for the last query time.</description>
+        <info>
+          <![CDATA[
+          This is the font which will be used when the last query time is displayed
+          ]]>
+        </info>
+        <value>Helvetica-bold-12</value>
+      </param>
+
+      <param name="lastQueryTimeX" type="Integer">
+        <label>X for last query time</label>
+        <description>X location for last query time label</description>
+        <info>
+          <![CDATA[
+          X location, in pixels from left margin, for last query time label.
+          ]]>
+        </info>
+        <value>10</value>
+      </param>
+
+      <param name="lastQueryTimeY" type="Integer">
+        <label>Y for last query time</label>
+        <description>Y location for last query time label</description>
+        <info>
+          <![CDATA[
+          Y location, in pixels from left margin, for last query time label.
+          ]]>
+        </info>
+        <value>10</value>
+      </param>
+
+      <param name="windowX" type="Integer">
+        <label>X location of window</label>
+        <description>The window X offset from the top-left of screen</description>
+        <value>1</value>
+      </param>
+
+      <param name="windowY" type="Integer">
+        <label>Y location of window</label>
+        <description>The window Y offset from the top-left of screen</description>
+        <value>25</value>
+      </param>
+
+      <param name="windowWidth" type="Integer">
+        <label>Window width</label>
+        <description>The window width in pixels</description>
+        <value>689</value>
+      </param>
+
+      <param name="windowHeight" type="Integer">
+        <label>Window height</label>
+        <description>The window height in pixels</description>
+        <value>719</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection diagram ======= -->
+
+    <!-- ====== start of collection flowline ====== -->
+
+    <param name="flowline" type="Collection" view_x="100" view_y="518" view_width="500" view_height="308">
+      <label>Flowline params</label>
+      <description>Edit the flowline parameters</description>
+
+      <param name="lineColor" type="Color">
+        <label>Line color</label>
+        <description>Color of the flow lines</description>
+        <info>
+          <![CDATA[
+          Flow lines indicate the logical flow of data or information through the diagram. This is the color of the flow lines
+          ]]>
+        </info>
+        <value>0xa52a2a</value>
+      </param>
+
+      <param name="outlineColor" type="Color">
+        <label>Outline color</label>
+        <description>Color of the flow outlines</description>
+        <info>
+          <![CDATA[
+          Flow lines indicate the logical flow of data or information through the diagram. This is the outline color of the flow lines
+          ]]>
+        </info>
+        <value>0x000000</value>
+      </param>
+
+      <param name="fillArrowHead" type="Boolean">
+        <label>Fill arrow head?</label>
+        <description>Set to true for solid arrow heads</description>
+        <info>
+          <![CDATA[
+          Flow lines indicate the logical flow of data or information through the diagram. The lines optionally have arrowheads on the ends indicating the direction of information flow. If this is set true, the heads will be solid. If not, they will be open.
+          ]]>
+        </info>
+        <value>true</value>
+      </param>
+
+      <param name="arrowHeadAngle" type="Double">
+        <label>Arrow head angle</label>
+        <description>Arrow head angle (degrees)</description>
+        <info>
+          <![CDATA[
+          Flow lines indicate the logical flow of data or information through the diagram. The lines optionally have arrowheads on the ends indicating the direction of information flow. This is the angle of the arrowhead, in degrees.
+          ]]>
+        </info>
+        <value>30.0</value>
+      </param>
+
+      <param name="arrowHeadLength" type="Integer">
+        <label>Arrow head length</label>
+        <description>Arrow head length (pixels)</description>
+        <info>
+          <![CDATA[
+          Flow lines indicate the logical flow of data or information through the diagram. The lines optionally have arrowheads on the ends indicating the direction of information flow. This is the length of the arrowhead, in pixels.
+          ]]>
+        </info>
+        <value>10</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection flowline ======= -->
+
+    <!-- ====== start of collection polyline ====== -->
+
+    <param name="polyline" type="Collection" view_x="100" view_y="100" view_width="354" view_height="225">
+      <label>Polyline params</label>
+      <description>Edit the polyline parameters</description>
+
+      <param name="lineColor" type="Color">
+        <label>Line color</label>
+        <description>Color of the poly lines</description>
+        <info>
+          <![CDATA[
+          Poly lines are arbitrary multi-point lines used to help organize the information on the diagram. This is the color of the poly lines
+          ]]>
+        </info>
+        <value>0x000000</value>
+      </param>
+
+      <param name="outlineColor" type="Color">
+        <label>Outline color</label>
+        <description>Color of the poly outlines</description>
+        <info>
+          <![CDATA[
+          Poly lines are arbitrary multi-point lines used to help organize the information on the diagram. This is the outline color of the poly lines
+          ]]>
+        </info>
+        <value>0x000000</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection polyline ======= -->
+
+    <!-- ====== start of collection textbox ====== -->
+
+    <param name="textbox" type="Collection" view_x="100" view_y="100" view_width="491" view_height="351">
+      <label>Textbox params</label>
+      <description>Edit the textbox parameters</description>
+
+      <param name="defaultWidth" type="Integer">
+        <label>Default width</label>
+        <description>Default width of a text box (pixels)</description>
+        <info>
+          <![CDATA[
+          When a text box is created, it will have this width by default. You can then resize the box by entering a different value in the edit dialog.
+          ]]>
+        </info>
+        <value>100</value>
+      </param>
+
+      <param name="defaultHeight" type="Integer">
+        <label>Default height</label>
+        <description>Default height of a text box (pixels)</description>
+        <info>
+          <![CDATA[
+          When a text box is created, it will have this height by default. You can then resize the box by entering a different value in the edit dialog.
+          ]]>
+        </info>
+        <value>50</value>
+      </param>
+
+      <param name="cornerRadius" type="Integer">
+        <label>Corner radius</label>
+        <description>Radius of the corner arc (pixels)</description>
+        <info>
+          <![CDATA[
+          The corners of the text box may optionally be rounded by a corner arc of this radius. Value is in pixels.
+          ]]>
+        </info>
+        <value>10</value>
+      </param>
+
+      <param name="outlineColor" type="Color">
+        <label>Outline color</label>
+        <description>Color of the flow outlines</description>
+        <info>
+          <![CDATA[
+          Outline color for the text boxes.
+          ]]>
+        </info>
+        <value>0x000000</value>
+      </param>
+
+      <param name="fillColor" type="Color">
+        <label>Fill color</label>
+        <description>Color of the flow fills</description>
+        <info>
+          <![CDATA[
+          Fill color for the text boxes.
+          ]]>
+        </info>
+        <value>0x4090a0</value>
+      </param>
+
+      <param name="fontName" type="String">
+        <label>Font name</label>
+        <description>Font name for text</description>
+        <info>
+          <![CDATA[
+          Set the font name for the text in the text boxes.
+          ]]>
+        </info>
+        <value>Dialog-plain-12</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection textbox ======= -->
+
+    <!-- ====== start of collection annotation ====== -->
+
+    <param name="annotation" type="Collection" view_x="100" view_y="100" view_width="428" view_height="224">
+      <label>Annotation params</label>
+      <description>Edit the annotation parameters</description>
+
+      <param name="textColor" type="Color">
+        <label>Text color</label>
+        <description>Color of the annotation text</description>
+        <value>0x000000</value>
+      </param>
+
+      <param name="fontName" type="String">
+        <label>Font name</label>
+        <description>Font name for annotation text</description>
+        <value>Dialog-plain-12</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection annotation ======= -->
+
+    <!-- ====== start of collection autodump ====== -->
+
+    <param name="autodump" type="Collection" view_x="100" view_y="100" view_width="536" view_height="319">
+      <label>Autodump params</label>
+      <description>Edit the autodump parameters</description>
+
+      <param name="active" type="Boolean">
+        <label>Autodump active?</label>
+        <description>Set autodump on?</description>
+        <info>
+          <![CDATA[
+          If true, HTML autodump feature will be set active. Autodump creates images and html files which represent the SysView diagram state. These files are then available for viewing via a browser.
+          ]]>
+        </info>
+        <value>true</value>
+      </param>
+
+      <param name="outdir" type="File">
+        <label>Output directory</label>
+        <description>Output directory for autodump files</description>
+        <info>
+          <![CDATA[
+          The HTML and image files will be written to this directory. See also the 'outdir' parameter.
+          ]]>
+        </info>
+        <value>/home/titan5/projDir/data/SysView</value>
+      </param>
+
+      <param name="dated" type="Boolean">
+        <label>Dated directories?</label>
+        <description>Set autodump into dated mode?</description>
+        <info>
+          <![CDATA[
+          If true, the autodump files will be written into a subdirectory named from the current date.
+          ]]>
+        </info>
+        <value>true</value>
+      </param>
+
+      <param name="template" type="File">
+        <label>Template file</label>
+        <description>HTML template for autodump files</description>
+        <info>
+          <![CDATA[
+          The HTML autodump files are based upon this template. See also the 'insertToken' parameter. The top part of the file, down to the insertToken, is copied to the output file. Then the generated HTML content is inserted. Then the remainder of the file is copied.
+          ]]>
+        </info>
+        <value>/home/titan5/projDir/SysView/params/template.html</value>
+      </param>
+
+      <param name="insertToken" type="String">
+        <label>Insert token</label>
+        <description>Token for insert point in template file</description>
+        <info>
+          <![CDATA[
+          The template file should have a line containing this insert token. The generated HTML content will be inserted into the template at this point - i.e it will replace the insert token.
+          ]]>
+        </info>
+        <value>===dynamic-content-is-inserted-here===</value>
+      </param>
+
+      <param name="objectInfo" type="Option">
+        <label>Object info format</label>
+        <description>Format of object information</description>
+        <info>
+          <![CDATA[
+          The object information can be either provided in HTML or graphical format.
+          ]]>
+        </info>
+        <value>HTML</value>
+      </param>
+
+      <param name="dumpInterval" type="Integer">
+        <label>Dump interval (mins)</label>
+        <description>How often to dump - in minutes</description>
+        <info>
+          <![CDATA[
+          The application will dump HTML files at regular intervals, controlled by this parameter. It will start dumping on the hour, and then regular intervals thereafter.
+          ]]>
+        </info>
+        <value>5</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection autodump ======= -->
+
+    <!-- ====== start of collection status ====== -->
+
+    <param name="status" type="Collection" view_x="100" view_y="100" view_width="647" view_height="243">
+      <label>Status params</label>
+      <description>Edit the Status parameters</description>
+
+      <param name="useLocalXML" type="Boolean">
+        <label>Use Local XML Status Files</label>
+        <description>Status is determined by looking at local XML files</description>
+        <info>
+          <![CDATA[
+          Querying the status of process, data, etc. over the network allows momentary network congestion appear as a more critical problem.
+          ]]>
+        </info>
+        <value>false</value>
+      </param>
+
+      <param name="xmlStatusLocation" type="String">
+        <label>Path to XML status files</label>
+        <description>This is the full path to the XML status files.</description>
+        <value>/d1/aoaws/data/monitoring/sysview</value>
+      </param>
+
+      <param name="maxAge" type="Integer">
+        <label>Max. age of an XML status file (sec)</label>
+        <description>XML status files older than this (sec) will not be used</description>
+        <info>
+          <![CDATA[
+          When parsing XML files to get status information, the time in the filename will be used to determine if they are older than this.
+          ]]>
+        </info>
+        <value>900</value>
+      </param>
+
+    </param>
+
+    <!-- ======= end of collection status ======= -->
+
+  </param>
+
+  <!-- ======= end of collection Root ======= -->
+
+</parameters>
+

@@ -1,0 +1,312 @@
+/**********************************************************************
+ * TDRP params for VertCompute
+ **********************************************************************/
+
+//======================================================================
+//
+// VertCompute analyses data from tsarchive time series files taken 
+//   during vertical pointing scans.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "cp2";
+
+///////////// register_with_procmap ///////////////////
+//
+// Option to register with the process mapper.
+// If true, this application will try to register with procmap once per 
+//   minute. (If unable to do so, no error occurs.).
+// Type: boolean
+//
+
+register_with_procmap = FALSE;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_mode //////////////////////////////
+//
+// Input mode - files or time series API.
+// If TS_FMQ_INPUT, the application will read the time series from a 
+//   file message queue and process the pulses as they come in. If 
+//   TS_FILE_INPUT, the application will process all the files specified 
+//   on the command line.
+//
+// Type: enum
+// Options:
+//     TS_FILE_INPUT
+//     TS_FMQ_INPUT
+//
+
+input_mode = TS_FILE_INPUT;
+
+///////////// input_fmq_name //////////////////////////
+//
+// FMQ name. For TS_FMQ_INPUT only.
+// Path to FMQ files. There are 2 files, one with a .buf extension and 
+//   one with a .stat extention. This path does not include the 
+//   extensions.
+// Type: string
+//
+
+input_fmq_name = "/tmp/fmq/ts";
+
+//======================================================================
+//
+// VERTICAL LAYERS.
+//
+//======================================================================
+ 
+///////////// n_layers ////////////////////////////////
+//
+// Number of layers for analysis.
+// Type: int
+//
+
+n_layers = 30;
+
+///////////// delta_height ////////////////////////////
+//
+// Height of each layer (km).
+// Type: double
+//
+
+delta_height = 0.3;
+
+///////////// start_height ////////////////////////////
+//
+// Start height of lowest layer (km).
+// Type: double
+//
+
+start_height = 0.375;
+
+///////////// n_samples ///////////////////////////////
+//
+// Number of pulse samples in a beam.
+// Type: int
+//
+
+n_samples = 256;
+
+///////////// invert_hv_flag //////////////////////////
+//
+// Option to invert H/V flag in pulse data.
+// Normally, the HV flag is set to 1 for H, 0 for V. If the flag in the 
+//   data has the opposite sense, set this to true.
+// Type: boolean
+//
+
+invert_hv_flag = FALSE;
+
+//======================================================================
+//
+// MOMENTS COMPUTATION.
+//
+//======================================================================
+ 
+///////////// hc_receiver /////////////////////////////
+//
+// Properties of horiz co-polar receiver.
+// bsky_noise_at_ifd: the blue-sky noise measured at the ifd, in dBm. 
+//   gain: the gain from the measurement plane to the ifd, in dB.
+//
+// Type: struct
+//   typedef struct {
+//      double bsky_noise_at_ifd;
+//      double gain;
+//      double radar_constant;
+//   }
+//
+//
+
+hc_receiver = { -67.8, 44.83, -73.1 };
+
+///////////// hx_receiver /////////////////////////////
+//
+// Properties of horiz cross-polar receiver.
+//
+// Type: struct
+//   typedef struct {
+//      double bsky_noise_at_ifd;
+//      double gain;
+//      double radar_constant;
+//   }
+//
+//
+
+hx_receiver = { -67.8, 44.83, -73.1 };
+
+///////////// vc_receiver /////////////////////////////
+//
+// Properties of vertical co-polar receiver.
+//
+// Type: struct
+//   typedef struct {
+//      double bsky_noise_at_ifd;
+//      double gain;
+//      double radar_constant;
+//   }
+//
+//
+
+vc_receiver = { -67.8, 44.95, -73 };
+
+///////////// vx_receiver /////////////////////////////
+//
+// Properties of vertical cross-polar receiver.
+//
+// Type: struct
+//   typedef struct {
+//      double bsky_noise_at_ifd;
+//      double gain;
+//      double radar_constant;
+//   }
+//
+//
+
+vx_receiver = { -67.8, 44.95, -73 };
+
+///////////// atmos_attenuation ///////////////////////
+//
+// Atmospheric attenuation (dB/km).
+// Reflectivity is corrected for this.
+// Type: double
+//
+
+atmos_attenuation = 0.012;
+
+///////////// min_snr /////////////////////////////////
+//
+// Minimum SNR for analysis.
+// Gates with SNR below this will be ignored.
+// Type: double
+//
+
+min_snr = 10;
+
+///////////// max_snr /////////////////////////////////
+//
+// Maximum SNR for analysis.
+// Gates with SNR above this will be ignored.
+// Type: double
+//
+
+max_snr = 60;
+
+///////////// min_rhohv ///////////////////////////////
+//
+// Minimum RHOHV for analysis.
+// Gates with RHOHV below this will be ignored.
+// Type: double
+//
+
+min_rhohv = 0.95;
+
+///////////// max_ldr /////////////////////////////////
+//
+// Max LDR for analysis.
+// Gates with LDR above this will be ignored.
+// Type: double
+//
+
+max_ldr = -25;
+
+///////////// zdr_correction //////////////////////////
+//
+// Correction applied to calibrated ZDR.
+// Type: double
+//
+
+zdr_correction = 0;
+
+///////////// ldr_correction //////////////////////////
+//
+// Correction applied to LDR.
+// Type: double
+//
+
+ldr_correction = 0;
+
+//======================================================================
+//
+// ANALYSIS DETAILS.
+//
+//======================================================================
+ 
+///////////// zdr_n_sdev //////////////////////////////
+//
+// Number of standard deviations for data QA purposes.
+// QA is applied to the ZDR data by ignoring values outside a certain 
+//   range around the mean. This is the number of standard deviations 
+//   within which data is accepted.
+// Type: double
+//
+
+zdr_n_sdev = 2;
+
+///////////// mean_zdrm_min_ht ////////////////////////
+//
+// Min ht for computing mean ZDRm (km).
+// A minimum ht is required to be clear of problems caused by 
+//   differential recovery of the TR limiters.
+// Type: double
+//
+
+mean_zdrm_min_ht = 1.30;
+
+///////////// mean_zdrm_max_ht ////////////////////////
+//
+// Max ht for computing mean ZDRm (km).
+// A max ht is sometimes required to be below bright band.
+// Type: double
+//
+
+mean_zdrm_max_ht = 3.40;
+
+//======================================================================
+//
+// OUTPUT RESULTS.
+//
+//======================================================================
+ 
+///////////// output_dir //////////////////////////////
+//
+// Dir for output files.
+// The results will be written to sub-directories named from the data 
+//   time.
+// Type: string
+//
+
+output_dir = "$(DATA_DIR)/analysis/vert";
+

@@ -1,0 +1,9 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "vchilld --config vchilld.ops"
+if ($status == 1) then
+  vchilld --config vchilld.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p vchilld -i ops &
+endif

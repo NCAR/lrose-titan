@@ -1,0 +1,13 @@
+# NAME contingency
+
+# Oien 	July 1999 
+
+-0.5  	0.5   	peru              ! Non
+0.5     1.5     cyan              ! False
+1.5	2.5	forest green      ! Fail
+2.5	3.5	white		  ! OK
+
+
+
+
+

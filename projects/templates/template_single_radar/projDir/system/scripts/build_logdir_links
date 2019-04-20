@@ -1,0 +1,498 @@
+#!/usr/bin/perl
+#
+# Name: build_logdir_links.pl
+#
+# Function: Make a link to the current date directory (YYYYMMDD)
+#           with a string name (e.g., today)
+#
+# Usage: see usage below
+#
+# Deirdre Garvey  NCAR/RAP/SDG      05-JUL-2000
+#
+#==================================================================
+#
+#
+# --------------------------- Externals -------------------------
+#
+# For handling the long format of input options
+#
+
+use Getopt::Long;
+use Env;
+use Cwd;
+Env::import();
+
+sub badArg;
+sub translateDataDir;
+sub verifyDataDir;
+
+# 
+# External modules
+#
+
+use Time::Local;                   # make 'date' available
+
+#
+# --------------------------- Defaults and globals --------------
+#
+# Get the program basename.
+#
+($prog = $0) =~ s%.*/%%;
+
+#
+# Set global defaults
+#
+$Today=`date`;                                 # Get todays date for error msgs
+chop($Today);
+#
+# Set command line defaults
+#
+$Debug=0;                                      # Flag for debug messages
+$Test=0;                                       # Flag for test mode
+$UseUTC=1;                                     # Flag to use UTC time
+$UseLocal=0;                                   # Flag to use local time
+$NumDays=2;                                    # Number of days to go back
+
+#
+# Save the usage to print to the user if there is a problem
+#
+$usage=
+    "\n" .
+    "Usage: $prog -i indir [-dhltu] <-n n>\n" .
+    "Purpose: To read the input directory and create links to directories\n" .
+    "         named YYYYMMDD to a string (e.g., today).\n" .
+    "         Default is --utctime --ndays 2.\n" .
+    "   -d                    : Print debugging messages.\n" .
+    "   -h                    : Print this usage message\n" .
+    "   -i --indir <dir>      : Directory to search for YYYYMMDD subdirectories.\n" .
+    "   -l --localtime        : Use localtime to determine today.\n" .
+    "   -n --ndays <n>        : Number of days to go backwards in generating\n" .
+    "                           links. Day 1 is today, Day 2 is yesterday.\n" .
+    "                           Default: $NumDays\n" .
+    "   -t --test             : Test mode. Only report on what would have\n" .
+    "                           been done, do not actually build links\n" .
+    "   -u --utctime          : Use UTC time to determine today. (Default)\n" .
+    "   -v --verbose <n>      : Print verbose debugging messages.\n" .
+    "                           Specify the level 1..2. Also sets\n" .
+    "                           --debug\n" ;
+
+# ----------------------------- Parse command line --------------------------
+#
+# Get the arguments from the command line
+#
+$result = &GetOptions('debug',
+		      'help',
+		      'indir=s',
+		      'localtime',
+		      'ndays=i',
+		      'test',
+		      'utctime',
+		      'verbose=i',
+                       '<>', \&badArg );
+
+if ( $result == 0 || $opt_help ) {
+   print $usage;
+   exit 0;
+}
+
+if (!$opt_indir) {
+    print(STDERR "ERROR: You must specify an input directory!\n");
+    exit 0;
+}
+
+if ($opt_debug) {
+  $Debug=1;
+  $Debug_level=1;
+  print(STDERR "Input options specified...\n");
+  print(STDERR "\tindir: $opt_indir\n");
+  print(STDERR "\tlocaltime: $opt_localtime\n");
+  print(STDERR "\tndays: $opt_ndays\n");
+  print(STDERR "\ttest: $opt_test\n");
+  print(STDERR "\tutctime: $opt_utctime\n");
+  print(STDERR "\tverbose: $opt_verbose\n");
+}
+
+if ($opt_indir) {
+    $InDir = $opt_indir;
+}
+
+if ($opt_localtime) {
+    $UseLocal = 1;
+    $UseUTC  = 0;
+}
+
+if ($opt_ndays) {
+    if (($opt_ndays > 2) || ($opt_ndays < 0)) {
+	print(STDERR "Sorry, only 1..2 is currently valid\n");
+	exit 0;
+    } else {
+	$NumDays = $opt_ndays;
+    }
+}
+
+if ($opt_test) {
+    $Test = 1;
+}
+
+if ($opt_utctime) {
+    $UseLocal = 0;
+    $UseUTC  = 1;
+}
+
+if ($opt_verbose) {
+    $Debug=1;
+    if ($opt_verbose > 2) {
+	$Debug_level = 2;
+    } else {
+	$Debug_level=$opt_verbose;
+    }
+}
+
+#--------------------------- Error checking -------------------------
+#
+# Does the input directory exist?
+
+if (!-e $InDir) {
+  print(STDERR "ERROR: $prog: The input directory $InDir does not exist\n");
+  exit 0;
+}
+
+#--------------------------- Initialization ---------------------------
+#
+# Get the current time
+
+$now=time;
+
+#------------------------------- Main ---------------------------------
+#
+# Loop through the $ndays, start with today as day 0
+
+for ($i=0; $i<$NumDays; $i++) {
+    
+    # Get the date
+
+    ($is_ok, $date_string) = &getDate($now, $UseUTC, $i, $Debug_level);
+    if (!$is_ok) {
+	next;
+    }
+
+    # Get the string to link the date to
+
+    ($is_ok, $link_string) = &getLinkString($i, $Debug_level);
+    if (!$is_ok) {
+	next;
+    }
+
+    # Build the link
+
+    $SourceDirName="$InDir/$date_string";
+    $TargetDirName="$InDir/$link_string";
+    
+    ($is_ok) = &makeLink($SourceDirName, $TargetDirName, $Test, $Debug_level);
+    if (!$is_ok) {
+	next;
+    }
+}
+
+# Done
+
+exit 1;
+
+# ----------------------------- Subroutines -----------------------------
+#
+# Subroutine getDate
+#
+# Usage:  ($return_val, $datestring) = &getDate($start, $dateflag, $numdays, $debug)
+#
+# Function: Get the date, $numdays ago from $start. Return in YYYYMMDD format.
+#
+# Input:    $start           start time, in UNIX time
+#           $dateflag        flag for date type, 1=UTC, 0=localtime
+#           $numdays         number of days offset from $start
+#           $debug           flag for debugging (1=on, 0=off)
+#
+# Output:   $return_val      1 on success, 0 on error
+#           $datestring      date as YYYYMMDD
+#
+#
+# Overview:
+#
+
+sub getDate
+{
+  local ($start, $dateflag, $numdays, $debug) = @_;
+
+  # Local variables
+
+  local($return_val, $subname);
+  local($dbg2, $oneday, $use_starttime, $datestring, $is_ok);
+  local($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst);
+
+  # Set defaults
+
+  $return_val=0;
+  $subname="getDate";
+  $datestring=-1;
+
+  # Debug
+
+  if ($debug == 2) {
+      $dbg2=1;
+  } else {
+      $dbg2=0;
+  }
+
+  if ($dbg2) {
+      print(STDERR "$prog: $subname: Input... flag: $dateflag, ndays: $numdays\n");
+  }
+
+  # Decrement the start time by the $numdays
+
+  $oneday=(60*60)*24;
+  $use_starttime=$start - ($oneday * $numdays);
+
+  # Get the time
+
+  if ($UseUTC) {
+      ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)=gmtime($use_starttime);
+  } else {
+      ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst)=localtime($use_starttime);
+  }
+
+  # Build the date string in YYYYMMDD format
+
+  $mon=$mon + 1;
+  $year=$year + 1900;
+
+  ($is_ok, $mon)=&zeroPadInt($mon, $debug);
+  ($is_ok, $mday)=&zeroPadInt($mday, $debug);
+
+  $datestring="${year}${mon}${mday}";
+
+  # Debug
+
+  if ($dbg2) {
+      print(STDERR "$prog: $subname: date: $datestring\n");
+  }
+
+  # Done
+
+  $return_val=1;
+  return($return_val, $datestring);
+}
+
+# ----------------------------------------------------------------------
+#
+# Subroutine getLinkString
+#
+# Usage:  ($return_val, $string) = &getLinkString($numdays, $debug)
+#
+# Function: Return a string for $numdays ago.
+#
+# Input:    $numdays         number of days ago
+#           $debug           flag for debugging (1=on, 0=off)
+#
+# Output:   $return_val      1 on success, 0 on error
+#           $string          string to describe the $numdays ago
+#
+#
+# Overview:
+#
+
+sub getLinkString
+{
+  local ($numdays, $debug) = @_;
+
+  # Local variables
+
+  local($return_val, $subname);
+  local($dbg2, $string);
+
+  # Set defaults
+
+  $return_val=0;
+  $subname="getLinkString";
+  $string="Unknown";
+
+  # Debug
+
+  if ($debug == 2) {
+      $dbg2=1;
+  } else {
+      $dbg2=0;
+  }
+
+  # Set the string
+
+  if ($numdays == 0) {
+      $string = "today";
+  } elsif ($numdays == 1) {
+      $string = "yesterday";
+  } else {
+      print(STDERR "ERROR: $prog: $subname: Invalid numdays ago: $numdays\n");
+      return($return_val, $string);
+  }
+
+  # Debug
+
+  if ($dbg2) {
+      print(STDERR "$prog: $subname: string: $string\n");
+  }
+
+  # Done
+  
+  $return_val = 1;
+  return($return_val, $string);
+}
+
+#---------------------------------------------------------------------------
+# Subroutine: zeroPadInt
+#
+# Usage:      ($return_val, $string) = zeroPadInt($int)
+#
+# Function:   To zero-pad the input one-digit integer and return a
+#             2-digit integer. If input is >9 then returns the input
+#             integer in the return string.
+#
+# Input:      int              a one-digit integer
+#
+# Output:     return_val       1 on success, 0 on error
+#             string           a two-digit zero-padded integer
+#
+# Overview:   Checks that the input integer is between 0 and 9, returns
+#             if not. If so, adds a 0 and returns the string.
+#
+
+sub zeroPadInt {
+    local($int1) = @_;
+
+    # Local variables
+
+    local($return_value, $string, $len);
+
+    # Set defaults
+
+    $string = $int1;
+
+    # Is the string a single digit?
+
+    if (($int1 > 9) || ($int1 < 0)) {
+        return($return_value, $string);
+    }
+    
+    $len=length($int1);
+    if ($len > 1) {
+        return($return_value, $string);
+    }
+
+    # Pad the integer
+
+    $string = "0${int1}";
+
+    $return_value = 1;
+
+    # Return
+
+    return($return_value, $string);
+}                                                                                    
+
+# ---------------------------------------------------------------------
+# Subroutine: makeLink
+#
+# Usage:      $return_val = makeLink($src_name, $link_name, $test, $debug)
+#
+# Function:   Create a symbolic link between the $src_name and $link_name.
+#
+# Input:      src_name         filename of source file
+#             link_name        filename of link
+#             test             test mode (1=on, 0=off)
+#             dbg              debug flag (1 = on, 0 = off)
+#
+# Output:     return_val       1 if success, 0 on failure
+# 
+# Overview:   Delete the $link_name if it exists. Create the new symbolic
+#             link between the $src_name and $link_name. 
+#
+#
+sub makeLink {
+    local($src_name, $link_name, $test, $dbg) = @_;
+
+    # Set local variables
+
+    local($return_val, $subname);
+    local($dbg2, $src_exist);
+
+    # Set defaults
+
+    $return_val=0;
+    $subname="makeLink";
+
+    if ($dbg == 2) {
+	$dbg2=1;
+    } else {
+	$dbg2=0;
+    }
+
+    if ($dbg2) {
+	print(STDERR "$prog: $subname: Input...\n");
+        print(STDERR "\tsource: $src_name\n");
+	print(STDERR "\tlink: $link_name\n");
+	print(STDERR "\ttest: $test\n");
+    }
+
+    # Does the source file exist?
+    # Exit with an error if it does not
+
+    if (!-e $src_name) {
+	print(STDERR "WARNING: $prog: $subname: $Today: Source file $src_name does not exist\n");
+	print(STDERR "\tWill try to create it\n");
+	system("mkdir -p $src_name");
+	if (!-e $src_name) {
+	    print(STDERR "WARNING: $prog: $subname: $Today: Could not create $src_name\n");
+	    $src_exist=0;
+	}
+    } else {
+	$src_exist=1;
+    }
+
+    # Delete the link if it exists.
+    # Note that we should delete the link IF it exists and the
+    # source file does NOT so that there is no confusion
+
+    if (-l $link_name) {
+	if ($dbg) {
+	    print(STDERR "$prog: $subname: $link_name exists, deleting it\n");
+	}
+	if ($test) {
+	    print(STDERR "$prog: $subname: Test mode.. will not actually delete $link_name\n");
+	} else {
+	    unlink($link_name);
+	}
+    }
+
+    # Create the link if the source file exists
+
+    if (!$src_exist) {
+	print(STDERR "$prog: $subname: Returning since $src_name does not exist\n");
+	return($return_val);
+    }
+
+    if ($dbg) {
+	print(STDERR "Linking $src_name to $link_name\n");
+    }
+
+    if ($test) {
+	print(STDERR "$prog: $subname: Test mode.. will not make actually make link\n");
+    } else {
+	$return_val=symlink($src_name, $link_name);
+	if ($return_val == 0) {
+	    print(STDERR "$prog: $subname: Warning: Could not create link for $src_name\n");
+	}
+    }
+
+    # Done
+
+    return($return_val);
+}
+
+# -------------------------------- EOF -------------------------------

@@ -1,0 +1,20 @@
+# number color scale
+
+# Mike Dixon, June 1991
+# Remove duplication of color range, Terri B., Apr. 1999
+
+0	2	#005a00
+2	4	#007000
+4	6	#087fdb
+6	8	#1c47e8
+8	10	#6e0dc6
+10	12	#c80f86
+12	14	#c06487
+14	16	#d2883b
+16	18	#fac431
+18	20	#fefa03
+20	22	#fe9a58
+22	24	#fe5f05
+24	26	#fd341c
+26	27	#bbb
+27	100	#eee

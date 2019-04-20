@@ -1,0 +1,27 @@
+####################################################################
+# SYSTEM
+#
+# Process restarters
+*/1 * * * *  csh -c "start_auto_restart_check_cron" 1> /dev/null 2> /dev/null
+*/1 * * * *  csh -c "start_procmap_check_cron"      1> /dev/null 2> /dev/null
+#
+# Build links to log date subdirs
+*/5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
+#
+# CIDD radar snapshot every 6 minutes
+#
+#1,7,13,19,25,31,37,43,49,55 * * * *  csh -c "start_CIDD.snapshot_BrisMerge" 1> /dev/null 2> /dev/null
+# CIDD sat snapshot every hour
+#
+#10 * * * *  csh -c "start_CIDD.snapshot_sat" 1> /dev/null 2> /dev/null
+#
+# Keep ssh login to hangar going
+#
+#*/1 * * * *  csh -c "start_ssh_to_hangar"      1> /dev/null 2> /dev/null
+#
+######################################################################
+# Once a day, make sure time series recording is not running
+#
+0 16 * * * csh -c "stop_ts_recording >& /dev/null"
+0 16 * * * csh -c "stop_SpectraPrint >& /dev/null"
+

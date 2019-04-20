@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Mdv2Vad -params Mdv2Vad.ops"
+if ($status == 1) then
+  nice Mdv2Vad -params Mdv2Vad.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Mdv2Vad -i ops &
+endif
+

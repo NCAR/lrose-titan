@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "Bprp2Dsr -params Bprp2Dsr.ops"
+if ($status == 1) then
+  Bprp2Dsr -params Bprp2Dsr.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Bprp2Dsr -i ops &
+endif
+

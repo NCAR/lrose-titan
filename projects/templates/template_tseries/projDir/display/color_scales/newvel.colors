@@ -1,0 +1,33 @@
+# NAME vel.colors
+# jonesa 	9/16/1994 15:18:46
+# MIN    MAX    NAME        COLOR LABEL
+-22.5 	-21 	gray0 	
+-21 	-19.5 	MediumOrchid4 	
+-19.5 	-18 	dark orchid 	
+-18 	-16.5 	purple 	
+-16.5 	-15 	medium purple 	
+-15 	-13.5 	medium blue 	
+-13.5 	-12 	royal blue 	
+-12 	-10.5 	deep sky blue 	
+-10.5 	-9 	cyan 	
+-9 	-7.5 	medium aquamarine 	
+-7.5 	-6 	pale green 	
+-6 	-4.5 	SpringGreen3 	
+-4.5 	-3 	SpringGreen4 	
+-3 	-1.5 	dark green 	
+-1.5 	0 	light gray 	
+0 	1.5 	orange 	
+1.5 	3 	goldenrod2 	
+3 	4.5 	goldenrod1 	
+4.5 	6 	gold 	
+6 	7.5 	yellow 	
+7.5 	9 	yellow2 	
+9 	10.5 	light goldenrod 	
+10.5 	12 	goldenrod 	
+12 	13.5 	salmon 	
+13.5 	15 	tomato 	
+15 	16.5 	brown2 	
+16.5 	18 	tomato3 	
+18 	19.5 	firebrick 	
+19.5 	21 	saddle brown 	
+21 	22.5 	dark slate gray 	

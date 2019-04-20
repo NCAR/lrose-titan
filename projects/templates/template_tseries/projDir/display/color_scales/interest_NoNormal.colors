@@ -1,0 +1,18 @@
+# NAME interest_pos.colors
+# jaimi 	1/21/1998 18:44:21
+# MIN    MAX    NAME        COLOR LABEL
+
+#0.0    0.5     #2a5577   !
+#0.5 	1.1 	firebrick 	!
+
+0 	0.3 	light slate gray 	!
+0.3 	0.6 	steel blue 	!
+0.6 	0.8 	cadet blue 	!
+0.8 	1.2 	dark sea green 	!
+1.2 	1.5 	sea green 	!
+1.5 	1.8 	olive drab 	!
+1.8 	2.1 	dark khaki 	!
+2.1 	2.4 	gold 	!
+2.4 	2.7 	rosy brown 	!
+2.7 	3.0	peru 	!
+3.0	3.3 	firebrick 	!

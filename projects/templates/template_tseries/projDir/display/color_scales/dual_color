@@ -1,0 +1,20 @@
+# dual color scale
+
+# DM, FEB 1998
+
+0       1      dark slate blue
+1	2	#005a00
+2	3	#007000
+3	4	#087fdb
+4	5	#1c47e8
+5	6	#6e0dc6
+6	7	#c80f86
+7	8	#c06487
+8	9	#d2883b
+9	10	#fac431
+10	11	#fefa03
+11	12	#fe9a58
+12	13	#fe5f05
+13	14	#fd341c
+14	15	gray
+15	30	light gray

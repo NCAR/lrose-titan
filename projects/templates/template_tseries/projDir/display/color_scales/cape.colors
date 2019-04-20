@@ -1,0 +1,37 @@
+# NAME cape.colors
+# jaimi 	3/18/1999 12:37:55
+# MIN    MAX    NAME        COLOR LABEL
+0        10    snow 
+10       25    gray88
+25       50    gray77
+50       75    gray66
+75      100    gray55 
+100     150    blanched almond
+150     200    bisque 
+200     250    wheat 
+250     300    PeachPuff2 
+300 	350 	rosy brown 	!
+350 	680 	dark salmon 	!
+680 	1020 	indian red 	!
+1020 	1360 	brown 	!
+1360 	1700 	sienna 	!
+1700 	2040 	peru 	!
+2040 	2380 	dark goldenrod 	!
+2380 	2720 	goldenrod 	!
+2720 	3060 	light goldenrod 	!
+3060 	3400 	dark khaki 	!
+3400 	3740 	dark olive green 	!
+3740 	4080 	olive drab 	!
+4080 	4420 	sea green 	!
+4420 	4760 	dark sea green 	!
+4760 	5100 	light sea green 	!
+5100 	5440 	cadet blue 	!
+5440 	5780 	steel blue 	!
+5780 	6120 	light sky blue 	!
+6120 	6460 	dodger blue 	!
+6460 	6800 	medium slate blue 	!
+6800 	7140 	slate blue 	!
+7140 	7480 	dark slate blue 	!
+7480 	7820 	midnight blue 	!
+7820 	8160 	dark slate gray 	!
+8160 	8500 	dim gray 	!

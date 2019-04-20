@@ -1,0 +1,16 @@
+# NAME rep.dbz.colors
+# awdl 	1/13/1994 9:5:6
+#MIN     MAX     NAME        COLOR LABEL
+-10 	-5 	gray21 	!
+-5 	0 	dark slate gray 	!
+0 	5 	dark olive green 	!
+5 	10 	forest green 	!
+10 	15 	lime green 	!
+15 	20 	green2 	!
+20 	25 	green yellow 	!
+25 	30 	yellow 	!
+30 	35 	orange 	!
+35 	40 	tomato 	!
+40 	45 	firebrick2 	!
+45 	50 	brown3 	!
+50 	55 	brown 	!

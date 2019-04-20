@@ -1,0 +1,24 @@
+# Sat temp - gray reverse- Taiwan
+#
+# Mike Dixon, Feb 2002
+#
+
+40	60	gray10
+30	40	gray20
+20	30	gray26
+10	20	gray34
+00	10	gray42
+-05	00	gray49
+-10	-05	gray56
+-15	-10	gray62
+-20	-15	gray68
+-25	-20	gray73
+-30	-25	gray78
+-35	-30	gray82
+-40	-35	gray86
+-45	-40	gray90
+-50	-45	gray93
+-55	-50	gray96
+-60	-55	gray98
+-65	-60	gray99
+-145	-65	#ffffff

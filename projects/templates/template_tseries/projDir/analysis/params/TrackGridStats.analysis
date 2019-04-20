@@ -1,0 +1,393 @@
+/**********************************************************************
+ * TDRP params for TrackGridStats
+ **********************************************************************/
+
+//======================================================================
+//
+// Program name: TrackGridStats.
+//
+// TrackGridStats computes geographically-distributed statistics from 
+//   titan storm and track files. Gridded output is in MDV format.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "Marburg";
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_dir ///////////////////////////////
+//
+// Input dir for storms files.
+// TITAN track *.sh5 files should appear in this directory.
+// Type: string
+//
+
+input_dir = "$(DATA_DIR)/titan/storms/Marburg";
+
+///////////// input_file_ext //////////////////////////
+//
+// File extension for input track files.
+// Type: string
+//
+
+input_file_ext = "th5";
+
+//======================================================================
+//
+// COMPUTATIONAL PARAMETERS.
+//
+//======================================================================
+ 
+///////////// track_data_type /////////////////////////
+//
+// Type of input track data.
+// Two track data types are permissable: (a) TITAN track files, (b) 
+//   track files generated from the stochastic model StormModel.
+//
+// Type: enum
+// Options:
+//     TITAN_TRACKS
+//     MODEL_TRACKS
+//
+
+track_data_type = TITAN_TRACKS;
+
+///////////// n_seasons ///////////////////////////////
+//
+// Number of seasons for stats.
+// The number of seasons for computing the seasonal means, such as 
+//   precip, if applicable.
+// Type: int
+//
+
+n_seasons = 5;
+
+///////////// min_duration ////////////////////////////
+//
+// Min track duration (secs).
+// The minimum duration for including a track in the analysis.
+// Type: double
+//
+
+min_duration = 1500;
+
+///////////// smoothing_kernel_size ///////////////////
+//
+// The number of grid locations in x and y over which the data is 
+//   smoothed during computation.
+// The stats are computed on the same grid projection as the track data. 
+//   However, you may choose to smooth the data during the computations. A 
+//   kernel size of 1 implies no smoothing. A kernel size of 3 implies 
+//   smoothing over a 3x3 kernel. The kernel size must be a positive odd 
+//   number.
+// Minimum val: 1
+// Type: int
+//
+
+smoothing_kernel_size = 1;
+
+///////////// radius_for_density_stats ////////////////
+//
+// Radius used to compute counting statistics (km).
+// A number of statistics are computed as counts per unit area. These 
+//   as: n_events, n_weighted, n_complex, n_start and n_mid. This is the 
+//   radius over which the density is computed.
+// Type: double
+//
+
+radius_for_density_stats = 10;
+
+///////////// spatial_representation //////////////////
+//
+// Spatial representation used for the storms.
+// The spatial extent of the storms may be described using either the 
+//   original grid run locations, or the ellipse fitted to the storm 
+//   shape. For MODEL_TRACKS only the ellipses are available.
+//
+// Type: enum
+// Options:
+//     STORM_RUNS
+//     STORM_ELLIPSES
+//
+
+// spatial_representation = STORM_RUNS;
+spatial_representation = STORM_ELLIPSES;
+
+///////////// compute_precip_from_dbz_histogram ///////
+//
+// Option to estimate precip using the reflectivity histogram.
+// If true, the dbz histogram will be used to estimate the reflectivity 
+//   at grid points, and the ZR relationship will be applied. If false, 
+//   the precip flux computed by TITAN will be spread evenly over the 
+//   storm area.
+// Type: boolean
+//
+
+compute_precip_from_dbz_histogram = TRUE;
+
+///////////// z_r_coeff ///////////////////////////////
+//
+// Z-R coefficient.
+// The coefficient in the Z-R relationship.
+// Type: double
+//
+
+z_r_coeff = 200;
+
+///////////// z_r_exponent ////////////////////////////
+//
+// Z-R exponent.
+// The exponent in the Z-R relationship.
+// Type: double
+//
+
+z_r_exponent = 1.455;
+
+///////////// hail_dbz_threshold //////////////////////
+//
+// Hail dBZ threshold.
+// The reflectivity threshold above which hail is assumed.
+// Type: double
+//
+
+hail_dbz_threshold = 55;
+
+///////////// override_ellipse ////////////////////////
+//
+// Option to override the storm ellipse shapes with circles of constant 
+//   radius.
+// If set the same weight is given to all storms for those properties 
+//   which are computed spatially. See circle_radius.
+// Type: boolean
+//
+
+override_ellipse = FALSE;
+
+///////////// circle_radius ///////////////////////////
+//
+// Radius of circle for overriding the ellipses.
+// See override_ellipse.
+// Minimum val: 0
+// Type: double
+//
+
+circle_radius = 10;
+
+//======================================================================
+//
+// MODEL PARAMETERS.
+//
+//======================================================================
+ 
+///////////// scan_interval ///////////////////////////
+//
+// Nominal radar volume scan interval (secs).
+// Nominal interval between radar volume scans. This is used for 
+//   adjusting time-dependent computations.
+// Type: double
+//
+
+scan_interval = 600;
+
+///////////// model_grid //////////////////////////////
+//
+// Grid parameters for model data.
+// The grid params for computing the track stats from model data. Only 
+//   applicable for MODEL_TRACKS.
+//
+// Type: struct
+//   typedef struct {
+//      double origin_lat;
+//      double origin_lon;
+//      int nx;
+//      int ny;
+//      double minx;
+//      double miny;
+//      double dx;
+//      double dy;
+//   }
+//
+//
+
+model_grid = { 39.78, -104.546, 120, 120, -148.75, -148.75, 2.5, 2.5 };
+
+///////////// dbz_hist_interval ///////////////////////
+//
+// Dbz histogram interval.
+// Reflectivity interval for histogram computations related to the 
+//   reflectivity distribution. Used for MODEL_TRACKS only.
+// Minimum val: 0.01
+// Type: double
+//
+
+dbz_hist_interval = 3;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// output_url //////////////////////////////
+//
+// URL for output MDV files.
+// Upper level directory for output grid stats files.
+// Type: string
+//
+
+output_url = "analysis/mdv/track_grid_stats/Marburg";
+
+///////////// output_time_stamp ///////////////////////
+//
+// Time stamp used to name output file.
+// START_TIME: name with period start time. MID_TIME: name with period 
+//   MID_TIME. END_TIME: name with period end time.
+//
+// Type: enum
+// Options:
+//     START_TIME
+//     MID_TIME
+//     END_TIME
+//
+
+output_time_stamp = END_TIME;
+
+///////////// data_set_info ///////////////////////////
+//
+// Data set info.
+// This is placed in the MDV master header for documentation purposes.
+// Type: string
+//
+
+data_set_info = "This MDV file was created by TrackGridStats.";
+
+///////////// data_set_name ///////////////////////////
+//
+// Data set name.
+// This is placed in the MDV master header for documentation purposes.
+// Type: string
+//
+
+data_set_name = "Track grid statistics.";
+
+///////////// data_set_source /////////////////////////
+//
+// Data set source details.
+// This is placed in the MDV master header for documentation purposes.
+// Type: string
+//
+
+data_set_source = "TITAN storm tracks - Marburg 35 dbz threshold.";
+
+///////////// output_projection ///////////////////////
+//
+// Projection for output grid.
+// If PROJ_NATIVE, the output grid is determined from the computational 
+//   grid. If not, the computational grid is remapped to the output grid 
+//   before the files are written.
+//
+// Type: enum
+// Options:
+//     PROJ_NATIVE
+//     PROJ_LATLON
+//     PROJ_LAMBERT_CONF
+//     PROJ_FLAT
+//
+
+output_projection = PROJ_NATIVE;
+
+///////////// output_grid /////////////////////////////
+//
+// Grid parameters for output file.
+// These params apply to all projection types, except NATIVE. The .
+//
+// Type: struct
+//   typedef struct {
+//      int nx;
+//      int ny;
+//      double minx;
+//      double miny;
+//      double dx;
+//      double dy;
+//   }
+//
+//
+
+output_grid = { 1, 1, 0, 0, 1, 1 };
+
+///////////// output_rotation /////////////////////////
+//
+// Outputped grid rotation.
+// This applies only to PROJ_FLAT projections.
+// Type: double
+//
+
+output_rotation = 0;
+
+///////////// output_origin_lat ///////////////////////
+//
+// Outputped grid origin latitude.
+// This applies only to PROJ_FLAT and PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+output_origin_lat = 0;
+
+///////////// output_origin_lon ///////////////////////
+//
+// Outputped grid origin longitude.
+// This applies only to PROJ_FLAT and PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+output_origin_lon = 0;
+
+///////////// output_lat1 /////////////////////////////
+//
+// Outputped grid reference latitude 1.
+// This applies only to PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+output_lat1 = 0;
+
+///////////// output_lat2 /////////////////////////////
+//
+// Outputped grid reference latitude 2.
+// This applies only to PROJ_LAMBERT_CONF projections.
+// Type: double
+//
+
+output_lat2 = 0;
+

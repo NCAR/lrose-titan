@@ -1,0 +1,88 @@
+/**********************************************************************
+ * TDRP params for DsSpdbServer
+ **********************************************************************/
+
+//======================================================================
+//
+// Data distribution.
+//
+// The server can be used to forward data on to multiple URLs. In this 
+//   case, the destination URLs may either be specified in an array 
+//   (dest_url_list) or as a template (dest_url_template) which is merged 
+//   with a destination host list (dest_host_list_file_path).
+//
+//======================================================================
+ 
+///////////// forward /////////////////////////////////
+//
+// Option to froward the data to specified URLs.
+// See parameters below.
+// Type: boolean
+//
+
+forward = TRUE;
+
+///////////// use_dest_host_list_file /////////////////
+//
+// Use host list in the file to create the destination urls.
+// The host list file contains a list of destination hosts. Each entry 
+//   in this list is merged with the url_template to create a list of 
+//   destination urls.
+// Type: boolean
+//
+
+use_dest_host_list_file = TRUE;
+
+///////////// dest_host_list_file_path ////////////////
+//
+// Path for destination host list file.
+// Only used if parameter 'use_dest_host_list_file' is TRUE.
+// Type: string
+//
+
+dest_host_list_file_path = "$(DATA_DIR)/_dest_host_list";
+
+///////////// dest_url_template ///////////////////////
+//
+// URL template for destination URLs.
+// Only used if parameter 'use_dest_host_list_file' is TRUE. The 
+//   protocol should match that expected by the ServerMgr for the 
+//   DsSpdbServer service. If the dir is missing, the current dir is used.
+// Type: string
+//
+
+dest_url_template = "spdbp:://::spdb/tstorms";
+
+///////////// dest_url_list ///////////////////////////
+//
+// Specified URL list for destination hosts.
+// This is only used if parameter 'use_dest_host_list_file' is FALSE. 
+//   The files will be distributed to this list of hosts. The protocol 
+//   should match that expected by the ServerMgr for the DsFileCopy 
+//   service. If the dir is missing, the current dir is used.
+// Type: string
+// 1D array - variable length.
+//
+
+dest_url_list = { "spdbp:://targethost::" };
+
+///////////// put_timeout_secs ////////////////////////
+//
+// Timeout period for put operations - secs.
+// The server will allow this amount of time for the put to succeed. 
+//   After this time, if the put is still active, it will be terminated.
+// Type: int
+//
+
+put_timeout_secs = 60;
+
+///////////// max_put_children ////////////////////////
+//
+// Max number	of active children putting the data.
+// If the number of active children exceeds this max, puts will be 
+//   suspended.
+// Type: int
+//
+
+max_put_children = 64;
+

@@ -1,0 +1,19 @@
+# NAME cloud_ht
+
+# rehak     9/2/1999
+
+0	3000   	blanched almond   ! 0
+3000	7000	bisque            ! 3
+7000	10000 	pale turquoise    ! 7
+10000	13000	cyan              ! 10
+13000	16000	deep sky blue     ! 13
+16000	19000	cornflower blue   ! 16
+19000	22000	medium slate blue ! 19
+22000	25000	slate blue        ! 22
+25000	28000   blue4             ! 25
+28000	31000	MediumPurple4     ! 28
+31000	35000	DarkOrchid4       ! 31
+35000	40000	MediumOrchid4     ! 35
+40000	46000   dark orchid       ! 40
+46000	52000   purple            ! 46
+52000	61000   medium purple     ! 52

@@ -1,0 +1,8 @@
+# NAME sat_refl
+
+# carson 7/31/1997   
+
+-10     10      black 
+10      17      gray25
+17      26      gray80
+26      50      gray95

@@ -1,0 +1,9 @@
+#! /bin/csh
+
+snuff Ltg2Symprod
+snuff Metar2Symprod
+snuff Pirep2Symprod
+snuff Acars2Symprod
+snuff Tstorms2Symprod
+snuff AcTrack2Symprod
+

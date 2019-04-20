@@ -1,0 +1,105 @@
+/**********************************************************************
+ * TDRP params for MdvCompare
+ **********************************************************************/
+
+//======================================================================
+//
+// MdvCompare is a small program for Andrew Crook that
+// reads two MDV fields, possibly from two different
+// files, and does some statistics on the differences
+// between the two fields over a subgrid. The differences are
+// computed as the first field specified minus the second.
+
+// The subgrid is defined by grid points, specified in
+// the param file. The file and field names are specified
+// on the command line. The usage is : 
+
+// MdvCompare file1 field1 file2 field2 -params User.params
+
+// Note that the arguments must be specified IN ORDER,
+// which is rather archaic but OK for a simple program.
+
+// The output is statistics on the differences between
+// the two files for that subgrid (missing/bad values
+// are not counted). The output (printed to stdout) is :
+
+// The time of the data for field one, unix time (long int)
+// Min, Mean and Max
+// Bottom tenth percentile, Median and Top tenth percentile
+// RMS error, standard deviation of errors.
+
+// Niles Oien 23 October 2001.
+//
+//======================================================================
+ 
+///////////// BadValue ////////////////////////////////
+//
+// Value to use for bad data.
+// Bad data usually happens if all the data in the
+// subgrid are bad or missing. In this case, the BadVal
+// will be printed out.
+// Type: double
+//
+
+BadValue = -999;
+
+//======================================================================
+//
+// Parameters that define the sub-grid.
+//
+//======================================================================
+ 
+///////////// MinX ////////////////////////////////////
+//
+// Minimum grid point in X for the subgrid.
+// The grid runs from 0 to NX-1 not 1 to NX.
+// Type: int
+//
+
+MinX = 50;
+
+///////////// MinY ////////////////////////////////////
+//
+// Minimum grid point in Y for the subgrid.
+// The grid runs from 0 to NY-1 not 1 to NY.
+// Type: int
+//
+
+MinY = 180;
+
+///////////// MinZ ////////////////////////////////////
+//
+// Minimum grid point in Z for the subgrid.
+// The grid runs from 0 to NZ-1 not 1 to NZ.
+// Type: int
+//
+
+MinZ = 1.5;
+
+///////////// MaxX ////////////////////////////////////
+//
+// Maximum grid point in X for the subgrid.
+// The grid runs from 0 to NX-1 not 1 to NX.
+// Type: int
+//
+
+MaxX = 100;
+
+///////////// MaxY ////////////////////////////////////
+//
+// Maximum grid point in Y for the subgrid.
+// The grid runs from 0 to NY-1 not 1 to NY.
+// Type: int
+//
+
+MaxY = 210;
+
+///////////// MaxZ ////////////////////////////////////
+//
+// Maximum grid point in Z for the subgrid.
+// The grid runs from 0 to NZ-1 not 1 to NZ.
+// Type: int
+//
+
+MaxZ = 2.0;
+

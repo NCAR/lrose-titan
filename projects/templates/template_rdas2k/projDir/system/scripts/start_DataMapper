@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/system/params
+
+running "DataMapper -params DataMapper.params"
+if ($status == 1) then
+  DataMapper -params DataMapper.params -debug |& \
+	LogFilter -d $ERRORS_LOG_DIR -p DataMapper -i primary >& /dev/null &
+endif
+

@@ -1,0 +1,130 @@
+/**********************************************************************
+ * TDRP params for RadMon
+ **********************************************************************/
+
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// Print debug messages.
+// Type: boolean
+//
+
+debug = FALSE;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with the process mapper.
+// Type: string
+//
+
+instance = "log";
+
+///////////// fmq_url /////////////////////////////////
+//
+// URL for DsRadar data via FMQ.
+// Type: string
+//
+
+fmq_url = "fmqp:://localhost::$(DATA_DIR)/fmq/moments";
+
+///////////// print_type //////////////////////////////
+//
+// Sets the type of printout. All information will be printed to stdout.
+// MONITOR: single line which overwrites itself. Suitable for a small 
+//   window with a single output line. SUMMARY: scrolling summary. FULL: 
+//   radar, field and beam params in full. DATA: data as well - very 
+//   verbose. SINGLE_GATE: data for a single gate at specficied range.
+//
+// Type: enum
+// Options:
+//     MONITOR
+//     SUMMARY
+//     FULL
+//     DATA
+//     SINGLE_GATE
+//
+
+print_type = SUMMARY;
+
+///////////// labels_in_monitor_mode //////////////////
+//
+// Option to print label line in monitor mode.
+// If TRUE, a line containing labels is printed ahead of the data line 
+//   in monitor mode.
+// Type: boolean
+//
+
+labels_in_monitor_mode = FALSE;
+
+///////////// volume_num_in_monitor_mode //////////////
+//
+// Option to print volume number in monitor mode.
+// If TRUE, the volume number is printed at the start of the line in 
+//   monitor mode.
+// Type: boolean
+//
+
+volume_num_in_monitor_mode = FALSE;
+
+///////////// flags_in_monitor_mode ///////////////////
+//
+// Option to print start of tilt, end of volume, etc. flags in monitor 
+//   mode.
+// If TRUE, a 3-letter string is added to the end of the line. The 
+//   strings are EOT (end-of-tilt), EOV (end-of-volume), SOT 
+//   (start-of-tilt), SOV (start-of-volume) and NST (new-scan-type).
+// Type: boolean
+//
+
+flags_in_monitor_mode = TRUE;
+
+///////////// tilt_flags_in_summary_mode //////////////
+//
+// Option to print start/end of tilt flags in summaryt mode.
+// If TRUE, the start and end of tilts will be printed in summary mode.
+// Type: boolean
+//
+
+tilt_flags_in_summary_mode = FALSE;
+
+///////////// update_interval /////////////////////////
+//
+// Update interval for display in secs.
+// Set to negative values to update based on count rather than seconds 
+//   between beam timestamps. If 0, prints on every beam.
+// Type: int
+//
+
+update_interval = 1;
+
+///////////// range_for_single_gate ///////////////////
+//
+// Range for printing out data for single gate - km.
+// For print_type = SINGLE_GATE.
+// Type: double
+//
+
+range_for_single_gate = 1;
+
+///////////// seek_to_start_of_input //////////////////
+//
+// Option to seek to the start of the input FMQ.
+// If FALSE, the program will seek to the end of the fmq and only read 
+//   in new data. If TRUE, it will start reading from the beginning of the 
+//   FMQ.
+// Type: boolean
+//
+
+seek_to_start_of_input = FALSE;
+
+///////////// n_monitor_line_feeds ////////////////////
+//
+// Number of line feeds in monitor mode.
+// The number of line feeds inserted before refreshing the line in 
+//   monitor mode.
+// Type: int
+//
+
+n_monitor_line_feeds = 0;
+

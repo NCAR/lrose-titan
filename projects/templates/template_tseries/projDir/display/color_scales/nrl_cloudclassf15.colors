@@ -1,0 +1,19 @@
+# NAME 15categories.colors
+# kessinge 	5/23/2002 13:54:29
+# MIN    MAX    NAME        COLOR LABEL
+14.5    20.5    seashell3        !N/A
+13.5    14.5    pink             !Sg
+12.5    13.5    light slate blue !Hz
+11.5    12.5    gray98           !Sn
+10.5    11.5    gray4            !Clr
+9.5     10.5    red              !Cb
+8.5     9.5     VioletRed4       !CsAn
+7.5     8.5     PaleVioletRed3   !CuC
+6.5     7.5     dark orange      !Cs
+5.5     6.5     yellow           !Cc
+4.5     5.5     khaki1           !Ci
+3.5     4.5     dark olive green !As
+2.5     3.5     olive drab       !Ac
+1.5     2.5     royal blue       !Cu
+0.5     1.5     DodgerBlue2      !Sc
+-0.5    0.5     LightSkyBlue1  !St

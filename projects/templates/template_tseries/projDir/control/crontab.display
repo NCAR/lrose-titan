@@ -1,0 +1,18 @@
+####################################################################
+# SYSTEM
+#
+# Process restarters
+*/1 * * * *  csh -c "start_auto_restart_check_cron" 1> /dev/null 2> /dev/null
+*/1 * * * *  csh -c "start_procmap_check_cron"      1> /dev/null 2> /dev/null
+#
+# Build links to log date subdirs
+*/5 * * * *   csh -c "start_build_logdir_links" 1> /dev/null 2> /dev/null
+#
+# Keep Xvfb running
+#*/1 * * * *  csh -c "start_Xvfb" 1> /dev/null 2> /dev/null
+#
+# CIDD snapshot every 10 minutes
+# Uncomment this on a display host
+#
+# 1,11,21,31,41,51 * * * *  csh -c "start_CIDD.snapshot.BrisMerge" 1> /dev/null 2> /dev/null
+#

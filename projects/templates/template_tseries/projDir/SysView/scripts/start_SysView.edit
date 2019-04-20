@@ -1,0 +1,5 @@
+#! /bin/csh
+
+cd $PROJ_DIR/SysView/params
+
+java -jar /home/titan5/projDir/lib/sysview.jar -params SysView.params.xml -diagram CP2.diagram.xml -instance edit

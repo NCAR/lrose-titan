@@ -1,0 +1,12 @@
+# number color scale
+
+# Mike Dixon, June 1991
+
+1	2	#c80f86
+2	3	#c06487
+3	4	#d2883b
+4	6	#fac431
+6	8	#fefa03
+8	10	#fe9a58
+10	12	#fe5f05
+12	100	#fd341c

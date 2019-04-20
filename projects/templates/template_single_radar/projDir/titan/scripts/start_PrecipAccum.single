@@ -1,0 +1,14 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/titan/params
+
+running "PrecipAccum -params PrecipAccum.single"
+if ($status == 1) then
+  PrecipAccum -params PrecipAccum.single |& \
+    LogFilter -d $ERRORS_LOG_DIR -p PrecipAccum -i single &
+endif
+
+
+
+
+

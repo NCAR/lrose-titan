@@ -1,0 +1,39 @@
+# NAME sat_highres
+
+# roberts 	3/29/1996 
+
+9	200     pink    
+8.5	9     black    
+8  	8.5	gray0  
+7.5 	8 	gray11
+7      7.5      gray16 
+6.5      7      gray21
+6 	6.5 	gray25
+5.5 	6 	gray28
+5 	5.5 	gray30
+4.5      5      gray31
+4      4.5      gray34 
+3.5 	4 	gray37 
+3      3.5      gray41
+2.5      3      gray44
+2      2.5      gray47
+1.5  	2  	gray51
+1   	1.5   	gray53
+0.5   	1   	gray56
+-0.5   	0.5   	linen   
+-1  	-0.5   	blanched almond
+-1.5  	-1      bisque        
+-2	-1.5 	pale turquoise
+-2.5     -2     cyan         
+-3	-2.5	deep sky blue
+-3.5	-3	cornflower blue   
+-4	-3.5	medium slate blue
+-4.5 	-4	slate blue       
+-5     -4.5     blue4           
+-5.5	-5	MediumPurple4  
+-6	-5.5	DarkOrchid4    
+-6.5	-6	MediumOrchid4    
+-7     -6.5     dark orchid     	
+-7.5     -7     purple           
+-8	-7.5     medium purple   
+-200	-8     magenta

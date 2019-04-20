@@ -1,0 +1,234 @@
+/**********************************************************************
+ * TDRP params for IntfRemove
+ **********************************************************************/
+
+//======================================================================
+//
+// IntfRemove reads DBZ and SNR data in an input DsRadar FMQ, identifies 
+//   interference and removes the interference power from the power 
+//   fields, and writes the cleaned up data out to a DsRadar queue.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "ops";
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_fmq_url ///////////////////////////
+//
+// Input URL for dual-pol moments data via DsRadar FMQ.
+// Type: string
+//
+
+input_fmq_url = "fmq/rdas";
+
+///////////// seek_to_start_of_input //////////////////
+//
+// Option to seek to the start of the input FMQ.
+// If TRUE, the program will seek to the start of the fmq and read in 
+//   data from the entire queue. If FALSE, it will only read new data as 
+//   it is added to the FMQ.
+// Type: boolean
+//
+
+seek_to_start_of_input = FALSE;
+
+//======================================================================
+//
+// INPUT FIELD INFORMATION.
+//
+// Names of input fields in the Dsr queue.
+//
+//======================================================================
+ 
+///////////// dsr_name_DBZ ////////////////////////////
+//
+// Dsr field name for DBZ.
+// Horizontally-polarized reflectivity factor.
+// Type: string
+//
+
+dsr_name_DBZ = "DBZ";
+
+///////////// SNR_available ///////////////////////////
+//
+// Is SNR data available?.
+// If not, SNR will be computed from DBZ, using noise_dbz_100km.
+// Type: boolean
+//
+
+SNR_available = TRUE;
+
+///////////// dsr_name_SNR ////////////////////////////
+//
+// Dsr field name for SNR.
+// Signal-to-noise ratio (dB).
+// Type: string
+//
+
+dsr_name_SNR = "SNR";
+
+///////////// noise_dbz_at_100km //////////////////////
+//
+// The noise represented as dBZ at 100km range.
+// This is used for computing the signal/noise value from the DBZ field.
+// Type: double
+//
+
+noise_dbz_at_100km = 0;
+
+//======================================================================
+//
+// SNR histogram.
+//
+// Computing a histogram for the SNR field allows us to identify 
+//   interference from the apparently raised noise floor.
+//
+//======================================================================
+ 
+///////////// snr_hist_min ////////////////////////////
+//
+// Min value for snr histogram (dB).
+// Type: double
+//
+
+snr_hist_min = 0;
+
+///////////// snr_hist_max ////////////////////////////
+//
+// Max value for snr histogram (dB).
+// Type: double
+//
+
+snr_hist_max = 100;
+
+///////////// snr_hist_delta //////////////////////////
+//
+// The resolution of the snr histogram (dB).
+// Type: double
+//
+
+snr_hist_delta = 1;
+
+///////////// mode_threshold //////////////////////////
+//
+// Min value of mode to indicate interference.
+// We compute a density curve from the histogram. If interference is 
+//   present, the mode of the density curve will indicate a peak at the 
+//   interference snr level. Set this threshold appropriately to separate 
+//   interference from other signals. The lower the value the larger the 
+//   percentage of beams considered to have interference.
+// Type: double
+//
+
+mode_threshold = 0.15;
+
+///////////// tail_threshold //////////////////////////
+//
+// Min density value for computing interference snr.
+// We compute interference snr by considering snr values on either side 
+//   of the mode. We stop looking when the density value drops below this 
+//   value.
+// Type: double
+//
+
+tail_threshold = 0.005;
+
+///////////// interference_snr_threshold //////////////
+//
+// SNR threshold for identifying interference.
+// A beam is identified as having interference if the interference SNR 
+//   exceeds this value.
+// Type: double
+//
+
+interference_snr_threshold = 2.5;
+
+///////////// print_histogram /////////////////////////
+//
+// Print out histogram.
+// Type: boolean
+//
+
+print_histogram = FALSE;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+// The cleaned up data will be output to a DsRadarFmq. All of the input 
+//   fields will be written to the output. The original input DBZ and SNR 
+//   field will be echoed as DBZ_ORIG and SNR_ORIG. If the SNR field was 
+//   not available as an input, the derived SNR will be output.
+//
+//======================================================================
+ 
+///////////// output_fmq_url //////////////////////////
+//
+// Output URL for cleaned up data via DsRadar FMQ.
+// Type: string
+//
+
+output_fmq_url = "fmq/intf_removed";
+
+///////////// output_fmq_size /////////////////////////
+//
+// Size of output FMQ, in bytes.
+// This is the total size of the output FMQ buffer. Some of this buffer 
+//   will be used for control bytes (12 bytes per message).
+// Type: int
+//
+
+output_fmq_size = 10000000;
+
+///////////// output_fmq_nslots ///////////////////////
+//
+// Number of slots in output FMQ.
+// The number of slots corresponds to the maximum number of messages 
+//   which may be written to the buffer before overwrites occur. However, 
+//   overwrites may occur sooner if the size is not set large enough.
+// Type: int
+//
+
+output_fmq_nslots = 10000;
+
+///////////// output_fmq_compress /////////////////////
+//
+// FMQ compression option.
+// If TRUE FMQ messages are compressed.
+// Type: boolean
+//
+
+output_fmq_compress = FALSE;
+

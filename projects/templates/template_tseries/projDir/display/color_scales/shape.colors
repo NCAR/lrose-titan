@@ -1,0 +1,23 @@
+# NAME shape.colors
+# jaimi 	1/30/1998 15:20:37
+# MIN    MAX    NAME        COLOR LABEL
+0 	5 	brown 	!
+5 	10 	rosy brown 	!
+10 	15 	dark goldenrod 	!
+15 	20 	goldenrod 	!
+20 	25 	gold 	!
+25 	30 	dark khaki 	!
+30 	35 	dark sea green 	!
+35 	40 	medium sea green 	!
+40 	45 	sea green 	!
+45 	50 	dark green 	!
+50 	55 	navy 	!
+55 	60 	slate blue 	!
+60 	65 	light slate blue 	!
+65 	70 	medium blue 	!
+70 	75 	royal blue 	!
+75 	80 	blue 	!
+80 	85 	dodger blue 	!
+85 	90 	cadet blue 	!
+90 	95 	light slate gray 	!
+95 	100 	light grey 	!

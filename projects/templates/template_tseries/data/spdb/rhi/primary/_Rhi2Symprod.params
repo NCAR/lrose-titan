@@ -1,0 +1,217 @@
+/**********************************************************************
+ * TDRP params for Rhi2Symprod
+ **********************************************************************/
+
+//======================================================================
+//
+// AZIMUTH TICKS.
+//
+//======================================================================
+ 
+///////////// tick_color //////////////////////////////
+//
+// Tick color.
+// Name of color suggested for the tick lines along each azimuth.
+// Type: string
+//
+
+tick_color = "white";
+
+///////////// tick_line_width /////////////////////////
+//
+// Line thickness of icon lines.
+// Thickness in pixels.
+// Type: int
+//
+
+tick_line_width = 2;
+
+///////////// tick_line_style /////////////////////////
+//
+// Line style for tick marks.
+//
+// Type: enum
+// Options:
+//     LINETYPE_SOLID
+//     LINETYPE_DASH
+//     LINETYPE_DOT_DASH
+//
+
+tick_line_style = LINETYPE_SOLID;
+
+///////////// tick_range //////////////////////////////
+//
+// Array of tick mark ranges.
+// Tick marks will be rendered along the RHI azimuth, between the given 
+//   ranges, for each set of range limits.
+//
+// Type: struct
+//   typedef struct {
+//      double start_range;
+//      double end_range;
+//   }
+//
+// 1D array - variable length.
+//
+
+tick_range = {
+  { 49, 51},
+  { 99, 101},
+  { 149, 151}
+};
+
+//======================================================================
+//
+// RADAR ICON.
+//
+//======================================================================
+ 
+///////////// radar_icon_size /////////////////////////
+//
+// Size of radar icon in pixels.
+// The radar position is represented by a cross. This is the length of 
+//   each arm of the cross in pixels.
+// Type: int
+//
+
+radar_icon_size = 4;
+
+///////////// radar_icon_line_width ///////////////////
+//
+// Line thickness of radar icon lines.
+// Thickness in pixels.
+// Type: int
+//
+
+radar_icon_line_width = 1;
+
+///////////// radar_icon_color ////////////////////////
+//
+// Color of radar icon.
+// Type: string
+//
+
+radar_icon_color = "cyan";
+
+//======================================================================
+//
+// TIME LABEL.
+//
+//======================================================================
+ 
+///////////// label_time //////////////////////////////
+//
+// Option to add a text label representing the time of the RHI data 
+//   used.
+// The time label will be placed relative to the radar location.
+// Type: boolean
+//
+
+label_time = TRUE;
+
+///////////// time_format /////////////////////////////
+//
+// Time label format.
+// Only relevant if do_time_labelling is TRUE.
+//
+// Type: enum
+// Options:
+//     TIME_LABEL_HHMM
+//     TIME_LABEL_HHMMSS
+//     TIME_LABEL_YYYYMMDDHHMMSS
+//
+
+time_format = TIME_LABEL_HHMMSS;
+
+///////////// time_text_offset ////////////////////////
+//
+// Pixel offset values for starting the time labelling text.
+// Only relevant if do_time_labelling is TRUE.
+//
+// Type: struct
+//   typedef struct {
+//      long x;
+//      long y;
+//   }
+//
+//
+
+time_text_offset = { 0, 15 };
+
+///////////// time_label_color ////////////////////////
+//
+// Color for time labels.
+// Only relevant if do_time_labelling is TRUE.
+// Type: string
+//
+
+time_label_color = "white";
+
+///////////// time_label_background_color /////////////
+//
+// Text background color.
+// Set to empty string to use display background color.
+// Type: string
+//
+
+time_label_background_color = "darkblue";
+
+///////////// time_label_vert_align ///////////////////
+//
+// Vertical alignment for the text.
+//
+// Type: enum
+// Options:
+//     VERT_ALIGN_TOP
+//     VERT_ALIGN_CENTER
+//     VERT_ALIGN_BOTTOM
+//
+
+time_label_vert_align = VERT_ALIGN_CENTER;
+
+///////////// time_label_horiz_align //////////////////
+//
+// Horizontal alignment for the text.
+//
+// Type: enum
+// Options:
+//     HORIZ_ALIGN_LEFT
+//     HORIZ_ALIGN_CENTER
+//     HORIZ_ALIGN_RIGHT
+//
+
+time_label_horiz_align = HORIZ_ALIGN_CENTER;
+
+///////////// time_label_font_style ///////////////////
+//
+// Font style for the text.
+//
+// Type: enum
+// Options:
+//     TEXT_NORM
+//     TEXT_BOLD
+//     TEXT_ITALICS
+//     TEXT_SUBSCRIPT
+//     TEXT_SUPERSCRIPT
+//     TEXT_UNDERLINE
+//     TEXT_STRIKETHROUGH
+//
+
+time_label_font_style = TEXT_BOLD;
+
+///////////// time_label_font_size ////////////////////
+//
+// Size of font to use for text.
+// Type: int
+//
+
+time_label_font_size = 0;
+
+///////////// time_label_font_name ////////////////////
+//
+// Font name.
+// Type: string
+//
+
+time_label_font_name = "fixed";
+

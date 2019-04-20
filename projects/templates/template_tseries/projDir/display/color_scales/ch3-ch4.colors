@@ -1,0 +1,25 @@
+# NAME ch3-ch4.colors 
+
+# Matt Meister July 2001
+
+-70	-60	violet	
+-60	-50 	plum
+-50	-40 	orchid	
+-40	-30 	purple	
+-30	-25 	light purple	
+-25	-20     aquamarine1	
+-20	-15     DarkSeaGreen1	
+-15	-10     SeaGreen1	
+-10	-9      burlywood1	
+-9	-8	wheat1	
+-8	-7	tan1	
+-7	-6	khaki1	
+-6	-5	LightGoldenrod1	
+-5	-4	thistle1		
+-4	-3	thistle2	
+-3	-2	thistle3	
+-2	-1 	thistle4	
+-1	0	grey80
+0	10	grey40
+10	70	grey30
+

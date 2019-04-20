@@ -1,0 +1,29 @@
+# NAME deg_c.colors
+
+# fhage 	6/9/1993 12:2:13
+
+-6 	-5 	gray25
+-5 	-4 	blue4
+-4 	-3 	medium blue
+-3 	-2 	slate blue
+-2 	-1 	cornflower blue
+-1 	0 	medium turquoise
+0 	2 	dark green
+2 	4 	dark olive green
+4 	6 	SpringGreen4
+6 	8 	SpringGreen3
+8 	10 	lime green
+10 	12 	chartreuse
+12 	14 	DarkOliveGreen1
+14 	16 	DarkOrange3
+16 	18 	goldenrod
+18 	20 	gold1
+20 	22 	yellow
+22 	24 	light goldenrod
+24 	26 	dark salmon
+26 	28 	salmon
+28 	30 	PaleVioletRed3
+30 	32 	firebrick
+32 	34 	red
+34 	36 	DeepPink1
+36 	40 	gray

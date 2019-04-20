@@ -1,0 +1,17 @@
+# NAME rip_cin.colors
+#
+# rehak 12/2001
+#
+# low values are hot colors,
+# high values are cool colors
+#
+#MIN     MAX     NAME        COLOR LABEL
+0.0001  10      medium spring green     !
+10      30      SpringGreen3            !
+30      40      forest green            !
+40      80      gold                    !
+80      180     coral                   !
+180     330     tomato                  !
+330     840     brown2                  !
+840     10000   red3                    !
+

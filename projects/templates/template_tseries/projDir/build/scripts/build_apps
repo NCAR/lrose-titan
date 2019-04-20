@@ -1,0 +1,23 @@
+#! /bin/csh
+#
+# Script to build the SPOL apps
+#
+# Installation will be done in:
+#   $RAP_BIN_DIR
+
+# build tdrp_gen - param file generator
+
+cd $CVS_DIR/apps/tdrp/src/tdrp_gen
+make opt install
+rehash
+
+# make apps
+
+cd $CVS_DIR/apps
+make -k opt install
+
+# run the checker
+
+do_check_apps
+
+

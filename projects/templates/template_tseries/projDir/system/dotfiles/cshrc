@@ -1,0 +1,204 @@
+#########################################
+# .cshrc file for TITAN project
+#########################################
+
+if ( $?prompt ) then
+  set prompt = "`hostname`:\!>"
+  set autoexpand
+  set autolist
+  set cdpath = ( ~ )
+  set pushdtohome
+endif
+
+unset autologout
+set autologout=0
+
+umask 002
+setenv TAPE /dev/st0
+setenv PRINTER lp
+
+# Set the build environment
+
+setenv LANG C
+setenv HOST_OS LINUX_CX11
+
+setenv LROSE_INSTALL_DIR $HOME/lrose
+setenv LROSE_CORE_DIR $HOME/git/lrose-core
+setenv CODEBASE $HOME/git/lrose-core/codebase
+
+setenv RAP_LIB_DIR $LROSE_INSTALL_DIR/lib
+setenv RAP_BIN_DIR $LROSE_INSTALL_DIR/bin
+
+setenv RAP_MAKE_INC_DIR $CODEBASE/make_include
+setenv RAP_MAKE_BIN_DIR $CODEBASE/make_bin
+
+setenv RAP_INC_DIR $LROSE_INSTALL_DIR/include
+setenv RAP_MAN_DIR $LROSE_INSTALL_DIR/man
+setenv RAP_DOC_DIR $LROSE_INSTALL_DIR/doc
+
+setenv RAP_SHARED_INC_DIR $RAP_INC_DIR
+setenv RAP_SHARED_LIB_DIR $RAP_LIB_DIR
+setenv RAP_SHARED_BIN_DIR $RAP_BIN_DIR
+setenv RAP_SHARED_MAN_DIR $RAP_MAN_DIR
+setenv RAP_SHARED_DOC_DIR $RAP_DOC_DIR
+
+# --- OTHER BUILD SETTINGS
+
+setenv QTDIR /usr/lib64/qt4
+setenv FC gfortran
+setenv GCC_WARNINGS -Wall
+
+# --- LD library path --
+
+setenv LD_LIBRARY_PATH $QTDIR/lib:$RAP_LIB_DIR
+
+# --- NCAR GRAPHICS ---
+
+setenv NCARG_ROOT /usr/local/ncarg
+
+# --- JAVA ---
+
+setenv JAVA_HOME /usr/java/latest
+setenv ANT_HOME /usr/local/ant
+
+# --- RUNTIME ---
+
+setenv PROJ_DIR $HOME/projDir
+setenv TITAN_HOME $PROJ_DIR
+setenv DATA_DIR $PROJ_DIR/data
+setenv RAP_DATA_DIR $DATA_DIR
+setenv TMP_DIR $DATA_DIR/tmp
+setenv LOG_DIR $DATA_DIR/logs
+setenv DATA_DISTRIB_LOG_DIR $LOG_DIR/distrib
+setenv ERRORS_LOG_DIR $LOG_DIR/errors
+setenv RESTART_LOG_DIR $LOG_DIR/restart
+
+setenv DATA_HOST localhost
+setenv MGEN_HOST localhost
+setenv PGEN_HOST localhost
+setenv DISPLAY_HOST localhost
+
+setenv PROCMAP_HOST localhost
+setenv DATA_MAPPER_ACTIVE true
+setenv LDATA_FMQ_ACTIVE true
+
+setenv DS_COMM_TIMEOUT_MSECS 60000
+setenv DS_PING_TIMEOUT_MSECS 20000
+
+# --- site info --- 
+
+if (-f $PROJ_DIR/system/params/site_params) then
+  source $PROJ_DIR/system/params/site_params
+endif
+
+# --- Path ---
+
+# Assemble path to include all scripts directories
+# then projDir/bin, then the rest
+
+set path = (.)
+if ( -d $PROJ_DIR ) then
+  foreach dir ($PROJ_DIR/*)
+    if (-d $dir/scripts) then
+      set path = ($path $dir/scripts)
+    endif
+  end
+endif
+
+if ($?INSTALL_DIR) then
+  if ( -d $INSTALL_DIR/bin ) then
+    set path = ($path $INSTALL_DIR/bin)
+  endif
+endif
+
+set path = ($path ~/lrose/bin ~/bin \
+        /opt/local/bin \
+	$JAVA_HOME/bin $ANT_HOME/bin \
+	$NCARG_ROOT/bin \
+        /usr/X11R6/bin /usr/sbin /usr/bin /sbin /bin \
+	/usr/bin/X11 /usr/local/bin /usr/local/sbin \
+	/opt/gfortran/irun/bin /opt/spol/bin \
+        /usr/sigmet/bin /usr/sigmet/bin/rda )
+
+# -- core files --
+# unlimit coredumpsize
+
+# --- Aliases ---
+if ($?prompt) then
+
+  alias sc source ~/.cshrc
+
+  alias setprompt 'set prompt="(`hostname`) `basename $cwd` ! % "'
+  alias cd 'cd \!*;setprompt; echo $cwd'
+  alias push 'pushd \!*; cd .'
+  alias pop 'popd; cd .'
+
+  set prompt = "%m:%~%# "             # tcsh
+  set showdots                        # tcsh
+  set watch = (1 root any)            # tcsh
+  set history=1000
+  set nobeep
+  set time = 5
+
+  setenv EDITOR emacs
+  setenv PAGER less
+  setenv LESS "-cMe"
+  setenv LESSOPEN "|lesspipe.sh %s"
+  setenv LESSCHARSET latin1
+
+  alias h history
+  alias ssh 'ssh -X'
+
+  alias rm 'rm -i'
+  alias mv 'mv -i'
+  alias cp 'cp -i' 
+
+  alias df 'df -h'
+  set filec
+  set fignore = (.o .ln)
+
+  alias catw 'cat `which \!*`'
+  alias lessw 'less `which \!*`'
+  alias emacsw 'emacs -nw `which \!*`'
+  alias viw 'vi `which \!*`'
+
+  alias lst 'ls -l \!* | awk \{s+=\$4\}END\{print\ s\}'
+  alias la 'ls -la --color=tty'
+  alias ll 'ls -l --color=tty'
+  alias lt 'ls -lt --color=tty'
+  alias lat 'ls -alt --color=tty'
+  alias l 'ls -sF'
+  alias L ls -agl
+  alias LS ls -aFRts 
+
+  alias xx 'xrdb ~/.Xdefaults'
+  alias cvs 'cvs -d :pserver:${CVSUSER}@localhost:/cvs \!*'
+  alias cvsforward 'ssh -a -x -C -Y -R 2401:localhost:2401'
+  alias cvsin 'ssh -a -x -C -L 2401:cvs:2401'
+  alias cvsout 'ssh -a -x -C -R 2401:cvs:2401'
+  alias gate 'ssh -a -x -C -L 2401:cvs.rap.ucar.edu:2401 titan5@gateway'
+
+  alias psg 'ps axww | sed -n "1p; \|sed .*/\!*/|d; /\!*/p"'
+  alias pslg 'ps alxww | sed -n "1p; \|sed .*/\!*/|d; /\!*/p"'
+  alias psug 'ps auxww | sed -n "1p; \|sed .*/\!*/|d; /\!*/p"'
+  alias psx 'ps xww | grep -v LogFilter'
+  alias ensc 'enscript -2r -fCourier7'
+
+  alias print_procmap 'print_procmap -hb -up -status'
+  alias PrintDataMap 'PrintDataMap -all -relt -lreg'
+  alias ppm 'print_procmap -hb -up -status'
+  alias pdm 'PrintDataMap -all -relt -lreg'
+  alias pcheck 'procmap_list_check -proc_list $PROJ_DIR/control/proc_list'
+  alias ph 'get_host_type'
+
+# save to dvd
+
+  alias savedvd 'growisofs -Z /dev/dvd -r -J'
+  alias saveiso2dvd 'growisofs -dvd-compat -Z /dev/dvd='
+
+#    eval `dircolors ~/.dircolors`      # Set up color-ls variables.
+
+  setprompt
+
+endif
+

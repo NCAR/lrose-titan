@@ -1,0 +1,4 @@
+-2      -1       gold		! init
+-1       0       blue		! decay
+ 0       1       green		! steady
+ 1       2       firebrick	! growth

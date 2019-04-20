@@ -1,0 +1,10 @@
+#! /bin/csh
+
+set_font_path
+
+setenv DATA_HOST pgen
+
+cd $PROJ_DIR/display/params
+
+CIDD -p CIDD.fat -i fat -fn fixed >& /dev/null &
+

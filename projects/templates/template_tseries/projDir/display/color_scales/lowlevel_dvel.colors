@@ -1,0 +1,24 @@
+# NAME lowlevel_dvel.colors
+
+# roberts 	5/27/1998 12:40:43
+
+0       5       dim gray 
+5 	10 	blue
+10 	15 	medium blue
+15      20 	slate blue
+20      24 	cornflower blue
+24 	28 	medium sea green
+28 	32 	lime green
+32 	36 	forest green
+36 	40 	dark olive green
+40 	44 	dark green
+44 	48 	saddle brown
+48 	52 	sienna
+52 	56 	dark goldenrod
+56 	60 	goldenrod
+60 	64 	gold1
+64 	68 	orange
+68 	72 	salmon
+72 	76 	tomato
+76 	80 	red
+80 	90 	firebrick

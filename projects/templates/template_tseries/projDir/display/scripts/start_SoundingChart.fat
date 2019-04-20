@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+setenv DATA_HOST pgen
+
+cd $PROJ_DIR/display/params
+
+SoundingChart -params SoundingChart.fat >& /dev/null &
+
+
+

@@ -1,0 +1,6 @@
+#! /bin/csh -f
+
+snuff "RadMon -params RadMon.ops"
+
+
+

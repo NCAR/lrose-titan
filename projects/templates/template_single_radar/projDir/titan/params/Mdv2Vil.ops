@@ -1,0 +1,139 @@
+/**********************************************************************
+ * TDRP params for Mdv2Vil
+ **********************************************************************/
+
+//======================================================================
+//
+// Program name: Mdv2Vil.
+//
+// Mdv2Vil computes VIL and related values from an MDV file, and stores 
+//   these in a different MDV file.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUG AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "ops";
+
+///////////// mode ////////////////////////////////////
+//
+// Operational mode.
+// Realtime mode - waits for new data; archive mode runs on single file.
+//
+// Type: enum
+// Options:
+//     REALTIME
+//     ARCHIVE
+//
+
+mode = REALTIME;
+
+///////////// max_realtime_valid_age //////////////////
+//
+// Max age of input data.
+// For realtime only - max age of input data for it to be valid.
+// Minimum val: 0
+// Type: int
+//
+
+max_realtime_valid_age = 300;
+
+///////////// input_dir ///////////////////////////////
+//
+// Input directory.
+// Path of input directory.
+// Type: string
+//
+
+input_dir = "$(DATA_DIR)/$(RADAR_CART_DIR)";
+
+///////////// dbz_field ///////////////////////////////
+//
+// Reflectivity field.
+// Field number of the reflectivity data in the mdv file.
+// Minimum val: 0
+// Type: int
+//
+
+dbz_field = 0;
+
+///////////// output_dir //////////////////////////////
+//
+// Output directory.
+// Path of output directory.
+// Type: string
+//
+
+output_dir = "$(DATA_DIR)/mdv/vil";
+
+///////////// output_totalVil /////////////////////////
+//
+// Output total VIL calculation to mdv file.
+// Type: boolean
+//
+
+output_totalVil = TRUE;
+
+///////////// output_dVil /////////////////////////////
+//
+// Output DVIL calculation to mdv file.
+// DVIL is the difference between the upper mass and lower mass around 
+//   the specified difference_height.
+// Type: boolean
+//
+
+output_dVil = TRUE;
+
+///////////// output_SSS_index ////////////////////////
+//
+// Output the Storm Severity index calculation to mdv file.
+// Type: boolean
+//
+
+output_SSS_index = TRUE;
+
+///////////// difference_height ///////////////////////
+//
+// Height (in km) used for DVIL calculation.
+// Height from which to calculate vil difference.
+// Minimum val: 0
+// Type: double
+//
+
+difference_height = 4.4;
+
+///////////// min_height //////////////////////////////
+//
+// Minimum Height (in km).
+// Minimum Height from which to calculate total vil.
+// Minimum val: 0
+// Type: double
+//
+
+min_height = 1;
+

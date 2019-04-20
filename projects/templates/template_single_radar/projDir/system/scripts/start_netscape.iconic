@@ -1,0 +1,16 @@
+#! /bin/csh
+
+running "navigator-smotif.real"
+set navigator_running=$status
+
+running "netscape"
+set netscape_running=$status
+
+if($netscape_running == 1 && $navigator_running == 1) then
+ cd $HOME
+ netscape -geometry 920x922+90+5 -iconic &
+ sleep 3
+endif
+
+
+

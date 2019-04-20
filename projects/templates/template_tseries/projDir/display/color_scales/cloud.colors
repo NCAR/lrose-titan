@@ -1,0 +1,11 @@
+# NAME cloud.colors
+# awdl 	7/16/1993 14:28:22
+#MIN     MAX     NAME        COLOR LABEL
+0 	0.5 	gray0 		!
+0.5 	1 	gray34 		!
+1 	1.5 	gray47 		!
+1.5 	2 	gray67 		!
+2 	2.5 	gray82 		!
+2.5 	3 	gray91 		!
+3 	3.5 	gray96 		!
+3.5 	1500 	snow 		!

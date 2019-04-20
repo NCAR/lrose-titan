@@ -1,0 +1,224 @@
+#! /bin/bash
+
+#--------------------------------------------------------------------
+#
+# script to install TITAN system
+#
+# Mike Dixon, EOL, NCAR, Boulder, CO, USA
+# Jan 2018
+#
+#--------------------------------------------------------------------
+
+# set the path
+
+export PATH=.:/bin:/usr/bin:/sbin:/usr/sbin:/usr/bin/X11:/usr/local/bin:/usr/local/sbin
+
+#######################################################
+# get run time
+
+year=`date +'%Y'`
+month=`date +'%m'`
+day=`date +'%d'`
+hour=`date +'%H'`
+min=`date +'%M'`
+sec=`date +'%S'`
+
+#--------------------------------------------------------------------
+
+echo
+echo "*********************************************************************"
+echo
+echo "  TITAN INSTALLATION"
+echo
+echo "  NCAR, Boulder, CO, USA"
+echo
+echo "  Runtime: $year/$month/$day $hour:$min:$sec"
+echo
+echo "*********************************************************************"
+echo
+echo "  NOTES:"
+echo
+echo "    TITAN distribution must reside in $HOME/git/lrose-titan"
+echo "    TITAN will be installed in project directory $HOME/projDir"
+echo
+echo "*********************************************************************"
+echo
+
+#--------------------------------------------------------------------
+# check args
+#
+
+if [ $# != 0 -a $# != 1 ]
+then
+    echo
+    echo "ERROR - bad command line"
+    echo
+    echo "Usage: $0 [-debug | -h]"
+    echo
+    exit -1
+fi
+
+if [ $# == 1 -a "$1" == -h ]
+then
+    echo
+    echo "Usage: $0 [-debug | -h]"
+    echo
+    exit 0
+fi
+
+debug=false
+debug_str=""
+if [ $# == 1 -a "$1" == -debug ]
+then
+    debug=true
+    debug_str="-debug"
+fi
+
+echo "  User input is requested as follows:"
+echo ""
+echo "    [option1 / option2 / option3] (default)?"
+echo ""
+echo "  Enter the option you want, or hit ENTER for the default"
+echo ""
+echo "*********************************************************************"
+echo ""
+
+#--------------------------------------------------------------------
+# Copy in .cshrc file?
+
+echo
+read -ep "Copy in new TITAN .cshrc file? [yes/no] (yes)? " copy_dot_cshrc
+test "$copy_dot_cshrc" || copy_dot_cshrc=yes
+
+#--------------------------------------------------------------------
+# Copy in .emacs file?
+
+echo
+read -ep "Copy in new TITAN .emacs file? [yes/no] (yes)? " copy_dot_emacs
+test "$copy_dot_emacs" || copy_dot_emacs=yes
+
+#--------------------------------------------------------------------
+# go ahead?
+
+echo
+read -ep "Do you wish to proceed with the install [yes/no] (yes)? " proceed
+test "$proceed" || proceed=yes
+if [ "$proceed" != yes ]
+then
+    echo
+    echo "  Aborting ..."
+    echo -n X | tr X '\07'	# Beep.
+    echo
+    exit 0
+fi
+echo
+
+#--------------------------------------------------------------------
+# save old projDir
+
+proj_dir=${HOME}/projDir
+
+if [ -e $proj_dir ]
+then
+    save_proj_dir=${HOME}/save.projDir.${year}${month}${day}.${hour}${min}${sec}
+    echo
+    echo "  saving $proj_dir to $save_proj_dir ..."
+    /bin/mv $proj_dir $save_proj_dir
+fi
+mkdir -p $proj_dir
+
+#--------------------------------------------------------------------
+# copy template into projDir
+
+echo
+echo "  copying project files to $proj_dir ..."
+
+/bin/cp -r projDir ${HOME}
+
+#--------------------------------------------------------------------
+# copy .cshrc and .emacs files
+
+if [ "$copy_dot_cshrc" == yes ]
+then
+    cshrc_file=${HOME}/.cshrc
+    titan_cshrc=projDir/system/dotfiles/cshrc
+    if [ -e $cshrc_file ]
+    then
+	save_cshrc_file=${HOME}/save.cshrc.${year}${month}${day}.${hour}${min}${sec}
+	echo
+	echo "  saving $cshrc_file to $save_cshrc_file ..."
+	/bin/cp $cshrc_file $save_cshrc_file
+    fi
+    echo
+    echo "  copying in $titan_cshrc ..."
+    /bin/cp $titan_cshrc $cshrc_file
+fi
+
+if [ "$copy_dot_emacs" == yes ]
+then
+    emacs_file=${HOME}/.emacs
+    titan_emacs=projDir/system/dotfiles/emacs
+    if [ -e $emacs_file ]
+    then
+	save_emacs_file=${HOME}/save.emacs.${year}${month}${day}.${hour}${min}${sec}
+	echo
+	echo "  saving $emacs_file to $save_emacs_file ..."
+	/bin/cp $emacs_file $save_emacs_file
+    fi
+    echo
+    echo "  copying in $titan_emacs ..."
+    /bin/cp $titan_emacs $emacs_file
+fi
+
+#--------------------------------------------------------------------
+# create the data directory, as needed
+
+default_data_dir=$proj_dir/data
+
+echo
+echo
+echo "Set the data directory you want to use."
+echo
+echo "  The default location is $default_data_dir."
+echo "  But you may wish to point to a different location."
+echo "  Must be writable by `whoami`"
+read -ep "    data_dir [$default_data_dir]? " data_dir
+test "$data_dir" || data_dir=$default_data_dir
+echo
+echo "  Using data_dir: $data_dir"
+echo
+
+# if the default location is not used, move the contents of the data dir
+
+if [ "$data_dir" != $default_data_dir ]
+then
+    mkdir -p $data_dir || exit -1
+    /bin/cp -r $default_data_dir/* $data_dir || exit -1
+    /bin/rm -rf $default_data_dir || exit -1
+    cd $proj_dir
+    ln -s $data_dir data
+    cd data
+    mkdir -p sim/time_series/example
+fi
+
+#--------------------------------------------------------------------
+# make link for logs so that Janitor can find them
+
+if [ "$data_dir" != $default_data_dir ]
+then
+    /bin/cp -r $proj_dir/logs $data_dir || exit -1
+    /bin/rm -rf $proj_dir/logs || exit -1
+    cd $proj_dir
+    ln -s $data_dir/logs
+fi
+
+#--------------------------------------------------------------------
+# done
+
+echo
+echo "  ************"
+echo "  *** Done ***"
+echo "  ************"
+echo
+
+exit 0

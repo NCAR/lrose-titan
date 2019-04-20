@@ -1,0 +1,196 @@
+# SysView.properties
+#
+# Properties file for the SysView Java application.  This
+# sample file contains all of the properties that SysView
+# allows you to modify.  Properties can also be specified on
+# the java command line with the following option:
+#     -D<property>=<value>
+#
+
+rap.sysview.version = 3.0
+
+################################################
+# 
+# CAUTION : When setting numeric values, insure
+# that there is no trailing white space.  (geez, it's
+# as bad as make)
+#
+################################################
+
+# Sleep time between queries
+
+rap.sysview.sleep_secs = 30
+
+###################################################
+# Auto dump properties
+#
+# When the autodump_type property is non-null, SysView
+# automatically dumps output of that type in the 
+# specified directory at the specified minutes.
+# Uncomment with care! :)
+
+#rap.sysview.autodump_type = html
+rap.sysview.autodump_directory = /home/aoaws/projDir/data/www_content/SysView
+rap.sysview.autodump_dated = true
+rap.sysview.autodump_template = /home/aoaws/projDir/htdocs/projects/aoaws_sysview/template.html
+rap.sysview.autodump_object_info = html
+rap.sysview.autodump_times = 0,15,30,45
+#rap.sysview.autodump_times = 0,5,10,15,20,25,30,35,40,45,50,55
+
+###################################################
+# Main window properties
+
+rap.sysview.window_width = 820
+rap.sysview.window_height = 870
+rap.sysview.window_x_loc = 50
+rap.sysview.window_y_loc = 50
+rap.sysview.grid_x_interval = 50
+rap.sysview.grid_y_interval = 50
+rap.sysview.grid_color = 0x000000
+
+#
+# RAP properties
+#
+
+rap.toolsa.procmap_host = localhost 
+rap.toolsa.procmap_port = 5433
+rap.toolsa.datamap_host = localhost
+rap.toolsa.datamap_port = 5434
+
+###################################################3
+# Data Set properties
+
+#
+# Common Data Set late params
+#
+rap.sysview.dataset_late_data_secs = 600
+rap.sysview.dataset_very_late_data_secs = 900
+
+#
+# Data Set status colors
+#
+# dataset disabled = gray
+rap.sysview.dataset_disabled_color = 0x888888
+# dataset ok = medium green
+rap.sysview.dataset_ok_color = 0x00aa00
+# datamap down = medium red
+rap.sysview.datamap_down_color = 0xaa0000
+# dataset no data = gray
+rap.sysview.dataset_no_data_color = 0x888888
+# dataset late data = gold
+rap.sysview.dataset_late_data_color = 0xffcc00
+# dataset very late data = red
+rap.sysview.dataset_very_late_data_color = 0xdd0000
+# dataset invalid status = pink
+rap.sysview.dataset_status_invalid_color = 0x00ffff
+
+# dataset outline = black
+rap.sysview.dataset_outline_color = 0x000000
+
+#
+# Data Set object size and shape.  The arc width and height are
+# for determining the "roundness" of the corners of the dataset
+# object.
+#
+rap.sysview.dataset_object_width = 100
+rap.sysview.dataset_object_height = 50
+rap.sysview.dataset_object_arc_width = 0
+rap.sysview.dataset_object_arc_height = 0
+
+rap.sysview.dataset_font = Dialog-plain-12
+
+###############################################################3
+# Process properties
+
+#
+# Process object status colors
+#
+# process disabled = gray
+rap.sysview.process_disabled_color = 0x888888
+# process ok = green
+rap.sysview.process_ok_color = 0x00aa00
+# process down = red
+rap.sysview.process_down_color = 0xcc0000
+# process late registration = yellow
+rap.sysview.process_late_reg_color = 0xffaa00
+# process invalid status = pink
+rap.sysview.process_status_invalid_color = 0xffafaf
+
+# process outline = black
+rap.sysview.process_outline_color = 0x000000
+
+#
+# Process object size and shape.  The arc width and height are
+# for determining the "roundness" of the corners of the process
+# object.
+#
+rap.sysview.process_object_width = 100
+rap.sysview.process_object_height = 50
+rap.sysview.process_object_arc_width = 40
+rap.sysview.process_object_arc_height = 40
+
+rap.sysview.process_font = Dialog-plain-12
+
+################################################################
+# Flow line properties
+
+#
+# Flow line object properties.
+#
+rap.sysview.flow_line_color = 0xa52a2a
+rap.sysview.flow_line_outline_color = 0x000000
+rap.sysview.flow_line_fill_arrowhead = true
+rap.sysview.flow_line_arrowhead_angle = 30.0
+rap.sysview.flow_line_arrowhead_len = 10.0
+
+################################################################
+# Polyline properties
+
+rap.sysview.polyline_color = 0x000000
+rap.sysview.polyline_outline_color = 0x000000
+
+################################################################
+# Text Box properties
+
+rap.sysview.textbox_width = 100
+rap.sysview.textbox_height = 50
+rap.sysview.textbox_arc_width = 10
+rap.sysview.textbox_arc_height = 10
+rap.sysview.textbox_outline_color = 0x000000
+rap.sysview.textbox_font = Dialog-plain-12 
+rap.sysview.textbox_fill_color = 0x4090a0
+
+################################################################
+# Annotation properties
+
+rap.sysview.annotation_color = 0x000000
+rap.sysview.annotation_font = Dialog-plain-14
+
+################################################################
+# Diagram properties
+
+rap.sysview.diagram_label_font = Dialog-plain-12
+rap.sysview.diagram_label_color = 0x000000
+
+# (x,y) coords for drawing last query time string
+rap.sysview.last_query_time_x = 10
+rap.sysview.last_query_time_y = 20
+
+#
+# GIF file locations
+#
+rap.sysview.window_icon = sysview.gif
+rap.sysview.image.location =
+
+#
+# Display date format
+#
+# default == true
+#rap.sysview.display_last_query_time = false
+#rap.toolsa.date_format_str = yyyy/MM/dd kk:mm:ss
+rap.toolsa.date_format_str = yyyy/MM/dd hh:mm:ss
+
+#
+# Some debug info
+#
+rap.sysview.debug_on = false

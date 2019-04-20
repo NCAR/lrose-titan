@@ -1,0 +1,6 @@
+# mit_storm_filter predictability parameter color scale
+
+# Nancy Rehak, July 1998
+
+0.01    300	light gray
+300	1000	#c80f86

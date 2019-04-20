@@ -1,0 +1,21 @@
+#! /usr/bin/perl
+#
+# get_host_type
+#
+# Purpose: print the host type by interpreting the host name.
+#-------------------------------------------------------------------
+
+use Env;
+Env::import();
+
+# initialize main variables
+
+$hostname = $ENV{'HOST'};
+
+if ($hostname =~ /mgen/) {
+    print "mgen\n";
+} elsif ($hostname =~ /pgen/) {
+    print "pgen\n";
+} else {
+    print "single\n";
+}

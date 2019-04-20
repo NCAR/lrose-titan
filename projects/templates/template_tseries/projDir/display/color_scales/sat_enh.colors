@@ -1,0 +1,36 @@
+# NAME sat_highres
+
+# roberts 	3/29/1996 
+
+40      45      black 
+45 	50 	gray0
+50 	55      gray11
+55      60      gray16
+60 	65 	gray21
+65 	70 	gray25
+70 	75 	gray28
+75      80      gray30
+80      85      gray31
+85 	90 	gray34
+90      95      gray37
+95      100     gray41
+100     105     gray44
+105 	110 	gray47
+110 	115 	gray51
+115 	120 	gray53
+120 	125 	gray56
+125 	130 	gray58
+130	135	gray61
+135     140     gray64
+140	145	gray67
+145	150	gray70
+150	155	gray73
+155     160	gray76
+160     165     gray79
+165	170	gray82
+170	175	gray85
+175	180	gray88
+180	185	gray91
+185     190     gray94	
+190     195     gray96	
+195     200     snow	

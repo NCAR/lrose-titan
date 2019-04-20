@@ -1,0 +1,45 @@
+#
+# Color table for particle detection data from SPOL.
+# Set up to use the same colors as ATD uses in
+# their displays, on advice from Dick Oye (nice guy).
+#
+# Niles Oien April 2002 (IHOP project).
+#
+# Here are the definitions for the particle types
+#   
+# Cloud                        1     //   "CL"
+# Drizzle                      2     //   "DRZ"
+# Light_Rain                   3     //   "LR"  
+# Moderate_Rain                4     //   "MR"
+# Heavy_Rain                   5     //   "HR"
+# Hail                         6     //   "HA"  
+# Rain_Hail_Mixture            7     //   "RH"
+# Graupel_Small_Hail           8     //   "GSH"
+# Graupel_Rain                 9     //   "GRR" 
+# Dry_Snow                     10    //   "DS"
+# Wet_Snow                     11    //   "WS"
+# Ice_Crystals                 12    //   "IC"
+# Irreg_Ice_Crystals           13    //   "IIC"  
+# Supercooled_Liquid_Droplets  14    //   "SLD"
+# Flying_Birds                 15    //   "BRD"
+# Flying_Insects               16    //   "BGS" (Aphids, Mosquitos, etc)
+# Ground_Clutter               17    //   "GCL"
+#
+0.5	1.5	#d0cfb6	! CL
+1.5	2.5	#ffd89b	! DRZ
+2.5	3.5	#ff960	! LR
+3.5	4.5	#cd77a	! MR
+4.5	5.5	#ff2f2f	! HR
+5.5	6.5	#fafa2e	! HA
+6.5	7.5	#24fa25	! RH
+7.5	8.5	#1ac67	! GSH
+8.5	9.5	#0920	! GRR
+9.5	10.5	#4ddfff	! DS
+10.5	11.5	#6294ef	! WS
+11.5	12.5	#5f54c0	! IC
+12.5	13.5	#ffcaff	! IIC
+13.5	14.5	#f79ab6	! SLD
+14.5	15.5	#f8f8f8	! BGS
+15.5	16.5	#a0a080	! BRD
+16.5	17.5	#c41da5	! GCL
+#

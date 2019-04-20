@@ -1,0 +1,19 @@
+# NAME topography.colors
+# awdl 	1/6/1994 11:54:16
+#MIN     MAX     NAME        COLOR LABEL
+0 	2.5 	saddle brown 	!
+2.5 	5.0 	sienna 		!
+5.0 	7.5 	DarkOrange3 	!
+7.5 	10.0 	dark orange 	!
+10.0 	12.5 	orange 		!
+12.5 	15.0 	tan2 		!
+15.0 	17.5 	peru 		!
+17.5 	20.0 	goldenrod1 	!
+20.0 	22.5 	gold 		!
+22.5 	25.0 	light goldenrod	!
+25.0 	27.5 	PeachPuff2 	!
+27.5 	30.0 	wheat 		!
+30.0 	32.5 	bisque 		!
+32.5 	35.0 	blanched almond	!
+35.0 	37.5 	gray94 		!
+37.5 	40.0 	snow 		!

@@ -1,0 +1,8 @@
+#! /bin/csh
+
+running "DsMdvServer -port 5440"
+if ($status == 1) then
+    DsMdvServer -port 5440 -instance standalone -qmax -1 |& \
+	LogFilter -d $ERRORS_LOG_DIR -p DsMdvServer -i standalone >& /dev/null &
+endif
+

@@ -1,0 +1,19 @@
+# NAME stab.colors
+
+# fhage 	6/9/1993 12:36:42
+
+-14 	-12 	midnight blue
+-12 	-10 	medium blue
+-10 	-8 	medium slate blue
+-8 	-6 	dark green
+-6 	-4 	SpringGreen4
+-4 	-2 	lime green
+-2 	0 	gainsboro
+0 	2 	yellow
+2 	4 	gold1
+4 	6 	goldenrod
+6 	8 	dark goldenrod
+8 	10 	peru
+10 	12 	sienna
+12 	14 	saddle brown
+14 	16 	dark slate gray

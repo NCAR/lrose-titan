@@ -1,0 +1,33 @@
+# NAME big_vel.colors
+# kessinge 	9/26/1995 11:30:00
+# MIN    MAX    NAME        COLOR LABEL
+-32.5 	-30 	gray0 	
+-30 	-27.5 	MediumOrchid4 	
+-27.5 	-25 	dark orchid 	
+-25 	-22.5 	purple 	
+-22.5 	-20 	medium purple 	
+-20 	-17.5 	medium blue 	
+-17.5 	-15 	royal blue 	
+-15 	-12.5 	deep sky blue 	
+-12.5 	-10 	cyan 	
+-10 	-8 	medium aquamarine 	
+-8 	-6 	pale green 	
+-6 	-4 	SpringGreen3 	
+-4 	-2 	SpringGreen4 	
+-2 	-0.5 	dark green 	
+-0.5 	0.5 	light gray 	
+0.5 	2	dark goldenrod 	
+2 	4 	dark orange 	
+4 	6 	goldenrod1 	
+6 	8 	light goldenrod 	
+8 	10 	yellow 	
+10 	12.5 	yellow2 	
+12.5 	15 	light pink 		
+15 	17.5 	dark pink 	
+17.5 	20	salmon 	
+20	22.5 	tomato 	
+22.5 	25 	brown2 	
+25 	27.5 	tomato3 	
+27.5 	30	firebrick 	
+30 	32.5 	saddle brown 	
+32.5 	35 	dark slate gray 	

@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/titan/params
+
+running "MdvRadarShear -params MdvRadarShear.sur"
+if ($status == 1) then
+  nice MdvRadarShear -params MdvRadarShear.sur |& \
+    LogFilter -d $ERRORS_LOG_DIR -p MdvRadarShear -i sur &
+endif
+

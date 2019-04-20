@@ -1,0 +1,24 @@
+# NAME sat_albedo
+
+# Roberts 4/15/1998   
+
+0        5      black 
+5  	10 	gray5
+10 	15 	gray11
+15      20      gray21
+20 	25 	gray25
+25 	30 	gray30
+30 	35 	gray34
+35      40      gray41
+40      45      gray47
+45 	50 	gray51
+50      55      gray53
+55      60      gray60
+60      65      gray65
+65 	70 	gray70
+70 	75  	gray75
+75  	80  	gray80
+80  	85  	gray85
+85  	90  	gray90
+90 	95 	gray95
+95      100     snow

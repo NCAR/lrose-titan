@@ -1,0 +1,23 @@
+# NAME dbzi.colors
+# pietrych 	8/11/1997 11:10:50
+# MIN    MAX    NAME        COLOR LABEL
+-25 	-20 	gray28 	! 
+-20 	-15 	gray37 	! 
+-15 	-10 	gray53 	!
+-10 	-5 	gray64 	!
+-5 	0 	gray76 	!
+0 	5 	gray88 	!
+5 	10 	cyan 	!
+10 	15 	deep sky blue 	!
+15 	20 	blue 	!
+20 	25 	green 	!
+25 	30 	lime green 	!
+30 	35 	forest green 	!
+35 	40 	yellow 	!
+40 	45 	gold2 	!
+45 	50 	orange 	!
+50 	55 	brown1 	!
+55 	60 	red3 	!
+60 	65 	brown 	!
+65 	70 	magenta 	!
+70 	75 	dark orchid 	!

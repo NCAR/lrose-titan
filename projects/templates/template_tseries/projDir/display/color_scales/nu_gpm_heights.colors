@@ -1,0 +1,45 @@
+# NAME gpm_heights.colors
+# Cathy Kessinger 11/1/2001 
+#MIN     MAX     NAME        COLOR LABEL
+-400	-350 	dark green
+-350 	-300	dark olive green
+-300 	-250 	forest green
+-200	-150 	dark green
+-150 	-100	dark olive green
+-100 	-50 	forest green
+-50 	0 	SpringGreen3
+0 	50	dark olive green
+50 	100 	forest green
+100 	150 	SpringGreen3
+150 	200 	medium sea green
+200 	250 	medium aquamarine
+250 	300 	medium slate blue
+300 	350 	blue
+350 	400 	blue4
+400 	450 	DarkOrchid4
+450 	500 	HotPink4
+500 	550 	maroon
+550 	600 	VioletRed4
+600 	650 	saddle brown 	
+650 	700 	sienna
+700		750 	DarkOrange3 	
+750 	800 	chocolate
+800 	850 	dark orange 	
+850 	900 	orange 		
+900 	950 	tan2 		
+950 	1000 	peru 		
+1000 	1050 	goldenrod1
+1050 	1100 	gold 		
+1100 	1150 	light goldenrod	
+1150 	1200 	yellow
+1200 	1250 	dark salmon
+1250 	1300 	salmon
+1300 	1350 	firebrick2
+1350 	1400 	DeepPink1
+1400 	1450 	PeachPuff2 	
+1450 	1500 	wheat 		
+1500 	1550 	bisque 		
+1550 	1600 	blanched almond	
+1600 	1650 	gray94 		
+1650 	1700 	light grey
+1700 	1750 	snow 		

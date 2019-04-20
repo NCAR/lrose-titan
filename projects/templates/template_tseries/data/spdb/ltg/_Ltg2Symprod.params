@@ -1,0 +1,269 @@
+/**********************************************************************
+ * TDRP params for Ltg2Symprod
+ **********************************************************************/
+
+//======================================================================
+//
+// RENDERING PARAMETERS.
+//
+//======================================================================
+ 
+///////////// display_color ///////////////////////////
+//
+// display color.
+// Name of color suggested for using on the display.
+// Type: string
+//
+
+display_color = "yellow";
+
+///////////// line_width //////////////////////////////
+//
+// Line thickness of icon lines.
+// Thickness in pixels.
+// Type: int
+//
+
+line_width = 1;
+
+///////////// icon_size ///////////////////////////////
+//
+// Size of icon in pixels.
+// Ltg is represented by a cross. This is the length of each arm of the 
+//   cross in pixels.
+// Type: int
+//
+
+icon_size = 4;
+
+///////////// render_polarity /////////////////////////
+//
+// Option to use a different strikes.
+// If set, negative strikes are rendered with
+// a '-', , positive with '+'.
+// Type: boolean
+//
+
+render_polarity = FALSE;
+
+///////////// different_color_for_recent_strikes //////
+//
+// Option to use a different color for the most recent strikes.
+// If set, strikes more recent than recent_strike_age are colored with 
+//   the recent_strike_color.
+// Type: boolean
+//
+
+different_color_for_recent_strikes = FALSE;
+
+///////////// recent_strike_age ///////////////////////
+//
+// Max age of recent strikes - secs.
+// See different_color_for_recent_strikes.
+// Type: int
+//
+
+recent_strike_age = 1800;
+
+///////////// recent_strike_color /////////////////////
+//
+// Color for recent strikes.
+// See different_color_for_recent_strikes.
+// Type: string
+//
+
+recent_strike_color = "gray";
+
+///////////// useWallClockForAge //////////////////////
+//
+// If we are coloring recent strikes differently, this
+// determines how the strike age is calculated.
+// If this is set to TRUE (default) then the age of the strikes
+// is calculated by taking the current (wall clock) time and
+// subtracting the valid time of the strike. This is intuitively
+// obvious, however, it does mean that if archive data are being
+// viewed, then none of them will be considered recent since
+// all strikes will likely be old relative to the current time.
+
+// Setting this parameter to FALSE means that instead of caluculating
+// age relative to the wall clock time, age will be calculated
+// relative to the end of the period for which data was requested.
+
+// If you are working with CIDD, setting short_requests=TRUE; in
+// the CIDD param file means that the ages will be relative to
+// the time of the end of the current frame plus minutes_allow_after.
+// Setting short_requests=FALSE; in the CIDD param file (the
+// default) means that ages will be relative to the end of
+// all the current frames (ie. the end of the movie loop)
+// plus minutes_allow_after.  Niles Oien.
+// Type: boolean
+//
+
+useWallClockForAge = TRUE;
+
+//======================================================================
+//
+// TIME LABELLING PARAMETERS.
+//
+//======================================================================
+ 
+///////////// do_time_labelling ///////////////////////
+//
+// Option to add a text label representing the time
+// of each strike to the display.
+// Useful for WSMR ltg data.
+// Type: boolean
+//
+
+do_time_labelling = FALSE;
+
+///////////// time_format /////////////////////////////
+//
+// Time label format.
+// Only relevant if do_time_labelling is TRUE.
+//
+// Type: enum
+// Options:
+//     TIME_LABEL_HHMM
+//     TIME_LABEL_HHMMSS
+//     TIME_LABEL_YYYYMMDDHHMMSS
+//
+
+time_format = TIME_LABEL_HHMM;
+
+///////////// time_text_offset ////////////////////////
+//
+// Pixel offset values for starting the time labelling text.
+// Only relevant if do_time_labelling is TRUE.
+//
+// Type: struct
+//   typedef struct {
+//      long x;
+//      long y;
+//   }
+//
+//
+
+time_text_offset = { 0, 0 };
+
+///////////// time_label_color ////////////////////////
+//
+// Color for time labels.
+// Only relevant if do_time_labelling is TRUE.
+// Type: string
+//
+
+time_label_color = "gray";
+
+//======================================================================
+//
+// FONT OPTIONS.
+//
+//======================================================================
+ 
+///////////// text_vert_align /////////////////////////
+//
+// Vertical alignment for the text.
+//
+// Type: enum
+// Options:
+//     VERT_ALIGN_TOP
+//     VERT_ALIGN_CENTER
+//     VERT_ALIGN_BOTTOM
+//
+
+text_vert_align = VERT_ALIGN_CENTER;
+
+///////////// text_horiz_align ////////////////////////
+//
+// Horizontal alignment for the text.
+//
+// Type: enum
+// Options:
+//     HORIZ_ALIGN_LEFT
+//     HORIZ_ALIGN_CENTER
+//     HORIZ_ALIGN_RIGHT
+//
+
+text_horiz_align = HORIZ_ALIGN_CENTER;
+
+///////////// text_font_style /////////////////////////
+//
+// Font style for the text.
+//
+// Type: enum
+// Options:
+//     TEXT_NORM
+//     TEXT_BOLD
+//     TEXT_ITALICS
+//     TEXT_SUBSCRIPT
+//     TEXT_SUPERSCRIPT
+//     TEXT_UNDERLINE
+//     TEXT_STRIKETHROUGH
+//
+
+text_font_style = TEXT_NORM;
+
+///////////// text_font_size //////////////////////////
+//
+// Size of font to use for text.
+// Type: long
+//
+
+text_font_size = 0;
+
+///////////// text_background_color ///////////////////
+//
+// Text background color.
+// Set to empty string to use display background color.
+// Type: string
+//
+
+text_background_color = "";
+
+///////////// font_name ///////////////////////////////
+//
+// Font name.
+// Type: string
+//
+
+font_name = "";
+
+//======================================================================
+//
+// BOUNDING BOX OPTIONS.
+//
+//======================================================================
+ 
+///////////// useBoundingBox //////////////////////////
+//
+// Set to TRUE to only include stations within the lat-lon bounding box.
+// Only accept stations for which the position is inside the bounding 
+//   box. Note: this will be overridden if the clientspecifies horizontal 
+//   limits.
+// Type: boolean
+//
+
+useBoundingBox = FALSE;
+
+///////////// bounding_box ////////////////////////////
+//
+// If useBoundingBox is true, only stations within this box will be 
+//   included in the product list.
+// To span the international date line, specify a continuous interval 
+//   using positive longitudes which exceed 180 ornegative longitudes 
+//   which are less than -180. For example, min_lon = 80 and max_lon = 240 
+//   will span between 80E and 120W acrossthe Pacific.
+//
+// Type: struct
+//   typedef struct {
+//      float min_lat;
+//      float min_lon;
+//      float max_lat;
+//      float max_lon;
+//   }
+//
+//
+
+bounding_box = { -90, -180, 90, 180 };
+

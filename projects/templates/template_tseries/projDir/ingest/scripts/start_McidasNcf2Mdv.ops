@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "McidasNcf2Mdv -params McidasNcf2Mdv.bris"
+if ($status == 1) then
+  nice McidasNcf2Mdv -params McidasNcf2Mdv.bris |& \
+    LogFilter -d $ERRORS_LOG_DIR -p McidasNcf2Mdv -i bris &
+endif
+

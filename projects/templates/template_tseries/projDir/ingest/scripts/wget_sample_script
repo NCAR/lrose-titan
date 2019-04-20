@@ -1,0 +1,9 @@
+#!/bin/sh
+
+while ( true )
+do
+today=$(date -u +%Y%m%d)
+cd ~/data/aws
+wget -N -nv -nd -r ftp://b08fdp:wwrp2008@172.18.9.200/data1/b08fdp/aws/$today/*.nc
+sleep 20
+done

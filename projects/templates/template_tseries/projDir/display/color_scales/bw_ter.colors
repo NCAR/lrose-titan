@@ -1,0 +1,9 @@
+# NAME bw_ter.colors
+ 
+# saxen 9/15/1998
+ 
+1000   1500      black
+1500   2000      gray35
+2000   2500      gray65
+2500   3000      gray95
+3000   4000      white

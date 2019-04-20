@@ -1,0 +1,8 @@
+#! /bin/csh
+
+update_mdv_times -debug -offset 4294967 -starttime "2008 08 26 17 00 00" -end "2008 08 27 06 30 00"  -iurl mdvp:://localhost::mdv/radarPolar/ops/sur -ourl mdvp:://localhost::mdv/radarPolar/ops/sur
+
+update_mdv_times -debug -offset 4294967 -starttime "2008 08 26 17 00 00" -end "2008 08 27 06 30 00"  -iurl mdvp:://localhost::mdv/radarPolar/cp2_x/sur -ourl mdvp:://localhost::mdv/radarPolar/cp2_x/sur
+
+update_mdv_times -debug -offset 4294967 -starttime "2008 08 26 17 00 00" -end "2008 08 27 06 30 00"  -iurl mdvp:://localhost::mdv/radarPolar/derived/sur -ourl mdvp:://localhost::mdv/radarPolar/derived/sur
+

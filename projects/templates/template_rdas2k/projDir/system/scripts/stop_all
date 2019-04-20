@@ -1,0 +1,23 @@
+#! /bin/csh
+
+#
+# Shut down entire system
+#
+
+# kill cron and the auto-restarter
+
+kill_cron
+kill_auto_restart
+
+# kill all processes
+
+killall_titan
+procmap_list_kill -sleep 0 -proc_list $PROJ_DIR/control/proc_list
+kill_procmap
+kill_servers
+
+# clean up shared memory
+
+remove_ipcs
+ipcrm_linux
+

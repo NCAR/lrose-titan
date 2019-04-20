@@ -1,0 +1,638 @@
+/**********************************************************************
+ * TDRP params for Metar2Symprod
+ **********************************************************************/
+
+//======================================================================
+//
+// STATION SELECTION.
+//
+//======================================================================
+ 
+///////////// useAcceptedStationsList /////////////////
+//
+// Set to TRUE to use the acceptedStations list (below).
+// Only accept stations in this list.
+// Type: boolean
+//
+
+useAcceptedStationsList = FALSE;
+
+///////////// acceptedStations ////////////////////////
+//
+// List of accepted station IDs.
+// If a station is not on this list, it is not displayed.
+// Type: string
+// 1D array - variable length.
+//
+
+acceptedStations = { "RCTP", "RCFG", "RCSS", "RCGM", "RCNO", "RCQC", "RCBS", "RCUK", "RCKH", "RCNN", "RCKU", "RCMJ", "RCDC", "RCLG", "RCKW", "RCPO", "RCSQ", "RCLY", "RCYU", "RCMS", "RCDI", "RCMQ", "RCGI", "RCLM" };
+
+///////////// useRejectedStationsList /////////////////
+//
+// Set to TRUE to use the rejectedStations list (below).
+// Reject stations in this list.
+// Type: boolean
+//
+
+useRejectedStationsList = TRUE;
+
+///////////// rejectedStations ////////////////////////
+//
+// List of rejected station IDs.
+// If a station is not on this list, it is not displayed.
+// Type: string
+// 1D array - variable length.
+//
+
+rejectedStations = { "RCAY", "RCQS", "RCFS", "RCDC", "RCGM" };
+
+///////////// useBoundingBox //////////////////////////
+//
+// Set to TRUE to only include stations within the lat-lon bounding box.
+// Only accept stations for which the position is inside the bounding 
+//   box.
+// Type: boolean
+//
+
+useBoundingBox = false;
+
+///////////// bounding_box ////////////////////////////
+//
+// If useBoundingBox is true, only stations within this box will be 
+//   included in the product list.
+// To span the international date line, specify a continuous interval 
+//   using positive longitudes which exceed 180 or negative longitudes 
+//   which are less than -180. For example, min_lon = 80 and max_lon = 240 
+//   will span between 80E and 120W across the Pacific.
+//
+// Type: struct
+//   typedef struct {
+//      float min_lat;
+//      float min_lon;
+//      float max_lat;
+//      float max_lon;
+//   }
+//
+//
+
+bounding_box = { -5, 86, 55, 156 };
+
+///////////// decimate_spatially //////////////////////
+//
+// Option to decimate metar density spatially. Only applicable if the 
+//   bounding box option is specified in the param file, or the client 
+//   specifies the horizontal limits in the request.
+// If active, an imaginary grid will be constructed for the bounding 
+//   box. The number of grids in each direction will be specified by 
+//   decimate_n_lat and decimate_n_lon. Only one METAR product will be 
+//   created for each rectangle in the grid.
+// Type: boolean
+//
+
+decimate_spatially = true;
+
+///////////// decimate_n_lat //////////////////////////
+//
+// If decimation is active, the bounding box is divided into this number 
+//   of sub-boxes in the latitude direction.
+// See decimate_spatially.
+// Type: int
+//
+
+decimate_n_lat = 40;
+
+///////////// decimate_n_lon //////////////////////////
+//
+// If decimation is active, the bounding box is divided into this number 
+//   of sub-boxes in the longitude direction.
+// See decimate_spatially.
+// Type: int
+//
+
+decimate_n_lon = 40;
+
+///////////// decimate_required_stations //////////////
+//
+// List of required stations when decimating.
+// If a station is in this list, it will always be displayed.
+// Type: string
+// 1D array - variable length.
+//
+
+decimate_required_stations = { "RCTP", "RCSS", "RCKH", "VHHH", "WSSS"};
+
+//======================================================================
+//
+// TRANSLATION.
+//
+//======================================================================
+ 
+///////////// do_translation //////////////////////////
+//
+// Option to perform translation to symprod format.
+// Type: boolean
+//
+
+do_translation = TRUE;
+
+///////////// display_temp ////////////////////////////
+//
+// Display of temperature data.
+// Set to the units that you want to use.
+//
+// Type: enum
+// Options:
+//     DISPLAY_TEMP_C
+//     DISPLAY_TEMP_F
+//     DISPLAY_TEMP_K
+//
+
+display_temp = DISPLAY_TEMP_C;
+
+//======================================================================
+//
+// TRANSLATED RENDERING PARAMETERS.
+//
+// Parameters for translated rendering using symprod format.
+//
+//======================================================================
+ 
+///////////// plot_unscaled ///////////////////////////
+//
+// Option to not scale the product with zoom state.
+// If true, the product is always rendered at the same scale, regardless 
+//   of zoom state. If false, the product is scaled down on the screen as 
+//   the zoome expands, and is scaled up as you zoom in.
+// Type: boolean
+//
+
+plot_unscaled = TRUE;
+
+//======================================================================
+//
+// Text labels.
+//
+// The following are specified for each text label:
+//      do_draw: option to draw the label, true or false
+//      color: foreground color
+//      background_color: background color - if empty, no background
+//      font_name: name of font family
+//      font_size: suggest size in pixels
+//      x_offset: x offset from station location in pixels
+//      y_offset: y offset from station location in pixels
+//      vert_align: vert justification of text relative to offset point
+//      horiz_align: horiz justification of text relative to offset point.
+//
+//======================================================================
+ 
+///////////// temperature_label ///////////////////////
+//
+// Details for temperature label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+temperature_label = { TRUE, "red", "", false, "8x13", 13, -6, 6, VERT_ALIGN_BOTTOM, HORIZ_ALIGN_RIGHT };
+
+///////////// dew_point_label /////////////////////////
+//
+// Details for dew_point label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+dew_point_label = { TRUE, "gray", "", false, "8x13", 13, -6, -6, VERT_ALIGN_TOP, HORIZ_ALIGN_RIGHT };
+
+///////////// pressure_as_3_digits ////////////////////
+//
+// Option to plot pressure in 3 digits only.
+// If true, only the first 3 digits of the pressure are plotted. So, for 
+//   example, 1014 will appear as 014. 998 will always appear as 998.
+// Type: boolean
+//
+
+pressure_as_3_digits = TRUE;
+
+///////////// pressure_label //////////////////////////
+//
+// Details for pressure label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+pressure_label = { TRUE, "white", "", true, "8x13", 13, 6, 6, VERT_ALIGN_BOTTOM, HORIZ_ALIGN_LEFT };
+
+///////////// current_weather_label ///////////////////
+//
+// Details for current weather label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+current_weather_label = { TRUE, "yellow", "", true, "8x13", 13, -6, 0, VERT_ALIGN_CENTER, HORIZ_ALIGN_RIGHT };
+
+///////////// wind_gust_label /////////////////////////
+//
+// Details for wind gust label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+wind_gust_label = { TRUE, "green", "", true, "8x13", 13, 6, 0, VERT_ALIGN_CENTER, HORIZ_ALIGN_LEFT };
+
+///////////// ceiling_label ///////////////////////////
+//
+// Details for ceiling label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+ceiling_label = { TRUE, "cyan", "", true, "8x13", 13, 6, -16, VERT_ALIGN_TOP, HORIZ_ALIGN_LEFT };
+
+///////////// ceiling_units ///////////////////////////
+//
+// Units for plotting ceiling.
+//
+// Type: enum
+// Options:
+//     CEILING_METERS
+//     CEILING_KM
+//     CEILING_FT
+//     CEILING_KFT
+//     CEILING_FL
+//
+
+ceiling_units = CEILING_FL;
+
+///////////// visibility_label ////////////////////////
+//
+// Details for visibility label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+visibility_label = { TRUE, "magenta", "", true, "8x13", 13, -6, -16, VERT_ALIGN_TOP, HORIZ_ALIGN_RIGHT };
+
+///////////// station_name_label_len //////////////////
+//
+// Length of station name label.
+// The last n chars are included in the label.
+// Maximum val: 4
+// Type: int
+//
+
+station_name_label_len = 4;
+
+///////////// visibility_units ////////////////////////
+//
+// Units for plotting visibility.
+//
+// Type: enum
+// Options:
+//     VISIBILITY_METERS
+//     VISIBILITY_KM
+//     VISIBILITY_METERS_KM
+//     VISIBILITY_MILES
+//
+
+visibility_units = VISIBILITY_METERS_KM;
+
+///////////// station_name_label //////////////////////
+//
+// Details for station_name label.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+station_name_label = { TRUE, "gray", "", true, "8x13", 13, 6, -6, VERT_ALIGN_TOP, HORIZ_ALIGN_LEFT };
+
+///////////// time_label //////////////////////////////
+//
+// Details for time string label.
+// Intended mainly for debugging, to see the time for the plotted METAR.
+//
+// Type: struct
+//   typedef struct {
+//      boolean do_draw;
+//      string color;
+//      string background_color;
+//      boolean override_color_from_flight_cat;
+//      string font_name;
+//      int font_size;
+//      int x_offset;
+//      int y_offset;
+//      vert_align_t vert_align;
+//        Options:
+//          VERT_ALIGN_TOP
+//          VERT_ALIGN_CENTER
+//          VERT_ALIGN_BOTTOM
+//      horiz_align_t horiz_align;
+//        Options:
+//          HORIZ_ALIGN_LEFT
+//          HORIZ_ALIGN_CENTER
+//          HORIZ_ALIGN_RIGHT
+//   }
+//
+//
+
+time_label = { FALSE, "white", "", FALSE, "fixed", 10, 0, -30, VERT_ALIGN_TOP, HORIZ_ALIGN_CENTER };
+
+//======================================================================
+//
+// WIND BARB PLOT.
+//
+//======================================================================
+ 
+///////////// draw_wind_barb //////////////////////////
+//
+// Option to draw the wind barb.
+// Type: boolean
+//
+
+draw_wind_barb = FALSE;
+
+///////////// station_posn_circle_radius //////////////
+//
+// Radius of circle at station position.
+// Set to 0 for no circle.
+// Type: int
+//
+
+station_posn_circle_radius = 1;
+
+///////////// wind_barb_color /////////////////////////
+//
+// Color of wind barb.
+// Type: string
+//
+
+wind_barb_color = "green";
+
+///////////// overrride_wind_barb_color_from_flight_cat /////
+//
+// Option to override the the wind barb color using the flight category 
+//   color.
+// Type: boolean
+//
+
+override_wind_barb_color_from_flight_cat = FALSE;
+
+///////////// wind_barb_shaft_len /////////////////////
+//
+// Length of wind barb shaft in pixels.
+// Type: int
+//
+
+wind_barb_shaft_len = 32;
+
+///////////// wind_barb_tick_len //////////////////////
+//
+// Length of wind barb ticks in pixels.
+// Type: int
+//
+
+wind_barb_tick_len = 8;
+
+///////////// wind_ticks_angle_to_shaft ///////////////
+//
+// Angle of the wind ticks relative to the shaft (deg).
+// Type: float
+//
+
+wind_ticks_angle_to_shaft = 60;
+
+//======================================================================
+//
+// FLIGHT CATEGORY AND SKY OBSCURATION.
+//
+//======================================================================
+ 
+///////////// draw_flight_category ////////////////////
+//
+// Option to draw the flight category and obscuration icon.
+// Type: boolean
+//
+
+draw_flight_category = FALSE;
+
+///////////// flight_category /////////////////////////
+//
+// Array of flight category parameters.
+// The flight category at a station will be computed using the ceiling 
+//   and visibility thresholds. If both values exceed the threshold, the 
+//   flight category will be equal to or greater that the specified 
+//   category.
+//
+// Type: struct
+//   typedef struct {
+//      flight_category_label_t label;
+//        Options:
+//          VFR
+//          MVFR
+//          IFR
+//      string color;
+//      float ceiling_threshold;
+//      float visibility_threshold;
+//   }
+//
+// 1D array - variable length.
+//
+
+flight_category = {
+  { VFR, "green", 1500, 5},
+  { IFR, "gold", 0, 0}
+};
+
+///////////// flight_category_circle_radius ///////////
+//
+// Radius for flight_category / obscuration icon.
+// Type: int
+//
+
+flight_category_circle_radius = 3;
+
+//======================================================================
+//
+// NATIVE RENDERING PARAMETERS.
+//
+// Parameters for rendering from native binary format.
+//
+//======================================================================
+ 
+///////////// color ///////////////////////////////////
+//
+// Chunk object foreground color.
+// Suggested foreground color for rendering the object.
+// Type: string
+//
+
+color = "green";
+
+///////////// background_color ////////////////////////
+//
+// Chunk object background color.
+// Suggested background color for rendering the object.
+// Type: string
+//
+
+background_color = "black";

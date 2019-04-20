@@ -1,0 +1,33 @@
+# NAME stFlow.colors
+# jaimi 	4/1/1998 13:9:56
+# MIN    MAX    NAME        COLOR LABEL
+-10 	-9 	midnight blue 	!
+-9 	-8 	dark slate blue 	!
+-8 	-7 	slate blue 	!
+-7 	-6 	medium slate blue 	!
+-6 	-5 	royal blue 	!
+-5 	-4 	medium blue 	!
+-4 	-3 	blue 	!
+-3 	-2 	dodger blue 	!
+-2 	-1 	cornflower blue 	!
+-1 	0 	steel blue 	!
+0 	1 	cadet blue 	!
+1 	2 	dark sea green 	!
+2 	3 	medium sea green 	!
+3 	4 	sea green 	!
+4 	5 	dark green 	!
+5 	6 	dark olive green 	!
+6 	7 	olive drab 	!
+7 	8 	dark khaki 	!
+8 	9 	light goldenrod 	!
+9 	10 	gold 	!
+10 	11 	goldenrod 	!
+11 	12 	dark goldenrod 	!
+12 	13 	peru 	!
+13 	14 	chocolate 	!
+14 	15 	sandy brown 	!
+15 	16 	dark salmon 	!
+16 	17 	rosy brown 	!
+17 	18 	indian red 	!
+18 	19 	firebrick 	!
+19 	20 	brown 	!
