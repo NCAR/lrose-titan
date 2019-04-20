@@ -46,7 +46,7 @@ Thanks to the above organizations for contributing to the documentation.
 
 ### Data formats
 
-1. [MDV ICD](./docs/pdf/MDV_format_ICD.pdf)
+1. [MDV](./docs/pdf/MDV_format_ICD.pdf)
 2. [MDV XML](./docs/pdf/MDV_XML_ICD.1.0.pdf)
 3. [Tstorms XML](./docs/pdf/Tstorms_XML_ICD.1.0.pdf)
 4. [Time series IWRF](./docs/pdf/IWRF_ts_format.pdf)
