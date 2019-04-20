@@ -23,7 +23,7 @@ The TITAN applications are part of the LROSE - the Lidar Radar Open Software Env
 
 The templates for the scripts and parameter files reside in the lrose-titan respository - [lrose-titan](./templates).
 
-## Documentation
+## Reference documentation
 
 ### Installing and running TITAN
 
