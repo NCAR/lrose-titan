@@ -69,10 +69,43 @@ def main():
     # actually get the data
 
     if (doSingle):
-        getRadarData(options.radarName, singleTime, singleTime)
+        # single time
+        getForInterval(options.radarName, singleTime, singleTime)
     else:
-        getRadarData(options.radarName, startTime, endTime)
-            
+        if (startTime.day == endTime.day):
+            # single day
+            getForInterval(options.radarName, startTime, endTime)
+        else:
+            # multiple days
+            tdiff = endTime - startTime
+            tdiffSecs = tdiff.total_seconds()
+            print("11111111 diff in secs:  ", tdiffSecs, file=sys.stderr)
+            startDay = datetime.date(startTime.year, startTime.month, startTime.day)
+            endDay = datetime.date(endTime.year, endTime.month, endTime.day)
+            thisDay = startDay
+            while (thisDay <= endDay):
+                print("11111111 processing day:  ", thisDay, file=sys.stderr)
+                if (thisDay == startDay):
+                    # get to end of start day
+                    periodStart = startTime
+                    periodEnd = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                                  23, 59, 59)
+                    getForInterval(options.radarName, periodStart, periodEnd)
+                elif (thisDay == endDay):
+                    # get from start of end day
+                    periodStart = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                                    0, 0, 0)
+                    periodEnd = endTime
+                    getForInterval(options.radarName, periodStart, periodEnd)
+                else:
+                    # get for the full day
+                    periodStart = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                                    0, 0, 0)
+                    periodEnd = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                                  23, 59, 59)
+                    getForInterval(options.radarName, periodStart, periodEnd)
+                thisDay = thisDay + datetime.timedelta(1)
+                
     # get current date and time
 
     # nowTime = time.gmtime()
@@ -113,6 +146,61 @@ def main():
     sys.exit(0)
 
 ########################################################################
+# Get the data for the specified time interval
+
+def getForInterval(radarName, startTime, endTime):
+
+    # construct the URL
+
+    dateStr =  startTime.strftime("%Y/%m/%d")
+    bucketURL = "http://noaa-nexrad-level2.s3.amazonaws.com"
+    dirListURL = bucketURL+ "/?prefix=" + dateStr + "/" + radarName
+    if (options.debug):
+        print("dirListURL: ", dirListURL, file=sys.stderr)
+
+    # get the listing in XML
+
+    xmldoc = minidom.parse(urlopen(dirListURL))
+    itemlist = xmldoc.getElementsByTagName('Key')
+    if (options.debug):
+        print("number of keys found: ", len(itemlist), file=sys.stderr)
+
+    process = 0
+    lastFileTime = datetime.datetime(1970, 1, 1, 0, 0, 0);
+    lastFile = ""
+    for x in itemlist:
+        file = getText(x.childNodes)
+        # Only process files that look like "2012/07/02/KJAX/KJAX20120702_030836_V06.gz"
+        try:
+            year = int(file[20:24]);
+            month = int(file[24:26]);
+            day = int(file[26:28]);
+            hour = int(file[29:31]);
+            min = int(file[31:33]);
+            sec = int(file[33:35]);
+            fileTime = datetime.datetime(year, month, day, hour, min, sec);
+        except:
+            if(options.verbose):
+                print("ignoring entry, file: ", file, file=sys.stderr)
+            continue
+
+        if(options.verbose):
+            print("file, time: ", file, fileTime, file=sys.stderr)
+
+        if(process == 0 and startTime < fileTime and endTime > lastFileTime):
+            process = 1
+            download(lastFile,radarName)
+        if(endTime < fileTime):
+            process = 0
+
+        if(process):
+            download(file,radarName)
+            
+        lastFileTime = fileTime
+        lastFile = file
+         
+    
+########################################################################
 # Download specified file
 
 def download(filepath, radarName):
@@ -145,60 +233,6 @@ def getText(nodelist):
     return ''.join(rc)
 
 
-########################################################################
-# Get the data
-
-def getRadarData(radarName, startTime, endTime):
-
-    dateStr =  startTime.strftime("%Y/%m/%d")
-
-    bucketURL = "http://noaa-nexrad-level2.s3.amazonaws.com"
-    dirListURL = bucketURL+ "/?prefix=" + dateStr + "/" + radarName
-
-    if (options.debug):
-        print("dirListURL: ", dirListURL, file=sys.stderr)
-
-    sys.stdout.write("listing files from dir %s/%s ... " % (dateStr, radarName))
-    sys.stdout.flush()
-    #xmldoc = minidom.parse(stdin)
-    xmldoc = minidom.parse(urlopen(dirListURL))
-    itemlist = xmldoc.getElementsByTagName('Key')
-
-    if (options.debug):
-        print("number of keys found: ", len(itemlist), file=sys.stderr)
-
-    process = 0
-    lastFileTime = 0
-    lastFile = ""
-    for x in itemlist:
-        file = getText(x.childNodes)
-        # Only process files that look like "2012/07/02/KJAX/KJAX20120702_030836_V06.gz"
-        try:
-            year = int(file[20:24]);
-            month = int(file[24:26]);
-            day = int(file[26:28]);
-            hour = int(file[29:31]);
-            min = int(file[31:33]);
-            sec = int(file[33:35]);
-            fileTime = datetime.datetime(year, month, day, hour, min, sec);
-        except:
-            continue
-
-        if(options.verbose):
-            print("file, time: ", file, fileTime, file=sys.stderr)
-        if(process == 0 and startTime < fileTime and endTime > lastFileTime):
-            process = 1
-            download(lastFile,radarName)
-        if(endTime < fileTime):
-            process = 0
-
-        if(process):
-            download(file,radarName)
-            
-        lastFileTime = fileTime
-        lastFile = file
-         
-    
 ########################################################################
 # Download a file into the current directory
 
