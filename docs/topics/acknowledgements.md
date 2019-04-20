@@ -5,7 +5,9 @@
 
 # Acknowledgements
 
-A significant part of the TITAN system, including the storm tracking algorithm, was written by Mike Dixon. However, numerous contributions have been made to the system by others. The author would like to acknowledge the contributions - scientific, engineering and supportive in nature - from the following contributors, with apologies to anyone omitted:
+A significant part of the TITAN system, including the storm tracking algorithm, was written by Mike Dixon.
+
+However, numerous contributions have been made to the system by others. The author would like to acknowledge the contributions - scientific, engineering and supportive in nature - from the following contributors, with apologies to anyone omitted:
 
  - Graeme Mather and Rob Parsons of CloudQuest, South Africa, and Griffith Morgan.
  - Deon Terblanche, Karel de Waal, Pieter Visser and Marion Mittermaier of the South African Weather Service.
