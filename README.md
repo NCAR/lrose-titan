@@ -2,12 +2,6 @@
 
 ## TITAN - Thunderstorm Identification Tracking Analysis & Nowcasting
 
-The TITAN project is now hosted on GitHub.
-
-The TITAN applications are part of the [lrose-core](https://github.com/NCAR/lrose-core).
-
-The templates for the scripts and parameter files reside in this respository - [here](./templates).
-
 <a name="overview"/>
 
 ## Overview
@@ -20,6 +14,14 @@ The templates for the scripts and parameter files reside in this respository - [
 6. [Storm Climatology](./docs/topics/storm_climatology.md)
 7. [History](./docs/topics/history.md)
 8. [Acknowledgements](./docs/topics/acknowledgements.md)
+
+## TITAN on GitHub
+
+The TITAN project is now hosted on [GitHub](https://github.com).
+
+The TITAN applications are part of the LROSE - the Lidar Radar Open Software Environment. The LROSE core can be found at [lrose-core](https://github.com/NCAR/lrose-core).
+
+The templates for the scripts and parameter files reside in the lrose-titan respository - [lrose-titan](./templates).
 
 ![header with logo](./docs/images/titan-header_logo.jpg)
 
