@@ -1,191 +1,212 @@
-<?php include("../include/begin.php"); ?>
-<?php include("./topics.php"); ?>
+![header with logo](../images/titan-header_logo.jpg)
 
-<!-- Begin main page content. -->
-<div id="content">
+[Top](../../README.md)
+[Back](./storm_analysis.md)
+[Fwd](./history.md)
 
-<h1>Storm climatology</h1>
+# Storm climatology
 
-<h2>Spatial climatology</h2>
+## Spatial climatology
 
-<p>
 The TrackGridStats application produces analyses of storm tracks over extended periods of time, such as complete seasons or multiple seasons. The output is in the form of 2-D grids which contain information on the spatial variability of various storm properties. 
-</p>
 
-<p>
 The following figures show some of the properties which may be computed in this way. The properties are  for the month of August 1995 using data from the Front Range NEXRAD near Denver.
-</p>
 
-<h4><a name="climo_grid_motion">Spatial climatology of storm volume</a></h4>
-<p>This is overlain with the climatology of storm motion.</p>
-<img src="./images/climo_grid_motion.png" alt="Sorry, image not available" />
 
-<h4><a name="climo_grid_area">Spatial climatology of storm area</a></h4>
-<img src="./images/climo_grid_area.png" alt="Sorry, image not available" />
+#### Spatial climatology of storm volume
 
-<h4><a name="climo_grid_precip">Spatial climatology of storm precipitation</a></h4>
-<img src="./images/climo_grid_precip.png" alt="Sorry, image not available" />
+This is overlain with the climatology of storm motion.
 
-<h4><a name="climo_grid_duration">Spatial climatology of storm duration</a></h4>
-<img src="./images/climo_grid_duration.png" alt="Sorry, image not available" />
+![climo_grid_motion](../images/climo_grid_motion.png)
 
-<h4><a name="climo_grid_tops">Spatial climatology of storm tops</a></h4>
-<img src="./images/climo_grid_tops.png" alt="Sorry, image not available" />
 
-<h4><a name="climo_grid_max_dbz">Spatial climatology of maximum storm refectivity</a></h4>
-<img src="./images/climo_grid_max_dbz.png" alt="Sorry, image not available" />
+#### Spatial climatology of storm area
 
-<h2>Aggregate climatology</h2>
+![climo_grid_area](../images/climo_grid_area.png)
 
-<p>
+
+#### Spatial climatology of storm precipitation
+
+![climo_grid_precip](../images/climo_grid_precip.png)
+
+
+#### Spatial climatology of storm duration
+
+![climo_grid_duration](../images/climo_grid_duration.png)
+
+
+#### Spatial climatology of storm tops
+
+![climo_grid_tops](../images/climo_grid_tops.png)
+
+
+#### Spatial climatology of maximum storm refectivity
+
+![climo_grid_max_dbz](../images/climo_grid_max_dbz.png)
+
+
+## Aggregate climatology
+
 The TracksAscii application produces ASCII tables of storm and track properties, which can then be analyzed by a suitable statistics package. Two categories of property are produced:
-</p>
 
-<ul>
-<li>Instantaneous storm properties, such as tops</li>
-<li>Aggregate track properties, such as duration.</li>
-</ul>
+ - Instantaneous storm properties, such as tops
+ - Aggregate track properties, such as duration.
 
-<h3>Instantaneous storm properties</h3>
+### Instantaneous storm properties
 
-<ul>
-<li>Remaining duration (hrs)</li>
-<li>Volumetric centroid lat (deg)</li>
-<li>Volumetric centroid lon (deg)</li>
-<li>Volumetric centroid x (km)</li>
-<li>Volumetric centroid y (km)</li>
-<li>Volumetric centroid z (km)</li>
-<li>Reflectivity-weighted centroid lat (deg)</li>
-<li>Reflectivity-weighted centroid lon (deg)</li>
-<li>Reflectivity-weighted centroid x (km)</li>
-<li>Reflectivity-weighted centroid y (km)</li>
-<li>Reflectivity-weighted centroid z (km)</li>
-<li>Precipitation centroid lat (deg)</li>
-<li>Precipitation centroid lon (deg)</li>
-<li>Precipitation centroid x (km)</li>
-<li>Precipitation centroid y (km)</li>
-<li>Precip area (km2)</li>
-<li>Precip orientation (deg T)</li>
-<li>Precip major radius (km)</li>
-<li>Precip minor radius (km)</li>
-<li>Precip flux (m3/s)</li>
-<li>Precip rate (mm/hr)</li>
-<li>Envelope centroid lat (deg)</li>
-<li>Envelope centroid lon (deg)</li>
-<li>Envelope centroid x (km)</li>
-<li>Envelope centroid y (km)</li>
-<li>Envelope area (km2)</li>
-<li>Envelope orientation (deg T)</li>
-<li>Envelope major radius (km)</li>
-<li>Envelope minor radius (km)</li>
-<li>Top (km)</li>
-<li>Base(km)</li>
-<li>Volume (km3)</li>
-<li>Mean area (km2)</li>
-<li>Mass (ktons)</li>
-<li>Tilt angle (deg)</li>
-<li>Tilt orientation (deg T)</li>
-<li>Max dBZ (dBZ)</li>
-<li>Mean dbz (dBZ)</li>
-<li>Max dBZ gradient (dBZ/km)</li>
-<li>Mean dbz gradient (dBZ/km)</li>
-<li>Ht of max dBZ (km)</li>
-<li>Vorticity (/s)</li>
-<li>Vil from maxZ (kg/m2)</li>
-<li>U (km/hr)</li>
-<li>V (km/hr)</li>
-<li>Dtop/Dt (km/hr)</li>
-<li>Dvolume/Dt (km3/hr)</li>
-<li>Dprecip_flux/Dt (m3/s2)</li>
-<li>Dmass/Dt (ktons/hr)</li>
-<li>DdBz_max/Dt (dBZ/hr)</li>
-<li>Speed (km/hr)</li>
-<li>Dirn (Deg T)</li>
-<li>% vol > 40 dBZ</li>
-<li>% area > 40 dBZ</li>
-<li>% vol > 50 dBZ</li>
-<li>% area > 50 dBZ</li>
-<li>% vol > 60 dBZ</li>
-<li>% area > 60 dBZ</li>
-<li>% vol > 70 dBZ</li>
-<li>% area > 70 dBZ</li>
-<li>Hail-FOKR Cat 0-4</li>
-<li>Hail-Waldvogel Prob</li>
-<li>Hail-mass aloft ktons</li>
-<li>Hail-Vihm kg/m2"</li>
-</ul>
+ - Remaining duration (hrs)
+ - Volumetric centroid lat (deg)
+ - Volumetric centroid lon (deg)
+ - Volumetric centroid x (km)
+ - Volumetric centroid y (km)
+ - Volumetric centroid z (km)
+ - Reflectivity-weighted centroid lat (deg)
+ - Reflectivity-weighted centroid lon (deg)
+ - Reflectivity-weighted centroid x (km)
+ - Reflectivity-weighted centroid y (km)
+ - Reflectivity-weighted centroid z (km)
+ - Precipitation centroid lat (deg)
+ - Precipitation centroid lon (deg)
+ - Precipitation centroid x (km)
+ - Precipitation centroid y (km)
+ - Precip area (km2)
+ - Precip orientation (deg T)
+ - Precip major radius (km)
+ - Precip minor radius (km)
+ - Precip flux (m3/s)
+ - Precip rate (mm/hr)
+ - Envelope centroid lat (deg)
+ - Envelope centroid lon (deg)
+ - Envelope centroid x (km)
+ - Envelope centroid y (km)
+ - Envelope area (km2)
+ - Envelope orientation (deg T)
+ - Envelope major radius (km)
+ - Envelope minor radius (km)
+ - Top (km)
+ - Base(km)
+ - Volume (km3)
+ - Mean area (km2)
+ - Mass (ktons)
+ - Tilt angle (deg)
+ - Tilt orientation (deg T)
+ - Max dBZ (dBZ)
+ - Mean dbz (dBZ)
+ - Max dBZ gradient (dBZ/km)
+ - Mean dbz gradient (dBZ/km)
+ - Ht of max dBZ (km)
+ - Vorticity (/s)
+ - Vil from maxZ (kg/m2)
+ - U (km/hr)
+ - V (km/hr)
+ - Dtop/Dt (km/hr)
+ - Dvolume/Dt (km3/hr)
+ - Dprecip_flux/Dt (m3/s2)
+ - Dmass/Dt (ktons/hr)
+ - DdBz_max/Dt (dBZ/hr)
+ - Speed (km/hr)
+ - Dirn (Deg T)
+ - % vol > 40 dBZ
+ - % area > 40 dBZ
+ - % vol > 50 dBZ
+ - % area > 50 dBZ
+ - % vol > 60 dBZ
+ - % area > 60 dBZ
+ - % vol > 70 dBZ
+ - % area > 70 dBZ
+ - Hail-FOKR Cat 0-4
+ - Hail-Waldvogel Prob
+ - Hail-mass aloft ktons
+ - Hail-Vihm kg/m2"
 
-<h3>Aggregate track properties</h3>
+### Aggregate track properties
 
-<ul>
-<li>Duration (hr)</li>
-<li>Remaining diration at maximum volume (hr)</li>
-<li>Mean volume (km3)</li>
-<li>Maximum volume (km3)</li>
-<li>Mean mass (ktons)</li>
-<li>Maximum mass (ktons)</li>
-<li>Maximum precip depth, computed using ellipse (mm)</li>
-<li>Mean precip depth, computed using ellipse (mm)</li>
-<li>Mean precip depth, computed using storm grid points (mm)</li>
-<li>Mean precip flux (m3/s)</li>
-<li>Maximum precip flux (m3/s)</li>
-<li>Mean envelope area (km2)</li>
-<li>Maximum envelope area (km2)</li>
-<li>Mean precip area (km2)</li>
-<li>Maximum precip area (km2)</li>
-<li>Mean top (km msl)</li>
-<li>Maximum top (km msl)</li>
-<li>Mean base (km msl)</li>
-<li>Maximum base( km msl)</li>
-<li>Mean dBZ</li>
-<li>Maximum dBZ</li>
-<li>Radar estimated rain volume (m3)</li>
-<li>Area time integral (km2.hr)</li>
-<li>Swath area computed using ellipse (km2)</li>
-<li>Swath area computed using storm grid points (km2)</li>
-<li>Mean speed (km/hr)</li>
-<li>Mean direction (deg T)</li>
-</ul>
+ - Duration (hr)
+ - Remaining diration at maximum volume (hr)
+ - Mean volume (km3)
+ - Maximum volume (km3)
+ - Mean mass (ktons)
+ - Maximum mass (ktons)
+ - Maximum precip depth, computed using ellipse (mm)
+ - Mean precip depth, computed using ellipse (mm)
+ - Mean precip depth, computed using storm grid points (mm)
+ - Mean precip flux (m3/s)
+ - Maximum precip flux (m3/s)
+ - Mean envelope area (km2)
+ - Maximum envelope area (km2)
+ - Mean precip area (km2)
+ - Maximum precip area (km2)
+ - Mean top (km msl)
+ - Maximum top (km msl)
+ - Mean base (km msl)
+ - Maximum base( km msl)
+ - Mean dBZ
+ - Maximum dBZ
+ - Radar estimated rain volume (m3)
+ - Area time integral (km2.hr)
+ - Swath area computed using ellipse (km2)
+ - Swath area computed using storm grid points (km2)
+ - Mean speed (km/hr)
+ - Mean direction (deg T)
 
-<p>
 The following figures demonstrate some of the ways in which this data may be analyzed. The data for this analysis was obtained from the Mile High radar, near Denver, for the summer seasons 1991 through 1993.
-</p>
 
-<h4><a name="climo_precip_area_lognormal">Lognormal fit to precipitation area</a></h4>
-<img src="./images/climo_precip_area_lognormal.png" alt="Sorry, image not available" />
+#### Lognormal fit to precipitation area
 
-<h4><a name="climo_precip_flux_lognormal">Lognormal fit to precipitation flux</a></h4>
-<img src="./images/climo_precip_flux_lognormal.png" alt="Sorry, image not available" />
+![climo_precip_area_lognormal](../images/climo_precip_area_lognormal.png)
 
-<h4><a name="climo_swath_area_lognormal">Lognormal fit to swath area</a></h4>
-<img src="./images/climo_swath_area_lognormal.png" alt="Sorry, image not available" />
 
-<h4><a name="climo_tops_lognormal">Lognormal fit to storm tops</a></h4>
-<img src="./images/climo_tops_lognormal.png" alt="Sorry, image not available" />
+#### Lognormal fit to precipitation flux
 
-<h4><a name="climo_max_speed_lognormal">Lognormal fit to maximum speed</a></h4>
-<img src="./images/climo_max_speed_lognormal.png" alt="Sorry, image not available" />
+![climo_precip_flux_lognormal](../images/climo_precip_flux_lognormal.png)
 
-<h4><a name="climo_max_dbz_lognormal">Lognormal fit to maximum reflectivity</a></h4>
-<img src="./images/climo_max_dbz_lognormal.png" alt="Sorry, image not available" />
 
-<h4><a name="climo_ati_lognormal">Lognormal fit to area time integral (ATI)</a></h4>
-<img src="./images/climo_ati_lognormal.png" alt="Sorry, image not available" />
+#### Lognormal fit to swath area
 
-<h4><a name="climo_duration_pdf">Exponential fit to duration > 15 min</a></h4>
-<img src="./images/climo_duration_pdf.png" alt="Sorry, image not available" />
+![climo_swath_area_lognormal](../images/climo_swath_area_lognormal.png)
 
-<h4><a name="climo_rerv_vs_ati">Radar estimated rain volume vs. Area time integral</a></h4>
-<img src="./images/climo_rerv_vs_ati.png" alt="Sorry, image not available" />
 
-<h4><a name="climo_vol_vs_refl">Volume vs. mean reflectivity</a></h4>
-<img src="./images/climo_vol_vs_refl.png" alt="Sorry, image not available" />
+#### Lognormal fit to storm tops
 
-<h4><a name="climo_precip_area_vs_vol">Precipitaiton area vs. volume</a></h4>
-<img src="./images/climo_precip_area_vs_vol.png" alt="Sorry, image not available" />
+![climo_tops_lognormal](../images/climo_tops_lognormal.png)
 
-<!-- div#content :: End main page content. -->
-</div>
 
-<?php include("../include/end.php"); ?>
+#### Lognormal fit to maximum speed
+
+![climo_max_speed_lognormal](../images/climo_max_speed_lognormal.png)
+
+
+#### Lognormal fit to maximum reflectivity
+
+![climo_max_dbz_lognormal](../images/climo_max_dbz_lognormal.png)
+
+
+#### Lognormal fit to area time integral (ATI)
+
+![climo_ati_lognormal](../images/climo_ati_lognormal.png)
+
+
+#### Exponential fit to duration > 15 min
+
+![climo_duration_pdf](../images/climo_duration_pdf.png)
+
+
+#### Radar estimated rain volume (RERV) vs. Area time integral (ATI)
+
+![climo_rerv_vs_ati](../images/climo_rerv_vs_ati.png)
+
+
+#### Volume vs. mean reflectivity
+
+![climo_vol_vs_refl](../images/climo_vol_vs_refl.png)
+
+
+#### Precipitaiton area vs. volume
+
+![climo_precip_area_vs_vol](../images/climo_precip_area_vs_vol.png)
+
+
+[Top](../../README.md)
+[Back](./storm_analysis.md)
+[Fwd](./history.md)
 
