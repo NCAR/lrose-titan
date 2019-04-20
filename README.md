@@ -40,7 +40,9 @@ The templates for the scripts and parameter files reside in the lrose-titan resp
 1. [TITAN displays - SA Weather Service](./docs/pdf/titan_display_guide.saws.pdf)
 2. [TITAN analysis - SA Weather Service](./docs/pdf/titan_analysis_guide.saws.pdf)
 3. [TITAN systems admin - SA Weather Service](./docs/pdf/titan_sysadmin_guide.saws.pdf)
-4. [TITAN manual - Portugese - IPMET, Brazil](./docs/pdf/TITAN_manual_ipmet.pdf)
+4. [TITAN manual - Portuguese - IPMET, Brazil](./docs/pdf/TITAN_manual_ipmet.pdf)
+
+Thanks to the above organizations for contributing to the documentation.
 
 ### Data formats
 
