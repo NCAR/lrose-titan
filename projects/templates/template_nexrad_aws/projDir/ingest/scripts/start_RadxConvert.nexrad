@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "RadxConvert -instance $radar_name"
+
+if ($status == 1) then
+    RadxConvert -instance $radar_name -params RadxConvert.nexrad -debug |& \
+        LogFilter -d $ERRORS_LOG_DIR -p RadxConvert -i $radar_name >& /dev/null &
+endif

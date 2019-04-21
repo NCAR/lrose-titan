@@ -23,7 +23,7 @@ setenv LANG C
 
 # Note: options for HOST_OS environment variable are
 #  LINUX_LROSE
-#  LINUX_OSC
+#  LINUX_OSX
 
 setenv HOST_OS LINUX_LROSE
 

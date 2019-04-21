@@ -12,8 +12,9 @@ setenv project                    "titan-nexrad"
 
 # Marshall
 
-setenv RADAR_SITE_NAME            "KFTG"
+setenv SITE_NAME                  "KFTG"
 setenv RADAR_NAME                 "KFTG"
+setenv radar_name                 "kftg"
 setenv RADAR_LAT                  39.7866
 setenv RADAR_LON                  -104.546
 setenv RADAR_ALT_KM               1.709
