@@ -73,12 +73,12 @@
 #----------------------------------------------------------------------------------------------------------
 #
 
-DBZ      DBZ     $(DATA_DIR)/cfradial/$(radar_name)&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
-VEL      VEL     $(DATA_DIR)/cfradial/$(radar_name)&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
-WIDTH    WIDTH   $(DATA_DIR)/cfradial/$(radar_name)&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
-ZDR      ZDR     $(DATA_DIR)/cfradial/$(radar_name)&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
-RHOHV    RHOHV   $(DATA_DIR)/cfradial/$(radar_name)&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
-PHIDP    PHIDP   $(DATA_DIR)/cfradial/$(radar_name)&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+DBZ      DBZ     mdvp:://localhost:0:$(DATA_DIR)/cfradial/$(radar_name)&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+VEL      VEL     mdvp:://localhost:0:$(DATA_DIR)/cfradial/$(radar_name)&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH    WIDTH   mdvp:://localhost:0:$(DATA_DIR)/cfradial/$(radar_name)&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR      ZDR     mdvp:://localhost:0:$(DATA_DIR)/cfradial/$(radar_name)&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV    RHOHV   mdvp:://localhost:0:$(DATA_DIR)/cfradial/$(radar_name)&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP    PHIDP   mdvp:://localhost:0:$(DATA_DIR)/cfradial/$(radar_name)&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
 DBZ_CART     DBZ_CART     $(DATA_DIR)/mdv/radarCart/$(radar_name)&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
 VEL_CART     VEL_CART     $(DATA_DIR)/mdv/radarCart/$(radar_name)&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
