@@ -2,7 +2,7 @@
 
 # ========================================================================== #
 #
-# Configure the host for a given role
+# Configure the project, install relevant files
 #
 # ========================================================================== #
 
@@ -20,34 +20,24 @@ def main():
     homeDir = os.environ['HOME']
     projDir = os.path.join(homeDir, 'projDir')
     controlDir = os.path.join(projDir, 'control')
-    defaultGitDir = os.path.join(homeDir, "git/lrose-projects-eolbase")
+    gitDir = os.path.join(homeDir, "git/lrose-titan")
 
     # parse the command line
-
+    
     usage = "usage: %prog [options]"
     parser = OptionParser(usage)
     parser.add_option('--debug',
                       dest='debug', default=True,
                       action="store_true",
                       help='Set debugging on')
-    parser.add_option('--verbose',
-                      dest='verbose', default=False,
-                      action="store_true",
-                      help='Set verbose debugging on')
-    parser.add_option('--gitDir',
-                      dest='gitDir', default=defaultGitDir,
-                      help='Path of main directory in git')
     parser.add_option('--dataDir',
-                      dest='dataDir', default='/data/eolbase',
+                      dest='dataDir', default='/data/titan/data',
                       help='Path of installed data dir')
     (options, args) = parser.parse_args()
     
-    if (options.verbose):
-        options.debug = True
-
     # compute paths
 
-    gitProjDir = os.path.join(options.gitDir, 'projDir')
+    gitProjDir = os.path.join(gitDir, 'projects/templates/nexrad_single/projDir')
     gitSystemDir = os.path.join(gitProjDir, 'system')
     
     # debug print
@@ -57,65 +47,21 @@ def main():
         print >>sys.stderr, ""
         print >>sys.stderr, "  Options:"
         print >>sys.stderr, "    Debug: ", options.debug
-        print >>sys.stderr, "    Verbose: ", options.verbose
         print >>sys.stderr, "    homeDir: ", homeDir
         print >>sys.stderr, "    projDir: ", projDir
         print >>sys.stderr, "    controlDir: ", controlDir
         print >>sys.stderr, "    gitDir: ", options.gitDir
         print >>sys.stderr, "    gitProjDir: ", gitProjDir
         print >>sys.stderr, "    gitSystemDir: ", gitSystemDir
-
-    # read current host type if previously set
-
-    prevHostType = 'archiver'
-    hostTypePath = os.path.join(homeDir, '.host_type')
-    if (os.path.exists(hostTypePath)):
-        hostTypeFile = open(hostTypePath, 'r')
-        prevHostType = hostTypeFile.read()
-        prevHostType = prevHostType.strip(string.whitespace)
-    if (options.debug):
-        print >>sys.stderr, "    prevHostType: ", prevHostType
-
-    # get the host type interactively
-
-    hostTypes = [ 'eolbase', 'relampago' ]
-
-    print ""
-    print "Choose host type from the following list"
-    print "       or hit enter to use host type shown:"
-    for hostType in hostTypes:
-        print "     ", hostType
-    hostType = raw_input('    ............. (' + prevHostType + ')? ')
-    if (len(hostType) < 4):
-        hostType = prevHostType
-    else:
-        typeIsValid = False
-        for htype in hostTypes:
-            if (hostType == htype):
-                typeIsValid = True
-        if (typeIsValid != True):
-            print >>sys.stderr, "ERROR - invalid host type: ", hostType
-            sys.exit(1)
-
-    gitProjDir = os.path.join(options.gitDir, "projDir")
-
-    # save the host type to ~/.host_type
-
-    hostTypeFile = open(hostTypePath, "w")
-    hostTypeFile.write(hostType + '\n')
-    hostTypeFile.close()
+        print >>sys.stderr, "    dataDir: ", options.dataDir
 
     # banner
 
     print " "
     print "*********************************************************************"
-    print
     print "  configure project"
-    print
     print "  runtime: " + str(datetime.datetime.now())
-    print
-    print "  host type: ", hostType
-    print
+    print "  dataDir: " + options.dataDir
     print "*********************************************************************"
     print " "
 
@@ -137,28 +83,11 @@ def main():
     cmd = "ln -s " + gitProjDir
     runCommand(cmd)
     
-    # make link to proc_list, crontab and data_list
-
-    os.chdir(controlDir)
-
-    removeSymlink(controlDir, "proc_list")
-    cmd = "ln -s proc_list." + hostType + " proc_list"
-    runCommand(cmd)
-
-    removeSymlink(controlDir, "crontab")
-    cmd = "ln -s crontab." + hostType + " crontab"
-    runCommand(cmd)
-
-    removeSymlink(controlDir, "data_list")
-    cmd = "ln -s data_list." + hostType + " data_list"
-    runCommand(cmd)
-    
     ############################################
-    # data dir - specific to the host type
-    # populate installed data dir /data/spol
+    # ensure the data directory exists
     
-    dataDirsPath = os.path.join(options.gitDir, 'data_dirs')
-    dataSubDir = "data." + hostType
+    cmd = "mkdir -p " + options.dataDir
+
     templateDataDir = os.path.join(dataDirsPath, dataSubDir)
     installDataDir = os.path.join(options.dataDir, dataSubDir)
 
@@ -227,7 +156,7 @@ def removeSymlink(dir, linkName):
 
 def runCommand(cmd):
 
-    if (options.debug == True):
+    if (options.debug):
         print >>sys.stderr, "running cmd:",cmd
 
     try:
@@ -235,7 +164,7 @@ def runCommand(cmd):
         if retcode < 0:
             print >>sys.stderr, "Child was terminated by signal: ", -retcode
         else:
-            if (options.verbose == True):
+            if (options.debug):
                 print >>sys.stderr, "Child returned code: ", retcode
     except OSError, e:
         print >>sys.stderr, "Execution failed:", e
