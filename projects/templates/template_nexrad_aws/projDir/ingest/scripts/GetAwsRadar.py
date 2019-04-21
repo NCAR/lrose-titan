@@ -72,7 +72,7 @@ def main():
     # realtime mode - loop forever
 
     if (options.realtimeMode):
-        lookbackSecs = timedelta(0, options.lookbackSecs)
+        lookbackSecs = timedelta(0, int(options.lookbackSecs))
         while(True):
             fileCount = 0
             nowTime = time.gmtime()
@@ -80,7 +80,7 @@ def main():
                                         nowTime.tm_hour, nowTime.tm_min, nowTime.tm_sec)
             startTime = endTime - lookbackSecs
             manageRetrieval(startTime, endTime)
-            time.sleep(options.sleepSecs)
+            time.sleep(int(options.sleepSecs))
         return
 
     # archive mode - one shot
@@ -277,7 +277,7 @@ def doDownload(radarName, fileTime, fileEntry, fileName):
           + " -rpath " + relPath \
           + " -ltime " + timeStr \
           + " -writer " + thisScriptName \
-          + " -dtype bufr"
+          + " -dtype level2"
     runCommand(cmd)
 
 ########################################################################
