@@ -72,20 +72,26 @@
 #Label    Label       URL           Colorscale Units Cont-lo-hi-interv Format Display_in_menu Bkgnd_Render
 #----------------------------------------------------------------------------------------------------------
 #
-DBZ    DBZ   mdvp:://localhost::$(RADAR_CART_DIR)&DBZ   dbz_color     dBZ    -5   80  5  dcont   1 0
-#DBZ    DBZ   mdvp:://localhost::$(RADAR_CART_DIR)&Refl   dbz_color     dBZ    -5   80  5  dcont   1 0
 
-#VEL   VEL   mdvp:://localhost::$(RADAR_CART_DIR)&VEL   vel_color     m/s    -5   80  5  dcont   1 0
+DBZ      DBZ     $(DATA_DIR)/cfradial/$(radar_name)&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+VEL      VEL     $(DATA_DIR)/cfradial/$(radar_name)&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH    WIDTH   $(DATA_DIR)/cfradial/$(radar_name)&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR      ZDR     $(DATA_DIR)/cfradial/$(radar_name)&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV    RHOHV   $(DATA_DIR)/cfradial/$(radar_name)&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP    PHIDP   $(DATA_DIR)/cfradial/$(radar_name)&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
 
-Precip-1Hr   Precip-1Hr   mdvp:://localhost::mdv/precip/1hr&#0   precip_color   mm      0  1000  50 dcont   1 0
- 
-Precip-24Hr  Precip-24Hr  mdvp:://localhost::mdv/precip/24hr&#0  precip_color   mm      0  1000  50 dcont   1 0
- 
-Rate-1Hr     Rate-1Hr     mdvp:://localhost::mdv/precip/1hr&#1   precip_color   mm      0  1000  50 dcont   1 0
- 
-VIL          VIL          mdvp:://localhost::mdv/vil&#0          vil_color      g/m2    0  1000  50 dcont   1 0
- 
-VIL-diff     VIL-diff     mdvp:://localhost::mdv/vil&#1        vil_diff_color  g/m2     0  1000  50 dcont   1 0
+DBZ_CART     DBZ_CART     $(DATA_DIR)/mdv/radarCart/$(radar_name)&DBZ     dbz.colors    dBZ    -5   80  5  dcont   1 0
+VEL_CART     VEL_CART     $(DATA_DIR)/mdv/radarCart/$(radar_name)&VEL     vel.colors    m/s    -5   80  5  dcont   1 0
+WIDTH_CART   WIDTH_CART   $(DATA_DIR)/mdv/radarCart/$(radar_name)&WIDTH   width.colors  m/s    -5   80  5  dcont   1 0
+ZDR_CART     ZDR_CART     $(DATA_DIR)/mdv/radarCart/$(radar_name)&ZDR     zdr.colors    dB     -5   80  5  dcont   1 0
+RHOHV_CART   RHOHV_CART   $(DATA_DIR)/mdv/radarCart/$(radar_name)&RHOHV   rhohv.colors  -    -5   80  5  dcont   1 0
+PHIDP_CART   PHIDP_CART   $(DATA_DIR)/mdv/radarCart/$(radar_name)&PHIDP   phidp_360.colors  deg    -5   80  5  dcont   1 0
+
+Precip-1Hr   Precip-1Hr   $(DATA_DIR)/mdv/precip/1hr/$(radar_name)&precip      precip_color   mm      0  1000  50 dcont   1 0
+Precip-24Hr  Precip-24Hr  $(DATA_DIR)/mdv/precip/24hr/$(radar_name)&precip     precip_color   mm      0  1000  50 dcont   1 0
+Rate-1Hr     Rate-1Hr     $(DATA_DIR)/mdv/precip/1hr/$(radar_name)&rate        precip_color   mm      0  1000  50 dcont   1 0
+VIL          VIL          $(DATA_DIR)/mdv/vil/$(radar_name)&vil     vil_color       g/m2    0  1000  50 dcont   1 0
+dVIL         dVIL         $(DATA_DIR)/mdv/vil/$(radar_name)&dVil    vil_diff_color  g/m2    0  1000  50 dcont   1 0
  
 </GRIDS>
 
@@ -778,7 +784,7 @@ cidd.draw_clock_local: 0
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 1
+cidd.num_field_menu_cols: 6
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.
@@ -1079,7 +1085,9 @@ prod_info = {
     on_by_default = TRUE,
     minutes_allow_before = 0.0,
     minutes_allow_after = 0.0,
-    text_off_threshold = 0
+    text_off_threshold = 0,
+    request_data_on_zoom = false,
+    request_data_on_vert_change = false
   }
   ,
   {
@@ -1090,7 +1098,9 @@ prod_info = {
     on_by_default = TRUE,
     minutes_allow_before = 10.0,
     minutes_allow_after = 0.0,
-    text_off_threshold = 0
+    text_off_threshold = 0,
+    request_data_on_zoom = false,
+    request_data_on_vert_change = false
   }
 
 };
