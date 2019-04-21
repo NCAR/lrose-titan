@@ -10,7 +10,7 @@
 setenv PROJECT_NAME               "TITAN-NEXRAD"
 setenv project                    "titan-nexrad"
 
-# Marshall
+# RADAR info
 
 setenv SITE_NAME                  "KFTG"
 setenv RADAR_NAME                 "KFTG"
@@ -19,7 +19,34 @@ setenv RADAR_LAT                  39.7866
 setenv RADAR_LON                  -104.546
 setenv RADAR_ALT_KM               1.709
 setenv RADAR_ALT_M                1709
-setenv GRIDDED_MINZ               1.5
+setenv RADAR_DESCRIPTION          "Front Range NEXRAD"
+setenv RADAR_DATA_INFO            "FTG radar, Denver, Colorado"
+
+# Host where the data is stored
+
+setenv DATA_HOST                  localhost
+
+# typical time between volumes (secs)
+
+setenv SCAN_DELTA_T               300
+
+# Lowest cappi for cart grid (km)
+
+setenv CART_GRID_START_HT         1.5
+
+# Start height for Rview
+
+setenv RVIEW_START_HT             2.0
+
+# Map config file for Rview
+
+setenv RVIEW_MAP_CONF_FILE        denver.conf
+
+# Precip estimation
+
+setenv ZR_COEFF                   200.0
+setenv ZR_EXPON                   1.6
+setenv HAIL_DBZ_THRESHOLD         53
 
 #############################################
 

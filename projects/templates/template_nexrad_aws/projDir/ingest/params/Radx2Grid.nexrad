@@ -353,7 +353,7 @@ beam_width_fraction_for_data_limit_extension = 0.5;
 
 grid_z_geom = {
     nz = 30,
-    minz = $(GRIDDED_MINZ),
+    minz = $(CART_GRID_START_HT),
     dz = 0.5
 };
 
