@@ -19,6 +19,7 @@ setenv RADAR_LAT                  39.7866
 setenv RADAR_LON                  -104.546
 setenv RADAR_ALT_KM               1.709
 setenv RADAR_ALT_M                1709
+setenv GRIDDED_MINZ               1.5
 
 #############################################
 

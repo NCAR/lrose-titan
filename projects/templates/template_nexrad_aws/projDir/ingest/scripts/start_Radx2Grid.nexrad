@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd $PROJ_DIR/ingest/params
+
+running "Radx2Grid -instance $radar_name"
+
+if ($status == 1) then
+    Radx2Grid -instance $radar_name -params Radx2Grid.nexrad -debug |& \
+        LogFilter -d $ERRORS_LOG_DIR -p Radx2Grid -i $radar_name >& /dev/null &
+endif
+
