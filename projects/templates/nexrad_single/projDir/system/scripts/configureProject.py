@@ -33,7 +33,7 @@ def main():
                       action="store_true",
                       help='Set debugging on')
     parser.add_option('--dataDir',
-                      dest='dataDir', default='/data/titan/data',
+                      dest='dataDir', default='/data/titan',
                       help='Path of installed data dir')
     (options, args) = parser.parse_args()
     
@@ -52,7 +52,7 @@ def main():
         print("    homeDir: ", homeDir, file=sys.stderr)
         print("    projDir: ", projDir, file=sys.stderr)
         print("    controlDir: ", controlDir, file=sys.stderr)
-        print("    gitDir: ", options.gitDir, file=sys.stderr)
+        print("    gitDir: ", gitDir, file=sys.stderr)
         print("    gitProjDir: ", gitProjDir, file=sys.stderr)
         print("    gitSystemDir: ", gitSystemDir, file=sys.stderr)
         print("    dataDir: ", options.dataDir, file=sys.stderr)
@@ -86,12 +86,10 @@ def main():
     runCommand(cmd)
     
     ############################################
-    # ensure the data directory exists
+    # create data directory
     
-    cmd = "mkdir -p " + options.dataDir
-
-    templateDataDir = os.path.join(dataDirsPath, dataSubDir)
-    installDataDir = os.path.join(options.dataDir, dataSubDir)
+    installDataDir = os.path.join(options.dataDir, 'data')
+    cmd = "mkdir -p " + installDataDir
 
     if (options.debug):
         print("Install data dir: ", installDataDir, file=sys.stderr)
@@ -101,7 +99,7 @@ def main():
     os.chdir(projDir)
     removeSymlink(projDir, "data")
     if (os.path.exists('data') == False):
-        cmd = "ln -s " + installDataDir + " data"
+        cmd = "ln -s " + installDataDir
         runCommand(cmd)
 
     # create symlink to logs
@@ -112,22 +110,6 @@ def main():
         cmd = "ln -s data/logs"
         runCommand(cmd)
 
-    # rync template dir into data dir
-
-    os.chdir(templateDataDir)
-    cmd = "rsync -av * " + installDataDir
-    runCommand(cmd)
-
-    # create symlinks for parameter files
-    # from data tree back into the template
-
-    debugStr = ""
-    if (options.debug):
-        debugStr = " --debug"
-    cmd = "createParamLinks.py --templateDir " + \
-          templateDataDir + " --installDir " + installDataDir + debugStr
-    runCommand(cmd)
-    
     # done
 
     sys.exit(0)
