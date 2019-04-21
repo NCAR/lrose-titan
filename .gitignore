@@ -7,3 +7,7 @@
 TAGS
 .#*
 
+# links
+
+projects/templates/nexrad_single/projDir/data
+projects/templates/nexrad_single/projDir/logs
