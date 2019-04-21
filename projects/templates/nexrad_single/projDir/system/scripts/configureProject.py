@@ -6,6 +6,8 @@
 #
 # ========================================================================== #
 
+from __future__ import print_function
+
 import os
 import sys
 from optparse import OptionParser
@@ -43,27 +45,27 @@ def main():
     # debug print
 
     if (options.debug):
-        print >>sys.stderr, "Running script: ", os.path.basename(__file__)
-        print >>sys.stderr, ""
-        print >>sys.stderr, "  Options:"
-        print >>sys.stderr, "    Debug: ", options.debug
-        print >>sys.stderr, "    homeDir: ", homeDir
-        print >>sys.stderr, "    projDir: ", projDir
-        print >>sys.stderr, "    controlDir: ", controlDir
-        print >>sys.stderr, "    gitDir: ", options.gitDir
-        print >>sys.stderr, "    gitProjDir: ", gitProjDir
-        print >>sys.stderr, "    gitSystemDir: ", gitSystemDir
-        print >>sys.stderr, "    dataDir: ", options.dataDir
+        print("Running script: ", os.path.basename(__file__), file=sys.stderr)
+        print("", file=sys.stderr)
+        print("  Options:", file=sys.stderr)
+        print("    Debug: ", options.debug, file=sys.stderr)
+        print("    homeDir: ", homeDir, file=sys.stderr)
+        print("    projDir: ", projDir, file=sys.stderr)
+        print("    controlDir: ", controlDir, file=sys.stderr)
+        print("    gitDir: ", options.gitDir, file=sys.stderr)
+        print("    gitProjDir: ", gitProjDir, file=sys.stderr)
+        print("    gitSystemDir: ", gitSystemDir, file=sys.stderr)
+        print("    dataDir: ", options.dataDir, file=sys.stderr)
 
     # banner
 
-    print " "
-    print "*********************************************************************"
-    print "  configure project"
-    print "  runtime: " + str(datetime.datetime.now())
-    print "  dataDir: " + options.dataDir
-    print "*********************************************************************"
-    print " "
+    print(" ")
+    print("*********************************************************************")
+    print("  configure project")
+    print("  runtime: " + str(datetime.datetime.now()))
+    print("  dataDir: " + options.dataDir)
+    print("*********************************************************************")
+    print(" ")
 
     # make links to the dotfiles in git projDir
     
@@ -92,7 +94,7 @@ def main():
     installDataDir = os.path.join(options.dataDir, dataSubDir)
 
     if (options.debug):
-        print >>sys.stderr, "Install data dir: ", installDataDir
+        print("Install data dir: ", installDataDir, file=sys.stderr)
 
     # create symlink to data
 
@@ -145,10 +147,10 @@ def removeSymlink(dir, linkName):
 
     if (os.path.exists(linkName)):
         # link name exists but is not a link
-        print >>sys.stderr, "ERROR - trying to remove symbolic link"
-        print >>sys.stderr, "  dir: ", dir
-        print >>sys.stderr, "  linkName: ", linkName
-        print >>sys.stderr, "This is NOT A LINK"
+        print("ERROR - trying to remove symbolic link", file=sys.stderr)
+        print("  dir: ", dir, file=sys.stderr)
+        print("  linkName: ", linkName, file=sys.stderr)
+        print("This is NOT A LINK", file=sys.stderr)
         sys.exit(1)
 
 ########################################################################
@@ -157,7 +159,7 @@ def removeSymlink(dir, linkName):
 def runCommand(cmd):
 
     if (options.debug):
-        print >>sys.stderr, "running cmd:",cmd
+        print("running cmd:",cmd, file=sys.stderr)
 
     try:
         retcode = subprocess.call(cmd, shell=True)
@@ -165,9 +167,9 @@ def runCommand(cmd):
             print >>sys.stderr, "Child was terminated by signal: ", -retcode
         else:
             if (options.debug):
-                print >>sys.stderr, "Child returned code: ", retcode
-    except OSError, e:
-        print >>sys.stderr, "Execution failed:", e
+                print("Child returned code: ", retcode, file=sys.stderr)
+    except OSError as e:
+        print("Execution failed:", e, file=sys.stderr)
 
 ########################################################################
 # Run - entry point
