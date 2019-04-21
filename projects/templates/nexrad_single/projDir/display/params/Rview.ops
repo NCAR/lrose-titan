@@ -213,7 +213,7 @@ Rview.use_track_data: true
 
 # If you are using the DsTitanServer, you need to specify the url
 
-Rview.titan_server_url: titanp:://$(DATA_HOST)::titan/storms
+Rview.titan_server_url: titanp:://$(DATA_HOST)::titan/storms/$(radar_name)
 
 # If no url is specified, Rview will use the old track_server
 

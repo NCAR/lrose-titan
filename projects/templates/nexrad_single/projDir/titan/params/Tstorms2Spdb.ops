@@ -71,7 +71,7 @@ mode = REALTIME;
 // Type: string
 //
 
-input_dir = "titan/storms";
+input_dir = "$(DATA_DIR)/titan/storms/$(radar_name)";
 
 ///////////// max_realtime_valid_age //////////////////
 //
@@ -96,6 +96,5 @@ max_realtime_valid_age = 360;
 //
 // Use the distrib URL if you need to distribute the data to other hosts
 
-output_url = "spdbp:://localhost::spdb/tstorms";
-// output_url = "spdbp::distrib//localhost::spdb/tstorms";
+output_url = "$(DATA_DIR)/spdb/tstorms/$(radar_name)";
 

@@ -1383,7 +1383,7 @@ FOKR_cat4_zmax_thresh = 65;
 // Type: string
 //
 
-storm_data_dir = "$(DATA_DIR)/titan/storms";
+storm_data_dir = "$(DATA_DIR)/titan/storms/$(radar_name)";
 
 ///////////// store_storm_runs ////////////////////////
 //
