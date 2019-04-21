@@ -1,0 +1,28 @@
+#! /bin/csh
+
+#
+# Shut down entire system
+#
+
+# remove crontab and kill the auto-restarter
+
+remove_crontab
+kill_auto_restart
+
+# kill the server manager so that it does not restart processes
+# which have been killed already.
+# Also kill DsFCopyServer and DsSpdbServer so new data does
+# not arrive after stopping the system.
+
+kill_DsServers
+kill_SymprodServers
+
+# kill all processes
+
+killall_processes
+kill_SysView
+
+# remove shared memory segments
+
+ipcrm_linux
+

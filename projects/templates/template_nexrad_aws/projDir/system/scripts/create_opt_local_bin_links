@@ -1,0 +1,50 @@
+#! /bin/csh
+
+#
+# Create start script links in /opt/local/bin
+#
+
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.cp2_queensland
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.dynamo
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.eolbase
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.eolbase2
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.front
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.ihop
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.improve
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.improveII
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.latte
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.mwanza
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.name
+ln -s ../git/lrose-uw-general/projDir/display/scripts/start_CIDD.olympex.web
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.pecan
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.pecan2
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.qpe
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.rico
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.sunscan.frech
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.sunscan.front
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.sunscan.marshall
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.sunscan.pecan
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_CIDD.timrex
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_HawkEye.bscan.sband
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.hcr-aristo17.100hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.hcr-aristo17.10hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.hcr-cset.qc.100hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.hcr-cset.qc.10hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.hcr-cset.velcorr.10hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.hcr-socrates.100hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.hcr-socrates.10hz
+ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-cset
+ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socrates.archive
+ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socrates.mhayman
+ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socrates.qc
+ln -s ../git/hsrl_configuration/projDir/display/scripts/start_HawkEye.hsrl-socrates.qc.debug
+ln -s ../spol-configuration/projDir/display/scripts/start_HawkEye.kband.bscan.archive
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_HawkEye.marshall
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.noreaster.100hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.noreaster.10hz
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_HawkEye.relay.rhi180
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_HawkEye.relay.sband
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.soc-test.100hz
+ln -s ../git/HCR_configuration/projDir/display/scripts/start_HawkEye.soc-test.10hz
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_RadMon.relay.sband
+ln -s ../git/lrose-projects-eolbase/projDir/display/scripts/start_Rview.pecan

@@ -1,0 +1,27 @@
+#!/bin/csh -f
+# kills all processes that may be running on an AOAWS machine 
+# 
+# This is done by running killall on all executable files in
+# ~/projDir/bin
+#
+
+foreach dir ($LROSE_INSTALL_DIR/bin*)
+  if (-d $dir) then
+    cd $dir
+    foreach file (*)
+      if (-f $file && -x $file) then
+#      pkill $file >& /dev/null
+       killall -q $file >& /dev/null
+      endif
+    end
+  endif
+end
+
+pkill vchilld
+pkill java
+pkill Xvfb
+
+# kill the control processes
+
+kill_control
+

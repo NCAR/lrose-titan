@@ -1,0 +1,5 @@
+#! /bin/csh
+
+snuff "Xvfb :1.0"
+
+

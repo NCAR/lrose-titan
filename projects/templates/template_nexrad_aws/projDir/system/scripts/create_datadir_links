@@ -1,0 +1,22 @@
+#! /bin/csh
+
+# Create links to data dirs
+
+cd ~/projDir/data
+ln -s /scr/rain1/rsfdata/projects/chill
+ln -s /scr/rain1/rsfdata/projects/cp2_queensland
+ln -s /scr/rain1/rsfdata/projects/dynamo
+ln -s /scr/rain1/rsfdata/projects/firestone
+ln -s /scr/rain1/rsfdata/projects/front
+ln -s /scr/rain1/rsfdata/projects/hawaii
+ln -s /scr/rain1/rsfdata/projects/ihop
+ln -s /scr/rain1/rsfdata/projects/improve
+ln -s /scr/rain1/rsfdata/projects/improveII
+ln -s /scr/rain1/rsfdata/projects/lakevic
+ln -s /scr/rain1/rsfdata/projects/name
+ln -s /scr/rain2/rsfdata/projects/pecan
+ln -s /scr/rain1/rsfdata/projects/rico
+ln -s /scr/rain1/rsfdata/projects/socrates
+ln -s /scr/rain1/rsfdata/projects/timrex/
+ln -s /scr/rain1/rsfdata/projects/trmm_climo/
+

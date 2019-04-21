@@ -1,0 +1,31 @@
+#! /bin/csh 
+
+#
+# Start up entire system...
+#
+
+#
+# start the procmap first so we can watch everything come up
+#
+
+start_procmap
+
+#
+# do a fast-start from the process list. We sleep between starts
+# to prevent overloading the system
+#
+ 
+procmap_list_start -sleep 0 \
+  -proc_list $PROJ_DIR/control/proc_list
+
+#
+# starting up the auto_restart should start up anything
+# that didn't come up during the fast-start
+#
+start_auto_restart
+
+#
+# install the crontab which insures that procmap and
+# the auto_restarter are always going
+#
+install_crontab

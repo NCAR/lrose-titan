@@ -1,0 +1,10 @@
+#! /bin/csh
+#
+# Make sure the process mapper is running
+#
+running "procmap -i procmap"
+if ($status == 1) then
+    echo starting procmap
+    procmap -i procmap  |& \
+	LogFilter -d $ERRORS_LOG_DIR -p procmap -i procmap >& /dev/null &
+endif
