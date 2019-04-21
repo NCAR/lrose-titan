@@ -1,0 +1,19 @@
+#! /bin/csh
+
+# start Rview
+
+setenv PROJ_DIR /opt/local/front/projDir
+setenv project pecan
+setenv DATA_HOST hail.eol.ucar.edu
+setenv DATA_DIR $PROJ_DIR/data
+setenv RAP_DATA_DIR $PROJ_DIR/data
+
+cd $PROJ_DIR/display/params
+
+Rview -params Rview.pecan -debug
+
+
+
+
+
+

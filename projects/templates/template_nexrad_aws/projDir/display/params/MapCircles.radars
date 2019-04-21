@@ -1,0 +1,126 @@
+/**********************************************************************
+ * TDRP params for MapCircles
+ **********************************************************************/
+
+//======================================================================
+//
+// MapCircles program.
+//
+// MapCircles creates a map file, with circles of a given radius around 
+//   a set of points. Map file data is written to stdout.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "radars";
+
+///////////// map_file_header /////////////////////////
+//
+// String to go at the head of the map file as a comment.
+// Type: string
+//
+
+map_file_header = "Radar circles";
+
+//======================================================================
+//
+// ARC SPECIFICATION.
+//
+// Use this for placing arcs or circles around a point.
+//
+//======================================================================
+ 
+///////////// arcs ////////////////////////////////////
+//
+// Array of points around which arcs should be placed.
+// The arcs are computed around each point at the given radius in km. If 
+//   a complete circle is required, set start_az_deg to 0 and end_az_deg 
+//   to 360.0. If a partial circle is required, set the start and end 
+//   azimuths accordingly. If the parial arc crosses north, set the 
+//   start_az_deg to a negative value. The arc is represented by a 
+//   poly-line with the specified number of segments.
+//
+// Type: struct
+//   typedef struct {
+//      string label;
+//      double center_lat;
+//      double center_lon;
+//      double start_az_deg;
+//      double end_az_deg;
+//      double radius_km;
+//      int n_segments;
+//   }
+//
+// 1D array - variable length.
+//
+
+arcs = {
+  { "KFTG",  39.7866, -104.546, 0, 360, 230, 360},
+  { "KCYS",  41.1519, -104.806, 0, 360, 230, 360},
+  { "KPUX",  38.4595, -104.181, 0, 360, 230, 360},
+  { "KGLD",  39.3667, -101.700, 0, 360, 230, 360},
+  { "KJGX",  39.0622, -108.213, 0, 360, 230, 360},
+  { "SPOL",  40.1233, -104.891, 0, 360, 150, 360},
+  { "CHILL", 40.4463, -104.637, 0, 360, 150, 360}
+};
+
+//======================================================================
+//
+// AZIMUTH LINE SPECIFICATION.
+//
+// Use this for placing azimuth radiating out from a point to a given 
+//   maximum range, as in a radar plot.
+//
+//======================================================================
+ 
+///////////// az_lines ////////////////////////////////
+//
+// Array of lines radiating out from a point, as in radar plot.
+// The lines are spaced evenly, starting at start_az_deg and then every 
+//   delta_az_deg above that. The line is drawn form the minimum radius to 
+//   the maximum radius.
+//
+// Type: struct
+//   typedef struct {
+//      string label;
+//      double center_lat;
+//      double center_lon;
+//      double start_az_deg;
+//      double delta_az_deg;
+//      int n_lines;
+//      double min_radius_km;
+//      double max_radius_km;
+//   }
+//
+// 1D array - variable length.
+//
+
+az_lines = {
+};
+
