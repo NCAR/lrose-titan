@@ -1,0 +1,13 @@
+#! /bin/csh -f
+
+set_font_path
+
+cd $PROJ_DIR/display/params
+
+running "CIDD -p CIDD.ops"
+if ($status == 1) then
+  kill_CIDD.ops
+  CIDD -p CIDD.ops -i ops | \
+    LogFilter -d $ERRORS_LOG_DIR -p CIDD -i ops &
+endif
+

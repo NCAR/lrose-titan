@@ -21,6 +21,7 @@ kill_SymprodServers
 
 killall_processes
 kill_SysView
+snuff GetAwsRadar.py
 
 # remove shared memory segments
 

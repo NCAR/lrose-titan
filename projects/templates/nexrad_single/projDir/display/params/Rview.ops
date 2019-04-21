@@ -254,8 +254,8 @@ Rview.annotate_tracks: speed
 
 # Plot track forecasts?
 
-Rview.n_forecast_steps: 1
-Rview.forecast_interval: 30.0
+Rview.n_forecast_steps: 5
+Rview.forecast_interval: 6.0
 Rview.arrow_head_km: 2
 
 # Draw in the storm identification runs
