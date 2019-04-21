@@ -1,0 +1,13 @@
+#! /bin/csh
+
+# set the font path
+# try various options
+
+foreach dir (/usr/share/X11/fonts /usr/share/fonts/X11 /usr/share/fonts /usr/X11R6/lib/X11/fonts)
+#  echo xset fp= ${dir}/misc/,${dir}/75dpi/,${dir}/100dpi/
+  xset fp= ${dir}/misc/,${dir}/75dpi/,${dir}/100dpi/ >& /dev/null
+  if ($status == 0) then
+      exit 0
+  endif
+end
+

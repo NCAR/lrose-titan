@@ -1,0 +1,20 @@
+#! /bin/csh
+
+# get the data from the $RADAR_NAME radar, using AWS
+
+cd $PROJ_DIR/ingest/scripts
+setenv RADAR_NAME KGLD
+
+running "GetAwsRadar.py --radarName $RADAR_NAME"
+
+if ($status == 1) then
+  GetAwsRadar.py --radarName $RADAR_NAME --debug \
+    --realtime \
+    --outputDir $DATA_DIR/raw/radar \
+    --tmpDir /tmp/raw/radar \
+    --lookbackSecs 3600 \
+    --sleepSecs 15 \
+      |& LogFilter -d $ERRORS_LOG_DIR -p GetAwsRadar -i $RADAR_NAME \
+      >& /dev/null &
+endif
+

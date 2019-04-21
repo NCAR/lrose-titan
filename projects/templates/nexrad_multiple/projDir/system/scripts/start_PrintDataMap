@@ -1,0 +1,5 @@
+#! /bin/csh
+
+\PrintDataMap -all -cont 5
+
+

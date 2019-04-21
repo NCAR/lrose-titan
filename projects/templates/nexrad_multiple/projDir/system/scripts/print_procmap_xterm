@@ -1,0 +1,24 @@
+#! /bin/csh
+
+#
+# Set the display to the current host or to
+# the hostname specified on the input line (optional)
+#
+if ( $# == 1) then
+   setenv DISPLAY $1\:0\.0
+else
+   setenv DISPLAY \:0.0
+endif
+
+#
+# Set the title for the print_procmap window so can
+# distinguish it from others
+#
+
+setenv win_title PM-$HOST
+
+#
+# Open an xterm and run print_procmap in it
+#
+xterm -T $win_title -g 100x50+10+10 -bg black -fg green -e start_print_procmap &
+

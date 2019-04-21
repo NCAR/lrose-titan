@@ -1,0 +1,10 @@
+#! /bin/csh
+
+cd $PROJ_DIR/system/params
+
+running "Scout -params Scout.primary"
+if ($status == 1) then
+  Scout -params Scout.primary |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Scout -i primary >& /dev/null &
+endif
+

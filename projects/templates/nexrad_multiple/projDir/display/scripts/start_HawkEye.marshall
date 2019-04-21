@@ -1,0 +1,12 @@
+#! /bin/csh
+
+setenv PROJ_DIR ~/projDir
+if (-e /opt/local/git/lrose-projects-eolbase/projDir) then
+  setenv PROJ_DIR  /opt/local/git/lrose-projects-eolbase/projDir
+endif
+
+cd $PROJ_DIR/display/params
+
+/opt/local/lrose/bin/HawkEye -params HawkEye.marshall >& /dev/null &
+
+

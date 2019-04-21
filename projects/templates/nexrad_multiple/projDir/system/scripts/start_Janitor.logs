@@ -1,0 +1,11 @@
+#! /bin/csh
+
+cd $PROJ_DIR/system/params
+
+running "Janitor -params Janitor.logs"
+
+if ($status == 1) then
+    Janitor -params Janitor.logs -debug |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Janitor -i logs >& /dev/null &
+endif
+
