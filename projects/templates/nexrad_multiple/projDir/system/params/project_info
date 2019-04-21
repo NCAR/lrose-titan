@@ -20,7 +20,7 @@ setenv RADAR_LON                  -104.546
 setenv RADAR_ALT_KM               1.709
 setenv RADAR_ALT_M                1709
 setenv RADAR_DESCRIPTION          "Front Range NEXRAD"
-setenv RADAR_DATA_INFO            "FTG radar, Denver, Colorado"
+setenv RADAR_DATA_INFO            "NEXRAD mosaic Front Range"
 
 # Host where the data is stored
 
