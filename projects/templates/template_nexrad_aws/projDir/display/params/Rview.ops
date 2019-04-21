@@ -82,10 +82,10 @@ Rview.grid_lat: $(RADAR_LAT)
 Rview.grid_lon: $(RADAR_LON)
 Rview.grid_rot: 0.0
 
-Rview.full_min_x: -200.0
-Rview.full_min_y: -200.0
-Rview.full_max_x: 200.0
-Rview.full_max_y: 200.0
+Rview.full_min_x: -230.0
+Rview.full_min_y: -230.0
+Rview.full_max_x: 230.0
+Rview.full_max_y: 230.0
 
 #######################################################################
 # Initial plot settings
@@ -570,23 +570,19 @@ Rview.ps_text_fontsize: 12
 
 Rview.field_name_from_params: true
 
-#fc dBZ mdvp:://$(DATA_HOST)::$(RADAR_CART_DIR) 0 720 dbz_color dbz_gray 0.0 100.0 5.0
+#fc dBZ $(DATA_DIR)/mdv/radarCart/$(radar_name) 0 720 dbz_color dbz_gray 0.0 100.0 5.0
 
-## #fc dBZ mdvp:://$(DATA_HOST)::$(RADAR_CART_DIR) DBZ 720 dbz_color dbz_gray 0.0 100.0 5.0
+#fc 1hr_Precip_Accum $(DATA_DIR)/mdv/precip/1hr/$(radar_name) precip 720 precip_color precip_gray 0.0 100.0 5.0
 
-## #fc Vel mdvp:://$(DATA_HOST)::$(RADAR_CART_DIR) VEL 720 vel_color vel_gray 0.0 100.0 5.0
+#fc 24hr_Precip_Accum $(DATA_DIR)/mdv/precip/24hr/$(radar_name) precip 720 precip_color precip_gray 0.0 100.0 5.0
 
-#fc 1hr_Precip_Accum mdvp:://$(DATA_HOST)::mdv/precip/1hr precip 720 precip_color precip_gray 0.0 100.0 5.0
+#fc 1hr_Precip_Rate $(DATA_DIR)/mdv/precip/1hr/$(radar_name) rate 720 precip_color precip_gray 0.0 100.0 5.0
 
-#fc 24hr_Precip_Accum  mdvp:://$(DATA_HOST)::mdv/precip/24hr precip 720 precip_color precip_gray 0.0 100.0 5.0
+#fc Vil $(DATA_DIR)/mdv/vil/$(radar_name) vil 720 vil_color vil_gray 0.0 100.0 5.0
 
-#fc 1hr_Precip_Rate mdvp:://$(DATA_HOST)::mdv/precip/1hr rate 720 precip_color precip_gray 0.0 100.0 5.0
+#fc Vil_Overhang $(DATA_DIR)/mdv/vil/$(radar_name) dVil 720 vil_diff_color vil_diff_gray 0.0 100.0 5.0
 
-#fc Vil mdvp:://$(DATA_HOST)::mdv/vil vil 720 vil_color vil_gray 0.0 100.0 5.0
-
-#fc Vil_Overhang mdvp:://$(DATA_HOST)::mdv/vil dVil 720 vil_diff_color vil_diff_gray 0.0 100.0 5.0
-
-#fc SSS mdvp:://$(DATA_HOST)::mdv/vil SSS 720 sss_color sss_gray 0.0 100.0 5.0
+#fc SSS $(DATA_DIR)/mdv/vil/$(radar_name) SSS 720 sss_color sss_gray 0.0 100.0 5.0
 
 
 
