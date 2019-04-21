@@ -28,8 +28,8 @@ def main():
 
     global options
     global tmpDir
-    global singleTime, startTime, endTime
-    global doSingle, doInterval
+    global startTime, endTime
+    global archiveMode
     global fileCount
 
     # initialize file count
@@ -69,52 +69,24 @@ def main():
             print("WARNING: cannot make output dir: ", options.outputDir, file=sys.stderr)
             print("  ", exc, file=sys.stderr)
 
-    # actually get the data
+    # realtime mode - loop forever
 
-    if (doSingle):
-        # single time
-        startDay = datetime.date(startTime.year, startTime.month, startTime.day)
-        getForInterval(options.radarName, startDay, singleTime, singleTime)
-    else:
-        if (startTime.day == endTime.day):
-            # single day
-            startDay = datetime.date(startTime.year, startTime.month, startTime.day)
-            getForInterval(options.radarName, startDay, startTime, endTime)
-        else:
-            # multiple days
-            tdiff = endTime - startTime
-            tdiffSecs = tdiff.total_seconds()
-            if (options.debug):
-                print("Proc interval in secs:  ", tdiffSecs, file=sys.stderr)
-            startDay = datetime.date(startTime.year, startTime.month, startTime.day)
-            endDay = datetime.date(endTime.year, endTime.month, endTime.day)
-            thisDay = startDay
-            while (thisDay <= endDay):
-                if (options.debug):
-                    print("===>>> processing day:  ", thisDay, file=sys.stderr)
-                if (thisDay == startDay):
-                    # get to end of start day
-                    periodStart = startTime
-                    periodEnd = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
-                                                  23, 59, 59)
-                    getForInterval(options.radarName, thisDay, periodStart, periodEnd)
-                elif (thisDay == endDay):
-                    # get from start of end day
-                    periodStart = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
-                                                    0, 0, 0)
-                    periodEnd = endTime
-                    getForInterval(options.radarName, thisDay, periodStart, periodEnd)
-                else:
-                    # get for the full day
-                    periodStart = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
-                                                    0, 0, 0)
-                    periodEnd = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
-                                                  23, 59, 59)
-                    getForInterval(options.radarName, thisDay, periodStart, periodEnd)
-                thisDay = thisDay + datetime.timedelta(1)
-                
-    print("---->> Num files downloaded: ", fileCount, file=sys.stderr)
-        
+    if (options.realtimeMode):
+        lookbackSecs = timedelta(0, options.lookbackSecs)
+        while(True):
+            fileCount = 0
+            nowTime = time.gmtime()
+            endTime = datetime.datetime(nowTime.tm_year, nowTime.tm_mon, nowTime.tm_mday,
+                                        nowTime.tm_hour, nowTime.tm_min, nowTime.tm_sec)
+            startTime = endTime - lookbackSecs
+            manageRetrieval(startTime, endTime)
+            time.sleep(options.sleepSecs)
+        return
+
+    # archive mode - one shot
+
+    manageRetrieval(startTime, endTime)
+            
     endString = "END: " + thisScriptName
     nowTime = datetime.datetime.now()
     endString += " at " + str(nowTime)
@@ -124,6 +96,65 @@ def main():
     print("==============================================", file=sys.stderr)
 
     sys.exit(0)
+
+########################################################################
+# Manage the retrieval
+
+def manageRetrieval(startTime, endTime):
+
+    if (options.debug):
+        print("Retrieving for times: ", 
+              startTime, " to ", endTime, file=sys.stderr)
+
+    if (startTime.day == endTime.day):
+
+        # single day
+        startDay = datetime.date(startTime.year, startTime.month, startTime.day)
+        getForInterval(options.radarName, startDay, startTime, endTime)
+        print("---->> Num files downloaded: ", fileCount, file=sys.stderr)
+        return
+
+    # multiple days
+
+    tdiff = endTime - startTime
+    tdiffSecs = tdiff.total_seconds()
+    if (options.debug):
+        print("Proc interval in secs:  ", tdiffSecs, file=sys.stderr)
+
+    startDay = datetime.date(startTime.year, startTime.month, startTime.day)
+    endDay = datetime.date(endTime.year, endTime.month, endTime.day)
+    thisDay = startDay
+    while (thisDay <= endDay):
+
+        if (options.debug):
+            print("===>>> processing day:  ", thisDay, file=sys.stderr)
+
+        if (thisDay == startDay):
+            # get to end of start day
+            periodStart = startTime
+            periodEnd = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                          23, 59, 59)
+            getForInterval(options.radarName, thisDay, periodStart, periodEnd)
+
+        elif (thisDay == endDay):
+            # get from start of end day
+            periodStart = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                            0, 0, 0)
+            periodEnd = endTime
+            getForInterval(options.radarName, thisDay, periodStart, periodEnd)
+
+        else:
+            # get for the full day
+            periodStart = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                            0, 0, 0)
+            periodEnd = datetime.datetime(thisDay.year, thisDay.month, thisDay.day,
+                                          23, 59, 59)
+            getForInterval(options.radarName, thisDay, periodStart, periodEnd)
+
+        # go to next day
+        thisDay = thisDay + timedelta(1)
+
+    print("---->> Num files downloaded: ", fileCount, file=sys.stderr)
 
 ########################################################################
 # Get the data for the specified time interval
@@ -224,7 +255,8 @@ def doDownload(radarName, fileTime, fileEntry, fileName):
     # create final dir
 
     dateStr =  fileTime.strftime("%Y%m%d")
-    outDayDir = os.path.join(options.outputDir, dateStr)
+    radarDir = os.path.join(options.outputDir, radarName)
+    outDayDir = os.path.join(radarDir, dateStr)
     try:
         os.makedirs(outDayDir)
     except OSError as exc:
@@ -241,7 +273,7 @@ def doDownload(radarName, fileTime, fileEntry, fileName):
     
     timeStr = fileTime.strftime("%Y%m%d%H%M%S")
     relPath = os.path.join(dateStr, fileName)
-    cmd = "LdataWriter -dir " + options.outputDir \
+    cmd = "LdataWriter -dir " + radarDir \
           + " -rpath " + relPath \
           + " -ltime " + timeStr \
           + " -writer " + thisScriptName \
@@ -256,18 +288,19 @@ def getLocalFileList(date, radarName):
     # make the target directory and go there
     
     dateStr = date.strftime("%Y%m%d")
-    localDayDir = os.path.join(options.outputDir, dateStr)
+    radarDir = os.path.join(options.outputDir, radarName)
+    dayDir = os.path.join(radarDir, dateStr)
     try:
-        os.makedirs(localDayDir)
+        os.makedirs(dayDir)
     except OSError as exc:
         if (options.verbose):
-            print("WARNING: trying to create dir: ", localDayDir, file = sys.stderr)
+            print("WARNING: trying to create dir: ", dayDir, file = sys.stderr)
             print("  exception: ", exc, file = sys.stderr)
 
     # get local file list - i.e. those which have already been downloaded
     
-    os.chdir(localDayDir)
-    localFileList = os.listdir(localDayDir)
+    os.chdir(dayDir)
+    localFileList = os.listdir(dayDir)
     localFileList.reverse()
 
     if (options.verbose):
@@ -281,8 +314,8 @@ def getLocalFileList(date, radarName):
 def parseArgs():
     
     global options
-    global singleTime, startTime, endTime
-    global doSingle, doInterval
+    global startTime, endTime
+    global archiveMode
 
     # parse the command line
 
@@ -316,41 +349,32 @@ def parseArgs():
                       dest='dryRun', default=False,
                       action="store_true",
                       help='Dry run: do not download data, list what would be downloaded')
-    parser.add_option('--latest',
-                      dest='getLatest', default=False,
+    parser.add_option('--realtime',
+                      dest='realtimeMode', default=False,
                       action="store_true",
-                      help='Get latest file')
-    parser.add_option('--continuous',
-                      dest='runContinuously', default=False,
-                      action="store_true",
-                      help='Run continuously - use with --latest')
-    parser.add_option('--single',
-                      dest='singleTime',
-                      default='1970 01 01 00 00 00',
-                      help='Single time for retrieval')
+                      help='Realtime mode - check every sleepSecs, look back lookbackSecs')
+    parser.add_option('--lookbackSecs',
+                      dest='lookbackSecs',
+                      default=1800,
+                      help='Lookback secs in realtime mode')
+    parser.add_option('--sleepSecs',
+                      dest='sleepSecs',
+                      default=10,
+                      help='Sleep secs in realtime mode')
     parser.add_option('--start',
                       dest='startTime',
                       default='1970 01 01 00 00 00',
-
-                      help='Start time for retrieval')
+                      help='Start time for retrieval - archive mode')
     parser.add_option('--end',
                       dest='endTime',
                       default='1970 01 01 00 00 00',
-                      help='End time for retrieval')
+                      help='End time for retrieval - archive mode')
 
     (options, args) = parser.parse_args()
 
     if (options.verbose):
         options.debug = True
         
-    year, month, day, hour, minute, sec = options.singleTime.split()
-    singleTime = datetime.datetime(int(year), int(month), int(day),
-                                   int(hour), int(minute), int(sec))
-    if (singleTime.year > 1970):
-        doSingle = True
-    else:
-        doSingle = False
-    
     year, month, day, hour, minute, sec = options.startTime.split()
     startTime = datetime.datetime(int(year), int(month), int(day),
                                   int(hour), int(minute), int(sec))
@@ -359,9 +383,9 @@ def parseArgs():
     endTime = datetime.datetime(int(year), int(month), int(day),
                                 int(hour), int(minute), int(sec))
     if (startTime.year > 1970 and endTime.year > 1970):
-        doInterval = True
+        archiveMode = True
     else:
-        doInterval = False
+        archiveMode = False
     
     if (options.debug):
         print("Options:", file=sys.stderr)
@@ -371,27 +395,16 @@ def parseArgs():
         print("  radarName: ", options.radarName, file=sys.stderr)
         print("  outputDir: ", options.outputDir, file=sys.stderr)
         print("  tmpDir: ", options.tmpDir, file=sys.stderr)
-        print("  getLatest? ", options.getLatest, file=sys.stderr)
-        print("  runContinuously? ", options.runContinuously, file=sys.stderr)
-        print("  doSingle? ", doSingle, file=sys.stderr)
-        print("  singleTime: ", singleTime, file=sys.stderr)
-        print("  doInterval? ", doInterval, file=sys.stderr)
+        print("  archiveMode? ", archiveMode, file=sys.stderr)
+        print("  realtimeMode? ", options.realtimeMode, file=sys.stderr)
+        print("  lookbackSecs: ", options.lookbackSecs, file=sys.stderr)
+        print("  sleepSecs: ", options.sleepSecs, file=sys.stderr)
         print("  startTime: ", startTime, file=sys.stderr)
         print("  endTime: ", endTime, file=sys.stderr)
 
-    if (doSingle == True and doInterval == True):
+    if (options.realtimeMode == True and archiveMode == True):
         print("ERROR - ", thisScriptName, file=sys.stderr)
-        print("  Cannot set both single and start/end times", file=sys.stderr)
-        sys.exit(1)
-
-    if (options.getLatest == True and doSingle == True):
-        print("ERROR - ", thisScriptName, file=sys.stderr)
-        print("  Cannot set both latest and single modes", file=sys.stderr)
-        sys.exit(1)
-
-    if (options.getLatest == True and doInterval == True):
-        print("ERROR - ", thisScriptName, file=sys.stderr)
-        print("  Cannot set both latest and interval modes", file=sys.stderr)
+        print("  For realtime mode, do not set start or end times", file=sys.stderr)
         sys.exit(1)
 
 ########################################################################
