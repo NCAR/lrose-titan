@@ -9,3 +9,23 @@ pkill DsMdvServer
 pkill DsFmqServer
 
 
+pkill AcTrack2Symprod
+pkill Acars2Symprod
+pkill BasinGenPt2Symprod
+pkill Bdry2Symprod
+pkill FltPath2Symprod
+pkill GenPoly2Symprod
+pkill GenPt2Symprod
+pkill GenPtField2Symprod
+pkill HydroStation2Symprod
+pkill Ltg2Symprod
+pkill Mad2Symprod
+pkill Metar2Symprod
+pkill Pirep2Symprod
+pkill PosnRpt2Symprod
+pkill Rhi2Symprod
+pkill SigAirMet2Symprod
+pkill SunCal2Symprod
+pkill Tstorms2Symprod
+pkill Vergrid2Symprod
+pkill WxHazards2Symprod
