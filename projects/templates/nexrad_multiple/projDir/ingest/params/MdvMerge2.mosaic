@@ -142,7 +142,7 @@ fcstLeadTimes = {
 // Type: int
 //
 
-time_trigger_interval = 300;
+time_trigger_interval = 150;
 
 ///////////// time_trigger_offset /////////////////////
 //
@@ -159,7 +159,7 @@ time_trigger_interval = 300;
 // Type: int
 //
 
-time_trigger_offset = 120;
+time_trigger_offset = 0;
 
 ///////////// time_trigger_margin /////////////////////
 //
@@ -444,7 +444,7 @@ merge_fields = {
   ,
   {
     name = "ZDR",
-    merge_method = MAX,
+    merge_method = MERGE_MAX,
     merge_encoding = FLOAT32,
     merge_scale = 0.5,
     merge_bias = -32,

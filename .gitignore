@@ -11,3 +11,7 @@ TAGS
 
 projects/templates/nexrad_single/projDir/data
 projects/templates/nexrad_single/projDir/logs
+
+projects/templates/nexrad_multiple/projDir/data
+projects/templates/nexrad_multiple/projDir/logs
+

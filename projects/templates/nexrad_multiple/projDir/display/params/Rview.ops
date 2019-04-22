@@ -76,16 +76,16 @@ Rview.approx_nticks: 7
 # lat/lon for latlon proj
 #
 
-Rview.projection: flat
+Rview.projection: latlon
 
 Rview.grid_lat: $(RADAR_LAT)
 Rview.grid_lon: $(RADAR_LON)
 Rview.grid_rot: 0.0
 
-Rview.full_min_x: -230.0
-Rview.full_min_y: -230.0
-Rview.full_max_x: 230.0
-Rview.full_max_y: 230.0
+Rview.full_min_x: -106.0
+Rview.full_min_y: 37.5
+Rview.full_max_x: -102.0
+Rview.full_max_y: 41.5
 
 #######################################################################
 # Initial plot settings

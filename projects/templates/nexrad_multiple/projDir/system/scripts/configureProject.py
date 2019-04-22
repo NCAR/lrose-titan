@@ -90,6 +90,7 @@ def main():
     
     installDataDir = os.path.join(options.dataDir, 'data')
     cmd = "mkdir -p " + installDataDir
+    runCommand(cmd)
 
     if (options.debug):
         print("Install data dir: ", installDataDir, file=sys.stderr)

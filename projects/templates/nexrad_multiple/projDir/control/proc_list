@@ -21,7 +21,7 @@ RadxConvert   kgjx       start_RadxConvert.kgjx    snuff_inst
 Radx2Grid      kftg      start_Radx2Grid.kftg      snuff_inst  localhost
 Radx2Grid      kcys      start_Radx2Grid.kcys      snuff_inst  localhost
 Radx2Grid      kpux      start_Radx2Grid.kpux      snuff_inst  localhost
-Radx2Grid      kgld      start_Radx2Grid.kgkd      snuff_inst  localhost
+Radx2Grid      kgld      start_Radx2Grid.kgld      snuff_inst  localhost
 Radx2Grid      kgjx      start_Radx2Grid.kgjx      snuff_inst  localhost
 EsdAcIngest     sim      start_EsdAcIngest.sim     snuff_inst  localhost
 #EsdAcIngest    ops      start_EsdAcIngest.ops     snuff_inst  localhost

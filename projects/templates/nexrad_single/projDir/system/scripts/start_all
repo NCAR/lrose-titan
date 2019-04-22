@@ -29,3 +29,5 @@ start_auto_restart
 # the auto_restarter are always going
 #
 install_crontab
+# start the nexrad ingest processes
+run_GetAwsRadar
