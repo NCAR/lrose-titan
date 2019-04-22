@@ -23,6 +23,8 @@ pkill CIDD
 pkill MdvMerge2
 pkill GetAwsRadar.py
 
+pkill procmap
+
 # kills all processes that may be running on an AOAWS machine 
 # 
 # This is done by running killall on all executable files in
