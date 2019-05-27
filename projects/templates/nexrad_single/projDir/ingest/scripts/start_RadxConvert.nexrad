@@ -2,9 +2,9 @@
 
 cd $PROJ_DIR/ingest/params
 
-running "RadxConvert -instance $radar_name"
+running "RadxConvert -instance nexrad"
 
 if ($status == 1) then
-    RadxConvert -instance $radar_name -params RadxConvert.nexrad -debug |& \
-        LogFilter -d $ERRORS_LOG_DIR -p RadxConvert -i $radar_name >& /dev/null &
+    RadxConvert -instance nexrad -params RadxConvert.nexrad -debug |& \
+        LogFilter -d $ERRORS_LOG_DIR -p RadxConvert -i nexrad >& /dev/null &
 endif

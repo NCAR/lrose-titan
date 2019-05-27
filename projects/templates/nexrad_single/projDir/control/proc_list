@@ -10,11 +10,11 @@ DataMapper    primary    start_DataMapper          kill_DataMapper   localhost
 ######################################################################
 # NEXRAD file ingest - from AWS
 #
-RadxConvert   kftg       start_RadxConvert.nexrad  snuff_inst
+RadxConvert   nexrad      start_RadxConvert.nexrad  snuff_inst
 ###############################################################################
 # Cartesian gridding, convert to MDV
 #
-Radx2Grid      kftg      start_Radx2Grid.nexrad    snuff_inst  localhost
+Radx2Grid      nexrad      start_Radx2Grid.nexrad    snuff_inst  localhost
 EsdAcIngest     sim      start_EsdAcIngest.sim     snuff_inst  localhost
 #EsdAcIngest    ops      start_EsdAcIngest.ops     snuff_inst  localhost
 ##############################################################################

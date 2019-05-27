@@ -2265,7 +2265,7 @@ ncf_comment = "";
 // Type: string
 //
 
-instance = "$(radar_name)";
+instance = "nexrad";
 
 ///////////// procmap_register_interval ///////////////
 //

@@ -2,10 +2,10 @@
 
 cd $PROJ_DIR/ingest/params
 
-running "Radx2Grid -instance $radar_name"
+running "Radx2Grid -instance nexrad"
 
 if ($status == 1) then
-    Radx2Grid -instance $radar_name -params Radx2Grid.nexrad -debug |& \
-        LogFilter -d $ERRORS_LOG_DIR -p Radx2Grid -i $radar_name >& /dev/null &
+    Radx2Grid -instance nexrad -params Radx2Grid.nexrad -debug |& \
+        LogFilter -d $ERRORS_LOG_DIR -p Radx2Grid -i nexrad >& /dev/null &
 endif
 

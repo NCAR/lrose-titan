@@ -384,7 +384,7 @@ remap_z_grid = {
 // Type: double
 //
 
-low_dbz_threshold = 30;
+low_dbz_threshold = 35;
 
 ///////////// high_dbz_threshold //////////////////////
 //
