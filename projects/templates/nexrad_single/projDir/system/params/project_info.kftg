@@ -12,15 +12,15 @@ setenv project                    "titan-nexrad"
 
 # RADAR info
 
-setenv SITE_NAME                  "KFWS"
-setenv RADAR_NAME                 "KFWS"
-setenv radar_name                 "kfws"
-setenv RADAR_LAT                  32.573
-setenv RADAR_LON                  -97.3031
-setenv RADAR_ALT_KM               0.236
-setenv RADAR_ALT_M                236
-setenv RADAR_DESCRIPTION          "DALLAS"
-setenv RADAR_DATA_INFO            "DALLAS"
+setenv SITE_NAME                  "KFTG"
+setenv RADAR_NAME                 "KFTG"
+setenv radar_name                 "kftg"
+setenv RADAR_LAT                  39.7866
+setenv RADAR_LON                  -104.546
+setenv RADAR_ALT_KM               1.709
+setenv RADAR_ALT_M                1709
+setenv RADAR_DESCRIPTION          "Front Range NEXRAD"
+setenv RADAR_DATA_INFO            "FTG radar, Denver, Colorado"
 
 # Host where the data is stored
 

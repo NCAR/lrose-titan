@@ -11,7 +11,7 @@ if ($status == 1) then
     --realtime \
     --outputDir $DATA_DIR/raw/radar \
     --tmpDir /tmp/raw/radar \
-    --lookbackSecs 3600 \
+    --lookbackSecs 10800 \
     --sleepSecs 15 \
       |& LogFilter -d $ERRORS_LOG_DIR -p GetAwsRadar -i $RADAR_NAME \
       >& /dev/null &

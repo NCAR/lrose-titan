@@ -1,4 +1,4 @@
-#! /bin/csh -f
+#! /bin/csh
 
 set_font_path
 
