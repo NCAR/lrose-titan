@@ -48,7 +48,7 @@ As an example, for the NEXRAD single project:
 
 ```
   ~/projDir -> ~/git/lrose-titan/projects/nexrad_single/projDir
-  ~/.cshrc -> ~/git/lrose-titan/projects/system/dotfiles/cshrc
+  ~/.cshrc -> ~/git/lrose-titan/projects/nexrad_single/projDir/system/dotfiles/cshrc
   ~/projDir/data -> /data/titan/data
   ~/projDir/logs -> /data/titan/data/logs
 
