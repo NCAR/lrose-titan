@@ -33,7 +33,7 @@ The TITAN applications should be compiled and installed following the
 The templates for the scripts and parameter files reside in this lrose-titan
 respository - [lrose-titan/projects](./projects).
 
-
+To install a template, see [these docs](./docs/install/install_from_template.md).
 
 ## Reference documentation
 
