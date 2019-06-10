@@ -125,9 +125,9 @@ def main():
     # create data directory
     
     installDataDir = os.path.join(options.dataDir, 'data')
-    cmd = "mkdir -p " + installDataDir
-
     print("Install data dir: ", installDataDir, file=sys.stderr)
+    cmd = "mkdir -p " + installDataDir
+    runCommand(cmd)
 
     # create symlink to data
 
