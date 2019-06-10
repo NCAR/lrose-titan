@@ -1,4 +1,4 @@
-#! /bin/csh -f
+#! /bin/csh
 
 # setenv DISPLAY :0.0
 
