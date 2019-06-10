@@ -5,6 +5,27 @@
 # ~/projDir/bin
 #
 
+procmap_list_kill -proc_list ~/projDir/control/proc_list -fast -debug
+
+killall DsServerMgr
+killall Janitor
+killall Scout
+killall DataMapper
+killall RadxConvert
+killall Radx2Grid
+killall EsdAcIngest
+killall Titan
+killall PrecipAccum
+killall Mdv2Vil
+killall Tstorms2Spdb
+killall Rview
+killall TimeHist
+killall CIDD
+killall MdvMerge2
+snuff GetAwsRadar.py
+
+killall procmap
+
 foreach dir ($LROSE_INSTALL_DIR/bin*)
   if (-d $dir) then
     cd $dir

@@ -19,8 +19,8 @@ kill_SymprodServers
 
 # kill all processes
 
+procmap_list_kill -proc_list ~/projDir/control/proc_list -fast -debug
 killall_processes
-kill_SysView
 snuff GetAwsRadar.py
 
 # remove shared memory segments

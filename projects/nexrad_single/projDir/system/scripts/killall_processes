@@ -2,28 +2,28 @@
 # kills all processes that may be running
 # 
 
-pkill java
-pkill Xvfb
+killall java
+killall Xvfb
 
-pkill DsServerMgr
-pkill Janitor
-pkill Scout
-pkill DataMapper
-pkill RadxConvert
-pkill Radx2Grid
-pkill EsdAcIngest
-pkill Titan
-pkill PrecipAccum
-pkill Mdv2Vil
-pkill Tstorms2Spdb
-pkill Rview
-pkill TimeHist
-pkill CIDD
+killall DsServerMgr
+killall Janitor
+killall Scout
+killall DataMapper
+killall RadxConvert
+killall Radx2Grid
+killall EsdAcIngest
+killall Titan
+killall PrecipAccum
+killall Mdv2Vil
+killall Tstorms2Spdb
+killall Rview
+killall TimeHist
+killall CIDD
 
-pkill MdvMerge2
-pkill GetAwsRadar.py
+killall MdvMerge2
+killall GetAwsRadar.py
 
-pkill procmap
+killall procmap
 
 # kills all processes that may be running on an AOAWS machine 
 # 
