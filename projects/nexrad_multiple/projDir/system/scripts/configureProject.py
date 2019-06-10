@@ -4,6 +4,9 @@
 #
 # Configure the project, install relevant files
 #
+# Run from within: git/lroae-titan
+# Requires ~/git/lrose-core to be checkout out.
+#
 # ========================================================================== #
 
 from __future__ import print_function
@@ -22,7 +25,8 @@ def main():
     homeDir = os.environ['HOME']
     projDir = os.path.join(homeDir, 'projDir')
     controlDir = os.path.join(projDir, 'control')
-    gitDir = os.path.join(homeDir, "git/lrose-titan")
+    titanGitDir = os.path.join(homeDir, "git/lrose-titan")
+    coreGitDir = os.path.join(homeDir, "git/lrose-core")
 
     # parse the command line
     
@@ -39,33 +43,51 @@ def main():
     
     # compute paths
 
-    gitProjDir = os.path.join(gitDir, 'projects/nexrad_multiple/projDir')
+    gitProjDir = os.path.join(titanGitDir, 'projects/nexrad_multiple/projDir')
     gitSystemDir = os.path.join(gitProjDir, 'system')
     
     # debug print
 
-    if (options.debug):
-        print("Running script: ", os.path.basename(__file__), file=sys.stderr)
-        print("", file=sys.stderr)
-        print("  Options:", file=sys.stderr)
-        print("    Debug: ", options.debug, file=sys.stderr)
-        print("    homeDir: ", homeDir, file=sys.stderr)
-        print("    projDir: ", projDir, file=sys.stderr)
-        print("    controlDir: ", controlDir, file=sys.stderr)
-        print("    gitDir: ", gitDir, file=sys.stderr)
-        print("    gitProjDir: ", gitProjDir, file=sys.stderr)
-        print("    gitSystemDir: ", gitSystemDir, file=sys.stderr)
-        print("    dataDir: ", options.dataDir, file=sys.stderr)
-
+    print("Running script: ", os.path.basename(__file__), file=sys.stderr)
+    print("", file=sys.stderr)
+    print("  Options:", file=sys.stderr)
+    print("    Debug: ", options.debug, file=sys.stderr)
+    print("    homeDir: ", homeDir, file=sys.stderr)
+    print("    projDir: ", projDir, file=sys.stderr)
+    print("    controlDir: ", controlDir, file=sys.stderr)
+    print("    titanGitDir: ", titanGitDir, file=sys.stderr)
+    print("    coreGitDir: ", coreGitDir, file=sys.stderr)
+    print("    gitProjDir: ", gitProjDir, file=sys.stderr)
+    print("    gitSystemDir: ", gitSystemDir, file=sys.stderr)
+    print("    dataDir: ", options.dataDir, file=sys.stderr)
+    
     # banner
 
     print(" ")
     print("*********************************************************************")
-    print("  configure project")
+    print("  configure project - NEXRAD multiple")
     print("  runtime: " + str(datetime.datetime.now()))
     print("  dataDir: " + options.dataDir)
     print("*********************************************************************")
     print(" ")
+
+    # check that the git dirs exist
+
+    if (os.path.exists(titanGitDir) == False):
+        print("ERROR - titanGitDir: ", titanGitDir, " does not exist.", file=sys.stderr)
+        print("  You must check this out into the home directory, as follows:", file=sys.stderr)
+        print("    mkdir ~/git", file=sys.stderr)
+        print("    cd ~/git", file=sys.stderr)
+        print("    git clone https://github.com/lrose-titan", file=sys.stderr)
+        sys.exit(1)
+
+    if (os.path.exists(coreGitDir) == False):
+        print("ERROR - coreGitDir: ", coreGitDir, " does not exist.", file=sys.stderr)
+        print("  You must check this out into the home directory, as follows:", file=sys.stderr)
+        print("    mkdir ~/git", file=sys.stderr)
+        print("    cd ~/git", file=sys.stderr)
+        print("    git clone https://github.com/lrose-core", file=sys.stderr)
+        sys.exit(1)
 
     # make links to the dotfiles in git projDir
     
@@ -84,16 +106,28 @@ def main():
     os.chdir(homeDir)
     cmd = "ln -s " + gitProjDir
     runCommand(cmd)
+
+    # install runtime scripts from lrose into projDir/lrose
+
+    os.chdir(coreGitDir + "/codebase/apps/scripts/src")
+    cmd = "install_scripts.lrose " + homeDir + "/projDir/lrose/scripts"
+    runCommand(cmd)
+    
+    os.chdir(coreGitDir + "/codebase/apps/procmap/src/scripts")
+    cmd = "install_scripts.lrose " + homeDir + "/projDir/lrose/scripts"
+    runCommand(cmd)
+    
+    os.chdir(coreGitDir + "/codebase/libs/perl5/src")
+    cmd = "install_perl5.lrose " + homeDir + "/projDir/lrose/lib/"
+    runCommand(cmd)
     
     ############################################
     # create data directory
     
     installDataDir = os.path.join(options.dataDir, 'data')
     cmd = "mkdir -p " + installDataDir
-    runCommand(cmd)
 
-    if (options.debug):
-        print("Install data dir: ", installDataDir, file=sys.stderr)
+    print("Install data dir: ", installDataDir, file=sys.stderr)
 
     # create symlink to data
 
@@ -134,6 +168,7 @@ def removeSymlink(dir, linkName):
         print("  dir: ", dir, file=sys.stderr)
         print("  linkName: ", linkName, file=sys.stderr)
         print("This is NOT A LINK", file=sys.stderr)
+        print("Please move this file out of the way: ~/" + linkName, file=sys.stderr)
         sys.exit(1)
 
 ########################################################################
