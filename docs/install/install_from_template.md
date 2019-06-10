@@ -55,7 +55,7 @@ As an example, for the NEXRAD single project:
 ```
 
 Also, configureProject.py will copy the required scripts from lrose-core into
-```~/projDir/lrose```.
+```~/projDir/lrose```. These are required for run-time support.
 
 ```
   rsync -av ~/git/lrose-core/codebase/apps/scripts/src/* ~/projDir/lrose/scripts
