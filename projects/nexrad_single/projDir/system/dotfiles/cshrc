@@ -115,9 +115,12 @@ if ( -d $PROJ_DIR ) then
   end
 endif
 
-set path = ($path $LROSE_INSTALL_DIR/bin)
+set path = ($path $LROSE_INSTALL_DIR/bin)  
 set path = ($path $PROJ_DIR/dial/Matlab)
 set path = ($path $HOME/cidd/bin)
+
+# set path = ($path $HOME/git/lrose-core/codebase/apps/scripts/src)  
+# set path = ($path $HOME/git/lrose-core/codebase/apps/procmap/src/scripts)  
 
 set path = ($path ~/bin $QTDIR/bin \
         ~/anaconda2/bin \

@@ -39,7 +39,7 @@ def main():
     
     # compute paths
 
-    gitProjDir = os.path.join(gitDir, 'projects/templates/nexrad_multiple/projDir')
+    gitProjDir = os.path.join(gitDir, 'projects/nexrad_multiple/projDir')
     gitSystemDir = os.path.join(gitProjDir, 'system')
     
     # debug print
