@@ -21,7 +21,7 @@ The TITAN project is now hosted on [GitHub](https://github.com).
 
 The TITAN applications are part of the LROSE - the Lidar Radar Open Software Environment. The LROSE core can be found at [lrose-core](https://github.com/NCAR/lrose-core).
 
-The templates for the scripts and parameter files reside in the lrose-titan respository - [lrose-titan](./templates).
+The templates for the scripts and parameter files reside in the lrose-titan respository - [lrose-titan](./projects).
 
 ## Reference documentation
 
