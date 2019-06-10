@@ -26,7 +26,7 @@ The TITAN applications are part of the LROSE - the Lidar Radar Open Software Env
 The LROSE core code can be found at [lrose-core](https://github.com/NCAR/lrose-core).
 
 The TITAN applications should be compiled and installed following the
-[documentation](https://github.com/NCAR/lrose-core/README.md) for the core.
+[documentation](https://github.com/NCAR/lrose-core/blob/master/README.md) for the core.
 
 ## Installing the TITAN scripts and parameter files
 
