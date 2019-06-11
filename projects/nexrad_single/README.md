@@ -7,7 +7,7 @@ data in the Amazon Web Services cloud.
 
 It is important that you use the c-shell (csh or tcsh) as your login shell.
 
-## Check out lrose-titan
+## Check out lrose-titan and lrose-core
 
 You should check lrose-titan from git into a ```git``` sub-directory in your
 home directory.

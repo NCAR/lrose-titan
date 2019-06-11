@@ -33,7 +33,11 @@ The TITAN applications should be compiled and installed following the
 The templates for the scripts and parameter files reside in this lrose-titan
 respository - [lrose-titan/projects](./projects).
 
-To install a template, see [these docs](./docs/install/install_from_template.md).
+To install a template, see [these docs](./docs/install_from_template.md).
+
+## The TITAN runtime environment
+
+See [runtime_environment.md](./docs/runtime_environment.md) for help on setting up the required runtime environment.
 
 ## Reference documentation
 

@@ -3,7 +3,11 @@
 Templates for the scripts and parameter files reside here: in this [lrose-titan
 respository](../../projects).
 
-## Check out lrose-titan
+## Setting up your environment
+
+It is important that you use the c-shell (csh or tcsh) as your login shell.
+
+## Check out lrose-titan and lrose-core
 
 You should check lrose-titan from git into a ```git``` sub-directory in your
 home directory. You should also check out lrose-core.
@@ -14,6 +18,15 @@ home directory. You should also check out lrose-core.
   git clone https://github.com/ncar/lrose-titan 
   git clone https://github.com/ncar/lrose-core 
 ```
+
+## Installing the TITAN applications
+
+The TITAN applications are part of the LROSE - the Lidar Radar Open Software Environment.
+
+The LROSE core code can be found at [lrose-core](https://github.com/NCAR/lrose-core).
+
+The TITAN applications should be compiled and installed following the
+[documentation](https://github.com/NCAR/lrose-core/blob/master/README.md) for the core.
 
 ## Available templates
 
