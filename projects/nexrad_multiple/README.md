@@ -1,7 +1,8 @@
-# TITAN project for single NEXRAD radar - installation
+# TITAN project for multiple NEXRAD radars - installation
 
-The project allows you to download realtime NEXRAD data for a single radar, from
-data in the Amazon Web Services cloud.
+The project allows you to download realtime NEXRAD data for multiple radars, from
+data in the Amazon Web Services cloud. We create a 3-D mosaic from the radars,
+and then run TITAN on that mosaic.
 
 ## Setting up your environment
 
@@ -52,7 +53,7 @@ The script creates a number of links, and populates the data tree as
 appropriate:
 
 ```
-  ~/projDir -> ~/git/lrose-titan/projects/nexrad_single/projDir
+  ~/projDir -> ~/git/lrose-titan/projects/nexrad_multiple/projDir
   ~/.cshrc -> ~/git/lrose-titan/projects/nexrad_single/projDir/system/dotfiles/cshrc
   ~/projDir/data -> /data/titan/data
   ~/projDir/logs -> /data/titan/data/logs
@@ -80,6 +81,22 @@ This file sets environment variables. It is sourced by the .cshrc file.
 You should edit this file as appropriate.
 
 It is important that you use the c-shell (csh or tcsh) as your login shell.
+
+## Setting up the scripts and paramater files
+
+The project runs ```RadxConvert``` to convert the data from NEXRAD to CfRadial format.
+
+It then runs ```Radx2Grid``` to transform from radial coordinates to Cartesian coordinates.
+
+And then ```MdvMerge2``` to merge the Cartesian volumes into a mosaic.
+
+To customize these processes for your project, you will need to modify the files in:
+
+```
+  projDir/control/proc_list
+  projDir/ingest/params
+  projDir/ingest/scripts
+```
 
 ## Running
 

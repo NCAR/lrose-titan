@@ -1,7 +1,6 @@
-# TITAN project for single NEXRAD radar - installation
+# TITAN project for single radar test - installation
 
-The project allows you to download realtime NEXRAD data for a single radar, from
-data in the Amazon Web Services cloud.
+The project allows you to simulate realtime data from a single radar.
 
 ## Setting up your environment
 

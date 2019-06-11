@@ -87,8 +87,8 @@ setenv DS_PING_TIMEOUT_MSECS 20000
 
 # --- site info --- 
 
-if (-f $PROJ_DIR/system/params/site_params) then
-  source $PROJ_DIR/system/params/site_params
+if (-f $PROJ_DIR/system/params/project_info) then
+  source $PROJ_DIR/system/params/project_info
 endif
 
 # --- Path ---
