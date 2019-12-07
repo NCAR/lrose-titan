@@ -1,0 +1,20 @@
+#! /bin/tcsh -f 
+
+# kill all servers
+
+pkill DataMapper
+pkill DsFCopyServer
+pkill DsFileDist
+pkill DsFmqServer
+
+pkill DsServerMgr
+pkill DsMdvServer
+pkill NcMdvServer
+pkill DsSpdbServer
+
+pkill Metar2Symprod
+pkill Rhi2Symprod
+pkill AcTrack2Symprod
+pkill Ltg2Symprod
+pkill SunCal2Symprod
+pkill Tstorms2Symprod

@@ -1,0 +1,43 @@
+######################################################################
+# TITAN NEXRAD TEMPLATE
+##############################################################################
+# SYSTEM processes
+#
+DsServerMgr   primary    start_DsServerMgr         snuff_inst        localhost
+#Janitor      logs       start_Janitor.logs        kill_Janitor      localhost
+Scout         primary    start_Scout               kill_Scout        localhost
+DataMapper    primary    start_DataMapper          kill_DataMapper   localhost
+######################################################################
+# NEXRAD file ingest - from AWS
+#
+RadxConvert   kmaf       start_RadxConvert.kmaf    snuff_inst
+RadxConvert   ksjt       start_RadxConvert.ksjt    snuff_inst
+RadxConvert   kdyx       start_RadxConvert.kdyx    snuff_inst
+###############################################################################
+# Cartesian gridding, convert to MDV
+#
+Radx2Grid      kmaf      start_Radx2Grid.kmaf      snuff_inst  localhost
+Radx2Grid      ksjt      start_Radx2Grid.ksjt      snuff_inst  localhost
+Radx2Grid      kdyx      start_Radx2Grid.kdyx      snuff_inst  localhost
+EsdAcIngest     sim      start_EsdAcIngest.sim     snuff_inst  localhost
+#EsdAcIngest    ops      start_EsdAcIngest.ops     snuff_inst  localhost
+###############################################################################
+# Create mosaic
+#
+MdvMerge2     mosaic     start_MdvMerge2.mosaic    snuff_inst  localhost
+##############################################################################
+# TITAN ROCESSES
+#
+Titan        ops       start_Titan.ops              snuff_inst  localhost
+PrecipAccum  single    start_PrecipAccum.single     snuff_inst  localhost
+PrecipAccum  1hr       start_PrecipAccum.1hr        snuff_inst  localhost
+PrecipAccum  24hr      start_PrecipAccum.24hr       snuff_inst  localhost
+Mdv2Vil      ops       start_Mdv2Vil.ops            snuff_inst  localhost
+Tstorms2Spdb ops       start_Tstorms2Spdb.ops       snuff_inst  localhost
+##############################################################################
+# DISPLAY processes
+#
+Rview        ops       start_Rview.ops          snuff_inst       localhost
+TimeHist     ops       start_Rview.ops          snuff_inst       localhost
+#CIDD         ops       start_CIDD.ops           snuff_inst       localhost
+

@@ -1,0 +1,12 @@
+#! /bin/csh
+
+set Today=`date -u '+%Y%m%d'`
+
+build_logdir_links -i $ERRORS_LOG_DIR >& $ERRORS_LOG_DIR/$Today/build_logdir_links.errors
+build_logdir_links -i $DATA_DISTRIB_LOG_DIR >& $ERRORS_LOG_DIR/$Today/build_logdir_links.distrib
+build_logdir_links -i $RESTART_LOG_DIR >& $ERRORS_LOG_DIR/$Today/build_logdir_links.restart
+build_logdir_links -i $DATA_DIR/monitoring/stats >& $ERRORS_LOG_DIR/$Today/build_logdir_links.stats
+
+
+
+

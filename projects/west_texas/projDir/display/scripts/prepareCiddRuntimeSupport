@@ -1,0 +1,23 @@
+#! /bin/csh
+
+# prepare files for CIDD runtime support
+
+mkdir -p /tmp/cidd_runtime_support
+
+cd ~/cvs/projects/hawk/front/projDir/display/params
+/bin/cp XResources4CIDD /tmp/cidd_runtime_support
+
+cd ~/cvs/projects/hawk/front/projDir/system/scripts
+/bin/cp set_font_path /tmp/cidd_runtime_support
+
+cd ~/cvs/projects/hawk/front/projDir/display/scripts
+/bin/cp start_CIDD.front /tmp/cidd_runtime_support
+/bin/cp start_CIDD.latte /tmp/cidd_runtime_support
+/bin/cp start_CIDD.dynamo /tmp/cidd_runtime_support
+/bin/cp start_CIDD.timrex /tmp/cidd_runtime_support
+/bin/cp start_CIDD.name /tmp/cidd_runtime_support
+/bin/cp start_CIDD.rico /tmp/cidd_runtime_support
+/bin/cp start_CIDD.ihop /tmp/cidd_runtime_support
+
+cd /tmp/cidd_runtime_support
+zip /tmp/CiddRuntimeSupport.zip *

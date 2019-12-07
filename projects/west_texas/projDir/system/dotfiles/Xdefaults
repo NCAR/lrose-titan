@@ -1,0 +1,32 @@
+xterm*background:	black
+xterm*foreground:	green
+xterm*font:	        9x15
+xterm*scrollBar:	true
+xterm*saveLines:	2000
+xterm*VT100*geometry:	80x55
+xterm*name:	xterm
+
+Emacs*Background:               black
+Emacs*Foreground:               green
+Emacs*SelectColor:		blue
+Emacs*popup*Foreground:         Wheat
+Emacs*popup*Background:         Black
+Emacs*dialog*XmTextField*Background:    blue
+Emacs*dialog*XmList*Background: green
+Emacs*dialog*XmText*Background: yellow
+Emacs*dialog*Foreground:        Black
+Emacs*dialog*Background:        White
+Emacs*menubar*Foreground:       Gold
+Emacs*menubar*Background:       Gray50
+Emacs*pointerShape:		arrow
+Emacs*pointerColor:             cyan
+Emacs*pointerBackground:        Black
+Emacs*cursorColor:              Red
+Emacs*highlightColor:    Gray20
+Emacs*highlight.Background:    Gray20
+Emacs*highlight.attributeForeground:    yellow
+Emacs*makefile-tab-face.attributeBackground:    OldLace
+Emacs*default.attributeFont: -*-fixed-medium-r-*-*-*-*-*-*-iso8859-1
+Emacs*font: 9x15
+
+

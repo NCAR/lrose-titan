@@ -1,0 +1,12 @@
+#! /bin/csh
+
+cd $RAP_DATA_DIR
+
+running "DsServerMgr"
+if ($status == 1) then
+    echo starting DsServerMgr
+#    DsServerMgr -instance primary -qmax -1 |& \
+    DsServerMgr -debug -debug -instance primary -qmax -1 |& \
+	LogFilter -d $ERRORS_LOG_DIR -p DsServerMgr -i primary >& /dev/null &
+endif
+

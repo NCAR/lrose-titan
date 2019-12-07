@@ -1,0 +1,8 @@
+#! /bin/csh
+
+running "DsFmqServer -instance manager"
+if ($status == 1) then
+    DsFmqServer -instance manager -qmax -1 |& \
+	LogFilter -d $ERRORS_LOG_DIR -p DsFmqServer -i manager >& /dev/null &
+endif
+
