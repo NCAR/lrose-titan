@@ -43,7 +43,7 @@ def main():
     
     # compute paths
 
-    gitProjDir = os.path.join(titanGitDir, 'projects/nexrad_multiple/projDir')
+    gitProjDir = os.path.join(titanGitDir, 'projects/west_texas/projDir')
     gitSystemDir = os.path.join(gitProjDir, 'system')
     
     # debug print
@@ -65,7 +65,7 @@ def main():
 
     print(" ")
     print("*********************************************************************")
-    print("  configure project - NEXRAD multiple")
+    print("  configure project - West Texas Weather Mod Assoc")
     print("  runtime: " + str(datetime.datetime.now()))
     print("  dataDir: " + options.dataDir)
     print("*********************************************************************")
