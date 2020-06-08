@@ -26,7 +26,7 @@ Rview.instance: archive
 # In archive mode, the time_requested is used.
 #
 
-Rview.time_requested: 1997 06 23 20 00 00
+Rview.time_requested: 2016 09 01 13 00 00
 Rview.mode: archive
 
 ######################################################################
@@ -54,7 +54,7 @@ Rview.double_click_delay: 0.3
 
 # The display is updated every 'update_interval' secs in case new data
 
-Rview.update_interval: 30
+Rview.update_interval: 20
 
 # base_timerinterval' is the basic interval for the interrupt timer
 
@@ -82,10 +82,10 @@ Rview.grid_lat: $(RADAR_LAT)
 Rview.grid_lon: $(RADAR_LON)
 Rview.grid_rot: 0.0
 
-Rview.full_min_x: -200.0
-Rview.full_min_y: -200.0
-Rview.full_max_x: 200.0
-Rview.full_max_y: 200.0
+Rview.full_min_x: -230.0
+Rview.full_min_y: -230.0
+Rview.full_max_x: 230.0
+Rview.full_max_y: 230.0
 
 #######################################################################
 # Initial plot settings
@@ -213,7 +213,7 @@ Rview.use_track_data: true
 
 # If you are using the DsTitanServer, you need to specify the url
 
-Rview.titan_server_url: titanp:://$(DATA_HOST)::titan/storms
+Rview.titan_server_url: titanp:://$(DATA_HOST)::titan/storms/$(radar_name)
 
 # If no url is specified, Rview will use the old track_server
 
@@ -254,8 +254,8 @@ Rview.annotate_tracks: speed
 
 # Plot track forecasts?
 
-Rview.n_forecast_steps: 1
-Rview.forecast_interval: 30.0
+Rview.n_forecast_steps: 5
+Rview.forecast_interval: 6.0
 Rview.arrow_head_km: 2
 
 # Draw in the storm identification runs
@@ -294,9 +294,9 @@ Rview.ac_posn_realtime_file: $(DATA_DIR)/ascii/ac_posn/realtime
 Rview.ac_posn_fwd_time_margin: 300
 Rview.ac_posn_back_time_margin: 300
 Rview.ac_posn_n_ident: 3
-Rview.ac_posn_idents: ZJRA ZJRB ZCAN
-Rview.ac_posn_colors: white orange cyan
-Rview.ac_posn_linestyles: 1 100.0 0.0, 1 4.0 2.0, 1 1.0 4.0, 1 1.0 3.0, 1 4.0 1.0
+Rview.ac_posn_idents: ZLTK ZJRA ZJRB
+Rview.ac_posn_colors: green orange cyan
+Rview.ac_posn_linestyles: 1 100.0 0.0, 1 4.0 2.0, 1 1.0 4.0
 Rview.ac_posn_max_speed_kts: 250
 Rview.ac_posn_max_bad_points: 2
 
@@ -315,6 +315,7 @@ Rview.ejectable_icon_size_km: 0.3
 Rview.end_burn_color: gold
 Rview.burn_in_place_color: blue
 Rview.end_burn_and_bip_color: magenta
+Rview.dry_ice_color: white
 
 # line width varies with the number of flares burning.
 # If width_per_flare is 1, line width will be number of burning flares.
@@ -322,6 +323,7 @@ Rview.end_burn_and_bip_color: magenta
 # If width_per_flare is 0, line widths will always be 1.
 
 Rview.line_width_per_flare: 2
+Rview.dry_ice_line_width: 3
 
 # linestyes not yet implemeted
 
@@ -568,23 +570,19 @@ Rview.ps_text_fontsize: 12
 
 Rview.field_name_from_params: true
 
-#fc dBZ mdvp:://$(DATA_HOST)::$(RADAR_CART_DIR) 0 720 dbz_color dbz_gray 0.0 100.0 5.0
+#fc dBZ $(DATA_DIR)/mdv/radarCart/$(radar_name) 0 720 dbz_color dbz_gray 0.0 100.0 5.0
 
-## #fc dBZ mdvp:://$(DATA_HOST)::$(RADAR_CART_DIR) DBZ 720 dbz_color dbz_gray 0.0 100.0 5.0
+#fc 1hr_Precip_Accum $(DATA_DIR)/mdv/precip/1hr/$(radar_name) precip 720 precip_color precip_gray 0.0 100.0 5.0
 
-## #fc Vel mdvp:://$(DATA_HOST)::$(RADAR_CART_DIR) VEL 720 vel_color vel_gray 0.0 100.0 5.0
+#fc 24hr_Precip_Accum $(DATA_DIR)/mdv/precip/24hr/$(radar_name) precip 720 precip_color precip_gray 0.0 100.0 5.0
 
-#fc 1hr_Precip_Accum mdvp:://$(DATA_HOST)::mdv/precip/1hr precip 720 precip_color precip_gray 0.0 100.0 5.0
+#fc 1hr_Precip_Rate $(DATA_DIR)/mdv/precip/1hr/$(radar_name) rate 720 precip_color precip_gray 0.0 100.0 5.0
 
-#fc 24hr_Precip_Accum  mdvp:://$(DATA_HOST)::mdv/precip/24hr precip 720 precip_color precip_gray 0.0 100.0 5.0
+#fc Vil $(DATA_DIR)/mdv/vil/$(radar_name) vil 720 vil_color vil_gray 0.0 100.0 5.0
 
-#fc 1hr_Precip_Rate mdvp:://$(DATA_HOST)::mdv/precip/1hr rate 720 precip_color precip_gray 0.0 100.0 5.0
+#fc Vil_Overhang $(DATA_DIR)/mdv/vil/$(radar_name) dVil 720 vil_diff_color vil_diff_gray 0.0 100.0 5.0
 
-#fc Vil mdvp:://$(DATA_HOST)::mdv/vil vil 720 vil_color vil_gray 0.0 100.0 5.0
-
-#fc Vil_Overhang mdvp:://$(DATA_HOST)::mdv/vil dVil 720 vil_diff_color vil_diff_gray 0.0 100.0 5.0
-
-#fc SSS mdvp:://$(DATA_HOST)::mdv/vil SSS 720 sss_color sss_gray 0.0 100.0 5.0
+#fc SSS $(DATA_DIR)/mdv/vil/$(radar_name) SSS 720 sss_color sss_gray 0.0 100.0 5.0
 
 
 
