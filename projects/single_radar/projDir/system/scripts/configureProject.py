@@ -113,9 +113,9 @@ def main():
     cmd = "install_scripts.lrose " + homeDir + "/projDir/lrose/scripts"
     runCommand(cmd)
     
-    os.chdir(coreGitDir + "/codebase/apps/procmap/src/scripts")
-    cmd = "install_scripts.lrose " + homeDir + "/projDir/lrose/scripts"
-    runCommand(cmd)
+    #os.chdir(coreGitDir + "/codebase/apps/procmap/src/scripts")
+    #cmd = "install_scripts.lrose " + homeDir + "/projDir/lrose/scripts"
+    #runCommand(cmd)
     
     os.chdir(coreGitDir + "/codebase/libs/perl5/src")
     cmd = "install_perl5.lrose " + homeDir + "/projDir/lrose/lib/"
