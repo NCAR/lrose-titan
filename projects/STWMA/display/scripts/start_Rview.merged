@@ -1,0 +1,15 @@
+#! /bin/csh -f
+
+setenv DISPLAY :0.0
+
+cd $PROJ_DIR/display/params
+
+running "Rview -params Rview.merged"
+if ($status == 1) then
+  kill_Rview.merged
+  Rview -params Rview.merged  |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rview -i merged &
+endif
+
+# AC Ingest Monitor
+start_ac_posn_monitor

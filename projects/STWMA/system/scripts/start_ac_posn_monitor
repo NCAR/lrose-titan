@@ -1,0 +1,7 @@
+#! /bin/csh
+
+cd $TITAN_HOME/logs/errors/today
+
+kill_ac_posn_monitor
+
+xterm -title EsdAcIngest -bg black -fg cyan -g 80x2-0-0 -e tail -f EsdAcIngest.ops.log &

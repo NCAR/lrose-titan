@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "superResNexradLdmUnzip -params superResNexradLdmUnzip.kdfx"
+if ($status == 1) then
+  superResNexradLdmUnzip -params superResNexradLdmUnzip.kdfx |& \
+    LogFilter -d $ERRORS_LOG_DIR -p superResNexradLdmUnzip -i kdfx &
+endif
+

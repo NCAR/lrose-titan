@@ -1,0 +1,302 @@
+/**********************************************************************
+ * TDRP params for EsdAcIngest
+ **********************************************************************/
+
+//======================================================================
+//
+// EsdAcIngest reads aircraft data from an ASCII string and stores it in 
+//   Spdb.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_VERBOSE;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "ops";
+
+///////////// mode ////////////////////////////////////
+//
+// Operating mode.
+// In REALTIME mode, the aircraft data is read in from the serial 
+//   connection. In ARCHIVE mode the data is read in from files, using the 
+//   -f command line option. In TEST mode, aircraft data is generated for 
+//   testing purposes.
+//
+// Type: enum
+// Options:
+//     REALTIME
+//     ARCHIVE
+//     TEST
+//
+
+mode = REALTIME;
+
+//======================================================================
+//
+// SERIAL DATA INPUT.
+//
+// The original system used a fixed-length preformatted string. The 
+//   newer system uses a comma-delimited string. The program automatically 
+//   determines which type of input string is being used.
+//
+//======================================================================
+ 
+///////////// optional_field_names ////////////////////
+//
+// Array of variable fields following fixed fields.
+// Used for comma-delimited format only. The comma-delimited format has 
+//   10 fixed fields: callsign, year, month, day, hour, min, sec, lat, 
+//   lon, alt. These are followed by optional fields. This array specifies 
+//   the optional field list.
+//
+// Type: enum
+// Options:
+//     GS
+//     TAS
+//     TEMP
+//     DEW_PT
+//     LW
+//     ERROR_FLAGS
+//     R_BURN
+//     L_BURN
+//     BURN_IN_PLACE
+//     EJECTABLE
+//     N_BURN_IN_PLACE
+//     N_EJECTABLE
+// 1D array - variable length.
+//
+
+optional_field_names = { GS, ERROR_FLAGS, R_BURN, L_BURN, BURN_IN_PLACE, EJECTABLE, N_BURN_IN_PLACE, N_EJECTABLE };
+
+///////////// burn_in_place_time //////////////////////
+//
+// Nominal burn time for burn-in-place flares (secs).
+// It is assumed that all burn-in-place flares will burn for this length 
+//   of time. The program will keep track of how many flares are burning 
+//   on each aircraft, and store that number in SPDB.
+// Type: int
+//
+
+burn_in_place_time = 120;
+
+///////////// input_device ////////////////////////////
+//
+// Name of input serial port device.
+// Normally /dev/ttyS0 (COM1) or /dev/ttyS1 (COM2). Check that you set 
+//   the permissions on the serial device to rw-rw-rw-, (666), so that we 
+//   have read-write permissions for the port.
+// Type: string
+//
+
+//input_device = "/dev/ttyS0";
+input_device = "/dev/ttyUSB0";
+
+///////////// baud_rate ///////////////////////////////
+//
+// Baud rate.
+// Baud rate for incoming serial data port.
+//
+// Type: enum
+// Options:
+//     BAUD_300
+//     BAUD_1200
+//     BAUD_2400
+//     BAUD_4800
+//     BAUD_9600
+//     BAUD_19200
+//     BAUD_38400
+//
+
+baud_rate = BAUD_9600;
+
+///////////// dataIs7Bit //////////////////////////////
+//
+// Flag for 7-bit data.
+// Set TRUE for 7-bit data, FALSE for 8-bit data.
+// Type: boolean
+//
+
+dataIs7Bit = FALSE;
+
+///////////// twoStopBits /////////////////////////////
+//
+// Flag for two stop bits.
+// If TRUE, 2 stop bits. If FALSE, 1 stop bit.
+// Type: boolean
+//
+
+twoStopBits = FALSE;
+
+///////////// enableParity ////////////////////////////
+//
+// Flag for enabling parity checking.
+// If TRUE, parity generation is enabled for outgoing characters, and 
+//   checking enabled for incoming characters. If FALSE, parity generation 
+//   and checking is off.
+// Type: boolean
+//
+
+enableParity = FALSE;
+
+///////////// oddParity ///////////////////////////////
+//
+// Flag for parity type.
+// If TRUE, odd parity. If FALSE, even parity. Only applies if 
+//   enableParity is TRUE.
+// Type: boolean
+//
+
+oddParity = FALSE;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// check_callsigns /////////////////////////
+//
+// Option to check callsigns.
+// If TRUE, only aircraft in the callsigns array are stored. If FALSE, 
+//   data from all aircraft is stored.
+// Type: boolean
+//
+
+check_callsigns = FALSE;
+
+///////////// callsigns ///////////////////////////////
+//
+// Callsign array.
+// Array of valid callsigns.
+// Type: string
+// 1D array - variable length.
+//
+
+callsigns = { "847P","370P","57AA","160P","178M" };
+
+///////////// echo ////////////////////////////////////
+//
+// Option to echo incoming data string.
+// If TRUE, the incoming strings are echoed to stdout.
+// Type: boolean
+//
+
+echo = FALSE;
+
+///////////// new_line_on_echo ////////////////////////
+//
+// Option to add new line to echo output.
+// If FALSE, carriage return is used instead of new line.
+// Type: boolean
+//
+
+new_line_on_echo = FALSE;
+
+///////////// output_url //////////////////////////////
+//
+// Output SPDB URL.
+// This is the path to the output data directory. You can use full URL 
+//   sytnax and optionally put the data to a remote machine.
+// Type: string
+//
+// Use the distrib URL for distributing the data to other hosts
+//
+
+output_url = "spdbp:://localhost::spdb/ac_posn";
+// output_url = "spdbp::distrib//localhost::spdb/ac_posn";
+
+///////////// valid_period ////////////////////////////
+//
+// Valid period (secs).
+// Time period over which the aircraft position is considered valid.
+// Minimum val: 1
+// Type: int
+//
+
+valid_period = 8;  
+
+///////////// output_ascii ////////////////////////////
+//
+// Option to output ASCII to separate SPDB data base.
+// If TRUE, the incoming data strings will be stored as ASCII in a 
+//   separate SPDB dir.
+// Type: boolean
+//
+
+output_ascii = TRUE;
+
+///////////// ascii_url ///////////////////////////////
+//
+// ASCII SPDB URL.
+// Use if 'output_ascii' is TRUE.
+// Type: string
+//
+
+ascii_url = "$(DATA_DIR)/spdb/ascii_ac_posn";
+
+//======================================================================
+//
+// TEST SETUP.
+//
+//======================================================================
+ 
+///////////// test_aircraft ///////////////////////////
+//
+// Details of aircraft for TEST mode.
+// The test aircraft have a starting location, speed (knots) and 
+//   altitude (ft). They wander randomly around. If they go further that 
+//   100 km from their starting location they are brought back to the 
+//   start. right_burn and left_burn indicate whether the burners should 
+//   be on or off. ejectable_interval indicates the time beteen ejectable 
+//   flares - set to -1 for no ejectables. burn_in_place_interval 
+//   indicates the time between starting burn_in_place flares - set to -1 
+//   for no burn_in_place flares. n_bip_at_a_time indictes the number of 
+//   burn_in_place flares to start at a time.
+//
+// Type: struct
+//   typedef struct {
+//      string callsign;
+//      double start_lat;
+//      double start_lon;
+//      double altitude;
+//      double speed;
+//      boolean right_burn;
+//      boolean left_burn;
+//      double ejectable_interval;
+//      int burn_in_place_interval;
+//      int n_bip_at_a_time;
+//   }
+//
+// 1D array - variable length.
+//
+
+test_aircraft = {
+  { "ZJRA", 39.43, -104.87, 9500, 150, TRUE, TRUE, -1, -1, 0},
+  { "ZJRB", 40.57, -103.86, 10500, 250, FALSE, FALSE, 10, -1, 0},
+  { "ZCAN", 41.19, -105.76, 11500, 150, FALSE, FALSE, -1, 60, 2}
+};
+

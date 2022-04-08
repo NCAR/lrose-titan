@@ -1,0 +1,22 @@
+! For Russians, who uses xxkb ;) 
+! XXkb.xpm.path: /usr/X11R6/share/xxkb
+
+XXkb.group.base: 1
+XXkb.group.alt: 2
+
+XXkb.mainwindow.enable: no
+XXkb.mainwindow.appicon: no
+
+XXkb.button.enable: yes
+XXkb.controls.button_delete: yes
+XXkb.button.xpm.1: een.xpm
+XXkb.button.xpm.2: eru.xpm
+XXkb.button.geometry: 16x16-62+8
+
+! XXkb.app_list.<match>.<action>: <list>
+! <match> is one of "wm_class_class", "wm_class_name", "wm_name"
+! <action> is one of "ignore", "start_alt", "alt_groupM" (M - 1..4) 
+! For example:
+
+XXkb.app_list.wm_name.ignore: gkrellm Licq* GIMP Saving* Electric*
+XXkb.app_list.wm_class_class.ignore: Gkrellm_conf Gimp xmms SDL_App

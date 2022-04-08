@@ -1,0 +1,20 @@
+#! /bin/csh
+
+# make sure virtual X server is running and set display accordingly
+
+start_Xvfb
+setenv DISPLAY :1.0
+
+# make sure font path is correct
+
+set_font_path
+setenv CLASSPATH $HOME/rap/lib
+
+cd $PROJ_DIR/sysview/params
+
+running "java -Xmx200m -jar /home/titan5/rap/lib/sysview.jar"
+
+if ($status == 1) then
+   java -Xmx200m -jar /home/titan5/rap/lib/sysview.jar -params SysView.params.xml -diagram SysView.diagram.xml -run -noedit |& LogFilter -d $ERRORS_LOG_DIR -p SysView >& /dev/null &
+endif
+

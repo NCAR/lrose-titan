@@ -1,0 +1,646 @@
+/**********************************************************************
+ * TDRP params for SurfInterp
+ **********************************************************************/
+
+//======================================================================
+//
+// surfInterp program.
+//
+// surfInterp performs interpolation on point data at non-uniform grid 
+//   locations. It produces an MDV file containing the interpolation 
+//   results.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed with the appropriate level of 
+//   detail.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "example";
+
+///////////// mode ////////////////////////////////////
+//
+// Operation mode.
+// Program may be run in two modes, ARCHIVE and REALTIME.
+//
+// Type: enum
+// Options:
+//     ARCHIVE
+//     REALTIME
+//
+
+mode = ARCHIVE;
+
+///////////// time_trigger_interval ///////////////////
+//
+// Interval for TIME_TRIGGER - secs.
+// For TIME_TRIGGER, this is the interval between trigger events. In 
+//   REALTIME mode, a time trigger always occurs on the hour, and at 
+//   constant intervals thereafter. In ARCHIVE mode the trigger starts at 
+//   start_time and at constant intervals thereafter.
+// Minimum val: 0
+// Type: int
+//
+
+time_trigger_interval = 300;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// use_terrain_data ////////////////////////
+//
+// Option to use terrain data.
+// You need terrain data for ceiling computations.
+// Type: boolean
+//
+
+use_terrain_data = FALSE;
+
+///////////// terrain_file ////////////////////////////
+//
+// File of terrain data in LATLON projection.
+// Used to correct ceiling for height above sea.
+// Type: string
+//
+
+terrain_file = "./terrain.mdv";
+
+///////////// terrain_field_name //////////////////////
+//
+// Terrain field name.
+// To use a field number, specify # as first character.
+// Type: string
+//
+
+terrain_field_name = "#0";
+
+///////////// surface_data_urls ///////////////////////
+//
+// Input URLs.
+// These are the URLs from which the station data are read.
+// Type: string
+// 1D array - variable length.
+//
+
+surface_data_urls = { "spdbp:://localhost::$(DATA_DIR)/spdb/mesonet" };
+
+///////////// genpt_data_urls /////////////////////////
+//
+// Input URLs for surface GenPt data.
+// Type: string
+// 1D array - variable length.
+//
+
+genpt_data_urls = { "spdbp:://localhost::spdb/not_available" };
+
+///////////// duration ////////////////////////////////
+//
+// Data duration.
+// This is how far back from the start time to search.
+// Type: int
+//
+
+duration = 900;
+
+///////////// sounding_urls ///////////////////////////
+//
+// URL of sounding database.
+// Type: string
+// 1D array - variable length.
+//
+
+sounding_urls = { "spdbp:://localhost::spdb/soundings" };
+
+///////////// sounding_look_back //////////////////////
+//
+// Time (in minutes) to search back for a sounding; Default is 9 hours; 
+//   max is 24 hours.
+// Type: int
+//
+
+sounding_look_back = 540;
+
+///////////// PresLi //////////////////////////////////
+//
+// Pressure to take temperature from in soundings.
+// For lifted index.
+// Type: float
+//
+
+PresLi = 500;
+
+///////////// sounding_max_dist ///////////////////////
+//
+// Maximum distance of sounding from a surface report.
+// For lifted index. Distance in kilometers.
+// Type: float
+//
+
+sounding_max_dist = 250;
+
+//======================================================================
+//
+// GRID.
+//
+//======================================================================
+ 
+///////////// OutputProj //////////////////////////////
+//
+// Output projection.
+//
+// Type: struct
+//   typedef struct {
+//      proj_type_t proj_type;
+//        Options:
+//          PROJ_LATLON
+//          PROJ_FLAT
+//          PROJ_LC
+//      int nx;
+//      int ny;
+//      float dx;
+//      float dy;
+//      float minx;
+//      float miny;
+//      float origin_lat;
+//      float origin_lon;
+//      float lat1;
+//      float lat2;
+//   }
+//
+//
+
+OutputProj = { PROJ_FLAT, 134, 134, 3, 3, -200, -200, 35.2383, -97.4602, 0, 0 };
+
+///////////// altitude ////////////////////////////////
+//
+// Altitude of origin.
+// Defaults to New York (1600.0).
+// Type: float
+//
+
+altitude = 1300;
+
+///////////// flat ////////////////////////////////////
+//
+// Flat earth projection.
+// If not use LatLon.
+// Type: boolean
+//
+
+flat = TRUE;
+
+///////////// AllowOutsideTerrain /////////////////////
+//
+// Allow terrain MDV file not to cover region.
+// May be useful for an island.
+// THIS PARAMETER IS CURRENTLY NOT USED.
+// Type: int
+//
+
+AllowOutsideTerrain = 0;
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// output_url //////////////////////////////
+//
+// Output URL.
+// The interpolated MDV data is written to this URL.
+// Type: string
+//
+
+output_url = "mdvp:://localhost::$(DATA_DIR)/mdv/surfInterp";
+
+///////////// datasetName /////////////////////////////
+//
+// Dataset name.
+// Type: string
+//
+
+datasetName = "SurfInterp";
+
+///////////// dataSource //////////////////////////////
+//
+// Data Source.
+// Type: string
+//
+
+dataSource = "Unknown";
+
+///////////// dataInfo ////////////////////////////////
+//
+// Data info.
+// Type: string
+//
+
+dataInfo = "none";
+
+//======================================================================
+//
+// FIELDS.
+//
+//======================================================================
+ 
+///////////// outputFields ////////////////////////////
+//
+// List of fields to include in the output file.
+//
+// Type: enum
+// Options:
+//     UWIND
+//     VWIND
+//     TEMP
+//     DEWPT
+//     LIFTED_INDEX
+//     REL_HUM
+//     WIND_GUST
+//     PRESSURE
+//     POTENTIAL_TEMP
+//     LIQUID_ACCUM
+//     PRECIP_RATE
+//     VISIBILITY
+//     RUNWAY_VIS_RANGE
+//     SEALEVEL_RELATIVE_CEILING
+//     ALTITUDE
+//     DEWPT_DEPRESSION
+//     TERRAIN
+//     CONVERGENCE
+//     TERRAIN_RELATIVE_CEILING
+//     FLIGHT_CAT
+// 1D array - variable length.
+//
+
+outputFields = { UWIND, VWIND, TEMP, DEWPT, REL_HUM, PRESSURE, CONVERGENCE, LIQUID_ACCUM };
+
+///////////// outputFieldsEncoding ////////////////////
+//
+// Output encoding for each outputField. If nothing is specified, the 
+//   default output encoding (ENCODING_INT8 and SCALING_ROUNDED) will be 
+//   used for every output field. If output encoding is specified, there 
+//   must be 1 structure in this array for every outputField specified. If 
+//   the array sizes don't match, the default output encoding will be used 
+//   for every field.
+// 	encoding_type - Type of encoding to use for the field data.
+// 	use_scaling_info - Flag indicating whether to use the scaling 
+//   information from the structure. If set to false, the default 
+//   SCALING_ROUNDED will be used.
+// 	scaling_type - Type of scaling to use for the output field. Used 
+//   only if use_scaling_info is set to true.
+// 	scale - The scale value to use when scaling. Used only if 
+//   use_scaling_info is set to true and scaling_type is set to 
+//   SCALING_SPECIFIED.
+// 	bias - The bias value to use when scaling. Used only if 
+//   use_scaling_info is set to true and scaling_type is set to 
+//   SCALING_SPECIFIED.
+//
+// Type: struct
+//   typedef struct {
+//      encoding_type_t encoding_type;
+//        Options:
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      boolean use_scaling_info;
+//      scaling_type_t scaling_type;
+//        Options:
+//          SCALING_NONE
+//          SCALING_ROUNDED
+//          SCALING_INTEGRAL
+//          SCALING_DYNAMIC
+//          SCALING_SPECIFIED
+//      double scale;
+//      double bias;
+//   }
+//
+// 1D array - variable length.
+//
+
+outputFieldsEncoding = {
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 },
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 },
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 },
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 },
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 },
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 },
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 },
+  { ENCODING_INT16, true, SCALING_ROUNDED, 1.0, 0.0 }
+};
+
+///////////// genptFields /////////////////////////////
+//
+// Array of fields to generate from GenPt data.
+// 	genpt_field_name - Name of field as it appears in the GenPt 
+//   database.
+// 	check_missing - Flag indicating whether to check for missing data 
+//   values in the GenPt data.
+// 	missing_value - The missing data value to use for this GenPt field. 
+//   By default, the GenPt database uses -9999.0 for missing data; 
+//   however, some programs, like MetarCapeCin, don't use this value for 
+//   missing data. MetarCapeCin uses -99999.0 for missing CIN values.
+// Used only if check_missing is set to true.
+// 	output_field_name - Name of field as it should appear in the output 
+//   file.
+// 	output_field_units - Name of field units to put in the output file.
+// 	encoding_type - Type of encoding to use for the field data.
+// 	use_scaling_info - Flag indicating whether to use the scaling 
+//   information from the structure. If set to false, the default 
+//   SCALING_ROUNDED will be used.
+// 	scaling_type - Type of scaling to use for the output field. Used 
+//   only if use_scaling_info is set to true.
+// 	scale - The scale value to use when scaling. Used only if 
+//   use_scaling_info is set to true and scaling_type is set to 
+//   SCALING_SPECIFIED.
+// 	bias - The bias value to use when scaling. Used only if 
+//   use_scaling_info is set to true and scaling_type is set to 
+//   SCALING_SPECIFIED.
+//
+// Type: struct
+//   typedef struct {
+//      string genpt_field_name;
+//      boolean check_missing;
+//      double missing_value;
+//      string output_field_name;
+//      string output_field_units;
+//      encoding_type_t encoding_type;
+//        Options:
+//          ENCODING_INT8
+//          ENCODING_INT16
+//          ENCODING_FLOAT32
+//      boolean use_scaling_info;
+//      scaling_type_t scaling_type;
+//        Options:
+//          SCALING_NONE
+//          SCALING_ROUNDED
+//          SCALING_INTEGRAL
+//          SCALING_DYNAMIC
+//          SCALING_SPECIFIED
+//      double scale;
+//      double bias;
+//   }
+//
+// 1D array - variable length.
+//
+
+genptFields = {
+//   { "cape", FALSE, -9999, "Cape", "none", ENCODING_INT8, FALSE, SCALING_ROUNDED, 1, 0},
+//   { "cin", TRUE, -99999, "Cin", "none", ENCODING_INT8, FALSE, SCALING_ROUNDED, 1, 0}
+};
+
+//======================================================================
+//
+// INTERPOLATION.
+//
+//======================================================================
+ 
+///////////// InterpMethod ////////////////////////////
+//
+// Interpolation option - choose the interpolation scheme.
+//
+// Type: enum
+// Options:
+//     INTERP_BARNES
+//     INTERP_NEAREST
+//
+
+InterpMethod = INTERP_BARNES;
+
+///////////// MaxAltError /////////////////////////////
+//
+// Max difference between altitude and terrain for VFR to work.
+// If negative, no check is made. Units are feet.
+// Type: float
+//
+
+MaxAltError = -1;
+
+///////////// MinWeight ///////////////////////////////
+//
+// Minimum sum of weights in Barnes interpolation for valid data.
+// If not reached, bad value output - effectively sets radius of 
+//   influence.
+// Type: float
+//
+
+MinWeight = 0.0001;
+
+///////////// WindowSize //////////////////////////////
+//
+// WindowSize for optional VFR median filter.
+// Actual tile is 2W +1 by 2W + 1.
+// Type: int
+//
+
+WindowSize = 0;
+
+///////////// NumPasses ///////////////////////////////
+//
+// Number of passes for VFR median filter.
+// Used to smooth out VFR image.
+// Type: int
+//
+
+NumPasses = 0;
+
+///////////// MinStations /////////////////////////////
+//
+// Minimum number of stations.
+// If fewer stations report, don't bother.
+// Type: int
+//
+
+MinStations = 0;
+
+///////////// MaxInterpDist ///////////////////////////
+//
+// Maximum distance for interpolation to be valid, Km.
+// Works in conjunction with minimum weight parameter.
+// Type: float
+//
+
+MaxInterpDist = 50;
+
+///////////// Rscale //////////////////////////////////
+//
+// Scale radius for interpolations.
+// Defaults to half of MaxInterpDist if 0 or less.
+// Type: float
+//
+
+Rscale = 0;
+
+///////////// UseOutsideRegion ////////////////////////
+//
+// Set to TRUE to accept stations outside the grid.
+// Default is to only accept stations within the grid.
+// Type: boolean
+//
+
+UseOutsideRegion = FALSE;
+
+//======================================================================
+//
+// FLIGHT CATEGORY.
+//
+//======================================================================
+ 
+///////////// BadCeilingValue /////////////////////////
+//
+// Value to use if ceiling is missing - if negative, use bad value.
+// Default sets both ceiling and flight cat to missing if ceiling is bad.
+// Type: float
+//
+
+BadCeilingValue = -1;
+
+///////////// FltCatThresh ////////////////////////////
+//
+// Array of thresholds used for determining flight categories.
+//
+// Type: struct
+//   typedef struct {
+//      float vis_thresh;
+//      float ceil_thresh;
+//   }
+//
+// 1D array - variable length.
+//
+
+FltCatThresh = {
+  { 0, 0},
+  { 1.6, 500},
+  { 5, 1500}
+};
+
+///////////// MaxVis //////////////////////////////////
+//
+// Maximum visibility from a station, Km.
+// Values greater than this are set to missing.
+// Type: float
+//
+
+MaxVis = 30;
+
+///////////// MaxCeiling //////////////////////////////
+//
+// Maximum cloud ceiling from a station, Km.
+// Values greater than this are set to missing.
+// Type: float
+//
+
+MaxCeiling = 30;
+
+///////////// ReplaceCeiling //////////////////////////
+//
+// If set to TRUE, ceiling values above ReplaceCeilingThreshold
+// are replaced with ReplaceCeilingValue. The reason is that in
+// some systems, a clear sky is reported as a ceiling of 10,000
+// feet - but the terrain may be near 10,000 feet which leads
+// to erroneous regions of bad flight cat.
+// No such processing occurrs if set to FALSE.
+// Type: boolean
+//
+
+ReplaceCeiling = FALSE;
+
+///////////// ReplaceCeilingThreshold /////////////////
+//
+// Cloud ceiling threshold, ft.
+// If ReplaceCeiling is TRUE then values of ceiling at or above
+// this value are replaced with ReplaceCeilingValue.
+// Type: float
+//
+
+ReplaceCeilingThreshold = 9500;
+
+///////////// ReplaceCeilingValue /////////////////////
+//
+// Cloud ceiling value, ft.
+// If ReplaceCeiling is TRUE then values of ceiling at or above
+// ReplaceCeilingThreshold are replaced with this value.
+// Type: float
+//
+
+ReplaceCeilingValue = 30000;
+
+//======================================================================
+//
+// CONVERGENCE.
+//
+//======================================================================
+ 
+///////////// convergenceDxDy /////////////////////////
+//
+// Convergence is the sum of the derivatives of u and v with respect 
+//   distance.   convergenceDxDy is the distace in gridpoints from the 
+//   point   reference at which we will take values of u and v to form the 
+//   difference  quotients.
+// By default the convergence is calculated using values of u and v at 
+//   adjacent grid points ( convergenceDxDy = 1). Adjusting this parameter 
+//   allows the convergence to be calculated over a larger spatial domain.
+// Minimum val: 1
+// Type: int
+//
+
+convergenceDxDy = 1;
+
+///////////// tryOtherPressure ////////////////////////
+//
+// Option to fall back onto another pressure if the
+// station pressure is missing in the calculation of lifted index.
+// The calculation of lifted index uses pressure data
+// from a surface station. If the
+// shared.pressure_station.stn_pres field in the station report
+// is not missing, then it is used. If it is missing and
+// tryOtherPressure is set to FALSE (default) then the lifted index
+// is not calculated, however if tryOtherPressure is set to TRUE and
+// the pres field in the station report is set to a
+// non-missing value then that value is used in the lifted index calc.
+// Type: boolean
+//
+
+tryOtherPressure = FALSE;
+
+///////////// adjustStationPressure ///////////////////
+//
+// If set, station pressures are treated as having been
+// corrected to be at sea level, and a correction is applied
+// to get the actual station pressure, ie. to un-do the
+// the correction that was applied to get the sea level
+// station pressure.
+// If all your station pressures are near 1013, you
+// probably need this.
+// Type: boolean
+//
+
+adjustStationPressure = FALSE;
+

@@ -1,0 +1,5 @@
+#! /bin/csh
+
+snuff netscape
+snuff communicator-smotif.real
+

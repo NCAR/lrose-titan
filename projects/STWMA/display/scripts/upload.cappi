@@ -1,0 +1,8 @@
+# March 23, 2016
+# Kendell LaRoche
+# STWMA
+# This script will transfer radar images from Titan to the web site
+
+lftp -e 'set ssl:verify-certificate false; put /home/titan/projDir/output/cappi.gif' -u stwma@southtexasweathermodification.com,WXmodsilverice15! ftp.southtexasweathermodification.com
+
+exit

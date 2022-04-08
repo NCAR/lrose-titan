@@ -1,0 +1,5 @@
+#! /bin/csh
+
+snuff "xterm -g 80x1-0-0"
+
+snuff "tail -f EsdAcIngest.log"

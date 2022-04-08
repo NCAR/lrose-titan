@@ -1,0 +1,53 @@
+##############################################################################
+# SYSTEM processes
+#
+DsServerMgr   primary    start_DsServerMgr         snuff_inst        localhost
+Janitor       primary    start_Janitor             kill_Janitor      localhost
+Scout         primary    start_Scout               kill_Scout        localhost
+DataMapper    primary    start_DataMapper          kill_DataMapper   localhost
+###############################################################################
+# INGEST processes
+#
+#superResNexradLdmUnzip  kcrp  start_superResNexradLdmUnzip.kcrp snuff_inst localhost
+#superResNexradLdmUnzip	kewx  start_superResNexradLdmUnzip.kewx snuff_inst localhost
+#superResNexradLdmUnzip	kdfx  start_superResNexradLdmUnzip.kdfx snuff_inst localhost
+#superResNexradII2Dsr    kcrp  start_superResNexradII2Dsr.kcrp   snuff_inst localhost
+#superResNexradII2Dsr    kewx  start_superResNexradII2Dsr.kewx   snuff_inst localhost
+#superResNexradII2Dsr    kdfx  start_superResNexradII2Dsr.kdfx   snuff_inst localhost
+#
+#Dsr2Vol		kcrp	   start_Dsr2Vol.kcrp	snuff_inst      localhost
+#Dsr2Vol		kewx	   start_Dsr2Vol.kewx	snuff_inst      localhost
+#Dsr2Vol		kdfx	   start_Dsr2Vol.kdfx	snuff_inst      localhost
+RadxConvert     kcrp     start_RadxConvert.kcrp    snuff_inst  localhost
+RadxConvert     kdfx     start_RadxConvert.kdfx    snuff_inst  localhost
+RadxConvert     kewx     start_RadxConvert.kewx    snuff_inst  localhost
+#
+Radx2Dsr     kcrp     start_Radx2Dsr.kcrp    snuff_inst  localhost
+Radx2Dsr     kdfx     start_Radx2Dsr.kdfx    snuff_inst  localhost
+Radx2Dsr     kewx     start_Radx2Dsr.kewx    snuff_inst  localhost
+#
+Radx2Grid     kcrp     start_Radx2Grid.kcrp    snuff_inst  localhost
+Radx2Grid     kdfx     start_Radx2Grid.kdfx    snuff_inst  localhost
+Radx2Grid     kewx     start_Radx2Grid.kewx    snuff_inst  localhost
+#
+MdvMerge2	ops	   start_MdvMerge2.ops	snuff_inst      localhost
+EsdAcIngest     ops        start_EsdAcIngest.ops  snuff_inst    localhost
+##############################################################################
+# TITAN PROCESSES
+#
+Titan        ops       start_Titan.ops              snuff_inst  localhost
+PrecipAccum  single    start_PrecipAccum.single     snuff_inst  localhost
+PrecipAccum  1hr       start_PrecipAccum.1hr        snuff_inst  localhost
+PrecipAccum  24hr      start_PrecipAccum.24hr       snuff_inst  localhost
+Mdv2Vil      ops       start_Mdv2Vil.ops            snuff_inst  localhost
+Tstorms2Spdb ops       start_Tstorms2Spdb.ops       snuff_inst  localhost
+##############################################################################
+# DISPLAY processes
+#
+Rview        merged    start_Rview.merged       snuff_inst        localhost
+Rview        web       start_Rview_web.ops      snuff_inst       localhost
+TimeHist     ops       start_Rview.merged       snuff_inst       localhost
+RadMon       kcrp      start_RadMon.kcrp        kill_RadMon.kcrp localhost
+RadMon       kewx      start_RadMon.kewx        kill_RadMon.kewx localhost
+RadMon       kdfx      start_RadMon.kdfx        kill_RadMon.kdfx localhost
+#CIDD         ops       start_CIDD.ops           snuff_inst       localhost

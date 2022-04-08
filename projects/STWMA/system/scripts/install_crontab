@@ -1,0 +1,4 @@
+#! /bin/csh
+
+crontab $PROJ_DIR/control/crontab >>&!  $ERRORS_LOG_DIR/crontab
+

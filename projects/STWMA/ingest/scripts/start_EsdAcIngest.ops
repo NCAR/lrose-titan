@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "EsdAcIngest -params EsdAcIngest.ops"
+if ($status == 1) then
+  EsdAcIngest -params EsdAcIngest.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p EsdAcIngest -i ops &
+endif
+

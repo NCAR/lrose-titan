@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "MdvMerge2 -params MdvMerge2.ops"
+if ($status == 1) then
+  nice MdvMerge2 -params MdvMerge2.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p MdvMerge2 -i ops &
+endif
+

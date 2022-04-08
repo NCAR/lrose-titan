@@ -1,0 +1,15 @@
+#! /bin/csh -f
+
+#setenv DISPLAY :0.0
+
+cd $PROJ_DIR/display/params
+
+running "RadMon -params RadMon.kcrp"
+if ($status == 1) then
+  xterm -title RadMon.kcrp -bg black -fg cyan -g 36x3-0+870 -e RadMon -params RadMon.kcrp &
+endif
+
+#running "xclock -digital"
+#if ($status == 1) then
+#  xclock -digital -geometry -0+0 -update 1 &
+#endif
