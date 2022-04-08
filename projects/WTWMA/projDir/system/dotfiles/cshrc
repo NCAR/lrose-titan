@@ -20,7 +20,9 @@ setenv PRINTER lp
 # Set the build environment
 
 setenv LANG C
-setenv HOST_OS LINUX
+setenv HOST_OS LINUX_LROSE
+setenv LROSE_INSTALL_DIR $HOME/lrose
+setenv LROSE_CORE_DIR $HOME/git/lrose-core
 setenv INSTALL_DIR $HOME/rap
 setenv RAP_MAKE_INC_DIR $INSTALL_DIR/make_include
 setenv RAP_MAKE_BIN_DIR $INSTALL_DIR/make_bin
@@ -33,6 +35,7 @@ setenv RAP_SHARED_BIN_DIR $INSTALL_DIR/bin
 setenv RAP_INST_LIB_DIR $INSTALL_DIR/lib
 setenv RAP_MAN_DIR $INSTALL_DIR/man
 setenv RAP_DOC_DIR $INSTALL_DIR/doc
+
 
 # CVS
 
@@ -84,6 +87,10 @@ setenv DS_PING_TIMEOUT_MSECS 20000
 
 setenv PAPER_SIZE 500x700+60+60
 
+# write old-style MDV files
+
+setenv MDV_WRITE_FORMAT FORMAT_MDV
+
 # --- site info --- 
 
 if (-f $PROJ_DIR/system/params/site_params) then
@@ -102,6 +109,12 @@ if ( -d $PROJ_DIR ) then
       set path = ($path $dir/scripts)
     endif
   end
+endif
+
+if ($?LROSE_INSTALL_DIR) then
+  if ( -d $LROSE_INSTALL_DIR/bin ) then
+    set path = ($path $LROSE_INSTALL_DIR/bin)
+  endif
 endif
 
 if ($?INSTALL_DIR) then
