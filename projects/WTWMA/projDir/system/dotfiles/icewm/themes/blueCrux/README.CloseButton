@@ -1,0 +1,15 @@
+For left-side Close button run
+
+./CloseLeft
+
+and choose CloseButtonLeft theme.
+
+For return to right-side Close button run
+
+./CloseRight
+
+and choose default theme.
+
+Default is right-side Close button.
+
+P.S. Sorry for my English ;)

@@ -1,0 +1,8 @@
+#! /bin/csh
+
+snuff DsMdvServer
+snuff DsSpdbServer
+kill_SymprodServers
+
+
+

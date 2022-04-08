@@ -1,0 +1,10 @@
+#! /bin/csh
+
+set_font_path
+setenv CLASSPATH $HOME/rap/lib
+
+cd $PROJ_DIR/sysview/params
+
+java -jar $CLASSPATH/sysview.jar -params SysView.params.xml -diagram SysView.diagram.xml
+
+

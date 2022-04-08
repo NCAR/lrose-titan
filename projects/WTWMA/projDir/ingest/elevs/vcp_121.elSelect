@@ -1,0 +1,13 @@
+#
+# Selects which fields to take from which rotation for VCP 121.
+# The first rotation is number 1. Niles Oien Feb 2008.
+#
+DBZ[1] VEL[2] SW[2]
+DBZ[5] VEL[6] SW[6]
+DBZ[9] VEL[9] SW[9]
+DBZ[12] VEL[12] SW[12]
+DBZ[15] VEL[15] SW[15]
+DBZ[17] VEL[17] SW[17]
+DBZ[18] VEL[18] SW[18]
+DBZ[19] VEL[19] SW[19]
+DBZ[20] VEL[20] SW[20]

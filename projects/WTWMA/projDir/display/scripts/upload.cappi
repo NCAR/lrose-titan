@@ -1,0 +1,4 @@
+#
+lftp -e 'set ssl:verify-certificate false; put /home/titan/projDir/output/cappi.gif' -u wtwmaco@wtwma.com,cyhlmmJQ ftp.wtwma.com
+
+exit

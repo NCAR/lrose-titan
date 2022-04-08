@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "Dsr2Vol -params Dsr2Vol.ksjt"
+if ($status == 1) then
+  nice Dsr2Vol -params Dsr2Vol.ksjt |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Dsr2Vol -i ksjt &
+endif
+

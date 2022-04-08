@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "Dsr2Vol -params Dsr2Vol.kmaf"
+if ($status == 1) then
+  nice Dsr2Vol -params Dsr2Vol.kmaf |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Dsr2Vol -i kmaf &
+endif
+

@@ -1,0 +1,20 @@
+#! /bin/csh
+#
+
+#
+# start SysView only if cron is active
+#
+
+set checkfile=/tmp/croncheck_SysView
+crontab -l >& $checkfile
+grep "no crontab" $checkfile >& /dev/null
+
+# if grep returns 1, cron is there so go ahead
+
+if ($status == 1) then
+    start_SysView
+endif
+
+# rm tmp file
+
+/bin/rm -f $checkfile

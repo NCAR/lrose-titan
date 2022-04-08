@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "superResNexradII2Dsr -params superResNexradII2Dsr.kmaf"
+if ($status == 1) then
+  superResNexradII2Dsr -params superResNexradII2Dsr.kmaf |& \
+    LogFilter -d $ERRORS_LOG_DIR -p superResNexradII2Dsr -i kmaf &
+endif
+

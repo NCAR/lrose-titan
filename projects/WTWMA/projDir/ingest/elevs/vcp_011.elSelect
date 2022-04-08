@@ -1,0 +1,18 @@
+#
+# Selects which fields to take from which rotation for VCP 11.
+# The first rotation is number 1. Niles Oien Feb 2008.
+#
+DBZ[1] VEL[2] SW[2]
+DBZ[3] VEL[4] SW[4]
+DBZ[5] VEL[5] SW[5]
+DBZ[6] VEL[6] SW[6]
+DBZ[7] VEL[7] SW[7]
+DBZ[8] VEL[8] SW[8]
+DBZ[9] VEL[9] SW[9]
+DBZ[10] VEL[10] SW[10]
+DBZ[11] VEL[11] SW[11]
+DBZ[12] VEL[12] SW[12]
+DBZ[13] VEL[13] SW[13]
+DBZ[14] VEL[14] SW[14]
+DBZ[15] VEL[15] SW[15]
+DBZ[16] VEL[16] SW[16]

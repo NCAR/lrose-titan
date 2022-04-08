@@ -1,0 +1,44 @@
+##############################################################################
+# SYSTEM processes
+#
+DsServerMgr   primary    start_DsServerMgr         snuff_inst        localhost
+Janitor       primary    start_Janitor             kill_Janitor      localhost
+Scout         primary    start_Scout               kill_Scout        localhost
+DataMapper    primary    start_DataMapper          kill_DataMapper   localhost
+###############################################################################
+# INGEST processes
+#
+#superResNexradLdmUnzip  kmaf  start_superResNexradLdmUnzip.kmaf snuff_inst localhost
+#superResNexradLdmUnzip	ksjt  start_superResNexradLdmUnzip.ksjt snuff_inst localhost
+#superResNexradII2Dsr    kmaf  start_superResNexradII2Dsr.kmaf   snuff_inst localhost
+#superResNexradII2Dsr    ksjt  start_superResNexradII2Dsr.ksjt   snuff_inst localhost
+#
+#Dsr2Vol		kmaf	   start_Dsr2Vol.kmaf	snuff_inst      localhost
+#Dsr2Vol		ksjt	   start_Dsr2Vol.ksjt	snuff_inst      localhost
+#
+RadxConvert     kmaf	 start_RadxConvert.kmaf	snuff_inst      localhost
+RadxConvert     ksjt	 start_RadxConvert.ksjt	snuff_inst      localhost
+Radx2Dsr     kmaf	 start_Radx2Dsr.kmaf	snuff_inst      localhost
+Radx2Dsr     ksjt	 start_Radx2Dsr.ksjt	snuff_inst      localhost
+Radx2Grid     kmaf	 start_Radx2Grid.kmaf	snuff_inst      localhost
+Radx2Grid     ksjt	 start_Radx2Grid.ksjt	snuff_inst      localhost
+#
+MdvMerge2	ops	   start_MdvMerge2.ops	snuff_inst      localhost
+EsdAcIngest     ops        start_EsdAcIngest.ops  snuff_inst    localhost
+##############################################################################
+# TITAN PROCESSES
+#
+Titan        ops       start_Titan.ops              snuff_inst  localhost
+PrecipAccum  single    start_PrecipAccum.single     snuff_inst  localhost
+PrecipAccum  1hr       start_PrecipAccum.1hr        snuff_inst  localhost
+PrecipAccum  24hr      start_PrecipAccum.24hr       snuff_inst  localhost
+Mdv2Vil      ops       start_Mdv2Vil.ops            snuff_inst  localhost
+Tstorms2Spdb ops       start_Tstorms2Spdb.ops       snuff_inst  localhost
+##############################################################################
+# DISPLAY processes
+#
+Rview        merged    start_Rview.merged       kill_Rview.merged localhost
+Rview        web       start_Rview_web.ops      snuff_inst       localhost
+RadMon       kmaf      start_RadMon.kmaf        kill_RadMon.kmaf localhost
+RadMon       ksjt      start_RadMon.ksjt        kill_RadMon.ksjt localhost
+#CIDD         ops       start_CIDD.ops           snuff_inst       localhost

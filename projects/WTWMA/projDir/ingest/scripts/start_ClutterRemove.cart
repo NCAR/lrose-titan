@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "ClutterRemove -params ClutterRemove.cart"
+if ($status == 1) then
+  ClutterRemove -params ClutterRemove.cart |& \
+    LogFilter -d $ERRORS_LOG_DIR -p ClutterRemove -i cart &
+endif
+

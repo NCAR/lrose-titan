@@ -1,0 +1,10 @@
+#! /bin/csh
+#
+
+running "auto_restart -p $PROJ_DIR/control/proc_list"
+if ($status == 1) then
+    echo "Starting auto_restart"
+    auto_restart -p $PROJ_DIR/control/proc_list -m $PROCMAP_HOST -s 60 -u 70 -i \
+    |& \
+    LogFilter -d $RESTART_LOG_DIR -p auto_restart >& /dev/null &
+endif

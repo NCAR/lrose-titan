@@ -1,0 +1,14 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/titan/params
+
+running "Mdv2Vil -params Mdv2Vil.ops"
+if ($status == 1) then
+  Mdv2Vil -params Mdv2Vil.ops |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Mdv2Vil -i ops &
+endif
+
+
+
+
+
