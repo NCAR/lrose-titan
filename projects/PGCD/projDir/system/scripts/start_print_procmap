@@ -1,0 +1,4 @@
+#! /bin/csh
+
+\print_procmap -hb -up -c 5
+

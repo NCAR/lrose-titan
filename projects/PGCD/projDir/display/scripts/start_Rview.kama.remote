@@ -1,0 +1,12 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/display/params
+
+running "Rview -params Rview.kama.remote"
+if ($status == 1) then
+  snuff "Rview -params Rview.kama.remote"
+  Rview -params Rview.kama.remote  |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rview -i kama.remote &
+endif
+
+# aircraft position monitor

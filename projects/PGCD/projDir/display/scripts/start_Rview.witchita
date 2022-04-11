@@ -1,0 +1,15 @@
+#! /bin/csh -f
+
+setenv DISPLAY :0.0
+
+cd $PROJ_DIR/display/params
+
+running "Rview -params Rview.witchita"
+if ($status == 1) then
+  kill_Rview.witchita
+  Rview -params Rview.witchita  |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rview -i witchita &
+endif
+
+# aircraft position monitor
+#start_ac_posn_monitor

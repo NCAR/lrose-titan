@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/ingest/params
+
+running "Test2Dsr -params Test2Dsr.sim"
+if ($status == 1) then
+  Test2Dsr -params Test2Dsr.sim |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Test2Dsr -i sim &
+endif
+

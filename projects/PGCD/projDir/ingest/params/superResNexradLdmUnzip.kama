@@ -1,0 +1,145 @@
+/**********************************************************************
+ * TDRP params for superResNexradLdmUnzip
+ **********************************************************************/
+
+//======================================================================
+//
+// The NEXRAD level II super resolution data are
+// typically delivered by LDM in multiple files. These
+// files have a simple header followed by the actual
+// data which must be uncompressed using the bunzip2
+// protocol. This program reads these files as they
+// arrive, does the necessary uncompression and then
+// appends the output from these multiple input files
+// to a single output file per volume. Once a volume
+// is complete, a _latest_data_info file is written to the
+// output directory. For the input files a naming convention
+// similar to /d2/ldmData/nexrad/NOP3/YYYYMMDD/HHMMSS_NNy_Vxx.BZIP2
+// is fgollowed, where :
+// NN is the message number for this scan,
+// xx is version number:
+//    Version 01: Legacy Message 1: Evansville (KVWX)
+//    Version 02: Message 31: Legacy resolution (Super-Res
+//                Generation disabled)
+//    Version 03: Message 31: Super-Resolution
+//    Version 04: Message 31: Recombined Super-Res
+// and y is E(end of volume), S (volume start), or I(intermediate)
+
+// Thanks to Jason Craig for implementing this naming convention.
+// Output files are named YYYYMMDD_hhmmss.nexDat
+// Niles Oien February 2008.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Determines how much printing to do while running.
+// Set as appropriate. FALSE means only report serious errors.
+// Type: boolean
+//
+
+debug = FALSE;
+
+///////////// inDir ///////////////////////////////////
+//
+// Directory under which the LDM dumps files using a
+// 20080208/033159_35_I_V04.BZIP2 file naming convention.
+// The date stamped directory should not be included
+// in this path, ie. if you have files named as :
+
+// /d2/ldmData/nexrad/NOP3/20080208/033159_35_I_V04.BZIP2
+
+// then this should be set to 
+// /d2/ldmData/nexrad/NOP3
+// that is, it should not be set to
+// /d2/ldmData/nexrad/NOP3/20080208.
+// Type: string
+//
+
+inDir = "/home/titan/ldmdata/KAMA";
+
+///////////// timeoutSecs /////////////////////////////
+//
+// Time, seconds, we should wait for a new file before
+// giving up and restarting the scan.
+// Set as appropriate. Default is 30 minutes.
+// Type: int
+//
+
+timeoutSecs = 900;
+
+///////////// outDir //////////////////////////////////
+//
+// Directory under which preprocessed super res
+// nexrad level two data will be written.
+// Set as appropriate.
+// Type: string
+//
+
+outDir = "/home/titan/projDir/data/ldmunzip/KAMA";
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+// Used for registration with procmap.
+// Type: string
+//
+
+instance = "kama";
+
+///////////// deleteFiles /////////////////////////////
+//
+// Option to delete older input files.
+// It's good to do this if at all possible. It means we
+// have to scan fewer files on input.
+// Type: boolean
+//
+
+deleteFiles = FALSE;
+
+///////////// maxFileAgeSec ///////////////////////////
+//
+// Maximum age for files, seconds.
+// Files older than this will not be considered and may
+// be deleted if deleteFiles is TRUE.
+// Type: int
+//
+
+maxFileAgeSec = 300;
+
+///////////// sleepSec ////////////////////////////////
+//
+// Number of seconds to sleep after processing a volume.
+// Avoids hammering the system.
+// Type: int
+//
+
+sleepSec = 1;
+
+///////////// socketOutput ////////////////////////////
+//
+// Option to write output data to a socket as
+// well as to file.
+// Allows user to get beams as they come in rather
+// than having to wait for the whole volume to accrue.
+//
+// Type: struct
+//   typedef struct {
+//      boolean writeToSocket;
+//      int socketNum;
+//   }
+//
+//
+
+socketOutput = { TRUE, 4500 };
+
+///////////// outputFiles /////////////////////////////
+//
+// Option to write output files.
+// Almost always do this. Only reason not to is that
+// socket based output has been selected.
+// Type: boolean
+//
+
+outputFiles = FALSE;
+

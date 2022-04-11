@@ -1,0 +1,212 @@
+#
+# High Plains Target Area 
+# Target Area Outline
+#
+# First point begins at the northwest corner of Quay County target area. Then 
+# proceeds to the east around perimeter of the target area.  Convienent corners## are annotated
+#
+#34.8659 -104.1160 northwest corner Quay county target area
+#34.8292 -103.9068
+#34.8654 -103.3895
+#34.9457 -103.2830
+#34.9427 -103.0685 corner of Quay/Curry/Texas State line
+#
+POLYLINE hp_borders 56
+34.8128 -103.0680 northwest District boundary in Deaf Smith along TX/NM line
+34.8153 -102.7270
+34.9894 -102.7282
+34.9899 -102.6336
+35.1022 -102.6325
+35.1011 -102.5069 
+35.1800 -102.5062 northwest District boundary,south of Vega on Oldham/DF County line
+35.1820 -102.1570 southwest corner Oldham County
+35.2451 -102.1571northern most District Boundary point on Oldham/Potter County line
+35.2451 -102.1331
+35.2328 -102.1247
+35.2321 -102.0878
+35.1954 -102.0866
+35.2283 -102.0681
+35.1830 -101.8381 northeast corner of Cap rock, near AMA
+34.9799 -101.9197 bend in Cap rock near Canyon
+34.8489 -102.1558
+34.8489 -102.2589
+34.7966 -102.2589
+34.7966 -102.2221
+34.6873 -102.2221
+34.6873 -102.1032
+34.7814 -102.1132
+34.7814 -101.9557
+34.8826 -101.9557
+34.8977 -101.6276
+34.8308 -101.6868
+34.8810 -101.6008
+34.7469 -101.3864 northeast tip of District Boundary near NE Swisher County
+34.7460 -101.4880 northeast corner Swisher County
+34.7490 -101.6130 southwest corner Armstrong County
+34.7510 -102.0250 northwest corner Swisher County
+34.3030 -102.0270 southwest corner Swisher County
+34.3080 -101.5530 northwest corner Floyd County
+34.3090 -101.4890 southeast corner Swisher County
+34.3086 -101.2026 northeast District boundary corner on Floyd/Brisco County line
+34.0535 -101.0245
+33.8392 -101.0230 southeast corner FLoyd County
+33.8336 -101.0212
+33.6167 -101.0175
+33.8328 -101.2774
+33.5174 -101.2408
+33.4680 -101.5434
+33.3880 -101.5430 southeast corner Lubbock County
+32.9600 -101.5366 southeast corner Lynn County
+32.9559 -101.6962 northeast corner of Dawson County
+32.9610 -102.0610 southwest corner Lynn County
+33.3890 -102.0540 northwest corner of Lynn County
+33.3900 -102.5930 southwest corner Hockley County
+33.3835 -103.0650 southwest corner Cochran County
+33.5541 -103.0663 intersection of Roosevelt and State line in CoCochran County
+33.8210 -103.0690 southwest corner Bailey County
+34.2956 -103.0683 southwest corner Parmer County
+34.4873 -103.0633 on State line half way up west sied of Parmer County
+34.7357 -103.0678 northwest corner Parmer County
+34.8130 -103.0679 northwest corner Deaf Smith Panhandle  
+#32.9549 -102.2069 northeast corner Gaines County
+#32.5200 -102.2020 southeast corner Gaines County
+#32.5102 -103.0620 southwest corner Gaines County/TX/NM line
+#32.9547 -103.0596northwest corner Gaines County/TX/NM line
+#33.3884 -103.0650 corner of Cochran/Yoakum/TX/NM line
+#33.5535 -103.0663 corner of Roosevelt/Lea/TX/NM line
+#33.5600 -103.5045 corner of Roosevelt/ on Lea County line
+#33.6480 -103.5005
+#33.6510 -103.6980
+#33.8184 -103.6995
+#33.8220 -103.8300
+#34.0740 -103.8270
+#34.0750 -103.9430 western most south corner of Roosevelt County
+#34.3155 -103.9410 west corner of Roosevelt panhandle cutoff
+#34.3116 -103.9414 east corner of Roosevelt panhandle cutoff
+#34.3170 -103.0676 corner of Roosevelt/Curry and TX/NM line
+34.8128 -103.0680 northwest District boundary in Deaf Smith along TX/NM line
+# 
+# Lea county starting at the SW corner of Gaines County
+#POLYLINE hp_borders 14
+32.5097 -103.0620
+32.5219 -103.1466
+32.5450 -103.2494
+32.5810 -103.3473
+32.6355 -103.4457
+32.6813 -103.5051
+32.7626 -103.6013
+32.8418 -103.6770
+32.9062 -103.7269
+32.9591 -103.7489
+33.3820 -103.7460
+33.3860 -103.7161
+33.5642 -103.7071
+33.5595 -103.5037
+#
+#34.6120 -103.9400 northwest corner Roosevelt Panhandle
+#34.6220 -104.1169 southwest corner Quay county 
+#34.8659 -104.1160 northwest corner Quay county target area
+#
+#
+# County Line Borders within the Target Area. Beginning with northern most E/W County Line.             
+POLYLINE hp_borders 3
+34.7357 -103.0678 southern border of Deaf Smith
+34.7450 -102.5159
+34.7500 -102.2222
+#
+POLYLINE hp_borders 2
+34.7509 -102.1100
+34.7510 -102.0251
+#
+POLYLINE hp_borders 6
+34.3167 -103.0675
+34.2956 -103.0683
+34.3028 -102.6078
+34.3030 -102.5169
+34.3039 -102.0591
+34.3032 -102.0273
+#
+POLYLINE hp_borders 5
+33.8210 -103.0690
+33.8290 -102.6030
+33.8311 -102.0520
+33.8330 -101.5451
+33.8390 -101.0221
+#
+POLYLINE hp_borders 2
+#33.3830 -103.0652
+#33.3899 -102.5929
+33.3891 -102.0539
+33.3880 -101.5430
+#
+#POLYLINE hp_borders 3
+32.9471 -103.0596
+32.9561 -102.5829
+32.9548 -102.2071
+#
+#end E /W lines
+#
+#begin N / S line starting at the NM state line
+#
+#POLYLINE hp_borders 2
+34.2948 -103.0684
+33.5542 -103.0663
+#
+POLYLINE hp_borders 5
+34.7449 -102.5159
+34.3032 -102.5172
+34.3030 -102.6080
+33.8291 -102.6030
+33.3899 -102.5931
+#32.9561 -102.5829
+#
+POLYLINE hp_borders 4
+34.3040 -102.0592
+33.8311 -102.0521
+33.3892 -102.0538
+32.9608 -102.0611
+#
+POLYLINE hp_borders 3
+34.3079 -101.5533
+33.8330 -101.5449
+33.4680 -101.5436
+#
+POLYLINE hp_borders 2
+35.1823 -102.1566
+34.8490 -102.1563
+#
+POLYLINE hp_borders 2
+35.1823 -102.1566
+35.1830 -101.8375
+#
+POLYLINE hp_borders 2
+34.8733 -101.6138
+34.7489 -101.6131
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

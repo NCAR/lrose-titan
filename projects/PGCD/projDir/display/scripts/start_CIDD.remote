@@ -1,0 +1,10 @@
+#! /bin/csh -f
+
+cd $PROJ_DIR/display/params
+
+CIDD -i remote -p CIDD.ops -i ops \
+    -xrm 'OpenWindows.MonospaceFont: fixed' \
+    -xrm 'OpenWindows.RegularFont: 6x13' \
+    -xrm 'OpenWindows.BoldFont: 6x13bold' |& \
+    LogFilter -d $ERRORS_LOG_DIR -p CIDD -i remote &
+

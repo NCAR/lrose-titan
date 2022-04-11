@@ -1,0 +1,15 @@
+#! /bin/csh
+
+#
+# Start virtual X server for Display :1.0
+
+running "Xvfb"
+if ($status == 1) then
+    Xvfb :1.0 -screen 0 1600x1200x24 -pixdepths 24 -ac -ld 100000 -ls 10000 |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Xvfb -i 1 >& /dev/null &
+endif
+
+# set the font path
+
+setenv DISPLAY :1.0
+set_font_path

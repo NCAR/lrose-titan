@@ -1,0 +1,31 @@
+#! /bin/csh
+
+pkill Acars2Symprod
+pkill acPosVector2Symprod
+pkill AcTrack2Symprod
+pkill Bdry2Symprod
+pkill Chunk2Symprod
+pkill Contour2Symprod
+pkill Edr2Symprod
+pkill FltPath2Symprod
+pkill GenPoly2Symprod
+pkill GenPt2Symprod
+pkill GenPtField2Symprod
+pkill HydroStation2Symprod
+pkill Ltg2Symprod
+pkill Mad2Symprod
+pkill Metar2Symprod
+pkill Pirep2Symprod
+pkill PosnRpt2Symprod
+pkill Rhi2Symprod
+pkill SigAirMet2Symprod
+pkill Sigmet2Symprod
+pkill simpleAcTrack2Symprod
+pkill Sndg2Symprod
+pkill StnAscii2Symprod
+pkill TrecGauge2Symprod
+pkill Tstorms2Symprod
+pkill Vergrid2Symprod
+pkill WWA2Symprod
+pkill WxHazards2Symprod
+

@@ -1,0 +1,575 @@
+<?xml version="1.0"?>
+
+<!--
+####################################################################################################################################
+
+ Sample Jadeite file
+
+ "Jadeite" - the scientific name for one of the minerals composing Jade (NaAlSi2O6)
+
+ Direct comments to:
+ Rob Weingruber (weingrub@ucar.edu)
+
+####################################################################################################################################
+-->
+
+<Jadeite version="0.1">
+
+<!--
+####################################################################################################################################
+
+ XML Tips:
+
+ - XML is comprised of Elements and Attributes, as shown below:
+
+   <Element attribute="value">
+     <ChildElement1/>
+     <ChildElement2 attribute1="foo" anotherAttribute="bar"/>
+   </Element>
+
+ - Do NOT use ampersand, apostrophe, greater-than, less-than, dashes, or exclamation characters for your content!
+   These are special XML characters.
+ - Element names begin with a capital letter, attribute names with a lowercase.
+ - Elements must be terminated with a slash, either inline such as "<Element/>" or with a matching tag such as "<Element></Element>"
+ - Attribute values must always be double quoted
+ - Comments are bounded by less-than, exclamation, and 2 dashes at the beginning and 2 dashes followed by a greater-than at the end.
+   2 dashes (and thus comments) cannot appear anywhere within a comment (which is why I can't show them to you here).
+ - Blank lines, whitespace, carriage returns, and comments are completely ignored by the parser.
+
+ Jadeite Tips:
+
+ - Configuration elements contain attributes which have meaning to that element (see descriptions of each below).
+ - Most configuration elements can be specified on a single line, but you are free to split them on several lines for readability.
+ - The following elements may appear more than once in a file: "Layer," "Colorscale," and "Area." All others should only appear once!
+ - Some attributes may be left out or their values left empty. In those cases, the default value for that attribute applies.
+
+####################################################################################################################################
+-->
+
+<!--
+####################################################################################################################################
+
+ <Layer> element (optional, zero or more).
+
+ Required attributes:
+
+ vis        = whether the layer should be on or off when the application starts
+ type       = the datatype of this layer, one of: MDV, MDVWIND, MDVTOPO, CIDDMAP, SYMPROD, WMS [WMS doesnt work yet].
+              This determines which other configuration options, below, are valid
+ name       = the name shown in the display
+ location   = where to get the data.
+
+ Datatype-specific options:
+
+   MDV:
+     field      = the short MDV field name to retrieve
+     is2D       = true or false (default); if 2D = true, then altitude changes do not cause a reloading of data
+     render     = rendering scheme which may be: grid, fillcontours, linecontours, or none (only makes for MDVWIND).
+     colorscale = the colorscale to use. May be the name of a colorscale defined in this file
+                  or a reference to a remote CIDD (*.colors) or JADE (*.xml) colorscale.
+     location   = must be in the form "mdvp::". Mdv files are NOT supported (yet).
+
+   MDVTOPO:
+     field      = the short MDV field name to retrieve
+     colorscale = the colorscale to use. May be the name of a colorscale defined in this file or a reference to a
+                  remote CIDD ("*.colors") or JADE ("*.xml") colorscale
+     location   = must be in the form "mdvp::".
+
+   MDVWIND:
+     isUandV    = true if the following fields will contain U and V vectors or false if speed and direction will be used
+     field      = the short MDV field name containing either the U wind vector or the wind speed in knots, depending on the value of "isUandV"
+     extraField = the short MDV field name containing the V wind vector or the wind direction in degrees, depending on the value of "isUandV"
+     is2D       = true or false (default); if 2D = true, then altitude changes do not cause a reloading of data
+     render     = rendering scheme ("grid" for filled grid, "fillcontours" for color-filled contours, or "linecontours" for line contours)
+     colorscale = the colorscale to use. May be the name of a colorscale defined in this file or a reference to a
+                  remote CIDD (*.colors) or JADE (*.xml) colorscale
+     location   = must be in the form "mdvp::".
+
+   SYMPROD:
+     before     = the amount of time before the currently selected time to look for products
+     after      = the amount of time after the currently selected time to look for products
+     textOff    = the spacing factor past which to stop rendering text labels
+     render     = the methodology to use for reconciling multiple valid products within the time period
+
+   CIDDMAP:
+     minKmScreenSpan        = the minimum kilometer distance across the screen at which to display this layer
+     maxKmScreenSpan        = the maximum kilometer distance across the screen at which to display this layer
+     color                  = the color with which to render the line, as an X11-defined color name, RGB triplet (each value between 0..255)
+                              or hex group ("wheat1", "153,153,153", "#ffffcc")
+     width                  = the width of the line in pixels
+
+   WMS (does not work yet!):
+     layers     = TODO what is this?? a comma-separated list of the id numbers for the layers to request from the server. Defaults to all.
+     serviceName = the name of the service to request, when, as is the case with the ESRI WMS interface, many services are served from the same URL
+
+ Notes:
+  - Layers are rendered in the same order in which they are defined. First layer is on bottom, last layer on top. However,
+    the GUI allows you to change the order by selecting "Configure -> Layer Order" from the menubar.
+
+####################################################################################################################################
+-->
+
+<!-- GRIDDED layers -->
+
+<Layer vis="on" type="MDV" name="DBZ" location="mdvp:://localhost::mdv/radar/cart"
+       field="DBZ" render="grid" colorscale="file:///home/titan5/projDir/display/color_scales/dbz_color.colors" />
+
+<Layer vis="off" type="MDV" name="Precip-1Hr" location="mdvp:://localhost::mdv/precip/1hr"
+       field="precip" render="grid" colorscale="file:///home/titan5/projDir/display/color_scales/precip_color.colors" />
+
+<Layer vis="off" type="MDV" name="Precip-24Hr" location="mdvp:://localhost::mdv/precip/24hr"
+       field="precip" render="grid" colorscale="file:///home/titan5/projDir/display/color_scales/precip_color.colors" />
+
+<Layer vis="off" type="MDV" name="Rate-1Hr" location="mdvp:://localhost::mdv/precip/1hr"
+       field="rate" render="grid" colorscale="file:///home/titan5/projDir/display/color_scales/vil_color.colors" />
+
+<Layer vis="off" type="MDV" name="VIL" location="mdvp:://localhost::mdv/vil"
+       field="vil" render="grid" colorscale="file:///home/titan5/projDir/display/color_scales/vil_color.colors" />
+
+<Layer vis="off" type="MDV" name="VIL-diff" location="mdvp:://localhost::mdv/vil"
+       field="dVil" render="grid" colorscale="file:///home/titan5/projDir/display/color_scales/vil_diff_color.colors" />
+
+<!--
+<Layer vis="off" type="MDV" name="VEL_S_SUR" location="mdvp:://localhost::mdv/radarPolar/cp2_s/sur"
+       field="VEL_F" render="grid" colorscale="http://www.ral.ucar.edu/colorscales/vel.colors" />
+
+<Layer vis="off" type="MDV" name="WIDTH_S_SUR" location="mdvp:://localhost::mdv/radarPolar/cp2_s/sur"
+       field="WIDTH_F" render="grid" colorscale="http://www.ral.ucar.edu/projects/titan/jadeite/color_scales/width.colors" />
+
+<Layer vis="off" type="MDV" name="Merged DBZ" location="mdvp:://localhost::mdv/radarCart/BrisMerge"
+       field="DBZ" render="fillcontours" colorscale="http://www.ral.ucar.edu/colorscales/dbz.colors" />
+
+-->
+
+<!--
+<Layer vis="off" type="MDV" name="MtStapl DBZ" location="mdvp:://localhost::mdv/radarPolar/MtStapl"
+       field="DBZ" render="grid" colorscale="http://www.ral.ucar.edu/colorscales/dbz.colors" />
+
+<Layer vis="off" type="MDV" name="MtStapl VEL" location="mdvp:://localhost::mdv/radarPolar/MtStapl"
+       field="VEL" render="grid" colorscale="http://www.ral.ucar.edu/colorscales/vel.colors" />
+-->
+
+<!-- SYMPROD layers -->
+
+<Layer vis="on" type="SYMPROD" name="Tstorms" location="spdbp:Tstorms2Symprod:basic//localhost::spdb/tstorms"
+       before="15mins" after="" textOff="1.5" mode="LATEST_IN_FRAME" />
+
+<Layer vis="on" type="SYMPROD" name="AircraftTracks" location="spdbp:AcTrack2Symprod://localhost::spdb/ac_posn"
+       before="10mins" after="" textOff="1.5" mode="LATEST_IN_FRAME" />
+
+<!--
+<Layer vis="off" type="MDV" name="Terrain" location="mdvp::static//localhost::mdv/terrain"
+       field="Elevation" is2D="true" render="fillcontours" colorscale="http://www.ral.ucar.edu/projects/titan/jadeite/color_scales/terrain.colors" />
+
+<Layer vis="off" type="MDVTOPO" name="Topography" location="mdvp::static//wmds.rap.ucar.edu::mdv/terrain"
+       field="Elevation" colorscale="topo_colorscale" />
+
+<Layer vis="on" type="SYMPROD" name="AWS" location="spdbp:Metar2Symprod:simple//localhost::spdb/aws"
+       before="1hrs" after="" textOff="1.5" mode="LATEST_IN_FRAME" />
+
+<Layer vis="off" type="SYMPROD" name="AWS-labels" location="spdbp:Metar2Symprod:labels//localhost::spdb/aws"
+       before="1hrs" after="" textOff="1.5" mode="LATEST_IN_FRAME" />
+
+<Layer vis="on" type="SYMPROD" name="Ltg" location="spdbp:Ltg2Symprod://localhost::spdb/ltg"
+       before="1hrs" after="" textOff="1.5" mode="LATEST_IN_FRAME" />
+
+-->
+
+<!-- MAPS -->
+
+<Layer vis="on" type="CIDDMAP" name="Rings" location="file:///home/titan5/projDir/display/maps/range_rings.map"
+       color="255,255,255" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="Counties" location="file:///home/titan5/projDir/display/maps/us_counties.map"
+       color="0,0,255" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="Roads" location="file:///home/titan5/projDir/display/maps/boulder_roads.map"
+       color="160,82,45" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="US States" location="http://rap.ucar.edu/maps/usa_states.map"
+       color="255,255,255" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="World Coasts" location="http://rap.ucar.edu/maps/world_states.map"
+       color="255,255,255" width="1" />
+
+<!--
+<Layer vis="on" type="CIDDMAP" name="Queensland" location="http://www.ral.ucar.edu/projects/titan/jadeite/maps/Queensland.map"
+       color="255,255,255" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="NSW coast" location="http://www.ral.ucar.edu/projects/titan/jadeite/maps/NswCoast.map"
+       color="255,255,255" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="CP2 rings" location="http://www.ral.ucar.edu/projects/titan/jadeite/maps/cp2_range_rings.map"
+       color="gray" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="BNE Airspace" location="http://www.ral.ucar.edu/projects/titan/jadeite/maps/BnAirspace.map"
+       color="blue" width="1" />
+
+<Layer vis="on" type="CIDDMAP" name="MIL Airspace" location="http://www.ral.ucar.edu/projects/titan/jadeite/maps/MilAirspace.map"
+       color="brown" width="1" />
+
+-->
+
+<!--
+####################################################################################################################################
+
+ Time configuration (optional, zero or one):
+
+ mode     = "realtime" or "archive" - determines data refresh and time window marching
+ start    = in realtime mode, start is relative to now (+ or - number of hrs or mins, or "now"), e.g., "-12hrs"
+            in archive mode, start must be an explicit time in the format "yyyy-MM-dd'T'HH:mm (e.g. 2008-04-30T23:41)
+ end      = in realtime mode, end is relative to now (+ or - number of hrs or mins, or "now"), e.g., "+15mins"
+            in archive mode, end must be an explicit time in the format "yyyy-MM-dd'T'HH:mm (e.g. 2008-04-30T23:41)
+ interval = time between selectable (and animated) ticks, beginning with the start time and ending at or before the end time
+ update   = time between checks for data updates (in realtime only). For performance reasons, keep this value >= 5mins.
+ timeZone = time zone to use for the interpretation of start/end, and to use for the display. Defaults to UTC if omitted.
+            Abbreviations and full descriptions are ok (eg: MST or America/Denver).  See http://en.wikipedia.org/wiki/Time_zone
+            for a description, and http://www.timezoneconverter.com/ for a listing
+
+####################################################################################################################################
+-->
+
+<Time mode="realtime" start="-12hrs" end="+12hrs" interval="1hrs" update="5mins" timeZone="America/Denver"/>
+<!-- <Time mode="archive" start="2008-02-02T01:00" end="2008-02-02T15:00" interval="6mins" timeZone="UTC"/> -->
+
+<!--
+####################################################################################################################################
+
+ Animation configuration (optional, zero or one):
+
+ delay = minimum milliseconds delay between animation frames
+ dwell = minimum milliseconds pause at the end of an animation sequence
+
+####################################################################################################################################
+-->
+
+<Animation delay="100" dwell="500" />
+
+<!--
+####################################################################################################################################
+
+ Altitude configuration (optional, zero or one):
+
+ units    = the units for the vertical scale (km, m, ft, FL, or mb)
+ bottom   = lowest altitude of range, in the same units defined above (if in mb, may be greater numerically than top)
+ top      = highest altitude of range, in the same units defined above (if in mb, may be lesser numerically than bottom)
+ interval = the interval to use for dividing up the distance between bottom and top
+ default  = optional initial altitude, in the same units defined above (defaults to same value as "bottom")
+
+ or
+
+ dataDrivenProperties = optional. Overrides other attributes. If true, altitude's range and levels will be
+                        dynamically set according to selected/on layer.
+
+####################################################################################################################################
+-->
+
+<!-- Altitude units="ft" bottom="0" top="40000" interval="1000" default="6000"/-->
+<!--Altitude units="FL" bottom="0" top="300" interval="10" default="100"/-->
+<!--Altitude units="km" bottom="0" top="16" interval="0.25" default="3"/-->
+<!--Altitude units="mb" bottom="1000" top="0" interval="50" default="700" /-->
+<Altitude dataDrivenProperties="true" default="4" />
+
+<!--
+####################################################################################################################################
+
+ View configuration (optional, zero or one):
+
+   projection = the projection in which to view the data. One of "LatLon," "Flat," "LambertConformal," or "Stereographic"
+
+ Projection-specific configuration:
+
+ LatLon:
+   none, defaults to -180 to +180 longitude and -90 to +90 latitude
+
+ Flat:
+   origLon  = longitude of the origin
+   origLat  = latitude of the origin
+   rotation = rotation of the projection
+
+ LambertConformal:
+   originLat = origin's latitude
+   originLon = origin's longitude
+   stdLat1 = standard latitude 1
+   stdLat2 = standard latitude 2 (optional)
+
+ Stereographic:
+   tangentLon = tangent longitude
+   tangentLat = tangent latitude
+   secantLat = secant latitude, if applicable due to secant plane
+
+####################################################################################################################################
+-->
+
+<!--View projection="LambertConformal" originLon="-95.0" originLat="25.0" stdLat1="25.0" /-->
+<View projection="Flat" originLon="-104.546" originLat="39.787" rotation="0.0" />
+<!--View projection="Stereographic" tangentLon="-135.0" tangentLat="90.0"/-->
+<!--<View projection="LatLon" /-->
+
+<!--
+####################################################################################################################################
+
+ Areas of Interest (optional, zero or more):
+
+   name = the name of the Area shown in the display
+ minLon = the minimum longitude of the lat/lon bounding box defining the Area in decimal degrees or degrees, minutes, seconds
+ minLat = the minimum latitude of the lat/lon bounding box defining the Area in decimal degrees or degrees, minutes, seconds
+ maxLon = the maximum longitude of the lat/lon bounding box defining the Area in decimal degrees or degrees, minutes, seconds
+ maxLat = the maximum latitude of the lat/lon bounding box defining the Area in decimal degrees or degrees, minutes, seconds
+ defaultView = (optional) true or false; if true, then the Area will be the default view for the main window
+
+ Note:
+   - If more than one Area has a defaultView of true, then the last one listed will be the default view
+
+    name  defaultView   minLon   minLat maxLon  maxLat
+
+####################################################################################################################################
+-->
+
+<Area name="SMALL" minLon="-105.24" minLat="39.24" maxLon="-103.96" maxLat="40.23"/>
+<Area name="MEDIUM" minLon="-106.86" minLat="38.0" maxLon="-102.22" maxLat="41.58" defaultView="true"/>
+<Area name="WIDE" minLon="-110.0" minLat="35.0" maxLon="-98" maxLat="44.0"/>
+<!-- <Area name="WORLD" minLon="-180" minLat="-90" maxLon="180" maxLat="90"/> -->
+
+<!--
+####################################################################################################################################
+
+ Window parameters (optional element, zero or one):
+
+ width = pixel width of the window, if the screen is big enough
+ height = pixel height of the window, if the screen is big enough
+ xOrigin = (optional) pixel x location of the upper left of the window, measured from upper left of the screen
+ yOrigin = (optional) pixel y location of the upper left of the window, measured from upper left of the screen (positive downwards)
+ backgroundColor = (optional) defaults to white
+
+####################################################################################################################################
+-->
+
+<Window width="900" height="1000" xOrigin="300" yOrigin="100" backgroundColor="gray20"/>
+
+<!--
+####################################################################################################################################
+
+ This section MUST appear *below* the Layer definitions!
+
+ XSections:
+
+ XSections = optional element. Zero or one allowed. If this element is missing, then cross-sections will be disabled.
+ Path = optional element representing a preconfigured xsect path. Zero or more allowed.
+   name = name attribute for the xsection Path element
+   Waypoint = 2 or more elements required for each Path. Ordered waypoints for the path. Requires lat and lon attributes.
+
+####################################################################################################################################
+-->
+
+<XSections>
+<!--
+  <Path name="LAX to Vegas to KDEN">
+    <Waypoint lat="33.8" lon="-118.341"/>
+    <Waypoint lat="36.41" lon="-115.06"/>
+    <Waypoint lat="42.0" lon="-105.0"/>
+  </Path>
+  <Path name="LAX to Boston">
+    <Waypoint lat="33.8" lon="-118.341"/>
+    <Waypoint lat="42.323" lon="-71.062"/>
+  </Path>
+-->
+</XSections>
+
+<!--
+####################################################################################################################################
+
+ SkewT parameters:
+
+ SkewT            = optional element. Zero or one allowed. If this element is missing, then SkewTs will be disabled.
+ location         = Required. where to get the data eg: mdvp:://yaw:10000:ruc/mdv/lambert
+ temperatureField = Required. Name of the MDV 3-D temperature field.
+ rhField          = either rhField or dewpointField required.  Name of the MDV 3-D relative humidity field. Server side units
+                    must be correct (ie: % means 0..100, whereas unitless means 0..1)
+ dewpointField    = either rhField or dewpointField required. Name of the MDV 3-D dewpoint field.
+ uField           = Required. Name of the MDV 3-D u-wind field. Speed/dir not supported (yet)
+ vField           = Required. Name of the MDV 3-D v-wind field. Speed/dir not supported (yet)
+
+####################################################################################################################################
+--><!--SkewT location="mdvp:://yaw:10000:ruc/mdv/lambert"
+       temperatureField="TMP"
+       rhField="R_H"
+       uField="UGRD"
+       vField="VGRD">
+</SkewT-->
+
+<!--
+<SkewT location="mdvp:://yaw:10000:ruc/mdv/lambert"
+       temperatureField="TMP"
+       rhField="R_H"
+       uField="UGRD"
+       vField="VGRD">
+</SkewT>
+-->
+
+  <!--
+  ####################################################################################################################################
+
+   ColorScale configuration (zero or more):
+
+   id    = the name of the colorscale, used to refer to it from "Layer" defintions
+   Range = one or more Range elements required
+   min   = the minimum value of the bin; attribute of the Range element, required
+   max   = the maximum value of the bin; attribute of the Range element, required
+   color = an X11-defined color name, RGB triplet (0..255 for each value), or hex group ("wheat1", "153,153,153", "#ffffcc");
+           attribute of the Range element, required
+   label = the optional custom label to apply to this bin. Defaults to the numeric values of the bin boundaries.
+           ; attribute of the Range element, optional
+
+   Note:
+      - when a value can be in more than one bin (overlapping) the last matching (descending) bin color is used
+
+  ####################################################################################################################################
+  -->
+<ColorScale id="airColorscale">
+  <Range min="-80" max="-35" color="LightYellow1"      label="-35<" />
+  <Range min="-35" max="-30" color="LightYellow2"      label="" />
+  <Range min="-30" max="-25" color="wheat1"            label="" />
+  <Range min="-25" max="-15" color="LightYellow3"      label="" />
+  <Range min="-15" max="-10" color="RosyBrown3"        label="" />
+  <Range min="-10" max="-5"  color="medium slate blue" label="" />
+  <Range min="-5"  max="0"   color="dark slate blue"   label="" />
+  <Range min="0"   max="5"   color="blue"              label="" />
+  <Range min="5"   max="10"  color="royal blue"        label="" />
+  <Range min="10"  max="14"  color="slate gray"        label="" />
+  <Range min="14"  max="17"  color="dark slate gray"   label="" />
+  <Range min="17"  max="20"  color="dark green"        label="" />
+  <Range min="20"  max="23"  color="forest green"      label="" />
+  <Range min="23"  max="26"  color="lime green"        label="" />
+  <Range min="26"  max="29"  color="lawn green"        label="" />
+  <Range min="29"  max="32"  color="yellow"            label="" />
+  <Range min="32"  max="35"  color="gold1"             label="" />
+  <Range min="35"  max="38"  color="DarkGoldenrod1"    label="" />
+  <Range min="38"  max="41"  color="orange"            label="" />
+  <Range min="41"  max="44"  color="sienna1"           label="" />
+  <Range min="44"  max="47"  color="orange red"        label="" />
+  <Range min="47"  max="50"  color="red1" />
+</ColorScale>
+
+<ColorScale id="tempColorscale">
+  <Range min="-50" max="-45"  color="204,153,255"/>
+  <Range min="-45" max="-40"  color="153,102,255"/>
+  <Range min="-40" max="-35"  color="102,51,153"/>
+  <Range min="-35" max="-30"  color="0,0,204"/>
+  <Range min="-30" max="-25"  color="0,0,255"/>
+  <Range min="-25" max="-20"  color="51,102,255"/>
+  <Range min="-20" max="-15"  color="51,153,255"/>
+  <Range min="-15" max="-10"  color="102,204,255"/>
+  <Range min="-10" max="-5"   color="153,204,255"/>
+  <Range min="-5"  max="0"    color="204,204,255"/>
+  <Range min="0"   max="5"    color="255,255,153"/>
+  <Range min="5"   max="10"   color="255,204,0"/>
+  <Range min="10"  max="15"   color="255,153,0"/>
+  <Range min="15"  max="20"   color="255,102,0"/>
+  <Range min="20"  max="25"   color="255,51,0"/>
+  <Range min="25"  max="30"   color="255,0,0"/>
+  <Range min="30"  max="35"   color="204,0,0"/>
+</ColorScale>
+
+<!--
+ wind.colors
+
+ For the Taiwan system. Winds below 60
+ are cool colours - over 60
+ they are hot colours.
+-->
+<ColorScale id="windColorsTaiwan">
+  <Range min="0"   max="15"  color="75,75,75" />
+  <Range min="15"  max="30"  color="102,102,102" />
+  <Range min="30"  max="45"  color="128,128,128" />
+  <Range min="45"  max="60"  color="153,153,153" />
+  <Range min="60"  max="70"  color="dark slate blue" />
+  <Range min="70"  max="80"  color="RoyalBlue" />
+  <Range min="80"  max="90"  color="SteelBlue1" />
+  <Range min="90"  max="100" color="purple" />
+  <Range min="100" max="110" color="sea green" />
+  <Range min="110" max="120" color="lime green" />
+  <Range min="120" max="150" color="orange" />
+  <Range min="150" max="200" color="chocolate" />
+</ColorScale>
+
+<ColorScale id="windColors">
+  <Range min="0"   max="15"  color="255,255,255"/>
+  <Range min="15"   max="30"  color="204,255,255"/>
+  <Range min="30"   max="45"  color="153,255,255"/>
+  <Range min="45"   max="60"  color="153,255,204"/>
+  <Range min="60"   max="75"  color="153,255,102"/>
+  <Range min="75"   max="90"  color="204,255,102"/>
+  <Range min="90"   max="105"  color="255,255,153"/>
+  <Range min="105"   max="120"  color="255,204,0"/>
+  <Range min="120"   max="135"  color="255,153,0"/>
+  <Range min="135"   max="150"  color="255,102,0"/>
+  <Range min="150"   max="165"  color="255,51,0"/>
+  <Range min="165"   max="180"  color="204,0,0"/>
+</ColorScale>
+
+<ColorScale id="radar_colorscale">
+  <Range min="5.0" max="10.0" color="102,255,255"/>
+  <Range min="10.0" max="15.0" color="51,153,255"/>
+  <Range min="15.0" max="20.0" color="0,0,255"/>
+  <Range min="20.0" max="25.0" color="0,255,0"/>
+  <Range min="25.0" max="30.0" color="0,204,0"/>
+  <Range min="30.0" max="35.0" color="0,153,0"/>
+  <Range min="35.0" max="40.0" color="255,255,0"/>
+  <Range min="40.0" max="45.0" color="255,204,0"/>
+  <Range min="45.0" max="50.0" color="255,102,0"/>
+  <Range min="50.0" max="55.0" color="255,0,0"/>
+  <Range min="55.0" max="60.0" color="204,51,0"/>
+  <Range min="60.0" max="65.0" color="153,0,0"/>
+  <Range min="65.0" max="70.0" color="255,0,255"/>
+  <Range min="70.0" max="75.0" color="153,51,204"/>
+</ColorScale>
+
+<ColorScale id="torp_colorscale">
+  <Range min="-35" max="-30" color="102,255,255"/>
+  <Range min="-30" max="-25" color="51,153,255"/>
+  <Range min="-25" max="-20" color="0,0,255"/>
+  <Range min="-20.0" max="-15.0" color="0,255,0"/>
+  <Range min="-15.0" max="-10.0" color="0,204,0"/>
+  <Range min="-10.0" max="-5.0" color="0,153,0"/>
+  <Range min="-5.0" max="0.0" color="255,255,0"/>
+  <Range min="0.0" max="5.0" color="255,204,0"/>
+  <Range min="5.0" max="10.0" color="255,102,0"/>
+  <Range min="10.0" max="15.0" color="255,0,0"/>
+  <Range min="15.0" max="20.0" color="204,51,0"/>
+  <Range min="20.0" max="25.0" color="153,0,0"/>
+  <Range min="25.0" max="30.0" color="255,0,255"/>
+  <Range min="30.0" max="35.0" color="153,51,204"/>
+</ColorScale>
+
+<ColorScale id="topo_colorscale">
+  <Range min="0" max="315" color="102,51,0"/>
+  <Range min="315" max="630" color="111,60,9"/>
+  <Range min="630" max="945" color="119,68,17"/>
+  <Range min="945" max="1260" color="128,77,26"/>
+  <Range min="1260" max="1575" color="137,86,35"/>
+  <Range min="1575" max="1890" color="145,94,43"/>
+  <Range min="1890" max="2215" color="153,102,51"/>
+  <Range min="2215" max="2530" color="162,111,60"/>
+  <Range min="2530" max="2845" color="170,119,68"/>
+  <Range min="2845" max="3160" color="179,128,77"/>
+  <Range min="3160" max="3475" color="188,137,86"/>
+  <Range min="3475" max="3790" color="196,145,94"/>
+  <Range min="3790" max="4105" color="204,153,102"/>
+  <Range min="4105" max="4420" color="213,162,111"/>
+  <Range min="4420" max="4735" color="221,170,119"/>
+  <Range min="4735" max="5050" color="230,179,128"/>
+  <Range min="5050" max="5365" color="239,188,137"/>
+  <Range min="5365" max="5680" color="247,196,145"/>
+  <Range min="5680" max="6000" color="255,204,153"/>
+</ColorScale>
+
+<!--
+####################################################################################################################################
+
+ Other configuration parameters:
+
+####################################################################################################################################
+-->
+
+</Jadeite>

@@ -1,0 +1,8 @@
+#! /bin/csh
+
+running "Janitor -instance logs"
+if ($status == 1) then
+    Janitor -instance logs -top $DATA_DIR/logs |& \
+	LogFilter -d $ERRORS_LOG_DIR -p Janitor -i logs >& /dev/null &
+endif
+

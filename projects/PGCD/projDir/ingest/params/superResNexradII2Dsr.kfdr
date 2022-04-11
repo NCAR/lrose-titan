@@ -1,0 +1,551 @@
+/**********************************************************************
+ * TDRP params for superResNexradII2Dsr
+ **********************************************************************/
+
+//======================================================================
+//
+// This application reads super resolution nexrad
+// radar data and writes the beam data to an FMQ.
+// Super resolution data became available in 2008 with
+// NOAAs Radar Operations Center (ROC) release of build 10
+// software. At this point, this application replaced
+// the earlier nexrad2dsr application.
+//
+// The radar data consists of reflectivity (DBZ),
+// radial velocity (VEL) and spectral width (SW) fields.
+// At the time of writing the nexrads are being fitted
+// with dual polarmetric abilities. Once this is complete
+// the dual pol data fields - ZDR, PHI and RHO - will also
+// be available. This application should cope with these
+// fields as they become available.
+//
+// This application can either read from a socket or read
+// from input files. Input files are typically delivered
+// via LDM, however, as they arrive the files are NOT
+// suitable for reading by this program. The application
+// apps/ingest/src/superResNexradLdmUnzip
+// should be used to initially read the input files from
+// LDM and write files that this application can read. The
+// superResNexradLdmUnzip can optionally write to a scoket
+// as well, and users who are interested in the highest tilt
+// may want to elect using a socket since it means that
+// they will not have to wait for the highest tilt before
+// an end of volume can be triggered. But in general file based
+// input is the norm.
+//
+// Niles Oien February 2008.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// How much printing to do while running.
+//
+// Set as appropriate.
+//
+//
+// Type: enum
+// Options:
+//     DEBUG_NONE
+//     DEBUG_HEADERS
+//     DEBUG_NORM
+//     DEBUG_DATA
+//
+
+debug = DEBUG_HEADERS;
+
+///////////// mode ////////////////////////////////////
+//
+// Where to read data from.
+//
+// Set as appropriate.
+//
+//
+// Type: enum
+// Options:
+//     READ_ARCHIVE_FILES
+//     READ_REALTIME_FILES
+//     READ_SOCKET
+//
+
+mode = READ_SOCKET;
+
+///////////// realtimeInput ///////////////////////////
+//
+// If mode is READ_REALTIME_FILES then use these parameters.
+//
+// Maximum file age (seconds), dir to watch, substring in filenames
+// and boolean indicating if input files should be gzipped when
+// done with them (they compress very effectively).
+//
+//
+// Type: struct
+//   typedef struct {
+//      int realtimeMaxAgeSec;
+//      string realtimeDir;
+//      string realtimeFilenameSubString;
+//      boolean realtimeGzipInput;
+//   }
+//
+//
+
+realtimeInput = {
+    realtimeMaxAgeSec = 900,
+    realtimeDir = "$(RAP_DATA_DIR)/ldmunzip/KFDR",
+    realtimeFilenameSubString = "nexDat",
+    realtimeGzipInput = TRUE
+};
+
+///////////// socketInput /////////////////////////////
+//
+// If mode is READ_SOCKET then use these parameters.
+//
+// Host name and port number to connect to.
+//
+//
+// Type: struct
+//   typedef struct {
+//      string socketHostName;
+//      int socketPortNum;
+//   }
+//
+//
+
+socketInput = {
+    socketHostName = "localhost",
+    socketPortNum = 16060
+};
+
+///////////// archiveString ///////////////////////////
+//
+// String to look for that signifies start of volume.
+//
+// Default should be OK for new data. Use the strings
+// command if it is not.
+//
+//
+// Type: string
+//
+
+archiveString = "AR";
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+//
+// Used for registration with procmap.
+//
+//
+// Type: string
+//
+
+instance = "kfdr";
+
+///////////// byteSwap ////////////////////////////////
+//
+// Option to byte swap the input data.
+//
+// This should be TRUE on a PC.
+//
+//
+// Type: boolean
+//
+
+byteSwap = TRUE;
+
+///////////// resample ////////////////////////////////
+//
+// Beam geometry to resample to.
+//
+// All beams are resampled to this geometry. This is needed
+// for the super res data.
+//
+//
+// Type: struct
+//   typedef struct {
+//      double firstGateRangeKm;
+//      double lastGateRangeKm;
+//      double gateSpacingKm;
+//      double azIncDeg;
+//   }
+//
+//
+
+resample = {
+    firstGateRangeKm = 2.125,
+    lastGateRangeKm = 300.125,
+    gateSpacingKm = 0.25,
+    azIncDeg = 0.5
+};
+
+///////////// elevAction //////////////////////////////
+//
+// Determines how elevation angles are handled.
+//
+// ELEVATION_ASIS (default) Just use the elevation as reported
+// ELEVATION_ROUNDED Round the elevation as reported - see
+//                   the roundElevDelta parameter.
+// ELEVATION_LOOKUP This allows a lookup table to be used to
+//    translate the elevation as read by mapping ranges of
+//    elevation angle to a single elevation. The lookup table
+//    depends on the VCP number and is stored in a file. The
+//    name of the file incorporates the VCP number (see the
+//    vcpElevFilename parameter). The format of this file is
+//    repaeated ASCI lines of the form
+//
+//    minElevation    maxElevation    elevation to use
+//
+//    Consider the following example lines :
+//
+//    0.0     1.0    0.5
+//    1.0     2.0    1.45
+//    2.0     3.0    2.4
+//
+//    This would have the result of using elevation 0.5 if
+//    the elevation was in the range 0.0 to 1.0 degrees,
+//    using 1.45 degrees for the range 1.0 to 2.0 and using
+//    2.4 for the range 2.0 to 3.0
+//
+//    Elevations that do not lie within the specified ranges
+//    will be passed on as is in this mode.
+//
+//
+// Type: enum
+// Options:
+//     ELEVATION_ASIS
+//     ELEVATION_ROUNDED
+//     ELEVATION_LOOKUP
+//
+
+elevAction = ELEVATION_LOOKUP;
+
+///////////// roundElevDelta //////////////////////////
+//
+// If elevAction is ELEVATION_ROUNDED then elevations will
+// be rounded to integer multiples of this value.
+//
+// Set as appropriate.
+//
+//
+// Type: double
+//
+
+roundElevDelta = 0.1;
+
+///////////// vcpElevFilename /////////////////////////
+//
+// If elevAction is ELEVATION_LOOKUP then the filename
+// to read the lookup table from will be construed using this
+// string and the VCP number.
+//
+// Set as appropriate.
+//
+//
+// Type: string
+//
+
+vcpElevFilename = "$(PROJ_DIR)/ingest/vcpElevFiles/vcp_%03d.elev";
+
+///////////// vcpElevSelectFilename ///////////////////
+//
+// Controls which field(s) to extract from which
+// elevation. This is done by reading a file for each VCP.
+// The filename is construed from this string and the VCP
+// number.
+//
+// The format of this ASCII file is probably best illustrated
+// by example. For the entries :
+//
+// DBZ[1] VEL[2] SW[2]
+// DBZ[5] VEL[6] SW[6]
+// DBZ[9] VEL[9] SW[9]
+//
+//  in the first output tilt, the DBZ field will be
+// taken from input elevation 1, VEL
+// and SW from input elevation 2. The next line
+// determines that the second output tilt will be
+// construed using the DBZ field from input elevation 5
+// and VEL and SW from input elevation 6. The third line
+// determines that the third output tilt will be construed
+// using the DBZ, VEL and SW from input elevation 9. The first
+// input tilt is number 1 (not 0).
+//
+//
+// Type: string
+//
+
+vcpElevSelectFilename = "$(PROJ_DIR)/ingest/vcpElevSelect/vcp_%03d.elSelect";
+
+///////////// fieldList ///////////////////////////////
+//
+// List of fields that we want to output.
+//
+// Set as appropriate. Output field names will be set
+// to DBZ, VEL, SW, ZDR, PHI and RHO respectively.
+//
+//
+// Type: struct
+//   typedef struct {
+//      boolean wantDBZ;
+//      boolean wantVEL;
+//      boolean wantSW;
+//      boolean wantZDR;
+//      boolean wantPHI;
+//      boolean wantRHO;
+//   }
+//
+//
+
+fieldList = {
+    wantDBZ = TRUE,
+    wantVEL = TRUE,
+    wantSW = FALSE,
+    wantZDR = TRUE,
+    wantPHI = FALSE,
+    wantRHO = TRUE
+};
+
+///////////// outputFmq ///////////////////////////////
+//
+// Specifications for the FMQ that we are to write to.
+//
+// Set as appropriate, try to avoid overwrites. The delay is not done if
+// the input mode is READ_SOCKET.
+//
+//
+// Type: struct
+//   typedef struct {
+//      long fmqSizeBytes;
+//      long fmqNumSlots;
+//      boolean fmqCompress;
+//      string fmqUrl;
+//      string fmqMsgLogDir;
+//      boolean fmqBlockingWrites;
+//      int fmqBeamsPerRadarParams;
+//      int delayAfterSendingParamsSecs;
+//   }
+//
+//
+
+outputFmq = {
+    fmqSizeBytes = 45000000,
+    fmqNumSlots = 6000,
+    fmqCompress = FALSE,
+    fmqUrl = "fmqp:://localhost::fmq/kfdr/dsRadar",
+    fmqMsgLogDir = "$(DATA_DIR)/logs/errors/",
+    fmqBlockingWrites = FALSE,
+    fmqBeamsPerRadarParams = 30,
+    delayAfterSendingParamsSecs = 0
+};
+
+///////////// radarDesc ///////////////////////////////
+//
+// Specifications for the radar.
+//
+// Set as appropriate.
+//
+//
+// Type: struct
+//   typedef struct {
+//      double lat;
+//      double lon;
+//      double altKm;
+//      long radarID;
+//      string radarName;
+//      string siteName;
+//      double horizBeamWidth;
+//      double vertBeamWidth;
+//   }
+//
+//
+
+radarDesc = {
+    lat = 34.3622,
+    lon = -98.9764,
+    altKm = 0.396,
+    radarID = 1,
+    radarName = "NEXRAD-KFDR",
+    siteName = "Fredrick - KFDR",
+    horizBeamWidth = 1,
+    vertBeamWidth = 1
+};
+
+///////////// locationFromInput ///////////////////////
+//
+// Option to take lat, lon alt from input data
+// rather than the radarDesc entry in the param file.
+//
+// Generally OK to set this to true and trust the
+// incoming datastream to get the location right.
+// It is set to FALSE by default for compatibility purposes.
+//
+//
+// Type: boolean
+//
+
+locationFromInput = FALSE;
+
+///////////// message31SizeError //////////////////////
+//
+// Number of bytes in message 31 is reported as being
+// this many bytes more than it actually is, ie.
+// actualNumBytes = headerNumBytes - message31SizeError
+// for message type 31.
+//
+// At the time of writing the error is 4 bytes. I think the
+// error is likely to remain, however, it is a parameter so that
+// if it is ever fixed then we can account for that without a
+// recompile.
+//
+//
+// Type: int
+//
+
+message31SizeError = 4;
+
+///////////// timeAction //////////////////////////////
+//
+// How to set the time for a beam.
+//
+// TIME_BEAM - take the time from the first beam. This may be
+// confusing, given that beams can be composites of different fields
+// that come from different rotations.
+//
+// TIME_FILENAME - take the time from the input filneame. Assumes
+// a 20080208_202933.nexDat naming convention.
+//
+// TIME_WALLCLOCK - Use current time.
+//
+//
+// Type: enum
+// Options:
+//     TIME_BEAM
+//     TIME_FILENAME
+//     TIME_WALLCLOCK
+//
+
+timeAction = TIME_BEAM;
+
+///////////// timeOffsetSecs //////////////////////////
+//
+// Time offset to add, seconds, regardless of what timeAction
+// is set to.
+//
+// Typically will be 0.
+//
+//
+// Type: int
+//
+
+timeOffsetSecs = 0;
+
+///////////// delay ///////////////////////////////////
+//
+// Number of seconds to delay after sending a tilt
+// and sending a volume.
+//
+// May well both be 0. These dealys are not done if the
+// input mode is READ_SOCKET.
+//
+//
+// Type: struct
+//   typedef struct {
+//      int delayPostTiltSecs;
+//      int delayPostVolSecs;
+//   }
+//
+//
+
+delay = {
+    delayPostTiltSecs = 0,
+    delayPostVolSecs = 0
+};
+
+///////////// delayBeam ///////////////////////////////
+//
+// Option to delay some number of milliseconds
+// after sending a beam.
+//
+// May be handy in some circumstances.
+//
+//
+// Type: struct
+//   typedef struct {
+//      boolean delayPostBeam;
+//      int msDelayPostBeam;
+//   }
+//
+//
+
+delayBeam = {
+    delayPostBeam = FALSE,
+    msDelayPostBeam = 0
+};
+
+///////////// requireAllFieldsInBeam //////////////////
+//
+// Option to require at least some non-missing data
+// for all fields in all beams.
+//
+// It is strongly suggested that this be set TRUE.
+// The advantage of setting it to false is that if a beam
+// has data in one field and not in another - say, it has
+// velocity data but the reflectivity data are all missing - then
+// the non-missing data are passed on for the field for
+// which they are available. The problem is that the all
+// missing data for the other field are also passed on. This
+// can cause problems for downstream processes - Titan,
+// for instance.
+//
+//
+// Type: boolean
+//
+
+requireAllFieldsInBeam = TRUE;
+
+///////////// azOffset ////////////////////////////////
+//
+// Offset to add, degrees, in azimuths.
+//
+// Typically will be 0.
+//
+//
+// Type: double
+//
+
+azOffset = 0;
+
+///////////// reportAllMissing ////////////////////////
+//
+// Report when all fields in a beam are set to the
+// the missing value for the whole beam.
+//
+// Independant of other debugging.
+//
+//
+// Type: boolean
+//
+
+reportAllMissing = FALSE;
+
+///////////// excludeAzRanges /////////////////////////
+//
+// Unusual option to exclude ranges of azimuth.
+// Azimuths range from 0 to 360 degrees inclusive.
+//
+// Default is not to do this. It is really a debugging measure
+// for a specific case, but it may be handy in some debugging.
+//
+//
+// Type: struct
+//   typedef struct {
+//      double minAz;
+//      double maxAz;
+//   }
+//
+// 1D array - variable length.
+//
+
+excludeAzRanges = {
+};
+

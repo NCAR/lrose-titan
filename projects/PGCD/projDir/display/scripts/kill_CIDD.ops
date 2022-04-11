@@ -1,0 +1,3 @@
+#! /bin/csh -f
+
+snuff "CIDD -p CIDD.ops"

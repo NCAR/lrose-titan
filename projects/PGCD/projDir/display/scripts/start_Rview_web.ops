@@ -1,0 +1,13 @@
+#! /bin/csh -f
+
+setenv DISPLAY :0.0
+
+cd $PROJ_DIR/display/params
+
+running "Rview -params Rview_web.ops"
+if ($status == 1) then
+  snuff "Rview -params Rview_web.ops"
+  Rview -params Rview_web.ops  |& \
+    LogFilter -d $ERRORS_LOG_DIR -p Rview -i web &
+endif
+

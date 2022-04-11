@@ -1,0 +1,452 @@
+/**********************************************************************
+ * TDRP params for DsFileDist
+ **********************************************************************/
+
+//======================================================================
+//
+// SETTING UP PARAMETER FILES FOR DsFileDist.
+//  This file specifies the behavior of DsFileDist. The program may be 
+//   started with the -params option to point to a global parameter file, 
+//   or there may be a file '_DsFileDist' in $RAP_DATA_DIR. Either of 
+//   these mechanisms allows you to set the global behavior of the 
+//   program. However, you need to add local parameter files to the 
+//   directory tree to activate the program.
+
+// To activate file copying from a given directory, put in a local copy 
+//   of the parameter file there. Normally the file is called 
+//   '_DsFileDist', but that may be changed by setting 'param_file_name' 
+//   in the global file. Make sure the file name starts with an underscore 
+//   '_'. otherwise the janitor may remove it.
+
+// If the program finds a local parameter file in a directory, it 
+//   becomes active on that directory. You control the required behavior 
+//   for that directory through the parameters in the local parameter 
+//   file.
+
+// If you remove the local paramater file, you will disable processing 
+//   on that directory. There is no need to restart the program.
+
+// IMPORTANT: only set the local parameters in the local parameter file. 
+//   DO NOT override the debugging and global parameters.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+// ONLY set these in the global file. DO NOT set them in the local 
+//   parameter files down in the data directory tree.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//
+
+debug = DEBUG_OFF;
+
+///////////// max_n_threads ///////////////////////////
+//
+// Max number of threads allowed to be active at a time.
+// If the thread count reaches this number, no new threads will be 
+//   created until a thread exits. This prevents the number of threads 
+//   becoming excessive should threads hang.
+// Type: int
+//
+
+max_n_threads = 128;
+
+///////////// no_threads //////////////////////////////
+//
+// No threads option. Forces single-threaded operation.
+// For debugging purposes. Note that the program will handle only a 
+//   single data directory in single-threaded operation.
+// Type: boolean
+//
+
+no_threads = FALSE;
+
+///////////// instance ////////////////////////////////
+//
+// Program instance for process registration.
+// This program registers with procmap. This is the instance registered.
+// Type: string
+//
+
+instance = "primary";
+
+//======================================================================
+//
+// GLOBAL PARAMETERS.
+//
+// ONLY set these in the global file. DO NOT set them in the local 
+//   parameter files down in the data directory tree.
+//
+//======================================================================
+ 
+///////////// check_for_new_directories ///////////////
+//
+// Option to periodically check for new active directories.
+// If TRUE, the program will periodically check for newly-active 
+//   directories - those with a _DsFileDist file, and direectories from 
+//   which the _DsFileDist file has been removed. See new_directory_delay. 
+//   To force a directory search, send the process a SIGHUP signal.
+// Type: boolean
+//
+
+check_for_new_directories = FALSE;
+
+///////////// new_directory_delay /////////////////////
+//
+// Delay between checking for active directories (secs).
+// The program will sleep for this length of time between checking for 
+//   parameter files which indicate that a directory is active. See 
+//   check_for_new_directories.
+// Minimum val: 1
+// Type: int
+//
+
+new_directory_delay = 300;
+
+///////////// new_data_delay //////////////////////////
+//
+// Delay while checking a directory for new data.
+// Only for latest_data_info_avail = false. The program will sleep for 
+//   this length of time between checking a directory for new data.
+// Minimum val: 1
+// Type: int
+//
+
+new_data_delay = 1;
+
+///////////// source_top_dir //////////////////////////
+//
+// Top-level directory for source files, relative to $RAP_DATA_DIR.
+// This is the top-level directory from which the search for source 
+//   files starts. $RAP_DATA_DIR must be defined.
+// Type: string
+//
+
+source_top_dir = "$(DATA_DIR)";
+
+///////////// copy_message_memory /////////////////////
+//
+// Option to copy memory from the messages into the message objects.
+// Setting to FALSE will reduce the memory usage for the program.
+// Type: boolean
+//
+
+copy_message_memory = FALSE;
+
+///////////// max_simultaneous_per_host ///////////////
+//
+// Max number of simultaneous active puts to each host.
+// The program will only allow this number of puts to be active to a 
+//   single host at any time. This prevents the line becoming clogged with 
+//   many simultaneous puts.
+// Minimum val: 1
+// Type: int
+//
+
+max_simultaneous_per_host = 4;
+
+//======================================================================
+//
+// LOCAL PARAMETERS.
+//
+// Only set these parameters in the local files in the data directory 
+//   tree. Do not override any of the global or debugging parameters.
+//
+//======================================================================
+ 
+///////////// process /////////////////////////////////
+//
+// Processing flag - controls whether we process this directory for 
+//   files to be distributed.
+// If FALSE, DsFileDist does not process this directory looking for 
+//   directories to distribute.
+// Type: boolean
+//
+
+process = TRUE;
+
+///////////// recurse /////////////////////////////////
+//
+// Recursion flag - controls recursion into this directory and below.
+// If FALSE, DsFileDist does not recirse to lower directories looking 
+//   for directories to distribute.
+// Type: boolean
+//
+
+recurse = TRUE;
+
+///////////// ident_mode //////////////////////////////
+//
+// File identification mode.
+// For IDENT_BY_TIME, the program watches the latest_data_info file for 
+//   changes, and uses the information in this file to compute the path 
+//   name. For IDENT_BY_NAME, the program watches for any file changes in 
+//   the directory.
+//
+// Type: enum
+// Options:
+//     IDENT_BY_TIME
+//     IDENT_BY_NAME
+//
+
+ident_mode = IDENT_BY_TIME;
+
+///////////// latest_data_info_avail //////////////////
+//
+// Indicates that a _latest_data_info file is available for reading.
+// If TRUE, we use the _latest_data_info file written by an upstream 
+//   process for notification that a file has arrived. Otherwise we watch 
+//   the directories for new files, and the latest_data_info file is 
+//   created by this program to keep track of distribution times.
+// Type: boolean
+//
+
+latest_data_info_avail = FALSE;
+
+///////////// max_valid_age ///////////////////////////
+//
+// Max valid age of source files (secs).
+// When checking for new files to distribute, files older than this will 
+//   be ignored. See also 'max_age_at_copy_time'.
+// Minimum val: 1
+// Type: int
+//
+
+max_valid_age = 360;
+
+///////////// file_quiescence_age /////////////////////
+//
+// Quiesence on a file before it is assumed to be complete (secs).
+// Only for latest_data_info_avail = false. The program will wait for a 
+//   file to stop growing before deciding that it has been completely 
+//   written.
+// Minimum val: 1
+// Type: int
+//
+
+file_quiescence_age = 5;
+
+///////////// check_file_ext //////////////////////////
+//
+// Option to only copy files with a given extension.
+// If TRUE, only files with extensions which match the parameter 
+//   'data_file_ext' will be copied.
+// Type: boolean
+//
+
+check_file_ext = FALSE;
+
+///////////// data_file_ext ///////////////////////////
+//
+// Specified data file extension.
+// See 'check_file_ext'.
+// Type: string
+//
+
+data_file_ext = "";
+
+///////////// allow_redistribution ////////////////////
+//
+// Option to allow redistribution of DsFileDist files.
+// If TRUE, allows files which have already been distributed by 
+//   DsFileDist to be forwarded on. If FALSE, does not allow the 
+//   redistribution of files which have already been distributed once.
+// Type: boolean
+//
+
+allow_redistribution = TRUE;
+
+///////////// force_copy //////////////////////////////
+//
+// Option to force copy. Uses single message - use for tunneling.
+// If TRUE, a single put message will be sent from the client to the 
+//   server. The file will always be written, even if it already exists. 
+//   Always use this option if you are sending the data via a tunnel. If 
+//   FALSE, the client will request the server to tell it whether to send 
+//   the file. This request is made via an 'enquire' message. The server 
+//   will tell the client whether to send the file. It will decline the 
+//   copy request if the file already exists, and if the age of the file 
+//   is less than the 'overwrite-age' parameter. This mode is intended for 
+//   use with redundant data sources in which the file may be sent from 
+//   more than one client.
+// Type: boolean
+//
+
+force_copy = FALSE;
+
+///////////// overwrite_age ///////////////////////////
+//
+// Overwrite age for existing file on target machine (secs).
+// If force_copy is true, copy will be forced even if file exists on 
+//   target machine. If force_copy if false, file age on target machine 
+//   will be checked. If the age exceeds overwrite_age, file will be 
+//   copied over existing file. If overwrite_age is -1, file will never be 
+//   overwritten.
+// Type: int
+//
+
+overwrite_age = -1;
+
+///////////// max_age_at_copy_time ////////////////////
+//
+// Max allowable age of files when copying starts (secs).
+// Before the program starts to copy a file, it will check the file age. 
+//   If the age exceeds this maximum, the file will not be copied. See 
+//   also 'max_valid_age'. The problem is that sometimes the network 
+//   connection is bad or goes down, and the copying gets behind. When 
+//   that happens, it may be that the program will try to copy files which 
+//   are old. This parameter allows you to prevent old files from being 
+//   copied. Set to -1 to disable checking, i.e., to force copying 
+//   irrespective of the file age.
+// Type: int
+//
+
+max_age_at_copy_time = 3600;
+
+///////////// remove_after_copy ///////////////////////
+//
+// Option to remove the file after copying.
+// Normally the file is not removed after copying. Setting this to TRUE 
+//   will cause the file to be removed after a successful copy. This will 
+//   only apply for a single URL destination. If you have more than 1 
+//   destination this parameter will be ignored.
+// Type: boolean
+//
+
+remove_after_copy = FALSE;
+
+///////////// write_ldata_to_input_dir ////////////////
+//
+// Option to write the latest data file to the input dir.
+// This is useful for keeping the data mapper up to date for external 
+//   data sets which do not have a latest data info file.
+// Type: boolean
+//
+
+write_ldata_to_input_dir = FALSE;
+
+///////////// compression_type ////////////////////////
+//
+// Compression type for transfer.
+// RLE - simple run-length encoding, fastest. LZO - fast, not very 
+//   compact, better than RLE. ZLIB - same as gzip, but without headers. 
+//   Not as fast as LZO, better than RLE. More compact than RLE and LZO. 
+//   BZIP - slow, very compact.
+//
+// Type: enum
+// Options:
+//     COMPRESSION_NONE
+//     COMPRESSION_RLE
+//     COMPRESSION_LZO
+//     COMPRESSION_ZLIB
+//     COMPRESSION_BZIP
+//
+
+compression_type = COMPRESSION_NONE;
+
+///////////// use_dest_host_list_file /////////////////
+//
+// Use host list in the file to create the destination urls.
+// The host list file contains a list of destination hosts. Each entry 
+//   in this list is merged with the url_template to create a list of 
+//   destination urls.
+// Type: boolean
+//
+
+use_dest_host_list_file = TRUE;
+
+///////////// dest_host_list_file_path ////////////////
+//
+// Path for destination host list file.
+// Only used if parameter 'use_dest_host_list_file' is TRUE.
+// Type: string
+//
+
+dest_host_list_file_path = "$(DATA_DIR)/_dest_host_list";
+
+///////////// dest_url_template ///////////////////////
+//
+// URL template for destination URLs.
+// Only used if parameter 'use_dest_host_list_file' is TRUE. The 
+//   protocol should match that expected by the ServerMgr for the 
+//   DsFileCopy service. If the directory part of the URL is empty, the 
+//   file is copied to the same directory on the target host, relative to 
+//   RAP_DATA_DIR or DATA_DIR.
+// Type: string
+//
+
+dest_url_template = "fcopyp:://::";
+
+///////////// dest_url_list ///////////////////////////
+//
+// Specified URL list for destination hosts.
+// This is only used if parameter 'use_dest_host_list_file' is FALSE. 
+//   The files will be distributed to this list of hosts. The protocol 
+//   should match that expected by the ServerMgr for the DsFileCopy 
+//   service. If the directory part of a URL is empty, the file is copied 
+//   to the same directory on the target host, relative to RAP_DATA_DIR or 
+//   DATA_DIR.
+// Type: string
+// 1D array - variable length.
+//
+
+dest_url_list = { "fcopyp:://targethost::" };
+
+///////////// minimum_expected_transfer_speed /////////
+//
+// Minimum expected transfer speed (kBytes/sec).
+// This should be set to the minimum speed expected on any of the lines 
+//   to be used. The expected transfer time is set using this speed. If 
+//   the transfer takes more than 10 times the expected time, the transfer 
+//   is killed.
+// Type: int
+//
+
+minimum_expected_transfer_speed = 128;
+
+///////////// reorder_by_file_size ////////////////////
+//
+// Option to use file size to alter the order for sending files.
+// If FALSE, files are sent in the order in which they appear on the 
+//   disk. If TRUE, this order is modified by the relative size of the 
+//   files to be sent. See 'max_reorder_delay_fraction'.
+// Type: boolean
+//
+
+reorder_by_file_size = TRUE;
+
+///////////// max_reorder_delay_fraction //////////////
+//
+// The cumulative delay fraction used to make reorder decisions.
+// If reorder_by_file_size is TRUE, small files may be inserted into the 
+//   put list ahead of larger files. This parameter controls how that 
+//   decision is made. When we insert a file in the queue, we note its 
+//   size, 'file_size'. Once it is in the queue, we keep track of how many 
+//   bytes are inserted ahead of it, 'nbytes_inserted'. We compute the 
+//   delay_fraction as nybytes_inserted divided by file_size. We only 
+//   allow a file to be inserted ahead of another file if the delay 
+//   fraction does not exceed this parameter, reorder_delay_fraction. The 
+//   bytes inserted cause a delay for the files behind. Using this scheme, 
+//   the fractional delay per file will always be less than the fraction 
+//   specified.
+// Minimum val: 0
+// Maximum val: 1
+// Type: float
+//
+
+max_reorder_delay_fraction = 0.4;
+
