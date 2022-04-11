@@ -417,7 +417,7 @@ remove_short_range_rays = FALSE;
 // Type: string
 //
 
-output_url = "fmqp:://localhost::fmq/dsRadar.$(RADAR_NAME)";
+output_url = "fmqp:://localhost::fmq/$(radar_name)/dsRadar";
 
 ///////////// data_mapper_report_interval /////////////
 //

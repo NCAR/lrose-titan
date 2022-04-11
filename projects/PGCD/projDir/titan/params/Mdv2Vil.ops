@@ -85,7 +85,7 @@ input_dir = "$(DATA_DIR)/mdv/radar/cart/Merged";
 // Type: string
 //
 
-output_dir = "$(DATA_DIR)/mdv/vil";
+output_dir = "mdvp:://localhost:0:$(DATA_DIR)/mdv/vil";
 
 //======================================================================
 //
