@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #=====================================================================
 #
@@ -21,7 +21,7 @@ from optparse import OptionParser
 import urllib
 from xml.dom import minidom
 from sys import stdin
-from urllib import urlopen
+from urllib.request import urlopen
 from subprocess import call
 
 def main():
@@ -244,8 +244,8 @@ def doDownload(radarName, fileTime, fileEntry, fileName):
     tmpPath = os.path.join(options.tmpDir, fileName)
     try:
         tmpFile = open(tmpPath, 'wb')
-        opener = urllib.URLopener()
-        myfile = opener.open(os.path.join(dataURL,fileEntry))
+        urlPath = os.path.join(dataURL,fileEntry);
+        myfile = urllib.request.urlopen(urlPath)
         tmpFile.write(myfile.read())
         tmpFile.close()
         fileCount = fileCount + 1
@@ -298,8 +298,8 @@ def getLocalFileList(date, radarName):
             print("  exception: ", exc, file = sys.stderr)
 
     # get local file list - i.e. those which have already been downloaded
-    
-    os.chdir(dayDir)
+
+    # os.chdir(dayDir)
     localFileList = os.listdir(dayDir)
     localFileList.reverse()
 
@@ -331,7 +331,7 @@ def parseArgs():
                       help='Set verbose debugging on')
     parser.add_option('--radarName',
                       dest='radarName',
-                      default='KMAF',
+                      default='KFTG',
                       help='4-character name for radar')
     parser.add_option('--outputDir',
                       dest='outputDir',
@@ -364,11 +364,11 @@ def parseArgs():
     parser.add_option('--start',
                       dest='startTime',
                       default='1970 01 01 00 00 00',
-                      help='Start time for retrieval - archive mode')
+                      help='Start time for retrieval - archival mode. Format is "yyyy mm dd hh mm ss", including double quotes.')
     parser.add_option('--end',
                       dest='endTime',
                       default='1970 01 01 00 00 00',
-                      help='End time for retrieval - archive mode')
+                      help='End time for retrieval - archival mode. Format is "yyyy mm dd hh mm ss", including double quotes.')
 
     (options, args) = parser.parse_args()
 
