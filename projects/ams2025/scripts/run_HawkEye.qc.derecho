@@ -2,7 +2,7 @@
 
 source ./set_env_vars
 
-cd $HOME/git/lrose-test/ams2025/params
+cd $HOME/git/lrose-titan/projects/ams2025/params
 
 HawkEye -params HawkEye.ams2025 -f ${DATA_DIR}/radar/cfradial/qc/KingCity/20220521/*nc
 

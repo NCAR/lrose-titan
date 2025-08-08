@@ -2,7 +2,7 @@
 
 source ./set_env_vars
 
-cd $HOME/git/lrose-test/ams2025/params
+cd $HOME/git/lrose-titan/projects/ams2025/params
 
 Radx2Grid -params Radx2Grid.hail -debug
 

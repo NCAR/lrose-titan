@@ -2,7 +2,7 @@
 
 source ./set_env_vars
 
-cd $HOME/git/lrose-test/ams2025/params
+cd $HOME/git/lrose-titan/projects/ams2025/params
 
 Mdv2SoundingSpdb -debug -params Mdv2SoundingSpdb.ERA5.derecho -f $DATA_DIR/ERA5/20220521/20220521_*
 
