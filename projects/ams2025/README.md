@@ -30,6 +30,8 @@ That will create the following tree:
   ~/data/ams2025/radar/raw/derecho/20220521*.h5
 ```
 
+## Output data
+
 After the full analysis has been run, the following derived data directories should exist:
 
 ```
@@ -49,7 +51,6 @@ After the full analysis has been run, the following derived data directories sho
   ~/data/ams2025/titan/ascii/Tracks2Ascii.derecho.txt (Titan output converted by Tracks2Ascii)
   ~/data/ams2025/titan/netcdf/Strathmore/titan_20240806.nc (Titan output converted by Tstorms2NetCDF)
   ~/data/ams2025/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
-
 ```
 
 ## Processing steps
