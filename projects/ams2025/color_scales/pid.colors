@@ -1,5 +1,6 @@
 # PID color scale
 
+0.0     0.5     #000000    !missing
 0.5	1.5	#d1d0b8    !cld-drops
 1.5	2.5	#fed89a	   !drizzle
 2.5	3.5	#fe9605	   !lt-rain

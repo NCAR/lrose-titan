@@ -169,20 +169,39 @@ Derecho case - interference largely mitigated:
 
 Although not perfect, for the purposes of this project, this censoring QC step is sufficent to ensure that Titan does not produce artifacts.
 
+## Computing PID as an alternative method of censoring
+
+An alternative method for cleaning up interference is to run RadxPid, and censor non-meteorological echoes.
+
+We downloaded the ERA5 reanalysis for these cases, and we can use that to save the model-based soundings:
+
+```
+  ./run_Mdv2SoundingSpdb.ERA5.hail
+  ./run_Mdv2SoundingSpdb.ERA5.derecho
+```
+
+And we can then run RadxPid:
+
+```
+  ./run_RadxPid.hail
+  ./run_RadxPid.derecho
+```
+
+The following shows the PID field for the derecho case:
+
+![Alt text](./images/derecho.pid.png)
+
+The interference is identifed as clutter in this case.
+
+And the following shows the result of using PID to clean up the reflectivity field:
+
+![Alt text](./images/derecho.dbz.censored_by_pid.png)
+
+
 
 ```
 run_Radx2Grid.hail
 run_Radx2Grid.derecho
-```
-
-```
-run_Mdv2SoundingSpdb.ERA5.hail
-run_Mdv2SoundingSpdb.ERA5.derecho
-```
-
-```
-run_RadxPid.hail
-run_RadxPid.derecho
 ```
 
 ```

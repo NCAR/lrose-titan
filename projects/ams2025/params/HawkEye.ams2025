@@ -425,6 +425,15 @@ fields = {
     color_map = "kdp.colors",
     shortcut = "8"
   }
+  ,
+  {
+    label = "PID",
+    raw_name = "PID",
+    filtered_name = "",
+    units = "",
+    color_map = "pid.colors",
+    shortcut = "8"
+  }
 };
 
 ///////////// background_render_mins //////////////////
