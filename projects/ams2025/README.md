@@ -159,12 +159,13 @@ You can view the results in HawkEye, and compare to the non-QC step above.
   ./run_HawkEye.qc.derecho
 ```
 
-See:
+Hail case - clean:
 
-* [hail DBZ with QC](./images/hail.dbz.qc.png)
-* [derecho DBZ with QC](./images/derecho.dbz.qc.png)
+![Alt text](./images/hail.dbz.qc.png)
 
-You can see, especially for the derecho case, the interference has been considerably reduced.
+Derecho case - interference largely mitigated:
+
+![Alt text](./images/derecho.dbz.qc.png)
 
 Although not perfect, for the purposes of this project, this censoring QC step is sufficent to ensure that Titan does not produce artifacts.
 
