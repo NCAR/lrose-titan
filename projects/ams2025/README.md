@@ -53,21 +53,79 @@ After the full analysis has been run, the following derived data directories sho
   ~/data/ams2025/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
 ```
 
-## Processing steps
+## Checking out the project
+
+The Titan project for AMS2025 is stored in the GitHub repo NCAR/lrose-titan.
+This is also the location of this README file.
+
+To check it out run:
+
+```
+  mkdir -p ~/git
+  cd ~/git
+  git clone https://github.com/ncar/lrose-titan
+```
+
+The structure of the ams2025 part of this repo is as follows:
+
+```
+  ~/git/lrose-titan/projects/ams2025/params
+  ~/git/lrose-titan/projects/ams2025/scripts
+  ~/git/lrose-titan/projects/ams2025/color_scales
+  ~/git/lrose-titan/projects/ams2025/maps
+```
+
+## Setting up the enbvironment
+
+In the scripts directory you will find the file:
+
+```
+  ~/git/lrose-titan/projects/ams2025/scripts/set_env_vars
+```
+
+This file setup up the environment, and is sourced by all of the scripts that we run for this project.
+
+The default contents are as follows:
+
+```
+  setenv DATA_DIR $HOME/data/ams2025
+  setenv PROJ_DIR $HOME/git/lrose-titan/projects/ams2025
+```
+
+The default settings work as is, if you have followed these instructions.
+If you have a different layout, edit ```set_env_vars``` appropriately.
+
+## Processing steps, running the scripts
+
+You should run the scripts from the script directory:
+
+```
+  cd ~/git/lrose-titan/projects/ams2025/scripts
+```
 
 ### convert raw HDF5 files with no QC
 
 ```
-run_RadxConvert.no_qc.hail
-run_RadxConvert.no_qc.derecho
+  ./run_RadxConvert.no_qc.hail
+  ./run_RadxConvert.no_qc.derecho
 ```
+
+This converts the raw HDF5 data into cfradial, with no QC steps applied.
+
+You can view the results using HawkEye:
+
+```
+  ./run_HawkEye.no_qc.hail
+  ./run_HawkEye.no_qc.derecho
+```
+
+You will notice that in the derecho case there is considerable interference, leading to radial spikes. See:
+
+* [hail DBZ no QC](./images/hail.dbz.no_qc.png)
+* [derecho DBZ no QC](./images/derecho.dbz.no_qc.png)
 
 ### convert raw HDF5 files with QC
 
-```
-run_HawkEye.no_qc.hail
-run_HawkEye.no_qc.derecho
-```
 
 ```
 run_RadxConvert.qc.hail
