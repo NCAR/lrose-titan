@@ -242,18 +242,36 @@ Cartesian DBZ data in Lucid, derecho case:
 
 ![Alt text](./images/derecho.dbz.cart.lucid.png)
 
+As mentioned, Lucid is still under development and only some of the functionality is available. You can select fields, zooms and maps. The height selector is functional. The movie control slider works, for selecting different times. However, much of the time controller is not yet working.
 
 ## Running Titan
 
-```
-run_Titan.hail
-run_Titan.derecho
-```
+Titan runs on the Cartesian gridded data, using the DBZ field and optionally the VEL field to compute storm rotation.
 
 ```
-run_Rview.hail
-run_Rview.derecho
+  ./run_Titan.hail
+  ./run_Titan.derecho
 ```
+
+You can view the Titan tracks using Rview, which has a partner application TimeHist:
+
+```
+  ./run_Rview.hail
+  ./run_Rview.derecho
+```
+
+Rview is a display application specifically designed to display Titan. We will need to demonstrate the interactive functionality. Rview on the mac seems to be crashing, so that will need to be debugged.
+
+Rview and TimeHist, hail case:
+
+![Alt text](./images/Rview.hail.png)
+![Alt text](./images/Rview.and.TimeHist.hail.png)
+
+Rview and TimeHist, derecho case:
+
+![Alt text](./images/Rview.derecho.png)
+![Alt text](./images/Rview.and.TimeHist.derecho.png)
+
 
 ```
 run_Tracks2Ascii.hail
