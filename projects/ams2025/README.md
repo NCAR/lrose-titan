@@ -222,6 +222,7 @@ On a Linux host, we can run CIDD to view the Cartesian fields, in addition to th
 Cartesian DBZ data in CIDD, hail case:
 
 ![Alt text](./images/hail.dbz.cart.cidd.png)
+<img src="./images/hail.dbz.cart.cidd.png" alt="Alt text" width="600">
 
 Cartesian DBZ data in CIDD, derecho case:
 
@@ -286,7 +287,7 @@ Tracks2Ascii exports the Titan track data in space-delimited ascii format:
 Tstorms2NetCDF exports the Titan track data in NetCDF-4, using groups:
 
 ```
-  ./run_Tstorms2NetCDF.hail
+   ./run_Tstorms2NetCDF.hail
   ./run_Tstorms2NetCDF.derecho
 ```
 
