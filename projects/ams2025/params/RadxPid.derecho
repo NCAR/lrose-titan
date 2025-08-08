@@ -387,7 +387,7 @@ output_fields = {
   ,
   {
     id = KDP,
-    name = "KDP",
+    name = "KDP2",
     long_name = "specific_differential_phase",
     standard_name = "specific_differential_phase_hv",
     units = "deg/km",
@@ -397,7 +397,7 @@ output_fields = {
   ,
   {
     id = KDP_SC,
-    name = "KDP_SC",
+    name = "KDP2_SC",
     long_name = "kdp_conditioned_using_ZZDR_self_consistency",
     standard_name = "specific_differential_phase_hv",
     units = "deg/km",
