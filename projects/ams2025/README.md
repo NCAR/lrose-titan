@@ -197,22 +197,53 @@ And the following shows the result of using PID to clean up the reflectivity fie
 
 ![Alt text](./images/derecho.dbz.censored_by_pid.png)
 
+For this tutorial we will use the QC data created by RadxConvert.
+
+## Transform the polar data to Cartesian, using Radx2Grid.
+
+Titan requires input data in Cartesian coordinates, rather than polar.
+
+To perform this transformation, we run the following:
 
 
 ```
-run_Radx2Grid.hail
-run_Radx2Grid.derecho
+  ./run_Radx2Grid.hail
+  ./run_Radx2Grid.derecho
 ```
 
-```
-run_CIDD.hail
-run_CIDD.derecho
-```
+On a Linux host, we can run CIDD to view the Cartesian fields, in addition to the polar fields:
+
 
 ```
-run_Lucid.hail
-run_Lucid.derecho
+  ./run_CIDD.hail
+  ./run_CIDD.derecho
 ```
+
+Cartesian DBZ data in CIDD, hail case:
+
+![Alt text](./images/hail.dbz.cart.cidd.png)
+
+Cartesian DBZ data in CIDD, derecho case:
+
+![Alt text](./images/derecho.dbz.cart.cidd.png)
+
+On a Mac or Linux we can run Lucid, the replacement for CIDD that is under development:
+
+```
+  ./run_Lucid.hail
+  ./run_Lucid.derecho
+```
+
+Cartesian DBZ data in Lucid, hail case:
+
+![Alt text](./images/hail.dbz.cart.lucid.png)
+
+Cartesian DBZ data in Lucid, derecho case:
+
+![Alt text](./images/derecho.dbz.cart.lucid.png)
+
+
+## Running Titan
 
 ```
 run_Titan.hail

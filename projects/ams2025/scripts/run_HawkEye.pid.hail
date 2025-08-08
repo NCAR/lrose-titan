@@ -1,0 +1,8 @@
+#! /bin/csh
+
+source ./set_env_vars
+
+cd $HOME/git/lrose-titan/projects/ams2025/params
+
+HawkEye -params HawkEye.ams2025 -f ${DATA_DIR}/radar/cfradial/pid/Strathmore/20240806/*nc
+
