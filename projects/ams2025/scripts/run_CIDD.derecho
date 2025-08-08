@@ -5,6 +5,3 @@ source ./set_env_vars
 cd $HOME/git/lrose-titan/projects/ams2025/params
 
 CIDD -p CIDD.derecho
-
-
-

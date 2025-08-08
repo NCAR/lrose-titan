@@ -1,4 +1,34 @@
-# TITAN cases for AMS 2025
+# TITAN tutorial for AMS 2025
+
+## Input data
+
+There are 2 cases for use in the Titan tutorial:
+
+* A hail storm in Alberta, observed by the Strathmore radar 40 km east Calgary.
+* A derecho event in Ontario, observed by the King City radar 40 km north of Toronto.
+
+Both of these are 10 cm (S-band) Gematronik dual polarization radars.
+
+The data (as a .tgz file) can be downloaded from Mike's Google drive at NCAR:
+
+* [AMS Titan data](https://drive.google.com/drive/folders/1OzjLzsGhSBAKDvFzJeBLGHYW0RlYU0hZ?usp=sharing)
+
+To be consistent, you should create a ```$HOME/data``` directory and copy the .tgz file there.
+
+Then:
+
+```
+  tar xvfz ams2025_titan.raw.tgz
+```
+
+That will create the following tree:
+
+```
+  ~/data/ams2025/ERA5/20220521
+  ~/data/ams2025/ERA5/20240806
+  ~/data/ams2025/radar/raw/hail/20240806*.h5
+  ~/data/ams2025/radar/raw/derecho/20220521*.h5
+```
 
 ## Processing steps
 
