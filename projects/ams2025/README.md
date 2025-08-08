@@ -122,18 +122,15 @@ You can view the results using HawkEye:
   ./run_HawkEye.no_qc.derecho
 ```
 
-You will notice that in the derecho case there is considerable interference, leading to radial spikes. See:
+You will notice that in the derecho case there is considerable interference, leading to radial spikes.
 
-<img align="left" width="500" height="500" src="./images/hail.dbz.no_qc.png">
-<img align="left" width="500" height="500" src="./images/derecho.dbz.no_qc.png">
-
-blah blah
-
-<img src="./images/hail.dbz.no_qc.png" alt="Alt text" width="600">
-
-blah blah
+Hail case - no significant interference:
 
 ![Alt text](./images/hail.dbz.no_qc.png)
+
+Derecho case - considerable interference:
+
+![Alt text](./images/derecho.dbz.no_qc.png)
 
 ### Convert raw HDF5 files with QC
 
