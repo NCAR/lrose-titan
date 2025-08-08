@@ -265,11 +265,14 @@ Rview is a display application specifically designed to display Titan. We will n
 Rview and TimeHist, hail case:
 
 <img src="./images/Rview.hail.png" alt="Alt text" width="600">
+<img src="./images/Rview.and.TimeHist.hail.png" alt="Alt text" width="900">
+
 ![Alt text](./images/Rview.and.TimeHist.hail.png)
 
 Rview and TimeHist, derecho case:
 
 <img src="./images/Rview.derecho.png" alt="Alt text" width="600">
+
 ![Alt text](./images/Rview.and.TimeHist.derecho.png)
 
 ## Exporting the Titan tracks using Tracks2Ascii
