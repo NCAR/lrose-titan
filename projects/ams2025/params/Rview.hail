@@ -57,7 +57,7 @@ Rview.double_click_delay: 0.3
 
 # The display is updated every 'update_interval' secs in case new data
 
-Rview.update_interval: 10
+Rview.update_interval: 30
 
 # base_timer_interval is the basic interval for the interrupt timer
 
@@ -232,7 +232,7 @@ Rview.titan_server_url: $(DATA_DIR)/titan/storms/Strathmore
 
 # How often to check for new track data (secs)
 
-Rview.track_check_interval: 10
+Rview.track_check_interval: 60
 
 # The shmem key for communicating track data to TimeHist
 
@@ -248,11 +248,11 @@ Rview.future_plot_period: 30.0
 
 Rview.plot_tracks: all_tracks
 Rview.plot_current: true
-Rview.plot_past: limited
-Rview.plot_future: false
-Rview.plot_forecast: limited
-Rview.track_graphic: polygons
-Rview.fill_graphic: false
+Rview.plot_past: all
+Rview.plot_future: all
+Rview.plot_forecast: false
+Rview.track_graphic: false
+Rview.fill_graphic: true
 Rview.plot_vectors: true
 Rview.annotate_tracks: false
 
@@ -438,8 +438,8 @@ Rview.x_future_storm_color_2: seagreen
 Rview.x_forecast_storm_color: red
 Rview.x_forecast_storm_color_2: gray50
 Rview.x_current_storm_line_width: 2
-Rview.x_past_storm_line_width: 1
-Rview.x_future_storm_line_width: 1
+Rview.x_past_storm_line_width: 2
+Rview.x_future_storm_line_width: 2
 Rview.x_forecast_storm_line_width: 2
 
 Rview.x_past_vector_color: white

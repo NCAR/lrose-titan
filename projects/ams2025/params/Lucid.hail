@@ -306,50 +306,82 @@ fields = {
   { "main", "DBZ_TOT_QC", "DBZ_TOT_QC", "radar/cfradial/qc/Strathmore", "DBZ_TOT", "dbz.colors", "dbz", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "VEL_QC", "VEL_QC", "radar/cfradial/qc/Strathmore", "VEL", "vel.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "WIDTH_QC", "WIDTH_QC", "radar/cfradial/qc/Strathmore", "WIDTH", "width.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "SNR_QC", "SNR_QC", "radar/cfradial/qc/Strathmore", "SNR", "snr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "ZDR_QC", "ZDR_QC", "radar/cfradial/qc/Strathmore", "ZDR", "zdr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "PHIDP_QC", "PHIDP_QC", "radar/cfradial/qc/Strathmore", "PHIDP", "phidp_360.colors", "deg", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "UPHIDP_QC", "UPHIDP_QC", "radar/cfradial/qc/Strathmore", "UPHIDP", "phidp_360.colors", "deg", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "RHOHV_QC", "RHOHV_QC", "radar/cfradial/qc/Strathmore", "RHOHV", "rhohv.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "KDP_QC", "KDP_QC", "radar/cfradial/qc/Strathmore", "KDP", "kdp.colors", "deg/km", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "NCP_QC", "NCP_QC", "radar/cfradial/qc/Strathmore", "NCP", "ncp.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "", "====", "====", "radar/cfradial/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
+  { "", "====", "====", "radar/cfradial/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "DBZ_NO_QC", "DBZ_NO_QC", "radar/cfradial/no_qc/Strathmore", "DBZ", "dbz.colors", "dbz", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "DBZ_TOT_NO_QC", "DBZ_TOT_NO_QC", "radar/cfradial/no_qc/Strathmore", "DBZ_TOT", "dbz.colors", "dbz", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "VEL_NO_QC", "VEL_NO_QC", "radar/cfradial/no_qc/Strathmore", "VEL", "vel.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "WIDTH_NO_QC", "WIDTH_NO_QC", "radar/cfradial/no_qc/Strathmore", "WIDTH", "width.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "SNR_NO_QC", "SNR_NO_QC", "radar/cfradial/no_qc/Strathmore", "SNR", "snr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "ZDR_NO_QC", "ZDR_NO_QC", "radar/cfradial/no_qc/Strathmore", "ZDR", "zdr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "PHIDP_NO_QC", "PHIDP_NO_QC", "radar/cfradial/no_qc/Strathmore", "PHIDP", "phidp_360.colors", "deg", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "UPHIDP_NO_QC", "UPHIDP_NO_QC", "radar/cfradial/no_qc/Strathmore", "UPHIDP", "phidp_360.colors", "deg", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "RHOHV_NO_QC", "RHOHV_NO_QC", "radar/cfradial/no_qc/Strathmore", "RHOHV", "rhohv.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "KDP_NO_QC", "KDP_NO_QC", "radar/cfradial/no_qc/Strathmore", "KDP", "kdp.colors", "deg/km", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "NCP_NO_QC", "NCP_NO_QC", "radar/cfradial/no_qc/Strathmore", "NCP", "ncp.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "", "====", "====", "radar/cfradial/no_qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
+  { "", "====", "====", "radar/cfradial/no_qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/no_qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/no_qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/no_qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "PID", "PID", "radar/cfradial/pid/Strathmore", "PID", "pid.colors", "dbz", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "DBZ_PID", "DBZ_PID", "radar/cfradial/pid/Strathmore", "DBZ", "dbz.colors", "dbz", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "VEL_PID", "VEL_PID", "radar/cfradial/pid/Strathmore", "VEL", "vel.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "WIDTH_PID", "WIDTH_PID", "radar/cfradial/pid/Strathmore", "WIDTH", "width.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "SNR_PID", "SNR_PID", "radar/cfradial/pid/Strathmore", "SNR", "snr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "ZDR_PID", "ZDR_PID", "radar/cfradial/pid/Strathmore", "ZDR", "zdr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "PHIDP_PID", "PHIDP_PID", "radar/cfradial/pid/Strathmore", "PHIDP", "phidp_360.colors", "deg", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
-  { "", "====", "====", "radar/cfradial/pid/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "RHOHV_PID", "RHOHV_PID", "radar/cfradial/pid/Strathmore", "RHOHV", "rhohv.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "KDP_PID", "KDP_PID", "radar/cfradial/pid/Strathmore", "KDP", "kdp.colors", "deg/km", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "main", "KDP2", "KDP2", "radar/cfradial/pid/Strathmore", "KD2P", "kdp.colors", "deg/km", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "main", "KDP2_SC", "KDP2_SC", "radar/cfradial/pid/Strathmore", "KDP2_SC", "kdp.colors", "deg/km", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "NCP_PID", "NCP_PID", "radar/cfradial/pid/Strathmore", "NCP", "ncp.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "", "====", "====", "radar/cfradial/pid/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/pid/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/pid/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cfradial/pid/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "DBZ_CART", "DBZ_CART", "radar/cart/qc/Strathmore", "DBZ", "dbz.colors", "dbz", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "DBZ_TOT_CART", "DBZ_TOT_CART", "radar/cart/qc/Strathmore", "DBZ_TOT", "dbz.colors", "dbz", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "VEL_CART", "VEL_CART", "radar/cart/qc/Strathmore", "VEL", "vel.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "WIDTH_CART", "WIDTH_CART", "radar/cart/qc/Strathmore", "WIDTH", "width.colors", "m/s", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "SNR_CART", "SNR_CART", "radar/cart/qc/Strathmore", "SNR", "snr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "ZDR_CART", "ZDR_CART", "radar/cart/qc/Strathmore", "ZDR", "zdr.colors", "dB", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "PHIDP_CART", "PHIDP_CART", "radar/cart/qc/Strathmore", "PHIDP", "phidp_360.colors", "deg", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "UPHIDP_CART", "UPHIDP_CART", "radar/cart/qc/Strathmore", "UPHIDP", "phidp_360.colors", "deg", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
   { "main", "RHOHV_CART", "RHOHV_CART", "radar/cart/qc/Strathmore", "RHOHV", "rhohv.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "KDP_CART", "KDP_CART", "radar/cart/qc/Strathmore", "KDP", "kdp.colors", "deg/km", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "main", "NCP_CART", "NCP_CART", "radar/cart/qc/Strathmore", "NCP", "ncp.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cart/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+
+  { "", "====", "====", "radar/cart/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cart/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
+  { "", "====", "====", "radar/cart/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE},
   { "", "====", "====", "radar/cart/qc/Strathmore", "none", "none.colors", "-", 0, 0, 0, POLYGONS, TRUE, FALSE, FALSE, FALSE, FALSE}
+
 };
 
 ///////////// replace_underscores /////////////////////

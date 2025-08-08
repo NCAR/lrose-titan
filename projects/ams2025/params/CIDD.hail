@@ -153,12 +153,12 @@ WIDTH_PID    WIDTH_PID    radar/cfradial/pid/Strathmore&WIDTH    width.colors   
 SNR_PID      SNR_PID      radar/cfradial/pid/Strathmore&SNR      snr.colors      dB     0 0 0   cart  1 0
 ZDR_PID      ZDR_PID      radar/cfradial/pid/Strathmore&ZDR      zdr.colors      dB     0 0 0   cart  1 0
 PHIDP_PID    PHIDP_PID    radar/cfradial/pid/Strathmore&PHIDP    phidp_360.colors    deg    0 0 0   cart  1 0
-====           ====           radar/cfradial/pid/Strathmore&none     none.colors     -      0 0 0   cart  1 0
-
 RHOHV_PID    RHOHV_PID    radar/cfradial/pid/Strathmore&RHOHV    rhohv.colors    -      0 0 0   cart  1 0
-KDP_PID      KDP_PID      radar/cfradial/pid/Strathmore&KDP      kdp.colors      deg/km 0 0 0   cart  1 0
+
 NCP_PID      NCP_PID      radar/cfradial/pid/Strathmore&NCP      ncp.colors      -      0 0 0   cart  1 0
-====           ====           radar/cfradial/pid/Strathmore&none     none.colors     -      0 0 0   cart  1 0
+KDP_PID      KDP_PID      radar/cfradial/pid/Strathmore&KDP      kdp.colors      deg/km 0 0 0   cart  1 0
+KDP2         KDP2         radar/cfradial/pid/Strathmore&KDP2      kdp.colors      deg/km 0 0 0   cart  1 0
+KDP2_SC      KDP2_SC      radar/cfradial/pid/Strathmore&KDP2_SC      kdp.colors      deg/km 0 0 0   cart  1 0
 
 ====           ====           radar/cfradial/pid/Strathmore&none     none.colors     -      0 0 0   cart  1 0
 ====           ====           radar/cfradial/pid/Strathmore&none     none.colors     -      0 0 0   cart  1 0
@@ -1115,7 +1115,7 @@ cidd.wsddm_mode:            0
 # click and drag. When set to 1, disallows multi way point cross sections
 # - RHI are defined by clicking right mouse near the radar origin and
 # dragging away from the radar along the desired  azimuth and releasing.
-cidd.one_click_rhi: 0
+cidd.one_click_rhi: 1
 
 # CIDD uses the number pad keys 7,9,4,6,1,3 to rotate the RHI 
 # by +/- these amounts

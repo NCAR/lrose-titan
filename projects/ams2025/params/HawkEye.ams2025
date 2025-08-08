@@ -391,6 +391,15 @@ fields = {
   }
   ,
   {
+    label = "NCP",
+    raw_name = "NCP",
+    filtered_name = "",
+    units = "",
+    color_map = "ncp.colors",
+    shortcut = "8"
+  }
+  ,
+  {
     label = "KDP",
     raw_name = "KDP",
     filtered_name = "",
@@ -400,11 +409,20 @@ fields = {
   }
   ,
   {
-    label = "NCP",
-    raw_name = "NCP",
+    label = "KDP2",
+    raw_name = "KDP2",
     filtered_name = "",
-    units = "",
-    color_map = "ncp.colors",
+    units = "deg/km",
+    color_map = "kdp.colors",
+    shortcut = "8"
+  }
+  ,
+  {
+    label = "KDP2_SC",
+    raw_name = "KDP_SC",
+    filtered_name = "",
+    units = "deg/km",
+    color_map = "kdp.colors",
     shortcut = "8"
   }
 };
