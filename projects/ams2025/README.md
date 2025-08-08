@@ -124,8 +124,8 @@ You can view the results using HawkEye:
 
 You will notice that in the derecho case there is considerable interference, leading to radial spikes. See:
 
-<img align="left" width="250" height="250" src="./images/hail.dbz.no_qc.png">
-<img align="left" width="250" height="250" src="./images/derecho.dbz.no_qc.png">
+<img align="left" width="500" height="500" src="./images/hail.dbz.no_qc.png">
+<img align="left" width="500" height="500" src="./images/derecho.dbz.no_qc.png">
 
 ### Convert raw HDF5 files with QC
 
