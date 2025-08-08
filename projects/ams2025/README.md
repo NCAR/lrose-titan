@@ -30,6 +30,28 @@ That will create the following tree:
   ~/data/ams2025/radar/raw/derecho/20220521*.h5
 ```
 
+After the full analysis has been run, the following derived data directories should exist:
+
+```
+  ~/data/ams2025/ERA5/spdb/Strathmore/20240806* (soundings from ERA5)
+  ~/data/ams2025/ERA5/spdb/KingCity/20220521* (soundings from ERA5)
+  ~/data/ams2025/radar/cfradial/no_qc/Strathmore/20240806/cfrad.20240806*nc (cfradial before QC)
+  ~/data/ams2025/radar/cfradial/no_qc/KingCity/20220521/cfrad.20220521*nc (cfradial before QC)
+  ~/data/ams2025/radar/cfradial/qc/Strathmore/20240806/cfrad.20240806*nc (cfradial after QC)
+  ~/data/ams2025/radar/cfradial/qc/KingCity/20220521/cfrad.20220521*nc (cfradial after QC)
+  ~/data/ams2025/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
+  ~/data/ams2025/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
+  ~/data/ams2025/radar/cart/qc/Strathmore/20240806/ncf_20240806*nc (Cartesian MDC CF-compliant netcdf)
+  ~/data/ams2025/radar/cart/qc/KingCity/20220521/ncf_202205216*nc (Cartesian MDC CF-compliant netcdf)
+  ~/data/ams2025/titan/storms/Strathmore/20240806* (Titan binary files)
+  ~/data/ams2025/titan/storms/KingCity/20220521* (Titan binary files)
+  ~/data/ams2025/titan/ascii/Tracks2Ascii.hail.txt (Titan output converted by Tracks2Ascii)
+  ~/data/ams2025/titan/ascii/Tracks2Ascii.derecho.txt (Titan output converted by Tracks2Ascii)
+  ~/data/ams2025/titan/netcdf/Strathmore/titan_20240806.nc (Titan output converted by Tstorms2NetCDF)
+  ~/data/ams2025/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
+
+```
+
 ## Processing steps
 
 ### convert raw HDF5 files with no QC
