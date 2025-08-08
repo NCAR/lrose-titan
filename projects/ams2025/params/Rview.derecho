@@ -116,7 +116,7 @@ Rview.ps_contourlabel_fontsize: 8
 #
 
 Rview.plot_maps: limited
-Rview.map_conf_file: $(PROJ_DIR)/maps/titan.conf
+Rview.map_conf_file: $(PROJ_DIR)/maps/ams2025.conf
 
 #######################
 # colorscale directory

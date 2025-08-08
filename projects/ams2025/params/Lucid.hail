@@ -250,7 +250,7 @@ archive_start_time = "2024 08 06 00 00 00";
 //
 // Type: string
 
-color_scale_urls = "/home/mdtest/ams2025/color_scales, http://front.eol.ucar.edu/colorscales";
+color_scale_urls = "$(PROJ_DIR)/color_scales, http://front.eol.ucar.edu/colorscales";
 
 ///////////// fields //////////////////////////////////
 //
@@ -651,7 +651,7 @@ station_loc_url = "";
 //
 // Type: string
 
-map_urls = "/home/mdtest/ams2025/maps, http://front.eol.ucar.edu/maps";
+map_urls = "$(PROJ_DIR)/maps, http://front.eol.ucar.edu/maps";
 
 ///////////// maps_enabled_at_startup /////////////////
 //
