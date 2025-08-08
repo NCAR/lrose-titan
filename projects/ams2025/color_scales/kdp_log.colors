@@ -1,0 +1,23 @@
+# colorscale for kdp log
+
+-35	-5	DarkSlateBlue
+-5	-4	NavyBlue
+-4	-3 	SlateBlue
+-3	-2 	Blue
+-2 	-1	MediumBlue
+-1 	-0.5 	SkyBlue
+-0.5    -0.25   gray20
+-0.25 	-0.1 	DarkGreen
+-0.1	0	ForestGreen
+0	0.1	YellowGreen
+0.1	0.2	Gold
+0.2	0.3	Yellow
+0.3	0.4	Coral
+0.4	0.5	Orange
+0.5	0.6	MediumVioletRed
+0.6	0.8	OrangeRed
+0.8	1.0	Red
+1.0	1.2	Pink
+1.2	1.5	Gray50
+1.5	2.0      Gray80
+2.0	5.0	White

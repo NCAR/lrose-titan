@@ -1,0 +1,12 @@
+# NAME wvel_gray.colors
+
+# roberts 	3/26/2001 12:19:36
+
+-1      0.1     gray30 
+.1 	.5      gray60	
+#.5 	.7     gray70	
+#.7 	.9     gray80	
+.5 	.7     gray75	
+.7 	.9     gray90	
+.9 	1.2     gray90 	
+1.2 	3.0     snow	

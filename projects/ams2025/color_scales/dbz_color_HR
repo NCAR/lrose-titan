@@ -1,0 +1,80 @@
+# dbz color scale
+# 01-03-2007 trying colors
+
+
+-5      5	burlywood      
+5	10	DarkSeaGreen1
+10      20      green1
+20      25      green4
+25      30      DeepSkyBlue
+30      35      medium blue
+35      40      yellow2
+40      45      dark orange
+45      50      red 
+50      60      plum1
+60      70      MediumOrchid1
+70      80      MediumOrchid4
+
+
+
+
+#0	5	gray80
+#5       10 	gray70
+#10      15	gray60
+#15      20 	chartreuse1
+#20      25	green3
+#25      30 	SeaGreen
+#30      35	dark green
+#35      40 	LightBlue1
+#40      45 	DodgerBlue3
+#45      50	Blue3
+#50      55	yellow1
+#55      60	chocolate2
+#60      65	firebrick3
+#65      70	HotPink1
+#70      75	HotPink3
+#75      80 	DeepPink3
+
+
+#5       6      Green
+#6       7      ForestGreen
+#7       8      Blue
+#9       10      Red 
+#10      50      green-bright11 
+#50      70      Green
+#70      80      DarkRed
+
+
+
+#5	  6     gray95
+#6	  7     gray90
+#7         8     gray85
+#8         9     gray80
+#9         10    gray75
+#10        11    gray70
+#11        12    gray65
+#12        13    gray60
+#13        14    gray55
+#14        15    gray50
+#15	19	green-bright22
+#19	23	green-bright11
+#23	26	green-dark44
+#26	29	green-dark33
+#29	32	green-dark22
+#32	35	green-dark11  	        
+#35	37	blue-bright22
+#37	39	blue-bright11
+#39	41	blue-dark44
+#41	45	blue-dark33
+#45	48	blue-dark22
+#48	50	blue-dark11
+#50	54	red-light22
+#54	59	red-light11
+#59	64	red-dark55
+#64	69	red-dark44
+#69	72	red-dark33
+#72	75	red-dark22
+#77	80	red-dark11
+
+
+

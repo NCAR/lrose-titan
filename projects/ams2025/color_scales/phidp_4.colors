@@ -1,0 +1,38 @@
+# phidp
+
+-360    -340     HotPink
+-340 	-320 	DeepPink1
+-320 	-300 	maroon
+-300 	-280 	dark orchid
+-280 	-260 	blue
+-260 	-240	royal blue
+-240 	-220 	deep sky blue
+-220 	-200 	medium spring green
+-200 	-180	forest green
+-180	-160	gray
+-160	-140	tan2
+-140	-120	gold1
+-120	-100	yellow
+-100	-080	salmon1
+-080	-060	tomato
+-060	-040	brown1
+-040	-020	red
+-020	0 	firebrick
+0       020     HotPink
+020	040	DeepPink1
+040	060	maroon
+060	080	dark orchid
+080	100	blue
+100	120	royal blue
+120	140	deep sky blue
+140	160	medium spring green
+160	180	forest green
+180	200 	gray
+200 	220 	tan2
+220 	240 	gold1
+240 	260 	yellow
+260 	280 	salmon1
+280 	300 	tomato
+300 	320 	brown1
+320 	340 	red
+340 	360 	firebrick

@@ -1,0 +1,9 @@
+#! /bin/csh
+
+source ./set_env_vars
+
+cd $DATA_DIR
+
+/bin/rm -rf radar/cfradial titan
+
+

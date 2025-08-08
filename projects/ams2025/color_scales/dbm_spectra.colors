@@ -1,0 +1,28 @@
+# NAME dbm_spectra.colors
+
+-100   -90   dodgerblue3
+-90    -85   royalblue3
+-85    -80   blue
+-80    -75   mediumblue
+-75    -70   navyblue
+-70    -65   midnightblue
+-65    -60   dimgray
+-60    -55   slategray
+-55    -50   seagreen
+-50    -45   forestgreen
+-45    -40   olivedrab
+-40    -35   yellowgreen
+-35    -30   Gold3
+-30    -25   gold
+-25    -20   yellow
+-20    -15   orange
+-15    -10   coral
+-10    -05   tomato
+-05      0   firebrick1
+  0      5   OrangeRed
+  5     10   Red
+ 10     15   DeepPink
+ 15     20   Maroon1
+ 20     25   HotPink
+ 25	50   Pink
+

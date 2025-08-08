@@ -1,0 +1,11 @@
+# NAME ir_rate_bin.colors
+# terrib 	1/14/1998 16:52:50
+# MIN    MAX    NAME        COLOR LABEL
+-80 	-40 	blue 	!
+-40 	-15 	cornflower blue 	!
+-15 	-12 	medium turquoise 	!
+-12 	-9 	dark olive green 	!
+-9 	-6 	dark green 	!
+-6 	-4 	SpringGreen4 	!
+-4   	 9 	gray76 	!
+9 	21 	dark goldenrod 	!

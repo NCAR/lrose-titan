@@ -1,0 +1,11 @@
+#! /bin/csh
+
+source ./set_env_vars
+
+cd $HOME/git/lrose-test/ams2025/params
+
+Tstorms2NetCDF -params Tstorms2NetCDF.hail -debug -f $DATA_DIR/titan/storms/Strathmore/20240806.sh5
+
+
+
+

@@ -1,0 +1,11 @@
+# gray scale for dbz field
+
+# Mike Dixon, April 1991
+
+#10	20	#111111
+#20	30	#222222
+25	35	gray35
+35	45	gray50
+45 	55	gray70
+55	85	gray90
+

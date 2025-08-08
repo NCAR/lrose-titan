@@ -1,0 +1,27 @@
+# NAME dbz_bragg.colors
+
+-40      -35 	dark green
+-35      -30 	dark olive green
+-30      -28    forest green
+-28      -26 	SpringGreen3
+-26      -24 	medium sea green
+-24      -22	medium aquamarine
+-22      -20 	medium slate blue
+-20      -18 	blue
+-18      -16 	blue4
+-16      -14 	DarkOrchid4
+-14      -12 	HotPink4
+-12	 -10    maroon
+-10	 -08  	VioletRed4
+-08	 -06 	sienna
+-06	 -04 	chocolate
+-04	 -02 	goldenrod
+-02	  00 	yellow
+ 00	  02 	dark salmon
+ 02	  04 	salmon
+ 04	  06 	firebrick2
+ 06	  08 	DeepPink1
+ 08	  10 	light grey
+ 10	  20 	snow
+ 20	 100 	white
+

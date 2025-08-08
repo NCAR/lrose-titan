@@ -1,0 +1,279 @@
+/**********************************************************************
+ * TDRP params for Mdv2SoundingSpdb
+ **********************************************************************/
+
+//======================================================================
+//
+// Mdv2SoundingSpdb reads MDV Cartesian grid files, samples the data at 
+//   an array of specified points, loads the data as a sounding and writes 
+//   the soundings to SPDB.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUG AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+//
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+
+debug = DEBUG_OFF;
+
+///////////// instance ////////////////////////////////
+//
+// Process instance.
+//
+// Used for registration with procmap.
+//
+// Type: string
+
+instance = "ERA5.derecho";
+
+///////////// procmap_register_interval ///////////////
+//
+// Interval for registering with procmap (secs).
+//
+// Sometime this app will spend a long time writing the netCDF file, 
+//   since compression can be quite time-consuming. Setting this to longer 
+//   than 60 secs (say 180) gives the app more time to complete its work. 
+//   The auto-restarter will restart any app which has not registered for 
+//   twice the length of the register interval.
+//
+// Type: int
+
+procmap_register_interval = 60;
+
+//======================================================================
+//
+// DATA INPUT.
+//
+//======================================================================
+ 
+///////////// input_dir ///////////////////////////////
+//
+// Input directory.
+//
+// Path of input directory.
+//
+// Type: string
+
+input_dir = "$(DATA_DIR)/ERA5";
+
+///////////// mode ////////////////////////////////////
+//
+// Operational mode.
+//
+// REALTIME: - waits for new data. ARCHIVE: uses start and end times. 
+//   FILELIST: processes specified file list.
+//
+// Type: enum
+// Options:
+//     REALTIME
+//     ARCHIVE
+//     FILELIST
+
+mode = ARCHIVE;
+
+///////////// max_realtime_valid_age //////////////////
+//
+// Max age of input data.
+//
+// REALTIME mode only. Max age of input data for it to be valid.
+//
+// Minimum val: 0
+//
+// Type: int
+
+max_realtime_valid_age = 300;
+
+///////////// latest_data_info_avail //////////////////
+//
+// Use _latest_data_info files to decide when new data has arrived.
+//
+// REALTIME mode only. If false, the directory input_dir is scanned for 
+//   new files.
+//
+// Type: boolean
+
+latest_data_info_avail = TRUE;
+
+//======================================================================
+//
+// INPUT DATA FIELD NAMES.
+//
+//======================================================================
+ 
+///////////// temp_field_name /////////////////////////
+//
+// Name of temperature field.
+//
+// Set to empty string if no temperature field.
+//
+// Type: string
+
+temp_field_name = "TEMP";
+
+///////////// temp_units_are_kelvin ///////////////////
+//
+// Set to TRUE if temperature is in Kelvin.
+//
+// If false, temps are in Celsius. Also applies to dew-pt.
+//
+// Type: boolean
+
+temp_units_are_kelvin = FALSE;
+
+///////////// rh_field_name ///////////////////////////
+//
+// Name of relative humidity field.
+//
+// Set to empty string if no RH field is available.
+//
+// Type: string
+
+rh_field_name = "RH";
+
+///////////// compute_rh_from_dewpt ///////////////////
+//
+// Set to TRUE to compute relative humidity from dew-pt field.
+//
+// Type: boolean
+
+compute_rh_from_dewpt = FALSE;
+
+///////////// dewpt_field_name ////////////////////////
+//
+// Name of dew-pt field.
+//
+// Set to empty string if no dew-pt field.
+//
+// Type: string
+
+dewpt_field_name = "Dewpt";
+
+///////////// u_wind_field_name ///////////////////////
+//
+// Name of field for X component of wind.
+//
+// Set to empty string if no X component of wind. Assumed to be in m/s.
+//
+// Type: string
+
+u_wind_field_name = "U";
+
+///////////// v_wind_field_name ///////////////////////
+//
+// Name of field for Y component of wind.
+//
+// Set to empty string if no Y component of wind. Assumed to be in m/s.
+//
+// Type: string
+
+v_wind_field_name = "V";
+
+///////////// w_wind_field_name ///////////////////////
+//
+// Name of field for Z component of wind.
+//
+// Set to empty string if no Z component of wind. Assumed to be in m/s.
+//
+// Type: string
+
+w_wind_field_name = "W";
+
+///////////// pressure_field_name /////////////////////
+//
+// Name of pressure field.
+//
+// Set to empty string if no prssure field. Assumed to be in hPa. If 
+//   this is missing, and the vertical levels are in pressure, the 
+//   vertical level value will be used.
+//
+// Type: string
+
+pressure_field_name = "pressure";
+
+///////////// height_field_name ///////////////////////
+//
+// Name of height field.
+//
+// Set to empty string if no height field. Assumed to be in km. If this 
+//   is missing, and the vertical levels are in km, the vertical level 
+//   value will be used.
+//
+// Type: string
+
+height_field_name = "height";
+
+///////////// heights_are_in_km ///////////////////////
+//
+// Set to TRUE if height values are in km instead of m.
+//
+// Type: boolean
+
+heights_are_in_km = TRUE;
+
+//======================================================================
+//
+// SAMPLING LOCATIONS.
+//
+//======================================================================
+ 
+///////////// station_locations ///////////////////////
+//
+// Sampling locations.
+//
+// Type: struct
+//   typedef struct {
+//      string name;
+//      double latitude;
+//      double longitude;
+//      double altitudeKm;
+//   }
+//
+// 1D array - variable length.
+
+station_locations = {
+  {
+    name = "KING",
+    latitude = 43.9637,
+    longitude = -79.5728,
+    altitudeKm = 0.3923
+  }
+};
+
+//======================================================================
+//
+// DATA OUTPUT.
+//
+//======================================================================
+ 
+///////////// output_url //////////////////////////////
+//
+// Directory for output data.
+//
+// Type: string
+
+output_url = "$(DATA_DIR)/ERA5/spdb/KingCity";
+
+///////////// valid_period_secs ///////////////////////
+//
+// Valid age for sounding data.
+//
+// How long until the next sounding is expected?.
+//
+// Type: int
+
+valid_period_secs = 43200;
+

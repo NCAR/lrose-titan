@@ -1,0 +1,19 @@
+# width_xpol.colors
+
+0	0.6     DarkSlateBlue
+0.6 	1.2	NavyBlue
+1.2	1.8 	Blue
+1.8 	2.4	MediumBlue
+2.4 	3.0 	SkyBlue
+3.0 	3.6 	DarkGreen
+3.6	4.2	ForestGreen
+4.2 	4.8	YellowGreen
+4.8  	5.4 	Gold
+5.4	6.0 	Yellow
+6.0	6.6	Coral
+6.6	7.2	Orange
+7.2	7.8	MediumVioletRed
+7.8	8.4	OrangeRed
+8.4	9.0	Red
+9.0	9.6	Gray50
+9.6	10.0	gray20

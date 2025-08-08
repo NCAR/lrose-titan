@@ -1,0 +1,19 @@
+#! /bin/csh
+
+source ./set_env_vars
+
+cd $HOME/git/lrose-test/ams2025/params
+
+mkdir -p $DATA_DIR/titan/ascii
+
+Tracks2Ascii -params Tracks2Ascii.hail -f ~/data/ams2025/titan/storms/Strathmore/20240806.th5 > $DATA_DIR/titan/ascii/Tracks2Ascii.hail.txt
+
+echo "Wrote file: $DATA_DIR/titan/ascii/Tracks2Ascii.hail.txt"
+
+
+
+
+
+
+
+

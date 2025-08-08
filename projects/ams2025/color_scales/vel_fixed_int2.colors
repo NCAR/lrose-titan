@@ -1,0 +1,24 @@
+# NAME vel30.colors
+
+-30     -26    dark slate blue
+-26     -21    navyblue
+-21     -17    blue
+-17	-13    dodger blue
+-13	-10    deep sky blue
+-10     -8     turquoise
+-8      -6     medium sea green
+-6      -4     forest green
+-4      -2     olive drab
+-2      -1     yellow green
+-1       0     dimgray
+ 0       1     slategray
+ 1 	 2     yellow
+ 2	 4     gold
+ 4	 6     orange
+ 6 	 8     coral
+ 8      10     Red
+10      13     medium violet red
+13 	17     deep pink
+17 	21     orchid
+21 	26     plum
+26	30     light pink

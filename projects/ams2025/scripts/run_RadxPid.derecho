@@ -1,0 +1,9 @@
+#! /bin/csh
+
+source ./set_env_vars
+
+cd $HOME/git/lrose-test/ams2025/params
+
+RadxPid -params RadxPid.derecho -debug
+
+

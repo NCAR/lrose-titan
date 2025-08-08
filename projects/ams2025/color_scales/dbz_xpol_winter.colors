@@ -1,0 +1,26 @@
+# NAME dbz_xpol_winter.colors
+
+-10 	-7.5 	dark green
+-7.5 	-5 	dark olive green
+-5 	-2.5 	forest green
+-2.5 	0 	SpringGreen3
+0	2.75	medium sea green
+2.75 	5.5 	medium aquamarine
+5.5 	8.25 	medium slate blue
+8.25 	11 	blue
+11 	13.75 	blue4
+13.75 	16.5 	DarkOrchid4
+16.5 	19.25 	HotPink4
+19.25 	22 	maroon
+22 	24.75 	VioletRed4
+24.75 	27.5 	sienna
+27.5 	30.25 	chocolate
+30.25 	33 	goldenrod
+33 	35.75 	yellow
+35.75 	38.5 	dark salmon
+38.5 	41.25 	salmon
+41.25 	44 	firebrick2
+44 	46.75 	DeepPink1
+46.75 	49.5 	light grey
+49.5 	52.25 	snow
+52.25	55	black

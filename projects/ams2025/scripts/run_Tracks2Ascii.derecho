@@ -1,0 +1,19 @@
+#! /bin/csh
+
+source ./set_env_vars
+
+cd $HOME/git/lrose-test/ams2025/params
+
+mkdir -p $DATA_DIR/titan/ascii
+
+Tracks2Ascii -params Tracks2Ascii.derecho -f ~/data/ams2025/titan/storms/KingCity/20220521.th5 > $DATA_DIR/titan/ascii/Tracks2Ascii.derecho.txt
+
+echo "Wrote file: $DATA_DIR/titan/ascii/Tracks2Ascii.derecho.txt"
+
+
+
+
+
+
+
+

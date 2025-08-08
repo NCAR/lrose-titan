@@ -1,0 +1,10 @@
+#! /bin/csh
+
+source ./set_env_vars
+
+cd $HOME/git/lrose-test/ams2025/params
+
+RadxConvert -params RadxConvert.qc.derecho -debug -f ${DATA_DIR}/radar/raw/derecho/202205211*CASKR.h5
+
+
+

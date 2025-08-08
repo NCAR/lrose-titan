@@ -1,0 +1,25 @@
+# NAME snr.colors
+
+-10     -9 	dark green
+-9 	-8 	dark olive green
+-8	-7	forest green
+-7	-6	SpringGreen3
+-6	-5	medium sea green
+-5	-4	medium aquamarine
+-4	-3	medium slate blue
+-3 	-2 	blue
+-2 	-1 	blue4
+-1 	 0 	DarkOrchid4
+ 0 	 1 	HotPink4
+ 1 	 2 	maroon
+ 2 	 3 	VioletRed4
+ 3 	 4 	sienna
+ 4 	 6 	chocolate
+ 6 	 8 	goldenrod
+ 8 	10 	yellow
+10 	12 	dark salmon
+12 	14 	salmon
+14 	16 	firebrick2
+16 	18 	DeepPink1
+18 	20 	light grey
+20 	100 	snow

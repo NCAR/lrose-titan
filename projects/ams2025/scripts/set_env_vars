@@ -1,0 +1,4 @@
+# set env vars for ams 2025
+
+setenv DATA_DIR $HOME/data/ams2025
+setenv PROJ_DIR $HOME/git/lrose-test/ams2025

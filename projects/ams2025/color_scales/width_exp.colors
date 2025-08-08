@@ -1,0 +1,22 @@
+# Colormap for Radar spectral width data
+# NAME width_exp.colors
+# kessinge      9/26/1995 11:30:00
+# MIN    MAX    NAME        COLOR LABEL
+16
+0	1	midnight blue
+1	2	dark slate blue
+2	3	dark slate grey
+3	4	dark olive green
+4	5	forest green
+5	6	lime green
+6	7	spring green
+7	8	pale green
+8	9	wheat
+9	10	khaki
+10	15	gold
+15	20	orange
+20	25	coral
+25	30	orange red
+30	35	red
+35	40	magenta
+
