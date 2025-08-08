@@ -93,6 +93,7 @@ The default contents are as follows:
 ```
 
 The default settings work as is, if you have followed these instructions.
+
 If you have a different layout, edit ```set_env_vars``` appropriately.
 
 ## Processing steps, running the scripts
@@ -112,6 +113,8 @@ You should run the scripts from the script directory:
 
 This converts the raw HDF5 data into cfradial, with no QC steps applied.
 
+We have, however, added the signal-to-noise (SNR) field, as derived from the reflectivity field DBZ. SNR is needed for later QC steps.
+
 You can view the results using HawkEye:
 
 ```
@@ -126,16 +129,38 @@ You will notice that in the derecho case there is considerable interference, lea
 
 ### convert raw HDF5 files with QC
 
+Inspection of the spikes reveals that the sources of the interference are not coherent with the radars:
+
+* SQI (NCP) is low
+* SNR is reasonably low
+
+In ```RadxConvert``` we have the option to censor the data fields using threshold applied to the input fields. Specifically we use RadxConvert to remove data at gates for which BOTH:
+
+* SQI (NCP) < 0.2, AND
+* SNR < 25 dB
+
+
+The following runs that step:
 
 ```
-run_RadxConvert.qc.hail
-run_RadxConvert.qc.derecho
+  ./run_RadxConvert.qc.hail
+  ./run_RadxConvert.qc.derecho
 ```
 
+You can view the results in HawkEye, and compare to the non-QC step above.
+
 ```
-run_HawkEye.qc.hail
-run_HawkEye.qc.derecho
+  ./run_HawkEye.qc.hail
+  ./run_HawkEye.qc.derecho
 ```
+
+See:
+
+* [hail DBZ no QC](./images/hail.dbz.qc.png)
+* [derecho DBZ no QC](./images/derecho.dbz.qc.png)
+
+For the purposes of this project, this censoring QC step is sufficent to ensure that Titan does not produce artifacts.
+
 
 ```
 run_Radx2Grid.hail
