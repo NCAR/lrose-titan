@@ -104,7 +104,7 @@ You should run the scripts from the script directory:
   cd ~/git/lrose-titan/projects/ams2025/scripts
 ```
 
-### convert raw HDF5 files with no QC
+### Convert raw HDF5 files with no QC
 
 ```
   ./run_RadxConvert.no_qc.hail
@@ -127,7 +127,7 @@ You will notice that in the derecho case there is considerable interference, lea
 * [hail DBZ no QC](./images/hail.dbz.no_qc.png)
 * [derecho DBZ no QC](./images/derecho.dbz.no_qc.png)
 
-### convert raw HDF5 files with QC
+### Convert raw HDF5 files with QC
 
 Inspection of the spikes reveals that the sources of the interference are not coherent with the radars:
 
@@ -156,10 +156,12 @@ You can view the results in HawkEye, and compare to the non-QC step above.
 
 See:
 
-* [hail DBZ no QC](./images/hail.dbz.qc.png)
-* [derecho DBZ no QC](./images/derecho.dbz.qc.png)
+* [hail DBZ with QC](./images/hail.dbz.qc.png)
+* [derecho DBZ with QC](./images/derecho.dbz.qc.png)
 
-For the purposes of this project, this censoring QC step is sufficent to ensure that Titan does not produce artifacts.
+You can see, especially for the derecho case, the interference has been considerably reduced.
+
+Although not perfect, for the purposes of this project, this censoring QC step is sufficent to ensure that Titan does not produce artifacts.
 
 
 ```
