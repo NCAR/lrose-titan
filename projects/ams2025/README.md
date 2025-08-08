@@ -221,12 +221,11 @@ On a Linux host, we can run CIDD to view the Cartesian fields, in addition to th
 
 Cartesian DBZ data in CIDD, hail case:
 
-![Alt text](./images/hail.dbz.cart.cidd.png)
 <img src="./images/hail.dbz.cart.cidd.png" alt="Alt text" width="600">
 
 Cartesian DBZ data in CIDD, derecho case:
 
-![Alt text](./images/derecho.dbz.cart.cidd.png)
+<img src="./images/derecho.dbz.cart.cidd.png" alt="Alt text" width="600">
 
 On a Mac or Linux we can run Lucid, the replacement for CIDD that is under development:
 
@@ -237,11 +236,11 @@ On a Mac or Linux we can run Lucid, the replacement for CIDD that is under devel
 
 Cartesian DBZ data in Lucid, hail case:
 
-![Alt text](./images/hail.dbz.cart.lucid.png)
+<img src="./images/hail.dbz.cart.lucid.png" alt="Alt text" width="600">
 
 Cartesian DBZ data in Lucid, derecho case:
 
-![Alt text](./images/derecho.dbz.cart.lucid.png)
+<img src="./images/derecho.dbz.cart.lucid.png" alt="Alt text" width="600">
 
 As mentioned, Lucid is still under development and only some of the functionality is available. You can select fields, zooms and maps. The height selector is functional. The movie control slider works, for selecting different times. However, much of the time controller is not yet working.
 
