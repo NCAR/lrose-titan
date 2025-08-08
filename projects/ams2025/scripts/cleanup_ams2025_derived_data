@@ -4,6 +4,10 @@ source ./set_env_vars
 
 cd $DATA_DIR
 
-/bin/rm -rf radar/cfradial titan
+/bin/rm -rf ERA5/spdb
+/bin/rm -rf radar/cfradial
+/bin/rm -rf radar/cart
+/bin/rm -rf titan
+
 
 
