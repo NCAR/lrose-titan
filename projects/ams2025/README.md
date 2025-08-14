@@ -75,7 +75,7 @@ The structure of the ams2025 part of this repo is as follows:
   ~/git/lrose-titan/projects/ams2025/maps
 ```
 
-## Setting up the enbvironment
+## Setting up the environment
 
 In the scripts directory you will find the file:
 
