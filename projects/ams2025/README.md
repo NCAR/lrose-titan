@@ -288,11 +288,13 @@ Tracks2Ascii exports the Titan track data in space-delimited ascii format:
 Tstorms2NetCDF exports the Titan track data in NetCDF-4, using groups:
 
 ```
-   ./run_Tstorms2NetCDF.hail
+  ./run_Tstorms2NetCDF.hail
   ./run_Tstorms2NetCDF.derecho
 ```
 
-We will provide a separate document describing the Titan NetCDF data model.
+For documentation on the NetCDF data model, see:
+
+* [Titan Data in NetCDF](../../docs/pdf/TitanDataNetCDF.pdf)
 
 
 
