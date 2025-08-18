@@ -75,6 +75,17 @@ The structure of the ams2025 part of this repo is as follows:
   ~/git/lrose-titan/projects/ams2025/maps
 ```
 
+## Data flow overview
+
+In this tutorial we process 2 data sets:
+
+* hail
+* derecho
+
+For each case the logic and data flow is as follows:
+
+![Alt text](./images/titan_data_flow.png)
+
 ## Setting up the environment
 
 In the scripts directory you will find the file:
