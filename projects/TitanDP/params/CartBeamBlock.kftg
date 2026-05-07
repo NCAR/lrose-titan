@@ -1,0 +1,447 @@
+/**********************************************************************
+ * TDRP params for CartBeamBlock
+ **********************************************************************/
+
+//======================================================================
+//
+// CartBeamBlock application.
+//
+// CartBeamBlock computes beam blockage for a specific radar and a 3D 
+//   Cartesian grid associated with that radar. The terrain height data is 
+//   read in from a digital terrain map. The Cartesian grid details are 
+//   determined by reading in a Cartesian file in CF-NetCDF MDV format. 
+//   Generally that Cart file will have been produced by RadxCartDP or 
+//   Radx2Grid. CartBeamBlock computes the cumulative beam blockage 
+//   fraction for each voxel in the 3D grid. It also writes out a 2D grid 
+//   containing the terrain height.
+//
+//======================================================================
+ 
+//======================================================================
+//
+// DEBUGGING AND PROCESS CONTROL.
+//
+//======================================================================
+ 
+///////////// debug ///////////////////////////////////
+//
+// Debug option.
+//
+// If set, debug messages will be printed appropriately.
+//
+// Type: enum
+// Options:
+//     DEBUG_OFF
+//     DEBUG_NORM
+//     DEBUG_VERBOSE
+//     DEBUG_EXTRA
+
+debug = DEBUG_OFF;
+
+///////////// n_compute_threads ///////////////////////
+//
+// Number of threads to be used for the main computations..
+//
+// This splits the load between CPU cores and speeds up the processing. 
+//   I recommend using 2 * number of cores.
+//
+// Type: int
+
+n_compute_threads = 8;
+
+//======================================================================
+//
+// CARTESIAN GRID TEMPLATE.
+//
+// We read in a 3D Cartesian file which we use as a template to 
+//   determine the 3D grid details.
+//
+//======================================================================
+ 
+///////////// grid_template_path //////////////////////
+//
+// Directory or file path for Cartesian input data.
+//
+// This specifies the path to either:
+//
+// 	(a) a single 3D Cartesian file, or 
+// 	(b) a directory containing such files.
+//
+// These files must have been previously created by running Radx2Grid or 
+//   RadxCartDP.
+//
+// Type: string
+
+grid_template_path = "$(HOME)/data/pecan/mdv/radarCart/kftg/no_blockage/20150626/ncf_20150626_000334.nc";
+
+///////////// template_field_name /////////////////////
+//
+// Field name for 3D Cartesian input data.
+//
+// This should be a 3D field in the template Cartesian file.
+//
+// Type: string
+
+template_field_name = "DBZ";
+
+//======================================================================
+//
+// DIGITAL ELEVATION DATA.
+//
+//======================================================================
+ 
+///////////// dem_path ////////////////////////////////
+//
+// DEM data path.
+//
+// The file with input digital elevation model data.
+//
+// Type: string
+
+dem_path = "$(HOME)/data/Terrain/DEM/SRTM3";
+
+///////////// dem_data_format /////////////////////////
+//
+// format of input digital elevation model data.
+//
+// supported digital elevation models:
+//   Shuttle Radar Topography Mission (3 arc-second resolution)
+//           format: srtm3 (data found here:
+//    	     http://dds.cr.usgs.gov/srtm/version2_1/SRTM3
+//   ESRI grid data (spheroid), with the various standard spheroids.
+//
+// Type: enum
+// Options:
+//     SHUTTLE_RADAR_TOPOGRAPHY
+//     ESRI_I65
+//     ESRI_ANS
+//     ESRI_CLARKE1858
+//     ESRI_GRS80
+//     ESRI_WGS84
+//     ESRI_WGS72
+//     INTERNATIONAL1924
+//     AUSTRALIAN_NATIONAL
+
+dem_data_format = SHUTTLE_RADAR_TOPOGRAPHY;
+
+//======================================================================
+//
+// SETTING THE PSEUDO EARTH RADIUS RATIO FOR HEIGHT COMPUTATIONS.
+//
+//======================================================================
+ 
+///////////// override_standard_pseudo_earth_radius ///
+//
+// Option to override the standard 4/3 earth radius model for 
+//   refraction.
+//
+// If true, the standard 4/3 earth radius will be overridden. The US NWS 
+//   NEXRAD system uses 1.21 instead of 1.333.
+//
+// Type: boolean
+
+override_standard_pseudo_earth_radius = FALSE;
+
+///////////// pseudo_earth_radius_ratio ///////////////
+//
+// Ratio for computing the pseudo earth radius for beam height 
+//   computations.
+//
+// For standard refraction this is 4/3. For super refraction it will be 
+//   less than 4.3, and for sub-refraction it will be greater. NEXRAD uses 
+//   1.21.
+//
+// Type: double
+
+pseudo_earth_radius_ratio = 1.33333;
+
+//======================================================================
+//
+// BLOCKAGE SAMPLING GEOMETRY.
+//
+// We compute blockage using a micro-grid, within the radar elevation, 
+//   azimuth and range geometry. This allows us to compute the effective 
+//   blockage more accurately.
+//
+//======================================================================
+ 
+///////////// n_pattern_vert //////////////////////////
+//
+// Number of pattern subsamples in the vertical.
+//
+// We compute beam power at this number of points in a vertical slice of 
+//   the beam. An uneven number gives us symmetrical sampling.
+//
+// Type: int
+
+n_pattern_vert = 31;
+
+///////////// n_pattern_horiz /////////////////////////
+//
+// Number of pattern subsamples in the horizontal.
+//
+// We compute beam power at this number of points in a horizontal 
+//   section across the beam. An uneven number gives us symmetrical 
+//   sampling.
+//
+// Type: int
+
+n_pattern_horiz = 31;
+
+///////////// range_res_m /////////////////////////////
+//
+// Range resolution for height and blockage sampling computations (m).
+//
+// We sample the beam at this range resolution, and accumulate the 
+//   extinction in range.
+//
+// Type: double
+
+range_res_m = 90;
+
+//======================================================================
+//
+// RADAR PARAMETERS.
+//
+//======================================================================
+ 
+///////////// radar_name //////////////////////////////
+//
+// Name of radar.
+//
+// If empty, the radar name from the data is used.
+//
+// Type: string
+
+radar_name = "KFTG";
+
+///////////// override_radar_location /////////////////
+//
+// Option to override the radar spatial location.
+//
+// If FALSE we use the radar location from the template file. If TRUE, 
+//   we specify the location in the parameter file.
+//
+// Type: boolean
+
+override_radar_location = FALSE;
+
+///////////// radar_location //////////////////////////
+//
+// Radar location.
+//
+// The radar location if override_radar_location is true. Altitude is in 
+//   km MSL.
+//
+// Type: struct
+//   typedef struct {
+//      double latitudeDeg;
+//      double longitudeDeg;
+//      double heightKm;
+//   }
+//
+
+radar_location = {
+    latitudeDeg = 0,
+    longitudeDeg = 0,
+    heightKm = 0
+};
+
+///////////// override_radar_wavelength ///////////////
+//
+// Option to override the radar wavelength.
+//
+// If FALSE we use the frequency from the radar params in the template 
+//   file. If TRUE, we use the value in the parameter file.
+//
+// Type: boolean
+
+override_radar_wavelength = FALSE;
+
+///////////// radar_wavelength_cm /////////////////////
+//
+// Radar wavelength, cm.
+//
+// The radar wavelength if override_radar_wavelength is true.
+//
+// Type: double
+
+radar_wavelength_cm = 5.4;
+
+///////////// override_radar_beamwidth ////////////////
+//
+// Option to override the radar beam width.
+//
+// If FALSE we use the beam width from the radar params in the template 
+//   file. If TRUE, we use the values in the parameter file.
+//
+// Type: boolean
+
+override_radar_beamwidth = FALSE;
+
+///////////// horiz_beam_width_deg ////////////////////
+//
+// Radar horizontal beam (deg).
+//
+// Used if override_radar_beamwidth is true.
+//
+// Type: double
+
+horiz_beam_width_deg = 1;
+
+///////////// vert_beam_width_deg /////////////////////
+//
+// Radar vertical beam (deg).
+//
+// Used if override_radar_beamwidth is true.
+//
+// Type: double
+
+vert_beam_width_deg = 1;
+
+//======================================================================
+//
+// DATA SET INFORMATION.
+//
+// Will be stored in CfRadial files, and other formats to the extent 
+//   supported by the format.
+//
+//======================================================================
+ 
+///////////// title ///////////////////////////////////
+//
+// Title string for netCDF file.
+//
+// Type: string
+
+title = "Radar beam blockage computed from digital elevation data.";
+
+///////////// institution /////////////////////////////
+//
+// Institution string for netCDF file.
+//
+// Type: string
+
+institution = "EOL/NCAR";
+
+///////////// references //////////////////////////////
+//
+// References string for netCDF file.
+//
+// Type: string
+
+references = "Created by LROSE app CartBeamBlock";
+
+//======================================================================
+//
+// OUTPUT DETAILS.
+//
+//======================================================================
+ 
+///////////// output_dir //////////////////////////////
+//
+// Output directory path.
+//
+// Output file will be written to this directory.
+//
+// Type: string
+
+output_dir = "$(HOME)/data/pecan/mdv/beamBlock/kftg";
+
+///////////// data_set_source /////////////////////////
+//
+// Description of data set source.
+//
+// This will be written to the MDV master header.
+//
+// Type: string
+
+data_set_source = "SRTM3";
+
+///////////// append_radar_name_to_output_dir /////////
+//
+// Option to add the radar name to the output path.
+//
+// If true, the output dir will be 'output_dir/radar_name'.
+//
+// Type: boolean
+
+append_radar_name_to_output_dir = FALSE;
+
+///////////// output_time_stamp ///////////////////////
+//
+// Time stamp for output files.
+//
+// We need to set a time so that the output files can be correctly 
+//   named. SRTM shuttle mission 99 occurred in early 2000.
+//
+// Type: struct
+//   typedef struct {
+//      int year;
+//      int month;
+//      int day;
+//      int hour;
+//      int min;
+//      int sec;
+//   }
+//
+
+output_time_stamp = {
+    year = 2000,
+    month = 1,
+    day = 1,
+    hour = 0,
+    min = 0,
+    sec = 0
+};
+
+///////////// blockage_field_name /////////////////////
+//
+// Name of blockge field in MDV output file.
+//
+// Type: string
+
+blockage_field_name = "extinction";
+
+///////////// elev_field_name /////////////////////////
+//
+// Name of elevation field in MDV output file.
+//
+// If name string is empty, this field is not written.
+//
+// Type: string
+
+elev_field_name = "elevation";
+
+///////////// terrain_ht_field_name ///////////////////
+//
+// Name of terrain height field in MDV output file.
+//
+// If name string is empty, this field is not written.
+//
+// Type: string
+
+terrain_ht_field_name = "terrain_ht";
+
+///////////// hi_res_terrain_ht_field_name ////////////
+//
+// Name of high resolution terrain height field in MDV output file.
+//
+// If name string is empty, this field is not written.
+//
+// Type: string
+
+hi_res_terrain_ht_field_name = "terrain_hi_res";
+
+///////////// hi_res_factor ///////////////////////////
+//
+// Grid resolution increase for high-res terrain grid.
+//
+// The high-resolution grid spacing will be reduced by this factor as 
+//   compared to the main Cartesian grid. Correspondingly, the number of 
+//   grid points will be increased by this factor.
+//
+// Type: double
+
+hi_res_factor = 10;
+
