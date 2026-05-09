@@ -1,0 +1,11 @@
+///////////// vsection_disable_interp /////////////////
+//
+// Option to disable interpolation in vertical sections.
+//
+// Some data is not amenable to interpolation. Setting this to TRUE will 
+//   disable interpolation when vertical sections are computed.
+//
+// Type: boolean
+
+vsection_disable_interp = TRUE;
+

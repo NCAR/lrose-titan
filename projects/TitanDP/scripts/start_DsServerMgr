@@ -1,0 +1,11 @@
+#! /bin/csh
+
+setenv DATA_DIR $HOME/data
+cd $DATA_DIR
+
+running "DsServerMgr"
+if ($status == 1) then
+    echo starting DsServerMgr
+    DsServerMgr -debug -debug -instance primary -qmax -1 >& /dev/null &
+endif
+

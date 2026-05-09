@@ -1,0 +1,6 @@
+#! /bin/csh
+
+setenv DATA_DIR $HOME/data
+cd $HOME/git/lrose-test/RadxCartDP/params
+../scripts/start_DsServerMgr
+CIDD -p CIDD.RadxCartDP

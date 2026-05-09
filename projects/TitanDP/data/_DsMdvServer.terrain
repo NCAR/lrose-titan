@@ -1,0 +1,33 @@
+/**********************************************************************
+ * TDRP params for DsMdvServer
+ **********************************************************************/
+
+//======================================================================
+//
+// STATIC FILES - READ OPERATIONS ONLY.
+//
+// Option to serve out data from a static file if a time-based request 
+//   is made.
+//
+//======================================================================
+ 
+///////////// use_static_file /////////////////////////
+//
+// Option to serve out data from a static file.
+//
+// If set, the data will always be read from a static file. The file url 
+//   is specified below. The times in the header will be set to match the 
+//   request time.
+//
+// Type: boolean
+
+use_static_file = TRUE;
+
+///////////// static_file_url /////////////////////////
+//
+// URL for static file.
+//
+// Type: string
+
+static_file_url = "$(HOME)/data/pecan/mdv/beamBlock/kftg/cart_terrain/20000101/20000101_000000.mdv.cf.nc";
+
