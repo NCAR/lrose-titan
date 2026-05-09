@@ -26,7 +26,7 @@ debug = FALSE;
 //
 // Type: string
 
-instance = "hail";
+instance = "derecho";
 
 ///////////// trigger_mode ////////////////////////////
 //
@@ -65,7 +65,7 @@ trigger_mode = TIME_LIST;
 //
 // Type: string
 
-radar_url = "$(DATA_DIR)/radar/cart/qc/Strathmore";
+radar_url = "$(DATA_DIR)/radar/cart/qc/KingCity";
 
 ///////////// dbz_field_name //////////////////////////
 //
@@ -173,5 +173,5 @@ base_height_threshold = 55;
 //
 // Type: string
 
-output_url = "$(DATA_DIR)/radar/cart/hail/Strathmore";
+output_url = "$(DATA_DIR)/radar/cart/hail/KingCity";
 

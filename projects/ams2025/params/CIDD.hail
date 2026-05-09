@@ -1,4 +1,4 @@
-#####################################################################################
+######################################################################################
 #  CIDD.master
 #  Configurable Interactive Data Display Master Params
 #
@@ -180,8 +180,9 @@ KDP_CART         KDP_CART         radar/cart/qc/Strathmore&KDP         kdp.color
 NCP_CART         NCP_CART         radar/cart/qc/Strathmore&NCP         ncp.colors      -      0 0 0   cart  1 0
 ====           ====           radar/cart/qc/Strathmore&none        none.colors     -      0 0 0   cart  1 0
 
-HAIL_MASS_FLUX HAIL_MASS_FLUX radar/cart/hail/Strathmore&Hail_Mass_Flux number_100.colors   g/m2s      0 0 0   cart  1 0
-HAIL_KE HAIL_KE radar/cart/hail/Strathmore&Hail_KE_Flux  number_100.colors   J/m2s      0 0 0   cart  1 0
+HAIL_KE HAIL_KE radar/cart/hail/Strathmore&Hail_KE_Flux  hail_ke.colors   J/m2s      0 0 0   cart  1 0
+HAIL_SWATH HAIL_SWATH radar/cart/hail_swath/Strathmore&maxHailKeFlux  hail_ke.colors   J/m2s      0 0 0   cart  1 0
+====           ====           radar/cart/no_qc/Strathmore&none     none.colors     -      0 0 0   cart  1 0
 ====           ====           radar/cart/no_qc/Strathmore&none     none.colors     -      0 0 0   cart  1 0
 ====           ====           radar/cart/no_qc/Strathmore&none     none.colors     -      0 0 0   cart  1 0
 

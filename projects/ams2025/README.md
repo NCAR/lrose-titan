@@ -307,9 +307,35 @@ For documentation on the NetCDF data model, see:
 
 * [Titan Data in NetCDF](../../docs/pdf/TitanDataNetCDF.pdf)
 
+## Running HailKE and HailKEswath
 
+HailKE estimates Hail Kinetic Energy, using the Cartesian reflectivity field.
 
+HailKEswath accumulates the results from HailKE into a swath over time.
 
+To run HailKE for each case:
 
+```
+  ./run_HailKE.hail
+  ./run_HailKE.derecho
+```
+
+To run HailKEswath for each case:
+
+```
+  ./run_HailKEswath.hail
+  ./run_HailKEswath.derecho
+```
+
+You can view the swath using CIDD:
+
+```
+  ./run_CIDD.hail
+  ./run_CIDD.derecho
+```
+
+and select the HailKE or HailKEswath fields:
+
+![Alt text](./images/hail_swath.png)
 
 

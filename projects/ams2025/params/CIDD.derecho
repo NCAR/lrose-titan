@@ -145,20 +145,20 @@ NCP_NO_QC      NCP_NO_QC      radar/cfradial/no_qc/KingCity&NCP      ncp.colors 
 ====           ====           radar/cfradial/no_qc/KingCity&none     none.colors     -      0 0 0   cart  1 0
 ====           ====           radar/cfradial/no_qc/KingCity&none     none.colors     -      0 0 0   cart  1 0
 
-PID          PID          radar/cfradial/pid/Strathmore&PID      pid.colors      dbz    0 0 0   cart  1 0
-DBZ_PID      DBZ_PID      radar/cfradial/pid/Strathmore&DBZ      dbz.colors      dbz    0 0 0   cart  1 0
-VEL_PID      VEL_PID      radar/cfradial/pid/Strathmore&VEL      vel.colors      m/s    0 0 0   cart  1 0
-WIDTH_PID    WIDTH_PID    radar/cfradial/pid/Strathmore&WIDTH    width.colors    m/s    0 0 0   cart  1 0
+PID          PID          radar/cfradial/pid/KingCity&PID      pid.colors      dbz    0 0 0   cart  1 0
+DBZ_PID      DBZ_PID      radar/cfradial/pid/KingCity&DBZ      dbz.colors      dbz    0 0 0   cart  1 0
+VEL_PID      VEL_PID      radar/cfradial/pid/KingCity&VEL      vel.colors      m/s    0 0 0   cart  1 0
+WIDTH_PID    WIDTH_PID    radar/cfradial/pid/KingCity&WIDTH    width.colors    m/s    0 0 0   cart  1 0
 
-SNR_PID      SNR_PID      radar/cfradial/pid/Strathmore&SNR      snr.colors      dB     0 0 0   cart  1 0
-ZDR_PID      ZDR_PID      radar/cfradial/pid/Strathmore&ZDR      zdr.colors      dB     0 0 0   cart  1 0
-PHIDP_PID    PHIDP_PID    radar/cfradial/pid/Strathmore&PHIDP    phidp_360.colors    deg    0 0 0   cart  1 0
-RHOHV_PID    RHOHV_PID    radar/cfradial/pid/Strathmore&RHOHV    rhohv.colors    -      0 0 0   cart  1 0
+SNR_PID      SNR_PID      radar/cfradial/pid/KingCity&SNR      snr.colors      dB     0 0 0   cart  1 0
+ZDR_PID      ZDR_PID      radar/cfradial/pid/KingCity&ZDR      zdr.colors      dB     0 0 0   cart  1 0
+PHIDP_PID    PHIDP_PID    radar/cfradial/pid/KingCity&PHIDP    phidp_360.colors    deg    0 0 0   cart  1 0
+RHOHV_PID    RHOHV_PID    radar/cfradial/pid/KingCity&RHOHV    rhohv.colors    -      0 0 0   cart  1 0
 
-NCP_PID      NCP_PID      radar/cfradial/pid/Strathmore&NCP      ncp.colors      -      0 0 0   cart  1 0
-KDP_PID      KDP_PID      radar/cfradial/pid/Strathmore&KDP      kdp.colors      deg/km 0 0 0   cart  1 0
-KDP2         KDP2         radar/cfradial/pid/Strathmore&KDP2      kdp.colors      deg/km 0 0 0   cart  1 0
-KDP2_SC      KDP2_SC      radar/cfradial/pid/Strathmore&KDP2_SC      kdp.colors      deg/km 0 0 0   cart  1 0
+NCP_PID      NCP_PID      radar/cfradial/pid/KingCity&NCP      ncp.colors      -      0 0 0   cart  1 0
+KDP_PID      KDP_PID      radar/cfradial/pid/KingCity&KDP      kdp.colors      deg/km 0 0 0   cart  1 0
+KDP2         KDP2         radar/cfradial/pid/KingCity&KDP2      kdp.colors      deg/km 0 0 0   cart  1 0
+KDP2_SC      KDP2_SC      radar/cfradial/pid/KingCity&KDP2_SC      kdp.colors      deg/km 0 0 0   cart  1 0
 
 ====           ====           radar/cfradial/pid/KingCity&none     none.colors     -      0 0 0   cart  1 0
 ====           ====           radar/cfradial/pid/KingCity&none     none.colors     -      0 0 0   cart  1 0
@@ -179,6 +179,11 @@ RHOHV_CART       RHOHV_CART       radar/cart/qc/KingCity&RHOHV       rhohv.color
 KDP_CART         KDP_CART         radar/cart/qc/KingCity&KDP         kdp.colors      deg/km 0 0 0   cart  1 0
 NCP_CART         NCP_CART         radar/cart/qc/KingCity&NCP         ncp.colors      -      0 0 0   cart  1 0
 ====           ====           radar/cart/qc/KingCity&none        none.colors     -      0 0 0   cart  1 0
+
+HAIL_KE HAIL_KE radar/cart/hail/KingCity&Hail_KE_Flux  hail_ke.colors   J/m2s      0 0 0   cart  1 0
+HAIL_SWATH HAIL_SWATH radar/cart/hail_swath/KingCity&maxHailKeFlux  hail_ke.colors   J/m2s      0 0 0   cart  1 0
+====           ====           radar/cart/no_qc/KingCity&none     none.colors     -      0 0 0   cart  1 0
+====           ====           radar/cart/no_qc/KingCity&none     none.colors     -      0 0 0   cart  1 0
 
 ====           ====           radar/cart/no_qc/KingCity&none     none.colors     -      0 0 0   cart  1 0
 ====           ====           radar/cart/no_qc/KingCity&none     none.colors     -      0 0 0   cart  1 0

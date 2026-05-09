@@ -587,5 +587,6 @@ Rview.field_name_from_params: true
 
 #fc dbz $(DATA_DIR)/radar/cart/qc/KingCity DBZ  1080  dbz_color dbz_gray 0.0 70.0 5.0
 #fc vel $(DATA_DIR)/radar/cart/qc/KingCity VEL  1080  vel_color vel_gray 0.0 70.0 5.0
+#fc hail $(DATA_DIR)/radar/cart/hail_swath/KingCity maxHailKeFlux 1080 hail_ke.colors dbz_gray 0.0 70.0 5.0
 
 
