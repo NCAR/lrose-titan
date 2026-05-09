@@ -1,0 +1,26 @@
+# NAME hsrl_log_counts.colors
+
+-5 	-2 	dark green
+-2 	0 	dark olive green
+00 	2 	forest green
+02 	4 	SpringGreen3
+04	6 	medium sea green
+06	8 	medium aquamarine
+08	10 	medium slate blue
+10	12 	blue
+12 	14 	blue4
+14 	16 	DarkOrchid4
+16 	18 	HotPink4
+18 	20 	maroon
+20 	22 	VioletRed4
+22 	24 	sienna
+24 	26 	chocolate
+26 	28 	goldenrod
+28 	30 	yellow3
+30 	32 	dark salmon
+32 	34 	salmon
+34 	36 	firebrick2
+36 	30 	DeepPink1
+38 	40 	light grey
+40 	45 	snow
+45	100	white

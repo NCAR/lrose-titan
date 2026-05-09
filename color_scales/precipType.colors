@@ -1,0 +1,10 @@
+# Field for WSDDM - ZrCalib  - precipType
+# Color coded Precip type (category)
+# Niles December 2003
+
+0.5 1.5     white !SN
+1.5 2.5     blue  !FZ
+2.5 3.5     green ! 
+3.5 4.5     orange !RA
+4.5 5.5     yellow !TS
+5.5 6.5     magenta !GR

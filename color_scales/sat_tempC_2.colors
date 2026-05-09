@@ -1,0 +1,35 @@
+# NAME sat_highres deg C
+
+-89    -83    #ffff00
+-83    -77    #ffc0cb
+-77    -71    #ffa500
+-71    -65    #ff0000
+-65    -59    medium purple
+-59    -53    purple
+-53    -47    dark orchid
+-47    -41    MediumOrchid4
+-41    -35    DarkOrchid4
+-35    -29    MediumPurple4
+-29    -23    blue4
+-23    -17    slate blue
+-17    -11    medium slate blue
+-11    -05    cornflower blue
+-05    001    deep sky blue
+001    007    cyan
+007    013    pale turquoise
+013    019    bisque
+019    025    blanched almond
+025    031    linen
+031    037    gray53
+037    043    gray51
+043    049    gray47
+049    055    gray44
+055    061    gray41
+061    067    gray37
+067    073    gray34
+073    079    gray31
+079    085    gray28
+085    091    gray25
+091    097    gray21
+097    103    gray11
+103    109    #000000

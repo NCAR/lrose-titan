@@ -1,0 +1,11 @@
+# NAME fuzzy_pos.colors
+# terrib 	1/14/1998 16:52:50
+# MIN    MAX    NAME        COLOR LABEL
+-40	-24 	blue4 !
+-24	-20 	mediumblue !
+-20 	-16 	cornflower blue 	!
+-16 	-12 	cyan 	!
+-12 	-8 	dark green 	!
+-8 	-4 	medium sea green 	!
+-4 	-2 	Spring Green 	!
+-2   	 30 	wheat 	!

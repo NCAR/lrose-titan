@@ -1,0 +1,8 @@
+# NAME flt_cat.colors
+#
+# Taiwan
+#
+35 	45	seagreen	!VFR
+25 	35 	blue		!SVFR
+10 	25 	orange	        !IFR
+

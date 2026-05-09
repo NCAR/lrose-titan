@@ -1,0 +1,35 @@
+# NAME surf_temp.colors
+#
+#
+-50  -20     DarkSlateGray1
+-20  -15     cyan              
+-15  -12     deep sky blue     
+-12  -09     cornflower blue   
+-09  -06     medium slate blue 
+-06  -03     slate blue        
+-03   00     blue4            
+ 00   02     MediumPurple4    
+ 02   04     DarkOrchid4      
+ 04   06     MediumOrchid4    
+ 06   08     dark orchid      
+ 08   10     purple           
+ 10   12     hot pink          
+ 12   14     pink        
+ 14   16     SteelBlue1
+ 16   18     SpringGreen2
+ 18   20     SpringGreen3
+ 20   22     SpringGreen4
+ 22   25     yellow1
+ 25   28     yellow3
+ 28   31     gold1
+ 31   34     DarkGoldenrod1
+ 34   37     orange
+ 37   40     sienna1
+ 40   45     coral1
+ 45   50     red1
+
+
+
+
+
+

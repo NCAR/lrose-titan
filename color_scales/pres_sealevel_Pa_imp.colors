@@ -1,0 +1,25 @@
+# pres_sealevel_Pa_imp.colors:
+# Hage	2008
+# MIN    MAX    NAME        COLOR LABEL
+50000 	90000 	saddle brown 	!
+90000 	95000 	brown 	!
+95000 	95500 	indian red 	!
+95500 	96000 	rosy brown 	!
+96000 	96500 	tan 	!
+96500 	97000 	light goldenrod 	!
+97000 	97500 	dark khaki 	!
+97500 	98000 	dark sea green 	!
+98000 	98500 	medium sea green 	!
+98500 	99000 	olive drab 	!
+99000 	99500 	sea green 	!
+99500  100000 	light sea green 	!
+100000 100500 	cadet blue 	!
+100500 101000 	steel blue 	!
+101000 101500 	dodger blue 	!
+101500 102000 	royal blue 	!
+102000 102500 	medium blue 	!
+102500 103000 	medium slate blue 	!
+103000 103500 	slate blue 	!
+103500 104000 	dark slate blue 	!
+104000 104500	navy 	!
+104500 110000 	midnight blue 	!

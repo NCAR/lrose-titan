@@ -1,0 +1,29 @@
+# NAME vel3.colors
+# jaimi 	9/22/1999 15:17:3
+# MIN    MAX    NAME        COLOR LABEL
+-39 	-36 	midnight blue 	!
+-36 	-33 	navy 	!
+-33 	-30 	dark slate blue 	!
+-30 	-27 	slate blue 	!
+-27 	-24 	light slate blue 	!
+-24 	-21 	medium blue 	!
+-21 	-18 	royal blue 	!
+-18 	-15 	dodger blue 	!
+-15 	-12 	deep sky blue 	!
+-12 	-9 	sky blue 	!
+-9 	-6 	medium aquamarine 	!
+-6 	-3 	cadet blue 	!
+-3 	0 	honeydew 	!
+0 	3 	lemon chiffon 	!
+3 	6 	pale goldenrod 	!
+6 	9 	khaki 	!
+9 	12 	light goldenrod 	!
+12 	15 	dark khaki 	!
+15 	18 	dark goldenrod 	!
+18 	21 	peru 	!
+21 	24 	sandy brown 	!
+24 	27 	chocolate 	!
+27 	30 	brown 	!
+30 	33 	firebrick 	!
+33 	36 	indian red 	!
+36 	39 	dark salmon 	!

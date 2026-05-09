@@ -1,0 +1,22 @@
+# NAME pdp.colors
+# fhage 	1/27/1994 17:52:16
+# MIN    MAX    NAME        COLOR LABEL
+-100 	-85 	gray21 	!
+-85 	-80 	midnight blue 	!
+-80 	-75 	dark slate gray 	!
+-75 	-70 	dark green 	!
+-70 	-65 	forest green 	!
+-65 	-60 	lime green 	!
+-60 	-55 	medium spring green 	!
+-55 	-50 	light sea green 	!
+-50 	-45 	royal blue 	!
+-45 	-40 	dark slate blue 	!
+-40 	-35 	DeepPink4 	!
+-35 	-30 	firebrick 	!
+-30 	-25 	red3 	!
+-25 	-20 	red 	!
+-20 	-15 	dark orange 	!
+-15 	-10 	orange 	!
+-10 	-5 	goldenrod1 	!
+-5 	0 	yellow 	!
+0 	100 	light gray 	!

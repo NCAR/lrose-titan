@@ -1,0 +1,28 @@
+# NAME ruc_mb.colors
+#
+# petach 6/21/1999
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+-1 	149 	midnight blue 	!
+149 	199 	blue4 	!
+199 	249 	medium blue 	!
+249 	299 	royal blue 	!
+299 	349 	cyan 	!
+349 	399 	aquamarine 	!
+399 	449 	medium spring green 	!
+449 	499 	SpringGreen3 	!
+499 	549 	forest green 	!
+549 	599 	green yellow 	!
+599 	649 	yellow3 	!
+649 	699 	yellow2 	!
+699 	749 	yellow 	!
+749 	799 	gold 	!
+799 	849 	orange 	!
+849 	899 	coral 	!
+899 	949 	tomato 	!
+949 	999 	red 	!
+999 	1049 	brown2 	!
+1049 	1099 	red3 	!

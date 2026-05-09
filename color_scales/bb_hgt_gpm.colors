@@ -1,0 +1,11 @@
+# NAME: bb_hgt_gpm.colors
+
+# brodzik   3/29/2017
+
+   0.0     1.0   white  !
+   1.0  1000.0   blue   !
+1000.0  2000.0   red    !
+2000.0  3000.0   green  !
+3000.0  4000.0   yellow !
+4000.0  5000.0   purple !
+

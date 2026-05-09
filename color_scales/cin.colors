@@ -1,0 +1,23 @@
+# NAME cin.colors
+
+# cathy kessinger 	11/1/2001
+
+-1000	-700 	dark green
+-700	-650 	dark olive green
+-650	-600 	SpringGreen4
+-600	-550 	SpringGreen3
+-550	-500 	lime green
+-500	-450 	chartreuse
+-450	-400	DarkOliveGreen1
+-400	-350 	DarkOrange3
+-350	-300	goldenrod
+-300	-250	gold1
+-250 	-200	yellow
+-200	-150 	light goldenrod
+-150	-100	dark salmon
+-100	-75	salmon
+-75	-50	PaleVioletRed3
+-50 	-25	firebrick
+-25 	-10	red
+-10	-1	DeepPink1
+-1 	1   gray

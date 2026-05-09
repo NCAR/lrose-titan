@@ -1,0 +1,29 @@
+# NAME dbmnoise.colors
+#
+
+-200	-110	dodgerblue3
+-110	-108	royalblue3
+-108	-106	blue
+-106	-105	mediumblue
+-105	-104	navyblue
+-104	-103	midnightblue
+-103	-102	dimgray
+-102	-101	slategray
+-101	-100	seagreen
+-100	-098	forestgreen
+-098	-096	olivedrab
+-096	-094	yellowgreen
+-094	-092	Gold3
+-092	-090	gold
+-090	-085	yellow
+-085	-080	orange
+-080	-070	coral
+-070	-060	tomato
+-060	-050	firebrick1
+-050	-040	OrangeRed
+-040	-030	Red
+-030	-020	DeepPink
+-020	-010	Maroon1
+-010	-000    HotPink
+-000	10	Pink
+

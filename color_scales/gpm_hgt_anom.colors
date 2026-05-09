@@ -1,0 +1,33 @@
+# NAME gpm_hgt_anom.colors
+# Cathy Kessinger 11/1/2001 
+#MIN     MAX     NAME        COLOR LABEL
+-65 	-60 	DarkOrchid4
+-60 	-55 	HotPink4
+-55 	-50 	maroon
+-50 	-45 	VioletRed4
+-45 	-40 	blue
+-40 	-35 	blue4
+-35	-30 	dark green
+-30 	-25	dark olive green
+-25 	-20 	forest green
+-20 	-15 	SpringGreen3
+-15 	-10 	medium sea green
+-10 	-5 	medium aquamarine
+-5 	-1 	medium slate blue
+-1 	1 	light grey
+1 	5 	tan2 		
+5 	10 	peru 		
+10 	15 	goldenrod1
+15 	20 	gold 		
+20 	25 	light goldenrod	
+25 	30 	yellow
+30 	35 	saddle brown 	
+35 	40 	sienna
+40 	45 	DarkOrange3 	
+45 	50 	chocolate
+50 	55 	dark orange 	
+55 	60 	orange 		
+60 	65 	dark salmon
+65 	70 	salmon
+70 	75 	firebrick2
+75 	80 	DeepPink1

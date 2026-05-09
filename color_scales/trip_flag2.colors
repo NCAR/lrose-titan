@@ -1,0 +1,6 @@
+# second trip flagcolor scale - above 3 implies second trip echo
+
+0.0	1.0     darkgreen	!
+1.0     2.0     lime green      !
+2.0	3.0	gold		!
+3.0     10.0    white           !2NDTRP

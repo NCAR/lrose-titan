@@ -1,0 +1,28 @@
+# NAME sdev_snr.colors
+
+0.00	0.10	dodgerblue3
+0.10	0.20	royalblue3
+0.20	0.30	blue
+0.30    0.50    mediumblue
+0.50    0.75    navyblue
+0.75    1.00    midnightblue
+1.00    1.25    dimgray
+1.25    1.50    slategray
+1.50    1.75    seagreen
+1.75    2.00    forestgreen
+2.00    2.50    olivedrab
+2.50    3.00    yellowgreen
+3.00	3.50	Gold3
+3.50	4.00 	gold
+4.00	4.50	yellow
+4.50	5.00	orange
+5.00	6.00	coral
+6.00    8.00    tomato
+8.00    10.0    firebrick1
+10.0	12.5    OrangeRed
+12.5	15.0 	Red
+15.0	20.0 	DeepPink
+20.0	25.0	maroon1
+25.0    30.0    HotPink
+30.0	99	Pink
+

@@ -1,0 +1,23 @@
+# NAME wvel_imp.colors
+
+# brodzik 	1/2/2020
+
+-1.6 	-1.4 	DeepPink1
+-1.4	-1.2 	maroon
+-1.2 	-1.0 	dark orchid
+-1.0 	-0.8 	blue
+-0.8 	-0.6 	royal blue
+-0.6 	-0.4 	deep sky blue
+-0.4 	-0.2 	medium spring green
+-0.2 	-0.1 	forest green
+-0.1    -0.05     dark green
+-0.05   0.05      gray
+0.05    0.1     tan2
+0.1     0.2     gold1
+0.2 	0.4 	yellow
+0.4 	0.6 	salmon1
+0.6 	0.8 	tomato
+0.8 	1.0 	brown1
+1.0 	1.2 	red
+1.2 	1.4 	firebrick
+1.4 	1.6 	firebrick

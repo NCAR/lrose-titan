@@ -1,0 +1,42 @@
+# NAME sat_highres deg C
+
+87	100     black    ! 87
+57  	87	gray0    ! 57
+52 	57 	gray11   ! 52
+47      52      gray16   ! 47 
+42      47      gray21   ! 42
+38 	42 	gray25   ! 38
+35 	38 	gray28   ! 35
+31 	35 	gray30   ! 31
+28      31      gray31   ! 28
+24      28      gray34   ! 24 
+21 	24 	gray37   ! 21
+18      21      gray41   ! 18
+15      18      gray44   ! 15
+12      15      gray47   ! 12
+8  	12  	gray51   ! 8 
+4   	8   	gray53   ! 4 
+0   	4   	linen    ! 0   
+-3  	0   	blanched almond   ! -3
+-7  	-3      bisque            ! -7
+-10	-7 	pale turquoise    ! -10
+-13     -10     cyan              ! -13 
+-16	-13	deep sky blue     ! -16
+-19	-16	cornflower blue   ! -19
+-22	-19	medium slate blue ! -22
+-25 	-22	slate blue        ! -25
+-28     -25     blue4             ! -28
+-31	-28	MediumPurple4     ! -31
+-35	-31	DarkOrchid4       ! -35
+-40	-35	MediumOrchid4     ! -40
+-46     -40     dark orchid       ! -46	
+-52     -46     purple            ! -52
+-56	-52     medium purple     ! -54
+-60     -56     red4              ! -58
+-64     -60     red3              ! -62
+-68     -64     red2              ! -66    
+-72     -68     red1              ! -70    
+-76     -72     coral1            ! -74     
+-80     -75     sienna1           ! -77
+-85     -80 	orange            ! -82
+-90     -85 	DarkGoldenrod1    ! -87

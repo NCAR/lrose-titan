@@ -1,0 +1,27 @@
+# NAME vvel.colors for RUC model
+
+-99     -70    dodgerblue3
+-70     -60    royalblue3
+-60     -50    blue
+-50     -40    mediumblue
+-40     -35    navyblue
+-35     -30    midnightblue
+-30     -25    dimgray
+-25     -20    slategray
+-20     -15    seagreen
+-15     -12    forestgreen
+-12     -9     olivedrab
+-9      -6     yellowgreen
+-6      -3     Gold3
+-3      -1     gold
+-1      1      yellow
+1       3      orange
+3       3      coral
+3       6      tomato
+6       9      firebrick1
+9       12     OrangeRed
+12      15     Red
+15  	20     DeepPink
+20      25     Maroon1
+25      30     HotPink
+30      99     Pink

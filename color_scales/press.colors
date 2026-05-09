@@ -1,0 +1,15 @@
+# NAME press.colors
+# Quick Color Scale for Surface Pressure - Mbar 
+# MIN    MAX    NAME        COLOR LABEL
+940 	950  	blue4 
+950 	960	medium blue 
+960 	970	blue 
+970 	980 	cornflower blue 
+980 	990 	dark green 
+990 	1000 	SpringGreen4 
+1000 	1010 	medium sea green 
+1010	1020 	lime green 
+1020	1030 	green2 
+1030	1040 	chartreuse 
+1040	1050 	green yellow 
+1050	1060 	yellow2 

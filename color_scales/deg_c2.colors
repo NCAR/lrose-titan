@@ -1,0 +1,28 @@
+# NAME deg_c2.colors
+# crook 	6/19/1997 14:9:15
+# MIN    MAX    NAME        COLOR LABEL
+-8 	-6 	medium blue 	!
+-6 	-4 	slate blue 	!
+-4 	-2 	cornflower blue 	!
+-2 	0 	medium turquoise 	!
+0 	2 	dark green 	!
+2 	4 	dark olive green 	!
+4 	6 	SpringGreen4 	!
+6 	8 	SpringGreen3 	!
+8 	10 	lime green 	!
+10 	12 	chartreuse 	!
+12 	14 	DarkOliveGreen1 	!
+14 	16 	DarkOrange3 	!
+16 	18 	goldenrod 	!
+18 	20 	gold1 	!
+20 	22 	yellow 	!
+22 	24 	light goldenrod 	!
+24 	26 	dark salmon 	!
+26 	28 	salmon 	!
+28 	30 	PaleVioletRed3 	!
+30 	32 	firebrick 	!
+32 	34 	red 	!
+34 	36 	DeepPink1 	!
+36 	38 	indian red 	! 
+38 	40 	salmon 	!
+40 	42 	gainsboro 	! 

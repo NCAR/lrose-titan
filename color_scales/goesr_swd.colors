@@ -1,0 +1,27 @@
+# NAME goesr_swd.colors
+
+-20     -2      dodgerblue3
+-2      -1      royalblue3
+-1      -0.8    blue
+-0.8    -0.6    mediumblue
+-0.6    -0.4    navyblue
+-0.4    -0.2    midnightblue
+-0.2    0.0     dimgray
+0.0     0.2     slategray
+0.2     0.4     seagreen
+0.4     1.0     forestgreen
+1.0     2.0     olivedrab
+2.0     3.0     yellowgreen
+3.0     4.0     Gold3
+4.0     5.0     gold
+5.0     6.0     yellow
+6.0     7.0     orange
+7       8       coral
+8       9       tomato
+9       10      firebrick1
+10      11      OrangeRed
+11      12      Red
+12      13      DeepPink
+13      14      Maroon1
+14      15      HotPink
+15      99      Pink

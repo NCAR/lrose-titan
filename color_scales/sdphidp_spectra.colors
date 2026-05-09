@@ -1,0 +1,28 @@
+# NAME sdphidp_spectra.colors
+
+000   004   dodgerblue3
+004   008   royalblue3
+008   012   blue
+012   016   mediumblue
+016   020   navyblue
+020   024   midnightblue
+024   028   dimgray
+028   032   slategray
+032   036   seagreen
+036   040   forestgreen
+040   044   olivedrab
+044   048   yellowgreen
+048   052    Gold3
+052   056   gold
+056   060   yellow
+060   064   orange
+064   066   coral
+066   068   tomato
+068   072   firebrick1
+072   080   OrangeRed
+080   084   Red
+084   088   DeepPink
+088   092   Maroon1
+092   096   HotPink
+096   200   Pink
+

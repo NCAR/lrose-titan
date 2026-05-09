@@ -1,0 +1,11 @@
+# NAME stab_bw.colors
+
+# hardt 	4/23/1996 12:36:42
+
+-14 	-8 	gray95
+-8 	-6 	gray90
+-6 	-4 	gray80
+-4 	-2 	gray70
+-2 	0 	gray60
+0	8 	gray50
+8	16	black

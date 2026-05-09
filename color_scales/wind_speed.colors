@@ -1,0 +1,34 @@
+# NAME wind_speed.colors
+#
+#
+000  001     DarkSlateGray1
+001  002     deep sky blue     
+002  004     cornflower blue   
+004  006     medium slate blue 
+006  008     slate blue        
+008  010     blue4            
+010  112     MediumPurple4    
+112  014     DarkOrchid4      
+014  016     MediumOrchid4    
+016  018     dark orchid      
+018  020     purple           
+020  022     hot pink          
+022  024     pink        
+024  026     SteelBlue1
+026  028     SpringGreen2
+028  030     SpringGreen3
+030  035     SpringGreen4
+035  040     yellow1
+040  045     yellow3
+045  050     gold1
+050  055     DarkGoldenrod1
+055  060     orange
+060  070     sienna1
+070  080     coral1
+080  100     red1
+
+
+
+
+
+

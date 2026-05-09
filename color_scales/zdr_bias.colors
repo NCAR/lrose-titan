@@ -1,0 +1,26 @@
+# NAME zdr_bias.colors
+
+#-1.00  -0.80	dodgerblue3
+#-0.80  -0.70	royalblue3
+#-0.70  -0.60	blue
+#-0.60  -0.50    mediumblue
+#-0.50  -0.40    navyblue
+#-0.40  -0.30    midnightblue
+-0.30  -0.20    dimgray
+-0.20  -0.15    slategray
+-0.15  -0.10    seagreen
+-0.10  -0.05    forestgreen
+-0.05   0.00    olivedrab
+ 0.00   0.05  	gold
+ 0.05   0.10	yellow
+ 0.10   0.15 	orange
+ 0.15   0.20 	coral
+ 0.20   0.30    tomato
+# 0.30   0.40    firebrick1
+# 0.40   0.50	OrangeRed
+# 0.50   0.60 	Red
+# 0.60   0.70 	DeepPink
+# 0.70   0.80	Maroon1
+# 0.80   0.90    HotPink
+# 0.90	5.00	Pink
+

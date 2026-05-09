@@ -1,0 +1,12 @@
+# NAME wvel_gray.colors
+
+# roberts 	3/26/2001 12:19:36
+
+-1      0.1     gray 
+.1 	.5      tan2	
+#.5 	.7     tan2	
+#.7 	.9     gold1	
+.5 	.7     gold1	
+.7 	.9     yellow	
+.9 	1.2     salmon1 	
+1.2 	3.0     white	

@@ -1,0 +1,39 @@
+<ColorScale id="rr_nws_xml.colors"
+            gradation="linear"
+            saturation="1.0"
+            labelsSetByValue="true">
+
+  <Range min="0.1" max="2.5" color="0.7007843, 0.84, 0.55" />
+  <Range min="2.5" max="5.0" color="0.525, 0.682, 0.576" />
+  <Range min="5.0" max="7.5" color="0.2901961, 0.53333336, 0.3764706" />
+  <Range min="7.5" max="10.0" color="0.05098039, 0.38039216, 0.1764706" />
+  <Range min="10.0" max="12.5" color="0.9607843, 0.94509804, 0.52156866" />
+  <Range min="12.5" max="15.0" color="0.99607843, 0.74509805, 0.32156864" />
+  <Range min="15.0" max="17.5" color="0.9607843, 0.5019608, 0.19215687" />
+  <Range min="17.5" max="20.0" color="0.93333334, 0.29803923, 0.14901961" />
+  <Range min="20.0" max="30.0" color="0.85882354, 0.10980392, 0.12941177" />
+  <Range min="30.0" max="40.0" color="0.6509804, 0.09803922, 0.12941177" />
+  <Range min="40.0" max="50.0" color="0.3764706, 0.03137255, 0.1254902" />
+  <Range min="50.0" max="60.0" color="0.20784314, 0.09803922, 0.18431373" />
+  <Range min="60.0" max="80.0" color="0.3019608, 0.15294118, 0.4392157" />
+  <Range min="80.0" max="100.0" color="0.7176471, 0.654902, 0.76862746" />
+  <Range min="100.0" max="1000.0" color="1.0,1.0,1.0" />
+
+  <Label value="0.1"    text="0.1"    />
+  <Label value="2.5"    text="2.5"    />
+  <Label value="5.0"    text="5"    />
+  <Label value="7.5"    text="7.5"    />
+  <Label value="10.0"    text="10"    />
+  <Label value="12.5"    text="12.5"    />
+  <Label value="15.0"    text="15"    />
+  <Label value="17.5"    text="17.5"    />
+  <Label value="20.0"    text="20"    />
+  <Label value="30.0"    text="30"    />
+  <Label value="40.0"    text="40"    />
+  <Label value="50.0"    text="50"    />
+  <Label value="60.0"    text="60"    />
+  <Label value="80.0"    text="80"    />
+  <Label value="100.0"    text="100"    />
+  <Label value="1000.0"    text="1000"    />
+
+</ColorScale>

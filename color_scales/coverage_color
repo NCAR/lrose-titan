@@ -1,0 +1,9 @@
+# coverage color scale
+
+# Mike Dixon, April 1991
+
+# MIN    MAX    NAME            COLOR LABEL
+
+#0.5      1.5    gray20          !UP
+0.5      1.5    gray20  
+

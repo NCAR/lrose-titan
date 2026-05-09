@@ -1,0 +1,24 @@
+# NAME vel30.colors
+
+-30     -26     midnightblue
+-26     -21    navyblue
+-21     -17    mediumblue
+-17	-13    blue
+-13	-10    royalblue3
+-10	-8     dodgerblue3
+-8      -6     seagreen
+-6      -4     forestgreen
+-4      -2     olivedrab
+-2      -1     yellowgreen
+-1       0     dimgray
+ 0       1     slategray
+ 1 	 2     gold
+ 2	 4     yellow
+ 4	 6     orange
+ 6 	 8     coral
+ 8       10    tomato
+ 10      13    OrangeRed
+ 13 	 17    firebrick1
+ 17 	 21    Red
+ 21 	 26    DeepPink
+ 26	 30    Maroon1

@@ -1,0 +1,28 @@
+# NAME number_1000.colors
+
+0	40	dodgerblue3
+40	80	royalblue3
+80	120	blue
+120     160    mediumblue
+160     200    navyblue
+200     240    midnightblue
+240     280    dimgray
+280     320     slategray
+320     360     seagreen
+360     400     forestgreen
+400     440     olivedrab
+440     480     yellowgreen
+480	520	Gold3
+520 	560  	gold
+560	600	yellow
+600	640 	orange
+640	680 	coral
+680     720     tomato
+720     760     firebrick1
+760	800     OrangeRed
+800	840 	Red
+840 	880 	DeepPink
+880	920     Maroon1
+920     960     HotPink
+960	1000	Pink
+

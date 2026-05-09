@@ -1,0 +1,33 @@
+# NAME sat_cloud
+
+# dixon nov 1998
+
+
+0        5      #010110
+5  	 7.5 	gray20
+7.5 	10 	gray32
+10      12.5    gray39
+12.5 	15 	gray43
+15 	17.5 	gray48
+17.5 	20 	gray53
+20      22.5    gray55
+22.5    25      gray57
+25 	27.5 	gray59
+27.5    30      gray61
+30      32.5    gray63
+32.5    35      gray65
+35      37.5    gray67
+37.5    40      gray69
+40 	42.5 	gray71
+42.5    45      gray73
+45 	47.5  	gray75
+47.5    50      gray77
+50 	52.5  	gray79
+52.5    55      gray81
+55 	57.5  	gray83
+57.5    60      gray85
+60 	65  	gray87
+65      70      gray89
+70 	75  	gray91
+75      80      gray93
+80  	100  	#fefeee

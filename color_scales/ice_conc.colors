@@ -1,0 +1,5 @@
+# NAME ice_conc.colors
+# Cathy Kessinger 	11/13/2001 
+#MIN     MAX     NAME        COLOR LABEL
+-0.5 	0.5 	chocolate 	!
+0.5 	1.5 	white 	!

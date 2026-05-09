@@ -1,0 +1,28 @@
+# NAME pres_pert_pa.colors
+
+-500     -400	  dodgerblue3
+-400     -300	  royalblue3
+-300	 -200	  blue
+-300     -100     mediumblue
+-100      000     navyblue
+000       100     midnightblue
+100       200     dimgray
+200       300     slategray
+300       400     seagreen
+400       500     forestgreen
+500       600     olivedrab
+600       700     yellowgreen
+700       800	  Gold3
+800       900	  gold
+900      1000	  yellow
+1000     1200	  orange
+1200     1400	  coral
+1400     1600     tomato
+1600     1800     firebrick1
+1800     2000	  OrangeRed
+2000     2250	  Red
+2250     2500	  DeepPink
+2500     3000	  Maroon1
+3000     4000     HotPink
+4000     5000	  Pink
+

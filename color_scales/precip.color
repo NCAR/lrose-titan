@@ -1,0 +1,25 @@
+# colorscale for precip
+
+# Marion Mittermaier, May 2000
+	
+#0.00	0.09	White
+#0.06 	0.09 	NavyBlue
+#0.06	0.09 	Blue
+0.09 	0.12	MediumBlue
+0.12 	0.15 	SkyBlue
+0.15 	0.18 	DarkGreen
+0.18	0.21	ForestGreen
+0.21	0.24	YellowGreen
+0.24	0.27	Gold
+0.27	0.33 	Yellow
+0.33	0.39	Coral
+0.39	0.45	Orange
+0.45	0.51	MediumVioletRed
+0.51	0.57	OrangeRed
+0.57	0.69	Red
+0.69	0.81	Gray
+0.81    2.00	DarkSlateBlue
+
+
+
+

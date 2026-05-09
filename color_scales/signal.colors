@@ -1,0 +1,17 @@
+# Color scale definition for signal/noise RADAR data
+15
+-20	-15	midnight blue
+-15	-10	dark slate blue
+-10	-5	slate blue
+-5	0	cornflower blue
+0	5	cyan
+5	10	aquamarine
+10	15	medium spring green
+15	20	spring green
+20	25	green
+25	30	green yellow
+30	35	yellow
+35	40	gold
+40	50	orange
+50	60	orange red
+60	70	red

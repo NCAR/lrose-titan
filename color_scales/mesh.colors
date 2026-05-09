@@ -1,0 +1,29 @@
+# NAME mesh.colors
+
+0       1	dodgerblue3
+1	2	royalblue3
+2	3	blue
+3       4       mediumblue
+4       5       navyblue
+5       6       midnightblue
+6       8       dimgray
+8       10      slategray
+10      12     seagreen
+12      15     forestgreen
+15      20     olivedrab
+20      25     yellowgreen
+25	30     Gold3
+30 	35     gold
+35	40     yellow
+40	50     orange
+50	60     coral
+60      70     tomato
+70      80     firebrick1
+80 	90     OrangeRed
+90	100    Red
+100 	110    DeepPink
+110	120    Maroon1
+120     130    HotPink
+130	150    Pink
+
+

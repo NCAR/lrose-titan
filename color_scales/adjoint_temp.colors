@@ -1,0 +1,26 @@
+# NAME vel_adjoint.colors
+
+# roberts 	5/15/1998 12:19:36
+
+-.2 	-.10 	DeepPink1
+-.10 	-.09 	maroon
+-.09 	-.08 	dark orchid
+-.08 	-.07 	blue
+-.07   -.06    blue4
+-.06 	-0.05 	royal blue
+-0.05 	-0.04 	deep sky blue
+-0.04 	-0.03 	medium spring green
+-0.03 	-0.02 	forest green
+-0.02 	-0.01    SprintGreen3	
+-0.01 	0.0 	gray
+0 	0.01 	tan2
+0.01 	0.02 	gold1
+0.02 	0.03     goldenrod	
+0.03 	0.04    yellow
+0.04 	0.05 	dark salmon
+0.05    .06     salmon
+.060 	.07 	brown1
+.07 	.080 	red
+.080 	.090 	firebrick
+.100     .20     light grey
+.200     .250     snow

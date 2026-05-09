@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="none.colors" rangeLabels="None">
+  <ColorRange minValue="0.0" maxValue="1.0">
+    <Color red="0" green="0" blue="0" />
+  </ColorRange>
+</ColorScale>
+

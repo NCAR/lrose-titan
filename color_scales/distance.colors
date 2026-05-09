@@ -1,0 +1,17 @@
+# NAME distance.colors
+# jaimi 	2/7/2000
+# MIN    MAX    NAME        COLOR LABEL
+-7.0 	-6.0 	steel blue 	!
+-6.0 	-5.0 	medium blue 	!
+-5.0 	-4.0 	slate blue 	!
+-4.0	-3.0	cornflower blue 	!
+-3.0	-2.0 	light sea green 	!
+-2.0	-1.0	turquoise 	!
+-1.0    0.0 	medium aquamarine 	!
+0.0	1.0	dark sea green 	!
+1.0	2.0 	dark khaki 	!
+2.0 	3.0	light goldenrod 	!
+3.0	4.0	gold 	!
+4.0	5.0	dark goldenrod 	!
+5.0	6.0	rosy brown 	!6.5
+6.0	7.0	firebrick 	!

@@ -1,0 +1,25 @@
+# NAME rh.colors
+#
+# Mike Dixon, Oct 1998
+#
+
+#MIN     MAX     NAME        COLOR LABEL
+0 	10	dark salmon
+10 	20 	PaleVioletRed3
+20 	25 	maroon
+25 	30 	VioletRed4
+30 	35 	HotPink4
+35 	40 	goldenrod1
+40 	45 	goldenrod
+45 	50 	tan2
+50 	55 	peru
+55 	60 	DarkOrange3
+60 	65 	saddle brown
+65 	70 	sienna
+70 	75 	dark olive green
+75 	80 	dark green
+80 	90 	SpringGreen4
+90 	93 	royal blue
+93 	96 	blue
+96 	99	medium blue
+99 	100 	midnight blue

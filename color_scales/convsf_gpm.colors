@@ -1,0 +1,8 @@
+# NAME: convsf_gpm.colors
+
+# brodzik   3/8/2017
+
+-0.5   0.5   light gray   !no_sfc_echo
+ 0.5   1.5   blue         !stra
+ 1.5   2.5   green        !conv
+ 2.5   3.5   red          !other

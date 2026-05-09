@@ -1,0 +1,28 @@
+# NAME heightkm.colors
+
+0	05000   dodgerblue3
+05000	10000   royalblue3
+10000	15000   blue
+15000   20000   mediumblue
+20000   25000   navyblue
+25000   30000   midnightblue
+30000   35000   dimgray
+35000   40000   slategray
+40000   50000   seagreen
+50000   60000   forestgreen
+60000   70000   olivedrab
+70000   80000   yellowgreen
+80000	90000	Gold3
+90000 	100000 	gold
+100000	110000	yellow
+110000	120000	orange
+120000	130000	coral
+130000  140000  tomato
+140000  150000  firebrick1
+150000	160000	OrangeRed
+160000	170000 	Red
+170000 	180000 	DeepPink
+180000	190000	Maroon1
+190000  200000  HotPink
+200000	300000	Pink
+

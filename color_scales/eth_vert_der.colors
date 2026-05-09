@@ -1,0 +1,19 @@
+# NAME eth_vert_der.colors
+
+-1		-0.000024	DeepPink1
+-0.000024	-0.000021	maroon
+-0.000021	-0.000018	dark orchid
+-0.000018	-0.000015	blue
+-0.000015	-0.000012	royal blue
+-0.000012	-0.000009	deep sky blue
+-0.000009	-0.000006	medium spring green
+-0.000006	-0.000003	forest green
+-0.000003	0.000003	gray
+0.000003	0.000006	tan2
+0.000006	0.000009	gold1
+0.000009	0.000012	yellow
+0.000012	0.000015	salmon1
+0.000015	0.000018	tomato
+0.000018	0.000021	brown1
+0.000021	0.000024	red
+0.000024	1		firebrick

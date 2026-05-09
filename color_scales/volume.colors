@@ -1,0 +1,21 @@
+# NAME volume.colors
+# terrib 	1/14/1998 17:21:42
+# MIN    MAX    NAME        COLOR LABEL
+0 	25 	blue4 	!
+25 	50 	medium blue 	!
+50 	75 	blue 	!
+75 	100 	cornflower blue 	!
+100 	200 	dark green 	!
+200 	300 	SpringGreen4 	!
+300 	400 	medium sea green 	!
+400 	500 	lime green 	!
+500 	600 	green2 	!
+600 	700 	chartreuse 	!
+700 	800 	green yellow 	!
+800 	900 	yellow2 	!
+900 	1000 	yellow 	!
+1000 	2000 	brown 	!
+2000 	3000 	tomato3 	!
+3000 	4000 	brown2 	!
+4000 	5000 	red 	!
+5000 	10000 	magenta 	!

@@ -1,0 +1,28 @@
+# NAME sst_degC.colors
+
+# kessinger 	4/13/2001 13:45:46
+
+-20 	-15 	midnight blue
+-15 	-13 	dark slate blue
+-13 	-10 	navy
+-10 	-7 	medium slate blue
+-7 	-3 	slate grey
+-3 	-1 	light grey
+-1	1	white
+1 	5 	dark green
+5 	10 	dark olive green
+10 	15 	forest green
+15 	17 	SpringGreen3
+17 	19	medium sea green
+19	21	medium aquamarine
+21 	23 	sienna
+23 	25 	chocolate
+25 	27 	goldenrod
+27 	29 	yellow
+29 	31 	dark salmon
+31 	33 	firebrick2
+33 	35 	salmon
+35 	37 	DeepPink1
+37 	39 	HotPink4
+39 	42 	maroon
+42 	45 	VioletRed4

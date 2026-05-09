@@ -1,0 +1,12 @@
+# NAME fuzzy_bw.colors
+
+# hardt         4/23/1996 12:2:13
+
+-100    0.0     gray95
+0.00    0.15    gray90
+0.15    0.35    gray80
+0.35    0.60    gray70
+0.60    0.80    gray60
+0.80    1.00    gray50
+1.00    100.    black
+

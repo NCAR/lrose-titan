@@ -1,0 +1,22 @@
+# colorscale for fraction
+
+# Mike Dixon, April 1991
+	
+0.000	0.045	DarkSlateBlue
+0.045 	0.090 	NavyBlue
+0.090	0.135	Blue
+0.135 	0.180	MediumBlue
+0.180 	0.225 	SkyBlue
+0.225 	0.270 	DarkGreen
+0.270	0.360	ForestGreen
+0.360	0.450	YellowGreen
+0.450	0.540	Gold
+0.540	0.630 	Yellow
+0.630	0.675	Coral
+0.675	0.720	Orange
+0.720	0.765	MediumVioletRed
+0.765	0.810	DarkRed
+0.810	0.855	OrangeRed
+0.855   0.900	Red
+0.900	1.000	white
+

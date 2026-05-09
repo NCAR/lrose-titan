@@ -1,0 +1,28 @@
+# vert wind speed
+#
+#
+-10.0	-4.5	dodgerblue3
+-4.5	-4.0	royalblue3
+-4.0	-3.5	blue
+-3.5    -3.0    mediumblue
+-3.0  	-2.5    navyblue
+-2.5   	-2.0   	midnightblue
+-2.0   	-1.5    dimgray
+-1.5    -1.0    slategray
+-1.0    -0.5    seagreen
+-0.5    -0.2    forestgreen
+-0.2    -0.1    olivedrab
+-0.1      0     yellowgreen
+0	0.1	Gold3
+0.1 	0.2 	gold
+0.2	0.5	yellow
+0.5	1.0 	orange
+1.0 	1.5 	coral
+1.5     2.0     tomato
+2.0     2.5     firebrick1
+2.5 	3.0	OrangeRed
+3.0 	3.5 	Red
+3.5 	4.0 	DeepPink
+4.0	4.5	Maroon1
+4.5     5.0     HotPink
+5.0	10.0	Pink

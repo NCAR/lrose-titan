@@ -1,0 +1,28 @@
+# NAME lfc.colors
+#
+# rehak 12/2001
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+0 	500 	midnight blue 	!
+500 	1000 	blue4 	!
+1000 	1500 	medium blue 	!
+1500 	2000 	royal blue 	!
+2000 	2500 	cyan 	!
+2500 	3000 	aquamarine 	!
+3000 	3500 	medium spring green 	!
+3500 	4000	SpringGreen3 	!
+4000 	4500 	forest green 	!
+4500 	5000 	green yellow 	!
+5000 	5500 	yellow3 	!
+5500 	6000 	yellow2 	!
+6000 	6500 	yellow 	!
+6500 	7000 	gold 	!
+7000 	7500 	orange 	!
+7500 	8000 	coral 	!
+8000 	8500 	tomato 	!
+8500 	9000 	red 	!
+9000 	9500 	brown2 	!
+9500 	20000 	red3 	!

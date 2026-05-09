@@ -1,0 +1,27 @@
+# beam blockage
+
+0.10    0.25    dodgerblue3
+0.25    0.50    royalblue3
+0.50    1.00    blue
+1.00    2.00    mediumblue
+2.00    3.00    navyblue
+3.00    4.00    midnightblue
+4.00    5.00    dimgray
+5.00    7.50    slategray
+7.50    10.0    seagreen
+10.0    12.5    forestgreen
+12.5    15.0    olivedrab
+15.0    17.5    yellowgreen
+17.5    20.0    Gold3
+20.0    35.0    gold
+35.0    50.0    yellow
+50.0    75.0    orange
+75.0    100.    coral
+100.    125.    tomato
+125.    150.    firebrick1
+150.    200.    OrangeRed
+200.    300.    Red
+300.    400.    DeepPink
+400.    500.    Maroon1
+500.    750.    HotPink
+750.    1000    Pink

@@ -1,0 +1,10 @@
+# number color scale
+
+# Stacy Brodzik, March 2013
+
+0.5	1.5	#ff2f2f    !supercooled-water
+1.5	2.5	#fbfb2f	   !rain
+2.5	3.5	#1fde14	   !ambiguous
+3.5	4.5	#4edfff	   !graupel
+4.5	5.5	#5f54c5	   !snow
+5.5	6.5	#c51ea5	   !hail

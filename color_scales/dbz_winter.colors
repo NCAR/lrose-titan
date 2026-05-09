@@ -1,0 +1,25 @@
+# NAME dbz_winter.colors
+
+-50 	-17 	dark green
+-17 	-14 	dark olive green
+-14	-11 	forest green
+-11 	-8	SpringGreen3
+-8 	-5 	medium sea green
+-5 	-2 	medium aquamarine
+-2 	1 	medium slate blue
+1 	4 	blue
+4 	7 	blue4
+7 	10 	DarkOrchid4
+10 	13 	HotPink4
+13 	16 	maroon
+16 	19 	VioletRed4
+19 	22 	sienna
+22 	25 	chocolate
+25 	28 	goldenrod
+28 	31 	yellow
+31 	34 	dark salmon
+34 	37 	salmon
+37 	40 	firebrick2
+40 	50 	DeepPink1
+50      60      light grey
+

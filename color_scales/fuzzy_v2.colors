@@ -1,0 +1,30 @@
+# NAME fuzzy_v2.colors
+
+# roberts 	6/25/1998 12:2:13
+
+-100 	-1.1 	gray25
+-1.1 	-1.0    bisque	
+-1.0	-0.9    chartreuse	
+-0.9 	-0.8    lime green	
+-0.8 	-0.7    SpringGreen3 	
+-0.7 	-0.6    SpringGreen4	
+-0.6	-0.5 	dark olive green
+-0.5	-0.4    dark green	
+-0.4	-0.3    medium turquoise	
+-0.3	-0.2    cornflower blue	
+-0.2 	-0.1    slate blue 
+-0.1 	-0.01   medium blue 	
+-0.01 	0.01    blue4 	
+0.01 	0.1     rosy brown  	
+0.1 	0.2 	DarkOrange3
+0.2 	0.3 	goldenrod
+0.3 	0.4 	gold1
+0.4	0.5 	yellow
+0.5 	0.6 	light goldenrod
+0.6 	0.7 	dark salmon
+0.7	0.8 	salmon
+0.8 	0.9 	PaleVioletRed3
+0.9 	1.0 	firebrick
+1.0	1.1 	red
+1.1 	1.2	DeepPink1
+1.2 	100 	gray

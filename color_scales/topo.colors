@@ -1,0 +1,25 @@
+# NAME topography.colors
+# Roberts 4/20/1998 11:54:16
+#MIN     MAX     NAME        COLOR LABEL
+0 	200 	dark green 	!
+200 	400 	forest green 	!
+400 	600 	rosy brown 	!
+600 	800 	saddle brown 	!
+800 	1000 	sienna 		!
+1000 	1200 	DarkOrange3 	!
+1200 	1400 	dark orange 	!
+1400 	1600 	orange 		!
+1600 	1800 	tan2 		!
+1800 	2000 	peru 		!
+2000 	2200 	dark goldenrod 	!
+2200 	2400 	goldenrod	!
+2400 	2600 	gold1   	!
+2600 	2800 	PeachPuff2 	!
+2800 	3000 	wheat 		!
+3000 	3250 	bisque 		!
+3250 	3500 	blanched almond	!
+3500 	3750 	linen    	!
+3750 	4000 	#FFF5EB		!
+4000 	4500 	white		!
+4500 	5000 	#777777		!
+5000 	6000 	#373737		!

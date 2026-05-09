@@ -1,0 +1,25 @@
+# NAME albedo_counts_16b.colors
+
+# Area file 16 bit counts.
+
+0       1000      black 
+1000  	2000 	gray5
+2000 	3000 	gray11
+3000    4000      gray21
+4000 	5000 	gray25
+5000 	6000 	gray30
+6000 	7000 	gray34
+7000    8000      gray41
+8000    9000      gray47
+9000 	10000 	gray51
+10000   11000      gray53
+11000   12000      gray60
+12000   13000      gray65
+13000 	14000 	gray70
+14000 	15000  	gray75
+15000  	16000  	gray80
+16000  	17000  	gray85
+17000  	18000  	gray90
+18000 	19000 	gray95
+19000   20000   snow
+20000   50000   firebrick 

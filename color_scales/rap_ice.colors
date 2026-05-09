@@ -1,0 +1,8 @@
+# NAME rap_ice.colors
+# awdl 	1/6/1994 12:2:9
+#MIN     MAX     NAME        COLOR LABEL
+0 	1 	gray0 		! Low
+1 	2 	green 		! Med
+2 	3 	yellow 		! Hi
+3 	4 	DeepPink1 	!
+4 	5 	red 		!

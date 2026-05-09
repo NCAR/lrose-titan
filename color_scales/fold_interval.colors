@@ -1,0 +1,6 @@
+# NAME fold_interval.colors
+
+0.5	1.5	blue      ! 1
+1.5	2.5	red       ! 2
+2.5	3.5	yellow    ! 3
+3.5	4.5	green     ! 4

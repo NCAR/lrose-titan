@@ -1,0 +1,29 @@
+# NAME mixr.colors
+
+# fhage 	6/9/1993 12:10:15
+
+0 	    .005 	gray25
+.005 	.01 	blue4
+.01 	.015 	medium blue
+.015 	.02 	slate blue
+.02 	.025 	cornflower blue
+.025 	.03 	medium turquoise
+.03 	.035 	dark green
+.035 	.04 	dark olive green
+.04 	.045 	SpringGreen4
+.045 	.05 	SpringGreen3
+.05 	.055 	lime green
+.055 	.06 	chartreuse
+.06 	.065 	DarkOliveGreen1
+.065 	.07 	DarkOrange3
+.07 	.075 	goldenrod
+.075 	.08 	gold1
+.08 	.085 	yellow
+.085 	.09 	light goldenrod
+.09 	.095 	dark salmon
+.095 	.1  	salmon
+.1   	.15 	PaleVioletRed3
+.15 	.11 	firebrick
+.11 	.115 	red
+.115 	.12 	DeepPink1
+.12 	.125 	gray

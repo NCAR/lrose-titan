@@ -1,0 +1,28 @@
+# NAME sat_domain
+
+# roberts 	5/19/1998 
+
+0        6      gray20 
+6 	9 	gray25
+9       12      gray32
+12      15      gray36
+15      18      gray40
+18      21      gray44
+21 	24 	gray48
+24 	27 	gray52
+27 	30 	gray56
+30 	33 	gray60
+33	36	gray64
+36      40      gray68
+40	44	gray72
+44 	48	gray74
+48 	52	gray78
+52      56      gray82
+56	60	gray85
+60	65	gray88
+65	70	gray91
+70	75	gray94
+75      80      gray96	
+80      85      gray98	
+85      90      snow	
+90     100      white	

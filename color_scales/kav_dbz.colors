@@ -1,0 +1,18 @@
+# NAME kav_dbz.colors
+# awdl 	12/6/1994 14:4:28
+# MIN    MAX    NAME        COLOR LABEL
+0 	5 	snow 	!
+5 	10 	light sea green 	!
+10 	15 	medium blue 	!
+15 	20 	SpringGreen3 	!
+20 	25 	yellow 	!
+25 	30 	firebrick1 	!
+30 	35 	red3 	!
+35 	40 	snow 	!
+40 	45 	yellow 	!
+45 	50 	blue 	!
+50 	55 	red3 	!
+55 	60 	dim gray 	!
+60 	65 	dark slate gray 	!
+65 	70 	gainsboro 	!
+70 	75 	gray 	!

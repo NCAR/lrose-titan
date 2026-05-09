@@ -1,0 +1,28 @@
+# NAME heights_meters.colors
+
+00000	00200 dodgerblue3
+00200	00400 royalblue3
+00400	00600 blue
+00600   00800 mediumblue
+00800   01000 navyblue
+01000   02000 midnightblue
+02000   03000 dimgray
+03000   04000 slategray
+04000   05000 seagreen
+05000   06000 forestgreen
+06000   07000 olivedrab
+07000   08000 yellowgreen
+08000	09000 Gold3
+09000	10000 gold
+10000   11000 yellow
+11000	12000 orange
+12000	13000 coral
+13000   14000 tomato
+14000   15000 firebrick1
+15000	16000 OrangeRed
+16000	17000 Red
+17000	18000 DeepPink
+18000	20000 Maroon1
+20000   22000 HotPink
+22000	30000 Pink
+

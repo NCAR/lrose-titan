@@ -1,0 +1,39 @@
+# NAME temp_imp.colors
+#
+#
+#
+# caron 	1/6/1993 16:16:23
+
+-75     -71.5 	DarkSlateGray1
+-71.5   -68 	SkyBlue1
+-68     -64.5   deep sky blue     
+-64.5   -61     medium slate blue 
+-61     -57.5   slate blue        
+-57.5   -54     blue4            
+-54     -50.5   MediumPurple4    
+-50.5   -47     DarkOrchid4      
+-47     -43.5   MediumOrchid4    
+-43.5   -40     dark orchid      
+-40     -36.5   purple           
+-36.5   -33     hot pink          
+-33     -29.5   pink        
+-29.5   -26 	DarkOrchid4
+-26     -22.5	RoyalBlue4
+-22.5   -19     gray
+-19     -15.5	SpringGreen2
+-15.5   -12 	SpringGreen3
+-12      -8.5 	SpringGreen4
+ -8.5    -5 	yellow1
+ -5      -1.5 	yellow3
+ -1.5 	  2 	gold1
+  2  	  5.5 	DarkGoldenrod1
+  5.5	  9 	orange
+  9 	 12.5 	sienna1
+ 12.5	 16 	coral1
+ 16 	 20 	red1
+
+
+
+
+
+

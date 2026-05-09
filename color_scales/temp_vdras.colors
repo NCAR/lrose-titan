@@ -1,0 +1,25 @@
+# NAME tem.colors
+
+# fhage 	6/9/1993 12:19:36
+
+-12.0   -11.0   DeepPink1
+-11.0   -10.0   gray70
+-10.0   -9.0	light grey
+-9.0 	-8.0 	snow
+-8.0 	-7.0 	LightSlateBlue
+-7.0 	-6.0	dark orchid
+-6.0 	-5.0	blue
+-5.0 	-4.0 	royal blue
+-4.0 	-3.0 	deep sky blue
+-3.0 	-2.0 	medium spring green
+-2.0 	-1.0	forest green
+-1.0 	-0.1	dark green
+-0.1    0.1     gray
+0.1 	1.0 	tan2
+1.0 	2.0 	gold1
+2.0 	3.0 	yellow
+3.0 	4.0 	salmon1
+4.0 	5.0 	tomato
+5.0 	6.0 	brown1
+6.0 	7.0 	red
+7.0 	8.0 	firebrick

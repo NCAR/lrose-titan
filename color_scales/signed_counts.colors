@@ -1,0 +1,28 @@
+# NAME signed_counts for satellite
+
+-127   -120	gray3
+-120   -110	gray6     
+-110   -100	gray9
+-100   -90	gray12
+-90    -80	gray16
+-80    -70	gray20
+-70    -60	gray24
+-60    -50	gray28
+-50    -40	gray32
+-40    -30	gray38
+-30    -20	gray42
+-20    -10	gray46
+-10    0	gray50
+0      10	gray54
+10     20	gray58
+20     30	gray62
+30     40	gray66
+40     50	gray70
+50     60	gray74
+60     70	gray78
+70     80	gray82
+80     90	gray86
+90     100	gray90
+100    110	gray93
+110    120	gray96
+120    127	white

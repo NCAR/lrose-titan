@@ -1,0 +1,28 @@
+# NAME ruc_mb.colors
+#
+# petach 6/21/1999
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+-1 	950 	midnight blue 	!
+950 	955 	blue4 	!
+955 	960 	medium blue 	!
+960 	965 	royal blue 	!
+965 	970 	cyan 	!
+970 	975 	aquamarine 	!
+975 	980 	medium spring green 	!
+980 	985 	SpringGreen3 	!
+985 	990 	forest green 	!
+990	995 	green yellow 	!
+995 	1000 	yellow3 	!
+1000 	1005 	yellow2 	!
+1005 	1010 	yellow 	!
+1010 	1015 	gold 	!
+1015 	1020 	orange 	!
+1020 	1025 	coral 	!
+1025 	1030 	tomato 	!
+1030 	1035 	red 	!
+1035 	1040 	brown2 	!
+1040 	1050 	red3 	!

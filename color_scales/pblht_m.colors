@@ -1,0 +1,28 @@
+# NAME pblht_m.colors
+
+000      100	  dodgerblue3
+100      200	  royalblue3
+200 	 300 	  blue
+300      400      mediumblue
+400      500      navyblue
+500      600      midnightblue
+600      700      dimgray
+700      800      slategray
+800      900      seagreen
+900     1000      forestgreen
+1000    1100      olivedrab
+1100    1200      yellowgreen
+1200    1300 	  Gold3
+1300    1400 	  gold
+1400    1500 	  yellow
+1500    1600 	  orange
+1600    1700 	  coral
+1700    1800      tomato
+1800    1900      firebrick1
+1900    2000	  OrangeRed
+2000    2250	  Red
+2250    2500	  DeepPink
+2500    3000	  Maroon1
+3000    4000     HotPink
+4000    5000	  Pink
+

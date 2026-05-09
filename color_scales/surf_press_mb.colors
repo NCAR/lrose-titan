@@ -1,0 +1,28 @@
+# NAME surf_pres_hpa.colors
+
+ 950	980	dodgerblue3
+ 980	990	royalblue3
+ 990	993	blue
+ 993    996     mediumblue
+ 996    998     navyblue
+ 998   1000    midnightblue
+1000   1002     dimgray
+1002   1004     slategray
+1004   1006     seagreen
+1006   1008     forestgreen
+1008   1010     olivedrab
+1010   1012     yellowgreen
+1012   1014	Gold3
+1014   1016	gold
+1016   1018	yellow
+1018   1020	orange
+1020   1022	coral
+1022   1024     tomato
+1024   1026     firebrick1
+1026   1028	OrangeRed
+1028   1030	Red
+1030   1035	DeepPink
+1035   1040	Maroon1
+1040   1045     HotPink
+1045   1050	Pink
+

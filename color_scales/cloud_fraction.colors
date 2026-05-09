@@ -1,0 +1,28 @@
+# NAME cloud_fraction.colors
+# awdl 	1/6/1994 11:50:58
+#MIN     MAX     NAME        COLOR LABEL
+0 	4 	gray0 	!
+4 	8 	gray16 	!
+8 	12 	gray30 	!
+12 	16 	gray34 	!
+16 	20 	gray41 	!
+20 	24 	gray47 	!
+24 	28 	gray53 	!
+28 	32 	gray58 	!
+32 	36 	gray61 	!
+36 	40 	gray67 	!
+40 	44 	gray73 	!
+44 	48 	gray79 	!
+48 	52 	gray85 	!
+52 	56 	gray94 	!
+56 	60 	snow 	!
+60 	64 	blanched almond 	!
+64 	68 	light goldenrod 	!
+68 	72 	yellow 	!
+72 	76 	chocolate 	!
+76 	80 	brown1 	!
+80 	84 	DeepPink1 	!
+84 	88 	violet red 	!
+88 	92 	HotPink4 	!
+92 	96 	MediumOrchid4 	!
+96 	100 	medium purple 	!

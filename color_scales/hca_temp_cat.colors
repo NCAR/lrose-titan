@@ -1,0 +1,7 @@
+# HCA temperature catergory color scale
+
+0.5	1.5	red	   !zone1
+1.5	2.5	orange	   !zone2
+2.5	3.5	green	   !zone3
+3.5	4.5	blue	   !zone4
+4.5	5.5	lightblue !zone5

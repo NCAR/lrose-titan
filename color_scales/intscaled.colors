@@ -1,0 +1,24 @@
+# NAME interest.colors
+# dave 	7/12/1994 14:34:39
+# MIN    MAX    NAME        COLOR LABEL
+-1.1 	0.0 	dark slate gray
+0.00 	0.05 	midnight blue
+0.05    0.10    navy
+0.10 	0.15 	navy
+0.15 	0.20 	dark slate blue
+0.20 	0.25 	slate blue
+0.25 	0.30 	slate blue
+0.30 	0.35 	medium slate blue
+0.35 	0.40 	dark green
+0.40 	0.45 	dark olive green
+0.45 	0.50 	brown
+0.50 	0.55 	saddle brown
+0.55 	0.60 	sienna
+0.60 	0.65 	indian red
+0.65 	0.70 	rosy brown
+0.70 	0.75 	dark goldenrod
+0.75 	0.80 	goldenrod
+0.80 	0.85 	light goldenrod
+0.85 	0.90 	gold
+0.90 	0.95 	yellow
+0.95 	1.15 	light yellow

@@ -1,0 +1,27 @@
+# NAME sdzdr_spectra.colors
+
+0.0   0.5      dodgerblue3
+0.5   1.0      royalblue3
+1.0   1.5      blue
+1.5   2.0      mediumblue
+2.0   2.5      navyblue
+2.5   3.0      midnightblue
+3.0   3.5      dimgray
+3.5   4.0      slategray
+4.0   4.5      seagreen
+4.5   5.0      forestgreen
+5.0   5.5      olivedrab
+5.5   6.0      yellowgreen
+6.0   6.5      Gold3
+6.5   7.0      gold
+7.0   7.5      yellow
+7.5   8.0      orange
+8.0   9.0      coral
+9.0    10      tomato
+ 10    11      firebrick1
+ 11    12      OrangeRed
+ 12    13      Red
+ 13    14      DeepPink
+ 14    15      Maroon1
+ 15    16      HotPink
+ 16    99      Pink

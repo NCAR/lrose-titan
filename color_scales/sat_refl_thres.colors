@@ -1,0 +1,23 @@
+# NAME sat_refl
+
+# carson 7/31/1997   
+
+-10     -7      black 
+-7 	-4 	gray5
+-4 	-1 	gray10
+-1      0       gray20
+0  	2       gray30	
+2  	5       Dark Slate Blue	
+5 	10      Cornflower Blue 	
+10      17      cyan 
+17      20      salmon 
+20      23      gray55
+23      26      gray60
+26      29      gray65
+29 	32 	gray70
+32 	35  	gray75
+35  	38  	gray80
+38  	41  	gray85
+41  	44  	gray90
+44 	47 	gray95
+47      50      snow

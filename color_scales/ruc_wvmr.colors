@@ -1,0 +1,28 @@
+# NAME ruc_wvmr.colors
+#
+# petach 6/21/1999
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+-4 	-2 	midnight blue 	!
+-2 	0 	blue4 	!
+0 	2 	medium blue 	!
+2 	4 	royal blue 	!
+4 	6 	cyan 	!
+6 	8 	aquamarine 	!
+8 	10 	medium spring green 	!
+10 	12 	SpringGreen3 	!
+12 	14 	forest green 	!
+14 	16 	green yellow 	!
+16 	18 	yellow3 	!
+18 	20 	yellow2 	!
+20 	22 	yellow 	!
+22 	24 	gold 	!
+24 	26 	orange 	!
+26 	28 	coral 	!
+28 	30 	tomato 	!
+30 	32 	red 	!
+32 	34 	brown2 	!
+34 	36 	red3 	!

@@ -1,0 +1,26 @@
+# NAME fzlevel.colors
+#
+
+0 	030 	midnight blue 	
+030 	060	medium blue 	
+060 	080	blue 	
+080	100	royal blue 	
+100	105	SpringGreen4 	
+105 	110	dark green 	
+110	115	dark olive green 	
+115	120	sienna 	
+120 	125	saddle brown 	
+125 	130 	DarkOrange3 	
+130	135	peru 	
+135	140	tan2 	
+140	145	goldenrod 	
+145	150	goldenrod1 	
+150	155	HotPink4 	
+155	160	VioletRed4 	
+160	165	maroon 	
+165	170	hot pink 	
+170	175	DeepPink1 	
+175	180	PaleVioletRed3 	
+180 	190	dark salmon 	
+190 	200	salmon 	
+200	500 	snow 	

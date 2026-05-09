@@ -1,0 +1,12 @@
+# HCA color scale
+
+0.5	1.5	#c51ea5	   !clutter
+1.5	2.5	#ffffff	   !insects
+2.5	3.5	#4edfff	   !dry-snow
+3.5	4.5	#6394f0	   !wet-snow
+4.5	5.5	#ffcbff	   !crystals
+5.5	6.5	#1fa51f	   !graupel
+6.5	7.5	#cd770f	   !big-drops
+7.5	8.5	#fe9605	   !lt-mod-rain
+8.5	9.5	#ff2f2f	   !hvy-rain
+9.5	10.5	#fbfb2f	   !rain/hail

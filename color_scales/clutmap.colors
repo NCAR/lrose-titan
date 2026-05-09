@@ -1,0 +1,5 @@
+# NAME interest.colors
+# dave 	7/12/1994 14:34:39
+# MIN    MAX    NAME        COLOR LABEL
+0.0 	0.5 	dark slate gray
+0.5 	1.0 	light yellow

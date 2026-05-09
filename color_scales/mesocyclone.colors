@@ -1,0 +1,24 @@
+# NAME mesocyclone.colors
+
+# roberts 	5/27/1998 12:40:43
+
+0       3       dim gray 
+3 	6 	blue
+6 	9 	medium blue
+9       12 	slate blue
+12 	15 	cornflower blue
+15 	18 	medium sea green
+18 	21 	lime green
+21 	24 	forest green
+24 	26 	dark olive green
+26 	28 	dark green
+28 	30 	saddle brown
+30 	32 	sienna
+32 	34 	dark goldenrod
+34 	36 	goldenrod
+36 	38 	gold1
+38 	40 	orange
+40 	42 	salmon
+42 	44 	tomato
+44 	46 	red
+46 	55 	firebrick

@@ -1,0 +1,28 @@
+# wind speed
+#
+#
+20	22	dodgerblue3
+22	24	royalblue3
+24	26	blue
+26    	28    	mediumblue
+28    	30    	navyblue
+30    	32   	midnightblue
+32    	34    	dimgray
+34      36     	slategray
+36     	38    	seagreen
+38     	40     	forestgreen
+40     	42     	olivedrab
+42      44     	yellowgreen
+44	46	Gold3
+46 	48 	gold
+48	50	yellow
+50	54 	orange
+54 	58 	coral
+58      62      tomato
+62      66      firebrick1
+66 	70	OrangeRed
+70 	75 	Red
+75 	80 	DeepPink
+80	85	Maroon1
+85      90      HotPink
+90	200	Pink

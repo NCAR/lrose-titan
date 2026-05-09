@@ -1,0 +1,26 @@
+# NAME convstrat_texture
+
+00.0	01.0	dodgerblue3
+01.0	02.0	royalblue3
+02.0	03.0	blue
+03.0    04.0    mediumblue
+04.0    05.0    navyblue
+05.0    06.0    midnightblue
+06.0    08.0    dimgray
+08.0    10.0    slategray
+10.0    12.0    seagreen
+12.0    14.0    forestgreen
+14.0    15.0    yellowgreen
+15.0	16.0 	gold
+16.0	18.0	yellow
+18.0	20.0	orange
+20.0	22.0	coral
+22.0    24.0    tomato
+24.0    26.0    firebrick1
+26.0	28.0    OrangeRed
+28.0	30.0 	Red
+30.0	40.0 	DeepPink
+40.0	50.0	Maroon1
+50.0    75.0    HotPink
+75.0	100.0	Pink
+

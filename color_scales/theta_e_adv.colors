@@ -1,0 +1,19 @@
+# NAME theta_e_adv.colors
+
+-1	-0.004	DeepPink1
+-0.004	-0.0035	maroon
+-0.0035	-0.003	dark orchid
+-0.003	-0.0025	blue
+-0.0025	-0.002	royal blue
+-0.002	-0.0015	deep sky blue
+-0.0015	-0.001	medium spring green
+-0.001	-0.0005	forest green
+-0.0005	0.0005	gray
+0.0005	0.001	tan2
+0.001	0.0015	gold1
+0.0015	0.002	yellow
+0.002	0.0025	salmon1
+0.0025	0.003	tomato
+0.003	0.0035	brown1
+0.0035	0.004	red
+0.004	1	firebrick

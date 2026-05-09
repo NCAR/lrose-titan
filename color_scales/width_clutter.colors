@@ -1,0 +1,45 @@
+# colorscale for width field for clutter
+
+0.00	0.05	dodgerblue3
+0.05	0.10	royalblue3
+0.10	0.15	blue
+0.15    0.20    mediumblue
+0.20    0.25    navyblue
+0.25    0.30    midnightblue
+0.30    0.35    dimgray
+0.35    0.40    slategray
+0.40    0.45    seagreen
+0.45    0.50    forestgreen
+0.50    0.55    olivedrab
+0.55    0.60    yellowgreen
+0.60	0.65	Gold3
+0.65	0.70	gold
+0.70	0.75	yellow
+0.75	0.80	orange
+0.80	0.85	coral
+0.85    0.90    tomato
+0.90    0.95    firebrick1
+0.95	1.00	OrangeRed
+1.00	2.00	Red
+2.00	3.00	DeepPink
+3.00	4.00	Maroon1
+4.00    5.00    HotPink
+5.00	99	black
+
+#0	0.1     DarkSlateBlue
+#0.1 	0.2	NavyBlue
+#0.2	0.3 	Blue
+#0.3 	0.4	MediumBlue
+#0.4 	0.5 	SkyBlue
+#0.5 	0.6 	DarkGreen
+#0.6	0.7	ForestGreen
+#0.7 	0.8	YellowGreen
+#0.8  	0.9 	Gold
+#0.9	1.0 	Yellow
+#1.0	2.0	Coral
+#2.0	3.0	Orange
+#3.0	4.0	MediumVioletRed
+#4.0	5.0	OrangeRed
+#5.0	10.0	Red
+#10.0	20.0	Gray50
+#20.0	50.0	gray20

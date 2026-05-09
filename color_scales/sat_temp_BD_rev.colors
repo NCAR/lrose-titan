@@ -1,0 +1,29 @@
+# Sat temp - MB - Taiwan
+#
+# Mike Dixon, June 2000
+#
+#
+# BD IR1 color scale from CWB
+#
+40	60	gray10
+30	40	gray25
+20	30	gray34
+10	20	gray41
+00	10	gray51
+-05	00	gray56
+-10	-05	gray60
+-15	-10	gray63
+-20	-15	gray66
+-25	-20	gray69
+-30	-25	gray71
+-42	-30	#0037ff
+-54	-42	#00af00
+-64	-54	#ffff00
+-70	-64	#ff00ff
+-76	-70	#00c7c7
+-80	-76	#ff0000
+-84	-80	#000000
+-87	-84	#ffffff
+-130	-87	#ff5564
+-145	-130	#ffffff
+

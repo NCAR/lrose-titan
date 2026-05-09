@@ -1,0 +1,6 @@
+# weak clutter power
+
+-200.0  -85.0	  gray30   ! not
+-85.0	-75.0	  cyan     ! clut
+-75.0   120.0	  gray30   ! not
+

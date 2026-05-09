@@ -1,0 +1,25 @@
+# colorscale for kdp
+
+-5.0    -4.0	dodgerblue3
+-4.0    -3.0	royalblue3
+-3.0    -2.0	blue
+-2.0    -1.0    mediumblue
+-1.0    0.00    navyblue
+0.00    0.50    midnightblue
+0.50    1.00    seagreen
+1.00    1.50    forestgreen
+1.50    2.00    olivedrab
+2.00    2.50    yellowgreen
+2.50    3.00	Gold3
+3.00    4.00  	gold
+4.00    5.00	yellow
+5.00    6.00 	orange
+6.00    8.00 	coral
+8.00    10.0    tomato
+10.0    12.0    firebrick1
+12.0    14.0    OrangeRed
+14.0    16.0 	Red
+16.0    18.0 	DeepPink
+18.0    20.0	Maroon1
+20.0    25.0    HotPink
+25.0    50.0	Pink

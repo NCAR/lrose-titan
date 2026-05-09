@@ -1,0 +1,25 @@
+# CPD - cumulative phase difference
+
+0	20	 Pink
+20      40       HotPink
+40	60	 Maroon1
+60 	80 	 DeepPink
+80	100      Red
+100 	120      OrangeRed
+120     140      firebrick1
+140     160      tomato
+160 	180      coral
+180	240      orange
+240	300      yellow
+300 	360      gold
+360     540      yellowgreen
+540     720      olivedrab
+720     1000     forestgreen
+1000    2000     seagreen
+2000    3000     slategray
+3000    4000     dimgray
+4000    5000     midnightblue
+5000    6000     navyblue
+6000    8000     mediumblue
+8000    10000    blue
+10000	100000   royalblue3

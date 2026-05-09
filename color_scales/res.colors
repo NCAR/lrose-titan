@@ -1,0 +1,28 @@
+# NAME res.colors
+
+0.0	0.1     dodgerblue3
+0.1	0.2     royalblue3
+0.2	0.3	blue
+0.3     0.4     mediumblue
+0.4     0.5     navyblue
+0.5     0.6     midnightblue
+0.6     0.7     dimgray
+0.7     0.8     slategray
+0.8     0.9     seagreen
+0.9     1.0     forestgreen
+1.0     1.2     olivedrab
+1.2     1.4     yellowgreen
+1.4	1.7	Gold3
+1.7 	2.0 	gold
+2.0	2.5	yellow
+2.5	3.0     orange
+3.0 	3.5	coral
+3.5     4.0     tomato
+4.0     4.5     firebrick1
+4.5 	5.0     OrangeRed
+5.0 	5.5 	Red
+5.5 	6.0 	DeepPink
+6.0	8.0	Maroon1
+8.0     10.0    HotPink
+10.0	20.0	Pink
+

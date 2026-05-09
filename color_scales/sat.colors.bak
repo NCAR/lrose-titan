@@ -1,0 +1,17 @@
+# NAME sat.colors
+
+# fhage 	6/9/1993 12:22:3
+
+0 	16 	gray0
+16 	32 	gray11
+32 	48 	gray21
+48 	64 	gray30
+64 	80 	gray41
+80 	96 	gray51
+96 	112 	gray61
+112 	128 	gray70
+128 	144 	gray76
+144 	160 	gray79
+160 	176 	gray85
+176 	192 	gray91
+192 	200 	snow

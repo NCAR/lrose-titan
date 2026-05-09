@@ -1,0 +1,21 @@
+# NAME wind.colors
+#
+# For the Taiwan system. Winds below 60
+# are cool colours - over 60
+# they are hot colours.
+# 
+#
+0       15	Gray30
+15      30      Gray40
+30      45      Gray50
+45      60      Gray60
+#
+#0       60      Gray15
+60      70      darkslateblue
+70      80      RoyalBlue
+80      90      SteelBlue1
+90      100     purple
+100     110     seagreen
+110     120     limegreen
+120     150     orange
+150     200     chocolate

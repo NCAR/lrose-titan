@@ -1,0 +1,28 @@
+# NAME interp_ratio.colors
+
+0.00	0.05    dodgerblue3
+0.05	0.10    royalblue3
+0.10	0.15    blue
+0.15    0.20    mediumblue
+0.20    0.25    navyblue
+0.25    0.30    midnightblue
+0.30    0.35    dimgray
+0.35    0.40    slategray
+0.40    0.45    seagreen
+0.45    0.50    forestgreen
+0.50    0.60    olivedrab
+0.60    0.70    yellowgreen
+0.70	1.50	Gold3
+0.80	0.90 	gold
+0.90	1.00 	yellow
+1.00	1.10    orange
+1.10 	1.25 	coral
+1.25    1.50    tomato
+1.50    1.75    firebrick1
+1.75	2.00    orangeRed
+2.00	2.50 	Red
+2.50 	3.00  	DeepPink
+3.00	4.00 	Maroon1
+4.00    5.00    HotPink
+5.00    50	Pink
+

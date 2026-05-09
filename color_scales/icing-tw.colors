@@ -1,0 +1,11 @@
+# NAME icing.colors
+#
+# Icing severity
+
+#0.25	0.50 	blue		!Lgt
+#0.50	0.75	lightblue	!Mod
+#0.75	5.00	pink	  	!Hvy
+
+0.25	0.50 	blue		!Lgt
+0.50	1.75	lightblue	!Mod
+1.75	2.00	pink	  	!Hvy

@@ -1,0 +1,8 @@
+# NAME interest.colors
+
+# fhage         6/9/1993 12:2:13
+
+0.0     1.5	gray60  ! CR
+1.5	2.5	red     ! FA
+2.5	3.5	blue    ! MISS
+3.5	4.5	green2  ! HIT

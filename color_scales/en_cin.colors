@@ -1,0 +1,16 @@
+# NAME en_cin.colors
+#
+# enelson 4-17-03.  needed CIN in negative values.	
+#
+# low values are hot colors,
+# high values are cool colors
+#
+#MIN     MAX     NAME        COLOR LABEL
+-10000	-840	red3
+-840	-330	brown2
+-330	-180	tomato
+-180	-80	coral
+-80	-40	gold
+-40	-30	forest green
+-30	-10	SpringGreen3
+-10	-.00001	medium spring green	

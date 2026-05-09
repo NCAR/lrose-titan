@@ -1,0 +1,11 @@
+# NAME rhohv_test_improv.colors
+
+-100    0.0     navyblue
+0.0     1.0     midnightblue
+1.0     1.25    darkgreen
+1.25 	1.5 	gold
+1.5     4       orange
+4 	8	OrangeRed
+8	10	Maroon1
+10      50      Pink
+

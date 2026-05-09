@@ -1,0 +1,22 @@
+# NAME fuzzy_pos.colors
+# terrib 	1/14/1998 16:52:50
+# MIN    MAX    NAME        COLOR LABEL
+-40 	-30 	slate blue 	!
+-30	-27 	medium slate blue !
+-27	-24 	blue !
+-24	-21 	blue4 !
+-21 	-18 	medium blue 	!
+-18 	-15 	cornflower blue 	!
+-15 	-12 	medium turquoise 	!
+-12 	-9 	dark olive green 	!
+-9 	-6 	dark green 	!
+-6 	-4 	SpringGreen4 	!
+-4 	-2 	medium sea green 	!
+-2   	 2 	linen 	!
+2 	4 	dark goldenrod 	!
+4 	6 	gold1 	!
+6 	9 	yellow 	!
+9 	12 	brown 	!
+12 	15 	red3 	!
+15 	18 	brown2 	!
+18      21	black 	!

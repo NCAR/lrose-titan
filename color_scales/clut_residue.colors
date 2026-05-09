@@ -1,0 +1,26 @@
+# clutter residue
+
+#-30 	-20 	dark green
+#-20 	-10 	dark olive green
+#-10 	-5 	forest green
+#-5 	0 	SpringGreen3
+#0 	1 	medium sea green
+1 	2 	medium aquamarine
+2 	3 	medium slate blue
+3 	4  	blue
+4  	5  	blue4
+5  	6  	DarkOrchid4
+6  	8  	HotPink4
+8  	10 	maroon
+10 	12 	VioletRed4
+12 	14 	sienna
+14 	16 	chocolate
+16 	18 	goldenrod
+18 	20 	yellow
+20 	25 	dark salmon
+25 	30 	salmon
+30 	35 	firebrick2
+35 	40 	DeepPink1
+40 	50 	light grey
+50 	75 	snow
+75	100	black

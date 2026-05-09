@@ -1,0 +1,124 @@
+<ColorScale id="chaseSpectral_xml.colors" gradation="linear" saturation="1.0" labelsSetByValue="true">
+  <Range min="-30" max="auto" color="0.09317630180115785, 0.11117332947760272, 0.26151238855305475" />
+  <Range min="auto" max="auto" color="0.10898740202835612, 0.13319350382565795, 0.3089538370897204" />
+  <Range min="auto" max="auto" color="0.12421596532360021, 0.15424489609911743, 0.3584824902114074" />
+  <Range min="auto" max="auto" color="0.1377440294143188, 0.17485524890812715, 0.4100132193954067" />
+  <Range min="auto" max="auto" color="0.15143092582666298, 0.20034937458089813, 0.4773185296806869" />
+  <Range min="auto" max="auto" color="0.15884110777734892, 0.22085406309837297, 0.5333780986311172" />
+  <Range min="auto" max="auto" color="0.1615687582201553, 0.24192717317982598, 0.590947280971239" />
+  <Range min="auto" max="auto" color="0.1567387388150081, 0.2644444177118183, 0.6485832602021305" />
+  <Range min="auto" max="auto" color="0.13019374811027845, 0.29771374755822616, 0.7127928058673725" />
+  <Range min="auto" max="auto" color="0.08570023827886969, 0.33146616127518264, 0.7407718073497576" />
+  <Range min="auto" max="auto" color="0.045209385399716286, 0.3672749347230809, 0.7454889092261349" />
+  <Range min="auto" max="auto" color="0.043458438883964015, 0.40102370971704254, 0.7420243047032399" />
+  <Range min="auto" max="auto" color="0.08583710398799438, 0.44015834330399145, 0.7360206802189788" />
+  <Range min="auto" max="auto" color="0.12753579832032957, 0.46967671977318937, 0.7321074968220892" />
+  <Range min="auto" max="auto" color="0.16939270970702336, 0.49808167670078485, 0.729514099015609" />
+  <Range min="auto" max="auto" color="0.221076366441748, 0.5324527583974503, 0.7281930113726283" />
+  <Range min="auto" max="auto" color="0.26249696935827066, 0.5592246702775623, 0.7285431679898072" />
+  <Range min="auto" max="auto" color="0.3048616586033889, 0.5853796696249742, 0.7299902509334001" />
+  <Range min="auto" max="auto" color="0.3490818000871771, 0.6108253115449156, 0.7324796800093838" />
+  <Range min="auto" max="auto" color="0.4078755353103908, 0.641415857529097, 0.7373884640869047" />
+  <Range min="auto" max="auto" color="0.4573210929073769, 0.6648973878622412, 0.7434335263117878" />
+  <Range min="auto" max="auto" color="0.5075922656244506, 0.6877756591216436, 0.7519221394187724" />
+  <Range min="auto" max="auto" color="0.5575181558550946, 0.7104543187762521, 0.7629291415211208" />
+  <Range min="auto" max="auto" color="0.6185864665812587, 0.7390466790641197, 0.7798383670352863" />
+  <Range min="auto" max="auto" color="0.6662315287143806, 0.7624048800378465, 0.7954941819359623" />
+  <Range min="auto" max="auto" color="0.7128885314512862, 0.7863668558670167, 0.8127502175082055" />
+  <Range min="auto" max="auto" color="0.758675986008732, 0.8110542493572185, 0.8314137476978961" />
+  <Range min="auto" max="auto" color="0.8148431081888104, 0.8430959697406819, 0.8565084542610862" />
+  <Range min="auto" max="auto" color="0.8589628398368314, 0.8698176873531217, 0.877876840786735" />
+  <Range min="auto" max="auto" color="0.9022321856472953, 0.897685181917325, 0.9003303399902122" />
+  <Range min="auto" max="auto" color="0.9450241336950317, 0.9267273985243988, 0.9232017297254779" />
+  <Range min="auto" max="auto" color="0.9276366903952598, 0.8895015346080178, 0.8801625091446738" />
+  <Range min="auto" max="auto" color="0.912940970001068, 0.852214830207059, 0.8357335125969564" />
+  <Range min="auto" max="auto" color="0.8996183458250351, 0.8151873435674267, 0.7907375926293952" />
+  <Range min="auto" max="auto" color="0.8842515223931736, 0.769321423964533, 0.7340672060990319" />
+  <Range min="auto" max="auto" color="0.8726749843514796, 0.7329446408023256, 0.688571641186953" />
+  <Range min="auto" max="auto" color="0.8615312235931758, 0.6968096810882964, 0.643061652171077" />
+  <Range min="auto" max="auto" color="0.8506671813652187, 0.6608684511065676, 0.597644543026785" />
+  <Range min="auto" max="auto" color="0.837282360615907, 0.6161255232979982, 0.5411665126797099" />
+  <Range min="auto" max="auto" color="0.8265865191963319, 0.5803968068112989, 0.49636307911450966" />
+  <Range min="auto" max="auto" color="0.8157857974447502, 0.5446412013022013, 0.4520417208585163" />
+  <Range min="auto" max="auto" color="0.8047829983640773, 0.5087638530967844, 0.4083617627821872" />
+  <Range min="auto" max="auto" color="0.7906020861628313, 0.463570184371689, 0.35497831597860807" />
+  <Range min="auto" max="auto" color="0.7787986023472407, 0.4269628178617235, 0.313593824377752" />
+  <Range min="auto" max="auto" color="0.7664733140591652, 0.38975562059023594, 0.27384573228244147" />
+  <Range min="auto" max="auto" color="0.7501324359996864, 0.34203819978054445, 0.22753008846802553" />
+  <Range min="auto" max="auto" color="0.7360276592028782, 0.3025817058357924, 0.1946669682951214" />
+  <Range min="auto" max="auto" color="0.7205052554891408, 0.26182376999357504, 0.16776810781649396" />
+  <Range min="auto" max="auto" color="0.7026577763956233, 0.22016032476969405, 0.14962641946742813" />
+  <Range min="auto" max="auto" color="0.6752290404511712, 0.16902839517353063, 0.14141261825631932" />
+  <Range min="auto" max="auto" color="0.6483618361407727, 0.13131544910443987, 0.14380937764395385" />
+  <Range min="auto" max="auto" color="0.6172580943089347, 0.09850955940169046, 0.15003428180550066" />
+  <Range min="auto" max="auto" color="0.582264072459783, 0.07332110668924821, 0.15685285246285416" />
+  <Range min="auto" max="auto" color="0.5337912133736735, 0.057128581028818445, 0.16201381167921866" />
+  <Range min="auto" max="auto" color="0.4924920560465744, 0.05489497800522934, 0.16085945689671105" />
+  <Range min="auto" max="auto" color="0.45038823069746997, 0.05620093240974463, 0.15446036095800122" />
+  <Range min="auto" max="auto" color="0.4083874753510262, 0.056986797359617467, 0.14366261504290215" />
+  <Range min="auto" max="auto" color="0.35662892011622993, 0.05501236188184371, 0.1256041268313333" />
+  <Range min="auto" max="auto" color="0.3159278573165507, 0.05071934147936142, 0.10851751538318564" />
+  <Range min="auto" max="auto" color="0.2757883929056377, 0.04407729543414405, 0.08968329380554105" />
+  <Range min="auto" max="30" color="0.23605636466461405, 0.03529747994604029, 0.06943744239412558" />
+  <Label value="-30.0" text="-30"/>
+  <Label value="-29.0" text="-29"/>
+  <Label value="-28.0" text="-28"/>
+  <Label value="-27.0" text="-27"/>
+  <Label value="-26.0" text="-26"/>
+  <Label value="-25.0" text="-25"/>
+  <Label value="-24.0" text="-24"/>
+  <Label value="-23.0" text="-23"/>
+  <Label value="-22.0" text="-22"/>
+  <Label value="-21.0" text="-21"/>
+  <Label value="-20.0" text="-20"/>
+  <Label value="-19.0" text="-19"/>
+  <Label value="-18.0" text="-18"/>
+  <Label value="-17.0" text="-17"/>
+  <Label value="-16.0" text="-16"/>
+  <Label value="-15.0" text="-15"/>
+  <Label value="-14.0" text="-14"/>
+  <Label value="-13.0" text="-13"/>
+  <Label value="-12.0" text="-12"/>
+  <Label value="-11.0" text="-11"/>
+  <Label value="-10.0" text="-10"/>
+  <Label value="-9.0" text="-9"/>
+  <Label value="-8.0" text="-8"/>
+  <Label value="-7.0" text="-7"/>
+  <Label value="-6.0" text="-6"/>
+  <Label value="-5.0" text="-5"/>
+  <Label value="-4.0" text="-4"/>
+  <Label value="-3.0" text="-3"/>
+  <Label value="-2.0" text="-2"/>
+  <Label value="-1.0" text="-1"/>
+  <Label value="0.0" text="0"/>
+  <Label value="1.0" text="1"/>
+  <Label value="2.0" text="2"/>
+  <Label value="3.0" text="3"/>
+  <Label value="4.0" text="4"/>
+  <Label value="5.0" text="5"/>
+  <Label value="6.0" text="6"/>
+  <Label value="7.0" text="7"/>
+  <Label value="8.0" text="8"/>
+  <Label value="9.0" text="9"/>
+  <Label value="10.0" text="10"/>
+  <Label value="11.0" text="11"/>
+  <Label value="12.0" text="12"/>
+  <Label value="13.0" text="13"/>
+  <Label value="14.0" text="14"/>
+  <Label value="15.0" text="15"/>
+  <Label value="16.0" text="16"/>
+  <Label value="17.0" text="17"/>
+  <Label value="18.0" text="18"/>
+  <Label value="19.0" text="19"/>
+  <Label value="20.0" text="20"/>
+  <Label value="21.0" text="21"/>
+  <Label value="22.0" text="22"/>
+  <Label value="23.0" text="23"/>
+  <Label value="24.0" text="24"/>
+  <Label value="25.0" text="25"/>
+  <Label value="26.0" text="26"/>
+  <Label value="27.0" text="27"/>
+  <Label value="28.0" text="28"/>
+  <Label value="29.0" text="29"/>
+  <Label value="30.0" text="30"/>
+</ColorScale>

@@ -1,0 +1,22 @@
+# NAME weasd.colors
+# Phillips  11/12/2007 
+#MIN     MAX     NAME        COLOR LABEL
+.001    1       gray80          !
+1       2.5     slate gray      !
+2.5     5       royal blue      !
+5       10      SteelBlue1      !
+10      15      cyan1           !
+15      20      DeepSkyBlue3    !
+20      25      RoyalBlue1      !
+25      30      MediumPurpele1  !
+30      35      orchid1         !
+35      50      PaleVioletRed1  !
+50      65      maroon1         !
+65      80      VioletRed3      !
+80      100     brown2          !
+100     120     firebrick1      !
+120     150     tan3            !
+150     200     #7D7D88         !
+200     1000    #A7A7B4         !
+1000    50000   lavender        !
+50000   55100   white           !

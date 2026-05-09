@@ -1,0 +1,13 @@
+# NAME interest.colors
+# dave 	7/12/1994 14:34:39
+# MIN    MAX    NAME        COLOR LABEL
+0.0 	100. 	dark slate gray
+100. 	200. 	navy
+200. 	300.	slate blue
+300.	400.	dark green
+400.	500.	brown
+500.	600.	sienna
+600. 	700.	rosy brown
+700. 	800.	goldenrod
+800.	900.	light goldenrod
+900.    1000.	gold

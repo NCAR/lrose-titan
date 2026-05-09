@@ -1,0 +1,23 @@
+# NAME interest.colors
+# dave 	7/12/1994 14:34:39
+# MIN    MAX    NAME        COLOR LABEL
+-1.1 	-0.9 	dark slate gray
+-0.9 	-0.8 	midnight blue
+-0.8 	-0.7 	navy
+-0.7 	-0.6 	dark slate blue
+-0.6 	-0.5 	slate blue
+-0.5 	-0.4 	slate blue
+-0.4 	-0.3 	medium slate blue
+-0.3 	-0.2 	dark green
+-0.2 	-0.1 	dark olive green
+-0.1 	0 	brown
+0 	0.1 	saddle brown
+0.1 	0.2 	sienna
+0.2 	0.3 	indian red
+0.3 	0.4 	rosy brown
+0.4 	0.5 	dark goldenrod
+0.5 	0.6 	goldenrod
+0.6 	0.7 	light goldenrod
+0.7 	0.8 	gold
+0.8 	0.9 	yellow
+0.9 	1.1 	light yellow

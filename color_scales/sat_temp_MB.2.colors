@@ -1,0 +1,14 @@
+# NAME sat_temp_mb.colors
+#
+# MB color scale as used by the CWB
+#
+# Mike Dixon, June 2000
+#
+-80    -64    magenta
+-64    -60    cyan
+-60    -54    black
+-54    -42    white
+-42    -32    red
+-32      6    yellow
+6       28    green
+28      50    blue

@@ -1,0 +1,12 @@
+# NAME hailsize.colors
+
+# roberts 	3/14/2001 12:40:43
+
+0      100      dark goldenrod
+100    125      goldenrod
+125    150      gold1
+150    175      orange
+175    200      salmon
+200    225      tomato
+225    250      red
+250    300      firebrick

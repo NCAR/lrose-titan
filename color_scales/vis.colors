@@ -1,0 +1,31 @@
+# NAME interest.colors
+
+# Michael Moore 4/20/1996
+
+-10   	0.0   	black	
+0.0   	0.02  	grey4	
+0.02   	0.04  	grey8	
+0.04   	0.06  	grey12	
+0.06   	0.08  	grey16
+0.08  	0.10  	grey20
+0.10  	0.12  	grey24
+0.12  	0.14  	grey28
+0.14  	0.16  	grey32
+0.16  	0.20  	grey36
+0.20  	0.24  	grey40
+0.24  	0.28  	grey43
+0.28  	0.32  	grey47
+0.32  	0.36  	grey51
+0.36 	0.40 	grey55
+0.40 	0.44 	grey59
+0.44	0.48	grey63 
+0.48	0.52	grey67
+0.52	0.56	grey71
+0.56  	0.60  	grey75
+0.60	0.64	grey79
+0.64	0.68	lightgrey
+0.68	0.72	grey88
+0.72	0.76	grey91
+0.76   	0.80  	grey94
+0.80  	1.0  	grey98
+

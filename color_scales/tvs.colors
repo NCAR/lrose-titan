@@ -1,0 +1,25 @@
+# NAME tvs.colors
+
+# roberts 	5/27/1998 12:40:43
+
+0       10      dim gray 
+10 	20	blue
+20 	30 	medium blue
+30      40 	slate blue
+40 	45 	cornflower blue
+45 	50 	medium sea green
+50 	55 	lime green
+55 	60 	forest green
+60 	65 	dark olive green
+65 	70 	dark green
+70 	75 	saddle brown
+75 	80 	sienna
+80 	85 	dark goldenrod
+85 	90 	goldenrod
+90 	95 	gold1
+95 	100 	orange
+100 	105 	salmon
+105 	110 	tomato
+110 	115 	red
+115 	120 	firebrick
+120 	130     snow	

@@ -1,0 +1,28 @@
+# NAME ruc_cape.colors
+#
+# petach 6/21/1999
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+00 	50 	midnight blue 	!
+50 	100 	blue4 	!
+100 	150 	medium blue 	!
+150 	200 	royal blue 	!
+200 	250 	cyan 	!
+250 	300 	aquamarine 	!
+300 	350 	medium spring green 	!
+350 	400 	SpringGreen3 	!
+400 	450 	forest green 	!
+450 	500 	green yellow 	!
+500 	600 	yellow3 	!
+600 	700 	yellow2 	!
+700 	800 	yellow 	!
+800 	900 	gold 	!
+900 	1000 	orange 	!
+1000 	2000 	coral 	!
+2000 	3000 	tomato 	!
+3000 	4000 	red 	!
+4000 	5000 	brown2 	!
+5000 	10000 	red3 	!

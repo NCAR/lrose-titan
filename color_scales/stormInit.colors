@@ -1,0 +1,43 @@
+# NAME stormInit.colors
+#
+# Colorscale for MDV files of StormInit data.
+#
+# Niles April 2003   
+#
+0       0.05    black 
+0.05  	0.10 	gray5
+0.10 	0.15 	gray11
+0.15    0.20    gray21
+0.20 	0.25 	gray25
+0.25 	0.30 	gray30
+0.30 	0.35 	gray34
+0.35    0.40    gray41
+0.40    0.45    gray47
+0.45 	0.50 	gray51
+0.50    0.55    gray53
+0.55    0.60    gray60
+0.60    0.65    gray65
+0.65 	0.70 	gray70
+0.70 	0.75  	gray75
+0.75  	0.80  	gray80
+0.80  	0.85  	gray85
+0.85  	0.90  	gray90
+0.90 	0.95 	gray95
+0.95    1.0     snow
+1.0 	1.1 	DeepPink1
+1.1 	1.2 	maroon
+1.2 	1.3 	dark orchid
+1.3 	1.4 	blue
+1.4 	1.5	royal blue
+1.5	1.6	deep sky blue
+1.6	1.7	medium spring green
+1.7	1.8	forest green
+1.8	1.9 	gray
+1.9	2.0	tan2
+2.0	2.1	gold1
+2.1	2.2	yellow
+2.2	2.3 	salmon1
+2.3 	2.4	tomato
+2.4 	2.5	brown1
+2.5 	2.6	red
+2.6 	2.7	firebrick

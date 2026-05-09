@@ -1,0 +1,13 @@
+#MIN     MAX     NAME                 COLOR LABEL
+
+-100 	0      SkyBlue1              ! Ocean
+0 	1      SkyBlue1              ! Ocean
+1      25     DarkGreen             ! Coast
+25	 50 	SpringGreen4          ! Coast
+50	100 	SpringGreen3          ! Coast
+100 	150 	SpringGreen2          ! Coast
+150 	300 	DarkGoldenrod         ! Inland
+300 	450 	goldenrod             ! Inland
+450 	600 	LightGoldenrod        ! Inland
+600 	900 	LightGoldenrodYellow  ! Inland
+900 	1500 	ivory                 ! Inland

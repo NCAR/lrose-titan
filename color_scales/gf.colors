@@ -1,0 +1,18 @@
+# NAME gf.colors
+ 
+# bforman       9/11/1996 
+ 
+0       29      mediumpurple1
+30      44      blue
+45      59      steelblue1
+60      74      cyan
+75      89      green3
+90      104     forest green
+105     119     grey60
+120     134     grey80
+135     149     orange3
+150     164     gold2
+165     179     yellow
+180     194     darkorange1
+195     209     orchid1
+210     255     brown3

@@ -1,0 +1,28 @@
+# precip_rate
+# Color coded Precip Rate 
+
+0.01    0.10    dodgerblue3
+0.10    0.20    royalblue3
+0.20    0.30    blue
+0.30    0.50    mediumblue
+0.50    0.75    navyblue
+0.75    1.00    midnightblue
+1.00    2.00    dimgray
+2.00    3.00    slategray
+3.00    4.00    seagreen
+4.00    5.00    forestgreen
+5.00    7.50    olivedrab
+7.50    10.0    yellowgreen
+10.0    12.5    Gold3
+12.5    15.0    gold
+15.0    17.5    yellow
+17.5    20.0    orange
+20.0    30.0    coral
+30.0    40.0    tomato
+40.0    50.0    firebrick1
+50.0    75.0    OrangeRed
+75.0    100     Red
+100     150     DeepPink
+150     200     Maroon1
+200     250     HotPink
+250     1000    Pink

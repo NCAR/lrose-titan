@@ -1,0 +1,28 @@
+# NAME elevation.colors
+
+-1	00	dodgerblue3
+00	01	royalblue3
+01	02	blue
+02      03      mediumblue
+03      04      navyblue
+04      05      midnightblue
+05      06      dimgray
+06      07      slategray
+07      08      seagreen
+08      09      forestgreen
+09      10      olivedrab
+10      12      yellowgreen
+12	14      Gold3
+14      16 	gold
+16	18      yellow
+18	20      orange
+20	22      coral
+22      25      tomato
+25      30      firebrick1
+30	35      OrangeRed
+35	40      Red
+40      50 	DeepPink
+50	60      Maroon1
+60      80      HotPink
+80	90	Pink
+

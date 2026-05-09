@@ -1,0 +1,28 @@
+# wind speed - U and V, can be negative
+#
+#
+-100	-45	dodgerblue3
+-45	-40	royalblue3
+-40	-35	blue
+-35    	-30    	mediumblue
+-30  	-25    	navyblue
+-25   	-20   	midnightblue
+-20   	-15    	dimgray
+-15     -10    	slategray
+-10     -5    	seagreen
+-5     	-2     	forestgreen
+-2     	-1     	olivedrab
+-1      0     	yellowgreen
+0	1	Gold3
+1 	2 	gold
+2	5	yellow
+5	10 	orange
+10 	15 	coral
+15      20      tomato
+20      25      firebrick1
+25 	30	OrangeRed
+30 	35 	Red
+35 	40 	DeepPink
+40	45	Maroon1
+45      50      HotPink
+50	100	Pink

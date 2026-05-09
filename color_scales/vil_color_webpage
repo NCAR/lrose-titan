@@ -1,0 +1,8 @@
+# VIL color scale -- based on Lincoln Lab's
+
+# Nancy Rehak, March 1998
+
+0.01     3.50      #007000         !1-2
+3.50     6.90      #fefa03         !-3-
+6.90     12.0      #fe9a58         !-4-
+12.0     100.      #fd341c         !5-6

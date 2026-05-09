@@ -1,0 +1,19 @@
+# NAME Refract.colors
+#
+# Niles for IHOP 2002.
+#
+-200 	-7     dark magenta 	
+-7 	-6     magenta  	
+-6 	-5      firebrick  	
+-5	-4      red 	
+-4	-3      tomato 	
+-3	-2      orange 	
+-2	0       gray40
+0.0     2       gray40
+2       3       dark green 
+3	4       green  	
+4	5	blue4
+5	6      blue	
+6       7      cyan 
+7      200	purple
+#

@@ -1,0 +1,28 @@
+# NAME prt.colors
+
+0.0     1.0e-5  dodgerblue3
+1.0e-5	2.0e-5  royalblue3
+2.0e-5	3.0e-5  blue
+3.0e-5  4.0e-5  mediumblue
+4.0e-5  5.0e-5  navyblue
+5.0e-5  6.0e-5  midnightblue
+6.0e-5  7.0e-5  dimgray
+7.0e-5  8.0e-5  slategray
+8.0e-5  9.0e-5  seagreen
+9.0e-5  1.0e-4  forestgreen
+1.0e-4  2.0e-4  olivedrab
+2.0e-4  4.0e-4  yellowgreen
+4.0e-4  6.0e-4  Gold3
+6.0e-4  8.0e-4  gold
+8.0e-4  1.0e-3  yellow
+1.0e-3 	2.0e-3  orange
+2.0e-3 	4.0e-3 	coral
+4.0e-3  6.0e-3  tomato
+6.0e-3  8.0e-3  firebrick1
+8.0e-3 	1.0e-2  OrangeRed
+1.0e-2 	2.0e-2 	Red
+2.0e-2 	4.0e-2 	DeepPink
+4.0e-2	6.0e-2	Maroon1
+6.0e-2  8.0e-2  HotPink
+8.0e-2	1.0   	Pink
+

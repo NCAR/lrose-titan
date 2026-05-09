@@ -1,0 +1,43 @@
+# colorscale for DBZ
+
+-30     -08     NavyBlue
+-08     -06     mediumBlue
+-06     -04     RoyalBlue
+-04     -02     CornflowerBlue
+-02     00      DeepSkyBlue
+00      02      SkyBlue
+02      04      LightSeaGreen
+04      06      DarkCyan
+06      08      Teal
+08      10      NavyBlue
+10      12      SlateBlue
+12      14      DarkSlateBlue
+14      16      SteelBlue
+16      18      CadetBlue
+18      20      DarkCyan
+20      22      forestgreen
+22      24      MediumSeaGreen
+24      26      olivedrab
+26      28      yellowgreen
+28      30      Gold3
+30      32      gold
+32      34      yellow
+34      36      orange
+36      38      DarkOrange
+38      40      coral
+40      42      tomato
+42      44      orangered
+44      46      crimson
+46      48      DeepPink
+48      50      Maroon1
+50      52      HotPink
+52      54      LightPink
+54      56      Violet
+56      58      PaleRedViolet
+58      60      Orchid
+60      62      MediumOrchid
+62      64      DarkOrchid
+64      66      Purple
+66      68      MediumPurple2
+68      80      MediumPurple1
+

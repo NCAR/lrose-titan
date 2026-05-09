@@ -1,0 +1,24 @@
+# NAME correlation.colors
+# jaimi 	2/2/1998 11:53:44
+# MIN    MAX    NAME        COLOR LABEL
+-1 	-0.9 	gray97 	!
+-0.9 	-0.8 	gray73 	!
+-0.8 	-0.7 	gray51 	!
+-0.7 	-0.6 	gray41 	!
+-0.6 	-0.5 	gray31 	!
+-0.5 	-0.4 	gray21 	!
+-0.4 	-0.3 	blue 	!
+-0.3 	-0.2 	royal blue 	!
+-0.2 	-0.1 	deep sky blue 	!
+-0.1 	0 	medium spring green 	!
+0 	0.1 	medium sea green 	!
+0.1 	0.2 	sea green 	!
+0.2 	0.3 	dark khaki 	!
+0.3 	0.4 	yellow 	!
+0.4 	0.5 	goldenrod 	!
+0.5 	0.6 	dark goldenrod 	!
+0.6 	0.7 	chocolate 	!
+0.7 	0.8 	firebrick 	!
+0.8 	0.9 	indian red 	!
+0.9 	1 	rosy brown 	!
+1 	1.1 	salmon 	! 

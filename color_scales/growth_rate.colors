@@ -1,0 +1,20 @@
+# NAME growth_rate.colors
+# terrib 	1/14/1998 18:1:58
+# MIN    MAX    NAME        COLOR LABEL
+-5000 	-4000 	DeepPink1 	!
+-4000 	-3000 	maroon 	!
+-3000 	-2000 	dark orchid 	!
+-2000 	-1000 	blue 	!
+-1000 	-500 	royal blue 	!
+-500 	-250 	deep sky blue 	!
+-250 	-100 	medium spring green 	!
+-100 	-50 	forest green 	!
+-50 	50 	gray 	!
+50 	100 	tan2 	!
+100 	250 	gold1 	!
+250 	500 	yellow 	!
+500 	1000 	salmon1 	!
+1000 	2000 	tomato 	!
+2000 	3000 	brown1 	!
+3000 	4000 	red 	!
+4000 	5000 	firebrick 	!

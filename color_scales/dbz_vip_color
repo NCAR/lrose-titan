@@ -1,0 +1,8 @@
+# DBZ to VIP color scale -- based on Lincoln Lab's
+
+# Nancy Rehak, June 1998
+
+0.01     35.5      #007000         !1-2
+35.5     43.5      #fefa03         !-3-
+43.5     48.0      #fe9a58         !-4-
+48.0     100.      #fd341c         !5-6

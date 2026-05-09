@@ -1,0 +1,7 @@
+# NAME: phase_gpm.colors
+
+# brodzik   3/10/2017
+
+-0.5   0.5   blue   !solid
+ 0.5   1.5   green  !mixed
+ 1.5   2.5   red    !liquid

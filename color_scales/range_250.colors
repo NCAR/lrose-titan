@@ -1,0 +1,28 @@
+# NAME range_250.colors
+
+000     010    dodgerblue3
+010     020    royalblue3
+020     030    blue
+030     040    mediumblue
+040     050    navyblue
+050     060    midnightblue
+060     070    dimgray
+070     080    slategray
+080     090    seagreen
+090     100    forestgreen
+100     110    olivedrab
+110     120    yellowgreen
+120     130    Gold3
+130     140    gold
+140     150    yellow
+150     160    orange
+160     170    coral
+170     180    tomato
+180     190    firebrick1
+190     200    OrangeRed
+200     210    Red
+210     220    DeepPink
+220     230    Maroon1
+230     240    HotPink
+240	250    Pink
+

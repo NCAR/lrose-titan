@@ -1,0 +1,45 @@
+# dbz color scale
+
+# Mike Dixon, April 1991
+# Rod Potts, Bureau of Meteorology, Aug 2005
+# *** Note Colors are RGB ***
+#
+
+#-20     5       gray25
+#5       10      dark slate blue
+#10	20	#005a00
+#20	30	#007000
+#30	35	#087fdb
+#35	36	#1c47e8
+#36	39	#6e0dc6
+#39	42	#c80f86
+#42	45	#c06487
+#45	48	#d2883b
+#48	51	#fac431
+#51	54	#fefa03
+#54	57	#fe9a58
+#57	60	#fe5f05
+#60	65	#fd341c
+#65	70	gray
+#70	80	light gray
+
+-32     0       #282828
+0       6       #000067
+6       12      #0000a3
+12      18      #0000ff
+18      24      #0057ff
+24      30      #00a3ff
+30      36      #00ffff
+36      39      #ffbe00 
+39	42	#ffff00
+42	45	#92ff00
+45	48	#00ff00
+48	51	#ff00ff
+51	54	#ff008d
+54	57	#ff0000
+57	60	#90191b
+60	63	#fd341c
+63	66	#fd675d
+66	69	#ffadcd
+69	72	#ffffff
+72	80	#aeedde

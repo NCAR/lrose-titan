@@ -1,0 +1,27 @@
+# NAME ltg_rate_hot.colors
+
+0  	1	 dodgerblue3
+1	2  	royalblue3
+2       3	blue
+3       4       mediumblue
+4       5       navyblue
+5       6       midnightblue
+6       8       dimgray
+8       10      slategray
+10      12      seagreen
+12      14      forestgreen
+14      16      olivedrab
+16      18      yellowgreen
+18      20      Gold3
+20      25   	gold
+25	30 	yellow
+30      35  	orange
+35	40 	coral
+40      45      tomato
+45      50      firebrick1
+50	60      OrangeRed
+60	70  	Red
+70      80    	DeepPink
+80	90 	Maroon1
+90      100     HotPink
+100	1000	Pink

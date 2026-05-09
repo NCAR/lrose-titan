@@ -1,0 +1,15 @@
+# NAME cloud_type_rcwf.colors
+
+# The labels are valid for the CloudClass
+
+# Rita Roberts  04/2002 
+
+0.5     1.5     light grey              ! Clr
+1.5     2.5     plum                    ! Cu
+3.5     4.5     cornflower blue         ! CuCg
+7.5     8.5     medium blue              ! Cb
+15.5    16.5    forest green            ! Cs
+31.5    32.5    medium aquamarine       ! Ci
+63.5    64.5    cyan                    ! As
+127.5  128.5    gray50                  ! St
+

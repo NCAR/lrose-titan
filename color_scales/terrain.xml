@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ColorScale className="edu.ucar.rap.jade.view.legend.ColorScale" id="terrain.colors">
+  <ColorRange minValue="-400.0" maxValue="-1.0">
+    <Color red="160" green="82" blue="45" />
+  </ColorRange>
+  <ColorRange minValue="-1.0" maxValue="1.0">
+    <Color red="25" green="25" blue="112" />
+  </ColorRange>
+  <ColorRange minValue="1.0" maxValue="50.0">
+    <Color red="0" green="100" blue="0" />
+  </ColorRange>
+  <ColorRange minValue="50.0" maxValue="100.0">
+    <Color red="0" green="139" blue="69" />
+  </ColorRange>
+  <ColorRange minValue="100.0" maxValue="250.0">
+    <Color red="0" green="205" blue="102" />
+  </ColorRange>
+  <ColorRange minValue="250.0" maxValue="500.0">
+    <Color red="0" green="238" blue="118" />
+  </ColorRange>
+  <ColorRange minValue="500.0" maxValue="750.0">
+    <Color red="184" green="134" blue="11" />
+  </ColorRange>
+  <ColorRange minValue="750.0" maxValue="1000.0">
+    <Color red="218" green="165" blue="32" />
+  </ColorRange>
+  <ColorRange minValue="1000.0" maxValue="2000.0">
+    <Color red="238" green="221" blue="130" />
+  </ColorRange>
+  <ColorRange minValue="2000.0" maxValue="3000.0">
+    <Color red="250" green="250" blue="210" />
+  </ColorRange>
+  <ColorRange minValue="3000.0" maxValue="4000.0">
+    <Color red="255" green="255" blue="240" />
+  </ColorRange>
+  <ColorRange minValue="4000.0" maxValue="5000.0">
+    <Color red="211" green="211" blue="211" />
+  </ColorRange>
+  <ColorRange minValue="5000.0" maxValue="6000.0">
+    <Color red="190" green="190" blue="190" />
+  </ColorRange>
+  <ColorRange minValue="6000.0" maxValue="9000.0">
+    <Color red="169" green="169" blue="169" />
+  </ColorRange>
+</ColorScale>
+

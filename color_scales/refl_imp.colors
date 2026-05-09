@@ -1,0 +1,20 @@
+# NAME refl_imp.colors
+
+# bforman 	1/17/1996 17:00:36
+
+-30 	-15 	black
+-15 	  0 	grey40
+  0	  2	grey63
+  2	  4	grey80
+  4 	  6 	purple1
+  6 	  8	dodgerblue2
+  8 	 10 	deepskyblue
+ 10 	 12 	springgreen3
+ 12 	 14 	green4
+ 14 	 16 	green2
+ 16 	 18 	yellow
+ 18 	 20 	darkorange3
+ 20 	 25 	orange
+ 25 	 30 	red
+ 30 	 35 	plum1
+ 35 	 50 	darkslategray1

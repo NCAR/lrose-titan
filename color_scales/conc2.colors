@@ -1,0 +1,21 @@
+# Concentration
+# Color coded Concentration 
+
+# Frank Hage 2006
+	
+0.0	.00001	black
+.00001 	.00002 	ForestGreen
+.00002	.00004 	YellowGreen
+.00004 	.0006	NavyBlue
+.0006 	.0008 	MediumBlue
+.00008 	.00010 Blue
+.00010	.00012	DarkSlateBlue
+.00012	.00015	SkyBlue
+.00015	.00020	MediumVioletRed
+.00020	.00025	Coral
+.00025	.0003	Orange
+.00030	.0005	Gold
+.00050	.0007	Yellow
+.00070	.0001	OrangeRed
+.00100 .0020	Red
+.00200 .0080	White

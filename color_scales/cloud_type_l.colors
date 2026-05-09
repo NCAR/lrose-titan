@@ -1,0 +1,18 @@
+# NAME cloud_type_l.colors
+
+# The labels are valid for the NRL Land classification algorithm only
+
+# Laurie Carson  12/1997 
+
+0       1       black                   ! 
+1       2       forest green            ! Ci
+2       3       medium aquamarine       ! Cs
+3       4       medium sea green        ! Ac
+4       5       dark turquoise          ! As
+5       6       light blue              ! CuC
+6       7       thistle                 ! Sc
+7       8       plum                    ! St
+8       9       orchid                  ! Cu
+9       10      royal blue              ! Cb
+10      11      light grey              ! Clr
+

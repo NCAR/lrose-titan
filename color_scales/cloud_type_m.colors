@@ -1,0 +1,17 @@
+# NAME cloud_type_m.colors
+
+# The labels are valid for the NRL Maritime classification algorithm only
+
+# Laurie Carson  4/19/1995
+
+0   	1   	black			! 
+1 	2 	forest green		! Ci
+2 	3 	medium sea green	! Cc
+3       4       medium aquamarine	! Cs
+4 	5 	dark turquoise 		! As
+5  	6  	light blue		! Ns
+6  	7  	thistle    		! Sc
+7  	8  	plum			! St
+8  	9  	orchid			! Cu
+9  	10 	royal blue		! Cn
+10 	11 	light grey		! Clr

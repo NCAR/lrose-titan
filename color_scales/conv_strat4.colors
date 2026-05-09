@@ -1,0 +1,10 @@
+# conv/strat colors
+
+13.5    14.5    royalblue     !strat-low
+15.5    16.5    steelblue     !strat-mid
+17.5    18.5    skyblue       !strat-high
+24.5    25.5    lightseagreen !mixed
+31.5    32.5    magenta       !conv-elev
+33.5    34.5    yellow        !conv-low
+35.5    36.5    orange        !conv-mid
+37.5    38.5    orangered     !conv-deep

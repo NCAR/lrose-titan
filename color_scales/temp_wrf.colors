@@ -1,0 +1,39 @@
+# NAME temp_wrf.colors
+#
+#
+#
+#  brodzik 	6/1/2017 10:55
+
+-66     -63	DarkSlateGray1
+-63     -60 	SkyBlue1
+-60     -57     deep sky blue     
+-57     -54     medium slate blue 
+-54     -51     slate blue        
+-51     -48     blue4            
+-48     -45     MediumPurple4    
+-45     -42     DarkOrchid4      
+-42     -39     MediumOrchid4    
+-39     -36     dark orchid      
+-36     -33     purple           
+-33     -30     hot pink          
+-30     -27     pink        
+-27     -24 	DarkOrchid4
+-24     -21 	RoyalBlue4
+-21     -18     gray
+-18     -15 	SpringGreen2
+-15     -12 	SpringGreen3
+-12      -9 	SpringGreen4
+ -9      -6 	yellow1
+ -6      -3 	yellow3
+ -3	  0 	gold1
+  0	  3 	DarkGoldenrod1
+  3	  6 	orange
+  6	  9 	sienna1
+  9	 12 	coral1
+ 12	 15 	red1
+
+
+
+
+
+

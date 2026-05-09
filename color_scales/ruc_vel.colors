@@ -1,0 +1,28 @@
+# NAME ruc_vel.colors
+#
+# petach 6/21/1999
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+-30 	-27 	midnight blue 	!
+-27 	-24 	blue4 	!
+-24 	-21 	medium blue 	!
+-21 	-18 	royal blue 	!
+-18 	-15 	cyan 	!
+-15 	-12 	aquamarine 	!
+-12 	-9 	medium spring green 	!
+-9 	-6 	SpringGreen3 	!
+-6 	-3 	forest green 	!
+-3 	-1 	green yellow 	!
+-1 	1 	yellow3 	!
+1 	3 	yellow2 	!
+3 	6 	yellow 	!
+6 	9 	gold 	!
+9 	12 	orange 	!
+12 	15 	coral 	!
+15 	18 	tomato 	!
+18 	21 	red 	!
+21 	24 	brown2 	!
+24 	27 	red3 	!

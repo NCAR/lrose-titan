@@ -1,0 +1,5 @@
+# NAME bitmap.colors
+# Cathy Kessinger 	11/13/2001 
+#MIN     MAX     NAME        COLOR LABEL
+0.0 	0.5 	cyan 	!
+0.5 	1.0 	brown 	!

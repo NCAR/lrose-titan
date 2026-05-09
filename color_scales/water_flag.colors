@@ -1,0 +1,4 @@
+# cmd flag colors
+
+-0.5	0.5	  gray30   ! land
+0.5	1.5	  blue     ! water

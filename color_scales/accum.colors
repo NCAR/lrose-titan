@@ -1,0 +1,17 @@
+# NAME accum.colors
+# ice 	5/15/1996 14:32:46
+# MIN    MAX    NAME        COLOR LABEL
+0 	2 	dark slate gray 	!
+2 	4 	dim gray 	! 
+4 	6 	dark green 	! 
+6 	8 	forest green 	! 
+8 	10 	medium sea green 	! 
+10 	12 	DeepSkyBlue3 	!
+12 	14 	royal blue 	! 
+14 	16 	purple 	!
+16 	18 	violet red 	!
+18 	20 	maroon1 	!
+20 	22 	coral 	!
+22 	24 	orange 	!
+24 	26 	red 	!
+26 	28 	snow 	!

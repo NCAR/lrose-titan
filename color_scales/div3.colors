@@ -1,0 +1,28 @@
+# NAME ruc_cin.colors
+#
+# petach 6/21/1999
+#
+# low values are hot colors,
+# high values are cool colors
+#
+#MIN     MAX     NAME        COLOR LABEL
+-5.0	-4.0	firebrick
+-4.0	-3.0	red 	!
+-3.0	-2.5	brown2 	!
+-2.5	-2.0	tomato 	!
+-2.0	-1.5	coral 	!
+-1.5	-1.0	orange 	!
+-1.0	-0.5	gold 	!
+-0.5	-0.1	yellow 	!
+-0.1	0.1 	gray 	!
+0.02     0.1 	dark olive green
+0.1 	0.2 	forest green 	!
+0.2 	0.3 	SpringGreen3 	!
+0.3 	0.4 	medium spring green 	!
+0.4 	0.5 	aquamarine 	!
+#2.5	3.0     cyan 	!
+0.5	1.0	royal blue 	!
+1.0	2.0	medium blue 	!
+2.0     4.0     maroon 	!
+4.0     6.0    VioletRed4 	!
+

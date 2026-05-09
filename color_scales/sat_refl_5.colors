@@ -1,0 +1,11 @@
+# NAME sat_refl
+
+# roberts 6/20/2001   
+
+0       2       gray30 
+2  	10  	gray45
+10      14      gray60
+14      17      pink 
+17      26      gray75
+26      38      gray90
+38  	50      white 

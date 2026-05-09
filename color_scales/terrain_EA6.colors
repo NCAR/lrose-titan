@@ -1,0 +1,17 @@
+#MIN     MAX     NAME                
+-400 	-1 	Sienna               
+-1 	1 	MidnightBlue         
+1 	50 	DarkGreen            
+50	100    	SpringGreen4         
+100     250	SpringGreen3         
+250 	500 	SpringGreen2         
+500 	750 	DarkGoldenrod        
+750 	1000 	goldenrod            
+1000 	1250 	LightGoldenrod       
+1250 	1500 	LightGoldenrodYellow 
+1500 	1750 	tan                
+#1750 	2000 	ivory                
+1750 	2000 	DarkGray            
+2000 	2500 	Gray                 
+2500 	3000 	LightGray
+3000    5000    ivory             

@@ -1,0 +1,25 @@
+# NAME pressure_mb.colors
+# Phillips	11/13/2007
+# MIN    MAX    NAME        COLOR LABEL
+870 	880 	saddle brown 	!
+880 	890 	brown 	!
+890 	900 	indian red 	!
+900 	910 	rosy brown 	!
+910 	920 	tan 	!
+920 	930 	light goldenrod 	!
+930 	940 	dark khaki 	!
+940 	950 	dark sea green 	!
+950 	960 	medium sea green 	!
+960 	970 	olive drab 	!
+970 	980 	sea green 	!
+980 	990 	light sea green 	!
+990    1000 	cadet blue 	!
+1000   1010 	steel blue 	!
+1010   1020 	dodger blue 	!
+1020   1030 	royal blue 	!
+1030   1040 	medium blue 	!
+1040   1050 	medium slate blue 	!
+1050   1060 	slate blue 	!
+1060   1070 	dark slate blue 	!
+1070   1080 	navy 	!
+1080   1090 	midnight blue 	!

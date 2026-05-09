@@ -1,0 +1,34 @@
+# NAME sat_albedo
+
+# carson 7/31/1997   
+
+0       5       gray2
+5  	10 	gray4
+10 	15 	gray6
+15      20      gray8
+20 	25 	gray10
+25 	30 	gray12
+30 	35 	gray14
+35      40      gray16
+40      45      gray18
+45 	50 	gray20
+50      55      gray23
+55      60      gray26
+60      65      gray29
+65 	70 	gray32
+70 	75  	gray35
+75  	80  	gray38
+80  	85  	gray41
+85  	90  	gray44
+90 	95 	gray47
+95      100     gray50
+100     105     gray55
+105     110     gray60
+110     115     gray65
+115     120     gray70
+120     125     gray75
+125     130     gray80
+130     135     gray85
+135     140     gray90
+140     150     gray95
+150     255     gray99

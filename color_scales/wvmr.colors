@@ -1,0 +1,13 @@
+# NAME wvmr.colors
+# jaimi 	12/2/1998 14:18:5
+# MIN    MAX    NAME        COLOR LABEL
+0 	0.005 	navy 	!
+0.005 	0.01 	steel blue 	!
+0.01 	0.015 	cadet blue 	!
+0.015 	0.02 	dark sea green 	!
+0.02 	0.025 	sea green 	!
+0.025 	0.03 	olive drab 	!
+0.03 	0.035 	dark goldenrod 	!
+0.035 	0.04 	tan 	!
+0.04 	0.045 	rosy brown 	!
+0.045 	0.05 	brown 	!

@@ -1,0 +1,6 @@
+# NAME nawau_ice.colors
+# awdl 	1/6/1994 12:2:42
+#MIN     MAX     NAME        COLOR LABEL
+0 	1 	gray0 	!
+1 	2 	green 	!
+2 	3 	yellow 	!

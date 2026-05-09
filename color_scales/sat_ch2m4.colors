@@ -1,0 +1,24 @@
+# NAME sat_ch2m4
+
+# carson 7/31/1997   
+
+-10     -5      black 
+-5  	0  	gray5
+0 	5  	gray10
+5       10      gray20
+10 	15 	gray25
+15 	20 	gray30
+20 	25 	gray35
+25      30      gray40
+30      35      gray45
+35 	40 	gray50
+40      45      gray55
+45      50      gray60
+50      55      gray65
+55 	60 	gray70
+60 	65  	gray75
+65  	70  	gray80
+70  	75  	gray85
+75  	80  	gray90
+80 	85 	gray95
+85      90      snow

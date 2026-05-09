@@ -1,0 +1,43 @@
+# DVIL color scale for web display
+
+# Mike Dixon, June 1991
+# Rod Potts, Bureau of Meteorology, Aug 2005
+# *** Note Colors are BGR for Xvfb ***
+#
+
+#0	1	#005a00
+#1	2	#007000
+#2	3	#087fdb
+#3	4	#1c47e8
+#4	5	#6e0dc6
+#5	7	#c80f86
+#7	10	#c06487
+#10	20	#d2883b
+#20	30	#fac431
+#30	50	#fefa03
+#50	100	#fe9a58
+#100	200	#fe5f05
+#200	500	#fd341c
+#500	1000	#bbb
+#1000	2000	#eee
+
+0.5     5     #267f2d 
+5       10    #1ece2d 
+10      15    #5ad127 
+15      20    #99bf39 
+20      25    #f29154 
+25      30    #e5bc37 
+30      35    #a7bf8b 
+35      40    #12ccc5 
+40      45    #63ffff 
+45      50    #0eefe8 
+50	55    #0da7db 
+55      60    #3f559e 
+60      65    #03149b 
+65      70    #041756 
+70      75    #4b5372 
+75      80    #515c89 
+80      85    #8a8b8e 
+85      90    #b7bcbc 
+90      95    #cfd6d0 
+95     100    #ffffff

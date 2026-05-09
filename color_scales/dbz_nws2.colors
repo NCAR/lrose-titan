@@ -1,0 +1,21 @@
+# NAME dbzg.colors
+# pietrych 	8/8/1997 13:40:47
+# MIN    MAX    NAME        COLOR LABEL
+-15 	-10 	dim gray 	! 
+-10 	-5 	gray 	! 
+-5 	0 	gainsboro 	! 
+0 	5 	linen 	! 
+5 	10 	cyan 	! 
+10 	15 	deep sky blue 	! 
+15 	20 	blue 	! 
+20 	25 	green 	! 
+25 	30 	lime green 	! 
+30 	35 	forest green 	! 
+35 	40 	yellow 	! 
+40 	45 	gold2 	! 
+45 	50 	orange 	! 
+50 	55 	brown1 	! 
+55 	60 	red3 	! 
+60 	65 	brown 	! 
+65 	70 	magenta 	! 
+70 	75 	dark orchid 	! 

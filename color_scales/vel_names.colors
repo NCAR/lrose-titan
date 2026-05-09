@@ -1,0 +1,19 @@
+# NAME vel_names.colors
+# fhage 	6/9/1993 12:19:36
+-24 	-21 	DeepPink1	!Haul ASS
+-21 	-18 	maroon	!Haul'n
+-18 	-15 	dark orchid	!Crank'n
+-15 	-12 	blue	!Fly'n
+-12 	-9 	royal blue	!Cruis'n
+-9 	-6 	deep sky blue	!Windy
+-6 	-3 	medium spring green	!Breezy
+-3 	-1 	forest green	!Wisps
+-1 	1 	gray	!Calm
+1 	3 	tan2	!Wisps
+3 	6 	gold1	!Breezy
+6 	9 	yellow	!Windy
+9 	12 	salmon1	!Cruis'n
+12 	15 	tomato	!Fly'n
+15 	18 	brown1	!Crank'n
+18 	21 	red	!Haul'n
+21 	24 	firebric	!Haul ASS

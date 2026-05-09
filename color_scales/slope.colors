@@ -1,0 +1,22 @@
+# NAME slope.colors
+# jaimi 	1/29/1998 13:57:25
+# MIN    MAX    NAME        COLOR LABEL
+0 	0.1 	 	!
+0.1 	0.2 	navy 	! 
+0.2 	0.3 	medium blue 	! 
+0.3 	0.4 	royal blue 	! 
+0.4 	0.5 	dodger blue 	! 
+0.5 	0.6 	medium slate blue 	! 
+0.6 	0.7 	light steel blue 	! 
+0.7 	0.8 	gold 	! 
+0.8 	0.9 	dark khaki 	! 
+0.9 	1 	khaki 	! 
+1 	2 	goldenrod 	! 
+2 	3 	dark goldenrod 	! 
+3 	4 	dark khaki 	! 
+4 	5 	yellow green 	! 
+5 	6 	olive drab 	! 
+6 	7 	forest green 	! 
+7 	8 	sea green 	! 
+8 	9 	dark olive green 	! 
+9 	10 	dark green 	! 

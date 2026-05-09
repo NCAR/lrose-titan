@@ -1,0 +1,15 @@
+# NAME af_ice.colors
+
+# awdl 	1/13/1994 16:57:14
+
+MIN     MAX     NAME        COLOR LABEL
+
+0 	1 	gray0 	!
+1 	2 	medium blue 	!
+2 	3 	SpringGreen4 	!
+3 	4 	green 	!
+4 	5 	yellow 	!
+5 	6 	DeepPink1 	!
+6 	7 	red 	!
+7 	8 	salmon 	! 
+8 	9 	PeachPuff2 	! 

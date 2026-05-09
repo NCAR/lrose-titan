@@ -1,0 +1,28 @@
+# mixing ratio
+
+0	1	dodgerblue3
+1	2	royalblue3
+2	3	blue
+3    	4    	mediumblue
+4    	5    	navyblue
+5    	6    	midnightblue
+6    	7     	dimgray
+7       8     	slategray
+8     	9     	seagreen
+9     	10     	forestgreen
+10     	12     	olivedrab
+12      14     	yellowgreen
+14	16	Gold3
+16 	18 	gold
+18	20	yellow
+20	22 	orange
+22 	24 	coral
+24      26      tomato
+26      28      firebrick1
+28 	30	OrangeRed
+30 	32 	Red
+32 	34 	DeepPink
+34	36	Maroon1
+36      38      HotPink
+38	99	Pink
+

@@ -1,0 +1,28 @@
+# NAME elev30.colors
+
+-1.	0.0	dodgerblue3
+0.0	0.5	royalblue3
+0.5	1.0	blue
+1.0     1.5      mediumblue
+1.5     2.0      navyblue
+2.0     2.5      midnightblue
+2.5     3.0      dimgray
+3.0     3.5      slategray
+3.5     4.0      seagreen
+4.0     4.5      forestgreen
+4.5     5.0      olivedrab
+5.0     6.0      yellowgreen
+6.0	7.0      Gold3
+7.0     8.0 	gold
+8.0	9.0      yellow
+9.0	10.      orange
+10.	11.      coral
+11.     12.      tomato
+12.     14.      firebrick1
+14.	16.      OrangeRed
+16.	18.      Red
+18.     20. 	DeepPink
+20.	23.      Maroon1
+23.     26.      HotPink
+26.	30	Pink
+

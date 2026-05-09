@@ -1,0 +1,28 @@
+# NAME ruc_epot.colors
+#
+# petach 6/21/1999
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+280 	285 	midnight blue 	!
+285 	290 	blue4 	!
+290 	295 	medium blue 	!
+295 	300 	royal blue 	!
+300 	305 	cyan 	!
+305 	310 	aquamarine 	!
+310 	315 	medium spring green 	!
+315 	320 	SpringGreen3 	!
+320 	325 	forest green 	!
+325 	330 	green yellow 	!
+330 	335 	yellow3 	!
+335 	340 	yellow2 	!
+340 	345 	yellow 	!
+345 	350 	gold 	!
+350 	355 	orange 	!
+355 	360 	coral 	!
+360 	365 	tomato 	!
+365 	370 	red 	!
+370 	375 	brown2 	!
+375 	380 	red3 	!

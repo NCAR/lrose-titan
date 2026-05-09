@@ -1,0 +1,19 @@
+# NAME ltgextent.colors
+
+0	1	black
+1       2       pale turquoise
+2       3       cyan
+3       4       deep sky blue
+4       5       cornflowerBlue
+5       6       blue
+6       7       green1
+7       8       green3
+8       9       green4
+9       10      yellow
+10      12      gold
+12      14      DarkOrange
+14      16      OrangeRed
+16      20      red
+20      24      firebrick4
+24      28      magenta
+28      100     purple

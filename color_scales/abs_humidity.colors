@@ -1,0 +1,25 @@
+# absolute humidity colors - g/m3
+#MIN     MAX     NAME        COLOR LABEL
+0.0 	0.2 	midnight blue 	
+0.2 	0.5 	medium blue 	
+0.5 	1.0 	blue 	
+1.0 	1.5 	royal blue 	
+1.5 	2.0 	SpringGreen4 	
+2.0 	2.5 	dark green 	
+2.5 	3.0 	dark olive green 	
+3.0 	3.5 	sienna 	
+3.5	4.0 	saddle brown 	
+4.0 	4.5 	DarkOrange3 	
+4.5 	5.0 	peru 	
+5.0 	6   	tan2 	
+6 	7   	goldenrod 	
+7 	8   	goldenrod1 	
+8 	9   	HotPink4 	
+9 	10  	VioletRed4 	
+10 	12  	maroon 	
+12 	15  	hot pink 	
+15 	20  	DeepPink1 	
+20 	25  	PaleVioletRed3 	
+25 	30  	dark salmon 	
+30 	40  	salmon 	
+40 	100 	snow 	

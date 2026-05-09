@@ -1,0 +1,30 @@
+# NAME 26categories.colors
+# kessinge 	5/23/2002 13:54:29
+# MIN    MAX    NAME        COLOR LABEL
+26.5    27.5    seashell3        !n/a
+25.5    26.5    gray4            !Clr
+24.5    25.5    gray98           !Sn
+23.5    24.5    RoyalBlue3       !CuOpn
+22.5    23.5    VioletRed4       !Mix
+21.5    22.5    red              !DC
+20.5    21.5    dark orange      !ThckH
+19.5    20.5    khaki1           !ThinH
+18.5    19.5    OliveDrab4       !Mid
+17.5    18.5    PaleVioletRed3   !CuC
+16.5    17.5    DodgerBlue2      !Low
+15.5    16.5    seashell3        !n/a
+14.5    15.5    pink             !Sg
+13.5    14.5    light slate blue !Hz
+12.5    13.5    gray98           !Sn
+11.5    12.5    gray4            !Clr
+10.5    11.5    red              !Cb
+9.5     10.5    VioletRed4       !CsAn
+8.5     9.5     PaleVioletRed3   !CuC
+7.5     8.5     dark orange      !Cs
+6.5     7.5     gold1            !Cc
+5.5     6.5     khaki1           !Ci
+4.5     5.5     OliveDrab4       !As
+3.5     4.5     OliveDrab3       !Ac
+2.5     3.5     RoyalBlue3       !Cu
+1.5     2.5     DodgerBlue2      !Sc
+0.5     1.5     LightSkyBlue1    !St

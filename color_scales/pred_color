@@ -1,0 +1,20 @@
+# mit_storm_filter predictability parameter color scale
+
+# Nancy Rehak, July 1998
+
+0.01    20      dark slate blue
+20	40	#005a00
+40	60	#007000
+60	80	#087fdb
+80	100	#1c47e8
+100	120	#6e0dc6
+120	140	#c80f86
+140	160	#c06487
+160	180	#d2883b
+180	200	#fac431
+200	220	#fefa03
+220	240	#fe9a58
+240	260	#fe5f05
+260	280	#fd341c
+280	300	gray
+300	1000	light gray

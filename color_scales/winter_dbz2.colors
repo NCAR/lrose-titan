@@ -1,0 +1,23 @@
+# NAME winter_dbz2.colors
+# awdl 	1/26/1994 8:23:17
+# MIN    MAX    NAME        COLOR LABEL
+-16 	-12 	saddle brown 	!
+-12 	-8 	peru 	! 
+-8 	-4 	dark slate gray 	!
+-4 	-1 	dark olive green 	!
+0 	2 	dark green 	!
+2 	5 	forest green 	!
+5 	8 	lime green 	!
+8 	11 	medium spring green 	!
+11 	14 	light sea green 	!
+14 	17 	royal blue 	!
+17 	20 	dark slate blue 	!
+20 	23 	DeepPink4 	!
+23 	26 	firebrick 	!
+26 	29 	red3 	!
+29 	32 	red 	!
+32 	35 	dark orange 	!
+35 	38 	orange 	!
+38 	41 	goldenrod1 	!
+41 	44 	yellow 	!
+44 	47 	snow 	!

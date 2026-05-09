@@ -1,0 +1,21 @@
+# NAME ruc_precip.colors
+#
+# Megenhardt 8/8/2002
+#
+# low values are cool colors,
+# high values are hot colors
+#
+#MIN	MAX     NAME        COLOR LABEL
+.01 	.05 	cyan 	!
+.05 	.1 	aquamarine 	!
+.1 	.2 	medium spring green 	!
+.2 	.3 	SpringGreen3 	!
+.3 	.4 	forest green 	!
+.4 	.5 	yellow 	!
+.5 	.75 	gold 	!
+.75 	1.0 	orange 	!
+1. 	1.5 	coral 	!
+1.5 	2.0 	red 	!
+2.0 	3.0 	brown2 	!
+3.0 	4.0 	DeepPink2	!
+4.0 	10.0 	MistyRose1	!

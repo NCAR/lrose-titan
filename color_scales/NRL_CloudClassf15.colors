@@ -1,0 +1,19 @@
+# NAME 15categories.colors
+# kessinge 	5/23/2002 13:54:29
+# MIN    MAX    NAME        COLOR LABEL
+15.5 	20.5 	seashell3 	 !Bad 
+13.5 	14.5 	pink 		 !Sg 
+12.5 	13.5 	light slate blue !Hz 
+13.5 	0 	gray98 		 !Sn 
+11.5 	12.5 	gray4 		 !Clr 
+9.5 	10.5 	red 		 !Cb 
+10.5 	11.5 	VioletRed4 	 !Clr 
+5.5 	6.5 	PaleVioletRed3 	 !CuC 
+2.5 	3.5 	salmon1 	 !Ac 
+1.5 	2.5 	goldenrod1 	 !Cc 
+0.5 	1.5 	khaki1 		 !Sc 
+4.5 	5.5 	forest green 	 !As 
+3.5 	4.5 	yellow green 	 !Ac 
+8.5 	9.5 	blue1 		 !CsAn 
+6.5 	7.5 	DeepSkyBlue3 	 !Cs 
+7.5 	8.5 	LightSkyBlue1 	 !St 

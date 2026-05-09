@@ -1,0 +1,27 @@
+# Colorscale for vert Temperature contours highlighted at 0.0
+-80	-75	red
+-75	-70	red
+-70	-65	red
+-65	-60	red
+-60	-55	red
+-55	-50	red
+-50	-45	red
+-45	-40	red
+-40	-35	red
+-35	-30	red
+-30	-25	red
+-25	-20	red
+-20	-15	red
+-15	-10	red
+-10	-5	red
+-5	0	red
+0	5	yellow
+5	10	red
+10	15	red
+15	20	red
+20	25	red
+25	30	red
+30	35	red
+35	40	red
+40	45	red
+45	50	red

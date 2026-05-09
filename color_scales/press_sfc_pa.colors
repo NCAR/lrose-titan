@@ -1,0 +1,24 @@
+# NAME press_sfc_pa.colors
+
+50000	50250 	saddle brown
+50250	50500 	brown
+50500	50750 	indian red
+50750 	60000 	rosy brown
+60000 	60250 	tan
+60250 	60500 	light goldenrod
+60500 	60750 	dark khaki
+60750 	70000 	dark sea green
+70000 	70250 	medium sea green
+70250 	70500 	olive drab
+70500 	70750 	sea green
+70750 	80000 	light sea green
+80000	80250 	cadet blue
+80250 	80500 	steel blue
+80500 	80750 	dodger blue
+80750 	90000 	royal blue
+90000 	90250 	medium blue
+90250 	90500 	medium slate blue
+90500 	90750 	slate blue
+90750 	100000	dark slate blue
+100000	104900 	navy
+105000 	110000 	midnight blue

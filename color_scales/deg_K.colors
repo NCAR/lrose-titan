@@ -1,0 +1,32 @@
+# NAME deg_K.colors - matches Deg_C.colors.
+# fhage 	4/5/2004 15:43:14
+# MIN    MAX    NAME        COLOR LABEL
+150 	195 	azure1 	!
+195 	200 	PaleTurquoise1 	!
+200 	205 	turquoise1 	!
+205 	210 	deep sky blue 	!
+210 	215 	dodger blue 	!
+215 	220 	blue1 	!
+220 	225 	blue3 	!
+225 	230 	midnight blue 	!
+230 	235 	dark green 	!
+235 	240 	dark olive green 	!
+240 	245 	SpringGreen4 	!
+245 	250 	SpringGreen3 	!
+250 	255 	spring green 	!
+255 	260 	pale green 	!
+260 	265 	DarkOliveGreen1 	!
+265 	270 	khaki1 	!
+270 	275 	yellow 	!
+275 	280 	yellow2 	!
+280 	285 	gold 	!
+285 	290 	orange 	!
+290 	295 	dark orange 	!
+295 	300 	orange red 	!
+300 	305 	red 	!
+305 	310 	red3 	!
+310 	315 	maroon 	!
+315 	320 	violet red 	!
+320 	325 	deep pink 	!
+325 	330 	magenta 	!
+330 	350 	PaleVioletRed1 	!

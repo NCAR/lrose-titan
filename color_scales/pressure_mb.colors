@@ -1,0 +1,25 @@
+# NAME pressure_mb.colors
+# jaimi 	12/2/1998 13:20:33
+# MIN    MAX    NAME        COLOR LABEL
+-1 	49 	saddle brown 	!
+49 	99 	brown 	!
+99 	149 	indian red 	!
+149 	199 	rosy brown 	!
+199 	249 	tan 	!
+249 	299 	light goldenrod 	!
+299 	349 	dark khaki 	!
+349 	399 	dark sea green 	!
+399 	449 	medium sea green 	!
+449 	499 	olive drab 	!
+499 	549 	sea green 	!
+549 	599 	light sea green 	!
+599 	649 	cadet blue 	!
+649 	699 	steel blue 	!
+699 	749 	dodger blue 	!
+749 	799 	royal blue 	!
+799 	849 	medium blue 	!
+849 	899 	medium slate blue 	!
+899 	949 	slate blue 	!
+949 	999 	dark slate blue 	!
+999 	1049 	navy 	!
+1049 	1099 	midnight blue 	!

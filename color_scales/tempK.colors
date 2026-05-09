@@ -1,0 +1,31 @@
+# NAME tempK.colors
+#
+
+000     200     black
+200     205 	DarkSlateGray1
+205     210 	SkyBlue1
+210     215     deep sky blue     
+215     220     medium slate blue 
+220     225     slate blue        
+225     230     blue4            
+230     235     MediumPurple4    
+235     240     DarkOrchid4      
+240     245     MediumOrchid4    
+245     250     dark orchid      
+250     255     purple           
+255     260     hot pink          
+260     265     pink        
+265     270	DarkOrchid4
+270     275	RoyalBlue4
+275     280     gray
+280     285     SpringGreen2
+285     290 	SpringGreen3
+290     295 	SpringGreen4
+295     300 	yellow1
+300     305 	yellow3
+305	310 	gold1
+310	315 	DarkGoldenrod1
+315	320 	orange
+320	325 	sienna1
+325	330 	coral1
+330	350 	red1

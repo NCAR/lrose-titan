@@ -1,0 +1,27 @@
+# NAME optical depth
+
+00      02	dodgerblue3
+02      04	royalblue3
+04      06	blue
+06      08      mediumblue
+08      10      navyblue
+10      11      midnightblue
+11      12      dimgray
+12      13      slategray
+13      14      seagreen
+14      15      forestgreen
+15      16      olivedrab
+16      17      yellowgreen
+17      18      Gold3
+18      19  	gold
+19      20	yellow
+20      21 	orange
+21      22 	coral
+22      23      tomato
+23      24      firebrick1
+24      25	OrangeRed
+25      26 	Red
+26      27 	DeepPink
+27      28	Maroon1
+28      29      HotPink
+29	99	Pink

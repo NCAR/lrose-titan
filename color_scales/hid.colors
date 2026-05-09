@@ -1,0 +1,15 @@
+# number color scale for CSU HID algorithm
+
+# Stacy Brodzik, June 2016
+
+-0.5	0.5	#d1d0b8    !unclassified
+0.5	1.5	#fed89a	   !drizzle
+1.5	2.5	#fe9605	   !rain
+2.5	3.5	#cd770f	   !ice-crystals
+3.5     4.5     #4edfff	   !dry-snow
+4.5     5.5     #6394f0	   !wet-snow
+5.5     6.5     #5f54c5	   !vert-ice
+6.5     7.5     #1fa51f	   !graupel-ld
+7.5     8.5     #0e8d0f	   !graupel-hd
+8.5     9.5     #fbfb2f	   !hail
+9.5    10.5     #ff2f2f	   !big-drops

@@ -1,0 +1,9 @@
+# gray scale for lightning strikes
+
+# Nancy Rehak, January 1997
+
+0	20	gray85
+20	30	gray70
+30	40      gray55
+40	80	gray30
+

@@ -1,0 +1,9 @@
+# PID color scale
+
+-1200   0       #d1d0b8    !missing
+0       1.0e7   #cd770f    !flag1
+1.0e7   2.0e7   #ff2f2f    !flag2
+2.0e7   3.0e7   #fbfb2f    !flag3
+3.0e7   4.0e7   #5f54c5    !flag4
+4.0e7   5.0e7   #ffffff    !flag5
+

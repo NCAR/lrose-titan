@@ -1,0 +1,185 @@
+<ColorScale id="chaseSpectral_xml.colors" gradation="linear" saturation="1.0" labelsSetByValue="true">
+  <Range min="-10" max="auto" color="0.0024915873186305442, 0.0, 0.012384975743134028" />
+  <Range min="auto" max="auto" color="0.02623110806901681, 0.019251356529242557, 0.04099719565992822" />
+  <Range min="auto" max="auto" color="0.059897098550817304, 0.04881754311797988, 0.08016404462664348" />
+  <Range min="auto" max="auto" color="0.08411030440442105, 0.07162630570115641, 0.11060885762401704" />
+  <Range min="auto" max="auto" color="0.10266153897601116, 0.08930515654768977, 0.14121456465739038" />
+  <Range min="auto" max="auto" color="0.12204930216132825, 0.10527029471923201, 0.17295407120040976" />
+  <Range min="auto" max="auto" color="0.14170779322661958, 0.12153155201199574, 0.20557352620593694" />
+  <Range min="auto" max="auto" color="0.16163206535297733, 0.13808406448319238, 0.23901583671001958" />
+  <Range min="auto" max="auto" color="0.18181983100677665, 0.15491562217923088, 0.2732302777616876" />
+  <Range min="auto" max="auto" color="0.19542233704789766, 0.16628550253074137, 0.29644516096860124" />
+  <Range min="auto" max="auto" color="0.21602930692396533, 0.18354637387824035, 0.3318208533881044" />
+  <Range min="auto" max="auto" color="0.23688151265700436, 0.20105205851083394, 0.36784629516014855" />
+  <Range min="auto" max="auto" color="0.2579730672044294, 0.2187930414951371, 0.40448865024038244" />
+  <Range min="auto" max="auto" color="0.2792980925984929, 0.2367605958643245, 0.44171864815856077" />
+  <Range min="auto" max="auto" color="0.30085474725300154, 0.254950433700364, 0.4795195573107834" />
+  <Range min="auto" max="auto" color="0.32263462692580464, 0.27335243106992085, 0.5178606098081753" />
+  <Range min="auto" max="auto" color="0.3446306103627299, 0.29195884400891425, 0.5567153804989767" />
+  <Range min="auto" max="auto" color="0.3594043963309351, 0.3044791642595126, 0.582878291666509" />
+  <Range min="auto" max="auto" color="0.3814893022266727, 0.32358123429569186, 0.6222074325716378" />
+  <Range min="auto" max="auto" color="0.40089137050020085, 0.3444407908983317, 0.6596980814115556" />
+  <Range min="auto" max="auto" color="0.4073991635255843, 0.3715173073372612, 0.690727084451002" />
+  <Range min="auto" max="auto" color="0.3898529834270127, 0.40749169908286365, 0.7129290556351471" />
+  <Range min="auto" max="auto" color="0.3542800460604907, 0.4471810391794282, 0.7291243736996367" />
+  <Range min="auto" max="auto" color="0.31144075013692146, 0.48611606120236794, 0.7412713589927521" />
+  <Range min="auto" max="auto" color="0.27135857341915376, 0.5230564094804628, 0.7470505142683564" />
+  <Range min="auto" max="auto" color="0.2539564429774965, 0.5466284692221874, 0.7435207175560191" />
+  <Range min="auto" max="auto" color="0.2520496737629422, 0.5806553968179421, 0.7227129816280311" />
+  <Range min="auto" max="auto" color="0.27052473400242827, 0.6132445955432781, 0.690557097489508" />
+  <Range min="auto" max="auto" color="0.29552143841510303, 0.6446982610452021, 0.6556063119576511" />
+  <Range min="auto" max="auto" color="0.3244361487784338, 0.6748928754675415, 0.6222357592283574" />
+  <Range min="auto" max="auto" color="0.3630859900606315, 0.7024904246584021, 0.5990184242250924" />
+  <Range min="auto" max="auto" color="0.41415477027214337, 0.7268667728809666, 0.5895187536506837" />
+  <Range min="auto" max="auto" color="0.4706051694153832, 0.7493812309749184, 0.5867704189854793" />
+  <Range min="auto" max="auto" color="0.5082075975421396, 0.7640187818450357, 0.5858519493737525" />
+  <Range min="auto" max="auto" color="0.5636532385476835, 0.7857190949301582, 0.5839544253243425" />
+  <Range min="auto" max="auto" color="0.6178078984126563, 0.8073698080400541, 0.5797094140490656" />
+  <Range min="auto" max="auto" color="0.6699529585373699, 0.8292144004843564, 0.5730894410513533" />
+  <Range min="auto" max="auto" color="0.7208489124023394, 0.8511047107245737, 0.5652111898989551" />
+  <Range min="auto" max="auto" color="0.770962734131975, 0.8728780095360219, 0.558149710978683" />
+  <Range min="auto" max="auto" color="0.8184983201561704, 0.8946860105022193, 0.5590607366444977" />
+  <Range min="auto" max="auto" color="0.861118322538546, 0.9167581865389627, 0.5781404267878386" />
+  <Range min="auto" max="auto" color="0.8866944207061425, 0.9316958034552827, 0.6012456265076893" />
+  <Range min="auto" max="auto" color="0.9226777332892258, 0.9543424609317221, 0.6441177638078684" />
+  <Range min="auto" max="auto" color="0.9583815798741145, 0.9770136696379067, 0.6887203693617854" />
+  <Range min="auto" max="auto" color="0.9922435650751389, 0.9959331080133342, 0.7242800782669195" />
+  <Range min="auto" max="auto" color="0.9863392783651502, 0.9712076285617534, 0.7036691181888547" />
+  <Range min="auto" max="auto" color="0.9736857334851521, 0.9356258936562878, 0.6581386637107829" />
+  <Range min="auto" max="auto" color="0.9622328938890369, 0.9000106899759703, 0.6068701207301166" />
+  <Range min="auto" max="auto" color="0.9511289026585478, 0.8641969827561542, 0.5556135420648503" />
+  <Range min="auto" max="auto" color="0.9449511030465213, 0.8397379751166396, 0.5230642052863329" />
+  <Range min="auto" max="auto" color="0.9388598081386549, 0.8014712413857253, 0.47923106706068663" />
+  <Range min="auto" max="auto" color="0.9360714138972375, 0.7612878230185812, 0.4414087078834195" />
+  <Range min="auto" max="auto" color="0.9346274332520993, 0.7198700522771461, 0.4060133016452229" />
+  <Range min="auto" max="auto" color="0.9329682508593181, 0.6777328867341995, 0.3715560052927781" />
+  <Range min="auto" max="auto" color="0.9315233702105231, 0.6343795314992845, 0.34043292908785505" />
+  <Range min="auto" max="auto" color="0.9306781172840793, 0.5891842063566682, 0.31557634575425303" />
+  <Range min="auto" max="auto" color="0.9294131035342146, 0.5423583445302147, 0.29508833891469677" />
+  <Range min="auto" max="auto" color="0.9280978642269457, 0.5101708088621424, 0.28193364106351043" />
+  <Range min="auto" max="auto" color="0.9246350521726708, 0.4607887852061771, 0.26278823632917914" />
+  <Range min="auto" max="auto" color="0.9157630793148334, 0.41227779522792657, 0.2491689429622002" />
+  <Range min="auto" max="auto" color="0.898247490993947, 0.3676901028943306, 0.24766793982240232" />
+  <Range min="auto" max="auto" color="0.8743255518290934, 0.326408620167937, 0.2549546362555558" />
+  <Range min="auto" max="auto" color="0.8477829447023825, 0.28572476622108217, 0.2636535949626446" />
+  <Range min="auto" max="auto" color="0.8199139277760031, 0.24416295846914596, 0.27147838234263827" />
+  <Range min="auto" max="auto" color="0.7901685401568179, 0.2021193638535799, 0.2767143354945485" />
+  <Range min="auto" max="auto" color="0.768859409413016, 0.17449487006145867, 0.2777455307567396" />
+  <Range min="auto" max="auto" color="0.734698587264087, 0.1337722034916666, 0.2764641975670299" />
+  <Range min="auto" max="auto" color="0.6979244247277436, 0.09344273269531651, 0.27348835443978675" />
+  <Range min="auto" max="auto" color="0.6578648286590381, 0.05336516500713818, 0.2744693004271668" />
+  <Range min="auto" max="auto" color="0.6145831747042363, 0.010192201714102823, 0.290422602572537" />
+  <Range min="auto" max="auto" color="0.6327041871440807, 0.06681815476928753, 0.35554857843528104" />
+  <Range min="auto" max="auto" color="0.6874803401632522, 0.11546206343047799, 0.4219022218269434" />
+  <Range min="auto" max="auto" color="0.7489143936573677, 0.1503388516905584, 0.47605329370848215" />
+  <Range min="auto" max="auto" color="0.7874041303314854, 0.17886012417158031, 0.5110248432162805" />
+  <Range min="auto" max="auto" color="0.8328617509720748, 0.23906533628827453, 0.5633413836919466" />
+  <Range min="auto" max="auto" color="0.8604638217631846, 0.31514152994902567, 0.6123411593015933" />
+  <Range min="auto" max="auto" color="0.8758588661058305, 0.3942303411683103, 0.6551369512108824" />
+  <Range min="auto" max="auto" color="0.8857407377889457, 0.46952148823240936, 0.6955606216107288" />
+  <Range min="auto" max="auto" color="0.8877354781179313, 0.5423273702783107, 0.7454744114672388" />
+  <Range min="auto" max="auto" color="0.8662530585324326, 0.6077807172395997, 0.8095789785308792" />
+  <Range min="auto" max="auto" color="0.767259204500133, 0.5782306857976662, 0.7955475236920502" />
+  <Range min="auto" max="auto" color="0.7103667671518434, 0.5349647879896255, 0.7667396941071299" />
+  <Range min="auto" max="auto" color="0.6527511605758141, 0.4601939921547219, 0.7175907894467176" />
+  <Range min="auto" max="auto" color="0.6063360549070635, 0.38064081342779177, 0.6672076672360139" />
+  <Range min="auto" max="auto" color="0.5590900516001845, 0.30067978552319513, 0.6144830879689864" />
+  <Range min="auto" max="auto" color="0.5039401095596162, 0.2253765074026634, 0.5548348493779544" />
+  <Range min="auto" max="auto" color="0.4383936011811051, 0.15940535323079474, 0.4863558140576434" />
+  <Range min="auto" max="auto" color="0.36761143308836763, 0.09968019306715861, 0.4135930943118996" />
+  <Range min="auto" max="auto" color="0.29776310393752564, 0.0349162568707488, 0.3426565528942769" />
+  <Range min="auto" max="80" color="0.25355038739927205, 0.0, 0.29884244295140205" />
+
+
+<Label value="-10.0" text="-10"/>
+<Label value="-9.0" text="-9"/>
+<Label value="-8.0" text="-8"/>
+<Label value="-7.0" text="-7"/>
+<Label value="-6.0" text="-6"/>
+<Label value="-5.0" text="-5"/>
+<Label value="-4.0" text="-4"/>
+<Label value="-3.0" text="-3"/>
+<Label value="-2.0" text="-2"/>
+<Label value="-1.0" text="-1"/>
+<Label value="0.0" text="0"/>
+<Label value="1.0" text="1"/>
+<Label value="2.0" text="2"/>
+<Label value="3.0" text="3"/>
+<Label value="4.0" text="4"/>
+<Label value="5.0" text="5"/>
+<Label value="6.0" text="6"/>
+<Label value="7.0" text="7"/>
+<Label value="8.0" text="8"/>
+<Label value="9.0" text="9"/>
+<Label value="10.0" text="10"/>
+<Label value="11.0" text="11"/>
+<Label value="12.0" text="12"/>
+<Label value="13.0" text="13"/>
+<Label value="14.0" text="14"/>
+<Label value="15.0" text="15"/>
+<Label value="16.0" text="16"/>
+<Label value="17.0" text="17"/>
+<Label value="18.0" text="18"/>
+<Label value="19.0" text="19"/>
+<Label value="20.0" text="20"/>
+<Label value="21.0" text="21"/>
+<Label value="22.0" text="22"/>
+<Label value="23.0" text="23"/>
+<Label value="24.0" text="24"/>
+<Label value="25.0" text="25"/>
+<Label value="26.0" text="26"/>
+<Label value="27.0" text="27"/>
+<Label value="28.0" text="28"/>
+<Label value="29.0" text="29"/>
+<Label value="30.0" text="30"/>
+<Label value="31.0" text="31"/>
+<Label value="32.0" text="32"/>
+<Label value="33.0" text="33"/>
+<Label value="34.0" text="34"/>
+<Label value="35.0" text="35"/>
+<Label value="36.0" text="36"/>
+<Label value="37.0" text="37"/>
+<Label value="38.0" text="38"/>
+<Label value="39.0" text="39"/>
+<Label value="40.0" text="40"/>
+<Label value="41.0" text="41"/>
+<Label value="42.0" text="42"/>
+<Label value="43.0" text="43"/>
+<Label value="44.0" text="44"/>
+<Label value="45.0" text="45"/>
+<Label value="46.0" text="46"/>
+<Label value="47.0" text="47"/>
+<Label value="48.0" text="48"/>
+<Label value="49.0" text="49"/>
+<Label value="50.0" text="50"/>
+<Label value="51.0" text="51"/>
+<Label value="52.0" text="52"/>
+<Label value="53.0" text="53"/>
+<Label value="54.0" text="54"/>
+<Label value="55.0" text="55"/>
+<Label value="56.0" text="56"/>
+<Label value="57.0" text="57"/>
+<Label value="58.0" text="58"/>
+<Label value="59.0" text="59"/>
+<Label value="60.0" text="60"/>
+<Label value="61.0" text="61"/>
+<Label value="62.0" text="62"/>
+<Label value="63.0" text="63"/>
+<Label value="64.0" text="64"/>
+<Label value="65.0" text="65"/>
+<Label value="66.0" text="66"/>
+<Label value="67.0" text="67"/>
+<Label value="68.0" text="68"/>
+<Label value="69.0" text="69"/>
+<Label value="70.0" text="70"/>
+<Label value="71.0" text="71"/>
+<Label value="72.0" text="72"/>
+<Label value="73.0" text="73"/>
+<Label value="74.0" text="74"/>
+<Label value="75.0" text="75"/>
+<Label value="76.0" text="76"/>
+<Label value="77.0" text="77"/>
+<Label value="78.0" text="78"/>
+<Label value="79.0" text="79"/>
+<Label value="80.0" text="80"/>
+</ColorScale>

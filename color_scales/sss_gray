@@ -1,0 +1,13 @@
+# SSS index gray scale
+
+# Mike Dixon, Spet 2003
+
+0.1	1.1	gray20
+1.1	2.1	gray50
+2.1	3.1	gray80
+3.1	4.1	gray30
+4.1	5.1	gray60
+5.1	6.1	gray90
+6.1	7.1	gray40
+7.1	8.1     gray70
+8.1	9.1	gray99
