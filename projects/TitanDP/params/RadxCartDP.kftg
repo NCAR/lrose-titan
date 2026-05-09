@@ -4,14 +4,31 @@
 
 //======================================================================
 //
-// RadxCartDP reads radar fields in polar coordinates, radar beam 
-//   blockage, and model data in Cartesian coordinates. It computes KDP, 
-//   PID and precip rate, interpolates onto a Cartesian grid, estimates 
-//   QPE at the surface, and writes out the results to Cartesian files in 
-//   MDV NetCDF files.
+// RadxCartDP reads radar fields in polar coordinates, derives 
+//   dual-polarization-based fields in 3D Cartesian coordinates, and 
+//   writes out a 3D Cartesian file in MDV CF-NetCDF format.
 //
-// The output is written to Cartesian files in CF-compliant NetCDF 
-//   format.
+// RadxCartDP peforms the following:
+//
+//  * Reads in dual-polarization data in polar coords.
+//
+//  * Computes KDP and texture-based feature fields in polar coords.
+//
+//  * Interpolates those fields onto a 3D Cartesian grid.
+//
+//  * Reads model data and interpolates onto the 3D grid.
+//
+//  * Computes PID and precip rate on the 3D grid.
+//
+//  * Reads in terrain height (DEM) data and interpolates onto the 2D 
+//   grid.
+//
+//  * Estimates beam blockage fraction for each point in the 3D grid.
+//
+//  * Computes QPE from the 3D precipitation rate, the terrain height 
+//   and beam blockage.
+//
+//  * Computes the 3D convective/stratiform partition.
 //
 //======================================================================
  
@@ -38,7 +55,7 @@ debug = DEBUG_OFF;
 
 //======================================================================
 //
-// RADAR DATA INPUT DIRECTORY and INPUT MODE.
+// RADAR DATA INPUT.
 //
 //======================================================================
  
@@ -74,7 +91,7 @@ radar_input_dir = "$(HOME)/data/pecan/cfradial/kftg/moments";
 //     ARCHIVE
 //     REALTIME
 
-radar_input_mode = FILELIST;
+radar_input_mode = ARCHIVE;
 
 ///////////// radar_max_realtime_data_age_secs ////////
 //
@@ -134,12 +151,14 @@ end_time = "2015 06 26 00 15 00";
 //
 //======================================================================
  
-///////////// radar_field_names ///////////////////////
+///////////// radar_fields ////////////////////////////
 //
-// Converts field type to strings.
+// Details of available radar fields. Exactly one of each field type 
+//   must be present.
 //
-// If input_name is empty the field is assumed to not exist in the input 
-//   data set.
+// 'is_available' specifies whether the field is available in the input 
+//   file. 'do_write' specifies wiether to write the field in the output 
+//   data set. You can rename the field on output.
 //
 // Type: struct
 //   typedef struct {
@@ -150,78 +169,109 @@ end_time = "2015 06 26 00 15 00";
 //          WIDTH
 //          SNR
 //          ZDR
-//          LDR
 //          PHIDP
 //          RHOHV
 //          KDP
+//          LDR
+//      boolean is_available;
 //      string input_name;
+//      boolean do_write;
 //      string output_name;
 //   }
 //
-// 1D array - fixed length - 9 elements.
+// 1D array - variable length.
 
-radar_field_names = {
+radar_fields = {
   {
     field_type = DBZ,
+    is_available = TRUE,
     input_name = "DBZ",
+    do_write = TRUE,
     output_name = "DBZ"
   }
   ,
   {
     field_type = VEL,
+    is_available = TRUE,
     input_name = "VEL",
+    do_write = TRUE,
     output_name = "VEL"
   }
   ,
   {
     field_type = WIDTH,
+    is_available = TRUE,
     input_name = "WIDTH",
+    do_write = TRUE,
     output_name = "WIDTH"
   }
   ,
   {
     field_type = SNR,
-    input_name = "",
+    is_available = FALSE,
+    input_name = "SNR",
+    do_write = TRUE,
     output_name = "SNR"
   }
   ,
   {
     field_type = ZDR,
+    is_available = TRUE,
     input_name = "ZDR",
+    do_write = TRUE,
     output_name = "ZDR"
   }
   ,
   {
-    field_type = LDR,
-    input_name = "",
-    output_name = "LDR"
-  }
-  ,
-  {
     field_type = PHIDP,
+    is_available = TRUE,
     input_name = "PHIDP",
+    do_write = TRUE,
     output_name = "PHIDP"
   }
   ,
   {
     field_type = RHOHV,
+    is_available = TRUE,
     input_name = "RHOHV",
+    do_write = TRUE,
     output_name = "RHOHV"
   }
   ,
   {
     field_type = KDP,
-    input_name = "",
+    is_available = FALSE,
+    input_name = "KDP",
+    do_write = TRUE,
     output_name = "KDP"
+  }
+  ,
+  {
+    field_type = LDR,
+    is_available = FALSE,
+    input_name = "LDR",
+    do_write = FALSE,
+    output_name = "LDR"
   }
 };
 
+///////////// estimate_snr_from_dbz ///////////////////
+//
+// Option to estimate SNR from DBZ field.
+//
+// If true, we estimate the SNR field from DBZ, using 
+//   'noise_dbz_at_100km' adjusted for range.
+//
+// Type: boolean
+
+estimate_snr_from_dbz = TRUE;
+
 ///////////// noise_dbz_at_100km //////////////////////
 //
-// The noise value, represented as dBZ at a range of 100km.
+// The estimates noise value, represented as dBZ at a range of 100km.
 //
-// This is used for computing the SNR from the DBZ field. It is only 
-//   used if SNR_available is FALSE. The SNR will be computed by 
+// This is used for estimating the SNR from the DBZ field. It is only 
+//   used if SNR is not available. The SNR will be computed by 
 //   range-correcting this value and using it as the noise value.
 //
 // Type: double
@@ -230,10 +280,10 @@ noise_dbz_at_100km = 0;
 
 //======================================================================
 //
-// MODEL FOR ENVIRONMENTAL FIELDS.
+// MODEL DATA FOR ENVIRONMENTAL CONDITIONS.
 //
-// We need access to model data to provide a temperature profile. We can 
-//   also make use of moisture and wind fields from the model.
+// We need access to model data to provide a temperature profile. We may 
+//   also store the moisture and wind fields from the model for later use.
 //
 //======================================================================
  
@@ -251,7 +301,7 @@ model_input_url = "$(HOME)/data/pecan/mdv/ruc";
 //
 // Search margin for model data (secs).
 //
-// We search for model data within this margin of the radar data.
+// We search for model data within this margin of the radar data time.
 //
 // Type: int
 
@@ -279,18 +329,13 @@ write_interpolated_model_data = FALSE;
 
 interpolated_model_output_url = "$(HOME)/data/pecan/mdv/ruc_interp";
 
-//======================================================================
+///////////// model_fields ////////////////////////////
 //
-// MODEL FIELD NAMES.
+// Specifies names and availability of model fields.
 //
-//======================================================================
- 
-///////////// model_field_names ///////////////////////
-//
-// Converts field type to string.
-//
-// If input_name is empty the field is assumed to not exist in the input 
-//   data set.
+// 'is_available' specifies whether the field is available in the input 
+//   file. 'do_write' specifies wiether to write the field in the output 
+//   data set. You can rename the field on output.
 //
 // Type: struct
 //   typedef struct {
@@ -301,41 +346,53 @@ interpolated_model_output_url = "$(HOME)/data/pecan/mdv/ruc_interp";
 //          UVEL
 //          VVEL
 //          WVEL
-//          NOT_SET
+//          MODEL_NOT_SET
+//      boolean is_available;
 //      string input_name;
+//      boolean do_write;
 //      string output_name;
 //   }
 //
-// 1D array - fixed length - 5 elements.
+// 1D array - variable length.
 
-model_field_names = {
+model_fields = {
   {
     field_type = TEMP,
+    is_available = TRUE,
     input_name = "TMP",
+    do_write = TRUE,
     output_name = "TEMP"
   }
   ,
   {
     field_type = RH,
+    is_available = TRUE,
     input_name = "RH",
+    do_write = TRUE,
     output_name = "RH"
   }
   ,
   {
     field_type = UVEL,
+    is_available = TRUE,
     input_name = "UGRD",
+    do_write = FALSE,
     output_name = "UVEL"
   }
   ,
   {
     field_type = VVEL,
+    is_available = TRUE,
     input_name = "VGRD",
+    do_write = FALSE,
     output_name = "VVEL"
   }
   ,
   {
     field_type = WVEL,
+    is_available = TRUE,
     input_name = "VVEL",
+    do_write = FALSE,
     output_name = "WVEL"
   }
 };
@@ -1977,6 +2034,88 @@ n_compute_threads = 8;
 
 //======================================================================
 //
+// CONVECTIVE/STRATIFORM PARTITION.
+//
+//======================================================================
+ 
+///////////// identify_conv_strat_partition ///////////
+//
+// Option to identify the convective / stratiform split.
+//
+// Uses the standard deviation of reflectivity as a texture field for 
+//   each Cartesian plane. Low variability indicates stratiform 
+//   conditions.
+//
+// Type: boolean
+
+identify_conv_strat_partition = TRUE;
+
+///////////// conv_strat_params_file_path /////////////
+//
+// Path for parameters for computing convective-stratiform partition, if 
+//   specified.
+//
+// If set to use-defaults, no parameter file will be read in, and the 
+//   default parameters will be used.
+//
+// Type: string
+
+conv_strat_params_file_path = "$(HOME)/git/lrose-test/RadxCartDP/params/conv_strat_params.nexrad";
+
+///////////// conv_strat_write_partition //////////////
+//
+// Option to write out the convective/stratiform partition.
+//
+// If true, the 3-D partition will be added to the output file.
+//
+// Type: boolean
+
+conv_strat_write_partition = TRUE;
+
+///////////// conv_strat_write_convectivity ///////////
+//
+// Option to write out the convective/stratiform partition.
+//
+// If true, the 3-D convectivity field will be added to the output file.
+//
+// Type: boolean
+
+conv_strat_write_convectivity = TRUE;
+
+///////////// conv_strat_write_convective_dbz /////////
+//
+// Option to write out the dbz field in convection.
+//
+// This is a 3D field - the reflectivity trimmed only to convective 
+//   regions, based on the convective/stratiform partition.
+//
+// Type: boolean
+
+conv_strat_write_convective_dbz = TRUE;
+
+///////////// conv_strat_write_echo_tops //////////////
+//
+// Option to write out echo tops fields.
+//
+// If true, the echo tops and convective echo tops will be written to 
+//   the output file.
+//
+// Type: boolean
+
+conv_strat_write_echo_tops = TRUE;
+
+///////////// conv_strat_write_debug_fields ///////////
+//
+// Option to write out the intermediate fields for debug purposes.
+//
+// If true, the intermediate fields will be written to the output file.
+//
+// Type: boolean
+
+conv_strat_write_debug_fields = TRUE;
+
+//======================================================================
+//
 // USE ECHO ORIENTATION TO INFORM INTERPOLATION GEOMETRY.
 //
 // Vertically-oriented echoes (convective) should be interpolated in the 
@@ -2062,86 +2201,4 @@ echo_orientation_n_points_sdev_h = 3;
 // Type: int
 
 echo_orientation_n_points_sdev_v = 3;
-
-//======================================================================
-//
-// CONVECTIVE/STRATIFORM PARTITION.
-//
-//======================================================================
- 
-///////////// identify_conv_strat_partition ///////////
-//
-// Option to identify the convective / stratiform split.
-//
-// Uses the standard deviation of reflectivity as a texture field for 
-//   each Cartesian plane. Low variability indicates stratiform 
-//   conditions.
-//
-// Type: boolean
-
-identify_conv_strat_partition = TRUE;
-
-///////////// conv_strat_params_file_path /////////////
-//
-// Path for parameters for computing convective-stratiform partition, if 
-//   specified.
-//
-// If set to use-defaults, no parameter file will be read in, and the 
-//   default parameters will be used.
-//
-// Type: string
-
-conv_strat_params_file_path = "$(HOME)/git/lrose-test/RadxCartDP/params/conv_strat_params.nexrad";
-
-///////////// conv_strat_write_partition //////////////
-//
-// Option to write out the convective/stratiform partition.
-//
-// If true, the 3-D partition will be added to the output file.
-//
-// Type: boolean
-
-conv_strat_write_partition = TRUE;
-
-///////////// conv_strat_write_convectivity ///////////
-//
-// Option to write out the convective/stratiform partition.
-//
-// If true, the 3-D convectivity field will be added to the output file.
-//
-// Type: boolean
-
-conv_strat_write_convectivity = TRUE;
-
-///////////// conv_strat_write_convective_dbz /////////
-//
-// Option to write out the dbz field in convection.
-//
-// This is a 3D field - the reflectivity trimmed only to convective 
-//   regions, based on the convective/stratiform partition.
-//
-// Type: boolean
-
-conv_strat_write_convective_dbz = TRUE;
-
-///////////// conv_strat_write_echo_tops //////////////
-//
-// Option to write out echo tops fields.
-//
-// If true, the echo tops and convective echo tops will be written to 
-//   the output file.
-//
-// Type: boolean
-
-conv_strat_write_echo_tops = TRUE;
-
-///////////// conv_strat_write_debug_fields ///////////
-//
-// Option to write out the intermediate fields for debug purposes.
-//
-// If true, the intermediate fields will be written to the output file.
-//
-// Type: boolean
-
-conv_strat_write_debug_fields = TRUE;
 
