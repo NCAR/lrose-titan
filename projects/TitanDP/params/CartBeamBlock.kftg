@@ -47,7 +47,7 @@ debug = DEBUG_OFF;
 //
 // Type: int
 
-n_compute_threads = 8;
+n_compute_threads = 24;
 
 //======================================================================
 //
@@ -58,31 +58,29 @@ n_compute_threads = 8;
 //
 //======================================================================
  
-///////////// grid_template_path //////////////////////
+///////////// grid_template_dir ///////////////////////
 //
-// Directory or file path for Cartesian input data.
+// Directory for grid template file.
 //
-// This specifies the path to either:
+// This is the directory containing the MDV file with the grid template.
 //
-// 	(a) a single 3D Cartesian file, or 
-// 	(b) a directory containing such files.
-//
-// These files must have been previously created by running Radx2Grid or 
-//   RadxCartDP.
+// These files must have been previously created by running RadxCartDP 
+//   -create_grid_template.
 //
 // Type: string
 
-grid_template_path = "$(HOME)/data/pecan/mdv/radarCart/kftg/no_blockage/20150626/ncf_20150626_000334.nc";
+grid_template_dir = "$(HOME)/data/pecan/mdv/radarCart/kftg/template";
 
-///////////// template_field_name /////////////////////
+///////////// template_3d_field_name //////////////////
 //
 // Field name for 3D Cartesian input data.
 //
-// This should be a 3D field in the template Cartesian file.
+// This should be a 3D field in the template Cartesian file created by 
+//   running 'RadxCartDP -create_grid_template'.
 //
 // Type: string
 
-template_field_name = "DBZ";
+template_3d_field_name = "template3D";
 
 //======================================================================
 //
@@ -395,13 +393,13 @@ output_time_stamp = {
     sec = 0
 };
 
-///////////// blockage_field_name /////////////////////
+///////////// extinction_field_name ///////////////////
 //
-// Name of blockge field in MDV output file.
+// Name of beam extinction field in MDV output file.
 //
 // Type: string
 
-blockage_field_name = "extinction";
+extinction_field_name = "extinction";
 
 ///////////// elev_field_name /////////////////////////
 //

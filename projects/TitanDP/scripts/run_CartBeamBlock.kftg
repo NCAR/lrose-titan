@@ -1,0 +1,7 @@
+#! /bin/csh
+
+cd ~/git/lrose-titan/projects/TitanDP/params
+
+CartBeamBlock -params CartBeamBlock.kftg -debug
+
+
