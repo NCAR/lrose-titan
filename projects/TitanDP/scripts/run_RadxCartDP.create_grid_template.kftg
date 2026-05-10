@@ -1,0 +1,6 @@
+#! /bin/csh
+
+cd ~/git/lrose-titan/projects/TitanDP/params
+
+RadxCartDP -params RadxCartDP.kftg -create_grid_template -debug 
+
