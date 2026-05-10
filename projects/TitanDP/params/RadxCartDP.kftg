@@ -1376,11 +1376,11 @@ grid_offset_origin_longitude = 0;
 
 //======================================================================
 //
-// CREATE A TEMPLATE CARTESIAN FILE.
+// CREATE A CARTESIAN GRID TEMPLATE CARTESIAN.
 //
 //======================================================================
  
-///////////// create_grid_template_file ///////////////
+///////////// create_grid_template ////////////////////
 //
 // Option to create a template file for use by CartBeamBlock.
 //
@@ -1401,6 +1401,14 @@ create_grid_template = FALSE;
 // Type: string
 
 grid_template_dir = "$(HOME)/data/pecan/mdv/radarCart/kftg/template";
+
+///////////// template_3d_field_name //////////////////
+//
+// Name of 3D template field in grid template file.
+//
+// Type: string
+
+template_3d_field_name = "template3D";
 
 //======================================================================
 //
