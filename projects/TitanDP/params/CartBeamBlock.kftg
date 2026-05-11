@@ -69,7 +69,7 @@ n_compute_threads = 24;
 //
 // Type: string
 
-grid_template_dir = "$(HOME)/data/pecan/mdv/radarCart/kftg/template";
+grid_template_dir = "$(DATA_DIR)/mdv/radarCart/kftg/template";
 
 ///////////// template_3d_field_name //////////////////
 //
@@ -365,7 +365,7 @@ references = "Created by LROSE app CartBeamBlock";
 //
 // Type: string
 
-output_dir = "$(HOME)/data/pecan/mdv/beamBlock/kftg";
+output_dir = "$(DATA_DIR)/mdv/BeamBlock/kftg";
 
 ///////////// data_set_source /////////////////////////
 //

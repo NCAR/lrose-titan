@@ -1,7 +1,9 @@
 #! /bin/csh
 
-cd ~/git/lrose-titan/projects/TitanDP/params
+source set_env_vars
 
-RadxCartDP -params RadxCartDP.kftg -start "2015 06 26 00 00 00" -end "2015 06 26 00 04 00" -debug
+cd $PROJ_DIR/params
+
+RadxCartDP -params RadxCartDP.kftg -start "2015 06 26 00 00 00" -end "2015 06 26 01 00 00" -debug
 
 

@@ -1,6 +1,8 @@
 #! /bin/csh
 
-cd ~/git/lrose-titan/projects/TitanDP/params
+source set_env_vars
+
+cd $PROJ_DIR/params
 
 CartBeamBlock -params CartBeamBlock.kftg -debug
 

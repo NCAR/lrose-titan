@@ -1,0 +1,5 @@
+# set env vars for TitanDP project
+
+setenv DATA_DIR $HOME/data/TitanDP
+setenv PROJ_DIR $HOME/git/lrose-titan/projects/TitanDP
+

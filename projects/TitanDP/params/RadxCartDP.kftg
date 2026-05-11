@@ -68,7 +68,7 @@ debug = DEBUG_OFF;
 //
 // Type: string
 
-radar_input_dir = "$(HOME)/data/pecan/cfradial/kftg/moments";
+radar_input_dir = "$(DATA_DIR)/cfradial/kftg/moments";
 
 ///////////// radar_input_mode ////////////////////////
 //
@@ -296,7 +296,7 @@ noise_dbz_at_100km = 0;
 //
 // Type: string
 
-model_input_url = "$(HOME)/data/pecan/mdv/ruc";
+model_input_url = "$(DATA_DIR)/mdv/ruc";
 
 ///////////// model_search_margin_secs ////////////////
 //
@@ -328,7 +328,7 @@ write_interpolated_model_data = FALSE;
 //
 // Type: string
 
-interpolated_model_output_url = "$(HOME)/data/pecan/mdv/ruc_interp";
+interpolated_model_output_url = "$(DATA_DIR)/mdv/ruc_interp";
 
 ///////////// model_fields ////////////////////////////
 //
@@ -429,7 +429,7 @@ read_beam_blockage = TRUE;
 //
 // Type: string
 
-beam_block_input_file_path = "$(HOME)/data/pecan/mdv/beamBlock/kftg/20000101/20000101_000000.mdv.cf.nc";
+beam_block_input_file_path = "$(DATA_DIR)/mdv/BeamBlock/kftg/20000101/20000101_000000.mdv.cf.nc";
 
 ///////////// beam_extinction_field_name //////////////
 //
@@ -527,7 +527,7 @@ qpe_zr_field_name = "QPE_ZR";
 //
 // Type: string
 
-output_dir = "$(HOME)/data/pecan/mdv/radarCart/kftg";
+output_dir = "$(DATA_DIR)/mdv/radarCart/kftg";
 
 ///////////// name_file_from_start_time ///////////////
 //
@@ -586,7 +586,7 @@ write_debug_polar_output = TRUE;
 //
 // Type: string
 
-debug_polar_output_dir = "$(HOME)/data/pecan/cfradial/kftg/debug";
+debug_polar_output_dir = "$(DATA_DIR)/cfradial/kftg/debug";
 
 //======================================================================
 //
@@ -1400,7 +1400,7 @@ create_grid_template = FALSE;
 //
 // Type: string
 
-grid_template_dir = "$(HOME)/data/pecan/mdv/radarCart/kftg/template";
+grid_template_dir = "$(DATA_DIR)/mdv/radarCart/kftg/template";
 
 ///////////// template_3d_field_name //////////////////
 //
