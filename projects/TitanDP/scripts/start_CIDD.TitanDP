@@ -1,0 +1,8 @@
+#! /bin/csh
+
+source set_env_vars
+
+./start_DsServerMgr
+
+cd $PROJ_DIR/params
+CIDD -p CIDD.TitanDP

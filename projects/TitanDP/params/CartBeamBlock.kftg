@@ -131,7 +131,7 @@ dem_data_format = SHUTTLE_RADAR_TOPOGRAPHY;
 //
 // Type: boolean
 
-copy_dem_tiles_used = TRUE;
+copy_dem_tiles_used = FALSE;
 
 ///////////// dem_copy_dir ////////////////////////////
 //
@@ -141,7 +141,7 @@ copy_dem_tiles_used = TRUE;
 //
 // Type: string
 
-dem_copy_dir = "$(HOME)/data/Terrain/DEM/SRTM3_copy";
+dem_copy_dir = "$(HOME)/data/Terrain/copy/SRTM3";
 
 //======================================================================
 //

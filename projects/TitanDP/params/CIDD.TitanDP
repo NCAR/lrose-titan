@@ -97,136 +97,98 @@ field_list = {
 
 # Cart data
 
-CART_KFTG_DBZ   CART_KFTG_DBZ    $(HOME)/data/pecan/mdv/radarCart/kftg&DBZ       dbz.colors   dBZ -5 80 5 cart 1 0
-CART_KFTG_ZDR   CART_KFTG_ZDR    $(HOME)/data/pecan/mdv/radarCart/kftg&ZDR       zdr.colors   dB  -5 80 5 cart 1 0
-CART_KFTG_PHIDP CART_KFTG_PHIDP  $(HOME)/data/pecan/mdv/radarCart/kftg&PHIDP       phidp.colors deg -5 80 5 cart 1 0
-CART_KFTG_RHOHV CART_KFTG_RHOHV  $(HOME)/data/pecan/mdv/radarCart/kftg&RHOHV       rhohv.colors -   -5 80 5 cart 1 0
-CART_KFTG_VEL   CART_KFTG_VEL    $(HOME)/data/pecan/mdv/radarCart/kftg&VEL       vel.colors   m/s -5 80 5 cart 1 0
-CART_KFTG_WIDTH CART_KFTG_WIDTH  $(HOME)/data/pecan/mdv/radarCart/kftg&WIDTH        width.colors m/s -5 80 5 cart 1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+CART_KFTG_DBZ   CART_KFTG_DBZ    $(DATA_DIR)/mdv/radarCart/kftg&DBZ       dbz.colors   dBZ -5 80 5 cart 1 0
+CART_KFTG_ZDR   CART_KFTG_ZDR    $(DATA_DIR)/mdv/radarCart/kftg&ZDR       zdr.colors   dB  -5 80 5 cart 1 0
+CART_KFTG_PHIDP CART_KFTG_PHIDP  $(DATA_DIR)/mdv/radarCart/kftg&PHIDP       phidp.colors deg -5 80 5 cart 1 0
+CART_KFTG_RHOHV CART_KFTG_RHOHV  $(DATA_DIR)/mdv/radarCart/kftg&RHOHV       rhohv.colors -   -5 80 5 cart 1 0
+CART_KFTG_VEL   CART_KFTG_VEL    $(DATA_DIR)/mdv/radarCart/kftg&VEL       vel.colors   m/s -5 80 5 cart 1 0
+CART_KFTG_WIDTH CART_KFTG_WIDTH  $(DATA_DIR)/mdv/radarCart/kftg&WIDTH        width.colors m/s -5 80 5 cart 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
 # Fields for PID
 
-PID_KFTG_DBZ   PID_KFTG_DBZ    $(HOME)/data/pecan/mdv/radarCart/kftg&DBZ_FOR_PID       dbz.colors   dBZ -5 80 5 cart 1 0
-PID_KFTG_ZDR   PID_KFTG_ZDR    $(HOME)/data/pecan/mdv/radarCart/kftg&ZDR_FOR_PID       zdr.colors   dB  -5 80 5 cart 1 0
-PID_KFTG_PHIDP PID_KFTG_PHIDP  $(HOME)/data/pecan/mdv/radarCart/kftg&PHIDP_FOR_PID       phidp.colors deg -5 80 5 cart 1 0a
-PID_KFTG_RHOHV PID_KFTG_RHOHV  $(HOME)/data/pecan/mdv/radarCart/kftg&RHOHV_FOR_PID       rhohv.colors -   -5 80 5 cart 1 0
-PID_KFTG_SNR   PID_KFTG_SNR    $(HOME)/data/pecan/mdv/radarCart/kftg&SNR_FOR_PID       snr.colors   dB -5 80 5 cart 1 0
-PID_KFTG_KDP   PID_KFTG_KDP    $(HOME)/data/pecan/mdv/radarCart/kftg&KDP_FOR_PID        kdp.colors -   -5 80 5 cart 1 0
-PID_SD_ZDR     PID_SD_ZDR      $(HOME)/data/pecan/mdv/radarCart/kftg&ZDR_SDEV_FOR_PID  sdzdr.colors   dB -5 80 5 cart 1 0
-PID_SD_PHIDP   PID_SD_PHIDP    $(HOME)/data/pecan/mdv/radarCart/kftg&PHIDP_SDEV_FOR_PID sdphidp.colors deg -5 80 5 cart 1 0
+PID_KFTG_DBZ   PID_KFTG_DBZ    $(DATA_DIR)/mdv/radarCart/kftg&DBZ_FOR_PID       dbz.colors   dBZ -5 80 5 cart 1 0
+PID_KFTG_ZDR   PID_KFTG_ZDR    $(DATA_DIR)/mdv/radarCart/kftg&ZDR_FOR_PID       zdr.colors   dB  -5 80 5 cart 1 0
+PID_KFTG_PHIDP PID_KFTG_PHIDP  $(DATA_DIR)/mdv/radarCart/kftg&PHIDP_FOR_PID       phidp.colors deg -5 80 5 cart 1 0a
+PID_KFTG_RHOHV PID_KFTG_RHOHV  $(DATA_DIR)/mdv/radarCart/kftg&RHOHV_FOR_PID       rhohv.colors -   -5 80 5 cart 1 0
+PID_KFTG_SNR   PID_KFTG_SNR    $(DATA_DIR)/mdv/radarCart/kftg&SNR_FOR_PID       snr.colors   dB -5 80 5 cart 1 0
+PID_KFTG_KDP   PID_KFTG_KDP    $(DATA_DIR)/mdv/radarCart/kftg&KDP_FOR_PID        kdp.colors -   -5 80 5 cart 1 0
+PID_SD_ZDR     PID_SD_ZDR      $(DATA_DIR)/mdv/radarCart/kftg&ZDR_SDEV_FOR_PID  sdzdr.colors   dB -5 80 5 cart 1 0
+PID_SD_PHIDP   PID_SD_PHIDP    $(DATA_DIR)/mdv/radarCart/kftg&PHIDP_SDEV_FOR_PID sdphidp.colors deg -5 80 5 cart 1 0
 
 # PID, Precip Rate, QPE
 
-PID  PID mdvp::pid//localhost:0:$(HOME)/data/pecan/mdv/radarCart/kftg&PID pid.colors - -5 80 5 cart 1 0
-PID_FILT PID_FILT mdvp::pid//localhost:0:$(HOME)/data/pecan/mdv/radarCart/kftg&PID_FILT pid.colors - -5 80 5 cart 1 0
-RATE_ZR  RATE_ZR $(HOME)/data/pecan/mdv/radarCart/kftg&RATE_ZR precip.colors - -5 80 5 cart 1 0
-RATE_HYBRID  RATE_HYBRID $(HOME)/data/pecan/mdv/radarCart/kftg&RATE_HYBRID precip.colors - -5 80 5 cart 1 0
-RATE_ZR_FILT  RATE_ZR_FILT $(HOME)/data/pecan/mdv/radarCart/kftg&RATE_ZR_FILT precip.colors - -5 80 5 cart 1 0
-RATE_HYBRID_FILT  RATE_HYBRID_FILT $(HOME)/data/pecan/mdv/radarCart/kftg&RATE_HYBRID_FILT precip.colors - -5 80 5 cart 1 0
-QPE_ZR QPE_ZR $(HOME)/data/pecan/mdv/radarCart/kftg&QPE_ZR precip.colors - -5 80 5 cart 1 0
-QPE_HYBRID QPE_HYBRID $(HOME)/data/pecan/mdv/radarCart/kftg&QPE_HYBRID precip.colors - -5 80 5 cart 1 0
+PID  PID mdvp::pid//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID pid.colors - -5 80 5 cart 1 0
+PID_FILT PID_FILT mdvp::pid//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID_FILT pid.colors - -5 80 5 cart 1 0
+RATE_ZR  RATE_ZR $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR precip.colors - -5 80 5 cart 1 0
+RATE_HYBRID  RATE_HYBRID $(DATA_DIR)/mdv/radarCart/kftg&RATE_HYBRID precip.colors - -5 80 5 cart 1 0
+RATE_ZR_FILT  RATE_ZR_FILT $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR_FILT precip.colors - -5 80 5 cart 1 0
+RATE_HYBRID_FILT  RATE_HYBRID_FILT $(DATA_DIR)/mdv/radarCart/kftg&RATE_HYBRID_FILT precip.colors - -5 80 5 cart 1 0
+QPE_ZR QPE_ZR $(DATA_DIR)/mdv/radarCart/kftg&QPE_ZR precip.colors - -5 80 5 cart 1 0
+QPE_HYBRID QPE_HYBRID $(DATA_DIR)/mdv/radarCart/kftg&QPE_HYBRID precip.colors - -5 80 5 cart 1 0
 
 # Temp, RH, Terrain, beam blockage
 
-Extinct    Extinct    $(HOME)/data/pecan/mdv/radarCart/kftg&extinction     fraction.colors   m   -5   80  5  cart   1 0
-TerrainHt  TerrainHt  $(HOME)/data/pecan/mdv/radarCart/kftg&terrain_ht     terrain_front.colors   m   -5   80  5  cart   1 0
-ExtinctRef ExtinctRef mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg&extinction     fraction.colors   m   -5   80  5  cart   1 0
-TerrainRef TerrainRef mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg/&terrain_ht  terrain_front.colors   m   -5   80  5  cart   1 0
-HiRes      HiRes      mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg/&terrain_hi_res  terrain_front.colors   m   -5   80  5  cart   1 0
-Elev          Elev    mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg&elevation elevation.colors   deg  -5   80  5  cart   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+Extinct    Extinct    $(DATA_DIR)/mdv/radarCart/kftg&extinction     fraction.colors   m   -5   80  5  cart   1 0
+TerrainHt  TerrainHt  $(DATA_DIR)/mdv/radarCart/kftg&terrain_ht     terrain_front.colors   m   -5   80  5  cart   1 0
+ExtinctRef ExtinctRef mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg&extinction     fraction.colors   m   -5   80  5  cart   1 0
+TerrainRef TerrainRef mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg/&terrain_ht  terrain_front.colors   m   -5   80  5  cart   1 0
+HiRes      HiRes      mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg/&terrain_hi_res  terrain_front.colors   m   -5   80  5  cart   1 0
+Elev          Elev    mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg&elevation elevation.colors   deg  -5   80  5  cart   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
-INTERP-temp   INTERP-temp   $(HOME)/data/pecan/mdv/radarCart/kftg&TEMP temp.colors   C   -5   80  5  dcont  1 0
-INTERP-RH     INTERP-RH     $(HOME)/data/pecan/mdv/radarCart/kftg&RH   rh.colors     %   -5   80  5  dcont  1 0
-EchoType      EchoType      mdvp::pid//localhost:0:$(HOME)/data/pecan/mdv/radarCart/kftg&EchoType3D  conv_strat4.colors - -5 80 5
-Convectivity  Convectivity  $(HOME)/data/pecan/mdv/radarCart/kftg&Convectivity3D  convectivity.colors - -5 80 5
-DbzTexture  DbzTexture  $(HOME)/data/pecan/mdv/radarCart/kftg&DbzTexture3D  dbz.colors - -5 80 5
-ShallowHt  ShallowHt  $(HOME)/data/pecan/mdv/radarCart/kftg&ShallowHt heightkm.colors km -5 80 5
-DeepHt  DeepHt  $(HOME)/data/pecan/mdv/radarCart/kftg&DeepHt heightkm.colors km -5 80 5
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+INTERP-temp   INTERP-temp   $(DATA_DIR)/mdv/radarCart/kftg&TEMP temp.colors   C   -5   80  5  dcont  1 0
+INTERP-RH     INTERP-RH     $(DATA_DIR)/mdv/radarCart/kftg&RH   rh.colors     %   -5   80  5  dcont  1 0
+EchoType      EchoType      mdvp::pid//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&EchoType3D  conv_strat4.colors - -5 80 5
+Convectivity  Convectivity  $(DATA_DIR)/mdv/radarCart/kftg&Convectivity3D  convectivity.colors - -5 80 5
+DbzTexture  DbzTexture  $(DATA_DIR)/mdv/radarCart/kftg&DbzTexture3D  dbz.colors - -5 80 5
+ShallowHt  ShallowHt  $(DATA_DIR)/mdv/radarCart/kftg&ShallowHt heightkm.colors km -5 80 5
+DeepHt  DeepHt  $(DATA_DIR)/mdv/radarCart/kftg&DeepHt heightkm.colors km -5 80 5
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
 # environmental and geometry
 
-RUC-temp   RUC-temp   $(HOME)/data/pecan/mdv/ruc&TMP  temp.colors   C   -5   80  5  dcont   1 0
-RUC-RH     RUC-RH     $(HOME)/data/pecan/mdv/ruc&RH   rh.colors   %   -5   80  5  dcont   1 0
-BEAM_HT   BEAM_HT     $(HOME)/data/pecan/cfradial/kftg/debug&BEAM_HT  number.colors km -5 80 5 radial 1 0
-ELEV     ELEV     $(HOME)/data/pecan/cfradial/kftg/debug&ELEV  number.colors deg -5 80 5 radial 1 0
-RANGE    RANGE    $(HOME)/data/pecan/cfradial/kftg/debug&RANGE  number_250.colors km -5 80 5 radial 1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+RUC-temp   RUC-temp   $(DATA_DIR)/mdv/ruc&TMP  temp.colors   C   -5   80  5  dcont   1 0
+RUC-RH     RUC-RH     $(DATA_DIR)/mdv/ruc&RH   rh.colors   %   -5   80  5  dcont   1 0
+BEAM_HT   BEAM_HT     $(DATA_DIR)/cfradial/kftg/debug&BEAM_HT  number.colors km -5 80 5 radial 1 0
+ELEV     ELEV     $(DATA_DIR)/cfradial/kftg/debug&ELEV  number.colors deg -5 80 5 radial 1 0
+RANGE    RANGE    $(DATA_DIR)/cfradial/kftg/debug&RANGE  number_250.colors km -5 80 5 radial 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
 # Polar
 
-KFTG_DBZ   KFTG_DBZ    $(HOME)/data/pecan/cfradial/kftg/moments&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
-KFTG_VEL   KFTG_VEL    $(HOME)/data/pecan/cfradial/kftg/moments&VEL       vel.colors   m/s -5 80 5 radial 1 0
-KFTG_WIDTH KFTG_WIDTH  $(HOME)/data/pecan/cfradial/kftg/moments&WIDTH        width.colors m/s -5 80 5 radial 1 0
-KFTG_ZDR   KFTG_ZDR    $(HOME)/data/pecan/cfradial/kftg/moments&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-KFTG_PHIDP KFTG_PHIDP  $(HOME)/data/pecan/cfradial/kftg/moments&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-KFTG_RHOHV KFTG_RHOHV  $(HOME)/data/pecan/cfradial/kftg/moments&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+KFTG_DBZ   KFTG_DBZ    $(DATA_DIR)/cfradial/kftg/moments&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+KFTG_VEL   KFTG_VEL    $(DATA_DIR)/cfradial/kftg/moments&VEL       vel.colors   m/s -5 80 5 radial 1 0
+KFTG_WIDTH KFTG_WIDTH  $(DATA_DIR)/cfradial/kftg/moments&WIDTH        width.colors m/s -5 80 5 radial 1 0
+KFTG_ZDR   KFTG_ZDR    $(DATA_DIR)/cfradial/kftg/moments&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+KFTG_PHIDP KFTG_PHIDP  $(DATA_DIR)/cfradial/kftg/moments&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+KFTG_RHOHV KFTG_RHOHV  $(DATA_DIR)/cfradial/kftg/moments&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
 # fields for computing scalar quantities for PID
 
-SCALAR_DBZ   SCALAR_DBZ    $(HOME)/data/pecan/cfradial/kftg/debug&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
-SCALAR_VEL   SCALAR_VEL    $(HOME)/data/pecan/cfradial/kftg/debug&VEL       vel.colors   m/s -5 80 5 radial 1 0
-SCALAR_WIDTH SCALAR_WIDTH  $(HOME)/data/pecan/cfradial/kftg/debug&WIDTH        width.colors m/s -5 80 5 radial 1 0
-SCALAR_ZDR   SCALAR_ZDR    $(HOME)/data/pecan/cfradial/kftg/debug&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-SCALAR_PHIDP SCALAR_PHIDP  $(HOME)/data/pecan/cfradial/kftg/debug&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-SCALAR_RHOHV SCALAR_RHOHV  $(HOME)/data/pecan/cfradial/kftg/debug&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+SCALAR_DBZ   SCALAR_DBZ    $(DATA_DIR)/cfradial/kftg/debug&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+SCALAR_VEL   SCALAR_VEL    $(DATA_DIR)/cfradial/kftg/debug&VEL       vel.colors   m/s -5 80 5 radial 1 0
+SCALAR_WIDTH SCALAR_WIDTH  $(DATA_DIR)/cfradial/kftg/debug&WIDTH        width.colors m/s -5 80 5 radial 1 0
+SCALAR_ZDR   SCALAR_ZDR    $(DATA_DIR)/cfradial/kftg/debug&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+SCALAR_PHIDP SCALAR_PHIDP  $(DATA_DIR)/cfradial/kftg/debug&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+SCALAR_RHOHV SCALAR_RHOHV  $(DATA_DIR)/cfradial/kftg/debug&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
-# Cart data low res
-
-# 2CART_KFTG_DBZ   2CART_KFTG_DBZ    $(HOME)/data/pecan/mdv/radarCart/kftg2&DBZ       dbz.colors   dBZ -5 80 5 cart 1 0
-# 2CART_KFTG_ZDR   2CART_KFTG_ZDR    $(HOME)/data/pecan/mdv/radarCart/kftg2&ZDR       zdr.colors   dB  -5 80 5 cart 1 0
-# 2CART_KFTG_PHIDP 2CART_KFTG_PHIDP  $(HOME)/data/pecan/mdv/radarCart/kftg2&PHIDP       phidp.colors deg -5 80 5 cart 1 0
-# 2CART_KFTG_RHOHV 2CART_KFTG_RHOHV  $(HOME)/data/pecan/mdv/radarCart/kftg2&RHOHV       rhohv.colors -   -5 80 5 cart 1 0
-# 2CART_KFTG_VEL   2CART_KFTG_VEL    $(HOME)/data/pecan/mdv/radarCart/kftg2&VEL       vel.colors   m/s -5 80 5 cart 1 0
-# 2CART_KFTG_WIDTH 2CART_KFTG_WIDTH  $(HOME)/data/pecan/mdv/radarCart/kftg2&WIDTH        width.colors m/s -5 80 5 cart 1 0
-# ========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-# ========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-
-# 2PID_KFTG_DBZ   2PID_KFTG_DBZ    $(HOME)/data/pecan/mdv/radarCart/kftg2&DBZ_FOR_PID       dbz.colors   dBZ -5 80 5 cart 1 0
-# 2PID_KFTG_ZDR   2PID_KFTG_ZDR    $(HOME)/data/pecan/mdv/radarCart/kftg2&ZDR_FOR_PID       zdr.colors   dB  -5 80 5 cart 1 0
-# 2PID_KFTG_PHIDP 2PID_KFTG_PHIDP  $(HOME)/data/pecan/mdv/radarCart/kftg2&PHIDP_FOR_PID       phidp.colors deg -5 80 5 cart 1 0
-# 2PID_KFTG_RHOHV 2PID_KFTG_RHOHV  $(HOME)/data/pecan/mdv/radarCart/kftg2&RHOHV_FOR_PID       rhohv.colors -   -5 80 5 cart 1 0
-# 2PID_KFTG_SNR   2PID_KFTG_SNR    $(HOME)/data/pecan/mdv/radarCart/kftg2&SNR_FOR_PID       snr.colors   dB -5 80 5 cart 1 0
-# 2PID_KFTG_KDP   2PID_KFTG_KDP    $(HOME)/data/pecan/mdv/radarCart/kftg2&KDP_FOR_PID        kdp.colors -   -5 80 5 cart 1 0
-# 2PID_SD_ZDR     2PID_SD_ZDR      $(HOME)/data/pecan/mdv/radarCart/kftg2&ZDR_SDEV_FOR_PID  sdzdr.colors   dB -5 80 5 cart 1 0
-# 2PID_SD_PHIDP   2PID_SD_PHIDP    $(HOME)/data/pecan/mdv/radarCart/kftg2&PHIDP_SDEV_FOR_PID sdphidp.colors deg -5 80 5 cart 1 0
-
-# 2PID  2PID mdvp::pid//localhost:0:$(HOME)/data/pecan/mdv/radarCart/kftg2&PID pid.colors - -5 80 5 cart 1 0
-# 2PID_FILT 2PID_FILT mdvp::pid//localhost:0:$(HOME)/data/pecan/mdv/radarCart/kftg2&PID_FILT pid.colors # - -5 80 5 cart 1 0
-# 2RATE_ZR  2RATE_ZR $(HOME)/data/pecan/mdv/radarCart/kftg2&RATE_ZR precip.colors - -5 80 5 cart 1 0
-# 2RATE_HYBRID  2RATE_HYBRID $(HOME)/data/pecan/mdv/radarCart/kftg2&RATE_HYBRID precip.colors - -5 80 5 cart 1 0
-# 2RATE_ZR_FILT  2RATE_ZR_FILT $(HOME)/data/pecan/mdv/radarCart/kftg2&RATE_ZR_FILT precip.colors - -5 80 5 cart 1 0
-# 2RATE_HYBRID_FILT  2RATE_HYBRID_FILT $(HOME)/data/pecan/mdv/radarCart/kftg2&RATE_HYBRID_FILT precip.colors - -5 80 5 cart 1 0
-# ========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-# ========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-
-# 2INTERP-temp   2INTERP-temp   $(HOME)/data/pecan/mdv/radarCart/kftg2&TEMP  temp.colors   C   -5   80  5  dcont   1 0
-# 2INTERP-RH     2INTERP-RH     $(HOME)/data/pecan/mdv/radarCart/kftg2&RH   rh.colors   %   -5   80  5  dcont   1 0
-# ========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-# ========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-# 2Terrain    2Terrain    mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg2&terrain_ht  terrain_front.colors   m   -5   80  5  cart   1 0
-# 2HiRes      2HiRes      mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg2&terrain_hi_res  terrain_front.colors   m   -5   80  5  cart   1 0
-# 2BEAM_E     2BEAM_E     mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg2&extinction     fraction.colors   m   -5   80  5  cart   1 0
-# 2Elev       2Elev       mdvp::terrain//localhost:0:$(HOME)/data/pecan/mdv/beamBlock/kftg2&elevation elevation.colors   deg  -5   80  5  cart   1 0
-
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(HOME)/data/pecan/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
 </GRIDS>
 
@@ -531,8 +493,8 @@ cidd.enable_save_image_panel: 1
  
 # On startup and each time the reset button is pressed, the display
 # will indicate a click at this point, as if the user had clicked..
-cidd.reset_click_longitude:  -99.535739
-cidd.reset_click_latitude:   38.553164
+cidd.reset_click_longitude:  -104.546
+cidd.reset_click_latitude:   39.7866
 #
 # The Outer most domain: Overlays are clipped to this domain and 
 # pan/moves cannot exceed these edge limits.
@@ -625,7 +587,7 @@ cidd.max_adeg:               360.0
 # Searchs . then each directory/URL in order 
 
 cidd.color_file_subdir:   $(HOME)/git/lrose-displays/color_scales
-cidd.map_file_subdir:     $(HOME)/git/lrose-displays//maps
+cidd.map_file_subdir:     $(HOME)/git/lrose-displays/maps
 
 #
 # Station locator features

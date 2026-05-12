@@ -1,6 +1,7 @@
 #! /bin/csh
 
-setenv DATA_DIR $HOME/data
+source set_env_vars
+
 cd $DATA_DIR
 
 running "DsServerMgr"
