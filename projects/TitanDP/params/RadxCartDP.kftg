@@ -1683,19 +1683,12 @@ time_field_name = "time_elapsed";
 
 interp_time_field = TRUE;
 
-//======================================================================
+///////////// write_interp_debug_fields ///////////////
 //
-// OPTION TO ADD DEBUG FIELDS.
-//
-// The debug fields are added to the output Cartesian grid. These are 
+// Option to write out debug fields for checking the interpolation. The 
+//   debug fields are added to the output Cartesian grid. These are 
 //   geometry fields, and can be used to ensure the interpolation is 
 //   working as expected.
-//
-//======================================================================
- 
-///////////// output_debug_fields /////////////////////
-//
-// Option to add debug fields for checking the interpolation.
 //
 // The test fields allow us to ensure that the interpolation is working 
 //   correctly.
@@ -1717,7 +1710,7 @@ interp_time_field = TRUE;
 //
 // Type: boolean
 
-output_debug_fields = FALSE;
+write_interp_debug_fields = FALSE;
 
 //======================================================================
 //
