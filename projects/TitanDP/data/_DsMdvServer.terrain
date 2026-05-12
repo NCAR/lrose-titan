@@ -29,5 +29,5 @@ use_static_file = TRUE;
 //
 // Type: string
 
-static_file_url = "$(HOME)/data/pecan/mdv/beamBlock/kftg/cart_terrain/20000101/20000101_000000.mdv.cf.nc";
+static_file_url = "$(DATA_DIR)/mdv/beamBlock/kftg/cart_terrain/20000101/20000101_000000.mdv.cf.nc";
 

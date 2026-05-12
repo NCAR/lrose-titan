@@ -119,8 +119,8 @@ PID_SD_PHIDP   PID_SD_PHIDP    $(DATA_DIR)/mdv/radarCart/kftg&PHIDP_SDEV_FOR_PID
 
 # PID, Precip Rate, QPE
 
-PID  PID mdvp::pid//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID pid.colors - -5 80 5 cart 1 0
-PID_FILT PID_FILT mdvp::pid//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID_FILT pid.colors - -5 80 5 cart 1 0
+PID  PID mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID pid.colors - -5 80 5 cart 1 0
+PID_FILT PID_FILT mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID_FILT pid.colors - -5 80 5 cart 1 0
 RATE_ZR  RATE_ZR $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR precip.colors - -5 80 5 cart 1 0
 RATE_HYBRID  RATE_HYBRID $(DATA_DIR)/mdv/radarCart/kftg&RATE_HYBRID precip.colors - -5 80 5 cart 1 0
 RATE_ZR_FILT  RATE_ZR_FILT $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR_FILT precip.colors - -5 80 5 cart 1 0
@@ -141,7 +141,7 @@ Elev          Elev    mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg&
 
 INTERP-temp   INTERP-temp   $(DATA_DIR)/mdv/radarCart/kftg&TEMP temp.colors   C   -5   80  5  dcont  1 0
 INTERP-RH     INTERP-RH     $(DATA_DIR)/mdv/radarCart/kftg&RH   rh.colors     %   -5   80  5  dcont  1 0
-EchoType      EchoType      mdvp::pid//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&EchoType3D  conv_strat4.colors - -5 80 5
+EchoType      EchoType      mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&EchoType3D  conv_strat4.colors - -5 80 5
 Convectivity  Convectivity  $(DATA_DIR)/mdv/radarCart/kftg&Convectivity3D  convectivity.colors - -5 80 5
 DbzTexture  DbzTexture  $(DATA_DIR)/mdv/radarCart/kftg&DbzTexture3D  dbz.colors - -5 80 5
 ShallowHt  ShallowHt  $(DATA_DIR)/mdv/radarCart/kftg&ShallowHt heightkm.colors km -5 80 5
