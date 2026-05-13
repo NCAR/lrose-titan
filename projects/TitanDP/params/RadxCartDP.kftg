@@ -143,7 +143,7 @@ start_time = "2015 06 26 00 00 00";
 //
 // Type: string
 
-end_time = "2015 06 26 00 15 00";
+end_time = "2015 06 26 00 05 00";
 
 //======================================================================
 //
@@ -316,7 +316,7 @@ model_search_margin_secs = 3600;
 //
 // Type: boolean
 
-write_interpolated_model_data = FALSE;
+// write_interpolated_model_data = FALSE;
 
 ///////////// interpolated_model_output_url ///////////
 //
@@ -328,7 +328,7 @@ write_interpolated_model_data = FALSE;
 //
 // Type: string
 
-interpolated_model_output_url = "$(DATA_DIR)/mdv/ruc_interp";
+// interpolated_model_output_url = "$(DATA_DIR)/mdv/ruc_interp";
 
 ///////////// model_fields ////////////////////////////
 //
