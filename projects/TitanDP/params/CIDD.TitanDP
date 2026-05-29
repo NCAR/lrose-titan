@@ -98,11 +98,11 @@ field_list = {
 # Cart data
 
 CART_KFTG_DBZ   CART_KFTG_DBZ    $(DATA_DIR)/mdv/radarCart/kftg&DBZ       dbz.colors   dBZ -5 80 5 cart 1 0
+CART_KFTG_VEL   CART_KFTG_VEL    $(DATA_DIR)/mdv/radarCart/kftg&VEL       vel.colors   m/s -5 80 5 cart 1 0
+CART_KFTG_WIDTH CART_KFTG_WIDTH  $(DATA_DIR)/mdv/radarCart/kftg&WIDTH        width.colors m/s -5 80 5 cart 1 0
 CART_KFTG_ZDR   CART_KFTG_ZDR    $(DATA_DIR)/mdv/radarCart/kftg&ZDR       zdr.colors   dB  -5 80 5 cart 1 0
 CART_KFTG_PHIDP CART_KFTG_PHIDP  $(DATA_DIR)/mdv/radarCart/kftg&PHIDP       phidp.colors deg -5 80 5 cart 1 0
 CART_KFTG_RHOHV CART_KFTG_RHOHV  $(DATA_DIR)/mdv/radarCart/kftg&RHOHV       rhohv.colors -   -5 80 5 cart 1 0
-CART_KFTG_VEL   CART_KFTG_VEL    $(DATA_DIR)/mdv/radarCart/kftg&VEL       vel.colors   m/s -5 80 5 cart 1 0
-CART_KFTG_WIDTH CART_KFTG_WIDTH  $(DATA_DIR)/mdv/radarCart/kftg&WIDTH        width.colors m/s -5 80 5 cart 1 0
 
 # Polar
 
