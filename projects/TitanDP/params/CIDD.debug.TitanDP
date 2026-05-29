@@ -103,95 +103,92 @@ CART_KFTG_PHIDP CART_KFTG_PHIDP  $(DATA_DIR)/mdv/radarCart/kftg&PHIDP       phid
 CART_KFTG_RHOHV CART_KFTG_RHOHV  $(DATA_DIR)/mdv/radarCart/kftg&RHOHV       rhohv.colors -   -5 80 5 cart 1 0
 CART_KFTG_VEL   CART_KFTG_VEL    $(DATA_DIR)/mdv/radarCart/kftg&VEL       vel.colors   m/s -5 80 5 cart 1 0
 CART_KFTG_WIDTH CART_KFTG_WIDTH  $(DATA_DIR)/mdv/radarCart/kftg&WIDTH        width.colors m/s -5 80 5 cart 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
-# Polar
+# Fields for PID
 
-RADIAL_KFTG_DBZ   RADIAL_KFTG_DBZ    $(DATA_DIR)/cfradial/kftg/moments&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
-RADIAL_KFTG_VEL   RADIAL_KFTG_VEL    $(DATA_DIR)/cfradial/kftg/moments&VEL       vel.colors   m/s -5 80 5 radial 1 0
-RADIAL_KFTG_WIDTH RADIAL_KFTG_WIDTH  $(DATA_DIR)/cfradial/kftg/moments&WIDTH        width.colors m/s -5 80 5 radial 1 0
-RADIAL_KFTG_ZDR   RADIAL_KFTG_ZDR    $(DATA_DIR)/cfradial/kftg/moments&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-RADIAL_KFTG_PHIDP RADIAL_KFTG_PHIDP  $(DATA_DIR)/cfradial/kftg/moments&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-RADIAL_KFTG_RHOHV RADIAL_KFTG_RHOHV  $(DATA_DIR)/cfradial/kftg/moments&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+PID_KFTG_DBZ   PID_KFTG_DBZ    $(DATA_DIR)/mdv/radarCart/kftg&DBZ_FOR_PID       dbz.colors   dBZ -5 80 5 cart 1 0
+PID_KFTG_ZDR   PID_KFTG_ZDR    $(DATA_DIR)/mdv/radarCart/kftg&ZDR_FOR_PID       zdr.colors   dB  -5 80 5 cart 1 0
+PID_KFTG_PHIDP PID_KFTG_PHIDP  $(DATA_DIR)/mdv/radarCart/kftg&PHIDP_FOR_PID       phidp.colors deg -5 80 5 cart 1 0a
+PID_KFTG_RHOHV PID_KFTG_RHOHV  $(DATA_DIR)/mdv/radarCart/kftg&RHOHV_FOR_PID       rhohv.colors -   -5 80 5 cart 1 0
+PID_KFTG_SNR   PID_KFTG_SNR    $(DATA_DIR)/mdv/radarCart/kftg&SNR_FOR_PID       snr.colors   dB -5 80 5 cart 1 0
+PID_KFTG_KDP   PID_KFTG_KDP    $(DATA_DIR)/mdv/radarCart/kftg&KDP_FOR_PID        kdp.colors -   -5 80 5 cart 1 0
+PID_SD_ZDR     PID_SD_ZDR      $(DATA_DIR)/mdv/radarCart/kftg&ZDR_SDEV_FOR_PID  sdzdr.colors   dB -5 80 5 cart 1 0
+PID_SD_PHIDP   PID_SD_PHIDP    $(DATA_DIR)/mdv/radarCart/kftg&PHIDP_SDEV_FOR_PID sdphidp.colors deg -5 80 5 cart 1 0
 
 # PID, Precip Rate, QPE
-    
+
 PID  PID mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID pid.colors - -5 80 5 cart 1 0
+PID_FILT PID_FILT mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID_FILT pid.colors - -5 80 5 cart 1 0
 RATE_ZR  RATE_ZR $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR precip.colors - -5 80 5 cart 1 0
 RATE_HYBRID  RATE_HYBRID $(DATA_DIR)/mdv/radarCart/kftg&RATE_HYBRID precip.colors - -5 80 5 cart 1 0
+RATE_ZR_FILT  RATE_ZR_FILT $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR_FILT precip.colors - -5 80 5 cart 1 0
+RATE_HYBRID_FILT  RATE_HYBRID_FILT $(DATA_DIR)/mdv/radarCart/kftg&RATE_HYBRID_FILT precip.colors - -5 80 5 cart 1 0
 QPE_ZR QPE_ZR $(DATA_DIR)/mdv/radarCart/kftg&QPE_ZR precip.colors - -5 80 5 cart 1 0
 QPE_HYBRID QPE_HYBRID $(DATA_DIR)/mdv/radarCart/kftg&QPE_HYBRID precip.colors - -5 80 5 cart 1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
-# Echo type, convectivity
-
-EchoType3D      EchoType3D      mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&EchoType3D  conv_strat4.colors - -5 80 5
-EchoType2D      EchoType2D      mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&EchoType2D  conv_strat4.colors - -5 80 5
-Convectivity    Convectivity  $(DATA_DIR)/mdv/radarCart/kftg&Convectivity3D  convectivity.colors - -5 80 5
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-
-# Terrain, extinction
+# Temp, RH, Terrain, beam blockage
 
 Extinct    Extinct    $(DATA_DIR)/mdv/radarCart/kftg&extinction     fraction.colors   m   -5   80  5  cart   1 0
 TerrainHt  TerrainHt  $(DATA_DIR)/mdv/radarCart/kftg&terrain_ht     terrain_front.colors   m   -5   80  5  cart   1 0
+ExtinctRef ExtinctRef mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg&extinction     fraction.colors   m   -5   80  5  cart   1 0
+TerrainRef TerrainRef mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg/&terrain_ht  terrain_front.colors   m   -5   80  5  cart   1 0
+HiRes      HiRes      mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg/&terrain_hi_res  terrain_front.colors   m   -5   80  5  cart   1 0
+Elev          Elev    mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg&elevation elevation.colors   deg  -5   80  5  cart   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+
+INTERP-temp   INTERP-temp   $(DATA_DIR)/mdv/radarCart/kftg&TEMP temp.colors   C   -5   80  5  dcont  1 0
+INTERP-RH     INTERP-RH     $(DATA_DIR)/mdv/radarCart/kftg&RH   rh.colors     %   -5   80  5  dcont  1 0
+EchoType      EchoType      mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&EchoType3D  conv_strat4.colors - -5 80 5
+Convectivity  Convectivity  $(DATA_DIR)/mdv/radarCart/kftg&Convectivity3D  convectivity.colors - -5 80 5
+DbzTexture  DbzTexture  $(DATA_DIR)/mdv/radarCart/kftg&DbzTexture3D  dbz.colors - -5 80 5
+ShallowHt  ShallowHt  $(DATA_DIR)/mdv/radarCart/kftg&ShallowHt heightkm.colors km -5 80 5
+DeepHt  DeepHt  $(DATA_DIR)/mdv/radarCart/kftg&DeepHt heightkm.colors km -5 80 5
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+
+# environmental and geometry
+
+RUC-temp   RUC-temp   $(DATA_DIR)/mdv/ruc&TMP  temp.colors   C   -5   80  5  dcont   1 0
+RUC-RH     RUC-RH     $(DATA_DIR)/mdv/ruc&RH   rh.colors   %   -5   80  5  dcont   1 0
+BEAM_HT   BEAM_HT     $(DATA_DIR)/cfradial/kftg/debug&BEAM_HT  number.colors km -5 80 5 radial 1 0
+ELEV     ELEV     $(DATA_DIR)/cfradial/kftg/debug&ELEV  number.colors deg -5 80 5 radial 1 0
+RANGE    RANGE    $(DATA_DIR)/cfradial/kftg/debug&RANGE  number_250.colors km -5 80 5 radial 1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
-# temp, RH - interpolated + oiginal
+# Polar
 
-TEMP   TEMP   $(DATA_DIR)/mdv/radarCart/kftg&TEMP temp.colors   C   -5   80  5  dcont  1 0
-RH     RH     $(DATA_DIR)/mdv/radarCart/kftg&RH   rh.colors     %   -5   80  5  dcont  1 0
-orig-temp   orig-temp   $(DATA_DIR)/mdv/ruc&TMP  temp.colors   C   -5   80  5  dcont   1 0
-orig-RH     orig-RH     $(DATA_DIR)/mdv/ruc&RH   rh.colors   %   -5   80  5  dcont   1 0
+KFTG_DBZ   KFTG_DBZ    $(DATA_DIR)/cfradial/kftg/moments&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+KFTG_VEL   KFTG_VEL    $(DATA_DIR)/cfradial/kftg/moments&VEL       vel.colors   m/s -5 80 5 radial 1 0
+KFTG_WIDTH KFTG_WIDTH  $(DATA_DIR)/cfradial/kftg/moments&WIDTH        width.colors m/s -5 80 5 radial 1 0
+KFTG_ZDR   KFTG_ZDR    $(DATA_DIR)/cfradial/kftg/moments&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+KFTG_PHIDP KFTG_PHIDP  $(DATA_DIR)/cfradial/kftg/moments&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+KFTG_RHOHV KFTG_RHOHV  $(DATA_DIR)/cfradial/kftg/moments&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
-
-# Debug fields
-
-#PID_KFTG_DBZ   PID_KFTG_DBZ    $(DATA_DIR)/mdv/radarCart/kftg&DBZ_FOR_PID       dbz.colors   dBZ -5 80 5 cart 1 0
-#PID_KFTG_ZDR   PID_KFTG_ZDR    $(DATA_DIR)/mdv/radarCart/kftg&ZDR_FOR_PID       zdr.colors   dB  -5 80 5 cart 1 0
-#PID_KFTG_PHIDP PID_KFTG_PHIDP  $(DATA_DIR)/mdv/radarCart/kftg&PHIDP_FOR_PID       phidp.colors deg -5 80 5 cart 1 0a
-#PID_KFTG_RHOHV PID_KFTG_RHOHV  $(DATA_DIR)/mdv/radarCart/kftg&RHOHV_FOR_PID       rhohv.colors -   -5 80 5 cart 1 0
-#PID_KFTG_SNR   PID_KFTG_SNR    $(DATA_DIR)/mdv/radarCart/kftg&SNR_FOR_PID       snr.colors   dB -5 80 5 cart 1 0
-#PID_KFTG_KDP   PID_KFTG_KDP    $(DATA_DIR)/mdv/radarCart/kftg&KDP_FOR_PID        kdp.colors -   -5 80 5 cart 1 0
-#PID_SD_ZDR     PID_SD_ZDR      $(DATA_DIR)/mdv/radarCart/kftg&ZDR_SDEV_FOR_PID  sdzdr.colors   dB -5 80 5 cart 1 0
-#PID_SD_PHIDP   PID_SD_PHIDP    $(DATA_DIR)/mdv/radarCart/kftg&PHIDP_SDEV_FOR_PID sdphidp.colors deg -5 80 5 cart 1 0
 
 # fields for computing scalar quantities for PID
 
-#SCALAR_DBZ   SCALAR_DBZ    $(DATA_DIR)/cfradial/kftg/debug&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
-#SCALAR_VEL   SCALAR_VEL    $(DATA_DIR)/cfradial/kftg/debug&VEL       vel.colors   m/s -5 80 5 radial 1 0
-#SCALAR_WIDTH SCALAR_WIDTH  $(DATA_DIR)/cfradial/kftg/debug&WIDTH        width.colors m/s -5 80 5 radial 1 0
-#SCALAR_ZDR   SCALAR_ZDR    $(DATA_DIR)/cfradial/kftg/debug&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
-#SCALAR_PHIDP SCALAR_PHIDP  $(DATA_DIR)/cfradial/kftg/debug&PHIDP       phidp.colors deg -5 80 5 radial 1 0
-#SCALAR_RHOHV SCALAR_RHOHV  $(DATA_DIR)/cfradial/kftg/debug&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+SCALAR_DBZ   SCALAR_DBZ    $(DATA_DIR)/cfradial/kftg/debug&DBZ       dbz.colors   dBZ -5 80 5 radial 1 0
+SCALAR_VEL   SCALAR_VEL    $(DATA_DIR)/cfradial/kftg/debug&VEL       vel.colors   m/s -5 80 5 radial 1 0
+SCALAR_WIDTH SCALAR_WIDTH  $(DATA_DIR)/cfradial/kftg/debug&WIDTH        width.colors m/s -5 80 5 radial 1 0
+SCALAR_ZDR   SCALAR_ZDR    $(DATA_DIR)/cfradial/kftg/debug&ZDR       zdr.colors   dB  -5 80 5 radial 1 0
+SCALAR_PHIDP SCALAR_PHIDP  $(DATA_DIR)/cfradial/kftg/debug&PHIDP       phidp.colors deg -5 80 5 radial 1 0
+SCALAR_RHOHV SCALAR_RHOHV  $(DATA_DIR)/cfradial/kftg/debug&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
-#PID_FILT PID_FILT mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID_FILT pid.colors - -5 80 5 cart 1 0
-#RATE_ZR_FILT  RATE_ZR_FILT $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR_FILT precip.colors - -5 80 5 cart 1 0
-#RATE_HYBRID_FILT  RATE_HYBRID_FILT $(DATA_DIR)/mdv/radarCart/kftg&RATE_HYBRID_FILT precip.colors - -5 80 5 cart 1 0
-
-#HiRes      HiRes      mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg/&terrain_hi_res  terrain_front.colors   m   -5   80  5  cart   1 0
-#Elev          Elev    mdvp::terrain//localhost:0:$(DATA_DIR)/mdv/beamBlock/kftg&elevation elevation.colors   deg  -5   80  5  cart   1 0
-
-#DbzTexture  DbzTexture  $(DATA_DIR)/mdv/radarCart/kftg&DbzTexture3D  dbz.colors - -5 80 5
-#ShallowHt  ShallowHt  $(DATA_DIR)/mdv/radarCart/kftg&ShallowHt heightkm.colors km -5 80 5
-#DeepHt  DeepHt  $(DATA_DIR)/mdv/radarCart/kftg&DeepHt heightkm.colors km -5 80 5
-
-#RUC-temp   RUC-temp   $(DATA_DIR)/mdv/ruc&TMP  temp.colors   C   -5   80  5  dcont   1 0
-#RUC-RH     RUC-RH     $(DATA_DIR)/mdv/ruc&RH   rh.colors   %   -5   80  5  dcont   1 0
-#BEAM_HT   BEAM_HT     $(DATA_DIR)/cfradial/kftg/debug&BEAM_HT  number.colors km -5 80 5 radial 1 0
-#ELEV     ELEV     $(DATA_DIR)/cfradial/kftg/debug&ELEV  number.colors deg -5 80 5 radial 1 0
-#RANGE    RANGE    $(DATA_DIR)/cfradial/kftg/debug&RANGE  number_250.colors km -5 80 5 radial 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
 </GRIDS>
 
@@ -976,7 +973,7 @@ cidd.click_posn_rel_to_origin: 1
 # Set this parameter to force the field menu popup to this many columns
 # If set <= 0, then cidd sets this dynamically, allowing at most 30 in each
 # column.
-cidd.num_field_menu_cols: 6
+cidd.num_field_menu_cols: 8
 
 # This parameter sets WSDDM specific behavior On -
 # - Go to end of loop when movie stops.

@@ -578,7 +578,7 @@ ncf_comment = "testing 111";
 //
 // Type: boolean
 
-write_debug_polar_output = FALSE;
+write_debug_polar_output = TRUE;
 
 ///////////// debug_polar_output_dir //////////////////
 //
