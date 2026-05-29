@@ -2050,7 +2050,7 @@ conv_strat_write_convectivity = TRUE;
 //
 // Type: boolean
 
-conv_strat_write_convective_dbz = TRUE;
+conv_strat_write_convective_dbz = FALSE;
 
 ///////////// conv_strat_write_echo_tops //////////////
 //
@@ -2061,7 +2061,7 @@ conv_strat_write_convective_dbz = TRUE;
 //
 // Type: boolean
 
-conv_strat_write_echo_tops = TRUE;
+conv_strat_write_echo_tops = FALSE;
 
 ///////////// conv_strat_write_debug_fields ///////////
 //
@@ -2071,7 +2071,7 @@ conv_strat_write_echo_tops = TRUE;
 //
 // Type: boolean
 
-conv_strat_write_debug_fields = TRUE;
+conv_strat_write_debug_fields = FALSE;
 
 //======================================================================
 //
