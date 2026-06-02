@@ -83,12 +83,7 @@ The structure of the TitanDP part of this repo is as follows:
 
 ## Overview
 
-In this tutorial we process 2 data sets:
-
-* hail
-* derecho
-
-For each case the logic and data flow is as follows:
+The overall processing flow is as follows:
 
 ![Alt text](./images/titan_dp_data_flow.png)
 
