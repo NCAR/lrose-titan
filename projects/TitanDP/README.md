@@ -148,7 +148,7 @@ CartBeamBlock reads in:
 * the template file to get the grid geometry.
 * the SRTM3 digital terrain height data.
 
-CartBeamBlock calculates the extinction fraction, at each Cartesian grid point, due to beam blockage caused by terrain.
+CartBeamBlock calculates the extinction fraction, at each 3D Cartesian grid point, due to beam blockage caused by terrain. It also creates a 2D Cartesian grid with terrain height.
 
 CartBeamBlock is quite CPU-intensive, and will probably take at least 30 minutes to complete. It is only run once per radar and Cartesian grid.
 
