@@ -128,9 +128,9 @@ You should run the steps from the script directory:
 
 This creates an MDV file with a single field named ```template3D```.
 
-This file has the specificed grid geometry for the Cartesian volume, for the specific radar - in this case KFTG.
+This field has the specified grid geometry for the Cartesian volume, for the selected radar location - in this case the Denver NEXRAD KFTG.
 
-The app reads in one CfRadial file to get the radar metadata. In this case it reads in the first file in the input directory:
+RadxCartDP reads in a single CfRadial file to get the radar metadata. In this case it reads in the first file in the input directory:
 
 ```
   $HOME/data/TitanDP/mdv/radarCart/kftg/template/20150626/20150626_005802.mdv.cf.nc
