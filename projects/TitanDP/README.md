@@ -121,7 +121,7 @@ You should run the scripts from the script directory:
   cd ~/git/lrose-titan/projects/TitanDP/scripts
 ```
 
-### Create a template file for the Cartesian grid
+## Create a template file for the Cartesian grid
 
 ```
   ./run_RadxCartDP.create_grid_template.kftg
@@ -137,7 +137,7 @@ This file has the specificed grid geometry for the Cartesian volume, for the spe
 
 The template file will be used by ```CartBeamBlock``` to create a beam blockage file for the specified radar (KFTG) and Cartesian grid.
 
-### Create the beam blockage file
+## Create the beam blockage file
 
 ```
   ./run_CartBeamBlock.kftg 
@@ -148,11 +148,13 @@ CartBeamBlock reads in:
 * the template file to get the grid geometry.
 * the SRTM3 digital terrain height data.
 
-CartBeamBlock calculates the extinction fraction, at each 3D Cartesian grid point, due to beam blockage caused by terrain. It also creates a 2D Cartesian grid with terrain height.
+CartBeamBlock calculates the power extinction fraction, at each 3D Cartesian grid point, due to beam blockage caused by terrain. It also creates a 2D Cartesian grid with terrain height.
 
-CartBeamBlock is quite CPU-intensive, and will probably take at least 30 minutes to complete. It is only run once per radar and Cartesian grid.
+CartBeamBlock is quite CPU-intensive, and will probably take at least 30 minutes to complete. It is only run once per radar and Cartesian grid. It is multi-threaded. You will get the best performance by setting the number of threads used to be 2 * the number of available CPUs.
 
-While it is running, feedback on progress is provided to your terminal window. For example:
+While it is running, text feedback on progress is provided to your terminal window.
+
+For example, it will look something like the following:
 
 ```
 INFO - CartBeamBlock::_computeBlockage()
@@ -164,6 +166,77 @@ INFO - blockage computation, % complete, nPointsDone: 17, 108800
 ```
 
 At this stage the computations are 17% complete.
+
+When complete you will see something like the following:
+
+```
+Adding 2D terrain ht field: terrain_ht
+Adding high resolution terrain field: terrain_hi_res
+Writing output MDV file, dir: /home/dixon/data/TitanDP/mdv/BeamBlock/kftg
+```
+
+Sometimes it will report that NaNs were found and converted to the bad_data_value. This is benign.
+
+The beam blockage will be written to an MDV file, in this case:
+
+```
+Wrote blockage MDV NetCDF file: /home/dixon/data/TitanDP/mdv/BeamBlock/kftg/20000101/20000101_000000.mdv.cf.nc
+```
+
+## Run RadxCartDP
+
+We run ```RadxCartDP``` to create a Cartesian output volume for each radar input volume.
+
+```
+  ./run_RadxCartDP.kftg 
+```
+
+In this example, we will analyze data for 1 hour from 2015/06/26 00:00 UTC to 01:00 UTC.
+
+RadxCartDP performs the following steps:\
+
+* read in a CfRadial radar volume.
+* locate the appropriate model (RUC) file that corresponds to the radar data in time.
+* compute KDP in radial space.
+* add required derived scalar fields in radial coordinates.
+* interpolate all radial fields onto Cartesian coordinates.
+* compute particle ID (PID) in 3D Cartesian coordinates.
+* compute precipitation rate (ZR, Hybrid) in 3D Cartesian coordinates.
+* taking beam blockage and terrain height into account, compute QPE (ZR, Hybrid), in 2D Cartesian coordinates.
+* compute the convective/stratiform partition, in 3D and 3D Cartesian coordinates.
+* write the results to Cartesian NetCDF CF-compliant MDV files.
+
+The fields produces in this example are:
+
+Radar input variables:
+
+  DBZ
+  VEL
+  WIDTH
+  ZDR
+  PHIDP
+  RHOHV
+
+Geometry:
+
+  SlantRange
+  BeamHt
+  Coverage
+
+Model:
+
+  TEMP
+  RH
+  PID
+  RATE_ZR
+  RATE_HYBRID
+  QPE_HYBRID
+  QPE_ZR
+  extinction
+  terrain_ht
+  EchoType3D
+  EchoType2D
+  Convectivity3D
 
 
 You can view the results using HawkEye:
