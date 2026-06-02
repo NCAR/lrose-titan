@@ -22,15 +22,17 @@ The input data for this tutorial is from the PECAN field campaign. PECAN was run
 
 For this initial testing we are using data for the KFTG NEXRAD radar, located at the Front Range airport near Denver, Colorado.
 
-* This is a convective storm case, with a squall line moving west to east.
+This is a convective storm case, with a squall line moving west to east.
 
 ![Alt text](./images/kftg_cart_dbz.png)
 
-The data for this tutorial is a compressed tar file: ```TitanDP_example_data.tgz```. This can be downloaded from Mike's Google drive at:
+The data for this tutorial is a compressed tar file: ```TitanDP_example_data.tgz```.
 
-* [TitanDP tutorial data](https://drive.google.com/drive/folders/1Hd3B5GvT4iaY7h_Gi4uR7RJYdorsXxC3)
+This can be downloaded from Mike's Google drive at:
 
-For the processing to work smoothly, you need to be consistent and put the data in the correct location.
+* [TitanDP_example_data.tgz](https://drive.google.com/drive/folders/1Hd3B5GvT4iaY7h_Gi4uR7RJYdorsXxC3)
+
+For the tutorial to work correctly, you need to be consistent and put the data in the correct location.
 
 You should create a ```$HOME/data``` directory and untar the file there.
 
