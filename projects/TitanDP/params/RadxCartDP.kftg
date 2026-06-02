@@ -578,7 +578,7 @@ ncf_comment = "testing 111";
 //
 // Type: boolean
 
-write_debug_polar_output = FALSE;
+write_debug_polar_output = TRUE;
 
 ///////////// debug_polar_output_dir //////////////////
 //
@@ -1597,7 +1597,7 @@ angle_fields = {
 //
 // Type: boolean
 
-output_range_field = FALSE;
+output_range_field = TRUE;
 
 ///////////// range_field_name ////////////////////////
 //
@@ -1607,7 +1607,7 @@ output_range_field = FALSE;
 //
 // Type: string
 
-range_field_name = "range";
+range_field_name = "SlantRange";
 
 ///////////// output_height_field /////////////////////
 //
@@ -1617,7 +1617,7 @@ range_field_name = "range";
 //
 // Type: boolean
 
-output_height_field = FALSE;
+output_height_field = TRUE;
 
 ///////////// height_field_name ///////////////////////
 //
@@ -1627,7 +1627,7 @@ output_height_field = FALSE;
 //
 // Type: string
 
-height_field_name = "height";
+height_field_name = "BeamHt";
 
 ///////////// output_coverage_field ///////////////////
 //
@@ -1640,7 +1640,7 @@ height_field_name = "height";
 //
 // Type: boolean
 
-output_coverage_field = FALSE;
+output_coverage_field = TRUE;
 
 ///////////// coverage_field_name /////////////////////
 //
@@ -1671,7 +1671,7 @@ output_time_field = FALSE;
 //
 // Type: string
 
-time_field_name = "time_elapsed";
+time_field_name = "TimeElapsed";
 
 ///////////// interp_time_field ///////////////////////
 //

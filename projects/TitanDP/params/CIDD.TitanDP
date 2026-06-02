@@ -149,6 +149,15 @@ orig-RH     orig-RH     $(DATA_DIR)/mdv/ruc&RH   rh.colors   %   -5   80  5  dco
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
+# range, beam ht, coverage
+
+BEAM_HT      BEAM_HT      $(DATA_DIR)/mdv/radarCart/kftg&BeamHt      height.colors     km -5 80 5 radial 1 0
+SLANT_RANGE  SLANT_RANGE  $(DATA_DIR)/mdv/radarCart/kftg&SlantRange  number_250.colors km -5 80 5 radial 1 0
+COVERAGE     COVERAGE     $(DATA_DIR)/mdv/radarCart/kftg&Coverage    coverage.colors   -  -5 80 5 radial 1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
+
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
@@ -192,6 +201,8 @@ orig-RH     orig-RH     $(DATA_DIR)/mdv/ruc&RH   rh.colors   %   -5   80  5  dco
 #BEAM_HT   BEAM_HT     $(DATA_DIR)/cfradial/kftg/debug&BEAM_HT  number.colors km -5 80 5 radial 1 0
 #ELEV     ELEV     $(DATA_DIR)/cfradial/kftg/debug&ELEV  number.colors deg -5 80 5 radial 1 0
 #RANGE    RANGE    $(DATA_DIR)/cfradial/kftg/debug&RANGE  number_250.colors km -5 80 5 radial 1 0
+
+# TIME_ELAPSED TIME_ELAPSED $(DATA_DIR)/mdv/radarCart/kftg&TimeElapsed number_250.colors   -  -5 80 5 radial 1 0
 
 </GRIDS>
 
