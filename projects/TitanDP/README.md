@@ -8,7 +8,7 @@ For this initial testing we are using data for the KFTG NEXRAD radar, located at
 
 * This is a convective storm case, with a squall line moving west to east.
 
-The data (as a .tgz file) can be downloaded from Mike's Google drive:
+The data ```TitanDP_example_data.tgz``` can be downloaded from Mike's Google drive:
 
 * [TitanDP tutorial data](https://drive.google.com/drive/folders/1Hd3B5GvT4iaY7h_Gi4uR7RJYdorsXxC3)
 
