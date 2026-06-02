@@ -181,7 +181,7 @@ containing the following fields:
 * TerrainHt (terrain height on specified Cartesian 2D grid)
 * TerrainHiRes (terrain height at 10 times resolution)
 
-When writing the output file, CartBeamBlock may report that NaNs were found and converted to the bad_data_value. This is benign and does not indicate an error.
+NOTE: when writing the output file, CartBeamBlock may report that NaNs were found and converted to the bad_data_value. This is benign and does not indicate an error.
 
 ## Run RadxCartDP
 
@@ -208,66 +208,45 @@ RadxCartDP performs the following steps:
 
 The fields produces in this example are:
 
-Radar fields:
+** Radar fields: **
 
-  DBZ
-  VEL
-  WIDTH
-  ZDR
-  PHIDP
-  RHOHV
-  KDP
+* DBZ
+* VEL
+* WIDTH
+* ZDR
+* PHIDP
+* RHOHV
+* KDP
 
-Radar geometry:
+** Radar geometry: **
 
-  SlantRange
-  BeamHt
-  Coverage
+* SlantRange
+* BeamHt
+* Coverage
 
-Model environment:
+** Model environment: **
 
-  TEMP
-  RH
+* TEMP
+* RH
 
-Terrain height and beam blockage:
+** Terrain height and beam blockage: **
 
-  extinction
-  terrain_ht
+* Extinction
+* TerrainHt
 
-Dual-polarization products:
+** Dual-polarization products: **
 
-  PID
-  RATE_ZR
-  RATE_HYBRID
-  QPE_HYBRID
-  QPE_ZR
+* PID
+* RATE_ZR
+* RATE_HYBRID
+* QPE_HYBRID
+* QPE_ZR
+
+ ** Echo classification: **
   
-  EchoType3D
-  EchoType2D
-  Convectivity3D
-
-  WIDTH
-  ZDR
-  PHIDP
-  RHOHV
-  DBZ
-  VEL
-  KDP
-  SlantRange
-  BeamHt
-  Coverage
-  TEMP
-  RH
-  PID
-  RATE_ZR
-  RATE_HYBRID
-  QPE_HYBRID
-  QPE_ZR
-  extinction
-  terrain_ht
-  EchoType3D
-  EchoType2D
-  Convectivity3D
+* EchoType3D
+* EchoType2D
+* Convectivity3D
 
 ## Output data
 
