@@ -208,7 +208,7 @@ RadxCartDP performs the following steps:
 
 The fields produces in this example are:
 
-** Radar fields: **
+**Radar fields:**
 
 * DBZ
 * VEL
@@ -218,23 +218,23 @@ The fields produces in this example are:
 * RHOHV
 * KDP
 
-** Radar geometry: **
+**Radar geometry:**
 
 * SlantRange
 * BeamHt
 * Coverage
 
-** Model environment: **
+**Model environment:**
 
 * TEMP
 * RH
 
-** Terrain height and beam blockage: **
+**Terrain height and beam blockage:**
 
 * Extinction
 * TerrainHt
 
-** Dual-polarization products: **
+**Dual-polarization products:**
 
 * PID
 * RATE_ZR
@@ -242,7 +242,7 @@ The fields produces in this example are:
 * QPE_HYBRID
 * QPE_ZR
 
- ** Echo classification: **
+ **Echo classification:**
   
 * EchoType3D
 * EchoType2D
