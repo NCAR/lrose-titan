@@ -1,5 +1,19 @@
 # TITAN Dual-Polarization tutorial
 
+## Overview
+
+TitanDP is under development. This document will be updated as progress is made.
+
+Initially we are working with a single radar volume.
+
+The single radar processing flow is as follows:
+
+![Alt text](./images/titan_dp_data_flow.png)
+
+Later we will add a dual-polarization merge step to create a mosaic, and run TitanDP on the mosaic:
+
+![Alt text](./images/merged_dp_data_flow.png)
+
 ## Input data
 
 The input data for this tutorial is from the PECAN field campaign. PECAN was run in Kansas from June to July 2015.
@@ -8,11 +22,15 @@ For this initial testing we are using data for the KFTG NEXRAD radar, located at
 
 * This is a convective storm case, with a squall line moving west to east.
 
-The data ```TitanDP_example_data.tgz``` can be downloaded from Mike's Google drive:
+![Alt text](./images/kftg_cart_dbz.png)
+
+The data for this tutorial is a compressed tar file: ```TitanDP_example_data.tgz```. This can be downloaded from Mike's Google drive at:
 
 * [TitanDP tutorial data](https://drive.google.com/drive/folders/1Hd3B5GvT4iaY7h_Gi4uR7RJYdorsXxC3)
 
-To be consistent, you should create a ```$HOME/data``` directory and untar the file there.
+For the processing to work smoothly, you need to be consistent and put the data in the correct location.
+
+You should create a ```$HOME/data``` directory and untar the file there.
 
 ```
   cd $HOME
@@ -34,29 +52,6 @@ These are, respectively:
 * SRTM 3 arc second (90m) resolution Terrain Height Data from the NASA shuttle mission.
 * CfRadial data from KFTG radar.
 * MDV model files from the RUC.
-
-## Output data
-
-After the full analysis has been run, the following derived data directories should exist:
-
-```
-  ~/data/TitanDP/ERA5/spdb/Strathmore/20240806* (soundings from ERA5)
-  ~/data/TitanDP/ERA5/spdb/KingCity/20220521* (soundings from ERA5)
-  ~/data/TitanDP/radar/cfradial/no_qc/Strathmore/20240806/cfrad.20240806*nc (cfradial before QC)
-  ~/data/TitanDP/radar/cfradial/no_qc/KingCity/20220521/cfrad.20220521*nc (cfradial before QC)
-  ~/data/TitanDP/radar/cfradial/qc/Strathmore/20240806/cfrad.20240806*nc (cfradial after QC)
-  ~/data/TitanDP/radar/cfradial/qc/KingCity/20220521/cfrad.20220521*nc (cfradial after QC)
-  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
-  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
-  ~/data/TitanDP/radar/cart/qc/Strathmore/20240806/ncf_20240806*nc (Cartesian MDC CF-compliant netcdf)
-  ~/data/TitanDP/radar/cart/qc/KingCity/20220521/ncf_202205216*nc (Cartesian MDC CF-compliant netcdf)
-  ~/data/TitanDP/titan/storms/Strathmore/20240806* (Titan binary files)
-  ~/data/TitanDP/titan/storms/KingCity/20220521* (Titan binary files)
-  ~/data/TitanDP/titan/ascii/Tracks2Ascii.hail.txt (Titan output converted by Tracks2Ascii)
-  ~/data/TitanDP/titan/ascii/Tracks2Ascii.derecho.txt (Titan output converted by Tracks2Ascii)
-  ~/data/TitanDP/titan/netcdf/Strathmore/titan_20240806.nc (Titan output converted by Tstorms2NetCDF)
-  ~/data/TitanDP/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
-```
 
 ## Checking out the project
 
@@ -80,12 +75,6 @@ The structure of the TitanDP part of this repo is as follows:
   ~/git/lrose-titan/projects/TitanDP/scripts
   ~/git/lrose-titan/projects/TitanDP/data
 ```
-
-## Overview
-
-The overall processing flow is as follows:
-
-![Alt text](./images/titan_dp_data_flow.png)
 
 ## Setting up the environment
 
@@ -264,6 +253,29 @@ Dual-polarization products:
   EchoType3D
   EchoType2D
   Convectivity3D
+
+## Output data
+
+After the full analysis has been run, the following derived data directories should exist:
+
+```
+  ~/data/TitanDP/ERA5/spdb/Strathmore/20240806* (soundings from ERA5)
+  ~/data/TitanDP/ERA5/spdb/KingCity/20220521* (soundings from ERA5)
+  ~/data/TitanDP/radar/cfradial/no_qc/Strathmore/20240806/cfrad.20240806*nc (cfradial before QC)
+  ~/data/TitanDP/radar/cfradial/no_qc/KingCity/20220521/cfrad.20220521*nc (cfradial before QC)
+  ~/data/TitanDP/radar/cfradial/qc/Strathmore/20240806/cfrad.20240806*nc (cfradial after QC)
+  ~/data/TitanDP/radar/cfradial/qc/KingCity/20220521/cfrad.20220521*nc (cfradial after QC)
+  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
+  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
+  ~/data/TitanDP/radar/cart/qc/Strathmore/20240806/ncf_20240806*nc (Cartesian MDC CF-compliant netcdf)
+  ~/data/TitanDP/radar/cart/qc/KingCity/20220521/ncf_202205216*nc (Cartesian MDC CF-compliant netcdf)
+  ~/data/TitanDP/titan/storms/Strathmore/20240806* (Titan binary files)
+  ~/data/TitanDP/titan/storms/KingCity/20220521* (Titan binary files)
+  ~/data/TitanDP/titan/ascii/Tracks2Ascii.hail.txt (Titan output converted by Tracks2Ascii)
+  ~/data/TitanDP/titan/ascii/Tracks2Ascii.derecho.txt (Titan output converted by Tracks2Ascii)
+  ~/data/TitanDP/titan/netcdf/Strathmore/titan_20240806.nc (Titan output converted by Tstorms2NetCDF)
+  ~/data/TitanDP/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
+```
 
 You can view the results using HawkEye:
 
