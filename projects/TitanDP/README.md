@@ -31,7 +31,7 @@ That will create the following data tree:
 
 These are, respectively:
 
-* SRTM 3 arc second (90m) resolution Terrain Height Data from the shuttle mission.
+* SRTM 3 arc second (90m) resolution Terrain Height Data from the NASA shuttle mission.
 * CfRadial data from KFTG radar.
 * MDV model files from the RUC.
 
