@@ -14,6 +14,8 @@ Later we will add a dual-polarization merge step to create a mosaic, and run Tit
 
 ![Alt text](./images/merged_dp_data_flow.png)
 
+Processes and data sets that do not yet exist are shown in gray.
+
 ## Input data
 
 The input data for this tutorial is from the PECAN field campaign. PECAN was run in Kansas from June to July 2015.
