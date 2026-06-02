@@ -183,7 +183,7 @@ containing the following fields:
 
 NOTE: when writing the output file, CartBeamBlock may report that NaNs were found and converted to the bad_data_value. This is benign and does not indicate an error.
 
-## Run RadxCartDP
+## Step 3: run RadxCartDP
 
 We run ```RadxCartDP``` to create a Cartesian output volume for each radar input volume.
 
