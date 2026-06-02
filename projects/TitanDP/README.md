@@ -28,7 +28,7 @@ This is a convective storm case, with a squall line moving west to east.
 
 The data for this tutorial is a compressed tar file: ```TitanDP_example_data.tgz```.
 
-This can be downloaded from Mike's Google drive at:
+This can be downloaded from Mike Dixon's Google drive at:
 
 * [TitanDP_example_data.tgz](https://drive.google.com/drive/folders/1Hd3B5GvT4iaY7h_Gi4uR7RJYdorsXxC3)
 
@@ -57,12 +57,13 @@ These are, respectively:
 * CfRadial data from KFTG radar.
 * MDV model files from the RUC.
 
-## Checking out the project
+## Getting the project files from GitHub
 
 The Titan dual-polarization project is stored in the GitHub repo NCAR/lrose-titan.
+
 This is also the location of this README file.
 
-To check it out run:
+To clone the project onto your local host, do the following:
 
 ```
   mkdir -p ~/git
@@ -70,7 +71,7 @@ To check it out run:
   git clone https://github.com/ncar/lrose-titan
 ```
 
-The structure of the TitanDP part of this repo is as follows:
+The structure of the TitanDP tutorial is as follows:
 
 ```
   ~/git/lrose-titan/color_scales
@@ -97,25 +98,35 @@ The defaults are as follows:
   setenv PROJ_DIR $HOME/git/lrose-titan/projects/TitanDP
 ```
 
-The default settings work as is, if you have followed these instructions.
+The default settings work for this tutorial, if you follow these instructions carefully.
 
 If you have a different layout, edit ```set_env_vars``` appropriately.
 
+## Parameter files
+
+You will find the relevant parameter files in the params directory:
+
+```
+  cd ~/git/lrose-titan/projects/TitanDP/params
+```
+
+The parameter files are well-documented with comments. So reading through them will help you understand the processing steps.
+
 ## Processing steps, running the scripts
 
-You should run the scripts from the script directory:
+You should run the steps from the script directory:
 
 ```
   cd ~/git/lrose-titan/projects/TitanDP/scripts
 ```
 
-## Create a template file for the Cartesian grid
+## Step 1: create a template file to specify the the Cartesian grid
 
 ```
   ./run_RadxCartDP.create_grid_template.kftg
 ```
 
-This creates an MDV file with 1 field named ```template3D```.
+This creates an MDV file with a single field named ```template3D```.
 
 This file has the specificed grid geometry for the Cartesian volume, for the specific radar - in this case KFTG.
 
@@ -125,9 +136,9 @@ The app reads in one CfRadial file to get the radar metadata. In this case it re
   $HOME/data/TitanDP/mdv/radarCart/kftg/template/20150626/20150626_005802.mdv.cf.nc
 ```
 
-The template file will be used by ```CartBeamBlock``` to create a beam blockage file for the specified radar (KFTG) and Cartesian grid.
+## Step 2: create the beam blockage file
 
-## Create the beam blockage file
+The template file created in step 1 will be used by ```CartBeamBlock``` to create a beam blockage file for the specified radar (KFTG) and Cartesian grid.
 
 ```
   ./run_CartBeamBlock.kftg 
@@ -140,7 +151,7 @@ CartBeamBlock reads in:
 
 CartBeamBlock calculates the power extinction fraction, at each 3D Cartesian grid point, due to beam blockage caused by terrain. It also creates a 2D Cartesian grid with terrain height.
 
-CartBeamBlock is quite CPU-intensive, and will probably take at least 30 minutes to complete. It is only run once per radar and Cartesian grid. It is multi-threaded. You will get the best performance by setting the number of threads used to be 2 * the number of available CPUs.
+CartBeamBlock is quite CPU-intensive, and will probably take at least 30 minutes to complete. It is run once per radar as a pre-processing step. It is multi-threaded. You will get the best performance by setting the number of threads used to be (4 * the number of available CPUs).
 
 While it is running, text feedback on progress is provided to your terminal window.
 
@@ -155,7 +166,7 @@ INFO - CartBeamBlock::_computeBlockage()
 INFO - blockage computation, % complete, nPointsDone: 17, 108800
 ```
 
-At this stage the computations are 17% complete.
+This indicates that the computations are 17% complete.
 
 When complete, the following MDV file is created:
 
@@ -170,7 +181,7 @@ containing the following fields:
 * TerrainHt (terrain height on specified Cartesian 2D grid)
 * TerrainHiRes (terrain height at 10 times resolution)
 
-Sometimes it will report that NaNs were found and converted to the bad_data_value. This is benign and does not indicate an error.
+When writing the output file, CartBeamBlock may report that NaNs were found and converted to the bad_data_value. This is benign and does not indicate an error.
 
 ## Run RadxCartDP
 
