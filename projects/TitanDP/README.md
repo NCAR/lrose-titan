@@ -12,15 +12,16 @@ The data (as a .tgz file) can be downloaded from Mike's Google drive:
 
 * [TitanDP tutorial data](https://drive.google.com/drive/folders/1Hd3B5GvT4iaY7h_Gi4uR7RJYdorsXxC3)
 
-To be consistent, you should create a ```$HOME/data``` directory and copy the .tgz file there.
-
-Then:
+To be consistent, you should create a ```$HOME/data``` directory and untar the file there.
 
 ```
+  cd $HOME
+  mkdir -p data
+  cd data
   tar xvfz ~/Downloads/TitanDP_example_data.tgz
 ```
 
-That will create the following tree:
+That will create the following data tree:
 
 ```
   ~/data/TitanDP/Terrain/DEM/SRTM3/N*.hgt
@@ -30,9 +31,9 @@ That will create the following tree:
 
 These are, respectively:
 
-* SRTM 3 arc second (90m) resolution Terrain Height Data from the shuttle mission
-* CfRadial data from KFTG radar
-* MDV model files from the RUC
+* SRTM 3 arc second (90m) resolution Terrain Height Data from the shuttle mission.
+* CfRadial data from KFTG radar.
+* MDV model files from the RUC.
 
 ## Output data
 
