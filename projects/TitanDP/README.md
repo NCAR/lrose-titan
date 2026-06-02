@@ -121,16 +121,50 @@ You should run the scripts from the script directory:
   cd ~/git/lrose-titan/projects/TitanDP/scripts
 ```
 
-### Convert raw HDF5 files with no QC
+### Create a template file for the Cartesian grid
 
 ```
-  ./run_RadxConvert.no_qc.hail
-  ./run_RadxConvert.no_qc.derecho
+  ./run_RadxCartDP.create_grid_template.kftg
 ```
 
-This converts the raw HDF5 data into cfradial, with no QC steps applied.
+This creates an MDV file with 1 field named ```template3D```.
 
-We have, however, added the signal-to-noise (SNR) field, as derived from the reflectivity field DBZ. SNR is needed for later QC steps.
+This file has the specificed grid geometry for the Cartesian volume, for the specific radar - in this case KFTG. We read in one CfRadial file to get the radar metadata.
+
+```
+  $HOME/data/TitanDP/mdv/radarCart/kftg/template/20150626/20150626_005802.mdv.cf.nc
+```
+
+The template file will be used by ```CartBeamBlock``` to create a beam blockage file for the specified radar (KFTG) and Cartesian grid.
+
+### Create the beam blockage file
+
+```
+  ./run_CartBeamBlock.kftg 
+```
+
+CartBeamBlock reads in:
+
+* the template file to get the grid geometry.
+* the SRTM3 digital terrain height data.
+
+CartBeamBlock calculates the extinction fraction, at each Cartesian grid point, due to beam blockage caused by terrain.
+
+CartBeamBlock is quite CPU-intensive, and will probably take at least 30 minutes to complete. It is only run once per radar and Cartesian grid.
+
+While it is running, feedback on progress is provided to your terminal window. For example:
+
+```
+INFO - CartBeamBlock::_computeBlockage()
+  nx, ny, nz: 800, 800, 34
+  nThreads: 24
+  maxRangeKm: 293.683
+  nPoints2D: 640000
+INFO - blockage computation, % complete, nPointsDone: 17, 108800
+```
+
+At this stage the computations are 17% complete.
+
 
 You can view the results using HawkEye:
 
