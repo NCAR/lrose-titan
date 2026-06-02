@@ -253,32 +253,16 @@ The fields produces in this example are:
 After the full analysis has been run, the following derived data directories should exist:
 
 ```
-  ~/data/TitanDP/ERA5/spdb/Strathmore/20240806* (soundings from ERA5)
-  ~/data/TitanDP/ERA5/spdb/KingCity/20220521* (soundings from ERA5)
-  ~/data/TitanDP/radar/cfradial/no_qc/Strathmore/20240806/cfrad.20240806*nc (cfradial before QC)
-  ~/data/TitanDP/radar/cfradial/no_qc/KingCity/20220521/cfrad.20220521*nc (cfradial before QC)
-  ~/data/TitanDP/radar/cfradial/qc/Strathmore/20240806/cfrad.20240806*nc (cfradial after QC)
-  ~/data/TitanDP/radar/cfradial/qc/KingCity/20220521/cfrad.20220521*nc (cfradial after QC)
-  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
-  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
-  ~/data/TitanDP/radar/cart/qc/Strathmore/20240806/ncf_20240806*nc (Cartesian MDC CF-compliant netcdf)
-  ~/data/TitanDP/radar/cart/qc/KingCity/20220521/ncf_202205216*nc (Cartesian MDC CF-compliant netcdf)
-  ~/data/TitanDP/titan/storms/Strathmore/20240806* (Titan binary files)
-  ~/data/TitanDP/titan/storms/KingCity/20220521* (Titan binary files)
-  ~/data/TitanDP/titan/ascii/Tracks2Ascii.hail.txt (Titan output converted by Tracks2Ascii)
-  ~/data/TitanDP/titan/ascii/Tracks2Ascii.derecho.txt (Titan output converted by Tracks2Ascii)
-  ~/data/TitanDP/titan/netcdf/Strathmore/titan_20240806.nc (Titan output converted by Tstorms2NetCDF)
-  ~/data/TitanDP/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
+  ~/data/TitanDP/mdv/radarCart/kftg/template (grid template geometry)
+  ~/data/TitanDP/mdv/BeamBlock/kftg (beam blockage file)
+  ~/data/TitanDP/mdv/radarCart/kftg (Cartesian dual-pol products)
 ```
 
-You can view the results using HawkEye:
+You can view the results using CIDD:
 
 ```
-  ./run_HawkEye.no_qc.hail
-  ./run_HawkEye.no_qc.derecho
+  ./run_CIDD.TitanDP
 ```
-
-You will notice that in the derecho case there is considerable interference, leading to radial spikes.
 
 Hail case - no significant interference:
 
