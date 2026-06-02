@@ -406,7 +406,7 @@ beam_block_input_file_path = "$(DATA_DIR)/mdv/BeamBlock/kftg/20000101/20000101_0
 //
 // Type: string
 
-beam_extinction_field_name = "extinction";
+beam_extinction_field_name = "Extinction";
 
 ///////////// terrain_ht_field_name ///////////////////
 //
@@ -414,7 +414,7 @@ beam_extinction_field_name = "extinction";
 //
 // Type: string
 
-terrain_ht_field_name = "terrain_ht";
+terrain_ht_field_name = "TerrainHt";
 
 //======================================================================
 //

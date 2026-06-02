@@ -167,21 +167,20 @@ INFO - blockage computation, % complete, nPointsDone: 17, 108800
 
 At this stage the computations are 17% complete.
 
-When complete you will see something like the following:
+When complete, the following MDV file is created:
 
 ```
-Adding 2D terrain ht field: terrain_ht
-Adding high resolution terrain field: terrain_hi_res
-Writing output MDV file, dir: /home/dixon/data/TitanDP/mdv/BeamBlock/kftg
+  $HOME/data/TitanDP/mdv/BeamBlock/kftg/20000101/20000101_000000.mdv.cf.nc
 ```
 
-Sometimes it will report that NaNs were found and converted to the bad_data_value. This is benign.
+containing the following fields:
 
-The beam blockage will be written to an MDV file, in this case:
+* Elevation (elevation angle of grid point as seen from radar)
+* Extinction (beam blockage extinction fraction)
+* TerrainHt (terrain height on specified Cartesian 2D grid)
+* TerrainHiRes (terrain height at 10 times resolution)
 
-```
-Wrote blockage MDV NetCDF file: /home/dixon/data/TitanDP/mdv/BeamBlock/kftg/20000101/20000101_000000.mdv.cf.nc
-```
+Sometimes it will report that NaNs were found and converted to the bad_data_value. This is benign and does not indicate an error.
 
 ## Run RadxCartDP
 
@@ -193,7 +192,7 @@ We run ```RadxCartDP``` to create a Cartesian output volume for each radar input
 
 In this example, we will analyze data for 1 hour from 2015/06/26 00:00 UTC to 01:00 UTC.
 
-RadxCartDP performs the following steps:\
+RadxCartDP performs the following steps:
 
 * read in a CfRadial radar volume.
 * locate the appropriate model (RUC) file that corresponds to the radar data in time.
@@ -208,7 +207,7 @@ RadxCartDP performs the following steps:\
 
 The fields produces in this example are:
 
-Radar input variables:
+Radar fields:
 
   DBZ
   VEL
@@ -216,15 +215,46 @@ Radar input variables:
   ZDR
   PHIDP
   RHOHV
+  KDP
 
-Geometry:
+Radar geometry:
 
   SlantRange
   BeamHt
   Coverage
 
-Model:
+Model environment:
 
+  TEMP
+  RH
+
+Terrain height and beam blockage:
+
+  extinction
+  terrain_ht
+
+Dual-polarization products:
+
+  PID
+  RATE_ZR
+  RATE_HYBRID
+  QPE_HYBRID
+  QPE_ZR
+  
+  EchoType3D
+  EchoType2D
+  Convectivity3D
+
+  WIDTH
+  ZDR
+  PHIDP
+  RHOHV
+  DBZ
+  VEL
+  KDP
+  SlantRange
+  BeamHt
+  Coverage
   TEMP
   RH
   PID
@@ -237,7 +267,6 @@ Model:
   EchoType3D
   EchoType2D
   Convectivity3D
-
 
 You can view the results using HawkEye:
 

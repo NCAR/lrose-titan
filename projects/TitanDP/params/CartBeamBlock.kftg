@@ -420,7 +420,7 @@ output_time_stamp = {
 //
 // Type: string
 
-extinction_field_name = "extinction";
+extinction_field_name = "Extinction";
 
 ///////////// elev_field_name /////////////////////////
 //
@@ -430,7 +430,7 @@ extinction_field_name = "extinction";
 //
 // Type: string
 
-elev_field_name = "elevation";
+elev_field_name = "Elevation";
 
 ///////////// terrain_ht_field_name ///////////////////
 //
@@ -440,7 +440,7 @@ elev_field_name = "elevation";
 //
 // Type: string
 
-terrain_ht_field_name = "terrain_ht";
+terrain_ht_field_name = "TerrainHt";
 
 ///////////// hi_res_terrain_ht_field_name ////////////
 //
@@ -450,7 +450,7 @@ terrain_ht_field_name = "terrain_ht";
 //
 // Type: string
 
-hi_res_terrain_ht_field_name = "terrain_hi_res";
+hi_res_terrain_ht_field_name = "TerrainHiRes";
 
 ///////////// hi_res_factor ///////////////////////////
 //
