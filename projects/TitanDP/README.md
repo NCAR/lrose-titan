@@ -40,27 +40,27 @@ These are, respectively:
 After the full analysis has been run, the following derived data directories should exist:
 
 ```
-  ~/data/ams2025/ERA5/spdb/Strathmore/20240806* (soundings from ERA5)
-  ~/data/ams2025/ERA5/spdb/KingCity/20220521* (soundings from ERA5)
-  ~/data/ams2025/radar/cfradial/no_qc/Strathmore/20240806/cfrad.20240806*nc (cfradial before QC)
-  ~/data/ams2025/radar/cfradial/no_qc/KingCity/20220521/cfrad.20220521*nc (cfradial before QC)
-  ~/data/ams2025/radar/cfradial/qc/Strathmore/20240806/cfrad.20240806*nc (cfradial after QC)
-  ~/data/ams2025/radar/cfradial/qc/KingCity/20220521/cfrad.20220521*nc (cfradial after QC)
-  ~/data/ams2025/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
-  ~/data/ams2025/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
-  ~/data/ams2025/radar/cart/qc/Strathmore/20240806/ncf_20240806*nc (Cartesian MDC CF-compliant netcdf)
-  ~/data/ams2025/radar/cart/qc/KingCity/20220521/ncf_202205216*nc (Cartesian MDC CF-compliant netcdf)
-  ~/data/ams2025/titan/storms/Strathmore/20240806* (Titan binary files)
-  ~/data/ams2025/titan/storms/KingCity/20220521* (Titan binary files)
-  ~/data/ams2025/titan/ascii/Tracks2Ascii.hail.txt (Titan output converted by Tracks2Ascii)
-  ~/data/ams2025/titan/ascii/Tracks2Ascii.derecho.txt (Titan output converted by Tracks2Ascii)
-  ~/data/ams2025/titan/netcdf/Strathmore/titan_20240806.nc (Titan output converted by Tstorms2NetCDF)
-  ~/data/ams2025/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
+  ~/data/TitanDP/ERA5/spdb/Strathmore/20240806* (soundings from ERA5)
+  ~/data/TitanDP/ERA5/spdb/KingCity/20220521* (soundings from ERA5)
+  ~/data/TitanDP/radar/cfradial/no_qc/Strathmore/20240806/cfrad.20240806*nc (cfradial before QC)
+  ~/data/TitanDP/radar/cfradial/no_qc/KingCity/20220521/cfrad.20220521*nc (cfradial before QC)
+  ~/data/TitanDP/radar/cfradial/qc/Strathmore/20240806/cfrad.20240806*nc (cfradial after QC)
+  ~/data/TitanDP/radar/cfradial/qc/KingCity/20220521/cfrad.20220521*nc (cfradial after QC)
+  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
+  ~/data/TitanDP/radar/cfradial/pid/Strathmore/20240806/cfrad.20240806*nc (cfradial PID)
+  ~/data/TitanDP/radar/cart/qc/Strathmore/20240806/ncf_20240806*nc (Cartesian MDC CF-compliant netcdf)
+  ~/data/TitanDP/radar/cart/qc/KingCity/20220521/ncf_202205216*nc (Cartesian MDC CF-compliant netcdf)
+  ~/data/TitanDP/titan/storms/Strathmore/20240806* (Titan binary files)
+  ~/data/TitanDP/titan/storms/KingCity/20220521* (Titan binary files)
+  ~/data/TitanDP/titan/ascii/Tracks2Ascii.hail.txt (Titan output converted by Tracks2Ascii)
+  ~/data/TitanDP/titan/ascii/Tracks2Ascii.derecho.txt (Titan output converted by Tracks2Ascii)
+  ~/data/TitanDP/titan/netcdf/Strathmore/titan_20240806.nc (Titan output converted by Tstorms2NetCDF)
+  ~/data/TitanDP/titan/netcdf/KingCity/titan_20220521.nc (Titan output converted by Tstorms2NetCDF)
 ```
 
 ## Checking out the project
 
-The Titan project for AMS2025 is stored in the GitHub repo NCAR/lrose-titan.
+The Titan dual-polarization project is stored in the GitHub repo NCAR/lrose-titan.
 This is also the location of this README file.
 
 To check it out run:
@@ -71,16 +71,17 @@ To check it out run:
   git clone https://github.com/ncar/lrose-titan
 ```
 
-The structure of the ams2025 part of this repo is as follows:
+The structure of the TitanDP part of this repo is as follows:
 
 ```
-  ~/git/lrose-titan/projects/ams2025/params
-  ~/git/lrose-titan/projects/ams2025/scripts
-  ~/git/lrose-titan/projects/ams2025/color_scales
-  ~/git/lrose-titan/projects/ams2025/maps
+  ~/git/lrose-titan/color_scales
+  ~/git/lrose-titan/mape
+  ~/git/lrose-titan/projects/TitanDP/params
+  ~/git/lrose-titan/projects/TitanDP/scripts
+  ~/git/lrose-titan/projects/TitanDP/data
 ```
 
-## Data flow overview
+## Overview
 
 In this tutorial we process 2 data sets:
 
@@ -89,23 +90,23 @@ In this tutorial we process 2 data sets:
 
 For each case the logic and data flow is as follows:
 
-![Alt text](./images/titan_data_flow.png)
+![Alt text](./images/titan_dp_data_flow.png)
 
 ## Setting up the environment
 
 In the scripts directory you will find the file:
 
 ```
-  ~/git/lrose-titan/projects/ams2025/scripts/set_env_vars
+  ~/git/lrose-titan/projects/TitanDP/scripts/set_env_vars
 ```
 
 This file setup up the environment, and is sourced by all of the scripts that we run for this project.
 
-The default contents are as follows:
+The defaults are as follows:
 
 ```
-  setenv DATA_DIR $HOME/data/ams2025
-  setenv PROJ_DIR $HOME/git/lrose-titan/projects/ams2025
+  setenv DATA_DIR $HOME/data/TitanDP
+  setenv PROJ_DIR $HOME/git/lrose-titan/projects/TitanDP
 ```
 
 The default settings work as is, if you have followed these instructions.
@@ -117,7 +118,7 @@ If you have a different layout, edit ```set_env_vars``` appropriately.
 You should run the scripts from the script directory:
 
 ```
-  cd ~/git/lrose-titan/projects/ams2025/scripts
+  cd ~/git/lrose-titan/projects/TitanDP/scripts
 ```
 
 ### Convert raw HDF5 files with no QC
