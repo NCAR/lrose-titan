@@ -172,7 +172,6 @@ end_time = "2015 06 26 00 05 00";
 //          ZDR
 //          PHIDP
 //          RHOHV
-//          KDP
 //          LDR
 //      boolean is_available;
 //      string input_name;
@@ -180,7 +179,7 @@ end_time = "2015 06 26 00 05 00";
 //      string output_name;
 //   }
 //
-// 1D array - fixed length - 9 elements.
+// 1D array - variable length.
 
 radar_fields = {
   {
@@ -237,14 +236,6 @@ radar_fields = {
     input_name = "RHOHV",
     do_write = TRUE,
     output_name = "RHOHV"
-  }
-  ,
-  {
-    field_type = KDP,
-    is_available = FALSE,
-    input_name = "KDP",
-    do_write = TRUE,
-    output_name = "KDP"
   }
   ,
   {
@@ -308,28 +299,6 @@ model_input_url = "$(DATA_DIR)/mdv/ruc";
 
 model_search_margin_secs = 3600;
 
-///////////// write_interpolated_model_data ///////////
-//
-// Write out interpolated model data?.
-//
-// This is useful for debugging.
-//
-// Type: boolean
-
-// write_interpolated_model_data = FALSE;
-
-///////////// interpolated_model_output_url ///////////
-//
-// URL for interpolated model data, in MDV/Netcdf-CF format.
-//
-// We interpolate the model data onto the output grid. Writing out this 
-//   data is useful for debugging, allowing us to compare the original 
-//   model with the interpolated model.
-//
-// Type: string
-
-// interpolated_model_output_url = "$(DATA_DIR)/mdv/ruc_interp";
-
 ///////////// model_fields ////////////////////////////
 //
 // Details of available model fields. Exactly one of each field type 
@@ -355,7 +324,7 @@ model_search_margin_secs = 3600;
 //      string output_name;
 //   }
 //
-// 1D array - fixed length - 5 elements.
+// 1D array - variable length.
 
 model_fields = {
   {
@@ -578,7 +547,7 @@ ncf_comment = "testing 111";
 //
 // Type: boolean
 
-write_debug_polar_output = TRUE;
+write_debug_polar_output = FALSE;
 
 ///////////// debug_polar_output_dir //////////////////
 //
@@ -604,17 +573,6 @@ debug_polar_output_dir = "$(DATA_DIR)/cfradial/kftg/debug";
 // Type: string
 
 KDP_params_file_path = "$(HOME)/git/lrose-test/RadxCartDP/params/kdp_params.nexrad";
-
-///////////// KDP_write_debug_fields //////////////////
-//
-// Write extra fields to assist with KDP debugging.
-//
-// These are the intermediate fields used in computing KDP and 
-//   attenuation.
-//
-// Type: boolean
-
-KDP_write_debug_fields = FALSE;
 
 //======================================================================
 //
@@ -670,16 +628,6 @@ PID_use_attenuation_corrected_fields = FALSE;
 
 PID_mode_filter_kernel_size = 5;
 
-///////////// PID_write_debug_fields //////////////////
-//
-// Write extra fields to assist with PID debugging.
-//
-// These are the intermediate fields used in computing PID.
-//
-// Type: boolean
-
-PID_write_debug_fields = FALSE;
-
 //======================================================================
 //
 // COMPUTING PRECIP RATE.
@@ -733,229 +681,6 @@ RATE_use_attenuation_corrected_fields = FALSE;
 // Type: int
 
 RATE_median_filter_kernel_size = 5;
-
-//======================================================================
-//
-// SPECIFYING PID OUTPUT FIELDS.
-//
-//======================================================================
- 
-///////////// output_fields ///////////////////////////
-//
-// Indicate which fields should be written to the output file.
-//
-// Choose the ID from the list.
-//
-// The name and units can be set however the user prefers.
-//
-// The output_encoding apply to CfRadial output only. 
-//
-// 	RATE_ZR: Precip rate from ZR
-// 	RATE_ZR_SNOW: Precip rate from ZR in dry snow
-// 	RATE_Z_ZDR: Precip rate from Z and ZDR
-// 	RATE_KDP: Precip rate from KDP
-// 	RATE_KDP_ZDR: Precip rate from KDP and ZDR
-// 	RATE_HYBRID: Precip rate from NCAR hybrid
-// 	RATE_PID: Precip rate using PID to select the appropriate rate
-// 	RATE_HIDRO: Precip rate using CSU HIDRO hybrid
-// 	RATE_BRINGI: Precip rate using Bringi hybrid
-// 	PID: NCAR Particle ID
-// 	PID_INTEREST: final interest map for NCAR Particle ID values
-// 	TEMP_FOR_PID: temperature field for PID (C)
-// 	KDP: KDP from filtering PHIDP and computing slope (deg/km)
-// 	KDP_SC: KDP conditioned using ZZDR self-consistency (deg/km)
-// 	DBZ_ATTEN_CORRECTION: DBZ attenuation correction (dB)
-// 	ZDR_ATTEN_CORRECTION: ZDR attenuation correction (dB)
-// 	DBZ_ATTEN_CORRECTED: DBZ corrected for attenuation (dBZ)
-// 	ZDR_ATTEN_CORRECTED: ZDR corrected for attenuation (dB).
-//
-// Type: struct
-//   typedef struct {
-//      output_field_id_t id;
-//        Options:
-//          RATE_ZR
-//          RATE_ZR_SNOW
-//          RATE_Z_ZDR
-//          RATE_KDP
-//          RATE_KDP_ZDR
-//          RATE_HYBRID
-//          RATE_PID
-//          RATE_HIDRO
-//          RATE_BRINGI
-//          PID_OUT
-//          PID_INTEREST
-//          TEMP_FOR_PID
-//          SD_ZDR
-//          SD_PHIDP
-//          KDP_OUT
-//          KDP_SC
-//          DBZ_ATTEN_CORRECTION
-//          ZDR_ATTEN_CORRECTION
-//          DBZ_ATTEN_CORRECTED
-//          ZDR_ATTEN_CORRECTED
-//      string name;
-//      string long_name;
-//      string standard_name;
-//      string units;
-//      boolean do_write;
-//   }
-//
-// 1D array - variable length.
-
-output_fields = {
-  {
-    id = RATE_ZR,
-    name = "RATE_ZR",
-    long_name = "precip_rate_from_z",
-    standard_name = "precip_rate_from_z",
-    units = "mm/hr",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = RATE_ZR_SNOW,
-    name = "RATE_ZR_SNOW",
-    long_name = "precip_rate_from_z_for_snow",
-    standard_name = "precip_rate_from_z_for_snow",
-    units = "mm/hr",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = RATE_Z_ZDR,
-    name = "RATE_Z_ZDR",
-    long_name = "precip_rate_from_z_and_zdr",
-    standard_name = "precip_rate_from_z_and_zdr",
-    units = "mm/hr",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = RATE_KDP,
-    name = "RATE_KDP",
-    long_name = "precip_rate_from_kdp",
-    standard_name = "precip_rate_from_kdp",
-    units = "mm/hr",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = RATE_KDP_ZDR,
-    name = "RATE_KDP_ZDR",
-    long_name = "precip_rate_from_kdp_and_zdr",
-    standard_name = "precip_rate_from_kdp_and_zdr",
-    units = "mm/hr",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = RATE_HYBRID,
-    name = "RATE_HYBRID",
-    long_name = "precip_rate_hybrid_of_zh_zzdr_kdp_and_kdpzdr",
-    standard_name = "precip_rate_hybrid_of_zh_zzdr_kdp_and_kdpzdr",
-    units = "mm/hr",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = RATE_PID,
-    name = "RATE_PID",
-    long_name = "precip_rate_based_on_pid",
-    standard_name = "precip_rate_based_on_pid",
-    units = "mm/hr",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = PID_OUT,
-    name = "PID",
-    long_name = "particle_id",
-    standard_name = "hydrometeor_type",
-    units = "",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = PID_INTEREST,
-    name = "PID_INTEREST",
-    long_name = "final_interest_value_for_pid_decision",
-    standard_name = "final_interest_value_for_pid_decision",
-    units = "",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = TEMP_FOR_PID,
-    name = "TEMP_FOR_PID",
-    long_name = "temperature_for_computing_pid",
-    standard_name = "temperature",
-    units = "C",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = SD_ZDR,
-    name = "SD_ZDR",
-    long_name = "sdev_of_zdr_for_computing_pid",
-    standard_name = "sdev_zdr",
-    units = "dB",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = SD_PHIDP,
-    name = "SD_PHIDP",
-    long_name = "sdev_of_phidp_for_computing_pid",
-    standard_name = "sdev_phidp",
-    units = "deg",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = KDP_OUT,
-    name = "KDP",
-    long_name = "specific_differential_phase",
-    standard_name = "specific_differential_phase_hv",
-    units = "deg/km",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = KDP_SC,
-    name = "KDP_SC",
-    long_name = "kdp_conditioned_using_ZZDR_self_consistency",
-    standard_name = "specific_differential_phase_hv",
-    units = "deg/km",
-    do_write = TRUE
-  }
-  ,
-  {
-    id = ZDR_ATTEN_CORRECTION,
-    name = "ZDR_ATTEN_CORRECTION",
-    long_name = "correction_to_zdr_for_attenuation",
-    standard_name = "zdr_attenuation_correction",
-    units = "dB",
-    do_write = FALSE
-  }
-  ,
-  {
-    id = DBZ_ATTEN_CORRECTED,
-    name = "DBZ_ATTEN_CORRECTED",
-    long_name = "dbz_corrected_for_attenuation",
-    standard_name = "dbz_corrected_for_attenuation",
-    units = "dBZ",
-    do_write = FALSE
-  }
-  ,
-  {
-    id = ZDR_ATTEN_CORRECTED,
-    name = "ZDR_ATTEN_CORRECTED",
-    long_name = "zdr_corrected_for_attenuation",
-    standard_name = "zdr_corrected_for_attenuation",
-    units = "dB",
-    do_write = FALSE
-  }
-};
 
 //======================================================================
 //
@@ -1545,49 +1270,32 @@ nyquist_velocity = 25;
 
 //======================================================================
 //
-// OPTION TO ADD GEOMETRY AND TIME FIELDS.
+// OPTION TO ADD DERIVED FIELDS.
 //
 // These fields are computed from the geometry of the radar rays, and 
 //   then added as input fields in native radial coordinates.
 //
 //======================================================================
  
-///////////// output_angle_fields /////////////////////
+///////////// output_KDP_field ////////////////////////
 //
-// Option to output angle fields.
+// Option to add KDP field to the output.
+//
+// KDP is derived from PHIDP.
 //
 // Type: boolean
 
-output_angle_fields = FALSE;
+output_KDP_field = TRUE;
 
-///////////// angle_fields ////////////////////////////
+///////////// KDP_field_name //////////////////////////
 //
-// Specify the output names of the angle fields. If set to empty, that 
-//   field will not be created.
+// Name of KDP field to be written.
 //
-// 	azimuth: the azimuth of the ray (deg)
-// 	elevation: the elevation of the ray (deg)
-// 	alpha: sin(az) * cos(el)
-// 	beta: cos(az) * cos(el)
-// 	gamma: sin(el).
+// See 'output_KDP_field'.
 //
-// Type: struct
-//   typedef struct {
-//      string azimuth_field_name;
-//      string elevation_field_name;
-//      string alpha_field_name;
-//      string beta_field_name;
-//      string gamma_field_name;
-//   }
-//
+// Type: string
 
-angle_fields = {
-    azimuth_field_name = "azimuth",
-    elevation_field_name = "elevation",
-    alpha_field_name = "alpha",
-    beta_field_name = "beta",
-    gamma_field_name = "gamma"
-};
+KDP_field_name = "KDP";
 
 ///////////// output_range_field //////////////////////
 //
@@ -1682,6 +1390,43 @@ time_field_name = "TimeElapsed";
 // Type: boolean
 
 interp_time_field = TRUE;
+
+///////////// output_angle_fields /////////////////////
+//
+// Option to output angle fields.
+//
+// Type: boolean
+
+output_angle_fields = FALSE;
+
+///////////// angle_fields ////////////////////////////
+//
+// Specify the output names of the angle fields. If set to empty, that 
+//   field will not be created.
+//
+// 	azimuth: the azimuth of the ray (deg)
+// 	elevation: the elevation of the ray (deg)
+// 	alpha: sin(az) * cos(el)
+// 	beta: cos(az) * cos(el)
+// 	gamma: sin(el).
+//
+// Type: struct
+//   typedef struct {
+//      string azimuth_field_name;
+//      string elevation_field_name;
+//      string alpha_field_name;
+//      string beta_field_name;
+//      string gamma_field_name;
+//   }
+//
+
+angle_fields = {
+    azimuth_field_name = "azimuth",
+    elevation_field_name = "elevation",
+    alpha_field_name = "alpha",
+    beta_field_name = "beta",
+    gamma_field_name = "gamma"
+};
 
 ///////////// write_interp_debug_fields ///////////////
 //

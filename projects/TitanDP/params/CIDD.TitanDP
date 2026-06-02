@@ -113,14 +113,14 @@ RADIAL_KFTG_ZDR   RADIAL_KFTG_ZDR    $(DATA_DIR)/cfradial/kftg/moments&ZDR      
 RADIAL_KFTG_PHIDP RADIAL_KFTG_PHIDP  $(DATA_DIR)/cfradial/kftg/moments&PHIDP       phidp.colors deg -5 80 5 radial 1 0
 RADIAL_KFTG_RHOHV RADIAL_KFTG_RHOHV  $(DATA_DIR)/cfradial/kftg/moments&RHOHV       rhohv.colors -   -5 80 5 radial 1 0
 
-# PID, Precip Rate, QPE
+# KDP, PID, Precip Rate, QPE
     
+KDP  KDP $(DATA_DIR)/mdv/radarCart/kftg&KDP kdp.colors deg/km -5 80 5 cart 1 0
 PID  PID mdvp::vsect_disable_interp//localhost:0:$(DATA_DIR)/mdv/radarCart/kftg&PID pid.colors - -5 80 5 cart 1 0
 RATE_ZR  RATE_ZR $(DATA_DIR)/mdv/radarCart/kftg&RATE_ZR precip.colors - -5 80 5 cart 1 0
 RATE_HYBRID  RATE_HYBRID $(DATA_DIR)/mdv/radarCart/kftg&RATE_HYBRID precip.colors - -5 80 5 cart 1 0
 QPE_ZR QPE_ZR $(DATA_DIR)/mdv/radarCart/kftg&QPE_ZR precip.colors - -5 80 5 cart 1 0
 QPE_HYBRID QPE_HYBRID $(DATA_DIR)/mdv/radarCart/kftg&QPE_HYBRID precip.colors - -5 80 5 cart 1 0
-========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 
 # Echo type, convectivity
 
