@@ -75,7 +75,7 @@ The structure of the TitanDP part of this repo is as follows:
 
 ```
   ~/git/lrose-titan/color_scales
-  ~/git/lrose-titan/mape
+  ~/git/lrose-titan/maps
   ~/git/lrose-titan/projects/TitanDP/params
   ~/git/lrose-titan/projects/TitanDP/scripts
   ~/git/lrose-titan/projects/TitanDP/data
@@ -100,7 +100,7 @@ In the scripts directory you will find the file:
   ~/git/lrose-titan/projects/TitanDP/scripts/set_env_vars
 ```
 
-This file setup up the environment, and is sourced by all of the scripts that we run for this project.
+This file sets up the environment, and is sourced by all of the scripts that we run for this project.
 
 The defaults are as follows:
 
@@ -129,7 +129,9 @@ You should run the scripts from the script directory:
 
 This creates an MDV file with 1 field named ```template3D```.
 
-This file has the specificed grid geometry for the Cartesian volume, for the specific radar - in this case KFTG. We read in one CfRadial file to get the radar metadata.
+This file has the specificed grid geometry for the Cartesian volume, for the specific radar - in this case KFTG.
+
+The app reads in one CfRadial file to get the radar metadata. In this case it reads in the first file in the input directory:
 
 ```
   $HOME/data/TitanDP/mdv/radarCart/kftg/template/20150626/20150626_005802.mdv.cf.nc
