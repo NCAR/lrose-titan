@@ -2,7 +2,21 @@
 
 ## Overview
 
-TitanDP is under development. This document will be updated as progress is made.
+The TitanDP project, funded by the UAE Rainfall Enhancement Program (UAE-REP), will provide a major upgrade to Titan by fully utilizing the dual-polarization now available from modern operational radar networks.
+
+The first stage of the work will develop canonical Cartesian volumes, centered on each radar, that make optimal use of the dual-polarization capabilities of the radar, but also bringing in environmental information via a model, and beam blockage estimates based on high resolution digital terrain data. A focus on data quality is essential for success.
+
+The derived and imported fields in these canonical volumes will include:
+
+* KDP based on a polynomial regression filter.
+* Particle ID (PID) calculated natively in Cartesian coordinates.
+* Precipition rate - ZR and Hybrid estimators.
+* Temperature and Relative Himidity from a model.
+* Beam blockage estimates.
+* QPE (ZR and Hybrid) using beam blockage and terrain height.
+* A Convective/Stratiform partition (based on the ECCO algorithm).
+
+Since TitanDP is a new project, and under development, this document will be updated as progress is made.
 
 Initially we are working with a single radar volume.
 
@@ -264,207 +278,46 @@ You can view the results using CIDD:
   ./run_CIDD.TitanDP
 ```
 
-Hail case - no significant interference:
+## Example images of output fields
 
-![Alt text](./images/hail.dbz.no_qc.png)
+### Cartesian DBZ
 
-Derecho case - considerable interference:
+![Alt text](./images/kftg_cart_dbz.png)
 
-![Alt text](./images/derecho.dbz.no_qc.png)
+### Cartesian VEL
 
-### Convert raw HDF5 files with QC
+![Alt text](./images/kftg_cart_vel.png)
 
-Inspection of the spikes reveals that the sources of the interference are not coherent with the radars:
+### Cartesian WIDTH
 
-* SQI (NCP) is low
-* SNR is reasonably low
+![Alt text](./images/kftg_cart_width.png)
 
-In ```RadxConvert``` we have the option to censor the data fields using threshold applied to the input fields. Specifically we use RadxConvert to remove data at gates for which BOTH:
+### Cartesian ZDR
 
-* SQI (NCP) < 0.2, AND
-* SNR < 25 dB
+![Alt text](./images/kftg_cart_zdr.png)
 
+### Cartesian PHIDP
 
-The following runs that step:
+![Alt text](./images/kftg_cart_phidp.png)
 
-```
-  ./run_RadxConvert.qc.hail
-  ./run_RadxConvert.qc.derecho
-```
+### Cartesian RHOHV
 
-You can view the results in HawkEye, and compare to the non-QC step above.
+![Alt text](./images/kftg_cart_rhohv.png)
 
-```
-  ./run_HawkEye.qc.hail
-  ./run_HawkEye.qc.derecho
-```
+### Cartesian KDP
 
-Hail case - clean:
+![Alt text](./images/kftg_cart_kdp.png)
 
-![Alt text](./images/hail.dbz.qc.png)
+### Cartesian DBZ
 
-Derecho case - interference largely mitigated:
+![Alt text](./images/kftg_cart_dbz.png)
 
-![Alt text](./images/derecho.dbz.qc.png)
+### Cartesian DBZ
 
-Although not perfect, for the purposes of this project, this censoring QC step is sufficent to ensure that Titan does not produce artifacts.
+![Alt text](./images/kftg_cart_dbz.png)
 
-## Computing PID as an alternative method of censoring
+### Cartesian DBZ
 
-An alternative method for cleaning up interference is to run RadxPid, and censor non-meteorological echoes.
-
-We downloaded the ERA5 reanalysis for these cases, and we can use that to save the model-based soundings:
-
-```
-  ./run_Mdv2SoundingSpdb.ERA5.hail
-  ./run_Mdv2SoundingSpdb.ERA5.derecho
-```
-
-And we can then run RadxPid:
-
-```
-  ./run_RadxPid.hail
-  ./run_RadxPid.derecho
-```
-
-The following shows the PID field for the derecho case:
-
-![Alt text](./images/derecho.pid.png)
-
-The interference is identifed as clutter in this case.
-
-And the following shows the result of using PID to clean up the reflectivity field:
-
-![Alt text](./images/derecho.dbz.censored_by_pid.png)
-
-For this tutorial we will use the QC data created by RadxConvert.
-
-## Transform the polar data to Cartesian, using Radx2Grid.
-
-Titan requires input data in Cartesian coordinates, rather than polar.
-
-To perform this transformation, we run the following:
-
-
-```
-  ./run_Radx2Grid.hail
-  ./run_Radx2Grid.derecho
-```
-
-On a Linux host, we can run CIDD to view the Cartesian fields, in addition to the polar fields:
-
-
-```
-  ./run_CIDD.hail
-  ./run_CIDD.derecho
-```
-
-Cartesian DBZ data in CIDD, hail case:
-
-<img src="./images/hail.dbz.cart.cidd.png" alt="Alt text" width="600">
-
-Cartesian DBZ data in CIDD, derecho case:
-
-<img src="./images/derecho.dbz.cart.cidd.png" alt="Alt text" width="600">
-
-On a Mac or Linux we can run Lucid, the replacement for CIDD that is under development:
-
-```
-  ./run_Lucid.hail
-  ./run_Lucid.derecho
-```
-
-Cartesian DBZ data in Lucid, hail case:
-
-<img src="./images/hail.dbz.cart.lucid.png" alt="Alt text" width="600">
-
-Cartesian DBZ data in Lucid, derecho case:
-
-<img src="./images/derecho.dbz.cart.lucid.png" alt="Alt text" width="600">
-
-As mentioned, Lucid is still under development and only some of the functionality is available. You can select fields, zooms and maps. The height selector is functional. The movie control slider works, for selecting different times. However, much of the time controller is not yet working.
-
-## Running Titan
-
-Titan runs on the Cartesian gridded data, using the DBZ field and optionally the VEL field to compute storm rotation.
-
-```
-  ./run_Titan.hail
-  ./run_Titan.derecho
-```
-
-You can view the Titan tracks using Rview, which has a partner application TimeHist:
-
-```
-  ./run_Rview.hail
-  ./run_Rview.derecho
-```
-
-Rview is a display application specifically designed to display Titan. We will need to demonstrate the interactive functionality. Rview on the mac seems to be crashing, so that will need to be debugged.
-
-Rview and TimeHist, hail case:
-
-<img src="./images/Rview.hail.png" alt="Alt text" width="600">
-
-![Alt text](./images/Rview.and.TimeHist.hail.png)
-
-Rview and TimeHist, derecho case:
-
-<img src="./images/Rview.derecho.png" alt="Alt text" width="600">
-
-![Alt text](./images/Rview.and.TimeHist.derecho.png)
-
-## Exporting the Titan tracks using Tracks2Ascii
-
-Tracks2Ascii exports the Titan track data in space-delimited ascii format:
-
-```
-  ./run_Tracks2Ascii.hail
-  ./run_Tracks2Ascii.derecho
-```
-
-## Exporting the Titan tracks using Tstorms2NetCDF
-
-Tstorms2NetCDF exports the Titan track data in NetCDF-4, using groups:
-
-```
-  ./run_Tstorms2NetCDF.hail
-  ./run_Tstorms2NetCDF.derecho
-```
-
-For documentation on the NetCDF data model, see:
-
-* [Titan Data in NetCDF](../../docs/pdf/TitanDataNetCDF.pdf)
-
-## Running HailKE and HailKEswath
-
-HailKE estimates Hail Kinetic Energy, using the Cartesian reflectivity field.
-
-HailKEswath accumulates the results from HailKE into a swath over time.
-
-To run HailKE for each case:
-
-```
-  ./run_HailKE.hail
-  ./run_HailKE.derecho
-```
-
-To run HailKEswath for each case:
-
-```
-  ./run_HailKEswath.hail
-  ./run_HailKEswath.derecho
-```
-
-You can view the swath using CIDD:
-
-```
-  ./run_CIDD.hail
-  ./run_CIDD.derecho
-```
-
-and select the HailKE or HailKEswath fields:
-
-![Alt text](./images/hail_swath.png)
+![Alt text](./images/kftg_cart_dbz.png)
 
 
