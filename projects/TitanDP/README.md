@@ -17,10 +17,10 @@ The derived and imported fields in the canonical volumes will include:
 * KDP based on a polynomial regression filter.
 * Particle ID (PID) calculated natively in Cartesian coordinates.
 * Precipition rate - ZR and Hybrid estimators.
-* Temperature and Relative Himidity from a model.
+* Temperature and Relative Humidity from a model.
 * Beam blockage estimates.
-* QPE (ZR and Hybrid) using beam blockage and terrain height.
-* A Convective/Stratiform partition (based on the ECCO algorithm).
+* QPE (ZR and Hybrid) incorporating beam blockage, beam height and terrain height.
+* A Convective/Stratiform partition based on the ECCO algorithm.
 
 Since TitanDP is a new project, and under development, this document will be updated as progress is made.
 
@@ -91,7 +91,7 @@ To clone the project onto your local host, do the following:
   git clone https://github.com/ncar/lrose-titan
 ```
 
-The structure of the TitanDP tutorial is as follows:
+The structure of the TitanDP project directory is as follows:
 
 ```
   ~/git/lrose-titan/color_scales
@@ -196,10 +196,10 @@ When complete, the following MDV file is created:
 
 containing the following fields:
 
-* Elevation (elevation angle of grid point as seen from radar)
-* Extinction (beam blockage extinction fraction)
-* TerrainHt (terrain height on specified Cartesian 2D grid)
-* TerrainHiRes (terrain height at 10 times resolution)
+* Elevation (elevation angle of grid point as seen from radar).
+* Extinction (beam blockage extinction fraction).
+* TerrainHt (terrain height on specified Cartesian 2D grid).
+* TerrainHiRes (terrain height at 10 times resolution).
 
 NOTE: when writing the output file, CartBeamBlock may report that NaNs were found and converted to the bad_data_value. This is benign and does not indicate an error.
 
@@ -314,16 +314,47 @@ You can view the results using CIDD:
 
 ![Alt text](./images/kftg_cart_kdp.png)
 
-### Cartesian DBZ
+### Particle ID - PID
 
-![Alt text](./images/kftg_cart_dbz.png)
+![Alt text](./images/kftg_cart_pid.png)
 
-### Cartesian DBZ
+### PRECIP_RATE_ZR
 
-![Alt text](./images/kftg_cart_dbz.png)
+![Alt text](./images/kftg_cart_rate_zr.png)
 
-### Cartesian DBZ
+### PRECIP_RATE_HYBRID
 
-![Alt text](./images/kftg_cart_dbz.png)
+![Alt text](./images/kftg_cart_rate_hybrid.png)
 
+### QPE_ZR
+
+![Alt text](./images/kftg_cart_qpe_zr.png)
+
+### QPE_HYBRID
+
+![Alt text](./images/kftg_cart_qpe_hybrid.png)
+
+### ECHO_TYPE
+
+![Alt text](./images/kftg_cart_echo_type.png)
+
+### CONVECTIVITY
+
+![Alt text](./images/kftg_cart_convectivity.png)
+
+### TEMPERATURE from model
+
+![Alt text](./images/kftg_cart_temp.png)
+
+### RH from model
+
+![Alt text](./images/kftg_cart_rh.png)
+
+### Beam blockage fraction - EXTINCTION
+
+![Alt text](./images/kftg_cart_extinction.png)
+
+### TERRAIN HEIGHT
+
+![Alt text](./images/kftg_cart_terrain_ht.png)
 
