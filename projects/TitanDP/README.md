@@ -328,33 +328,33 @@ You can view the results using CIDD:
 
 ### QPE_ZR
 
-![Alt text](./images/kftg_cart_qpe_zr.png)
+![Alt text](./images/kftg_qpe_zr.png)
 
 ### QPE_HYBRID
 
-![Alt text](./images/kftg_cart_qpe_hybrid.png)
+![Alt text](./images/kftg_qpe_hybrid.png)
 
 ### ECHO_TYPE
 
-![Alt text](./images/kftg_cart_echo_type.png)
+![Alt text](./images/kftg_echo_type.png)
 
 ### CONVECTIVITY
 
-![Alt text](./images/kftg_cart_convectivity.png)
+![Alt text](./images/kftg_convectivity.png)
 
 ### TEMPERATURE from model
 
-![Alt text](./images/kftg_cart_temp.png)
+![Alt text](./images/kftg_temp.png)
 
 ### RH from model
 
-![Alt text](./images/kftg_cart_rh.png)
+![Alt text](./images/kftg_rh.png)
 
 ### Beam blockage fraction - EXTINCTION
 
-![Alt text](./images/kftg_cart_extinction.png)
+![Alt text](./images/kftg_extinction.png)
 
 ### TERRAIN HEIGHT
 
-![Alt text](./images/kftg_cart_terrain_ht.png)
+![Alt text](./images/kftg_terrain_ht.png)
 
