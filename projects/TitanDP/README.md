@@ -6,7 +6,13 @@ The TitanDP project, funded by the UAE Rainfall Enhancement Program (UAE-REP), w
 
 The first stage of the work will develop canonical Cartesian volumes, centered on each radar, that make optimal use of the dual-polarization capabilities of the radar, but also bringing in environmental information via a model, and beam blockage estimates based on high resolution digital terrain data. A focus on data quality is essential for success.
 
-The derived and imported fields in these canonical volumes will include:
+Subsequent stages will provide:
+
+* TitanDP - Titan upgrade to dual-polarization, reading in the single-radar dual-pol Cartesian volumes.
+* MdvMergeDP - a Cartesian merge to create a dual-pol radar mosaic, making use of the derived fields to improve the merge decisions.
+* Lucid - a Qt-based upgrade to CIDD, incorporating the legacy Rview/TimeHist functionality.
+
+The derived and imported fields in the canonical volumes will include:
 
 * KDP based on a polynomial regression filter.
 * Particle ID (PID) calculated natively in Cartesian coordinates.
