@@ -133,8 +133,8 @@ Convectivity    Convectivity  $(DATA_DIR)/mdv/radarCart/kftg&Convectivity3D  con
 
 # Terrain, extinction
 
-Extinct    Extinct    $(DATA_DIR)/mdv/radarCart/kftg&extinction     fraction.colors   m   -5   80  5  cart   1 0
-TerrainHt  TerrainHt  $(DATA_DIR)/mdv/radarCart/kftg&terrain_ht     terrain_front.colors   m   -5   80  5  cart   1 0
+Extinct    Extinct    $(DATA_DIR)/mdv/radarCart/kftg&Extinction     fraction.colors   m   -5   80  5  cart   1 0
+TerrainHt  TerrainHt  $(DATA_DIR)/mdv/radarCart/kftg&TerrainHt     terrain_front.colors   m   -5   80  5  cart   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
 ========   =========  $(DATA_DIR)/junk&junk  none.colors   m   -5   80  5  dcont   1 0
